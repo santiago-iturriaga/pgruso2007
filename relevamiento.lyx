@@ -1,0 +1,639 @@
+#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
+\textclass article
+\language english
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Documento de relevamiento
+\end_layout
+
+\begin_layout Author
+Santiago Iturriaga, Paulo Maya, Damian Pintos
+\end_layout
+
+\begin_layout Date
+14/06/2007
+\newpage
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand \tableofcontents{}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Sun grid engine 6.1
+\end_layout
+
+\begin_layout Subsection
+Requerimientos
+\end_layout
+
+\begin_layout Itemize
+Master: 100 MB de memoria disponible 500 MB de disco disponible
+\end_layout
+
+\begin_layout Itemize
+Host de ejecución: 20 MB de memoria disponible 100 MB de disco disponible
+\end_layout
+
+\begin_layout Itemize
+Sistemas operativos soportados:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solaris 10, 9, and 8 SPARC 
+\end_layout
+
+\begin_layout Itemize
+Solaris 10 and 9 x86
+\end_layout
+
+\begin_layout Itemize
+Solaris 10 x64
+\end_layout
+
+\begin_layout Itemize
+Apple Mac OS X 10.4 (Tiger) PPC
+\end_layout
+
+\begin_layout Itemize
+Apple Mac OS X 10.4 (Tiger) x86
+\end_layout
+
+\begin_layout Itemize
+Hewlett Packard HP-UX 11.00 o superior (incluido HP-UX IA64)
+\end_layout
+
+\begin_layout Itemize
+IBM AIX 5.1, 5.3
+\end_layout
+
+\begin_layout Itemize
+Linux x86, kernel 2.4, 2.6, glibc >= 2.3.2
+\end_layout
+
+\begin_layout Itemize
+Linux x64, kernel 2.4, 2.6, glibc >= 2.3.2
+\end_layout
+
+\begin_layout Itemize
+Linux IA64, kernel 2.4, 2.6, glibc >= 2.3.2
+\end_layout
+
+\begin_layout Itemize
+Silicon Graphics IRIX 6.5
+\end_layout
+
+\begin_layout Itemize
+Microsoft Windows Server 2003
+\end_layout
+
+\begin_layout Itemize
+Windows XP Professional with Service Pack 1 o superior
+\end_layout
+
+\begin_layout Itemize
+Windows 2000 Server with Service Pack 3 o superior
+\end_layout
+
+\begin_layout Itemize
+Windows 2000 Professional with Service Pack 3 o superior
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plataformas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SPARC Ultra III
+\end_layout
+
+\begin_layout Itemize
+SPARC Ultra IV
+\end_layout
+
+\begin_layout Itemize
+AMD64 x86
+\end_layout
+
+\begin_layout Itemize
+Mac
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Características generales
+\end_layout
+
+\begin_layout Itemize
+Permite limitar el máximo numero de trabajos por usuario, grupo y proyecto
+ o recursos como colas, host, memoria y licencias de software.
+ 
+\end_layout
+
+\begin_layout Itemize
+Expresiones booleanas : permiten al usuario especificar los recursos que
+ requerido para un trabajo determinado usando expresiones logicas.
+ Por ejemplo, un usuario puede requerir que un trabajo corra en un host
+ que cumpla la condición 
+\begin_inset Quotes eld
+\end_inset
+
+Solaris o Linux pero no Linux en IA64
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Distributed Resource Management Application API (DRMAA) es un conjunto de
+ APIs standard desarrollado por Global Grid Forum para application builders,
+ portal builders e ISV's.
+ La versión 6.1 soporta los últimos C y Java bindings de DRMAA 1.0.
+ Adicionalmente, es provisto de compatibilidad hacia atrás para: DRMAA 0.5
+ Java binding y DRMAA 0.95 C binding.
+\end_layout
+
+\begin_layout Itemize
+Guarda la información referida a la cuenta de cada trabajo en una base de
+ datos relacional (soportando Oracle, MySQL y PostgreSQL).
+\end_layout
+
+\begin_layout Itemize
+Una cola podria abarcar mas de un host de ejecucion.
+ 
+\end_layout
+
+\begin_layout Itemize
+La grilla es rellenada con los trabajos mas chicos mientras los trabajos
+ mas grandes estan siendo programados para ejecutarse.
+ 
+\end_layout
+
+\begin_layout Itemize
+Provee ejecución repetitiva de el mismo (o muy similar) conjunto de operaciones,
+ por ejemplo durante el renderizado de multiples frames.
+ 
+\end_layout
+
+\begin_layout Itemize
+Maneja aplicaciones paralelas (MPI o PVM habilitados) a travez de una interface
+ dedicada.
+ 
+\end_layout
+
+\begin_layout Itemize
+Permite la distribución de recursos a equipos o departamentos, por ejemplo
+ proporcionalmente a su contribución económica.
+ 
+\end_layout
+
+\begin_layout Itemize
+Código con una complejidad alta.
+ 
+\end_layout
+
+\begin_layout Itemize
+Sistema integrado, no muestra facilidades a la hora de dividirlo en subsistemas.
+\end_layout
+
+\begin_layout Subsection
+Resumen
+\end_layout
+
+\begin_layout Standard
+Sun grid engine 6.1 provee la mayoría de las funcionalidades requeridas para
+ el proyecto.
+ Por otro lado, tiene como desventaja el ser un único gran paquete indivisible,
+ lo cual hace muy difícil cualquier adaptación o modificación de su funcionamien
+to.
+ 
+\end_layout
+
+\begin_layout Standard
+Si nos basamos en la historia reciente del producto, en una versión anterior
+ se encontró un problema de seguridad (un salto en las restricciones) y
+ quienes lo estaban utilizando en ese momento descartaron la idea de buscar
+ el problema y solucionarlo, limitándose sólamente a esperar que los creadores
+ de la herramienta lo corrigieran.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto se debe a que la herramienta cuenta con un código muy complejo y dificil
+ de modificar, lo que lo coloca como una opción poco vialble para ser utilizada
+ dentro del proyecto propuesto.
+\end_layout
+
+\begin_layout Section
+TORQUE
+\end_layout
+
+\begin_layout Standard
+TORQUE (Terascale Open-source Resource and QUEue manager) se trata de un
+ 'fork' open-source de la version 2.3.12 de OpenPBS mantenido por Cluster
+ Resources.
+ 
+\end_layout
+
+\begin_layout Standard
+Incorpora muchas mejoras con respecto al proyecto PBS original provistas
+ por NCSA (National Center of Supercomputing Applications), OSC (Ohio Supercompu
+ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
+ centros HPC junto con las mejoras desarrolladas por Cluster Resources.
+\end_layout
+
+\begin_layout Subsection
+Requerimientos
+\end_layout
+
+\begin_layout Standard
+Plataformas soportadas:
+\end_layout
+
+\begin_layout Itemize
+Linux
+\end_layout
+
+\begin_layout Itemize
+UNIX
+\end_layout
+
+\begin_layout Subsection
+Caracteristicas generales
+\end_layout
+
+\begin_layout Standard
+Los trabajos (jobs) son manejados en el sistema (cluster) de la misma manera
+ que lo hace OpenPBS.
+ Cuenta con un conjunto de colas (queues) de trabajos que definen propiedades
+ generales para los trabajos que contienen (p.ej.
+ recursos disponibles, etc.) y al ingresar un trabajo al sistema, este debe
+ especificar caracteristicas especificas de si mismo que ayuden al sistema
+ a planificar (schedule) la ejecucion del mismo (p.ej.
+ nodos a utilizar, memoria maxima a utilizar, etc.).
+ Con esta informacion (los datos de la cola a la que pertenece el trabajo
+ y los datos especificos del trabajo en cuestion) el planificador (scheduler)
+ decide el momento en que un trabajo comienza a ejecutarse y con que recursos
+ cuenta en cada instante.
+\end_layout
+
+\begin_layout Standard
+Existen tres tipos de nodos en el sistema:
+\end_layout
+
+\begin_layout Itemize
+Nodo Maestro
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Es necesario que exista un nodo maestro en el sistema, en este nodo se debe
+ ejecutar pbs_server.
+ Dependiendo del sistema este nodo maestro puede encontrarse dedicado unicamente
+ a este rol o compartir otros roles.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Nodos Interactivos
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Los nodos interactivos proveen un punto de entrada al sistema para los usuarios.
+ Es en estos nodos en que los usuarios puede ingresar tareas al sistema
+ y monitorear su progreso.
+ Estos nodos deben tener comandos como qsub, qhold, etc disponibles.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Nodos de computo
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Estos son los responsables de la ejecucion de los trabajos encolados en
+ el sistema.
+ En cada uno de estos nodos debe ejecutarse pbs_mom (Machine Oriented Mini-serve
+r) que es el encargado de iniciar, detener y manejar los trabajos encolados.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Librerias para programacion paralela
+\end_layout
+
+\begin_layout Subsubsection
+MPI (Message Passing Interface)
+\end_layout
+
+\begin_layout Standard
+El soporte para liberias MPI se encuentra integrado en TORQUE, el sistema
+ puede correr con cualquier implementacion de MPI.
+ Particularmente para MPICH existe un reemplazo para el script mpirun (mpirun
+ se encuentra incluido en el paquete de mpich) llamado mpiexec.
+ Mpiexec es usado para inicializar trabajos paralelos dentro de un sistema
+ PBS.
+ Los recursos utilizados por procesos paralelos son correctamente registrados
+ cuando se utiliza mpiexec y se reporta su uso en el log del PBS, a diferencia
+ de lo que sucede cuando se utiliza el script mpirun original.
+\end_layout
+
+\begin_layout Subsubsection
+PVM (Parallel Virtual Machine)
+\end_layout
+
+\begin_layout Standard
+Una de las principales desventajas de TORQUE es la dificultad que plantea
+ el uso de la liberia PVM.
+ A diferencia de MPI, el soporte para PVM no se encuentra integrado al sistema
+ por lo que debe manejarse cuidadosamente.
+ Para ejecutar una aplicacion paralela utilizando PVM se debe iniciar el
+ demonio pvmd en el script del trabajo, configurar los nodos escalvos para
+ luego iniciar la ejecucion del trabajo (todo esto puede realizarse utilizando
+ mpiexec).
+\end_layout
+
+\begin_layout Subsection
+Scheduler
+\end_layout
+
+\begin_layout Standard
+TORQUE contiene la logica necesaria para llevar a cabo la planificacion
+ de trabajos, pero se trata de una logica muy simple que no resulta adecuada
+ para un ambiente de produccion.
+ Basicamente el planificador que se encuentra incorporado a TORQUE maneja
+ los trabajos como una cola FIFO (First-In First-Out).
+ Para mejorar esto se utiliza Maui, una aplicacion especializada en la planifica
+cion de trabajos.
+\end_layout
+
+\begin_layout Section
+Maui
+\end_layout
+
+\begin_layout Standard
+Maui se enfoca en la planificacion de trabajos y deja la problematica de
+ iniciar los trabajos y la interaccion con los usuarios a los manejadores
+ de recursos (distributed resource managers, DRM) como OpenPBS, TORQUE,
+ SGE, etc.
+\end_layout
+
+\begin_layout Subsection
+Requerimientos
+\end_layout
+
+\begin_layout Itemize
+Hardware
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+20-50 MB de RAM (para clusters de hasta 10 teraflops)
+\end_layout
+
+\begin_layout Itemize
+>20 MB de disco duro para los fuentes, binarios, estadisticas y archivos
+ de logs
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plataformas soportadas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linux
+\end_layout
+
+\begin_layout Itemize
+AIX
+\end_layout
+
+\begin_layout Itemize
+OSF/Tru-64
+\end_layout
+
+\begin_layout Itemize
+Solaris
+\end_layout
+
+\begin_layout Itemize
+HP-UX
+\end_layout
+
+\begin_layout Itemize
+IRIX
+\end_layout
+
+\begin_layout Itemize
+FreeBSD
+\end_layout
+
+\begin_layout Itemize
+Other UNIX platforms
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+DRM soportados
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OpenPBS
+\end_layout
+
+\begin_layout Itemize
+'Scalable' Open PBS
+\end_layout
+
+\begin_layout Itemize
+PBSPro
+\end_layout
+
+\begin_layout Itemize
+Sun Grid Engine (SGE)
+\end_layout
+
+\begin_layout Itemize
+SGE Enterprise Edition
+\end_layout
+
+\begin_layout Itemize
+LoadLeveler
+\end_layout
+
+\begin_layout Itemize
+LSF
+\end_layout
+
+\begin_layout Itemize
+BProc/Scyld
+\end_layout
+
+\begin_layout Itemize
+Scalable System Software (SSSRM)
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Caracteristicas generales
+\end_layout
+
+\begin_layout Standard
+El algoritmo de planificacion de Maui soporta fairness, preemption, backfill,
+ etc.
+ y tiene una interfaz para la interaccion con un allocation management externo.
+ Un allocation manager (tambien conocido como allocation bank o cpu bank)
+ funciona como un banco en el cual la moneda son los recursos del sistema
+ (p.ej.
+ procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
+ de recursos.
+\end_layout
+
+\begin_layout Subsubsection
+Backfill
+\end_layout
+
+\begin_layout Standard
+Backfill es un acercamiento en la planificacion que permite ejecutar algunos
+ trabajos 'desordenadamente' siempre y cuando estos no retrasen los trabajos
+ de prioridad superior de la cola.
+ Para determinar si un trabajo será retrasado, cada trabajo debe proveer
+ una estimación de cuánto tiempo necesitará para su ejecucion.
+ Esta estimación, conocida como límite wallclock, es una valoración del
+ tiempo desde el comienzo del trabajo hasta su final.
+ Es a menudo sabio sobrestimar levemente este límite porque el planificador
+ se puede configurar para matar a los trabajos que exceden sus límites del
+ wallclock.
+ Sin embargo, la sobrestimación demasiado grande del tiempo del wallclock
+ de un trabajo evitará que el planificador pueda optimizar correctamente
+ la cola de trabajo.
+ Cuanto más exacto el límite del wallclock, mayor sera la posibilidad de
+ que Maui encuentre agujeros en la planificacion para comenzar a ejecutar
+ su trabajo con mayor anticipacion.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Gerenciamiento de asignación
+\end_layout
+
+\begin_layout Standard
+Maui posee interfaces para sistemas de gerenciamiento de asignación tales
+ como Gold de PNNL.
+ Estos sistemas permiten que a cada usuario le sea asignada una porción
+ de los recursos totales de cálculo disponibles en el sistema.
+ Estos sistemas trabajan asociando a cada usuario a unas o más cuentas.
+ Cuando se envia un trabajo, el usuario especifica a que cuenta se debe
+ cargar los recursos consumidos por el trabajo.
+\end_layout
+
+\begin_layout Subsubsection
+Reservas anticipadas
+\end_layout
+
+\begin_layout Standard
+Las reservas anticipadas permiten que un sitio disponga ciertos recursos
+ a un lado para el uso específico de de ciertas aplicaciones durante cierto
+ tiempo.
+ El acceso a una reserva dada es controlado por un Access Control List (ACL)
+ que determina quién puede utilizar los recursos reservados.
+ Es importante observar que mientras que un ACL permite que trabajos particulare
+s utilicen recursos reservados, no fuerzan al trabajo a utilizar estos recursos.
+ Maui procurará utilizar la mejor combinación posible de recursos disponibles
+ sean éstos reservados o no.
+ Maui puede ser configurado para que ciertos trabajos sean restringidos
+ y que funcionen utilizando solamente recursos reservados, aplicando restriccion
+es a nivel de trabajo o especificando ciertas restricciones especiales de
+ QoS.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Quality of Service (QOS)
+\end_layout
+
+\begin_layout Standard
+Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios,
+ estos beneficios pueden incluir acceso a recursos adicionales, exlusiones
+ de determinadas politicas, acceso a capacidades especiales, y mejoras en
+ la priorizacion de trabajos.
+\end_layout
+
+\begin_layout Section
+Gold
+\end_layout
+
+\begin_layout Standard
+Gold es un sistema de gerenciamiento de asignación desarrollado en PNNL
+ bajo el proyecto Scalable Systems Software (SSS).
+\end_layout
+
+\begin_layout Section
+Referencias
+\end_layout
+
+\begin_layout Address
+http://www.sun.com/software/gridware/features.xml
+\end_layout
+
+\begin_layout Address
+http://www.clusterresources.com/
+\end_layout
+
+\begin_layout Address
+http://www.emsl.pnl.gov/docs/mscf/gold/
+\end_layout
+
+\begin_layout Address
+http://www.openpbs.org/
+\end_layout
+
+\end_body
+\end_document
