@@ -257,7 +257,7 @@ TORQUE
 
 \begin_layout Standard
 TORQUE (Terascale Open-source Resource and QUEue manager) se trata de un
- 'fork' open-source de la version 2.3.12 de OpenPBS mantenido por Cluster
+ 'fork' open-source de la versión 2.3.12 de OpenPBS mantenido por Cluster
  Resources.
  
 \end_layout
@@ -286,7 +286,7 @@ UNIX
 \end_layout
 
 \begin_layout Subsection
-Caracteristicas generales
+Características generales
 \end_layout
 
 \begin_layout Standard
@@ -295,11 +295,11 @@ Los trabajos son manejados en el cluster de la misma manera que lo hace
  Cuenta con un conjunto de colas de trabajos que definen propiedades generales
  para los trabajos que contienen (p.ej.
  recursos disponibles, etc.) y al ingresar un trabajo al sistema, este debe
- especificar caracteristicas especificas de si mismo que ayuden al sistema
- a planificar la ejecucion del mismo (p.ej.
- nodos a utilizar, memoria maxima a utilizar, etc.).
- Con esta informacion (los datos de la cola a la que pertenece el trabajo
- y los datos especificos del trabajo en cuestion) el scheduler decide el
+ especificar características especificas de si mismo que ayuden al sistema
+ a planificar la ejecución del mismo (p.ej.
+ nodos a utilizar, memoria máxima a utilizar, etc.).
+ Con esta información (los datos de la cola a la que pertenece el trabajo
+ y los datos específicos del trabajo en cuestión) el scheduler decide el
  momento en que un trabajo comienza a ejecutarse y con que recursos cuenta
  en cada instante.
 \end_layout
@@ -316,7 +316,7 @@ Nodo Maestro
 \begin_layout Standard
 Es necesario que exista un nodo maestro en el sistema, en este nodo se debe
  ejecutar pbs_server.
- Dependiendo del sistema este nodo maestro puede encontrarse dedicado unicamente
+ Dependiendo del sistema este nodo maestro puede encontrarse dedicado únicamente
  a este rol o compartir otros roles.
 \end_layout
 
@@ -340,7 +340,7 @@ Nodos de computo
 
 \begin_deeper
 \begin_layout Standard
-Estos son los responsables de la ejecucion de los trabajos encolados en
+Estos son los responsables de la ejecución de los trabajos encolados en
  el sistema.
  En cada uno de estos nodos debe ejecutarse pbs_mom (Machine Oriented Mini-serve
 r) que es el encargado de iniciar, detener y manejar los trabajos encolados.
@@ -349,15 +349,15 @@ r) que es el encargado de iniciar, detener y manejar los trabajos encolados.
 \end_deeper
 \begin_layout Standard
 Torque cuenta con una interfaz de usuario de linea de comando (CLI) como
- principal manera de interactuar con el sistema, tambien cuenta con una
- interfaz grafica para X-Windows y una biblioteca para desarrollo en C.
+ principal manera de interactuar con el sistema, también cuenta con una
+ interfaz gráfica para X-Windows y una biblioteca para desarrollo en C.
  Es posible utilizar bibliotecas desarrolladas por 3eros para otros lenguajes
  (p.ej.
  Perl o Python).
 \end_layout
 
 \begin_layout Subsection
-Bibliotecas para programacion paralela
+Bibliotecas para programación paralela
 \end_layout
 
 \begin_layout Subsubsection
@@ -365,8 +365,8 @@ MPI (Message Passing Interface)
 \end_layout
 
 \begin_layout Standard
-El soporte para liberias MPI se encuentra integrado en TORQUE, el sistema
- puede correr con cualquier implementacion de MPI.
+El soporte para bibliotecas tipo MPI se encuentra integrado en TORQUE, el
+ sistema puede correr con cualquier implementación de MPI.
  Particularmente para MPICH existe un reemplazo para el script mpirun (mpirun
  se encuentra incluido en el paquete de mpich) llamado mpiexec.
  Mpiexec es usado para inicializar trabajos paralelos dentro de un sistema
@@ -382,12 +382,12 @@ PVM (Parallel Virtual Machine)
 
 \begin_layout Standard
 Una de las principales desventajas de TORQUE es la dificultad que plantea
- el uso de la liberia PVM.
+ el uso de la biblioteca PVM.
  A diferencia de MPI, el soporte para PVM no se encuentra integrado al sistema
  por lo que debe manejarse cuidadosamente.
- Para ejecutar una aplicacion paralela utilizando PVM se debe iniciar el
- demonio pvmd en el script del trabajo, configurar los nodos escalvos para
- luego iniciar la ejecucion del trabajo (todo esto puede realizarse utilizando
+ Para ejecutar una aplicación paralela utilizando PVM se debe iniciar el
+ demonio pvmd en el script del trabajo, configurar los nodos esclavos para
+ luego iniciar la ejecución del trabajo (todo esto puede realizarse utilizando
  mpiexec).
 \end_layout
 
@@ -396,18 +396,18 @@ Maui
 \end_layout
 
 \begin_layout Standard
-TORQUE contiene la logica necesaria para llevar a cabo la planificacion
- de trabajos, pero se trata de una logica muy simple que no resulta adecuada
- para un ambiente de produccion.
- Basicamente el planificador que se encuentra incorporado a TORQUE maneja
+TORQUE contiene la lógica necesaria para llevar a cabo la planificación
+ de trabajos, pero se trata de una lógica muy simple que no resulta adecuada
+ para un ambiente de producción.
+ Básicamente el planificador que se encuentra incorporado a TORQUE maneja
  los trabajos como una cola FIFO (First-In First-Out).
- Para mejorar esto se utiliza Maui, una aplicacion especializada en la planifica
-cion de trabajos.
+ Para mejorar esto se utiliza Maui, una aplicación especializada en la planifica
+ción de trabajos.
 \end_layout
 
 \begin_layout Standard
-Maui se enfoca en la planificacion de trabajos y deja la problematica de
- iniciar los trabajos y la interaccion con los usuarios a los manejadores
+Maui se enfoca en la planificación de trabajos y deja la problemática de
+ iniciar los trabajos y la interacción con los usuarios a los manejadores
  de recursos (distributed resource managers, DRM) como OpenPBS, TORQUE,
  SGE, etc.
 \end_layout
@@ -426,7 +426,7 @@ Hardware
 \end_layout
 
 \begin_layout Itemize
->20 MB de disco duro para los fuentes, binarios, estadisticas y archivos
+>20 MB de disco duro para los fuentes, binarios, estadísticas y archivos
  de logs
 \end_layout
 
@@ -512,14 +512,14 @@ Scalable System Software (SSSRM)
 
 \end_deeper
 \begin_layout Subsubsection
-Caracteristicas generales
+Características generales
 \end_layout
 
 \begin_layout Standard
-El algoritmo de planificacion de Maui soporta fairness, preemption, backfill,
+El algoritmo de planificación de Maui soporta fairness, preemption, backfill,
  etc.
- y tiene una interfaz para la interaccion con un allocation management externo.
- Un allocation manager (tambien conocido como allocation bank o cpu bank)
+ y tiene una interfaz para la interacción con un allocation management externo.
+ Un allocation manager (también conocido como allocation bank o cpu bank)
  funciona como un banco en el cual la moneda son los recursos del sistema
  (p.ej.
  procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
@@ -531,11 +531,11 @@ Backfill
 \end_layout
 
 \begin_layout Standard
-Backfill es un acercamiento en la planificacion que permite ejecutar algunos
+Backfill es un acercamiento en la planificación que permite ejecutar algunos
  trabajos 'desordenadamente' siempre y cuando estos no retrasen los trabajos
  de prioridad superior de la cola.
  Para determinar si un trabajo será retrasado, cada trabajo debe proveer
- una estimación de cuánto tiempo necesitará para su ejecucion.
+ una estimación de cuánto tiempo necesitará para su ejecución.
  Esta estimación, conocida como límite wallclock, es una valoración del
  tiempo desde el comienzo del trabajo hasta su final.
  Es a menudo sabio sobrestimar levemente este límite porque el planificador
@@ -545,8 +545,8 @@ Backfill es un acercamiento en la planificacion que permite ejecutar algunos
  de un trabajo evitará que el planificador pueda optimizar correctamente
  la cola de trabajo.
  Cuanto más exacto el límite del wallclock, mayor sera la posibilidad de
- que Maui encuentre agujeros en la planificacion para comenzar a ejecutar
- su trabajo con mayor anticipacion.
+ que Maui encuentre agujeros en la planificación para comenzar a ejecutar
+ su trabajo con mayor anticipación.
  
 \end_layout
 
@@ -560,7 +560,7 @@ Maui posee interfaces para sistemas de gerenciamiento de asignación tales
  Estos sistemas permiten que a cada usuario le sea asignada una porción
  de los recursos totales de cálculo disponibles en el sistema.
  Estos sistemas trabajan asociando a cada usuario a unas o más cuentas.
- Cuando se envia un trabajo, el usuario especifica a que cuenta se debe
+ Cuando se envía un trabajo, el usuario especifica a que cuenta se debe
  cargar los recursos consumidos por el trabajo.
 \end_layout
 
@@ -591,8 +591,8 @@ Quality of Service (QoS)
 
 \begin_layout Standard
 Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios,
- estos beneficios pueden incluir acceso a recursos adicionales, exlusiones
- de determinadas politicas, acceso a capacidades especiales, y mejoras en
+ estos beneficios pueden incluir acceso a recursos adicionales, exclusiones
+ de determinadas políticas, acceso a capacidades especiales, y mejoras en
  la priorizacion de trabajos.
 \end_layout
 
@@ -601,21 +601,21 @@ Faireshare
 \end_layout
 
 \begin_layout Standard
-Este componente permite favorecer trabajos en base al uso historico a corto
+Este componente permite favorecer trabajos en base al uso histórico a corto
  plazo.
- Es posible asi ajustar la prioridad de un trabajo dependiendo de la utilizacion
+ Es posible así ajustar la prioridad de un trabajo dependiendo de la utilización
  porcentual del sistema de usuarios, grupos, o QoS.
- Dada una ventana de tiempo determinado sobre la cual se evalua la utilizacion
+ Dada una ventana de tiempo determinado sobre la cual se evalúa la utilización
  de recursos del sistema se determina si esta siendo mantenido un cierto
  balanceo o no.
 \end_layout
 
 \begin_layout Subsubsection
-Interfaz de programacion
+Interfaz de programación
 \end_layout
 
 \begin_layout Itemize
-Interfaz de extension (Extension Interface)
+Interfaz de extensión (Extension Interface)
 \end_layout
 
 \begin_deeper
@@ -623,7 +623,7 @@ Interfaz de extension (Extension Interface)
 Esta interfaz permite que bibliotecas externas sean 'linkeadas' al servidor
  de Maui brindando acceso a todos los datos y objetos utilizados por el
  planificador.
- Ademas, permite que estas bibliotecas realicen override de las principales
+ Además, permite que estas bibliotecas realicen override de las principales
  funciones de Maui.
 \end_layout
 
@@ -639,44 +639,44 @@ Se trata de una interfaz en C que permite el desarrollo de nuevos algoritmos.
 
 \end_deeper
 \begin_layout Subsubsection
-Estadisticas
+Estadísticas
 \end_layout
 
 \begin_layout Standard
-Maui almacena tres diferentes clases de estadisticas:
+Maui almacena tres diferentes clases de estadísticas:
 \end_layout
 
 \begin_layout Itemize
-Estadisticas de tiempo real
+Estadísticas de tiempo real
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Estas estadisticas son mantenidas en memoria y pueden ser consultadas mediante
+Estas estadísticas son mantenidas en memoria y pueden ser consultadas mediante
  comandos.
- El comando 'showstats' provee informacion detallada por usuario, por grupo,
+ El comando 'showstats' provee información detallada por usuario, por grupo,
  por cuenta o por nodo.
- Ademas en cualquier momento estas estadisticas pueden resetearse utilizando
+ Además en cualquier momento estas estadísticas pueden resetearse utilizando
  el comando 'resetstats'.
  
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Historico
+Histórico
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Estas estadisticas pueden ser obtenidas para un lapso de tiempo, un tipo
- de trabajo y/o una porcion de recursos utilizando el comando 'profiler'.
- Este comando trabaja con la traza de informacion detallada de un trabajo,
+Estas estadísticas pueden ser obtenidas para un lapso de tiempo, un tipo
+ de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
+ Este comando trabaja con la traza de información detallada de un trabajo,
  que es guardada al dar por finalizado un trabajo.
- Estas trazas son almacenadas en el directorio configurado por el parametro
+ Estas trazas son almacenadas en el directorio configurado por el parámetro
  STATDIR (por defecto $(MAUIHOMEDIR)/stats) en archivos utilizando el formato
  WWW_MMM_DD_YYYY (p.
  ej.
- Mon_Jul_16_2001), siendo esta fecha la fecha de finalizacion del trabajo.
+ Mon_Jul_16_2001), siendo esta fecha la fecha de finalización del trabajo.
  La traza de un trabajo se almacena en texto plano utilizando espacios como
  separadores, por lo que puede ser analizado directamente con cualquier
  editor de texto.
@@ -690,13 +690,13 @@ Fairshare
 
 \begin_deeper
 \begin_layout Itemize
-Este tipo de estadisticas son mantenidas sin importar si fairshare se encuentra
+Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
  habilitado.
  Al igual que las trazas de los trabajos, estas son almacenadas en archivos
- utilizando texto plano en el directorio configurado por el parametro STATDIR
+ utilizando texto plano en el directorio configurado por el parámetro STATDIR
  y utilizando el formato FS.<EPOCHTIME> (p.ej., FS.982713600) por cada ventana
  de fairshare.
- Se puede obtener informacion de estos archivos utilizando el comando 'diagnose
+ Se puede obtener información de estos archivos utilizando el comando 'diagnose
  -f'.
  
 \end_layout
@@ -707,36 +707,64 @@ Gold
 \end_layout
 
 \begin_layout Standard
-Gold es un sistema de gerenciamiento de asignación desarrollado en PNNL
- bajo el proyecto Scalable Systems Software (SSS).
- 
+Gold es un sistema de contaduría open-source desarrollado en PNNL bajo el
+ proyecto Scalable Systems Software (SSS) que lleva registro y maneja el
+ uso de recursos en clusters de alto desempeño.
+ Actúa de la misma forma que un banco en el que son depositados créditos
+ en cuentas, estos créditos representan recursos en el sistema.
+ A medida que se finalizan trabajos o que son consumidos recursos en el
+ sistema se debitan créditos de sus respectivas cuentas.
 \end_layout
 
 \begin_layout Standard
-Gold es un sistema de contaduria open source que lleva registro y maneja
- el uso de recursos en clusters de alta performance.
+Es posible realizar operaciones como depósitos, retiros, transferencias
+ o reembolsos sobre las cuentas del sistema, además, provee listados de
+ balances a usuarios y administradores.
+\end_layout
+
+\begin_layout Subsubsection
+Características generales
+\end_layout
+
+\begin_layout Paragraph
+Reservas
 \end_layout
 
 \begin_layout Standard
-Gold is an open source accounting system that tracks and manages resource
- usage on High Performance Computers.
- It acts much like a bank in which resource credits are deposited into accounts
- with access controls designating which users, projects and machines may
- access the account.
- As jobs complete or as resources are utilized, accounts are charged and
- resource usage recorded.
- Gold supports familiar operations such as deposits, withdrawals, transfers
- and refunds.
- It provides balance and usage feedback to users, managers, and system administr
-ators.
- Since accounting needs vary widely from organization to organization, Gold
- has been designed to be extremely ?exible, featuring customizable accounting
- and sup- porting a variety of accounting models.
- Attention has been given to scalability, se- curity, and fault tolerance.
- Gold facilitates the sharing of resources between organi- zations or within
- a Grid by providing distributed accounting while preserving local site
- autonomy.
+Previo al inicio de un trabajo se realiza una estimación del total de recursos
+ que este consumirá, en base a esta estimación se reservan créditos en la
+ cuenta correspondiente.
+ Estos créditos 'reservados' se debitan una vez que el trabajo es terminado,
+ de esta manera se evita que un proyecto consuma mas recursos de los que
+ tiene asignados.
+\end_layout
+
+\begin_layout Paragraph
+Vencimiento de créditos
+\end_layout
+
+\begin_layout Standard
+Puede especificarse un lapso de validez a los créditos en el sistema, permitiend
+o que se implemente una política de use-it-or-lose-it previniendo el uso
+ exhaustivo de créditos acumulados y estableciendo ciclos a un proyecto.
+\end_layout
+
+\begin_layout Paragraph
+Interfaz web
+\end_layout
+
+\begin_layout Standard
+Permitiendo acceso remoto a usuarios y administradores.
  
+\end_layout
+
+\begin_layout Paragraph
+Interfaz de programación
+\end_layout
+
+\begin_layout Standard
+Existen diferentes formas de integrar Gold al sistema: Perl API, Java API
+ o directamente utilizando el protocolo SSSRMAP (basado en XML).
 \end_layout
 
 \begin_layout Subsection
@@ -747,8 +775,8 @@ Conclusiones
 Torque junto con Maui y Gold satisfacen los requerimientos planteados para
  el proyecto.
  Su consumo de recursos del cluster es relativamente bajo, se adapta muy
- bien al menjo de clusters pequeños y posee un manejo eficiente de trabajos
- paralelos (sobre todo si estos son homogeneos).
+ bien al manejo de clusters pequeños y posee un manejo eficiente de trabajos
+ paralelos (sobre todo si estos son homogéneos).
  
 \end_layout
 
@@ -757,22 +785,22 @@ Pero existen ciertos aspectos en los que Torque no se desempeña de la mejor
  manera.
  Si bien se encuentra integrado el soporte para bibliotecas tipo MPI, no
  existe un correcto soporte para PVM.
- Ademas existen ciertas carencias en sus funcionalidades de Resource Management;
+ Además existen ciertas carencias en sus funcionalidades de Resource Management;
  p.
  ej.
- no es capaz de realizar CPU Harvesting o migracion de procesos.
+ no es capaz de realizar CPU Harvesting o migración de procesos.
  
 \end_layout
 
 \begin_layout Standard
 Si bien existe un buen soporte por parte de la comunidad de usuarios de
- Torque y Maui por medio de listas de correo, la documentacion disponible
+ Torque y Maui por medio de listas de correo, la documentación disponible
  en el sitio web se encuentra incompleta en algunos aspectos (p.
  ej.
- PVM, interfaces de programacion, etc.).
- Como es de esperar esta documentacion se encuentra mas completa para Moab
- (la version comercial de Maui), que si bien no es exactamente el mismo
- producto son muy similares entre si.
+ PVM, interfaces de programación, etc.).
+ Como es de esperar esta documentación se encuentra mas completa para Moab
+ (la versión comercial de Maui), y si bien son productos diferentes son
+ similares en muchos aspectos.
 \end_layout
 
 \begin_layout Bibliography
