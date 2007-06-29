@@ -1,4 +1,4 @@
-#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
@@ -30,23 +30,1314 @@
 \begin_body
 
 \begin_layout Title
-Documento de relevamiento
+Estado del Arte
+\end_layout
+
+\begin_layout Title
+Cluster de Computadores de Alto Desempeño con Acceso Remoto
+\end_layout
+
+\begin_layout Title
+Carrera de Ingeniería en Computación
+\end_layout
+
+\begin_layout Title
+Facultad de Ingeniería
 \end_layout
 
 \begin_layout Author
 Santiago Iturriaga, Paulo Maya, Damian Pintos
 \end_layout
 
-\begin_layout Date
-14/06/2007
+\begin_layout Section*
+Resumen
+\end_layout
+
+\begin_layout Section*
+Introducción
+\end_layout
+
+\begin_layout Section*
+Computación de Alto Rendimiento
+\end_layout
+
+\begin_layout Paragraph
+El campo de la computación de alto rendimiento es muy importante en la resolució
+n a problemas complejos.
+ 
+\end_layout
+
+\begin_layout Paragraph
+La computación de alto rendimiento se apoya en tecnologías como los clusters,
+ supercomputadores o mediante el uso de la computación paralela.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Computación Distribuida
+\end_layout
+
+\begin_layout Paragraph
+La computación distribuida es un modelo para resolver problemas de computación
+ masiva utilizando un gran número de computadoras en una infraestructura
+ de telecomunicaciones distribuida.
+\end_layout
+
+\begin_layout Paragraph
+La informática distribuida consiste en compartir recursos heterogéneos (basadas
+ en distintas plataformas, arquitecturas de equipos y programas, lenguajes
+ de programación), situados en distintos lugares y pertenecientes a diferentes
+ dominios de administración sobre una red que utiliza estándares abiertos.
+ 
+\end_layout
+
+\begin_layout Paragraph
+La computación distribuida ha sido diseñada para resolver problemas demasiado
+ grandes para cualquier supercomputadora y main-frame, manteniendose la
+ flexibilidad de trabajar en múltiples problemas más pequeños.
+ Por lo tanto, la computación en grid es naturalmente un entorno multi-usuario;
+ por ello, las técnicas de autorización segura son esenciales antes de permitir
+ que los recursos informáticos sean controlados por usuarios remotos.
+\end_layout
+
+\begin_layout Section*
+Clusters
+\end_layout
+
+\begin_layout Paragraph
+El término cluster se aplica a los conjuntos de computadoras que se comportan
+ como si fuesen una única computadora.
+ Hoy en día tiene un papel importante en aplicaciones científicas y de ingenierí
+a, comerciales, simulaciones, etc.
+\end_layout
+
+\begin_layout Paragraph
+La tecnología de clusters ha evolucionado apoyándose en actividades que
+ van desde aplicaciones de supercómputo y software de misiones críticas,
+ servidores Web y comercio electrónico, hasta bases de datos de alto rendimiento.
+\end_layout
+
+\begin_layout Paragraph
+El uso de clusters surge gracias a la convergencia de varias tendencias
+ actuales como la disponibilidad de microprocesadores económicos de alto
+ rendimiento y redes de alta velocidad, la existentica de herramientas para
+ cómputo distribuido de alto rendimiento, así como la creciente necesidad
+ de potencia computacional para aplicaciones que la requieran.
+\end_layout
+
+\begin_layout Paragraph
+Un cluster es un grupo de múltiples ordenadores unidos mediante una red
+ de alta velocidad, de tal forma que el conjunto es visto como un único
+ ordenador, más potente que los comunes de escritorio.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Se espera de un cluster que presente combinaciones de los siguientes característ
+icas:
+\end_layout
+
+\begin_layout Enumerate
+Alto rendimiento
+\end_layout
+
+\begin_layout Enumerate
+Alta disponibilidad
+\end_layout
+
+\begin_layout Enumerate
+Equilibrio de carga 
+\end_layout
+
+\begin_layout Enumerate
+Escalabilidad 
+\end_layout
+
+\begin_layout Paragraph
+La construcción de los cluster es muy fácil y económica, debido a su flexibilida
+d: pueden tener todos la misma configuración de hardware y sistema operativo
+ (cluster homogéneo), diferente rendimiento pero con arquitecturas y sistemas
+ operativos similares (cluster semi-homogéneo), o tener diferente hardware
+ y sistema operativo (cluster heterogéneo).
+\end_layout
+
+\begin_layout Paragraph
+Se pueden construir cluster con ordenadores personales desechados por "anticuado
+s" que consiguen competir en capacidad de cálculo con superordenadores carísimos.
+\end_layout
+
+\begin_layout Paragraph
+Es necesario proveer un sistema para el manejo del cluster, el cual se encargue
+ de interactuar con el usuario y los procesos que corren en él para optimizar
+ el funcionamiento.
+\end_layout
+
+\begin_layout Subsubsection*
+Cluster de alto rendimiento
+\end_layout
+
+\begin_layout Paragraph
+Un cluster de alto rendimiento está diseñado para dar altas prestaciones
+ en cuanto a capacidad de cálculo.
+\end_layout
+
+\begin_layout Paragraph
+Los motivos para utilizar un cluster de alto rendimiento son:
+\end_layout
+
+\begin_layout Itemize
+el tamaño del problema por resolver y
+\end_layout
+
+\begin_layout Itemize
+el precio de la máquina necesaria para resolverlo.
+\end_layout
+
+\begin_layout Paragraph
+Por medio de un cluster se pueden conseguir capacidades de cálculo superiores
+ a las de un ordenador más caro.
+\end_layout
+
+\begin_layout Paragraph
+Para garantizar esta capacidad de cálculo, los problemas necesitan ser paraleliz
+ables, ya que el método con el que los clusters agilizan el procesamiento
+ es dividir el problema en problemas más pequeños y calcularlos en los nodos.
+\end_layout
+
+\begin_layout Subsubsection*
+Cluster de alta disponibilidad
+\end_layout
+
+\begin_layout Paragraph
+Un cluster de alta disponibilidad se caracterizan por compartir los discos
+ de almacenamiento de datos y por estar constantemente monitorizándose entre
+ sí.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Podemos dividirlo en dos clases:
+\end_layout
+
+\begin_layout Itemize
+Alta disponibilidad de infrestructura
+\end_layout
+
+\begin_layout Itemize
+Alta disponibilidad de aplicación
+\end_layout
+
+\begin_layout Subsubsection*
+Cluster de balanceo de carga
+\end_layout
+
+\begin_layout Paragraph
+Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
+ por uno o más ordenadores que actúan como frontend del cluster, y que se
+ ocupan de repartir las peticiones de servicio que reciba el cluster, a
+ otros ordenadores del cluster que forman el back-end de éste.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Escalabilidad
+\end_layout
+
+\begin_layout Paragraph
+La escalabilidad es la propiedad deseable de un sistema, una red o un proceso,
+ que indica su habilidad para, o bien manejar el crecimiento continuo de
+ trabajo de manera fluida, o bien para estar preparado para hacerse más
+ grande sin perder calidad en los servicios ofrecidos.
+\end_layout
+
+\begin_layout Paragraph
+Las características más destacadas de este tipo de cluster son:
+\end_layout
+
+\begin_layout Itemize
+Se puede ampliar su capacidad fácilmente añadiendo más ordenadores al cluster.
+\end_layout
+
+\begin_layout Itemize
+Robustez.
+ Ante la caída de alguno de los ordenadores del cluster el servicio se puede
+ ver mermado, pero mientras haya ordenadores en funcionamiento, éstos seguirán
+ dando servicio.
+\end_layout
+
+\begin_layout Section*
+Programación Paralela
+\end_layout
+
+\begin_layout Paragraph
+La programación paralela es una técnica de programación basada en la ejecución
+ simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
+ o en un cluster de ordenadores, en cuyo caso se denomina computación distribuid
+a.
+ Al contrario que en la programación concurrente, esta técnica enfatiza
+ la verdadera simultaneidad en el tiempo de la ejecución de las tareas.
+\end_layout
+
+\begin_layout Paragraph
+Los sistemas con multiprocesador y multicomputadores consiguen un aumento
+ del rendimiento si se utilizan estas técnicas.
+ En los sistemas monoprocesador el beneficio en rendimiento no es tan evidente,
+ ya que la CPU es compartida por múltiples procesos en el tiempo, lo que
+ se denomina multiplexación o multiprogramación.
+\end_layout
+
+\begin_layout Paragraph
+El mayor problema de la computación paralela radica en la complejidad de
+ sincronizar unas tareas con otras, ya sea mediante secciones críticas,
+ semáforos o paso de mensajes, para garantizar la exclusión mutua en las
+ zonas del código en las que sea necesario.
+\end_layout
+
+\begin_layout Standard
+Aplicaciones demandantes de recursos
+\end_layout
+
+\begin_layout Standard
+Podemos hacer una division de las aplicaciones que requieren una demanda
+ de recusrsos computaionales importantes de la siguiente manera.
+\end_layout
+
+\begin_layout Standard
+Aplicacions de calculo intencivas
+\end_layout
+
+\begin_layout Standard
+Son aplicaciones que requieren un alto numero de ciclos de máquinas, estas
+ son las que han impulsado
+\end_layout
+
+\begin_layout Standard
+el desarrollo de supercomputadores.
+ Son típicas en ciencias e ingeniería, aunque recientemente
+\end_layout
+
+\begin_layout Standard
+han aparecido en otras áreas como simulación financiera y económica.
+ Dependen grandemente de
+\end_layout
+
+\begin_layout Standard
+la velocidad y el procesamiento de punto flotantes de los supercomputadores.
+ 
+\end_layout
+
+\begin_layout Standard
+Algunos ejemplos son:
+\end_layout
+
+\begin_layout Standard
+1.
+ Dinámica de fluidos computacional.
+\end_layout
+
+\begin_layout Standard
+2.
+ Simulaciones electromagnéticas.
+\end_layout
+
+\begin_layout Standard
+3.
+ Modelado ambiental.
+\end_layout
+
+\begin_layout Standard
+4.
+ Dinámica estructural.
+\end_layout
+
+\begin_layout Standard
+5.
+ Modelado biológico.
+\end_layout
+
+\begin_layout Standard
+6.
+ Dinámica molecular.
+\end_layout
+
+\begin_layout Standard
+7.
+ Simulación de redes.
+\end_layout
+
+\begin_layout Standard
+8.
+ Modelado financiero y económico.
+\end_layout
+
+\begin_layout Standard
+Aplicaciones de almacenemiento masivo
+\end_layout
+
+\begin_layout Standard
+Dependen de la capacidad para almacenar y procesar grandes cantidades de
+ información.
+ Requieren de un acceso rápido y seguro a una masa considerable de datos
+\end_layout
+
+\begin_layout Standard
+almacenados.
+ 
+\end_layout
+
+\begin_layout Standard
+Algunas de ellas son:
+\end_layout
+
+\begin_layout Standard
+1.
+ Análisis de data sísmica.
+\end_layout
+
+\begin_layout Standard
+2.
+ Procesamiento de imágenes.
+\end_layout
+
+\begin_layout Standard
+3.
+ Minería de datos.
+\end_layout
+
+\begin_layout Standard
+4.
+ Análisis estadístico de datos.
+\end_layout
+
+\begin_layout Standard
+5.
+ Análisis de mercados.
+\end_layout
+
+\begin_layout Standard
+Aplicaciones exigentes comunicacionalmente
+\end_layout
+
+\begin_layout Standard
+Estas son relativamente nuevas y pueden ser llamadas servicios por demanda.
+ Requieren de
+\end_layout
+
+\begin_layout Standard
+recursos computacionales conectados por redes con anchos de banda considerables.
+\end_layout
+
+\begin_layout Standard
+Ejemplos:
+\end_layout
+
+\begin_layout Standard
+1.
+ Procesamiento de transacciones en línea.
+\end_layout
+
+\begin_layout Standard
+2.
+ Sistemas colaborativos.
+\end_layout
+
+\begin_layout Standard
+3.
+ Texto por demanda.
+\end_layout
+
+\begin_layout Standard
+4.
+ Vídeo por demanda.
+\end_layout
+
+\begin_layout Standard
+5.
+ Imágenes por demanda.
+\end_layout
+
+\begin_layout Standard
+6.
+ Simulación por demanda.
+\end_layout
+
+\begin_layout Standard
+Obviamente que todas las aplicaciones anteriores dependen en cierto grado
+ de cada uno de los
+\end_layout
+
+\begin_layout Standard
+aspectos computacionales mencionados: poder de computo, capacidades de almacenam
+iento y
+\end_layout
+
+\begin_layout Standard
+eficientes canales de comunicación, sin embargo las podemos agrupar por
+ su característica
+\end_layout
+
+\begin_layout Standard
+dominante.
+\end_layout
+
+\begin_layout Standard
+Sistemas de sistemas
+\end_layout
+
+\begin_layout Standard
+Las aplicaciones en este grupo combinan en forma más compleja las característica
+s anteriores
+\end_layout
+
+\begin_layout Standard
+y dependen, en muchos casos, de sistemas computacionales integrados diseñados
+\end_layout
+
+\begin_layout Standard
+primordialmente para ellas.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplos:
+\end_layout
+
+\begin_layout Standard
+1.
+ Soporte a decisiones corporativas y gubernamentales.
+\end_layout
+
+\begin_layout Standard
+2.
+ Control de sistemas a tiempo real.
+\end_layout
+
+\begin_layout Standard
+3.
+ Banca electrónica.
+\end_layout
+
+\begin_layout Standard
+4.
+ Compras electrónicas.
+\end_layout
+
+\begin_layout Standard
+5.
+ Educación.
+\end_layout
+
+\begin_layout Standard
+Existe una alta correspondencia entre la evolución de tecnologías informaticas
+ y el
+\end_layout
+
+\begin_layout Standard
+desarrollo de aplicaciones; en particular el hardware tiene gran influencia
+ en el éxito de ciertas
+\end_layout
+
+\begin_layout Standard
+áreas.
+ La aplicaciones intensivas en cálculo fueron estimuladas principalmente
+ por máquinas
+\end_layout
+
+\begin_layout Standard
+vectoriales y procesadores masivamente paralelos.
+ Las aplicaciones de almacenamiento masivo
+\end_layout
+
+\begin_layout Standard
+han sido guiadas por dispositivos de almacenamiento como RAID y robots de
+ cintas.
+ Las
+\end_layout
+
+\begin_layout Standard
+aplicaciones exigentes comunicacionales como herramientas colaborativas
+ basadas en WWW y
+\end_layout
+
+\begin_layout Standard
+servicios por demanda en línea originalmente surgieron con las LAN y estan
+ creciendo
+\end_layout
+
+\begin_layout Standard
+drásticamente con Internet.
+\end_layout
+
+\begin_layout Standard
+Organizacion de computadores
+\end_layout
+
+\begin_layout Standard
+La organización de los procesadores o red se refiere a como se conectan
+ o enlazan los
+\end_layout
+
+\begin_layout Standard
+procesadores o nodos en un computador paralelo.
+\end_layout
+
+\begin_layout Standard
+Existen varios criteriospara evaluar los distintos diseños de organizacion:
+\end_layout
+
+\begin_layout Standard
+1) Diámetro: viene dado por la mayor distancia entre dos nodos.
+ Mientras menor
+\end_layout
+
+\begin_layout Standard
+sea el diámetro menor será el tiempo de comunicación entre nodos.
+\end_layout
+
+\begin_layout Standard
+2) Ancho de bisección de la red: es el menor número de enlaces que deben
+ ser removidos
+\end_layout
+
+\begin_layout Standard
+para dividir la red por la mitad.
+ Un ancho de bisección alto puede reducir el tiempo de comunicación cuando
+ el movimiento de datos es sustancial, y un ancho
+\end_layout
+
+\begin_layout Standard
+de bisección alto hace el sistema más tolerante a fallas debido a que defectos
+ en un nodo no hacen inoperable a todo el sistema.
+\end_layout
+
+\begin_layout Standard
+3) Es preferible que el número de enlaces por nodo sea una constante independien
+te del
+\end_layout
+
+\begin_layout Standard
+tamaño de la red, ya que hace más fácil incrementar el número de nodos.
+\end_layout
+
+\begin_layout Standard
+4) Es preferible que la longitud máxima de los enlaces sea una constante
+ independiente del
+\end_layout
+
+\begin_layout Standard
+tamaño de la red, ya que hace más fácil añadir nodos.
+ 
+\end_layout
+
+\begin_layout Standard
+5) Redes estáticas y dinámicas.
+ En las redes estáticas la topología de interconexión se
+\end_layout
+
+\begin_layout Standard
+define cuando se construye la máquina.
+ Si la red es dinámica, la interconexión puede
+\end_layout
+
+\begin_layout Standard
+variar durante la ejecución de un programa o entre la ejecución de programas.
+\end_layout
+
+\begin_layout Standard
+A continuacion veremos algunos tipos de disenos de redes de procesadores.
+\end_layout
+
+\begin_layout Standard
+BUS Y ETHERNET
+\end_layout
+
+\begin_layout Standard
+En una red donde los procesadores comparten el mismo recurso de comunicación:
+\end_layout
+
+\begin_layout Standard
+el bus.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta arquitectura es fácil y económica de implementar, pero es altamente
+ no escalable ya
+\end_layout
+
+\begin_layout Standard
+que solo un procesador puede usar el bus en un momento dado; a medida que
+ se incrementa el
+\end_layout
+
+\begin_layout Standard
+número de procesadores, el bus se convierte en un cuello de botella debido
+ a la congestión.
+ 
+\end_layout
+
+\begin_layout Standard
+Mallas
+\end_layout
+
+\begin_layout Standard
+Al igual que el bus (o ethernet), las mallas son fáciles y económicas de
+ implementar, sin
+\end_layout
+
+\begin_layout Standard
+embargo el diámetro se incrementa al añadir nodos.
+ En las mallas de dimensión 1, si los dos
+\end_layout
+
+\begin_layout Standard
+nodos extremos también son conectados, entonces se tiene un anillo
+\end_layout
+
+\begin_layout Standard
+Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
+\end_layout
+
+\begin_layout Standard
+y tiene la ventaja de que pueden ser construidas sin conexiones largas.
+ El diámetro de las mallas
+\end_layout
+
+\begin_layout Standard
+puede ser reducido a la mitad si se extiende la malla con conexiones toroidales
+ de forma que los
+\end_layout
+
+\begin_layout Standard
+procesadores en los bordes también estén conectados con vecinos.
+ Esto sin embargo
+\end_layout
+
+\begin_layout Standard
+presenta dos desventajas: a) conexiones más largas son requeridas y b) un
+ subconjunto de un
+\end_layout
+
+\begin_layout Standard
+torus no es un torus y los beneficios de esta interconexión se pierden si
+ la máquina es
+\end_layout
+
+\begin_layout Standard
+particionada entre varios usuarios.
+\end_layout
+
+\begin_layout Standard
+MARIPOSA
+\end_layout
+
+\begin_layout Standard
+Figura
+\end_layout
+
+\begin_layout Standard
+ARBOLES BINARIOS
+\end_layout
+
+\begin_layout Standard
+Son particularmente útiles en problemas de ordenamiento, multiplicación
+\end_layout
+
+\begin_layout Standard
+de matrices, y algunos problemas en los que los tiempos sw solución crecen
+ exponencialmente con el
+\end_layout
+
+\begin_layout Standard
+tamaño del problema (NP-complejos).
+ 
+\end_layout
+
+\begin_layout Standard
+PIRAMIDES
+\end_layout
+
+\begin_layout Standard
+Estas redes intentan combinar las ventajas de las mallas y los arboles,
+ se incrementa la tolerancia a fallas y el número de vias de comunicación.
+\end_layout
+
+\begin_layout Standard
+HIPERCUBO
+\end_layout
+
+\begin_layout Standard
+Un hipercubo puede ser considerado como una malla con conexiones largas
+ adicionales, estas conexiones reducen el diámetro e incrementan el ancho
+ de bisección.
+ 
+\end_layout
+
+\begin_layout Standard
+Se puede definir recursibamente un hipercubo de la siguiente manera: un
+ hipercubo de dimensión-cero es un único procesador
+\end_layout
+
+\begin_layout Standard
+y un hipercubo de dimensión-uno conecta dos hipercubos de dimensión-cero.
+ En general, un
+\end_layout
+
+\begin_layout Standard
+hipercubo de dimensión d+1 con 2d+1 nodos, se construye conectando los procesado
+res
+\end_layout
+
+\begin_layout Standard
+respectivos de dos hipercubos de dimensión d.
+ 
+\end_layout
+
+\begin_layout Standard
+OMEGA
+\end_layout
+
+\begin_layout Standard
+La Figura 12 muestra una red omega de 3 etapas que conecta 8 procesadores).
+ La red está
+\end_layout
+
+\begin_layout Standard
+formada por crossbar switches 2x2.
+ Los switches tiene cuatro estados posibles: recto, cruzado,
+\end_layout
+
+\begin_layout Standard
+broadcast superior y broadcast inferior; que pueden ser configurados dependiendo
+ de la
+\end_layout
+
+\begin_layout Standard
+conexión que se desea (Figura 13).
+ Debido a esto, estas topologías se llaman dinámicas o
+\end_layout
+
+\begin_layout Standard
+reconfigurables.
+ Los switches son unidireccionales y debemos ver la red plegada en donde
+ los
+\end_layout
+
+\begin_layout Standard
+procesadores de la izquierda y la derecha son los mismos.
+ Estas redes reducen considerablemente
+\end_layout
+
+\begin_layout Standard
+la competencia por ancho de banda, pero son altamente no escalables y costosas.
+ El highperformance-
+\end_layout
+
+\begin_layout Standard
+switch de la SP2 es una red omega.
+\end_layout
+
+\begin_layout Standard
+FIBRAS DE INTERCONEXION
+\end_layout
+
+\begin_layout Standard
+Estas so un conjunto de switches, llamados routers, enlazados por distintas
+ configuraciones o topologías.
+\end_layout
+
+\begin_layout Standard
+DISEÑO DE ALGORITMOS PARALELOS
+\end_layout
+
+\begin_layout Standard
+El diseño de algoritmos paralelos involucra cuatro etapas, las cuales se
+ presentan como
+\end_layout
+
+\begin_layout Standard
+secuenciales pero que en la práctica no lo son.
+\end_layout
+
+\begin_layout Standard
+1) Partición: El cómputo y los datos sobre los cuales se opera se descomponen
+ en tareas.
+ Se
+\end_layout
+
+\begin_layout Standard
+ignoran aspectos como el número de procesadores de la máquina a usar y se
+ concentra la
+\end_layout
+
+\begin_layout Standard
+atención en explotar oportunidades de paralelismo.
+\end_layout
+
+\begin_layout Standard
+2) Comunicación: Se determina la comunicación para coordinar las tareas.
+ Se
+\end_layout
+
+\begin_layout Standard
+definen estructuras y algoritmos de comunicación.
+\end_layout
+
+\begin_layout Standard
+3) Agrupación: Se evalua en terminos de eficiencia y costos de implementacion
+ a las dos etapas anteriores.
+ 
+\end_layout
+
+\begin_layout Standard
+se agrupan tareas pequeñas en tareas más grandes.
+\end_layout
+
+\begin_layout Standard
+4) Asignación: Cada tarea es asignada a un procesador tratando de maximizar
+ la utilización
+\end_layout
+
+\begin_layout Standard
+de los procesadores y de reducir el costo de comunicación.
+ La asignación puede ser
+\end_layout
+
+\begin_layout Standard
+estática (se establece antes de la ejecución del programa) o en tiempo de
+ ejecución
+\end_layout
+
+\begin_layout Standard
+mediante algoritmos de balanceo de carga.
+\end_layout
+
+\begin_layout Standard
+Particion
+\end_layout
+
+\begin_layout Standard
+En la etapa de partición se buscan oportunidades de paralelismo y se trata
+ de subdividir el
+\end_layout
+
+\begin_layout Standard
+problema lo más finamente posible.
+ Se dividen tanto los cómputos como los datos.
+ 
+\end_layout
+
+\begin_layout Standard
+Existen dos formas de descomposicion.
+\end_layout
+
+\begin_layout Standard
+Descomposición del dominio: se centra en los datos.
+ Se determina la partición
+\end_layout
+
+\begin_layout Standard
+apropiada de los datos y luego se trabaja en los cómputos asociados con
+ los datos.
+\end_layout
+
+\begin_layout Standard
+Descomposición funcional: es el contrario al enfoque anterior, primero se
+ descomponen los
+\end_layout
+
+\begin_layout Standard
+cómputos y luego se ocupa de los datos.
+\end_layout
+
+\begin_layout Standard
+En el proceso de particion existen aspectos a tener en cuenta: 
+\end_layout
+
+\begin_layout Standard
+-el orden de tareas debe ser por lo menos superior al numero de procesadores
+ para tener flexibilidad en etapas siguientes
+\end_layout
+
+\begin_layout Standard
+-evitar cómputos y almacenamientos redundantes
+\end_layout
+
+\begin_layout Standard
+-las tareas deben ser de tamaños equivalentes para facilitar el balanceo
+\end_layout
+
+\begin_layout Standard
+de la carga de los procesadores.
+\end_layout
+
+\begin_layout Standard
+-El número de tareas debe ser proporcional al tamaño del problema
+\end_layout
+
+\begin_layout Standard
+Comunicación
+\end_layout
+
+\begin_layout Standard
+El proceso de partición de tareas no es independiente del proceso de comunicació
+n.
+ En esta se especifica como los datos serán transferidos o compartidos entre
+ tareas.
+\end_layout
+
+\begin_layout Standard
+La comunicación puede ser definida en dos fases.
+ Primero se definen los canales que conectan las tareas.
+ Segundo
+\end_layout
+
+\begin_layout Standard
+se especifica la información o mensajes que deben ser enviado y recibidos
+ en estos canales.
+\end_layout
+
+\begin_layout Standard
+Dependiendo de si estamos en el caso de memoria distribuida o memoria compartida
+ dependera la forma de atacar la comunicación entre tareas varía.
+\end_layout
+
+\begin_layout Standard
+En un ambientes de memoria distribuida, las tareas tiene una identificación
+ única y interactuan enviando y recibiendo mensajes hacia y desde tareas
+ específicas.
+ Las librerías más conocidas para implementar el pase de mensajes en ambientes
+ de memoria distribuida son: MPI (Message Passing Interface) y PVM (Parallel
+ Virtual Machine).
+\end_layout
+
+\begin_layout Standard
+En ambientes de memoria compartida no existe la noción de pertenencia y
+ el envío de datos
+\end_layout
+
+\begin_layout Standard
+no se dá como tal.
+ Todas las tareas comparten la misma memoria.
+\end_layout
+
+\begin_layout Standard
+Semáforos, semáforos binarios, barreras y otros mecanismos de sincronizacion
+ son usados para controlar el acceso a la
+\end_layout
+
+\begin_layout Standard
+memoria compartida y coordinar las tareas.
+\end_layout
+
+\begin_layout Standard
+En esta etapa hay que tener en cuenta los siguientes aspectos:
+\end_layout
+
+\begin_layout Standard
+-las tareas deben efectuar aproximadamente el mismo número de operaciones
+ de
+\end_layout
+
+\begin_layout Standard
+comunicación.
+ De otra forma es muy probable que el algoritmo no sea extensible a
+\end_layout
+
+\begin_layout Standard
+problemas mayores ya que habrán cuellos de botella.
+\end_layout
+
+\begin_layout Standard
+-la comunicación entre tareas debe ser tan pequeña como sea posible.
+\end_layout
+
+\begin_layout Standard
+-las operaciones de comunicación deben poder proceder concurrentemente.
+\end_layout
+
+\begin_layout Standard
+-los cómputos de diferentes tareas deben poder proceder concurrentemente.
+\end_layout
+
+\begin_layout Standard
+AGRUPACION
+\end_layout
+
+\begin_layout Standard
+En las dos tareas anteriores el algoritmo resultante es aún abstracto en
+ el sentido de que no se tomó en cuenta
+\end_layout
+
+\begin_layout Standard
+la máquina sobre el cual correrá.
+ En este proceso se busca un algoritmo concreto, que corra eficientemente
+ sobre cierta clase
+\end_layout
+
+\begin_layout Standard
+de computadores.
+ 
+\end_layout
+
+\begin_layout Standard
+En particular se considera si es útil agrupar tareas y si vale la pena replicar
+ datos y/o cómputos.
+\end_layout
+
+\begin_layout Standard
+En el proceso de partición se trata de establecer el mayor número posible
+ de tareas con la 
+\end_layout
+
+\begin_layout Standard
+intensión de maximizar el paralelismo.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto no necesariamente produce un algoritmo eficiente ya que el costo de
+ comunicación puede ser significativo.
+ 
+\end_layout
+
+\begin_layout Standard
+Mediante la agrupación de tareas se puede reducir la cantidad de datos a
+ enviar y así reducir el número de
+\end_layout
+
+\begin_layout Standard
+mensajes y el costo de comunicación.
+\end_layout
+
+\begin_layout Standard
+Se puede intentar replicar cómputos y/o datos para reducir los requerimientos
+ de comunicación.
+ 
+\end_layout
+
+\begin_layout Standard
+Aspectos a considerar en esta etapa:
+\end_layout
+
+\begin_layout Standard
+-chequear si la agrupación redujo los costos de comunicación.
+\end_layout
+
+\begin_layout Standard
+-si se han replicado cómputos y/o datos, se debe verificar que los beneficios
+ son superiores
+\end_layout
+
+\begin_layout Standard
+a los costos.
+\end_layout
+
+\begin_layout Standard
+-se debe verificar que las tareas resultantes tengan costos de computo y
+ comunicación
+\end_layout
+
+\begin_layout Standard
+similares.
+\end_layout
+
+\begin_layout Standard
+- revisar si el número de tareas es extensible con el tamaño del problema.
+\end_layout
+
+\begin_layout Standard
+-si el agrupamiento ha reducido las oportunidades de ejecución concurrente,
+ se debe
+\end_layout
+
+\begin_layout Standard
+verificar que aun hay suficiente concurrencia y posiblemente considerar
+ diseños
+\end_layout
+
+\begin_layout Standard
+alternativos.
+\end_layout
+
+\begin_layout Standard
+-nalizar si es posible reducir aun más el número de tareas sin introducir
+ desbalances de
+\end_layout
+
+\begin_layout Standard
+cargas o reducir la extensibilidad.
+\end_layout
+
+\begin_layout Standard
+ASIGNACION
+\end_layout
+
+\begin_layout Standard
+En este proceso se determina en que procesador se ejecutará cada tarea.
+ Este problema
+\end_layout
+
+\begin_layout Standard
+no se presenta en máquinas de memoria compartida tipo UMA.
+ Estas proveen asignación
+\end_layout
+
+\begin_layout Standard
+dinámica de procesos y los procesos que necesitan de un CPU están en una
+ cola de procesos
+\end_layout
+
+\begin_layout Standard
+listos.
+ Cada procesador tiene acceso a esta cola y puede correr el próximo proceso.
+ No
+\end_layout
+
+\begin_layout Standard
+consideraremos más este caso.
+\end_layout
+
+\begin_layout Standard
+Para el momento no hay mecanismos generales de asignación de tareas para
+ máquinas
+\end_layout
+
+\begin_layout Standard
+distribuidas.
+ Esto continúa siendo un problema difícil y que debe ser atacado explícitamente
+ a la
+\end_layout
+
+\begin_layout Standard
+hora de diseñar algoritmos paralelos.
+\end_layout
+
+\begin_layout Standard
+La asignación de tareas puede ser estática o dinámica.
+ En la asignación estática, las tareas
+\end_layout
+
+\begin_layout Standard
+son asignadas a un procesador al comienzo de la ejecución del algoritmo
+ paralelo y corren ahí
+\end_layout
+
+\begin_layout Standard
+hasta el final.
+ La asignación estática en ciertos casos puede resultar en un tiempo de
+ ejecución
+\end_layout
+
+\begin_layout Standard
+menor respecto a asignaciones dinámicas y también puede reducir el costo
+ de creación de
+\end_layout
+
+\begin_layout Standard
+procesos, sincronización y terminación.
+\end_layout
+
+\begin_layout Standard
+En la asignación dinámica se hacen cambios en la distribución de las tareas
+ entre los
+\end_layout
+
+\begin_layout Standard
+procesadores a tiempo de ejecución, o sea, hay migración de tareas a tiempo
+ de ejecución.
+ Esto
+\end_layout
+
+\begin_layout Standard
+es con el fin de balancear la carga del sistema y reducir el tiempo de ejecución.
+ Sin embargo, el
+\end_layout
+
+\begin_layout Standard
+costo de balanceo puede ser significativo y por ende incrementar el tiempo
+ de ejecución.
+ Entre
+\end_layout
+
+\begin_layout Standard
+los algoritmos de balanceo de carga están los siguientes:
+\end_layout
+
+\begin_layout Standard
+Balanceo centralizado: un nodo ejecuta el algoritmo y mantiene el estado
+ global del sistema.
+\end_layout
+
+\begin_layout Standard
+Este método no es extensible a problemas más grandes ya que el nodo encargado
+ del balanceo se
+\end_layout
+
+\begin_layout Standard
+convierte en un cuello de botella.
+\end_layout
+
+\begin_layout Standard
+Balanceo completamente distribuido: cada procesador mantiene su propia visión
+ del
+\end_layout
+
+\begin_layout Standard
+sistema intercambiando información con sus vecinos y así hacer cambios locales.
+ El costo de
+\end_layout
+
+\begin_layout Standard
+balanceo se reduce pero no es óptimo debido a que solo se dispone de información
+ parcial.
+\end_layout
+
+\begin_layout Standard
+Balanceo semi-distribuido: divide los procesadores en regiones, cada una
+ con un algoritmo
+\end_layout
+
+\begin_layout Standard
+centralizado local.
+ Otro algoritmo balancea la carga entre las regiones.
+\end_layout
+
+\begin_layout Standard
+El balanceo puede ser iniciado por envío o recibimiento.
+ Si es balanceo iniciado por envío,
+\end_layout
+
+\begin_layout Standard
+un procesador con mucha carga envía trabajo a otros.
+ Si es balanceo iniciado por recibimiento,
+\end_layout
+
+\begin_layout Standard
+un procesador con poca carga solicita trabajo de otros.
+ Si la carga por procesador es baja o
+\end_layout
+
+\begin_layout Standard
+mediana, es mejor el balanceo iniciado por envío.
+ Si la carga es alta se debe usar balanceo
+\end_layout
+
+\begin_layout Standard
+iniciado por recibimiento.
+ De lo contrario, en ambos casos, se puede producir una fuerte
+\end_layout
+
+\begin_layout Standard
+migración innecesaria de tareas.
+\end_layout
+
+\begin_layout Section*
+Relevamiento de tecnologias
 \end_layout
 
 \begin_layout Section
 OpenMosix, OpenSSI y Kerrighed
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Section
