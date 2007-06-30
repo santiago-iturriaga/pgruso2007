@@ -1,4 +1,4 @@
-#LyX 1.4.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
@@ -1340,6 +1340,63 @@ Relevamiento de tecnologias
 OpenMosix, OpenSSI y Kerrighed
 \end_layout
 
+\begin_layout Standard
+(http://es.wikipedia.org/wiki/Single_System_Image) SSI (Single System Image):
+ en un SSI todas las computadoras vinculadas dependen de un sistema operativo
+ común, diseñado al efecto.
+ En cambio, un grid es heterogéneo, en el sentido en que las computadoras
+ pueden tener diferentes sistemas operativos.
+\end_layout
+
+\begin_layout Standard
+Una imagen única de sistema (Single System Image, SSI) es una propiedad
+ de un sistema que oculta la naturaleza heterogénea y distribuida de los
+ recursos, y los presenta a los usuarios y a las aplicaciones como un recurso
+ computacional unificado y sencillo.
+ SSI significa que el usuario tiene una visión global de los recursos disponible
+s independientemente del nodo al que están físicamente asociados esos recursos.
+ Además, SSI puede asegurar que un sistema continuará funcionando después
+ de algún fallo (alta disponibilidad) así como asegurar que el sistema se
+ cargue uniformemente y se provea de multiprocesamiento común (gestión y
+ planificación de recursos).
+\end_layout
+
+\begin_layout Standard
+Las metas más importantes que se persiguen en el diseño de un SSI son, principal
+mente, la completa transparencia en la gestión de recursos, escalabilidad,
+ y la capacidad de soportar aplicaciones de usuario.
+\end_layout
+
+\begin_layout Standard
+openMosix is a Linux kernel extension for single-system image clustering.
+ The cluster adapts itself to the workload.
+ openMosix adds cluster functionality to any Linux flavor.
+ openMosix uses adaptive load balancing techniques, processes that run on
+ a node can transparently be distributed to one another.
+ Due to the complete transparency of openMosix, a process does not have
+ to know where it is running.
+ The process ?thinks? that it is running locally.
+ In this case, this transparency means that no additional programming is
+ needed to take advantage of the openMosix load-balancing technology.
+\end_layout
+
+\begin_layout Standard
+There are some fundamental differences between the main structure of the
+ two programs.
+ A great disadvantage of Beowulf clusters comparing to openMosix is that
+ only programs written using the PVM (Parallel Virtual Machine) and MPI
+ (Message Passing Interface) libraries are supported.
+ The PVM and MPI libraries are the most used libraries by programmers which
+ program for clusters.
+ The PVM and MPI libraries allow computing problems to be solved at a rate
+ that scales almost linearly in relation to the number of nodes in the cluster.
+ Since PVM and MPI programming is quite complex, these kind of techniques
+ will only be used in small dedicated communities.
+ We can conclude that for the ?regular? cluster user Beowulf may be a little
+ too complicated due to it?s special needs, with openMosix the user does
+ not need to worry about the program structure.
+\end_layout
+
 \begin_layout Section
 Condor
 \end_layout
@@ -1700,6 +1757,14 @@ Una de las principales desventajas de TORQUE es la dificultad que plantea
  demonio pvmd en el script del trabajo, configurar los nodos esclavos para
  luego iniciar la ejecución del trabajo (todo esto puede realizarse utilizando
  mpiexec).
+\end_layout
+
+\begin_layout Subsubsection
+Interfaz de programación
+\end_layout
+
+\begin_layout Standard
+Torque soporta DRMAA (http://en.wikipedia.org/wiki/DRMAA) al igual que SGE.
 \end_layout
 
 \begin_layout Subsection
@@ -2114,6 +2179,157 @@ Si bien existe un buen soporte por parte de la comunidad de usuarios de
  similares en muchos aspectos.
 \end_layout
 
+\begin_layout Subsection
+Casos de estudio
+\end_layout
+
+\begin_layout Paragraph
+Oregon State University, Laboratorio de fisica
+\end_layout
+
+\begin_layout Standard
+(http://physics.oregonstate.edu/~elserj/support/cluster_use.php) These machines
+ are currently 34 (eventually 35) Dell Optiplex GX620's with Intel Pentium
+ D 830 (3.0 GHz) processors, and 1 GB of RAM running Suse Linux 10.1 64 bit
+ Operating System.
+ These computers are also loaded with the Intel Compiler Suite which comprises
+ a C, C++ and Fortran compilers, as well as the Math Kernel Library (cluster
+ edition) and MPI libraries.
+ The MPI libraries are what is required for the cluster to be able to run
+ parallel jobs.
+ The cluster also utilizes a program called Torque which acts as a resource
+ manager for the cluster.
+ As of 4/2/07, we now use Maui for a scheduler for the system.
+ This program will take the programs that you submit and decide what computer(s)
+ to run on based on current load.
+ Torque is based on PBS and uses all the same commands, but is open sourced.
+\end_layout
+
+\begin_layout Paragraph
+University of Glasgow
+\end_layout
+
+\begin_layout Standard
+(http://www.gla.ac.uk/services/it/whatwedo/computecluster/) The Cluster runs
+ Torque & Maui (see www.clusterresources.com) on Redhat Enterprise Linux 3.
+ There are 60 execution nodes available each with dual opteron 248 processors
+ and 2GB RAM.
+ In addition to the standard RedHat components (eg the GNU compilers - gcc,
+ g++ g77 etc) we have installed MPI libraries(mpich 1.2.6) and blast (blast
+ 2.2-10).
+ There is also a mirror of some of the blast databases.
+ 
+\end_layout
+
+\begin_layout Paragraph
+University of Heidelberg
+\end_layout
+
+\begin_layout Standard
+(http://helics.uni-hd.de/) The Interdisciplinary Center for Scientific Computing
+ (IWR) of the University of Heidelberg has decided to install a high-performance
+ PC cluster.
+ The computer is used by groups in particular in the basis research of mathemati
+cs, computer science, bio computer science and chemistry for extensive calculati
+ons and simulations.
+\end_layout
+
+\begin_layout Standard
+The IWR parallel high-performance computer was installed at the beginning
+ of 2002 and consists of 512 AMD Athlon MP processors, installed in 256
+ SMP computing nodes.
+ The processors are running at a clock speed of 1.4GHz and reach a theoretical
+ maximum performance of 2.4 billion floating point operations per second
+ (Gflops).
+ The total system indicates a theoretical peak performance of more than
+ 1.4 Teraflops, which well exceeded even all installed Myrinet PC cluster
+ in the world at the time of the installation.
+ First performance measurements by using the well known Linpack Benchmark
+ showed an extraordinary performance of 825 Gflops, which have placed this
+ supercomputer in 35th position of the June 2002 list of the Top 500 most
+ powerful computers in the world.
+\end_layout
+
+\begin_layout Standard
+The interconnections of the computing nodes are realized via the high-speed
+ network Myrinet2000.
+ This network is characterized by a point-to-point throughput of 2 Gigabit
+ per second between two computing nodes.
+ The system has 512 gigabytes of distributed memory, the major part is available
+ for calculations.
+ The system costs of 1.3 Mio EURO are comparatively low, which becomes possible
+ by a consistent use of standard components available in the PC market ('commodi
+ty off-the-shelf').
+ As base for this cluster computer Linux is used as operating system; HELICS
+ is a Debian GNU/Linux installation.
+ Additionally, the low level GM driver for the Myricom hardware is needed
+ and mpich is used for parallel development.
+ As batch system the OpenPBS derivative Torque is installed.
+ On top of Torque the Moab scheduler, the successor of the famous Maui scheduler
+, is used to optimize the utilization of HELICS.
+ Further necessary software tools are taken from the area of the worldwide
+ OpenSource and Linux community and adapted to the special needs of the
+ supercomputer in order to allow a complete control of system resources.
+ Also some useful commercial software products are installed - eg.
+ development tools like compilers.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Stony Brook University
+\end_layout
+
+\begin_layout Standard
+(http://www.sunysb.edu/seawulfcluster/hardware.shtml) The Seawulf Cluster has
+ 235 dual processor nodes (470 individual CPU's).
+ These are 3.4Ghz Intel Pentium IV Xeon processors from Dell.
+ Each node has 2GB attached memory and a 40GB hard disk.
+ The connectivity is through 1Gb copper Ethernet, and a 288-port switch
+ from Force10.
+ Access to this cluster is through a front end machine (headnode) and servers
+ which will handle the firewall, also Intel dual processor nodes.
+ Mass storage is through a 20TB Raid array, and an equal amount of back
+ up storage.
+ It is planned to back up the Raid array daily.
+\end_layout
+
+\begin_layout Standard
+Technical support for this machine will be provided by Yan Yu, Brian Fix,
+ and a team of undergraduates.
+\end_layout
+
+\begin_layout Standard
+The machine will operate Debian GNU/Linux, with batch control by Torque
+ and Maui.
+ The 1.4 version of MPI will be installed.
+\end_layout
+
+\begin_layout Paragraph
+Dansk Center for Scientific Computing
+\end_layout
+
+\begin_layout Standard
+(http://www.dcsc.sdu.dk/overview.php) Computing nodes 160x Dell PowerEdge 1950
+ 1U rackmountable servers with 2 2,66Ghz Intel Woodcrest CPUs, 4 GB Ram,
+ 2x160 GB HDD (7200rpm, 8 MB buffer, SATA150), 2x Gigabit Ethernet 40x Dell
+ PowerEdge 1950 1U rackmountable servers with 2 2,66Ghz Intel Woodcrest
+ CPUs, 8 GB Ram, 2x160 GB HDD (7200rpm, 8 MB buffer, SATA150), 2x Gigabit
+ Ethernet
+\end_layout
+
+\begin_layout Standard
+Operating system OpenSuSE GNU/Linux 10.1 on a 2.6 kernel Batch- and scheduling
+ software Torque 2.1.2 MAUI 3.2.6
+\end_layout
+
+\begin_layout Standard
+MPI & PVM
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Bibliography
 
 \bibitem [1]{key-1}
@@ -2156,6 +2372,15 @@ Torque Resource Manager, Cluster Resources.
 William Gropp, Ewing Lusk and Thomas Sterling.
  Beowulf Cluster Computing with Linux, Second Edition.
  The MIT press, 2003 ISBN:0262692929 
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem [6]{key-6}
+M.
+ Michels, W.
+ Borremans: Clustering with openMosix, University of Amsterdam, February
+ 2005.
 \end_layout
 
 \begin_layout Standard
