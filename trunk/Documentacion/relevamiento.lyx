@@ -1,4 +1,4 @@
-#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
@@ -55,6 +55,373 @@ Resumen
 
 \begin_layout Section*
 Introducción
+\end_layout
+
+\begin_layout Paragraph
+
+\lang english
+En el principio de la historia de las computadoras, se tenía la idea de
+ que un servidor tenia que ser necesariamente una máquina, conocida como
+ super computador o mainframe, que contaba con un súper procesador que daba
+ servicio a varias terminales tontas.
+ Asi, para asegurar mayor poder de cálculo es necesario tener un procesador
+ más poderoso.
+ De este modo, cuando los requerimientos de procesamiento aumentan, es necesario
+, en la mayoría de los casos, cambiar la super computadora actual por una
+ nueva mejor, pasando a subutilizar la super computadora anterior, con un
+ alto costo asociado.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang english
+Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
+ crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
+to poniendo a trabajar varias computadoras en paralelo con procesadores
+ 16 DX4, interconectadas en una red de 10 Mbit Ethernet.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang english
+A partir de ese momento, y debido al éxito alcanzado en el proyecto, muchos
+ otros proyectos siguieron la investigaci´n del tema, bajo la premisa de
+ convertir hardware de relativo bajo costo en clusters que logren equiparar
+ o superar la performance alcanzada por las supercomputadoras.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang english
+Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
+ tareas como Data Mining, Servidores de Archivos, Servidores de Base de
+ Datos, Servidores Web, Simuladores de Vuelo, Graphics Rendering, Modeladores
+ Climáticos o incluso para CD Ripping alcanzando velocidades realmente altas.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang english
+La idea es simplemente reunir el poder de cómputo de una serie de nodos
+ para proveer alta escabilidad, poder de cómputo, o construir redundancia
+ y de esta manera proveer alta disponibilidad.
+ Entonces en vez de un simple cliente haciendo peticiones de uno o más servidore
+s, los cluster utilizan múltiples máquinas para proveer un ambiente más
+ poderoso de cómputo, a través de una sola imagen de sistema, esto es que
+ el procesamiento sea visible al usuario como una sola unidad, aunque se
+ componga de muchas computadoras trabajando en paralelo para el mismo fin.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang english
+El alto poder de procesamiento de varias computadoras trabajando en paralelo,
+ (o cluster de computadoras), se perfila como una solución viable a las
+ empresas, universidades y escuelas a un bajo costo de implementación.
+ 
+\end_layout
+
+\begin_layout Paragraph
+
+\lang english
+Con el tiempo, la investigación se ha ido especializando en áreas específicas.
+ El Cluster de Alto Rendimiento se aplica principalmente a aplicaciones
+ científicas mientras que el Cluster de Alta Disponibilidad y Cluster de
+ Balanceo de Carga son más utilizado en el ambiente de negocios.
+ En este trabajo nos enfocaremos en el primero.
+\end_layout
+
+\begin_layout Subsection*
+
+\lang english
+Trabajos previos
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+No son pocos los trabajos realizados sobre investigación, desarrollo, construcci
+ón y aplicaciones de clusters, pero es relativamente poca la bibliografía
+ asociada, dado que el tema ha ganado auge principalmente en la última década,
+ más alla de que la idea no es nueva.
+ Se remontan estudios desde 1970, pero se puede decir que IBM fue la primera
+ en establecer una teoría formal con respecto a los clusters.
+ Este trabajo fue realizado por Gene Myron Amdahl (arquitecto de computadoras
+ estadounidense noruego), que en el momento de realizar el estudio donde
+ demostró la ley de Amdal (llamada axial en honor a su nombre).
+ Esta ley se usa para encontrar la máxima mejora esperada a un sistema en
+ su totalidad, cuando solo parte del sistema se mejora.
+ Esto es usado muy a menudo en computación paralela para predecir la máxima
+ mejora de velocidad usando múltiples procesadores.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Ley de amdahl: 
+\begin_inset Quotes eld
+\end_inset
+
+La mejora obtenida en el rendimiento de un sistema debido a la alteración
+ de uno de sus componentes está limitada por la fracción de tiempo que se
+ utiliza dicho componente
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang english
+\begin_inset Formula $A=F_{a}*((1-F_{m})+F_{m}/A_{m}$
+\end_inset
+
+) donde 
+\begin_inset Formula $F_{a}$
+\end_inset
+
+ es el tiempo de ejecución antiguo, 
+\begin_inset Formula $A$
+\end_inset
+
+ es la aceleración obtenida, 
+\begin_inset Formula $A_{m}$
+\end_inset
+
+ es el factor de mejora introducido y 
+\begin_inset Formula $F_{m}$
+\end_inset
+
+ es la fracción de tiempo que el sistema utiliza el subsistema mejorado
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\lang english
+Hoy en día, hay muchísimos trabajos de diferente índole con respecto a los
+ clusters de computadoras, debido a que en elámbito de computación paralela,
+ el cluster es la nueva modalidad de construcción de supercomputadoras,
+ por su bajo costo y accesibilidad.
+\end_layout
+
+\begin_layout Subsection*
+
+\lang english
+Proyectos / Productos de Clusters
+\end_layout
+
+\begin_layout Subsubsection*
+
+\lang english
+Clusters de Alta Disponibilidad
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Oracle Real Application Clusters
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+IBM DB2 Integrated Cluster Environment
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Linux HA
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+FreeNAS
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+HA-OSCAR: The High Availability Linux Project
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Kimberlite 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Lifekeeper
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Linux FailSafe
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Linux Replicated High Availability Manager
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+MC/Serviceguard
+\end_layout
+
+\begin_layout Subsubsection*
+
+\lang english
+Clusters de Alto Rendimiento
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+PVM
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+pvmsync
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+MPI
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+LAM/MPI
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+PLUS: MPI&PVM integration
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Beowulf (for Linux)
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Berkeley NOW (for Solaris)
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Parallel Knoppix
+\end_layout
+
+\begin_layout Subsubsection*
+
+\lang english
+Mallas (Grids) de computadoras
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+SGE (Sun Grid Engine)
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+GridSim toolkit for Simulation of Application Scheduling
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Gridbus: Toolkit for service-oriented cluster and grid computing 
+\end_layout
+
+\begin_layout Subsubsection*
+
+\lang english
+Balanceo de Carga
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Alinka Oranges 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Keepalived
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Linux Virtual Server
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+LVSM
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Red Hat Cluster Suite
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Turbolinux Cluster Server
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Ultra Monkey
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Condor
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+openMosix
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Cluster Knoppix
 \end_layout
 
 \begin_layout Section*
@@ -1413,121 +1780,55 @@ SLURM
 Sun grid engine 6.1
 \end_layout
 
-\begin_layout Subsection
-Requerimientos
+\begin_layout Paragraph
+Sun Grid Engine es un software para administración de recursos distribuídos
+ que dinámicamente asocia requerimientos de hardware y software de los usuarios
+ con los recursos disponibles en la red (generalmente heterogéneos) de acuerdo
+ a políticas predefinidas.
 \end_layout
 
-\begin_layout Itemize
-Master: 100 MB de memoria disponible 500 MB de disco disponible
+\begin_layout Standard
+Sun Grid Engine actúa como el sistema nervioso central de un cluster de
+ computadoras conectadas.
+ A partir de algunos demoniso, el Sun Grid Master supervisa todos los recursos
+ de la red 
+\lang english
+para permitir control completo y alcanzar la utilización óptima de los mismos.
 \end_layout
 
-\begin_layout Itemize
-Host de ejecución: 20 MB de memoria disponible 100 MB de disco disponible
+\begin_layout Paragraph
+Sun Grid Engine fue desarrollado como realce de Codine de Genias GmbH y
+ Grisdware inc, de acuerdo a requerimientos de varios clientes tales como
+ el laboratorio de investigación del ejército de Aberdeen y BMW.
+ Con Sun Grid Engine, el uso medio de los recursos aumentó de menos del
+ 50% a más del 90% en ambos ambientes.
 \end_layout
 
-\begin_layout Itemize
-Sistemas operativos soportados:
+\begin_layout Paragraph
+Sun grid Engine reune el poder de cálculo disponible en granjas de computadoras
+ dedicadas, servidores conectados y computadoras de escritorio, y las presenta
+ desde un único punto de acceso para el usuario que necesita ciclos de cómputo.
+ Esto se logra distribuyendo la carga de trabajo entre los sistemas disponibles,
+ aumentando la productividad de máquinas y del uso de licencias, mientras
+ se maximiza el número de trabajos que pueden ser completados.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Solaris 10, 9, and 8 SPARC 
+\begin_layout Paragraph
+Los requerimientos de hardware son mínimos (100 MB de memoria disponible
+ y 500MB de disco) y soporta la mayoría de los sistemas operativos populares.
+ Soporta las plataformas SPARC Ultra III, SPARC Ultra IV, AMD64, x86 y Mac.
 \end_layout
 
-\begin_layout Itemize
-Solaris 10 and 9 x86
+\begin_layout Standard
+Permite control de usuarios, limitando tanto el número máximo de trabajos
+ por usuario, grupo y proyecto, como recursos tales como colas, hosts, memoria
+ y licencias de software.
 \end_layout
 
-\begin_layout Itemize
-Solaris 10 x64
-\end_layout
-
-\begin_layout Itemize
-Apple Mac OS X 10.4 (Tiger) PPC
-\end_layout
-
-\begin_layout Itemize
-Apple Mac OS X 10.4 (Tiger) x86
-\end_layout
-
-\begin_layout Itemize
-Hewlett Packard HP-UX 11.00 o superior (incluido HP-UX IA64)
-\end_layout
-
-\begin_layout Itemize
-IBM AIX 5.1, 5.3
-\end_layout
-
-\begin_layout Itemize
-Linux x86, kernel 2.4, 2.6, glibc >= 2.3.2
-\end_layout
-
-\begin_layout Itemize
-Linux x64, kernel 2.4, 2.6, glibc >= 2.3.2
-\end_layout
-
-\begin_layout Itemize
-Linux IA64, kernel 2.4, 2.6, glibc >= 2.3.2
-\end_layout
-
-\begin_layout Itemize
-Silicon Graphics IRIX 6.5
-\end_layout
-
-\begin_layout Itemize
-Microsoft Windows Server 2003
-\end_layout
-
-\begin_layout Itemize
-Windows XP Professional with Service Pack 1 o superior
-\end_layout
-
-\begin_layout Itemize
-Windows 2000 Server with Service Pack 3 o superior
-\end_layout
-
-\begin_layout Itemize
-Windows 2000 Professional with Service Pack 3 o superior
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Plataformas
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-SPARC Ultra III
-\end_layout
-
-\begin_layout Itemize
-SPARC Ultra IV
-\end_layout
-
-\begin_layout Itemize
-AMD64 x86
-\end_layout
-
-\begin_layout Itemize
-Mac
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Características generales
-\end_layout
-
-\begin_layout Itemize
-Permite limitar el máximo numero de trabajos por usuario, grupo y proyecto
- o recursos como colas, host, memoria y licencias de software.
- 
-\end_layout
-
-\begin_layout Itemize
-Expresiones booleanas : permiten al usuario especificar los recursos que
- requerido para un trabajo determinado usando expresiones logicas.
- Por ejemplo, un usuario puede requerir que un trabajo corra en un host
- que cumpla la condición 
+\begin_layout Standard
+Los recursos requeridos por cada trabajo se pueden indicar mediante expresiones
+ lógicas, (por ejemplo, un usuario puede requerir que un trabajo corra en
+ un host que cumpla la condición 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1535,11 +1836,10 @@ Solaris o Linux pero no Linux en IA64
 \begin_inset Quotes erd
 \end_inset
 
-.
- 
+).
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Paragraph
 Distributed Resource Management Application API (DRMAA) es un conjunto de
  APIs standard desarrollado por Global Grid Forum para application builders,
  portal builders e ISV's.
@@ -1548,47 +1848,29 @@ Distributed Resource Management Application API (DRMAA) es un conjunto de
  Java binding y DRMAA 0.95 C binding.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Paragraph
 Guarda la información referida a la cuenta de cada trabajo en una base de
  datos relacional (soportando Oracle, MySQL y PostgreSQL).
 \end_layout
 
-\begin_layout Itemize
-Una cola podria abarcar mas de un host de ejecucion.
- 
-\end_layout
-
-\begin_layout Itemize
-La grilla es rellenada con los trabajos mas chicos mientras los trabajos
- mas grandes estan siendo programados para ejecutarse.
- 
-\end_layout
-
-\begin_layout Itemize
-Provee ejecución repetitiva de el mismo (o muy similar) conjunto de operaciones,
- por ejemplo durante el renderizado de multiples frames.
- 
-\end_layout
-
-\begin_layout Itemize
+\begin_layout Paragraph
 Maneja aplicaciones paralelas (MPI o PVM habilitados) a travez de una interface
  dedicada.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Paragraph
 Permite la distribución de recursos a equipos o departamentos, por ejemplo
  proporcionalmente a su contribución económica.
  
 \end_layout
 
-\begin_layout Itemize
-Código con una complejidad alta.
- 
-\end_layout
-
-\begin_layout Itemize
-Sistema integrado, no muestra facilidades a la hora de dividirlo en subsistemas.
+\begin_layout Paragraph
+El código muestra una complejidad alta, además el sistema es integrado,
+ no muestra facilidades a la hora de dividirlo en subsistemas.
+ Estas carácterísticas hacen que en algunos aspectos se vea como un sistema
+ cerrado, que no permite adaptaciones en caso de realidades no abarcadas
+ por el mismo.
 \end_layout
 
 \begin_layout Subsection
@@ -2381,10 +2663,6 @@ M.
  Michels, W.
  Borremans: Clustering with openMosix, University of Amsterdam, February
  2005.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \end_body
