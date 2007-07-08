@@ -1,4 +1,4 @@
-#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
@@ -57,7 +57,7 @@ Resumen
 Introducción
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 
 \lang english
 En el principio de la historia de las computadoras, se tenía la idea de
@@ -72,7 +72,7 @@ En el principio de la historia de las computadoras, se tenía la idea de
  alto costo asociado.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 
 \lang english
 Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
@@ -81,7 +81,7 @@ to poniendo a trabajar varias computadoras en paralelo con procesadores
  16 DX4, interconectadas en una red de 10 Mbit Ethernet.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 
 \lang english
 A partir de ese momento, y debido al éxito alcanzado en el proyecto, muchos
@@ -90,7 +90,7 @@ A partir de ese momento, y debido al éxito alcanzado en el proyecto, muchos
  o superar la performance alcanzada por las supercomputadoras.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 
 \lang english
 Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
@@ -99,7 +99,7 @@ Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
  Climáticos o incluso para CD Ripping alcanzando velocidades realmente altas.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 
 \lang english
 La idea es simplemente reunir el poder de cómputo de una serie de nodos
@@ -112,7 +112,7 @@ s, los cluster utilizan múltiples máquinas para proveer un ambiente más
  componga de muchas computadoras trabajando en paralelo para el mismo fin.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 
 \lang english
 El alto poder de procesamiento de varias computadoras trabajando en paralelo,
@@ -121,7 +121,7 @@ El alto poder de procesamiento de varias computadoras trabajando en paralelo,
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 
 \lang english
 Con el tiempo, la investigación se ha ido especializando en áreas específicas.
@@ -1928,7 +1928,7 @@ No soporta PVM
 Sun grid engine 6.1
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Sun Grid Engine es un software para administración de recursos distribuídos
  que dinámicamente asocia requerimientos de hardware y software de los usuarios
  con los recursos disponibles en la red (generalmente heterogéneos) de acuerdo
@@ -1944,7 +1944,7 @@ Sun Grid Engine actúa como el sistema nervioso central de un cluster de
 para permitir control completo y alcanzar la utilización óptima de los mismos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Sun Grid Engine fue desarrollado como realce de Codine de Genias GmbH y
  Grisdware inc, de acuerdo a requerimientos de varios clientes tales como
  el laboratorio de investigación del ejército de Aberdeen y BMW.
@@ -1952,7 +1952,7 @@ Sun Grid Engine fue desarrollado como realce de Codine de Genias GmbH y
  50% a más del 90% en ambos ambientes.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Sun grid Engine reune el poder de cálculo disponible en granjas de computadoras
  dedicadas, servidores conectados y computadoras de escritorio, y las presenta
  desde un único punto de acceso para el usuario que necesita ciclos de cómputo.
@@ -1961,7 +1961,7 @@ Sun grid Engine reune el poder de cálculo disponible en granjas de computadoras
  se maximiza el número de trabajos que pueden ser completados.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Los requerimientos de hardware son mínimos (100 MB de memoria disponible
  y 500MB de disco) y soporta la mayoría de los sistemas operativos populares.
  Soporta las plataformas SPARC Ultra III, SPARC Ultra IV, AMD64, x86 y Mac.
@@ -1987,7 +1987,7 @@ Solaris o Linux pero no Linux en IA64
 ).
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Distributed Resource Management Application API (DRMAA) es un conjunto de
  APIs standard desarrollado por Global Grid Forum para application builders,
  portal builders e ISV's.
@@ -1996,24 +1996,24 @@ Distributed Resource Management Application API (DRMAA) es un conjunto de
  Java binding y DRMAA 0.95 C binding.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Guarda la información referida a la cuenta de cada trabajo en una base de
  datos relacional (soportando Oracle, MySQL y PostgreSQL).
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Maneja aplicaciones paralelas (MPI o PVM habilitados) a travez de una interface
  dedicada.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Permite la distribución de recursos a equipos o departamentos, por ejemplo
  proporcionalmente a su contribución económica.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El código muestra una complejidad alta, además el sistema es integrado,
  no muestra facilidades a la hora de dividirlo en subsistemas.
  Estas carácterísticas hacen que en algunos aspectos se vea como un sistema
