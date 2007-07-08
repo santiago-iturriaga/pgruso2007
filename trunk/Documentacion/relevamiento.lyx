@@ -1269,8 +1269,6 @@ UMA: Multiprocesadores de Acceso Uniforme a Memoria
 \end_layout
 
 \begin_layout Paragraph
-\paragraph_spacing single
-\align left
 Estos computadores tienen sus procesadores interconectados a través de un
  mecanismo de switches a una memoria compartida centralizada.
  Entre estos mecanismos estan: un bus común, crossbar switches, packet-switched
@@ -1278,8 +1276,6 @@ Estos computadores tienen sus procesadores interconectados a través de un
 \end_layout
 
 \begin_layout Paragraph
-\paragraph_spacing single
-\align left
 Encore Multimax y Sequent Symetry S81 son ejemplos comerciales de este tipo
  de multiprocesadores.
 \end_layout
