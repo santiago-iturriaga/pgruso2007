@@ -1834,23 +1834,23 @@ Caracteristicas generales
 \end_layout
 
 \begin_layout Standard
-Condor es un proyecto open-source de la universidad de Wisconsin que fue
- especificamente diseñado para High-Throughput Computing (HTC).
- Si bien Condor puede utilizarse en High-Performance Computing (HPC) existen
- importantes diferencias entre HPC y HTC.
+Condor es un proyecto open-source de la universidad de Wisconsin especificamente
+ diseñado para High-Throughput Computing (HTC).
+ Si bien Condor puede utilizarse con fines de High-Performance Computing
+ (HPC) existen importantes diferencias entre HPC y HTC.
  Fundamentalmente los trabajos ejecutados en un entorno HPC se caracterizan
- por necesitar grandes cantidades de poder computacional de manera de resolver
- un problema en el menor tiempo posible, en cambio en entorno HTC las tareas
- requieren tiempos de ejecucion considerablemente superiores (meses o años
- en lugar de horas o días).
+ por necesitar resolver un problema en el menor tiempo posible, en cambio
+ en un entorno HTC ya es sabido que no es posible resolver los problemas
+ en tiempos pequeños, estamos hablando de meses o años en lugar de horas
+ o días.
  Como consecuencia en HPC el poder computacional de un cluster normalmente
- es medido en operaciones de punto flotante por segundo (FLOPS), la comunidad
- HTC en cambio se enfoca en cuantos trabajos es posible completar en un
- largo periodo de tiempo y no le interesa que tan rapido puede terminarse
- un trabajo individual.
- Debido a este perfil de tipo HTC, Condor se enfoca en la robustez y la
- confiabilidad brindando funcionalidades como: CPU harvesting, migración
- de procesos, tolerancia a fallas y process checkpoint.
+ es medido en operaciones de punto flotante por segundo (FLOPS), en cambio
+ la comunidad HTC se interesa mas en la cantidad de trabajos que posible
+ completar en un largo periodo de tiempo, no le interesa que tan rapido
+ puede terminarse un trabajo individual.
+ Debido a este perfil de tipo HTC, Condor se enfoca principalmente en la
+ robustez y la confiabilidad brindando funcionalidades como: CPU harvesting,
+ migración de procesos, tolerancia a fallas y process checkpoint.
 \end_layout
 
 \begin_layout Standard
@@ -1895,15 +1895,29 @@ s interesantes (p.ej.
 \end_layout
 
 \begin_layout Section
+Generic NQS
+\end_layout
+
+\begin_layout Itemize
+Codigo legado
+\end_layout
+
+\begin_layout Itemize
+Desarrollo detenido
+\end_layout
+
+\begin_layout Section
 OpenPBS
 \end_layout
 
-\begin_layout Itemize
-No hay soporte
-\end_layout
-
-\begin_layout Itemize
-No hay nuevas versiones desde hace anios
+\begin_layout Standard
+OpenPBS se trata de la version original de PBS desarrollada para la NASA
+ a principios de los 90's.
+ Actualmente es ofrecida por Altair Grid Technologies, aunque no se encuentra
+ en desarrollo y la empresa no brinda ningún tipo de soporte sobre el software.
+ Atair ha apostado a una versión comercial del producto llamada PBS Pro,
+ y en lo que a Alatir respecta OpenPBS se trata de un punto de entrada a
+ PBS Pro.
 \end_layout
 
 \begin_layout Section
