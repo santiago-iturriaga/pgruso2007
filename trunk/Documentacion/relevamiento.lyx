@@ -1,4 +1,4 @@
-#LyX 1.4.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
@@ -1829,12 +1829,89 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
 Condor
 \end_layout
 
+\begin_layout Subsection
+Caracteristicas generales
+\end_layout
+
+\begin_layout Standard
+Condor es un proyecto open-source de la universidad de Wisconsin que fue
+ especificamente diseñado para High-Throughput Computing (HTC).
+ Si bien Condor puede utilizarse en High-Performance Computing (HPC) existen
+ importantes diferencias entre HPC y HTC.
+ Fundamentalmente los trabajos ejecutados en un entorno HPC se caracterizan
+ por necesitar grandes cantidades de poder computacional de manera de resolver
+ un problema en el menor tiempo posible, en cambio en entorno HTC las tareas
+ requieren tiempos de ejecucion considerablemente superiores (meses o años
+ en lugar de horas o días).
+ Como consecuencia en HPC el poder computacional de un cluster normalmente
+ es medido en operaciones de punto flotante por segundo (FLOPS), la comunidad
+ HTC en cambio se enfoca en cuantos trabajos es posible completar en un
+ largo periodo de tiempo y no le interesa que tan rapido puede terminarse
+ un trabajo individual.
+ Debido a este perfil de tipo HTC, Condor se enfoca en la robustez y la
+ confiabilidad brindando funcionalidades como: CPU harvesting, migración
+ de procesos, tolerancia a fallas y process checkpoint.
+\end_layout
+
+\begin_layout Standard
+Paradojicamente si bien se trata de un proyecto open-source su codigo fuente
+ no se distribuye libremente.
+ Para obtener el codigo fuente de Condor es necesario enviar un correo electroni
+co explicando la razón por la que se quiere obtener el código fuente y cada
+ petición es analizada puntualmente.
+\end_layout
+
+\begin_layout Subsection
+Bibliotecas para programación paralela
+\end_layout
+
+\begin_layout Standard
+Condor se encuentra diseñado principalmente para la ejecucion de trabajos
+ seriales.
+ Si bien provee soporte limitado para las bibliotecas PVM y MPI para procesamien
+to paralelo su desempeño en esta area se encuentra por debajo de otros DRM's
+ como Torque o SGE.
+\end_layout
+
+\begin_layout Subsection
+Interfaz de programación
+\end_layout
+
+\begin_layout Standard
+Condor brinda una interfaz de programacion propietaria, pero no soporta
+ el estandar DRMAA.
+\end_layout
+
+\begin_layout Subsection
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Condor no parece ser el software ideal para el proyecto.
+ Si bien puede adaptarse a los requerimientos planteados y brinda funcionalidade
+s interesantes (p.ej.
+ migracion de procesos, cpu harvesting, etc.) existen areas en las que se
+ encuentra claramente en desventaja con respecto a otros productos.
+\end_layout
+
 \begin_layout Section
 OpenPBS
 \end_layout
 
+\begin_layout Itemize
+No hay soporte
+\end_layout
+
+\begin_layout Itemize
+No hay nuevas versiones desde hace anios
+\end_layout
+
 \begin_layout Section
 SLURM
+\end_layout
+
+\begin_layout Itemize
+No soporta PVM
 \end_layout
 
 \begin_layout Section
