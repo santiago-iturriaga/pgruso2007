@@ -49,11 +49,15 @@ Facultad de Ingeniería
 Santiago Iturriaga, Paulo Maya, Damian Pintos
 \end_layout
 
-\begin_layout Section*
-Resumen
+\begin_layout Standard
+\begin_inset LatexCommand \tableofcontents{}
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introducción
 \end_layout
 
@@ -131,7 +135,7 @@ Con el tiempo, la investigación se ha ido especializando en áreas específicas.
  En este trabajo nos enfocaremos en el primero.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 
 \lang english
 Trabajos previos
@@ -208,13 +212,13 @@ Hoy en día, hay muchísimos trabajos de diferente índole con respecto a los
  por su bajo costo y accesibilidad.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 
 \lang english
 Proyectos / Productos de Clusters
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 
 \lang english
 Clusters de Alta Disponibilidad
@@ -280,7 +284,7 @@ Linux Replicated High Availability Manager
 MC/Serviceguard
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 
 \lang english
 Clusters de Alto Rendimiento
@@ -334,7 +338,7 @@ Berkeley NOW (for Solaris)
 Parallel Knoppix
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 
 \lang english
 Mallas (Grids) de computadoras
@@ -358,7 +362,7 @@ GridSim toolkit for Simulation of Application Scheduling
 Gridbus: Toolkit for service-oriented cluster and grid computing 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 
 \lang english
 Balanceo de Carga
@@ -424,33 +428,29 @@ openMosix
 Cluster Knoppix
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Computación de Alto Rendimiento
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El campo de la computación de alto rendimiento es muy importante en la resolució
 n a problemas complejos.
- 
-\end_layout
-
-\begin_layout Paragraph
-La computación de alto rendimiento se apoya en tecnologías como los clusters,
+ La computación de alto rendimiento se apoya en tecnologías como los clusters,
  supercomputadores o mediante el uso de la computación paralela.
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 Computación Distribuida
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La computación distribuida es un modelo para resolver problemas de computación
  masiva utilizando un gran número de computadoras en una infraestructura
  de telecomunicaciones distribuida.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La informática distribuida consiste en compartir recursos heterogéneos (basadas
  en distintas plataformas, arquitecturas de equipos y programas, lenguajes
  de programación), situados en distintos lugares y pertenecientes a diferentes
@@ -458,7 +458,7 @@ La informática distribuida consiste en compartir recursos heterogéneos (basadas
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La computación distribuida ha sido diseñada para resolver problemas demasiado
  grandes para cualquier supercomputadora y main-frame, manteniendose la
  flexibilidad de trabajar en múltiples problemas más pequeños.
@@ -467,11 +467,11 @@ La computación distribuida ha sido diseñada para resolver problemas demasiado
  que los recursos informáticos sean controlados por usuarios remotos.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection
 Programación Paralela
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La programación paralela es una técnica de programación basada en la ejecución
  simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
  o en un cluster de ordenadores, en cuyo caso se denomina computación distribuid
@@ -480,7 +480,7 @@ a.
  la verdadera simultaneidad en el tiempo de la ejecución de las tareas.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Los sistemas con multiprocesador y multicomputadores consiguen un aumento
  del rendimiento si se utilizan estas técnicas.
  En los sistemas monoprocesador el beneficio en rendimiento no es tan evidente,
@@ -488,27 +488,27 @@ Los sistemas con multiprocesador y multicomputadores consiguen un aumento
  se denomina multiplexación o multiprogramación.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El mayor problema de la computación paralela radica en la complejidad de
  sincronizar unas tareas con otras, ya sea mediante secciones críticas,
  semáforos o paso de mensajes, para garantizar la exclusión mutua en las
  zonas del código en las que sea necesario.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Standard
 Aplicaciones demandantes de recursos
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Podemos hacer una division de las aplicaciones que requieren una demanda
  de recusrsos computaionales importantes de la siguiente manera.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Standard
 Aplicacions de calculo intencivas
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Son aplicaciones que requieren un alto numero de ciclos de máquinas, estas
  son las que han impulsado el desarrollo de supercomputadores.
  Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
@@ -518,7 +518,7 @@ Son aplicaciones que requieren un alto numero de ciclos de máquinas, estas
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Algunos ejemplos son:
 \end_layout
 
@@ -554,11 +554,11 @@ Simulación de redes.
 Modelado financiero y económico.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Aplicaciones de almacenemiento masivo
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Dependen de la capacidad para almacenar y procesar grandes cantidades de
  información.
  Requieren de un acceso rápido y seguro a una masa considerable de datos
@@ -566,7 +566,7 @@ Dependen de la capacidad para almacenar y procesar grandes cantidades de
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Algunas de ellas son:
 \end_layout
 
@@ -590,18 +590,18 @@ Análisis estadístico de datos.
 Análisis de mercados.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Aplicaciones exigentes comunicacionalmente
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Estas son relativamente nuevas y pueden ser llamadas servicios por demanda.
  Requieren de recursos computacionales conectados por redes con anchos de
  banda considerables.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Ejemplos:
 \end_layout
 
@@ -629,25 +629,25 @@ Imágenes por demanda.
 Simulación por demanda.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Obviamente que todas las aplicaciones anteriores dependen en cierto grado
  de cada uno de los aspectos computacionales mencionados: poder de computo,
  capacidades de almacenamiento y eficientes canales de comunicación, sin
  embargo las podemos agrupar por su característica dominante.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Standard
 Sistemas de sistemas
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Las aplicaciones en este grupo combinan en forma más compleja las característica
 s anteriores y dependen, en muchos casos, de sistemas computacionales integrados
  diseñados primordialmente para ellas.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Ejemplos:
 \end_layout
 
@@ -671,7 +671,7 @@ Compras electrónicas.
 Educación.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Existe una alta correspondencia entre la evolución de tecnologías informaticas
  y el desarrollo de aplicaciones; en particular el hardware tiene gran influenci
 a en el éxito de ciertas áreas.
@@ -684,27 +684,27 @@ a en el éxito de ciertas áreas.
  con las LAN y estan creciendo drásticamente con Internet.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 Organizacion de computadores
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La organización de los procesadores o red se refiere a como se conectan
  o enlazan los procesadores o nodos en un computador paralelo.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Existen varios criteriospara evaluar los distintos diseños de organizacion:
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 1) Diámetro: viene dado por la mayor distancia entre dos nodos.
  Mientras menor sea el diámetro menor será el tiempo de comunicación entre
  nodos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 2) Ancho de bisección de la red: es el menor número de enlaces que deben
  ser removidos para dividir la red por la mitad.
  Un ancho de bisección alto puede reducir el tiempo de comunicación cuando
@@ -713,19 +713,19 @@ Existen varios criteriospara evaluar los distintos diseños de organizacion:
  inoperable a todo el sistema.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 3) Es preferible que el número de enlaces por nodo sea una constante independien
 te del tamaño de la red, ya que hace más fácil incrementar el número de
  nodos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 4) Es preferible que la longitud máxima de los enlaces sea una constante
  independiente del tamaño de la red, ya que hace más fácil añadir nodos.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 5) Redes estáticas y dinámicas.
  En las redes estáticas la topología de interconexión se define cuando se
  construye la máquina.
@@ -733,21 +733,21 @@ te del tamaño de la red, ya que hace más fácil incrementar el número de
  de un programa o entre la ejecución de programas.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 A continuacion veremos algunos tipos de disenos de redes de procesadores.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 BUS Y ETHERNET
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En una red donde los procesadores comparten el mismo recurso de comunicación:
  el bus.
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Standard
 Esta arquitectura es fácil y económica de implementar, pero es altamente
  no escalable ya que solo un procesador puede usar el bus en un momento
  dado; a medida que se incrementa el número de procesadores, el bus se convierte
@@ -788,18 +788,18 @@ bus.png
 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Mallas
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Al igual que el bus (o ethernet), las mallas son fáciles y económicas de
  implementar, sin embargo el diámetro se incrementa al añadir nodos.
  En las mallas de dimensión 1, si los dos nodos extremos también son conectados,
  entonces se tiene un anillo.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
  y tiene la ventaja de que pueden ser construidas sin conexiones largas.
  El diámetro de las mallas puede ser reducido a la mitad si se extiende
@@ -808,49 +808,49 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
  Esto sin embargo presenta dos desventajas: a) conexiones más largas son
  requeridas y b) un subconjunto de un torus no es un torus y los beneficios
  de esta interconexión se pierden si la máquina es particionada entre varios
- usuari os.
+ usuarios.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Mariposa
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Simaleres a las mallas pero presentan menor diametro.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Arboles binarios
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Son particularmente útiles en problemas de ordenamiento, multiplicación
  de matrices, y algunos problemas en los que los tiempos sw solución crecen
  exponencialmente con el tamaño del problema (NP-complejos).
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Piramides
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Estas redes intentan combinar las ventajas de las mallas y los arboles,
  se incrementa la tolerancia a fallas y el número de vias de comunicación.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Hipercubo
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Un hipercubo puede ser considerado como una malla con conexiones largas
  adicionales, estas conexiones reducen el diámetro e incrementan el ancho
  de bisección.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Se puede definir recursibamente un hipercubo de la siguiente manera: un
  hipercubo de dimensión-cero es un único procesador y un hipercubo de dimensión-
 uno conecta dos hipercubos de dimensión-cero.
@@ -860,11 +860,11 @@ uno conecta dos hipercubos de dimensión-cero.
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Omega
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Es una red formada por crossbar switches 2x2.
  Estos tiene cuatro estados posibles: recto, cruzado, broadcast superior
  y broadcast inferior que son configurados segun la conexión que se tien.
@@ -872,93 +872,93 @@ Es una red formada por crossbar switches 2x2.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Estas redes reducen considerablemente la competencia por ancho de banda,
  pero son altamente no escalables y costosas.
  El highperformance-switch de la SP2 es una red omega.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Lasig siguiente figura muestra una red omega de 3 etapas que conecta 8 procesado
 res.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Fibras de interconexion
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Estas so un conjunto de switches, llamados routers, enlazados por distintas
  configuraciones o topologías.
 \end_layout
 
-\begin_layout Subsection*
-Diseno de algoritmos paraleleos
+\begin_layout Subsection
+Diseño de algoritmos paraleleos
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El diseño de algoritmos paralelos involucra cuatro etapas, las cuales se
  presentan como secuenciales pero que en la práctica no lo son.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 1) Partición: El cómputo y los datos sobre los cuales se opera se descomponen
  en tareas.
  Se ignoran aspectos como el número de procesadores de la máquina a usar
  y se concentra la atención en explotar oportunidades de paralelismo.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 2) Comunicación: Se determina la comunicación para coordinar las tareas.
  Se definen estructuras y algoritmos de comunicación.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 3) Agrupación: Se evalua en terminos de eficiencia y costos de implementacion
  a las dos etapas anteriores.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 se agrupan tareas pequeñas en tareas más grandes.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 4) Asignación: Cada tarea es asignada a un procesador tratando de maximizar
  la utilización de los procesadores y de reducir el costo de comunicación.
  La asignación puede ser estática (se establece antes de la ejecución del
  programa) o en tiempo de ejecución mediante algoritmos de balanceo de carga.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Particion
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En la etapa de partición se buscan oportunidades de paralelismo y se trata
  de subdividir el problema lo más finamente posible.
  Se dividen tanto los cómputos como los datos.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Existen dos formas de descomposicion.
  Descomposición del dominio: se centra en los datos.
  Se determina la partición
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 apropiada de los datos y luego se trabaja en los cómputos asociados con
  los datos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Descomposición funcional: es el contrario al enfoque anterior, primero se
  descomponen los cómputos y luego se ocupa de los datos.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En el proceso de particion existen aspectos a tener en cuenta: 
 \end_layout
 
@@ -980,34 +980,34 @@ las tareas deben ser de tamaños equivalentes para facilitar el balanceo
 el número de tareas debe ser proporcional al tamaño del problema
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Comunicación
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El proceso de partición de tareas no es independiente del proceso de comunicació
 n.
  En esta se especifica como los datos serán transferidos o compartidos entre
  tareas.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La comunicación puede ser definida en dos fases.
  Primero se definen los canales que conectan las tareas.
  Segundo
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 se especifica la información o mensajes que deben ser enviado y recibidos
  en estos canales.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Dependiendo de si estamos en el caso de memoria distribuida o memoria compartida
  dependera la forma de atacar la comunicación entre tareas varía.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En un ambientes de memoria distribuida, las tareas tiene una identificación
  única y interactuan enviando y recibiendo mensajes hacia y desde tareas
  específicas.
@@ -1016,19 +1016,19 @@ En un ambientes de memoria distribuida, las tareas tiene una identificación
  Virtual Machine).
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En ambientes de memoria compartida no existe la noción de pertenencia y
  el envío de datos no se dá como tal.
  Todas las tareas comparten la misma memoria.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Semáforos, semáforos binarios, barreras y otros mecanismos de sincronizacion
  son usados para controlar el acceso a la memoria compartida y coordinar
  las tareas.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En esta etapa hay que tener en cuenta los siguientes aspectos:
 \end_layout
 
@@ -1051,11 +1051,11 @@ las operaciones de comunicación deben poder proceder concurrentemente.
 los cómputos de diferentes tareas deben poder proceder concurrentemente.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Agrupacion
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En las dos tareas anteriores el algoritmo resultante es aún abstracto en
  el sentido de que no se tomó en cuenta la máquina sobre el cual correrá.
  En este proceso se busca un algoritmo concreto, que corra eficientemente
@@ -1063,39 +1063,39 @@ En las dos tareas anteriores el algoritmo resultante es aún abstracto en
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En particular se considera si es útil agrupar tareas y si vale la pena replicar
  datos y/o cómputos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En el proceso de partición se trata de establecer el mayor número posible
  de tareas con la intensión de maximizar el paralelismo.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Esto no necesariamente produce un algoritmo eficiente ya que el costo de
  comunicación puede ser significativo.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Mediante la agrupación de tareas se puede reducir la cantidad de datos a
  enviar y así reducir el número de
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 mensajes y el costo de comunicación.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Se puede intentar replicar cómputos y/o datos para reducir los requerimientos
  de comunicación.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Aspectos a considerar en esta etapa:
 \end_layout
 
@@ -1128,28 +1128,28 @@ nalizar si es posible reducir aun más el número de tareas sin introducir
  desbalances de cargas o reducir la extensibilidad.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Asignacion
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En este proceso se determina en que procesador se ejecutará cada tarea.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En maquinas de memoria compartida tipo UMA no se presenta este problema
  ya que proveen asignación dinámica de procesos y los procesos.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Actualmente no hay mecanismos generales de asignación de tareas para máquinas
  distribuidas por lo que este problema debe ser atacado explícitamente en
  el diseno de algoritmos paralelos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La asignación de tareas puede ser estática o dinámica.
  En la asignación estática, las tareas son asignadas a un procesador al
  comienzo de la ejecución del algoritmo paralelo y corren ahí hasta el final.
@@ -1158,14 +1158,14 @@ La asignación de tareas puede ser estática o dinámica.
  el costo de creación de procesos, sincronización y terminación.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En la asignación dinámica se hacen cambios en la distribución de las tareas
  entre los procesadores en tiempo de ejecución Esto es con el fin de balancear
  la carga del sistema y reducir el tiempo de ejecución.
  Sin embargo, el
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 costo de balanceo puede ser significativo y por ende incrementar el tiempo
  de ejecución.
  Entre los algoritmos de balanceo de carga están los siguientes:
@@ -1188,35 +1188,35 @@ Balanceo semi-distribuido: divide los procesadores en regiones, cada una
  Otro algoritmo balancea la carga entre las regiones.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 Modelos de computacion paralela
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Arreglos de procesadores
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Una maquina cuyo conjunto de instruccuines permite operaciones tanto sobre
  vectores como escalares lo denominamos computador vectorial.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Procesador Vectorial Pipelined
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En estas máquinas los vectores fluyen a través de las unidades aritméticas
  pipelined.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Las unidades consisten de una cascada de etapas de procesamiento compuestas
  de circuitos que efectúan operaciones aritméticas o lógicas sobre el flujo
  de datos que pasan a través de ellas.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La etapas están separadas por registros de alta velocidad usados para guardar
  resultados intermedios.
  La información que fluye entre las etapas adyacentes esta bajo el control
@@ -1224,15 +1224,15 @@ La etapas están separadas por registros de alta velocidad usados para guardar
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En esta categoría tenemos maquinas como la Cray-1 y la Cyber-205.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Arreglos de Procesadores
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Son máquinas que constan de un computador secuencial conectado a un arreglo
  de elementos de procesamiento sincronizados e idénticos capaces de ejecutar
  las mismas operaciones sobre datos diferentes.
@@ -1244,47 +1244,47 @@ Son máquinas que constan de un computador secuencial conectado a un arreglo
  control para la unidades de procesamiento en el computador.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Los arreglos de procesamiento difieren fundamentalmente en la complejidad
  y la topología de interconexión de sus elementos de procesamiento.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Ejemplos de estas máquinas son: IILIAC IV, Goodyear MPP y Connection Machine
  CM-200.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Multiprocesadores
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Son equipos formados por un número de procesadores completamente programables
  capaces de ejecutar su propio programa.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 UMA: Multiprocesadores de Acceso Uniforme a Memoria
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Estos computadores tienen sus procesadores interconectados a través de un
  mecanismo de switches a una memoria compartida centralizada.
  Entre estos mecanismos estan: un bus común, crossbar switches, packet-switched
  networks9.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Encore Multimax y Sequent Symetry S81 son ejemplos comerciales de este tipo
  de multiprocesadores.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 NUMA: Multiprocesadores de Acceso No-Uniforme a Memoria
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Estos multiprocesadores tienen el espacio de direccionamiento compartido
  y la memoria distribuida.
  La memoria compartida esta formada por la memoria local de los procesadores.
@@ -1294,7 +1294,7 @@ Estos multiprocesadores tienen el espacio de direccionamiento compartido
  paralela.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El principal problema que presentan los multiprocesadores (máquinas de memoria
  compartida) radica en que no se pueden agregar procesadores indefinidamente
  ya que a partir de cierto número y dependiendo de la aplicación, el mecanismo
@@ -1302,11 +1302,11 @@ El principal problema que presentan los multiprocesadores (máquinas de memoria
 lidad.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 MULTICOMPUTADORES
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En esta categoría, los procesadores no comparten memoria.
  Cada procesador tiene su propia memoria privada (máquinas de memoria distribuid
 a) y la interacción entre ellos es a través de pase de mensajes.
@@ -1314,33 +1314,33 @@ a) y la interacción entre ellos es a través de pase de mensajes.
  SuperCluster, Thinking Machine CM-5 y la IBM SP2.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 MAQUINAS DE MEMORIA COMPARTIDA DISTRIBUIDA
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Actualmente las máquinas paralelas tienden a aprovechar las facilidades
  de programación que ofrecen los ambientes de memoria compartida y la escalabili
 dad de los ambientes de memoria distribuida.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Este modelo conecta entre si módulos de multiprocesadores manteniendo la
  visión global de la memoria.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Este tipo de maquinas entra dentro de la categoría de NUMA y un ejemplo
  es la SGI Origin 2000.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 MULTIPROCESADORES MULTI-HEBRADOS
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En estas máquinas cada procesador tiene cierto número de flujos de instrucciones
  implementados en hardware, incluyendo el contador de programa y registros,
  cada uno destinado a ejecutar una hebra.
@@ -1349,68 +1349,68 @@ En estas máquinas cada procesador tiene cierto número de flujos de instrucciones
  instrucciones de otra hebra
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La Tera MTA (multithreaded architecture), es la primera de estas máquinas
  , cada procesador tiene 128 flujos de instrucciones.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Un acceso a memoria dura aproximadamente 100 ciclos por lo que en en la
  próxima ejecución de la hebra se tendrán los datos requeridos.
  Este mecanismo permite a la MTA tolerar la latencia a memoria y por lo
  tanto no requiere de memorias cache.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Cada instrucción de 64-bits codifica 3 operaciones(una de memoria y dos
  que pueden ser aritméticas o de control).
  Cuenta con in sistema operativo de versión distribuida completamente simétrica
  de UNIX.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El sistema cuenta con 1 a 256 procesadores que comparten una enorme memoria.
  A su ves cada procesador tiene 1 o 2 Gb de memoria, un mapeo aleatorio
  de la memoria y una red altamente interconectada proveen acceso casi uniforme
  de cualquier procesador a cualquier memoria.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Los estudios realizados muestran que el costo del multi-hebrado es pequeño,
  con un rendimiento comparable con el de la T90 y los códigos de la MTA
  son significativamente más fáciles de optimizar que en máquinas masivamente
  paralelas o estaciones de trabajo de alto rendimiento.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 TAXONOMIA DE FLYNN
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Esta es otra forma de clasificar computadores seriales y paralelos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Es basada en la multiplicidad del flujo de instrucciones y del flujo de
  datos en un computador.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
  el computador y un flujo de datos es la secuencia de datos sobre los cuales
  operan las instrucciones.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Dentro de la clasificacion de Flynn tenemos la siguientes categorías.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 SISD Single instruction stream, single data stream
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La mayor parte de computadores seriales son SISD.
  Estas tienen un CPU que ejecuta una instrucciones, busca o guarda datos
  en un momento dado.
@@ -1420,15 +1420,15 @@ La mayor parte de computadores seriales son SISD.
 Figura
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 SIMD Single instruction stream, multiple data stream
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En esta categoria entrarn los arreglos de procesadores.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Hay un conjunto de unidades de procesamiento cada una ejecutando la misma
  operación sobre datos distintos
 \end_layout
@@ -1437,21 +1437,21 @@ Hay un conjunto de unidades de procesamiento cada una ejecutando la misma
 Figura
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 MISD Multiple instruction stream, single data stream
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Existen n procesadores, cada uno recibiendo una instrucción diferente y
  operando sobre el mismo flujo de datos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
  de que ciertas MIMD puedan ser usadas de esta forma.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 MIMD Multiple instruction stream, multiple data stream La mayoría de los
  multiprocesadores y multicomputadores pueden ser clasificados bajo esta
  categoría.
@@ -1459,43 +1459,43 @@ MIMD Multiple instruction stream, multiple data stream La mayoría de los
  un programa diferente sobre sus propios datos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Podemos categorizarlos tambien según como esté organizada su memoria: memoria
  compartida o memoria distribuida.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 SPMD Single program, multiple data
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En esta categoria cada procesador ejecuta una copia exacta del mismo programa,
  pero opera sobre datos diferentes.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Pese a no ser una categoría definida por Flynn es muy usada y pueder ser
  considerada como un caso particular de MIMD.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 EL IBM SCALABLE POWER PARALLEL SYSTEM (SP2)
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Si queremos clasificar a la SP2 dentro de las categorías vistas podemos
  decir que es un multicomputador (memoria distribuida) MIMD.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Cada nodo puede ser usado como un computador independiente, pero también
  pueden cooperar en la solución del mismo problema en paralelo.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Tenemos tres tipos de nodos en la SP2:
 \end_layout
 
@@ -1515,92 +1515,92 @@ altos constan de hasta 8 procesadores que comparten la misma memoria.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Cada módulo de una SP2 puede tener hasta 16 nodos finos, u 8 anchos o 4
  altos.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Un switch de alta eficiencia (high-performance-switch) conecta los procesadores
  para proveer altas velocidades de comunicación.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En particular consiste de una red omega, de mutiples etapas, buffers y un
  mecanismo de enrutamiento packet-switched.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Los buffers permiten el almacenamiento temporal de paquetes entre etapas
  en caso de que la etapa siguiente esté ocupada.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En los protocolos packet-switched, cada mensaje contiene información de
  enrutamiento
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 que es interpretada por cada elemento del switch.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La SP2 esta basada en el sistema operativo AIX/6000 y en la tecnología RISC
  System/6000 POWER2.
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 LA SGI ORIGIN 2000
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La SGI Origin 2000 es un MIMD con memoria distribuida compartida.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 En cada nodo hay uno o dos procesadores R10000 con memoria distribuida a
  través del sistema.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Esta provista con hardware para la migración de paginas.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La memoria es universalmente accesible y compartida entre todos los procesadores.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 De igual forma los dispositivos de I/O están distribuidos entre los nodos
  pero cada uno esta
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 disponible a todos los procesadores.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 FIGURA
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El Hub es el controlador de la memoria distribuida/compartida y es el encargado
  de que todos los procesadores y los dispositivos de I/O tengan acceso transpare
 nte a toda la memoria.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El Crossbow es un crossbar chip encargado de conectar dos nodos controladores
  de I/O.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La fibra de interconexión es una malla de múltiples enlaces punto-a-punto
  conectados por los enrutadores y provee a cada par de nodos con un mínimo
  de dos trayectorias distintas.
@@ -1608,37 +1608,37 @@ La fibra de interconexión es una malla de múltiples enlaces punto-a-punto
  la fibra que estén fallando.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La Origin 2000 puede tener hasta 128 procesadores, 4GB de memoria por nodo
  (256GB en total) y 64 interfaces de I/O con 192 controladores de I/O.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 A medida que se agregan nodos a la fibra de interconexión, el ancho de banda
  y la eficiencia escalan linealmente sin afectar significativamente las
  latencias del sistema.
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 CLUSTERS DE PC'S
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El término cluster se aplica a los conjuntos de computadoras que se comportan
  como si fuesen una única computadora.
  Hoy en día tiene un papel importante en aplicaciones científicas y de ingenierí
 a, comerciales, simulaciones, etc.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La tecnología de clusters ha evolucionado apoyándose en actividades que
  van desde aplicaciones de supercómputo y software de misiones críticas,
  servidores Web y comercio electrónico, hasta bases de datos de alto rendimiento.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 El uso de clusters surge gracias a la convergencia de varias tendencias
  actuales como la disponibilidad de microprocesadores económicos de alto
  rendimiento y redes de alta velocidad, la existentica de herramientas para
@@ -1646,14 +1646,14 @@ El uso de clusters surge gracias a la convergencia de varias tendencias
  de potencia computacional para aplicaciones que la requieran.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Un cluster es un grupo de múltiples ordenadores unidos mediante una red
  de alta velocidad, de tal forma que el conjunto es visto como un único
  ordenador, más potente que los comunes de escritorio.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Se espera de un cluster que presente combinaciones de los siguientes característ
 icas:
 \end_layout
@@ -1674,7 +1674,7 @@ Equilibrio de carga
 Escalabilidad 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La construcción de los cluster es muy fácil y económica, debido a su flexibilida
 d: pueden tener todos la misma configuración de hardware y sistema operativo
  (cluster homogéneo), diferente rendimiento pero con arquitecturas y sistemas
@@ -1682,27 +1682,27 @@ d: pueden tener todos la misma configuración de hardware y sistema operativo
  y sistema operativo (cluster heterogéneo).
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Se pueden construir cluster con ordenadores personales desechados por "anticuado
 s" que consiguen competir en capacidad de cálculo con superordenadores carísimos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Es necesario proveer un sistema para el manejo del cluster, el cual se encargue
  de interactuar con el usuario y los procesos que corren en él para optimizar
  el funcionamiento.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Paragraph
 Cluster de alto rendimiento
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Standard
 Un cluster de alto rendimiento está diseñado para dar altas prestaciones
  en cuanto a capacidad de cálculo.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Standard
 Los motivos para utilizar un cluster de alto rendimiento son:
 \end_layout
 
@@ -1714,29 +1714,29 @@ el tamaño del problema por resolver y
 el precio de la máquina necesaria para resolverlo.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Standard
 Por medio de un cluster se pueden conseguir capacidades de cálculo superiores
  a las de un ordenador más caro.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Standard
 Para garantizar esta capacidad de cálculo, los problemas necesitan ser paraleliz
 ables, ya que el método con el que los clusters agilizan el procesamiento
  es dividir el problema en problemas más pequeños y calcularlos en los nodos.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Paragraph
 Cluster de alta disponibilidad
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Standard
 Un cluster de alta disponibilidad se caracterizan por compartir los discos
  de almacenamiento de datos y por estar constantemente monitorizándose entre
  sí.
  
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Standard
 Podemos dividirlo en dos clases:
 \end_layout
 
@@ -1744,15 +1744,15 @@ Podemos dividirlo en dos clases:
 Alta disponibilidad de infrestructura
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Paragraph
 Alta disponibilidad de aplicación
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Paragraph
 Cluster de balanceo de carga
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
  por uno o más ordenadores que actúan como frontend del cluster, y que se
  ocupan de repartir las peticiones de servicio que reciba el cluster, a
@@ -1760,18 +1760,18 @@ Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Paragraph
 Escalabilidad
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La escalabilidad es la propiedad deseable de un sistema, una red o un proceso,
  que indica su habilidad para, o bien manejar el crecimiento continuo de
  trabajo de manera fluida, o bien para estar preparado para hacerse más
  grande sin perder calidad en los servicios ofrecidos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Las características más destacadas de este tipo de cluster son:
 \end_layout
 
@@ -1786,11 +1786,11 @@ Robustez.
  dando servicio.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Relevamiento de tecnologias
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 SSI: OpenMosix, OpenSSI y Kerrighed
 \end_layout
 
@@ -1821,11 +1821,11 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
  a fondo este tipo de tecnologias de manera de poder compara ambas soluciones.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Condor
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Caracteristicas generales
 \end_layout
 
@@ -1857,7 +1857,7 @@ co explicando la razón por la que se quiere obtener el código fuente y cada
  petición es analizada puntualmente.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Bibliotecas para programación paralela
 \end_layout
 
@@ -1869,7 +1869,7 @@ to paralelo su desempeño en esta area se encuentra por debajo de otros DRM's
  como Torque o SGE.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Interfaz de programación
 \end_layout
 
@@ -1878,7 +1878,7 @@ Condor brinda una interfaz de programacion propietaria, pero no soporta
  el estandar DRMAA.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Conclusión
 \end_layout
 
@@ -1890,7 +1890,7 @@ s interesantes (p.ej.
  encuentra claramente en desventaja con respecto a otros productos.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Generic NQS
 \end_layout
 
@@ -1902,7 +1902,7 @@ Codigo legado
 Desarrollo detenido
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 OpenPBS
 \end_layout
 
@@ -1916,7 +1916,7 @@ OpenPBS se trata de la version original de PBS desarrollada para la NASA
  PBS Pro.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 SLURM
 \end_layout
 
@@ -1924,7 +1924,7 @@ SLURM
 No soporta PVM
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Sun grid engine 6.1
 \end_layout
 
@@ -2021,7 +2021,7 @@ El código muestra una complejidad alta, además el sistema es integrado,
  por el mismo.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Resumen
 \end_layout
 
@@ -2049,7 +2049,7 @@ Esto se debe a que la herramienta cuenta con un código muy complejo y dificil
  dentro del proyecto propuesto.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 TORQUE
 \end_layout
 
@@ -2067,7 +2067,7 @@ ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
  centros HPC junto con las mejoras desarrolladas por Cluster Resources.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Requerimientos
 \end_layout
 
@@ -2083,7 +2083,7 @@ Linux
 UNIX
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Características generales
 \end_layout
 
@@ -2154,11 +2154,11 @@ Torque cuenta con una interfaz de usuario de linea de comando (CLI) como
  Perl o Python).
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Bibliotecas para programación paralela
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 MPI (Message Passing Interface)
 \end_layout
 
@@ -2174,7 +2174,7 @@ El soporte para bibliotecas tipo MPI se encuentra integrado en TORQUE, el
  de lo que sucede cuando se utiliza el script mpirun original.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 PVM (Parallel Virtual Machine)
 \end_layout
 
@@ -2198,7 +2198,7 @@ Torque soporta el estandar Distributed Resource Management Application API
  (DRMAA) al igual que la mayoria de los manejadores de recursos.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Maui
 \end_layout
 
@@ -2219,7 +2219,7 @@ Maui se enfoca en la planificación de trabajos y deja la problemática de
  SGE, etc.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Requerimientos
 \end_layout
 
@@ -2318,7 +2318,7 @@ Scalable System Software (SSSRM)
 \end_layout
 
 \end_deeper
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Características generales
 \end_layout
 
@@ -2333,7 +2333,7 @@ El algoritmo de planificación de Maui soporta fairness, preemption, backfill,
  de recursos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Backfill
 \end_layout
 
@@ -2357,7 +2357,7 @@ Backfill es un acercamiento en la planificación que permite ejecutar algunos
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Gerenciamiento de asignación
 \end_layout
 
@@ -2371,7 +2371,7 @@ Maui posee interfaces para sistemas de gerenciamiento de asignación tales
  cargar los recursos consumidos por el trabajo.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Reservas anticipadas
 \end_layout
 
@@ -2392,7 +2392,7 @@ es a nivel de trabajo o especificando ciertas restricciones especiales de
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Quality of Service (QoS)
 \end_layout
 
@@ -2403,7 +2403,7 @@ Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios,
  la priorizacion de trabajos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Faireshare
 \end_layout
 
@@ -2417,7 +2417,7 @@ Este componente permite favorecer trabajos en base al uso histórico a corto
  balanceo o no.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Interfaz de programación
 \end_layout
 
@@ -2445,7 +2445,7 @@ Se trata de una interfaz en C que permite el desarrollo de nuevos algoritmos.
 \end_layout
 
 \end_deeper
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Estadísticas
 \end_layout
 
@@ -2509,7 +2509,7 @@ Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
+\begin_layout Subsubsection
 Gold
 \end_layout
 
@@ -2529,11 +2529,11 @@ Es posible realizar operaciones como depósitos, retiros, transferencias
  balances a usuarios y administradores.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Características generales
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Reservas
 \end_layout
 
@@ -2546,7 +2546,7 @@ Previo al inicio de un trabajo se realiza una estimación del total de recursos
  tiene asignados.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Vencimiento de créditos
 \end_layout
 
@@ -2556,7 +2556,7 @@ o que se implemente una política de use-it-or-lose-it previniendo el uso
  exhaustivo de créditos acumulados y estableciendo ciclos a un proyecto.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Interfaz web
 \end_layout
 
@@ -2565,7 +2565,7 @@ Permitiendo acceso remoto a usuarios y administradores.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Interfaz de programación
 \end_layout
 
@@ -2574,7 +2574,7 @@ Existen diferentes formas de integrar Gold al sistema: Perl API, Java API
  o directamente utilizando el protocolo SSSRMAP (basado en XML).
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Casos de estudio
 \end_layout
 
@@ -2661,7 +2661,7 @@ El cluster consta de 200 nodos Dell PowerEdge 1950 1U con dos procesadores
  MPI como de tipo PVM.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Conclusiones
 \end_layout
 
