@@ -759,7 +759,7 @@ Esta arquitectura es fácil y económica de implementar, pero es altamente
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Caption
 C:
@@ -811,12 +811,78 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
  usuarios.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Caption
+C:
+\backslash
+Documents and Settings
+\backslash
+Paulo
+\backslash
+Mis documentos
+\backslash
+Facultad
+\backslash
+Proyecto
+\backslash
+Source
+\backslash
+Documentacion
+\backslash
+Images
+\backslash
+malla1.png
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Mariposa
 \end_layout
 
 \begin_layout Standard
 Simaleres a las mallas pero presentan menor diametro.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Caption
+C:
+\backslash
+Documents and Settings
+\backslash
+Paulo
+\backslash
+Mis documentos
+\backslash
+Facultad
+\backslash
+Proyecto
+\backslash
+Source
+\backslash
+Documentacion
+\backslash
+Images
+\backslash
+mariposa.png
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -837,6 +903,39 @@ Piramides
 \begin_layout Standard
 Estas redes intentan combinar las ventajas de las mallas y los arboles,
  se incrementa la tolerancia a fallas y el número de vias de comunicación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Caption
+C:
+\backslash
+Documents and Settings
+\backslash
+Paulo
+\backslash
+Mis documentos
+\backslash
+Facultad
+\backslash
+Proyecto
+\backslash
+Source
+\backslash
+Documentacion
+\backslash
+Images
+\backslash
+piramide.png
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1744,7 +1843,7 @@ Podemos dividirlo en dos clases:
 Alta disponibilidad de infrestructura
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Itemize
 Alta disponibilidad de aplicación
 \end_layout
 
@@ -1783,7 +1882,58 @@ Se puede ampliar su capacidad fácilmente añadiendo más ordenadores al cluster.
 Robustez.
  Ante la caída de alguno de los ordenadores del cluster el servicio se puede
  ver mermado, pero mientras haya ordenadores en funcionamiento, éstos seguirán
- dando servicio.
+ dando servicio
+\end_layout
+
+\begin_layout Standard
+HERRAMIENTAS
+\end_layout
+
+\begin_layout Standard
+En programación paralela existen diferentes lenguajes y herramientas de
+ programación con caracteristicas espesificas para diferentes clases de
+ problema.
+\end_layout
+
+\begin_layout Standard
+C++ Composicional (C++): Es una extensión de C++ que provee al programador
+ facilidades para controlar localidad, concurrencia, comunicaciones, y asignació
+n de tareas.
+ Puede ser usado para construir librerías que implementen tareas, canales,
+ y otras abstracciones básicas de la programación paralela.
+\end_layout
+
+\begin_layout Standard
+High Performance Fortran (HPF): Es un ejemplo de lenguajes datos-paralelos
+ y se ha
+\end_layout
+
+\begin_layout Standard
+convertido en un estándar para aplicaciones científicas e ingenieriles.
+ El paralelismo es expresado
+\end_layout
+
+\begin_layout Standard
+en términos de operaciones sobre matrices y la comunicación es inferida
+ por el compilador.
+\end_layout
+
+\begin_layout Standard
+Parallel Virtual Machine (PVM): Es una librería de subrutinas para enviar
+ y recibir
+\end_layout
+
+\begin_layout Standard
+mensajes.
+\end_layout
+
+\begin_layout Standard
+Message Passing Interface (MPI): Similar a PVM pero, tal como HPF, MPI se
+ ha
+\end_layout
+
+\begin_layout Standard
+convertido un estándar.
 \end_layout
 
 \begin_layout Section
