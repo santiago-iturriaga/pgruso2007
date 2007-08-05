@@ -1941,7 +1941,7 @@ Relevamiento de tecnologias
 \end_layout
 
 \begin_layout Subsection
-SSI: OpenMosix, OpenSSI y Kerrighed
+SSI: OpenMosix*, OpenSSI y Kerrighed
 \end_layout
 
 \begin_layout Standard
@@ -1969,6 +1969,12 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
  paradigma estilo beowulf mas clasico.
  Quizas sea interesante construir un pequeño cluster SSI e investigar mas
  a fondo este tipo de tecnologias de manera de poder compara ambas soluciones.
+\end_layout
+
+\begin_layout Standard
+(*) Moshe Bar, fundador y director de proyecto de openMosix, anuncio el
+ 15 de julio del 2007 el cierre del proyecto y que se congelara tanto su
+ desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
 \end_layout
 
 \begin_layout Subsection
@@ -2062,8 +2068,8 @@ OpenPBS se trata de la version original de PBS desarrollada para la NASA
  Actualmente es ofrecida por Altair Grid Technologies, aunque no se encuentra
  en desarrollo y la empresa no brinda ningún tipo de soporte sobre el software.
  Atair ha apostado a una versión comercial del producto llamada PBS Pro,
- y en lo que a Alatir respecta OpenPBS se trata de un punto de entrada a
- PBS Pro.
+ y en lo que a Alatir respecta OpenPBS se trata de una forma de comenzar
+ a utilizar PBS con el objectivo de comprar PBS Pro.
 \end_layout
 
 \begin_layout Subsection
