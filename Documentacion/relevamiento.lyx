@@ -1,17 +1,25 @@
-#LyX 1.4.4 created this file. For more info see http://www.lyx.org/
-\lyxformat 245
+#LyX 1.5.0rc1 created this file. For more info see http://www.lyx.org/
+\lyxformat 271
 \begin_document
 \begin_header
 \textclass article
 \language spanish
 \inputencoding auto
-\fontscheme default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \paperfontsize default
 \spacing single
 \papersize default
 \use_geometry false
 \use_amsmath 1
+\use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
@@ -25,6 +33,7 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "paulom" 
 \end_header
 
 \begin_body
@@ -34,15 +43,15 @@ Estado del Arte
 \end_layout
 
 \begin_layout Title
-Cluster de Computadores de Alto DesempeÒo con Acceso Remoto
+Cluster de Computadores de Alto Desempe√±o con Acceso Remoto
 \end_layout
 
 \begin_layout Title
-Carrera de IngenierÌa en ComputaciÛn
+Carrera de Ingenier√≠a en Computaci√≥n
 \end_layout
 
 \begin_layout Title
-Facultad de IngenierÌa
+Facultad de Ingenier√≠a
 \end_layout
 
 \begin_layout Author
@@ -50,7 +59,7 @@ Santiago Iturriaga, Paulo Maya, Damian Pintos
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand \tableofcontents{}
+\begin_inset LatexCommand tableofcontents
 
 \end_inset
 
@@ -58,20 +67,20 @@ Santiago Iturriaga, Paulo Maya, Damian Pintos
 \end_layout
 
 \begin_layout Section
-IntroducciÛn
+Introducci√≥n
 \end_layout
 
 \begin_layout Standard
 
 \lang english
-En el principio de la historia de las computadoras, se tenÌa la idea de
- que un servidor tenia que ser necesariamente una m·quina, conocida como
- super computador o mainframe, que contaba con un s˙per procesador que daba
+En el principio de la historia de las computadoras, se ten√≠a la idea de
+ que un servidor tenia que ser necesariamente una m√°quina, conocida como
+ super computador o mainframe, que contaba con un s√∫per procesador que daba
  servicio a varias terminales tontas.
- Asi, para asegurar mayor poder de c·lculo es necesario tener un procesador
- m·s poderoso.
+ Asi, para asegurar mayor poder de c√°lculo es necesario tener un procesador
+ m√°s poderoso.
  De este modo, cuando los requerimientos de procesamiento aumentan, es necesario
-, en la mayorÌa de los casos, cambiar la super computadora actual por una
+, en la mayor√≠a de los casos, cambiar la super computadora actual por una
  nueva mejor, pasando a subutilizar la super computadora anterior, con un
  alto costo asociado.
 \end_layout
@@ -79,7 +88,7 @@ En el principio de la historia de las computadoras, se tenÌa la idea de
 \begin_layout Standard
 
 \lang english
-Esta idea encontrÛ oposiciÛn en 1994, cuando Donald Becker y Thomas Sterling
+Esta idea encontr√≥ oposici√≥n en 1994, cuando Donald Becker y Thomas Sterling
  crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
 to poniendo a trabajar varias computadoras en paralelo con procesadores
  16 DX4, interconectadas en una red de 10 Mbit Ethernet.
@@ -88,8 +97,8 @@ to poniendo a trabajar varias computadoras en paralelo con procesadores
 \begin_layout Standard
 
 \lang english
-A partir de ese momento, y debido al Èxito alcanzado en el proyecto, muchos
- otros proyectos siguieron la investigaci¥n del tema, bajo la premisa de
+A partir de ese momento, y debido al √©xito alcanzado en el proyecto, muchos
+ otros proyectos siguieron la investigaci¬¥n del tema, bajo la premisa de
  convertir hardware de relativo bajo costo en clusters que logren equiparar
  o superar la performance alcanzada por las supercomputadoras.
 \end_layout
@@ -100,18 +109,18 @@ A partir de ese momento, y debido al Èxito alcanzado en el proyecto, muchos
 Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
  tareas como Data Mining, Servidores de Archivos, Servidores de Base de
  Datos, Servidores Web, Simuladores de Vuelo, Graphics Rendering, Modeladores
- Clim·ticos o incluso para CD Ripping alcanzando velocidades realmente altas.
+ Clim√°ticos o incluso para CD Ripping alcanzando velocidades realmente altas.
 \end_layout
 
 \begin_layout Standard
 
 \lang english
-La idea es simplemente reunir el poder de cÛmputo de una serie de nodos
- para proveer alta escabilidad, poder de cÛmputo, o construir redundancia
+La idea es simplemente reunir el poder de c√≥mputo de una serie de nodos
+ para proveer alta escabilidad, poder de c√≥mputo, o construir redundancia
  y de esta manera proveer alta disponibilidad.
- Entonces en vez de un simple cliente haciendo peticiones de uno o m·s servidore
-s, los cluster utilizan m˙ltiples m·quinas para proveer un ambiente m·s
- poderoso de cÛmputo, a travÈs de una sola imagen de sistema, esto es que
+ Entonces en vez de un simple cliente haciendo peticiones de uno o m√°s servidore
+s, los cluster utilizan m√∫ltiples m√°quinas para proveer un ambiente m√°s
+ poderoso de c√≥mputo, a trav√©s de una sola imagen de sistema, esto es que
  el procesamiento sea visible al usuario como una sola unidad, aunque se
  componga de muchas computadoras trabajando en paralelo para el mismo fin.
 \end_layout
@@ -120,18 +129,18 @@ s, los cluster utilizan m˙ltiples m·quinas para proveer un ambiente m·s
 
 \lang english
 El alto poder de procesamiento de varias computadoras trabajando en paralelo,
- (o cluster de computadoras), se perfila como una soluciÛn viable a las
- empresas, universidades y escuelas a un bajo costo de implementaciÛn.
+ (o cluster de computadoras), se perfila como una soluci√≥n viable a las
+ empresas, universidades y escuelas a un bajo costo de implementaci√≥n.
  
 \end_layout
 
 \begin_layout Standard
 
 \lang english
-Con el tiempo, la investigaciÛn se ha ido especializando en ·reas especÌficas.
+Con el tiempo, la investigaci√≥n se ha ido especializando en √°reas espec√≠ficas.
  El Cluster de Alto Rendimiento se aplica principalmente a aplicaciones
- cientÌficas mientras que el Cluster de Alta Disponibilidad y Cluster de
- Balanceo de Carga son m·s utilizado en el ambiente de negocios.
+ cient√≠ficas mientras que el Cluster de Alta Disponibilidad y Cluster de
+ Balanceo de Carga son m√°s utilizado en el ambiente de negocios.
  En este trabajo nos enfocaremos en el primero.
 \end_layout
 
@@ -144,19 +153,19 @@ Trabajos previos
 \begin_layout Standard
 
 \lang english
-No son pocos los trabajos realizados sobre investigaciÛn, desarrollo, construcci
-Ûn y aplicaciones de clusters, pero es relativamente poca la bibliografÌa
- asociada, dado que el tema ha ganado auge principalmente en la ˙ltima dÈcada,
- m·s alla de que la idea no es nueva.
+No son pocos los trabajos realizados sobre investigaci√≥n, desarrollo, construcci
+√≥n y aplicaciones de clusters, pero es relativamente poca la bibliograf√≠a
+ asociada, dado que el tema ha ganado auge principalmente en la √∫ltima d√©cada,
+ m√°s alla de que la idea no es nueva.
  Se remontan estudios desde 1970, pero se puede decir que IBM fue la primera
- en establecer una teorÌa formal con respecto a los clusters.
+ en establecer una teor√≠a formal con respecto a los clusters.
  Este trabajo fue realizado por Gene Myron Amdahl (arquitecto de computadoras
  estadounidense noruego), que en el momento de realizar el estudio donde
- demostrÛ la ley de Amdal (llamada axial en honor a su nombre).
- Esta ley se usa para encontrar la m·xima mejora esperada a un sistema en
+ demostr√≥ la ley de Amdal (llamada axial en honor a su nombre).
+ Esta ley se usa para encontrar la m√°xima mejora esperada a un sistema en
  su totalidad, cuando solo parte del sistema se mejora.
- Esto es usado muy a menudo en computaciÛn paralela para predecir la m·xima
- mejora de velocidad usando m˙ltiples procesadores.
+ Esto es usado muy a menudo en computaci√≥n paralela para predecir la m√°xima
+ mejora de velocidad usando m√∫ltiples procesadores.
  
 \end_layout
 
@@ -167,8 +176,8 @@ Ley de amdahl:
 \begin_inset Quotes eld
 \end_inset
 
-La mejora obtenida en el rendimiento de un sistema debido a la alteraciÛn
- de uno de sus componentes est· limitada por la fracciÛn de tiempo que se
+La mejora obtenida en el rendimiento de un sistema debido a la alteraci√≥n
+ de uno de sus componentes est√° limitada por la fracci√≥n de tiempo que se
  utiliza dicho componente
 \begin_inset Quotes erd
 \end_inset
@@ -187,11 +196,11 @@ La mejora obtenida en el rendimiento de un sistema debido a la alteraciÛn
 \begin_inset Formula $F_{a}$
 \end_inset
 
- es el tiempo de ejecuciÛn antiguo, 
+ es el tiempo de ejecuci√≥n antiguo, 
 \begin_inset Formula $A$
 \end_inset
 
- es la aceleraciÛn obtenida, 
+ es la aceleraci√≥n obtenida, 
 \begin_inset Formula $A_{m}$
 \end_inset
 
@@ -199,16 +208,16 @@ La mejora obtenida en el rendimiento de un sistema debido a la alteraciÛn
 \begin_inset Formula $F_{m}$
 \end_inset
 
- es la fracciÛn de tiempo que el sistema utiliza el subsistema mejorado
+ es la fracci√≥n de tiempo que el sistema utiliza el subsistema mejorado
 \end_layout
 
 \end_deeper
 \begin_layout Standard
 
 \lang english
-Hoy en dÌa, hay muchÌsimos trabajos de diferente Ìndole con respecto a los
- clusters de computadoras, debido a que en el·mbito de computaciÛn paralela,
- el cluster es la nueva modalidad de construcciÛn de supercomputadoras,
+Hoy en d√≠a, hay much√≠simos trabajos de diferente √≠ndole con respecto a los
+ clusters de computadoras, debido a que en el√°mbito de computaci√≥n paralela,
+ el cluster es la nueva modalidad de construcci√≥n de supercomputadoras,
  por su bajo costo y accesibilidad.
 \end_layout
 
@@ -429,73 +438,118 @@ Cluster Knoppix
 \end_layout
 
 \begin_layout Section
-ComputaciÛn de Alto Rendimiento
+Computaci√≥n de Alto Rendimiento
 \end_layout
 
 \begin_layout Standard
-El campo de la computaciÛn de alto rendimiento es muy importante en la resoluciÛ
-n a problemas complejos.
- La computaciÛn de alto rendimiento se apoya en tecnologÌas como los clusters,
- supercomputadores o mediante el uso de la computaciÛn paralela.
+En el correr de los ultimos anos a crecido la importancias de satisfacer
+ requisitos crecientes de poder de conputo debido a:
+\end_layout
+
+\begin_layout Standard
+-la necesidad de resolver problemas mas complicados
+\end_layout
+
+\begin_layout Standard
+-resolver modelos mas complejos
+\end_layout
+
+\begin_layout Standard
+-grandes volumenes de datos
+\end_layout
+
+\begin_layout Standard
+-capacidad de respuesta en tiempo limitado
+\end_layout
+
+\begin_layout Standard
+El procesamiento paralelo o Computacion Paralela de alto renedimiento a
+ ganado terreno y se a vuelo muy importante en la resoluci√≥n de estos requisitos.
+\end_layout
+
+\begin_layout Standard
+La computaci√≥n de alto rendimiento se apoya en tecnolog√≠as como los clusters,
+ supercomputadores o mediante el uso de la computaci√≥n paralela y distribuida.
  
 \end_layout
 
 \begin_layout Subsection
-ComputaciÛn Distribuida
+Computaci√≥n Distribuida
 \end_layout
 
 \begin_layout Standard
-La computaciÛn distribuida es un modelo para resolver problemas de computaciÛn
- masiva utilizando un gran n˙mero de computadoras en una infraestructura
+La computaci√≥n distribuida es un modelo para resolver problemas de computaci√≥n
+ masiva utilizando un gran n√∫mero de computadoras en una infraestructura
  de telecomunicaciones distribuida.
 \end_layout
 
 \begin_layout Standard
-La inform·tica distribuida consiste en compartir recursos heterogÈneos (basadas
+La inform√°tica distribuida consiste en compartir recursos heterog√©neos (basadas
  en distintas plataformas, arquitecturas de equipos y programas, lenguajes
- de programaciÛn), situados en distintos lugares y pertenecientes a diferentes
- dominios de administraciÛn sobre una red que utiliza est·ndares abiertos.
+ de programaci√≥n), situados en distintos lugares y pertenecientes a diferentes
+ dominios de administraci√≥n sobre una red que utiliza est√°ndares abiertos.
  
 \end_layout
 
 \begin_layout Standard
-La computaciÛn distribuida ha sido diseÒada para resolver problemas demasiado
- grandes para cualquier supercomputadora y main-frame, manteniendose la
- flexibilidad de trabajar en m˙ltiples problemas m·s pequeÒos.
- Por lo tanto, la computaciÛn en grid es naturalmente un entorno multi-usuario;
- por ello, las tÈcnicas de autorizaciÛn segura son esenciales antes de permitir
- que los recursos inform·ticos sean controlados por usuarios remotos.
-\end_layout
-
-\begin_layout Subsection
-ProgramaciÛn Paralela
+Exiten varios grados de distribucion: dsitribucion de hardware y procesamiento,
+ distribucion de datos y distrubucion del control
 \end_layout
 
 \begin_layout Standard
-La programaciÛn paralela es una tÈcnica de programaciÛn basada en la ejecuciÛn
- simult·nea, bien sea en un mismo ordenador (con uno o varios procesadores)
- o en un cluster de ordenadores, en cuyo caso se denomina computaciÛn distribuid
+La computaci√≥n distribuida ha sido dise√±ada para resolver problemas demasiado
+ grandes para cualquier supercomputadora y main-frame, manteniendose la
+ flexibilidad de trabajar en m√∫ltiples problemas m√°s peque√±os.
+ Por lo tanto, la computaci√≥n en grid es naturalmente un entorno multi-usuario;
+ por ello, las t√©cnicas de autorizaci√≥n segura son esenciales antes de permitir
+ que los recursos inform√°ticos sean controlados por usuarios remotos.
+\end_layout
+
+\begin_layout Standard
+Ventajas de la computacion distribuida: mejora en desempeno, robustez, seguridad
+ no centralizada, acceso transparente a los datos no locales.
+\end_layout
+
+\begin_layout Subsection
+Programaci√≥n Paralela
+\end_layout
+
+\begin_layout Standard
+La programaci√≥n paralela es una t√©cnica de programaci√≥n basada en la ejecuci√≥n
+ simult√°nea, bien sea en un mismo ordenador (con uno o varios procesadores)
+ o en un cluster de ordenadores, en cuyo caso se denomina computaci√≥n distribuid
 a.
- Al contrario que en la programaciÛn concurrente, esta tÈcnica enfatiza
- la verdadera simultaneidad en el tiempo de la ejecuciÛn de las tareas.
+ Al contrario que en la programaci√≥n concurrente, esta t√©cnica enfatiza
+ la verdadera simultaneidad en el tiempo de la ejecuci√≥n de las tareas.
+\end_layout
+
+\begin_layout Standard
+Esta tecnica se ha visto posibilitada por avances en diferentes tecnologias
+ como microporcesadores con mayor poder de procesamiento, comunicacion de
+ datos, desarrollo de bibliotecas e interfaces para programacion de procesos.
 \end_layout
 
 \begin_layout Standard
 Los sistemas con multiprocesador y multicomputadores consiguen un aumento
- del rendimiento si se utilizan estas tÈcnicas.
+ del rendimiento si se utilizan estas t√©cnicas.
  En los sistemas monoprocesador el beneficio en rendimiento no es tan evidente,
- ya que la CPU es compartida por m˙ltiples procesos en el tiempo, lo que
- se denomina multiplexaciÛn o multiprogramaciÛn.
+ ya que la CPU es compartida por m√∫ltiples procesos en el tiempo, lo que
+ se denomina multiplexaci√≥n o multiprogramaci√≥n.
 \end_layout
 
 \begin_layout Standard
-El mayor problema de la computaciÛn paralela radica en la complejidad de
- sincronizar unas tareas con otras, ya sea mediante secciones crÌticas,
- sem·foros o paso de mensajes, para garantizar la exclusiÛn mutua en las
- zonas del cÛdigo en las que sea necesario.
+El mayor problema de la computaci√≥n paralela radica en la complejidad de
+ sincronizar unas tareas con otras, ya sea mediante secciones cr√≠ticas,
+ sem√°foros o paso de mensajes, para garantizar la exclusi√≥n mutua en las
+ zonas del c√≥digo en las que sea necesario.
 \end_layout
 
 \begin_layout Standard
+Ventajas de la programacion paralela: mayor capacidad de proceso, menosr
+ tiempo de procesamiento, aprovechar la escalabilidad potencial de los recursos
+\end_layout
+
+\begin_layout Subsubsection
 Aplicaciones demandantes de recursos
 \end_layout
 
@@ -504,15 +558,15 @@ Podemos hacer una division de las aplicaciones que requieren una demanda
  de recusrsos computaionales importantes de la siguiente manera.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Aplicacions de calculo intencivas
 \end_layout
 
 \begin_layout Standard
-Son aplicaciones que requieren un alto numero de ciclos de m·quinas, estas
+Son aplicaciones que requieren un alto numero de ciclos de m√°quinas, estas
  son las que han impulsado el desarrollo de supercomputadores.
- Son tÌpicas en ciencias e ingenierÌa, aunque recientemente han aparecido
- en otras ·reas como simulaciÛn financiera y econÛmica.
+ Son t√≠picas en ciencias e ingenier√≠a, aunque recientemente han aparecido
+ en otras √°reas como simulaci√≥n financiera y econ√≥mica.
  Dependen grandemente de la velocidad y el procesamiento de punto flotantes
  de los supercomputadores.
  
@@ -523,11 +577,11 @@ Algunos ejemplos son:
 \end_layout
 
 \begin_layout Itemize
-Din·mica de fluidos computacional.
+Din√°mica de fluidos computacional.
 \end_layout
 
 \begin_layout Itemize
-Simulaciones electromagnÈticas.
+Simulaciones electromagn√©ticas.
 \end_layout
 
 \begin_layout Itemize
@@ -535,33 +589,33 @@ Modelado ambiental.
 \end_layout
 
 \begin_layout Itemize
-Din·mica estructural.
+Din√°mica estructural.
 \end_layout
 
 \begin_layout Itemize
-Modelado biolÛgico.
+Modelado biol√≥gico.
 \end_layout
 
 \begin_layout Itemize
-Din·mica molecular.
+Din√°mica molecular.
 \end_layout
 
 \begin_layout Itemize
-SimulaciÛn de redes.
+Simulaci√≥n de redes.
 \end_layout
 
 \begin_layout Itemize
-Modelado financiero y econÛmico.
+Modelado financiero y econ√≥mico.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 Aplicaciones de almacenemiento masivo
 \end_layout
 
 \begin_layout Standard
 Dependen de la capacidad para almacenar y procesar grandes cantidades de
- informaciÛn.
- Requieren de un acceso r·pido y seguro a una masa considerable de datos
+ informaci√≥n.
+ Requieren de un acceso r√°pido y seguro a una masa considerable de datos
  almacenados.
  
 \end_layout
@@ -571,26 +625,26 @@ Algunas de ellas son:
 \end_layout
 
 \begin_layout Itemize
-An·lisis de data sÌsmica.
+An√°lisis de data s√≠smica.
 \end_layout
 
 \begin_layout Itemize
-Procesamiento de im·genes.
+Procesamiento de im√°genes.
 \end_layout
 
 \begin_layout Itemize
-MinerÌa de datos.
+Miner√≠a de datos.
 \end_layout
 
 \begin_layout Itemize
-An·lisis estadÌstico de datos.
+An√°lisis estad√≠stico de datos.
 \end_layout
 
 \begin_layout Itemize
-An·lisis de mercados.
+An√°lisis de mercados.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 Aplicaciones exigentes comunicacionalmente
 \end_layout
 
@@ -606,7 +660,7 @@ Ejemplos:
 \end_layout
 
 \begin_layout Itemize
-Procesamiento de transacciones en lÌnea.
+Procesamiento de transacciones en l√≠nea.
 \end_layout
 
 \begin_layout Itemize
@@ -618,32 +672,32 @@ Texto por demanda.
 \end_layout
 
 \begin_layout Itemize
-VÌdeo por demanda.
+V√≠deo por demanda.
 \end_layout
 
 \begin_layout Itemize
-Im·genes por demanda.
+Im√°genes por demanda.
 \end_layout
 
 \begin_layout Itemize
-SimulaciÛn por demanda.
+Simulaci√≥n por demanda.
 \end_layout
 
 \begin_layout Standard
 Obviamente que todas las aplicaciones anteriores dependen en cierto grado
  de cada uno de los aspectos computacionales mencionados: poder de computo,
- capacidades de almacenamiento y eficientes canales de comunicaciÛn, sin
- embargo las podemos agrupar por su caracterÌstica dominante.
+ capacidades de almacenamiento y eficientes canales de comunicaci√≥n, sin
+ embargo las podemos agrupar por su caracter√≠stica dominante.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Sistemas de sistemas
 \end_layout
 
 \begin_layout Standard
-Las aplicaciones en este grupo combinan en forma m·s compleja las caracterÌstica
+Las aplicaciones en este grupo combinan en forma m√°s compleja las caracter√≠stica
 s anteriores y dependen, en muchos casos, de sistemas computacionales integrados
- diseÒados primordialmente para ellas.
+ dise√±ados primordialmente para ellas.
  
 \end_layout
 
@@ -660,28 +714,28 @@ Control de sistemas a tiempo real.
 \end_layout
 
 \begin_layout Itemize
-Banca electrÛnica.
+Banca electr√≥nica.
 \end_layout
 
 \begin_layout Itemize
-Compras electrÛnicas.
+Compras electr√≥nicas.
 \end_layout
 
 \begin_layout Itemize
-EducaciÛn.
+Educaci√≥n.
 \end_layout
 
 \begin_layout Standard
-Existe una alta correspondencia entre la evoluciÛn de tecnologÌas informaticas
+Existe una alta correspondencia entre la evoluci√≥n de tecnolog√≠as informaticas
  y el desarrollo de aplicaciones; en particular el hardware tiene gran influenci
-a en el Èxito de ciertas ·reas.
- La aplicaciones intensivas en c·lculo fueron estimuladas principalmente
- por m·quinas vectoriales y procesadores masivamente paralelos.
+a en el √©xito de ciertas √°reas.
+ La aplicaciones intensivas en c√°lculo fueron estimuladas principalmente
+ por m√°quinas vectoriales y procesadores masivamente paralelos.
  Las aplicaciones de almacenamiento masivo han sido guiadas por dispositivos
  de almacenamiento como RAID y robots de cintas.
  Las aplicaciones exigentes comunicacionales como herramientas colaborativas
- basadas en WWW y servicios por demanda en lÌnea originalmente surgieron
- con las LAN y estan creciendo dr·sticamente con Internet.
+ basadas en WWW y servicios por demanda en l√≠nea originalmente surgieron
+ con las LAN y estan creciendo dr√°sticamente con Internet.
 \end_layout
 
 \begin_layout Subsection
@@ -689,48 +743,48 @@ Organizacion de computadores
 \end_layout
 
 \begin_layout Standard
-La organizaciÛn de los procesadores o red se refiere a como se conectan
+La organizaci√≥n de los procesadores o red se refiere a como se conectan
  o enlazan los procesadores o nodos en un computador paralelo.
 \end_layout
 
 \begin_layout Standard
-Existen varios criteriospara evaluar los distintos diseÒos de organizacion:
+Existen varios criteriospara evaluar los distintos dise√±os de organizacion:
  
 \end_layout
 
 \begin_layout Standard
-1) Di·metro: viene dado por la mayor distancia entre dos nodos.
- Mientras menor sea el di·metro menor ser· el tiempo de comunicaciÛn entre
+1) Di√°metro: viene dado por la mayor distancia entre dos nodos.
+ Mientras menor sea el di√°metro menor ser√° el tiempo de comunicaci√≥n entre
  nodos.
 \end_layout
 
 \begin_layout Standard
-2) Ancho de bisecciÛn de la red: es el menor n˙mero de enlaces que deben
+2) Ancho de bisecci√≥n de la red: es el menor n√∫mero de enlaces que deben
  ser removidos para dividir la red por la mitad.
- Un ancho de bisecciÛn alto puede reducir el tiempo de comunicaciÛn cuando
- el movimiento de datos es sustancial, y un ancho de bisecciÛn alto hace
- el sistema m·s tolerante a fallas debido a que defectos en un nodo no hacen
+ Un ancho de bisecci√≥n alto puede reducir el tiempo de comunicaci√≥n cuando
+ el movimiento de datos es sustancial, y un ancho de bisecci√≥n alto hace
+ el sistema m√°s tolerante a fallas debido a que defectos en un nodo no hacen
  inoperable a todo el sistema.
 \end_layout
 
 \begin_layout Standard
-3) Es preferible que el n˙mero de enlaces por nodo sea una constante independien
-te del tamaÒo de la red, ya que hace m·s f·cil incrementar el n˙mero de
+3) Es preferible que el n√∫mero de enlaces por nodo sea una constante independien
+te del tama√±o de la red, ya que hace m√°s f√°cil incrementar el n√∫mero de
  nodos.
 \end_layout
 
 \begin_layout Standard
-4) Es preferible que la longitud m·xima de los enlaces sea una constante
- independiente del tamaÒo de la red, ya que hace m·s f·cil aÒadir nodos.
+4) Es preferible que la longitud m√°xima de los enlaces sea una constante
+ independiente del tama√±o de la red, ya que hace m√°s f√°cil a√±adir nodos.
  
 \end_layout
 
 \begin_layout Standard
-5) Redes est·ticas y din·micas.
- En las redes est·ticas la topologÌa de interconexiÛn se define cuando se
- construye la m·quina.
- Si la red es din·mica, la interconexiÛn puede variar durante la ejecuciÛn
- de un programa o entre la ejecuciÛn de programas.
+5) Redes est√°ticas y din√°micas.
+ En las redes est√°ticas la topolog√≠a de interconexi√≥n se define cuando se
+ construye la m√°quina.
+ Si la red es din√°mica, la interconexi√≥n puede variar durante la ejecuci√≥n
+ de un programa o entre la ejecuci√≥n de programas.
 \end_layout
 
 \begin_layout Standard
@@ -742,16 +796,16 @@ BUS Y ETHERNET
 \end_layout
 
 \begin_layout Standard
-En una red donde los procesadores comparten el mismo recurso de comunicaciÛn:
+En una red donde los procesadores comparten el mismo recurso de comunicaci√≥n:
  el bus.
  
 \end_layout
 
 \begin_layout Standard
-Esta arquitectura es f·cil y econÛmica de implementar, pero es altamente
+Esta arquitectura es f√°cil y econ√≥mica de implementar, pero es altamente
  no escalable ya que solo un procesador puede usar el bus en un momento
- dado; a medida que se incrementa el n˙mero de procesadores, el bus se convierte
- en un cuello de botella debido a la congestiÛn.
+ dado; a medida que se incrementa el n√∫mero de procesadores, el bus se convierte
+ en un cuello de botella debido a la congesti√≥n.
  
 \end_layout
 
@@ -761,7 +815,10 @@ wide false
 sideways false
 status open
 
-\begin_layout Caption
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
 C:
 \backslash
 Documents and Settings
@@ -788,26 +845,31 @@ bus.png
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Mallas
 \end_layout
 
 \begin_layout Standard
-Al igual que el bus (o ethernet), las mallas son f·ciles y econÛmicas de
- implementar, sin embargo el di·metro se incrementa al aÒadir nodos.
- En las mallas de dimensiÛn 1, si los dos nodos extremos tambiÈn son conectados,
+Al igual que el bus (o ethernet), las mallas son f√°ciles y econ√≥micas de
+ implementar, sin embargo el di√°metro se incrementa al a√±adir nodos.
+ En las mallas de dimensi√≥n 1, si los dos nodos extremos tambi√©n son conectados,
  entonces se tiene un anillo.
 \end_layout
 
 \begin_layout Standard
-Mallas de 2 dimensiones y de 3 dimensiones son comunes en computaciÛn paralela
+Mallas de 2 dimensiones y de 3 dimensiones son comunes en computaci√≥n paralela
  y tiene la ventaja de que pueden ser construidas sin conexiones largas.
- El di·metro de las mallas puede ser reducido a la mitad si se extiende
+ El di√°metro de las mallas puede ser reducido a la mitad si se extiende
  la malla con conexiones toroidales de forma que los procesadores en los
- bordes tambiÈn estÈn conectados con vecinos.
- Esto sin embargo presenta dos desventajas: a) conexiones m·s largas son
+ bordes tambi√©n est√©n conectados con vecinos.
+ Esto sin embargo presenta dos desventajas: a) conexiones m√°s largas son
  requeridas y b) un subconjunto de un torus no es un torus y los beneficios
- de esta interconexiÛn se pierden si la m·quina es particionada entre varios
+ de esta interconexi√≥n se pierden si la m√°quina es particionada entre varios
  usuarios.
 \end_layout
 
@@ -817,7 +879,10 @@ wide false
 sideways false
 status open
 
-\begin_layout Caption
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
 C:
 \backslash
 Documents and Settings
@@ -844,6 +909,11 @@ malla1.png
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Mariposa
 \end_layout
@@ -858,7 +928,10 @@ wide false
 sideways false
 status open
 
-\begin_layout Caption
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
 C:
 \backslash
 Documents and Settings
@@ -885,14 +958,19 @@ mariposa.png
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Arboles binarios
 \end_layout
 
 \begin_layout Standard
-Son particularmente ˙tiles en problemas de ordenamiento, multiplicaciÛn
- de matrices, y algunos problemas en los que los tiempos sw soluciÛn crecen
- exponencialmente con el tamaÒo del problema (NP-complejos).
+Son particularmente √∫tiles en problemas de ordenamiento, multiplicaci√≥n
+ de matrices, y algunos problemas en los que los tiempos sw soluci√≥n crecen
+ exponencialmente con el tama√±o del problema (NP-complejos).
  
 \end_layout
 
@@ -902,7 +980,7 @@ Piramides
 
 \begin_layout Standard
 Estas redes intentan combinar las ventajas de las mallas y los arboles,
- se incrementa la tolerancia a fallas y el n˙mero de vias de comunicaciÛn.
+ se incrementa la tolerancia a fallas y el n√∫mero de vias de comunicaci√≥n.
 \end_layout
 
 \begin_layout Standard
@@ -911,7 +989,10 @@ wide false
 sideways false
 status open
 
-\begin_layout Caption
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
 C:
 \backslash
 Documents and Settings
@@ -938,23 +1019,28 @@ piramide.png
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Hipercubo
 \end_layout
 
 \begin_layout Standard
 Un hipercubo puede ser considerado como una malla con conexiones largas
- adicionales, estas conexiones reducen el di·metro e incrementan el ancho
- de bisecciÛn.
+ adicionales, estas conexiones reducen el di√°metro e incrementan el ancho
+ de bisecci√≥n.
  
 \end_layout
 
 \begin_layout Standard
 Se puede definir recursibamente un hipercubo de la siguiente manera: un
- hipercubo de dimensiÛn-cero es un ˙nico procesador y un hipercubo de dimensiÛn-
-uno conecta dos hipercubos de dimensiÛn-cero.
- En general, un hipercubo de dimensiÛn d+1 con 2d+1 nodos, se construye
- conectando los procesadores respectivos de dos hipercubos de dimensiÛn
+ hipercubo de dimensi√≥n-cero es un √∫nico procesador y un hipercubo de dimensi√≥n-
+uno conecta dos hipercubos de dimensi√≥n-cero.
+ En general, un hipercubo de dimensi√≥n d+1 con 2d+1 nodos, se construye
+ conectando los procesadores respectivos de dos hipercubos de dimensi√≥n
  d.
  
 \end_layout
@@ -966,8 +1052,8 @@ Omega
 \begin_layout Standard
 Es una red formada por crossbar switches 2x2.
  Estos tiene cuatro estados posibles: recto, cruzado, broadcast superior
- y broadcast inferior que son configurados segun la conexiÛn que se tien.
- Estas topologÌas se llaman din·micas o reconfigurables.
+ y broadcast inferior que son configurados segun la conexi√≥n que se tien.
+ Estas topolog√≠as se llaman din√°micas o reconfigurables.
  
 \end_layout
 
@@ -988,45 +1074,45 @@ Fibras de interconexion
 
 \begin_layout Standard
 Estas so un conjunto de switches, llamados routers, enlazados por distintas
- configuraciones o topologÌas.
+ configuraciones o topolog√≠as.
 \end_layout
 
 \begin_layout Subsection
-DiseÒo de algoritmos paraleleos
+Dise√±o de algoritmos paraleleos
 \end_layout
 
 \begin_layout Standard
-El diseÒo de algoritmos paralelos involucra cuatro etapas, las cuales se
- presentan como secuenciales pero que en la pr·ctica no lo son.
+El dise√±o de algoritmos paralelos involucra cuatro etapas, las cuales se
+ presentan como secuenciales pero que en la pr√°ctica no lo son.
 \end_layout
 
 \begin_layout Standard
-1) ParticiÛn: El cÛmputo y los datos sobre los cuales se opera se descomponen
+1) Partici√≥n: El c√≥mputo y los datos sobre los cuales se opera se descomponen
  en tareas.
- Se ignoran aspectos como el n˙mero de procesadores de la m·quina a usar
- y se concentra la atenciÛn en explotar oportunidades de paralelismo.
+ Se ignoran aspectos como el n√∫mero de procesadores de la m√°quina a usar
+ y se concentra la atenci√≥n en explotar oportunidades de paralelismo.
 \end_layout
 
 \begin_layout Standard
-2) ComunicaciÛn: Se determina la comunicaciÛn para coordinar las tareas.
- Se definen estructuras y algoritmos de comunicaciÛn.
+2) Comunicaci√≥n: Se determina la comunicaci√≥n para coordinar las tareas.
+ Se definen estructuras y algoritmos de comunicaci√≥n.
 \end_layout
 
 \begin_layout Standard
-3) AgrupaciÛn: Se evalua en terminos de eficiencia y costos de implementacion
+3) Agrupaci√≥n: Se evalua en terminos de eficiencia y costos de implementacion
  a las dos etapas anteriores.
  
 \end_layout
 
 \begin_layout Standard
-se agrupan tareas pequeÒas en tareas m·s grandes.
+se agrupan tareas peque√±as en tareas m√°s grandes.
 \end_layout
 
 \begin_layout Standard
-4) AsignaciÛn: Cada tarea es asignada a un procesador tratando de maximizar
- la utilizaciÛn de los procesadores y de reducir el costo de comunicaciÛn.
- La asignaciÛn puede ser est·tica (se establece antes de la ejecuciÛn del
- programa) o en tiempo de ejecuciÛn mediante algoritmos de balanceo de carga.
+4) Asignaci√≥n: Cada tarea es asignada a un procesador tratando de maximizar
+ la utilizaci√≥n de los procesadores y de reducir el costo de comunicaci√≥n.
+ La asignaci√≥n puede ser est√°tica (se establece antes de la ejecuci√≥n del
+ programa) o en tiempo de ejecuci√≥n mediante algoritmos de balanceo de carga.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1034,26 +1120,26 @@ Particion
 \end_layout
 
 \begin_layout Standard
-En la etapa de particiÛn se buscan oportunidades de paralelismo y se trata
- de subdividir el problema lo m·s finamente posible.
- Se dividen tanto los cÛmputos como los datos.
+En la etapa de partici√≥n se buscan oportunidades de paralelismo y se trata
+ de subdividir el problema lo m√°s finamente posible.
+ Se dividen tanto los c√≥mputos como los datos.
  
 \end_layout
 
 \begin_layout Standard
 Existen dos formas de descomposicion.
- DescomposiciÛn del dominio: se centra en los datos.
- Se determina la particiÛn
+ Descomposici√≥n del dominio: se centra en los datos.
+ Se determina la partici√≥n
 \end_layout
 
 \begin_layout Standard
-apropiada de los datos y luego se trabaja en los cÛmputos asociados con
+apropiada de los datos y luego se trabaja en los c√≥mputos asociados con
  los datos.
 \end_layout
 
 \begin_layout Standard
-DescomposiciÛn funcional: es el contrario al enfoque anterior, primero se
- descomponen los cÛmputos y luego se ocupa de los datos.
+Descomposici√≥n funcional: es el contrario al enfoque anterior, primero se
+ descomponen los c√≥mputos y luego se ocupa de los datos.
  
 \end_layout
 
@@ -1067,62 +1153,62 @@ el orden de tareas debe ser por lo menos superior al numero de procesadores
 \end_layout
 
 \begin_layout Itemize
-evitar cÛmputos y almacenamientos redundantes
+evitar c√≥mputos y almacenamientos redundantes
 \end_layout
 
 \begin_layout Itemize
-las tareas deben ser de tamaÒos equivalentes para facilitar el balanceo
+las tareas deben ser de tama√±os equivalentes para facilitar el balanceo
  de la carga de los procesadores.
 \end_layout
 
 \begin_layout Itemize
-el n˙mero de tareas debe ser proporcional al tamaÒo del problema
+el n√∫mero de tareas debe ser proporcional al tama√±o del problema
 \end_layout
 
 \begin_layout Subsubsection
-ComunicaciÛn
+Comunicaci√≥n
 \end_layout
 
 \begin_layout Standard
-El proceso de particiÛn de tareas no es independiente del proceso de comunicaciÛ
+El proceso de partici√≥n de tareas no es independiente del proceso de comunicaci√≥
 n.
- En esta se especifica como los datos ser·n transferidos o compartidos entre
+ En esta se especifica como los datos ser√°n transferidos o compartidos entre
  tareas.
 \end_layout
 
 \begin_layout Standard
-La comunicaciÛn puede ser definida en dos fases.
+La comunicaci√≥n puede ser definida en dos fases.
  Primero se definen los canales que conectan las tareas.
  Segundo
 \end_layout
 
 \begin_layout Standard
-se especifica la informaciÛn o mensajes que deben ser enviado y recibidos
+se especifica la informaci√≥n o mensajes que deben ser enviado y recibidos
  en estos canales.
 \end_layout
 
 \begin_layout Standard
 Dependiendo de si estamos en el caso de memoria distribuida o memoria compartida
- dependera la forma de atacar la comunicaciÛn entre tareas varÌa.
+ dependera la forma de atacar la comunicaci√≥n entre tareas var√≠a.
 \end_layout
 
 \begin_layout Standard
-En un ambientes de memoria distribuida, las tareas tiene una identificaciÛn
- ˙nica y interactuan enviando y recibiendo mensajes hacia y desde tareas
- especÌficas.
- Las librerÌas m·s conocidas para implementar el pase de mensajes en ambientes
+En un ambientes de memoria distribuida, las tareas tiene una identificaci√≥n
+ √∫nica y interactuan enviando y recibiendo mensajes hacia y desde tareas
+ espec√≠ficas.
+ Las librer√≠as m√°s conocidas para implementar el pase de mensajes en ambientes
  de memoria distribuida son: MPI (Message Passing Interface) y PVM (Parallel
  Virtual Machine).
 \end_layout
 
 \begin_layout Standard
-En ambientes de memoria compartida no existe la nociÛn de pertenencia y
- el envÌo de datos no se d· como tal.
+En ambientes de memoria compartida no existe la noci√≥n de pertenencia y
+ el env√≠o de datos no se d√° como tal.
  Todas las tareas comparten la misma memoria.
 \end_layout
 
 \begin_layout Standard
-Sem·foros, sem·foros binarios, barreras y otros mecanismos de sincronizacion
+Sem√°foros, sem√°foros binarios, barreras y otros mecanismos de sincronizacion
  son usados para controlar el acceso a la memoria compartida y coordinar
  las tareas.
 \end_layout
@@ -1132,22 +1218,22 @@ En esta etapa hay que tener en cuenta los siguientes aspectos:
 \end_layout
 
 \begin_layout Itemize
-las tareas deben efectuar aproximadamente el mismo n˙mero de operaciones
- de comunicaciÛn.
+las tareas deben efectuar aproximadamente el mismo n√∫mero de operaciones
+ de comunicaci√≥n.
  De otra forma es muy probable que el algoritmo no sea extensible a problemas
- mayores ya que habr·n cuellos de botella.
+ mayores ya que habr√°n cuellos de botella.
 \end_layout
 
 \begin_layout Itemize
-la comunicaciÛn entre tareas debe ser tan pequeÒa como sea posible.
+la comunicaci√≥n entre tareas debe ser tan peque√±a como sea posible.
 \end_layout
 
 \begin_layout Itemize
-las operaciones de comunicaciÛn deben poder proceder concurrentemente.
+las operaciones de comunicaci√≥n deben poder proceder concurrentemente.
 \end_layout
 
 \begin_layout Itemize
-los cÛmputos de diferentes tareas deben poder proceder concurrentemente.
+los c√≥mputos de diferentes tareas deben poder proceder concurrentemente.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1155,42 +1241,42 @@ Agrupacion
 \end_layout
 
 \begin_layout Standard
-En las dos tareas anteriores el algoritmo resultante es a˙n abstracto en
- el sentido de que no se tomÛ en cuenta la m·quina sobre el cual correr·.
+En las dos tareas anteriores el algoritmo resultante es a√∫n abstracto en
+ el sentido de que no se tom√≥ en cuenta la m√°quina sobre el cual correr√°.
  En este proceso se busca un algoritmo concreto, que corra eficientemente
  sobre cierta clase de computadores.
  
 \end_layout
 
 \begin_layout Standard
-En particular se considera si es ˙til agrupar tareas y si vale la pena replicar
- datos y/o cÛmputos.
+En particular se considera si es √∫til agrupar tareas y si vale la pena replicar
+ datos y/o c√≥mputos.
 \end_layout
 
 \begin_layout Standard
-En el proceso de particiÛn se trata de establecer el mayor n˙mero posible
- de tareas con la intensiÛn de maximizar el paralelismo.
+En el proceso de partici√≥n se trata de establecer el mayor n√∫mero posible
+ de tareas con la intensi√≥n de maximizar el paralelismo.
  
 \end_layout
 
 \begin_layout Standard
 Esto no necesariamente produce un algoritmo eficiente ya que el costo de
- comunicaciÛn puede ser significativo.
+ comunicaci√≥n puede ser significativo.
  
 \end_layout
 
 \begin_layout Standard
-Mediante la agrupaciÛn de tareas se puede reducir la cantidad de datos a
- enviar y asÌ reducir el n˙mero de
+Mediante la agrupaci√≥n de tareas se puede reducir la cantidad de datos a
+ enviar y as√≠ reducir el n√∫mero de
 \end_layout
 
 \begin_layout Standard
-mensajes y el costo de comunicaciÛn.
+mensajes y el costo de comunicaci√≥n.
 \end_layout
 
 \begin_layout Standard
-Se puede intentar replicar cÛmputos y/o datos para reducir los requerimientos
- de comunicaciÛn.
+Se puede intentar replicar c√≥mputos y/o datos para reducir los requerimientos
+ de comunicaci√≥n.
  
 \end_layout
 
@@ -1199,31 +1285,31 @@ Aspectos a considerar en esta etapa:
 \end_layout
 
 \begin_layout Itemize
-chequear si la agrupaciÛn redujo los costos de comunicaciÛn.
+chequear si la agrupaci√≥n redujo los costos de comunicaci√≥n.
 \end_layout
 
 \begin_layout Itemize
-si se han replicado cÛmputos y/o datos, se debe verificar que los beneficios
+si se han replicado c√≥mputos y/o datos, se debe verificar que los beneficios
  son superiores a los costos.
 \end_layout
 
 \begin_layout Itemize
 se debe verificar que las tareas resultantes tengan costos de computo y
- comunicaciÛn similares.
+ comunicaci√≥n similares.
 \end_layout
 
 \begin_layout Itemize
-revisar si el n˙mero de tareas es extensible con el tamaÒo del problema.
+revisar si el n√∫mero de tareas es extensible con el tama√±o del problema.
 \end_layout
 
 \begin_layout Itemize
-si el agrupamiento ha reducido las oportunidades de ejecuciÛn concurrente,
+si el agrupamiento ha reducido las oportunidades de ejecuci√≥n concurrente,
  se debe verificar que aun hay suficiente concurrencia y posiblemente considerar
- diseÒos alternativos.
+ dise√±os alternativos.
 \end_layout
 
 \begin_layout Itemize
-nalizar si es posible reducir aun m·s el n˙mero de tareas sin introducir
+nalizar si es posible reducir aun m√°s el n√∫mero de tareas sin introducir
  desbalances de cargas o reducir la extensibilidad.
 \end_layout
 
@@ -1232,42 +1318,42 @@ Asignacion
 \end_layout
 
 \begin_layout Standard
-En este proceso se determina en que procesador se ejecutar· cada tarea.
+En este proceso se determina en que procesador se ejecutar√° cada tarea.
  
 \end_layout
 
 \begin_layout Standard
 En maquinas de memoria compartida tipo UMA no se presenta este problema
- ya que proveen asignaciÛn din·mica de procesos y los procesos.
+ ya que proveen asignaci√≥n din√°mica de procesos y los procesos.
  
 \end_layout
 
 \begin_layout Standard
-Actualmente no hay mecanismos generales de asignaciÛn de tareas para m·quinas
- distribuidas por lo que este problema debe ser atacado explÌcitamente en
+Actualmente no hay mecanismos generales de asignaci√≥n de tareas para m√°quinas
+ distribuidas por lo que este problema debe ser atacado expl√≠citamente en
  el diseno de algoritmos paralelos.
 \end_layout
 
 \begin_layout Standard
-La asignaciÛn de tareas puede ser est·tica o din·mica.
- En la asignaciÛn est·tica, las tareas son asignadas a un procesador al
- comienzo de la ejecuciÛn del algoritmo paralelo y corren ahÌ hasta el final.
- La asignaciÛn est·tica en ciertos casos puede resultar en un tiempo de
- ejecuciÛn menor respecto a asignaciones din·micas y tambiÈn puede reducir
- el costo de creaciÛn de procesos, sincronizaciÛn y terminaciÛn.
+La asignaci√≥n de tareas puede ser est√°tica o din√°mica.
+ En la asignaci√≥n est√°tica, las tareas son asignadas a un procesador al
+ comienzo de la ejecuci√≥n del algoritmo paralelo y corren ah√≠ hasta el final.
+ La asignaci√≥n est√°tica en ciertos casos puede resultar en un tiempo de
+ ejecuci√≥n menor respecto a asignaciones din√°micas y tambi√©n puede reducir
+ el costo de creaci√≥n de procesos, sincronizaci√≥n y terminaci√≥n.
 \end_layout
 
 \begin_layout Standard
-En la asignaciÛn din·mica se hacen cambios en la distribuciÛn de las tareas
- entre los procesadores en tiempo de ejecuciÛn Esto es con el fin de balancear
- la carga del sistema y reducir el tiempo de ejecuciÛn.
+En la asignaci√≥n din√°mica se hacen cambios en la distribuci√≥n de las tareas
+ entre los procesadores en tiempo de ejecuci√≥n Esto es con el fin de balancear
+ la carga del sistema y reducir el tiempo de ejecuci√≥n.
  Sin embargo, el
 \end_layout
 
 \begin_layout Standard
 costo de balanceo puede ser significativo y por ende incrementar el tiempo
- de ejecuciÛn.
- Entre los algoritmos de balanceo de carga est·n los siguientes:
+ de ejecuci√≥n.
+ Entre los algoritmos de balanceo de carga est√°n los siguientes:
 \end_layout
 
 \begin_layout Itemize
@@ -1276,8 +1362,8 @@ Balanceo centralizado: un nodo ejecuta el algoritmo y mantiene el estado
 \end_layout
 
 \begin_layout Itemize
-Balanceo completamente distribuido: cada procesador mantiene su propia visiÛn
- del sistema intercambiando informaciÛn con sus vecinos y asÌ hacer cambios
+Balanceo completamente distribuido: cada procesador mantiene su propia visi√≥n
+ del sistema intercambiando informaci√≥n con sus vecinos y as√≠ hacer cambios
  locales.
 \end_layout
 
@@ -1305,26 +1391,26 @@ Procesador Vectorial Pipelined
 \end_layout
 
 \begin_layout Standard
-En estas m·quinas los vectores fluyen a travÈs de las unidades aritmÈticas
+En estas m√°quinas los vectores fluyen a trav√©s de las unidades aritm√©ticas
  pipelined.
 \end_layout
 
 \begin_layout Standard
 Las unidades consisten de una cascada de etapas de procesamiento compuestas
- de circuitos que efect˙an operaciones aritmÈticas o lÛgicas sobre el flujo
- de datos que pasan a travÈs de ellas.
+ de circuitos que efect√∫an operaciones aritm√©ticas o l√≥gicas sobre el flujo
+ de datos que pasan a trav√©s de ellas.
 \end_layout
 
 \begin_layout Standard
-La etapas est·n separadas por registros de alta velocidad usados para guardar
+La etapas est√°n separadas por registros de alta velocidad usados para guardar
  resultados intermedios.
- La informaciÛn que fluye entre las etapas adyacentes esta bajo el control
- de un reloj R que se aplica a todos los registros simult·neamente.
+ La informaci√≥n que fluye entre las etapas adyacentes esta bajo el control
+ de un reloj R que se aplica a todos los registros simult√°neamente.
  
 \end_layout
 
 \begin_layout Standard
-En esta categorÌa tenemos maquinas como la Cray-1 y la Cyber-205.
+En esta categor√≠a tenemos maquinas como la Cray-1 y la Cyber-205.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1332,25 +1418,25 @@ Arreglos de Procesadores
 \end_layout
 
 \begin_layout Standard
-Son m·quinas que constan de un computador secuencial conectado a un arreglo
- de elementos de procesamiento sincronizados e idÈnticos capaces de ejecutar
+Son m√°quinas que constan de un computador secuencial conectado a un arreglo
+ de elementos de procesamiento sincronizados e id√©nticos capaces de ejecutar
  las mismas operaciones sobre datos diferentes.
- El computador secuencial generalmente es un CPU de propÛsito general que
- almacena el programa y los datos que ser·n operados en paralelo, adem·s
- de ejecutar la porciÛn del programa que es secuencial.
+ El computador secuencial generalmente es un CPU de prop√≥sito general que
+ almacena el programa y los datos que ser√°n operados en paralelo, adem√°s
+ de ejecutar la porci√≥n del programa que es secuencial.
  Los elementos de procesamiento se asemejan a CPUs pero no tienen unidades
- de control propias; el computador secuencial genera todas las seÒales de
+ de control propias; el computador secuencial genera todas las se√±ales de
  control para la unidades de procesamiento en el computador.
 \end_layout
 
 \begin_layout Standard
 Los arreglos de procesamiento difieren fundamentalmente en la complejidad
- y la topologÌa de interconexiÛn de sus elementos de procesamiento.
+ y la topolog√≠a de interconexi√≥n de sus elementos de procesamiento.
  
 \end_layout
 
 \begin_layout Standard
-Ejemplos de estas m·quinas son: IILIAC IV, Goodyear MPP y Connection Machine
+Ejemplos de estas m√°quinas son: IILIAC IV, Goodyear MPP y Connection Machine
  CM-200.
 \end_layout
 
@@ -1359,7 +1445,7 @@ Multiprocesadores
 \end_layout
 
 \begin_layout Standard
-Son equipos formados por un n˙mero de procesadores completamente programables
+Son equipos formados por un n√∫mero de procesadores completamente programables
  capaces de ejecutar su propio programa.
 \end_layout
 
@@ -1368,9 +1454,9 @@ UMA: Multiprocesadores de Acceso Uniforme a Memoria
 \end_layout
 
 \begin_layout Standard
-Estos computadores tienen sus procesadores interconectados a travÈs de un
+Estos computadores tienen sus procesadores interconectados a trav√©s de un
  mecanismo de switches a una memoria compartida centralizada.
- Entre estos mecanismos estan: un bus com˙n, crossbar switches, packet-switched
+ Entre estos mecanismos estan: un bus com√∫n, crossbar switches, packet-switched
  networks9.
 \end_layout
 
@@ -1389,14 +1475,14 @@ Estos multiprocesadores tienen el espacio de direccionamiento compartido
  La memoria compartida esta formada por la memoria local de los procesadores.
  El tiempo de acceso a memoria depende de si el acceso es local al procesador
  o no.
- La BBN TC2000 y la SGI Origin 2000 son ejemplos de este modelo de computaciÛn
+ La BBN TC2000 y la SGI Origin 2000 son ejemplos de este modelo de computaci√≥n
  paralela.
 \end_layout
 
 \begin_layout Standard
-El principal problema que presentan los multiprocesadores (m·quinas de memoria
+El principal problema que presentan los multiprocesadores (m√°quinas de memoria
  compartida) radica en que no se pueden agregar procesadores indefinidamente
- ya que a partir de cierto n˙mero y dependiendo de la aplicaciÛn, el mecanismo
+ ya que a partir de cierto n√∫mero y dependiendo de la aplicaci√≥n, el mecanismo
  de switches o enrutamiento se satura , en otras palabras, tienen poca extensibi
 lidad.
 \end_layout
@@ -1406,9 +1492,9 @@ MULTICOMPUTADORES
 \end_layout
 
 \begin_layout Standard
-En esta categorÌa, los procesadores no comparten memoria.
- Cada procesador tiene su propia memoria privada (m·quinas de memoria distribuid
-a) y la interacciÛn entre ellos es a travÈs de pase de mensajes.
+En esta categor√≠a, los procesadores no comparten memoria.
+ Cada procesador tiene su propia memoria privada (m√°quinas de memoria distribuid
+a) y la interacci√≥n entre ellos es a trav√©s de pase de mensajes.
  Ejemplos son: Intel ParagonXP/S, Meikos Computing Surface, nCUBE 2, Parsytec
  SuperCluster, Thinking Machine CM-5 y la IBM SP2.
 \end_layout
@@ -1418,20 +1504,20 @@ MAQUINAS DE MEMORIA COMPARTIDA DISTRIBUIDA
 \end_layout
 
 \begin_layout Standard
-Actualmente las m·quinas paralelas tienden a aprovechar las facilidades
- de programaciÛn que ofrecen los ambientes de memoria compartida y la escalabili
+Actualmente las m√°quinas paralelas tienden a aprovechar las facilidades
+ de programaci√≥n que ofrecen los ambientes de memoria compartida y la escalabili
 dad de los ambientes de memoria distribuida.
  
 \end_layout
 
 \begin_layout Standard
-Este modelo conecta entre si mÛdulos de multiprocesadores manteniendo la
- visiÛn global de la memoria.
+Este modelo conecta entre si m√≥dulos de multiprocesadores manteniendo la
+ visi√≥n global de la memoria.
  
 \end_layout
 
 \begin_layout Standard
-Este tipo de maquinas entra dentro de la categorÌa de NUMA y un ejemplo
+Este tipo de maquinas entra dentro de la categor√≠a de NUMA y un ejemplo
  es la SGI Origin 2000.
 \end_layout
 
@@ -1440,7 +1526,7 @@ MULTIPROCESADORES MULTI-HEBRADOS
 \end_layout
 
 \begin_layout Standard
-En estas m·quinas cada procesador tiene cierto n˙mero de flujos de instrucciones
+En estas m√°quinas cada procesador tiene cierto n√∫mero de flujos de instrucciones
  implementados en hardware, incluyendo el contador de programa y registros,
  cada uno destinado a ejecutar una hebra.
  En cada ciclo el procesador ejecuta instrucciones de una de la hebras.
@@ -1449,21 +1535,21 @@ En estas m·quinas cada procesador tiene cierto n˙mero de flujos de instrucciones
 \end_layout
 
 \begin_layout Standard
-La Tera MTA (multithreaded architecture), es la primera de estas m·quinas
+La Tera MTA (multithreaded architecture), es la primera de estas m√°quinas
  , cada procesador tiene 128 flujos de instrucciones.
 \end_layout
 
 \begin_layout Standard
 Un acceso a memoria dura aproximadamente 100 ciclos por lo que en en la
- prÛxima ejecuciÛn de la hebra se tendr·n los datos requeridos.
+ pr√≥xima ejecuci√≥n de la hebra se tendr√°n los datos requeridos.
  Este mecanismo permite a la MTA tolerar la latencia a memoria y por lo
  tanto no requiere de memorias cache.
 \end_layout
 
 \begin_layout Standard
-Cada instrucciÛn de 64-bits codifica 3 operaciones(una de memoria y dos
- que pueden ser aritmÈticas o de control).
- Cuenta con in sistema operativo de versiÛn distribuida completamente simÈtrica
+Cada instrucci√≥n de 64-bits codifica 3 operaciones(una de memoria y dos
+ que pueden ser aritm√©ticas o de control).
+ Cuenta con in sistema operativo de versi√≥n distribuida completamente sim√©trica
  de UNIX.
 \end_layout
 
@@ -1475,9 +1561,9 @@ El sistema cuenta con 1 a 256 procesadores que comparten una enorme memoria.
 \end_layout
 
 \begin_layout Standard
-Los estudios realizados muestran que el costo del multi-hebrado es pequeÒo,
- con un rendimiento comparable con el de la T90 y los cÛdigos de la MTA
- son significativamente m·s f·ciles de optimizar que en m·quinas masivamente
+Los estudios realizados muestran que el costo del multi-hebrado es peque√±o,
+ con un rendimiento comparable con el de la T90 y los c√≥digos de la MTA
+ son significativamente m√°s f√°ciles de optimizar que en m√°quinas masivamente
  paralelas o estaciones de trabajo de alto rendimiento.
 \end_layout
 
@@ -1502,7 +1588,7 @@ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
 \end_layout
 
 \begin_layout Standard
-Dentro de la clasificacion de Flynn tenemos la siguientes categorÌas.
+Dentro de la clasificacion de Flynn tenemos la siguientes categor√≠as.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1529,7 +1615,7 @@ En esta categoria entrarn los arreglos de procesadores.
 
 \begin_layout Standard
 Hay un conjunto de unidades de procesamiento cada una ejecutando la misma
- operaciÛn sobre datos distintos
+ operaci√≥n sobre datos distintos
 \end_layout
 
 \begin_layout Standard
@@ -1541,25 +1627,25 @@ MISD Multiple instruction stream, single data stream
 \end_layout
 
 \begin_layout Standard
-Existen n procesadores, cada uno recibiendo una instrucciÛn diferente y
+Existen n procesadores, cada uno recibiendo una instrucci√≥n diferente y
  operando sobre el mismo flujo de datos.
 \end_layout
 
 \begin_layout Standard
-Actualmente no hay m·quinas de este tipo por ser poco practicas, a pesar
+Actualmente no hay m√°quinas de este tipo por ser poco practicas, a pesar
  de que ciertas MIMD puedan ser usadas de esta forma.
 \end_layout
 
 \begin_layout Standard
-MIMD Multiple instruction stream, multiple data stream La mayorÌa de los
+MIMD Multiple instruction stream, multiple data stream La mayor√≠a de los
  multiprocesadores y multicomputadores pueden ser clasificados bajo esta
- categorÌa.
- Estos tienen m·s de un procesador independiente, y cada uno puede ejecutar
+ categor√≠a.
+ Estos tienen m√°s de un procesador independiente, y cada uno puede ejecutar
  un programa diferente sobre sus propios datos.
 \end_layout
 
 \begin_layout Standard
-Podemos categorizarlos tambien seg˙n como estÈ organizada su memoria: memoria
+Podemos categorizarlos tambien seg√∫n como est√© organizada su memoria: memoria
  compartida o memoria distribuida.
 \end_layout
 
@@ -1574,7 +1660,7 @@ En esta categoria cada procesador ejecuta una copia exacta del mismo programa,
 \end_layout
 
 \begin_layout Standard
-Pese a no ser una categorÌa definida por Flynn es muy usada y pueder ser
+Pese a no ser una categor√≠a definida por Flynn es muy usada y pueder ser
  considerada como un caso particular de MIMD.
 \end_layout
 
@@ -1583,14 +1669,14 @@ EL IBM SCALABLE POWER PARALLEL SYSTEM (SP2)
 \end_layout
 
 \begin_layout Standard
-Si queremos clasificar a la SP2 dentro de las categorÌas vistas podemos
+Si queremos clasificar a la SP2 dentro de las categor√≠as vistas podemos
  decir que es un multicomputador (memoria distribuida) MIMD.
  
 \end_layout
 
 \begin_layout Standard
-Cada nodo puede ser usado como un computador independiente, pero tambiÈn
- pueden cooperar en la soluciÛn del mismo problema en paralelo.
+Cada nodo puede ser usado como un computador independiente, pero tambi√©n
+ pueden cooperar en la soluci√≥n del mismo problema en paralelo.
  
 \end_layout
 
@@ -1600,7 +1686,7 @@ Tenemos tres tipos de nodos en la SP2:
 
 \begin_layout Itemize
 anchos: se configuran como servidores para proveer servicios necesarios
- para la ejecuciÛn de tareas y permiten conectar directamente dispositivos
+ para la ejecuci√≥n de tareas y permiten conectar directamente dispositivos
  de almacenamiento.
  
 \end_layout
@@ -1615,14 +1701,14 @@ altos constan de hasta 8 procesadores que comparten la misma memoria.
 \end_layout
 
 \begin_layout Standard
-Cada mÛdulo de una SP2 puede tener hasta 16 nodos finos, u 8 anchos o 4
+Cada m√≥dulo de una SP2 puede tener hasta 16 nodos finos, u 8 anchos o 4
  altos.
  
 \end_layout
 
 \begin_layout Standard
 Un switch de alta eficiencia (high-performance-switch) conecta los procesadores
- para proveer altas velocidades de comunicaciÛn.
+ para proveer altas velocidades de comunicaci√≥n.
  
 \end_layout
 
@@ -1634,12 +1720,12 @@ En particular consiste de una red omega, de mutiples etapas, buffers y un
 
 \begin_layout Standard
 Los buffers permiten el almacenamiento temporal de paquetes entre etapas
- en caso de que la etapa siguiente estÈ ocupada.
+ en caso de que la etapa siguiente est√© ocupada.
  
 \end_layout
 
 \begin_layout Standard
-En los protocolos packet-switched, cada mensaje contiene informaciÛn de
+En los protocolos packet-switched, cada mensaje contiene informaci√≥n de
  enrutamiento
 \end_layout
 
@@ -1648,7 +1734,7 @@ que es interpretada por cada elemento del switch.
 \end_layout
 
 \begin_layout Standard
-La SP2 esta basada en el sistema operativo AIX/6000 y en la tecnologÌa RISC
+La SP2 esta basada en el sistema operativo AIX/6000 y en la tecnolog√≠a RISC
  System/6000 POWER2.
  
 \end_layout
@@ -1663,12 +1749,12 @@ La SGI Origin 2000 es un MIMD con memoria distribuida compartida.
 
 \begin_layout Standard
 En cada nodo hay uno o dos procesadores R10000 con memoria distribuida a
- travÈs del sistema.
+ trav√©s del sistema.
  
 \end_layout
 
 \begin_layout Standard
-Esta provista con hardware para la migraciÛn de paginas.
+Esta provista con hardware para la migraci√≥n de paginas.
 \end_layout
 
 \begin_layout Standard
@@ -1676,7 +1762,7 @@ La memoria es universalmente accesible y compartida entre todos los procesadores
 \end_layout
 
 \begin_layout Standard
-De igual forma los dispositivos de I/O est·n distribuidos entre los nodos
+De igual forma los dispositivos de I/O est√°n distribuidos entre los nodos
  pero cada uno esta
 \end_layout
 
@@ -1700,11 +1786,11 @@ El Crossbow es un crossbar chip encargado de conectar dos nodos controladores
 \end_layout
 
 \begin_layout Standard
-La fibra de interconexiÛn es una malla de m˙ltiples enlaces punto-a-punto
- conectados por los enrutadores y provee a cada par de nodos con un mÌnimo
+La fibra de interconexi√≥n es una malla de m√∫ltiples enlaces punto-a-punto
+ conectados por los enrutadores y provee a cada par de nodos con un m√≠nimo
  de dos trayectorias distintas.
  Esta redundancia le permite al sistema eludir enrutadores o enlaces de
- la fibra que estÈn fallando.
+ la fibra que est√©n fallando.
 \end_layout
 
 \begin_layout Standard
@@ -1714,7 +1800,7 @@ La Origin 2000 puede tener hasta 128 procesadores, 4GB de memoria por nodo
 \end_layout
 
 \begin_layout Standard
-A medida que se agregan nodos a la fibra de interconexiÛn, el ancho de banda
+A medida que se agregan nodos a la fibra de interconexi√≥n, el ancho de banda
  y la eficiencia escalan linealmente sin afectar significativamente las
  latencias del sistema.
  
@@ -1725,35 +1811,35 @@ CLUSTERS DE PC'S
 \end_layout
 
 \begin_layout Standard
-El tÈrmino cluster se aplica a los conjuntos de computadoras que se comportan
- como si fuesen una ˙nica computadora.
- Hoy en dÌa tiene un papel importante en aplicaciones cientÌficas y de ingenierÌ
+El t√©rmino cluster se aplica a los conjuntos de computadoras que se comportan
+ como si fuesen una √∫nica computadora.
+ Hoy en d√≠a tiene un papel importante en aplicaciones cient√≠ficas y de ingenier√≠
 a, comerciales, simulaciones, etc.
 \end_layout
 
 \begin_layout Standard
-La tecnologÌa de clusters ha evolucionado apoy·ndose en actividades que
- van desde aplicaciones de supercÛmputo y software de misiones crÌticas,
- servidores Web y comercio electrÛnico, hasta bases de datos de alto rendimiento.
+La tecnolog√≠a de clusters ha evolucionado apoy√°ndose en actividades que
+ van desde aplicaciones de superc√≥mputo y software de misiones cr√≠ticas,
+ servidores Web y comercio electr√≥nico, hasta bases de datos de alto rendimiento.
 \end_layout
 
 \begin_layout Standard
 El uso de clusters surge gracias a la convergencia de varias tendencias
- actuales como la disponibilidad de microprocesadores econÛmicos de alto
+ actuales como la disponibilidad de microprocesadores econ√≥micos de alto
  rendimiento y redes de alta velocidad, la existentica de herramientas para
- cÛmputo distribuido de alto rendimiento, asÌ como la creciente necesidad
+ c√≥mputo distribuido de alto rendimiento, as√≠ como la creciente necesidad
  de potencia computacional para aplicaciones que la requieran.
 \end_layout
 
 \begin_layout Standard
-Un cluster es un grupo de m˙ltiples ordenadores unidos mediante una red
- de alta velocidad, de tal forma que el conjunto es visto como un ˙nico
- ordenador, m·s potente que los comunes de escritorio.
+Un cluster es un grupo de m√∫ltiples ordenadores unidos mediante una red
+ de alta velocidad, de tal forma que el conjunto es visto como un √∫nico
+ ordenador, m√°s potente que los comunes de escritorio.
  
 \end_layout
 
 \begin_layout Standard
-Se espera de un cluster que presente combinaciones de los siguientes caracterÌst
+Se espera de un cluster que presente combinaciones de los siguientes caracter√≠st
 icas:
 \end_layout
 
@@ -1774,21 +1860,21 @@ Escalabilidad
 \end_layout
 
 \begin_layout Standard
-La construcciÛn de los cluster es muy f·cil y econÛmica, debido a su flexibilida
-d: pueden tener todos la misma configuraciÛn de hardware y sistema operativo
- (cluster homogÈneo), diferente rendimiento pero con arquitecturas y sistemas
- operativos similares (cluster semi-homogÈneo), o tener diferente hardware
- y sistema operativo (cluster heterogÈneo).
+La construcci√≥n de los cluster es muy f√°cil y econ√≥mica, debido a su flexibilida
+d: pueden tener todos la misma configuraci√≥n de hardware y sistema operativo
+ (cluster homog√©neo), diferente rendimiento pero con arquitecturas y sistemas
+ operativos similares (cluster semi-homog√©neo), o tener diferente hardware
+ y sistema operativo (cluster heterog√©neo).
 \end_layout
 
 \begin_layout Standard
 Se pueden construir cluster con ordenadores personales desechados por "anticuado
-s" que consiguen competir en capacidad de c·lculo con superordenadores carÌsimos.
+s" que consiguen competir en capacidad de c√°lculo con superordenadores car√≠simos.
 \end_layout
 
 \begin_layout Standard
 Es necesario proveer un sistema para el manejo del cluster, el cual se encargue
- de interactuar con el usuario y los procesos que corren en Èl para optimizar
+ de interactuar con el usuario y los procesos que corren en √©l para optimizar
  el funcionamiento.
 \end_layout
 
@@ -1797,8 +1883,8 @@ Cluster de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-Un cluster de alto rendimiento est· diseÒado para dar altas prestaciones
- en cuanto a capacidad de c·lculo.
+Un cluster de alto rendimiento est√° dise√±ado para dar altas prestaciones
+ en cuanto a capacidad de c√°lculo.
 \end_layout
 
 \begin_layout Standard
@@ -1806,22 +1892,22 @@ Los motivos para utilizar un cluster de alto rendimiento son:
 \end_layout
 
 \begin_layout Itemize
-el tamaÒo del problema por resolver y
+el tama√±o del problema por resolver y
 \end_layout
 
 \begin_layout Itemize
-el precio de la m·quina necesaria para resolverlo.
+el precio de la m√°quina necesaria para resolverlo.
 \end_layout
 
 \begin_layout Standard
-Por medio de un cluster se pueden conseguir capacidades de c·lculo superiores
- a las de un ordenador m·s caro.
+Por medio de un cluster se pueden conseguir capacidades de c√°lculo superiores
+ a las de un ordenador m√°s caro.
 \end_layout
 
 \begin_layout Standard
-Para garantizar esta capacidad de c·lculo, los problemas necesitan ser paraleliz
-ables, ya que el mÈtodo con el que los clusters agilizan el procesamiento
- es dividir el problema en problemas m·s pequeÒos y calcularlos en los nodos.
+Para garantizar esta capacidad de c√°lculo, los problemas necesitan ser paraleliz
+ables, ya que el m√©todo con el que los clusters agilizan el procesamiento
+ es dividir el problema en problemas m√°s peque√±os y calcularlos en los nodos.
 \end_layout
 
 \begin_layout Paragraph
@@ -1830,8 +1916,8 @@ Cluster de alta disponibilidad
 
 \begin_layout Standard
 Un cluster de alta disponibilidad se caracterizan por compartir los discos
- de almacenamiento de datos y por estar constantemente monitoriz·ndose entre
- sÌ.
+ de almacenamiento de datos y por estar constantemente monitoriz√°ndose entre
+ s√≠.
  
 \end_layout
 
@@ -1844,7 +1930,7 @@ Alta disponibilidad de infrestructura
 \end_layout
 
 \begin_layout Itemize
-Alta disponibilidad de aplicaciÛn
+Alta disponibilidad de aplicaci√≥n
 \end_layout
 
 \begin_layout Paragraph
@@ -1852,10 +1938,10 @@ Cluster de balanceo de carga
 \end_layout
 
 \begin_layout Standard
-Un cluster de equilibrio de carga o de cÛmputo adaptativo est· compuesto
- por uno o m·s ordenadores que act˙an como frontend del cluster, y que se
+Un cluster de equilibrio de carga o de c√≥mputo adaptativo est√° compuesto
+ por uno o m√°s ordenadores que act√∫an como frontend del cluster, y que se
  ocupan de repartir las peticiones de servicio que reciba el cluster, a
- otros ordenadores del cluster que forman el back-end de Èste.
+ otros ordenadores del cluster que forman el back-end de √©ste.
  
 \end_layout
 
@@ -1866,41 +1952,41 @@ Escalabilidad
 \begin_layout Standard
 La escalabilidad es la propiedad deseable de un sistema, una red o un proceso,
  que indica su habilidad para, o bien manejar el crecimiento continuo de
- trabajo de manera fluida, o bien para estar preparado para hacerse m·s
+ trabajo de manera fluida, o bien para estar preparado para hacerse m√°s
  grande sin perder calidad en los servicios ofrecidos.
 \end_layout
 
 \begin_layout Standard
-Las caracterÌsticas m·s destacadas de este tipo de cluster son:
+Las caracter√≠sticas m√°s destacadas de este tipo de cluster son:
 \end_layout
 
 \begin_layout Itemize
-Se puede ampliar su capacidad f·cilmente aÒadiendo m·s ordenadores al cluster.
+Se puede ampliar su capacidad f√°cilmente a√±adiendo m√°s ordenadores al cluster.
 \end_layout
 
 \begin_layout Itemize
 Robustez.
- Ante la caÌda de alguno de los ordenadores del cluster el servicio se puede
- ver mermado, pero mientras haya ordenadores en funcionamiento, Èstos seguir·n
+ Ante la ca√≠da de alguno de los ordenadores del cluster el servicio se puede
+ ver mermado, pero mientras haya ordenadores en funcionamiento, √©stos seguir√°n
  dando servicio
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 HERRAMIENTAS
 \end_layout
 
 \begin_layout Standard
-En programaciÛn paralela existen diferentes lenguajes y herramientas de
- programaciÛn con caracteristicas espesificas para diferentes clases de
+En programaci√≥n paralela existen diferentes lenguajes y herramientas de
+ programaci√≥n con caracteristicas espesificas para diferentes clases de
  problema.
 \end_layout
 
 \begin_layout Standard
-C++ Composicional (C++): Es una extensiÛn de C++ que provee al programador
- facilidades para controlar localidad, concurrencia, comunicaciones, y asignaciÛ
+C++ Composicional (C++): Es una extensi√≥n de C++ que provee al programador
+ facilidades para controlar localidad, concurrencia, comunicaciones, y asignaci√≥
 n de tareas.
- Puede ser usado para construir librerÌas que implementen tareas, canales,
- y otras abstracciones b·sicas de la programaciÛn paralela.
+ Puede ser usado para construir librer√≠as que implementen tareas, canales,
+ y otras abstracciones b√°sicas de la programaci√≥n paralela.
 \end_layout
 
 \begin_layout Standard
@@ -1909,17 +1995,17 @@ High Performance Fortran (HPF): Es un ejemplo de lenguajes datos-paralelos
 \end_layout
 
 \begin_layout Standard
-convertido en un est·ndar para aplicaciones cientÌficas e ingenieriles.
+convertido en un est√°ndar para aplicaciones cient√≠ficas e ingenieriles.
  El paralelismo es expresado
 \end_layout
 
 \begin_layout Standard
-en tÈrminos de operaciones sobre matrices y la comunicaciÛn es inferida
+en t√©rminos de operaciones sobre matrices y la comunicaci√≥n es inferida
  por el compilador.
 \end_layout
 
 \begin_layout Standard
-Parallel Virtual Machine (PVM): Es una librerÌa de subrutinas para enviar
+Parallel Virtual Machine (PVM): Es una librer√≠a de subrutinas para enviar
  y recibir
 \end_layout
 
@@ -1933,7 +2019,162 @@ Message Passing Interface (MPI): Similar a PVM pero, tal como HPF, MPI se
 \end_layout
 
 \begin_layout Standard
-convertido un est·ndar.
+convertido un est√°ndar.
+\end_layout
+
+\begin_layout Subsection*
+MPI: Message Passing Interface
+\end_layout
+
+\begin_layout Standard
+MPI es una biliotca que provee funcionalidades para la comunicacion de procesos
+ mediante el pasaje de mensajes.
+ Esta fue creada por cientificos desarrolladores de software y aplicaciones
+ bajo el objetivo de desarrollar un estandar portable y eficiente para programac
+ion paralela.
+\end_layout
+
+\begin_layout Subsubsection*
+Caracteristicas
+\end_layout
+
+\begin_layout Itemize
+Memoria distribuida
+\end_layout
+
+\begin_layout Itemize
+Paralelismo explicito
+\end_layout
+
+\begin_layout Itemize
+Unico mecanismo de comunicacion
+\end_layout
+
+\begin_layout Itemize
+Modelo de programa: SPMD
+\end_layout
+
+\begin_layout Itemize
+Numero de tareas fijado en tiepo pre-ejecucion
+\end_layout
+
+\begin_layout Itemize
+125 funciones
+\end_layout
+
+\begin_layout Subsubsection*
+Ventajas
+\end_layout
+
+\begin_layout Standard
+Permite comunicacion punto a punto
+\end_layout
+
+\begin_layout Standard
+Contiene operaciones colectivas
+\end_layout
+
+\begin_layout Standard
+Permite agrupamiento de procesos
+\end_layout
+
+\begin_layout Standard
+Incluye contextos de comunicacion entre grupos de proceso
+\end_layout
+
+\begin_layout Standard
+Topologias de procesos
+\end_layout
+
+\begin_layout Standard
+Contiene soporte para Fortan y C
+\end_layout
+
+\begin_layout Standard
+Permite el manejo del entorno de programacion
+\end_layout
+
+\begin_layout Standard
+Contiene una interfase personalizada
+\end_layout
+
+\begin_layout Subsubsection*
+Desventajas
+\end_layout
+
+\begin_layout Standard
+No permite comunicacion de memoria compartida
+\end_layout
+
+\begin_layout Standard
+No tiene soporte de SO para recepciones por interrucion
+\end_layout
+
+\begin_layout Standard
+No tiene ejecucion remota de procesos
+\end_layout
+
+\begin_layout Standard
+Pocas facilidades de debug
+\end_layout
+
+\begin_layout Standard
+No soporta hilos
+\end_layout
+
+\begin_layout Standard
+No contiene soporte de tareas
+\end_layout
+
+\begin_layout Standard
+Tiene un pobre manejo de I/O
+\end_layout
+
+\begin_layout Subsection*
+PVM: Parallel Virtual Machine
+\end_layout
+
+\begin_layout Standard
+Es una biblioteca para el desarrollo de aplicaciones paralelas y distribuidas.
+ PVM surge como proyecto de laboratorio universitario y fue adoptado como
+ estandar de facto, no es standar de la industria.
+\end_layout
+
+\begin_layout Standard
+Algunas de sus cualidades son: potencia, simplicidad, portabilidad, practicidad.
+\end_layout
+
+\begin_layout Subsubsection*
+Caracteristicas
+\end_layout
+
+\begin_layout Itemize
+Permite la administracion dinamica de un conjunto de equipos que conforman
+ la maquina virtual
+\end_layout
+
+\begin_layout Itemize
+Contiene mecanismos de creacion e identificacion de procesos
+\end_layout
+
+\begin_layout Itemize
+Modelo de comunicacion entre proceos basado en pasaje de mensajes
+\end_layout
+
+\begin_layout Itemize
+Brinda mecanismos de sincronizacion de procesos
+\end_layout
+
+\begin_layout Itemize
+Brinda soporte para manejar heterogeneidad
+\end_layout
+
+\begin_layout Itemize
+Permite aprovechar arquitecturas multiprocesador
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
@@ -1946,15 +2187,15 @@ SSI: OpenMosix*, OpenSSI y Kerrighed
 
 \begin_layout Standard
 A diferencia de un cluster tradicional en SSI todas las computadoras vinculadas
- dependen de un sistema operativo identico en com˙n.
+ dependen de un sistema operativo identico en com√∫n.
 \end_layout
 
 \begin_layout Standard
-Un SSI oculta la naturaleza heterogÈnea y distribuida de los recursos, y
+Un SSI oculta la naturaleza heterog√©nea y distribuida de los recursos, y
  los presenta a los usuarios y a las aplicaciones como un recurso computacional
  unificado y sencillo.
  Una de las metas que mas diferencia un SSI de un cluster o un grid tradicional
- es su completa transparencia en la gestiÛn de recursos.
+ es su completa transparencia en la gesti√≥n de recursos.
  Es debido a esta completa transparencia que es posible migrar procesos
  de un nodo a otro.
  Tampoco es necesario programacion adicional para beneficiarse del paralelismo,
@@ -1967,7 +2208,7 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
  no creemos que se ajusten a los requerimientos planteados principalmente
  debido a que el cluster ya se encuentra en funcionamiento siguiendo un
  paradigma estilo beowulf mas clasico.
- Quizas sea interesante construir un pequeÒo cluster SSI e investigar mas
+ Quizas sea interesante construir un peque√±o cluster SSI e investigar mas
  a fondo este tipo de tecnologias de manera de poder compara ambas soluciones.
 \end_layout
 
@@ -1987,14 +2228,14 @@ Caracteristicas generales
 
 \begin_layout Standard
 Condor es un proyecto open-source de la universidad de Wisconsin especificamente
- diseÒado para High-Throughput Computing (HTC).
+ dise√±ado para High-Throughput Computing (HTC).
  Si bien Condor puede utilizarse con fines de High-Performance Computing
  (HPC) existen importantes diferencias entre HPC y HTC.
  Fundamentalmente los trabajos ejecutados en un entorno HPC se caracterizan
  por necesitar resolver un problema en el menor tiempo posible, en cambio
  en un entorno HTC ya es sabido que no es posible resolver los problemas
- en tiempos pequeÒos, estamos hablando de meses o aÒos en lugar de horas
- o dÌas.
+ en tiempos peque√±os, estamos hablando de meses o a√±os en lugar de horas
+ o d√≠as.
  Como consecuencia en HPC el poder computacional de un cluster normalmente
  es medido en operaciones de punto flotante por segundo (FLOPS), en cambio
  la comunidad HTC se interesa mas en la cantidad de trabajos que posible
@@ -2002,31 +2243,31 @@ Condor es un proyecto open-source de la universidad de Wisconsin especificamente
  puede terminarse un trabajo individual.
  Debido a este perfil de tipo HTC, Condor se enfoca principalmente en la
  robustez y la confiabilidad brindando funcionalidades como: CPU harvesting,
- migraciÛn de procesos, tolerancia a fallas y process checkpoint.
+ migraci√≥n de procesos, tolerancia a fallas y process checkpoint.
 \end_layout
 
 \begin_layout Standard
 Paradojicamente si bien se trata de un proyecto open-source su codigo fuente
  no se distribuye libremente.
  Para obtener el codigo fuente de Condor es necesario enviar un correo electroni
-co explicando la razÛn por la que se quiere obtener el cÛdigo fuente y cada
- peticiÛn es analizada puntualmente.
+co explicando la raz√≥n por la que se quiere obtener el c√≥digo fuente y cada
+ petici√≥n es analizada puntualmente.
 \end_layout
 
 \begin_layout Subsubsection
-Bibliotecas para programaciÛn paralela
+Bibliotecas para programaci√≥n paralela
 \end_layout
 
 \begin_layout Standard
-Condor se encuentra diseÒado principalmente para la ejecucion de trabajos
+Condor se encuentra dise√±ado principalmente para la ejecucion de trabajos
  seriales.
  Si bien provee soporte limitado para las bibliotecas PVM y MPI para procesamien
-to paralelo su desempeÒo en esta area se encuentra por debajo de otros DRM's
+to paralelo su desempe√±o en esta area se encuentra por debajo de otros DRM's
  como Torque o SGE.
 \end_layout
 
 \begin_layout Subsubsection
-Interfaz de programaciÛn
+Interfaz de programaci√≥n
 \end_layout
 
 \begin_layout Standard
@@ -2035,7 +2276,7 @@ Condor brinda una interfaz de programacion propietaria, pero no soporta
 \end_layout
 
 \begin_layout Subsubsection
-ConclusiÛn
+Conclusi√≥n
 \end_layout
 
 \begin_layout Standard
@@ -2066,8 +2307,8 @@ OpenPBS
 OpenPBS se trata de la version original de PBS desarrollada para la NASA
  a principios de los 90's.
  Actualmente es ofrecida por Altair Grid Technologies, aunque no se encuentra
- en desarrollo y la empresa no brinda ning˙n tipo de soporte sobre el software.
- Atair ha apostado a una versiÛn comercial del producto llamada PBS Pro,
+ en desarrollo y la empresa no brinda ning√∫n tipo de soporte sobre el software.
+ Atair ha apostado a una versi√≥n comercial del producto llamada PBS Pro,
  y en lo que a Alatir respecta OpenPBS se trata de una forma de comenzar
  a utilizar PBS con el objectivo de comprar PBS Pro.
 \end_layout
@@ -2085,54 +2326,54 @@ Sun grid engine 6.1
 \end_layout
 
 \begin_layout Standard
-Sun Grid Engine es un software para administraciÛn de recursos distribuÌdos
- que din·micamente asocia requerimientos de hardware y software de los usuarios
- con los recursos disponibles en la red (generalmente heterogÈneos) de acuerdo
- a polÌticas predefinidas.
+Sun Grid Engine es un software para administraci√≥n de recursos distribu√≠dos
+ que din√°micamente asocia requerimientos de hardware y software de los usuarios
+ con los recursos disponibles en la red (generalmente heterog√©neos) de acuerdo
+ a pol√≠ticas predefinidas.
 \end_layout
 
 \begin_layout Standard
-Sun Grid Engine act˙a como el sistema nervioso central de un cluster de
+Sun Grid Engine act√∫a como el sistema nervioso central de un cluster de
  computadoras conectadas.
  A partir de algunos demoniso, el Sun Grid Master supervisa todos los recursos
  de la red 
 \lang english
-para permitir control completo y alcanzar la utilizaciÛn Ûptima de los mismos.
+para permitir control completo y alcanzar la utilizaci√≥n √≥ptima de los mismos.
 \end_layout
 
 \begin_layout Standard
 Sun Grid Engine fue desarrollado como realce de Codine de Genias GmbH y
  Grisdware inc, de acuerdo a requerimientos de varios clientes tales como
- el laboratorio de investigaciÛn del ejÈrcito de Aberdeen y BMW.
- Con Sun Grid Engine, el uso medio de los recursos aumentÛ de menos del
- 50% a m·s del 90% en ambos ambientes.
+ el laboratorio de investigaci√≥n del ej√©rcito de Aberdeen y BMW.
+ Con Sun Grid Engine, el uso medio de los recursos aument√≥ de menos del
+ 50% a m√°s del 90% en ambos ambientes.
 \end_layout
 
 \begin_layout Standard
-Sun grid Engine reune el poder de c·lculo disponible en granjas de computadoras
+Sun grid Engine reune el poder de c√°lculo disponible en granjas de computadoras
  dedicadas, servidores conectados y computadoras de escritorio, y las presenta
- desde un ˙nico punto de acceso para el usuario que necesita ciclos de cÛmputo.
+ desde un √∫nico punto de acceso para el usuario que necesita ciclos de c√≥mputo.
  Esto se logra distribuyendo la carga de trabajo entre los sistemas disponibles,
- aumentando la productividad de m·quinas y del uso de licencias, mientras
- se maximiza el n˙mero de trabajos que pueden ser completados.
+ aumentando la productividad de m√°quinas y del uso de licencias, mientras
+ se maximiza el n√∫mero de trabajos que pueden ser completados.
 \end_layout
 
 \begin_layout Standard
-Los requerimientos de hardware son mÌnimos (100 MB de memoria disponible
- y 500MB de disco) y soporta la mayorÌa de los sistemas operativos populares.
+Los requerimientos de hardware son m√≠nimos (100 MB de memoria disponible
+ y 500MB de disco) y soporta la mayor√≠a de los sistemas operativos populares.
  Soporta las plataformas SPARC Ultra III, SPARC Ultra IV, AMD64, x86 y Mac.
 \end_layout
 
 \begin_layout Standard
-Permite control de usuarios, limitando tanto el n˙mero m·ximo de trabajos
+Permite control de usuarios, limitando tanto el n√∫mero m√°ximo de trabajos
  por usuario, grupo y proyecto, como recursos tales como colas, hosts, memoria
  y licencias de software.
 \end_layout
 
 \begin_layout Standard
 Los recursos requeridos por cada trabajo se pueden indicar mediante expresiones
- lÛgicas, (por ejemplo, un usuario puede requerir que un trabajo corra en
- un host que cumpla la condiciÛn 
+ l√≥gicas, (por ejemplo, un usuario puede requerir que un trabajo corra en
+ un host que cumpla la condici√≥n 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2147,13 +2388,13 @@ Solaris o Linux pero no Linux en IA64
 Distributed Resource Management Application API (DRMAA) es un conjunto de
  APIs standard desarrollado por Global Grid Forum para application builders,
  portal builders e ISV's.
- La versiÛn 6.1 soporta los ˙ltimos C y Java bindings de DRMAA 1.0.
- Adicionalmente, es provisto de compatibilidad hacia atr·s para: DRMAA 0.5
+ La versi√≥n 6.1 soporta los √∫ltimos C y Java bindings de DRMAA 1.0.
+ Adicionalmente, es provisto de compatibilidad hacia atr√°s para: DRMAA 0.5
  Java binding y DRMAA 0.95 C binding.
 \end_layout
 
 \begin_layout Standard
-Guarda la informaciÛn referida a la cuenta de cada trabajo en una base de
+Guarda la informaci√≥n referida a la cuenta de cada trabajo en una base de
  datos relacional (soportando Oracle, MySQL y PostgreSQL).
 \end_layout
 
@@ -2164,15 +2405,15 @@ Maneja aplicaciones paralelas (MPI o PVM habilitados) a travez de una interface
 \end_layout
 
 \begin_layout Standard
-Permite la distribuciÛn de recursos a equipos o departamentos, por ejemplo
- proporcionalmente a su contribuciÛn econÛmica.
+Permite la distribuci√≥n de recursos a equipos o departamentos, por ejemplo
+ proporcionalmente a su contribuci√≥n econ√≥mica.
  
 \end_layout
 
 \begin_layout Standard
-El cÛdigo muestra una complejidad alta, adem·s el sistema es integrado,
+El c√≥digo muestra una complejidad alta, adem√°s el sistema es integrado,
  no muestra facilidades a la hora de dividirlo en subsistemas.
- Estas car·cterÌsticas hacen que en algunos aspectos se vea como un sistema
+ Estas car√°cter√≠sticas hacen que en algunos aspectos se vea como un sistema
  cerrado, que no permite adaptaciones en caso de realidades no abarcadas
  por el mismo.
 \end_layout
@@ -2182,26 +2423,26 @@ Resumen
 \end_layout
 
 \begin_layout Standard
-Sun grid engine 6.1 provee la mayorÌa de las funcionalidades requeridas para
+Sun grid engine 6.1 provee la mayor√≠a de las funcionalidades requeridas para
  el proyecto.
- Por otro lado, tiene como desventaja el ser un ˙nico gran paquete indivisible,
- lo cual hace muy difÌcil cualquier adaptaciÛn o modificaciÛn de su funcionamien
+ Por otro lado, tiene como desventaja el ser un √∫nico gran paquete indivisible,
+ lo cual hace muy dif√≠cil cualquier adaptaci√≥n o modificaci√≥n de su funcionamien
 to.
  
 \end_layout
 
 \begin_layout Standard
-Si nos basamos en la historia reciente del producto, en una versiÛn anterior
- se encontrÛ un problema de seguridad (un salto en las restricciones) y
+Si nos basamos en la historia reciente del producto, en una versi√≥n anterior
+ se encontr√≥ un problema de seguridad (un salto en las restricciones) y
  quienes lo estaban utilizando en ese momento descartaron la idea de buscar
- el problema y solucionarlo, limit·ndose sÛlamente a esperar que los creadores
+ el problema y solucionarlo, limit√°ndose s√≥lamente a esperar que los creadores
  de la herramienta lo corrigieran.
  
 \end_layout
 
 \begin_layout Standard
-Esto se debe a que la herramienta cuenta con un cÛdigo muy complejo y dificil
- de modificar, lo que lo coloca como una opciÛn poco vialble para ser utilizada
+Esto se debe a que la herramienta cuenta con un c√≥digo muy complejo y dificil
+ de modificar, lo que lo coloca como una opci√≥n poco vialble para ser utilizada
  dentro del proyecto propuesto.
 \end_layout
 
@@ -2211,7 +2452,7 @@ TORQUE
 
 \begin_layout Standard
 TORQUE (Terascale Open-source Resource and QUEue manager) se trata de un
- 'fork' open-source de la versiÛn 2.3.12 de OpenPBS mantenido por Cluster
+ 'fork' open-source de la versi√≥n 2.3.12 de OpenPBS mantenido por Cluster
  Resources.
  
 \end_layout
@@ -2240,7 +2481,7 @@ UNIX
 \end_layout
 
 \begin_layout Subsubsection
-CaracterÌsticas generales
+Caracter√≠sticas generales
 \end_layout
 
 \begin_layout Standard
@@ -2249,11 +2490,11 @@ Los trabajos son manejados en el cluster de la misma manera que lo hace
  Cuenta con un conjunto de colas de trabajos que definen propiedades generales
  para los trabajos que contienen (p.ej.
  recursos disponibles, etc.) y al ingresar un trabajo al sistema, este debe
- especificar caracterÌsticas especificas de si mismo que ayuden al sistema
- a planificar la ejecuciÛn del mismo (p.ej.
- nodos a utilizar, memoria m·xima a utilizar, etc.).
- Con esta informaciÛn (los datos de la cola a la que pertenece el trabajo
- y los datos especÌficos del trabajo en cuestiÛn) el scheduler decide el
+ especificar caracter√≠sticas especificas de si mismo que ayuden al sistema
+ a planificar la ejecuci√≥n del mismo (p.ej.
+ nodos a utilizar, memoria m√°xima a utilizar, etc.).
+ Con esta informaci√≥n (los datos de la cola a la que pertenece el trabajo
+ y los datos espec√≠ficos del trabajo en cuesti√≥n) el scheduler decide el
  momento en que un trabajo comienza a ejecutarse y con que recursos cuenta
  en cada instante.
 \end_layout
@@ -2270,7 +2511,7 @@ Nodo Maestro
 \begin_layout Standard
 Es necesario que exista un nodo maestro en el sistema, en este nodo se debe
  ejecutar pbs_server.
- Dependiendo del sistema este nodo maestro puede encontrarse dedicado ˙nicamente
+ Dependiendo del sistema este nodo maestro puede encontrarse dedicado √∫nicamente
  a este rol o compartir otros roles.
 \end_layout
 
@@ -2294,7 +2535,7 @@ Nodos de computo
 
 \begin_deeper
 \begin_layout Standard
-Estos son los responsables de la ejecuciÛn de los trabajos encolados en
+Estos son los responsables de la ejecuci√≥n de los trabajos encolados en
  el sistema.
  En cada uno de estos nodos debe ejecutarse pbs_mom (Machine Oriented Mini-serve
 r) que es el encargado de iniciar, detener y manejar los trabajos encolados.
@@ -2303,15 +2544,15 @@ r) que es el encargado de iniciar, detener y manejar los trabajos encolados.
 \end_deeper
 \begin_layout Standard
 Torque cuenta con una interfaz de usuario de linea de comando (CLI) como
- principal manera de interactuar con el sistema, tambiÈn cuenta con una
- interfaz gr·fica para X-Windows y una biblioteca para desarrollo en C.
+ principal manera de interactuar con el sistema, tambi√©n cuenta con una
+ interfaz gr√°fica para X-Windows y una biblioteca para desarrollo en C.
  Es posible utilizar bibliotecas desarrolladas por 3eros para otros lenguajes
  (p.ej.
  Perl o Python).
 \end_layout
 
 \begin_layout Subsubsection
-Bibliotecas para programaciÛn paralela
+Bibliotecas para programaci√≥n paralela
 \end_layout
 
 \begin_layout Paragraph
@@ -2320,7 +2561,7 @@ MPI (Message Passing Interface)
 
 \begin_layout Standard
 El soporte para bibliotecas tipo MPI se encuentra integrado en TORQUE, el
- sistema puede correr con cualquier implementaciÛn de MPI.
+ sistema puede correr con cualquier implementaci√≥n de MPI.
  Particularmente para MPICH existe un reemplazo para el script mpirun (mpirun
  se encuentra incluido en el paquete de mpich) llamado mpiexec.
  Mpiexec es usado para inicializar trabajos paralelos dentro de un sistema
@@ -2339,14 +2580,14 @@ Una de las principales desventajas de TORQUE es la dificultad que plantea
  el uso de la biblioteca PVM.
  A diferencia de MPI, el soporte para PVM no se encuentra integrado al sistema
  por lo que debe manejarse cuidadosamente.
- Para ejecutar una aplicaciÛn paralela utilizando PVM se debe iniciar el
+ Para ejecutar una aplicaci√≥n paralela utilizando PVM se debe iniciar el
  demonio pvmd en el script del trabajo, configurar los nodos esclavos para
- luego iniciar la ejecuciÛn del trabajo (todo esto puede realizarse utilizando
+ luego iniciar la ejecuci√≥n del trabajo (todo esto puede realizarse utilizando
  mpiexec).
 \end_layout
 
 \begin_layout Subsubsection
-Interfaz de programaciÛn
+Interfaz de programaci√≥n
 \end_layout
 
 \begin_layout Standard
@@ -2359,18 +2600,18 @@ Maui
 \end_layout
 
 \begin_layout Standard
-TORQUE contiene la lÛgica necesaria para llevar a cabo la planificaciÛn
- de trabajos, pero se trata de una lÛgica muy simple que no resulta adecuada
- para un ambiente de producciÛn.
- B·sicamente el planificador que se encuentra incorporado a TORQUE maneja
+TORQUE contiene la l√≥gica necesaria para llevar a cabo la planificaci√≥n
+ de trabajos, pero se trata de una l√≥gica muy simple que no resulta adecuada
+ para un ambiente de producci√≥n.
+ B√°sicamente el planificador que se encuentra incorporado a TORQUE maneja
  los trabajos como una cola FIFO (First-In First-Out).
- Para mejorar esto se utiliza Maui, una aplicaciÛn especializada en la planifica
-ciÛn de trabajos.
+ Para mejorar esto se utiliza Maui, una aplicaci√≥n especializada en la planifica
+ci√≥n de trabajos.
 \end_layout
 
 \begin_layout Standard
-Maui se enfoca en la planificaciÛn de trabajos y deja la problem·tica de
- iniciar los trabajos y la interacciÛn con los usuarios a los manejadores
+Maui se enfoca en la planificaci√≥n de trabajos y deja la problem√°tica de
+ iniciar los trabajos y la interacci√≥n con los usuarios a los manejadores
  de recursos (distributed resource managers, DRM) como OpenPBS, TORQUE,
  SGE, etc.
 \end_layout
@@ -2389,7 +2630,7 @@ Hardware
 \end_layout
 
 \begin_layout Itemize
->20 MB de disco duro para los fuentes, binarios, estadÌsticas y archivos
+>20 MB de disco duro para los fuentes, binarios, estad√≠sticas y archivos
  de logs
 \end_layout
 
@@ -2475,14 +2716,14 @@ Scalable System Software (SSSRM)
 
 \end_deeper
 \begin_layout Paragraph
-CaracterÌsticas generales
+Caracter√≠sticas generales
 \end_layout
 
 \begin_layout Standard
-El algoritmo de planificaciÛn de Maui soporta fairness, preemption, backfill,
+El algoritmo de planificaci√≥n de Maui soporta fairness, preemption, backfill,
  etc.
- y tiene una interfaz para la interacciÛn con un allocation management externo.
- Un allocation manager (tambiÈn conocido como allocation bank o cpu bank)
+ y tiene una interfaz para la interacci√≥n con un allocation management externo.
+ Un allocation manager (tambi√©n conocido como allocation bank o cpu bank)
  funciona como un banco en el cual la moneda son los recursos del sistema
  (p.ej.
  procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
@@ -2494,36 +2735,36 @@ Backfill
 \end_layout
 
 \begin_layout Standard
-Backfill es un acercamiento en la planificaciÛn que permite ejecutar algunos
+Backfill es un acercamiento en la planificaci√≥n que permite ejecutar algunos
  trabajos 'desordenadamente' siempre y cuando estos no retrasen los trabajos
  de prioridad superior de la cola.
- Para determinar si un trabajo ser· retrasado, cada trabajo debe proveer
- una estimaciÛn de cu·nto tiempo necesitar· para su ejecuciÛn.
- Esta estimaciÛn, conocida como lÌmite wallclock, es una valoraciÛn del
+ Para determinar si un trabajo ser√° retrasado, cada trabajo debe proveer
+ una estimaci√≥n de cu√°nto tiempo necesitar√° para su ejecuci√≥n.
+ Esta estimaci√≥n, conocida como l√≠mite wallclock, es una valoraci√≥n del
  tiempo desde el comienzo del trabajo hasta su final.
- Es a menudo sabio sobrestimar levemente este lÌmite porque el planificador
- se puede configurar para matar a los trabajos que exceden sus lÌmites del
+ Es a menudo sabio sobrestimar levemente este l√≠mite porque el planificador
+ se puede configurar para matar a los trabajos que exceden sus l√≠mites del
  wallclock.
- Sin embargo, la sobrestimaciÛn demasiado grande del tiempo del wallclock
- de un trabajo evitar· que el planificador pueda optimizar correctamente
+ Sin embargo, la sobrestimaci√≥n demasiado grande del tiempo del wallclock
+ de un trabajo evitar√° que el planificador pueda optimizar correctamente
  la cola de trabajo.
- Cuanto m·s exacto el lÌmite del wallclock, mayor sera la posibilidad de
- que Maui encuentre agujeros en la planificaciÛn para comenzar a ejecutar
- su trabajo con mayor anticipaciÛn.
+ Cuanto m√°s exacto el l√≠mite del wallclock, mayor sera la posibilidad de
+ que Maui encuentre agujeros en la planificaci√≥n para comenzar a ejecutar
+ su trabajo con mayor anticipaci√≥n.
  
 \end_layout
 
 \begin_layout Subparagraph
-Gerenciamiento de asignaciÛn
+Gerenciamiento de asignaci√≥n
 \end_layout
 
 \begin_layout Standard
-Maui posee interfaces para sistemas de gerenciamiento de asignaciÛn tales
+Maui posee interfaces para sistemas de gerenciamiento de asignaci√≥n tales
  como Gold de PNNL.
- Estos sistemas permiten que a cada usuario le sea asignada una porciÛn
- de los recursos totales de c·lculo disponibles en el sistema.
- Estos sistemas trabajan asociando a cada usuario a unas o m·s cuentas.
- Cuando se envÌa un trabajo, el usuario especifica a que cuenta se debe
+ Estos sistemas permiten que a cada usuario le sea asignada una porci√≥n
+ de los recursos totales de c√°lculo disponibles en el sistema.
+ Estos sistemas trabajan asociando a cada usuario a unas o m√°s cuentas.
+ Cuando se env√≠a un trabajo, el usuario especifica a que cuenta se debe
  cargar los recursos consumidos por el trabajo.
 \end_layout
 
@@ -2533,14 +2774,14 @@ Reservas anticipadas
 
 \begin_layout Standard
 Las reservas anticipadas permiten que un sitio disponga ciertos recursos
- a un lado para el uso especÌfico de de ciertas aplicaciones durante cierto
+ a un lado para el uso espec√≠fico de de ciertas aplicaciones durante cierto
  tiempo.
  El acceso a una reserva dada es controlado por un Access Control List (ACL)
- que determina quiÈn puede utilizar los recursos reservados.
+ que determina qui√©n puede utilizar los recursos reservados.
  Es importante observar que mientras que un ACL permite que trabajos particulare
 s utilicen recursos reservados, no fuerzan al trabajo a utilizar estos recursos.
- Maui procurar· utilizar la mejor combinaciÛn posible de recursos disponibles
- sean Èstos reservados o no.
+ Maui procurar√° utilizar la mejor combinaci√≥n posible de recursos disponibles
+ sean √©stos reservados o no.
  Maui puede ser configurado para que ciertos trabajos sean restringidos
  y que funcionen utilizando solamente recursos reservados, aplicando restriccion
 es a nivel de trabajo o especificando ciertas restricciones especiales de
@@ -2555,7 +2796,7 @@ Quality of Service (QoS)
 \begin_layout Standard
 Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios,
  estos beneficios pueden incluir acceso a recursos adicionales, exclusiones
- de determinadas polÌticas, acceso a capacidades especiales, y mejoras en
+ de determinadas pol√≠ticas, acceso a capacidades especiales, y mejoras en
  la priorizacion de trabajos.
 \end_layout
 
@@ -2564,21 +2805,21 @@ Faireshare
 \end_layout
 
 \begin_layout Standard
-Este componente permite favorecer trabajos en base al uso histÛrico a corto
+Este componente permite favorecer trabajos en base al uso hist√≥rico a corto
  plazo.
- Es posible asÌ ajustar la prioridad de un trabajo dependiendo de la utilizaciÛn
+ Es posible as√≠ ajustar la prioridad de un trabajo dependiendo de la utilizaci√≥n
  porcentual del sistema de usuarios, grupos, o QoS.
- Dada una ventana de tiempo determinado sobre la cual se eval˙a la utilizaciÛn
+ Dada una ventana de tiempo determinado sobre la cual se eval√∫a la utilizaci√≥n
  de recursos del sistema se determina si esta siendo mantenido un cierto
  balanceo o no.
 \end_layout
 
 \begin_layout Paragraph
-Interfaz de programaciÛn
+Interfaz de programaci√≥n
 \end_layout
 
 \begin_layout Itemize
-Interfaz de extensiÛn (Extension Interface)
+Interfaz de extensi√≥n (Extension Interface)
 \end_layout
 
 \begin_deeper
@@ -2586,7 +2827,7 @@ Interfaz de extensiÛn (Extension Interface)
 Esta interfaz permite que bibliotecas externas sean 'linkeadas' al servidor
  de Maui brindando acceso a todos los datos y objetos utilizados por el
  planificador.
- Adem·s, permite que estas bibliotecas realicen override de las principales
+ Adem√°s, permite que estas bibliotecas realicen override de las principales
  funciones de Maui.
 \end_layout
 
@@ -2602,44 +2843,44 @@ Se trata de una interfaz en C que permite el desarrollo de nuevos algoritmos.
 
 \end_deeper
 \begin_layout Paragraph
-EstadÌsticas
+Estad√≠sticas
 \end_layout
 
 \begin_layout Standard
-Maui almacena tres diferentes clases de estadÌsticas:
+Maui almacena tres diferentes clases de estad√≠sticas:
 \end_layout
 
 \begin_layout Itemize
-EstadÌsticas de tiempo real
+Estad√≠sticas de tiempo real
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Estas estadÌsticas son mantenidas en memoria y pueden ser consultadas mediante
+Estas estad√≠sticas son mantenidas en memoria y pueden ser consultadas mediante
  comandos.
- El comando 'showstats' provee informaciÛn detallada por usuario, por grupo,
+ El comando 'showstats' provee informaci√≥n detallada por usuario, por grupo,
  por cuenta o por nodo.
- Adem·s en cualquier momento estas estadÌsticas pueden resetearse utilizando
+ Adem√°s en cualquier momento estas estad√≠sticas pueden resetearse utilizando
  el comando 'resetstats'.
  
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-HistÛrico
+Hist√≥rico
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Estas estadÌsticas pueden ser obtenidas para un lapso de tiempo, un tipo
- de trabajo y/o una porciÛn de recursos utilizando el comando 'profiler'.
- Este comando trabaja con la traza de informaciÛn detallada de un trabajo,
+Estas estad√≠sticas pueden ser obtenidas para un lapso de tiempo, un tipo
+ de trabajo y/o una porci√≥n de recursos utilizando el comando 'profiler'.
+ Este comando trabaja con la traza de informaci√≥n detallada de un trabajo,
  que es guardada al dar por finalizado un trabajo.
- Estas trazas son almacenadas en el directorio configurado por el par·metro
+ Estas trazas son almacenadas en el directorio configurado por el par√°metro
  STATDIR (por defecto $(MAUIHOMEDIR)/stats) en archivos utilizando el formato
  WWW_MMM_DD_YYYY (p.
  ej.
- Mon_Jul_16_2001), siendo esta fecha la fecha de finalizaciÛn del trabajo.
+ Mon_Jul_16_2001), siendo esta fecha la fecha de finalizaci√≥n del trabajo.
  La traza de un trabajo se almacena en texto plano utilizando espacios como
  separadores, por lo que puede ser analizado directamente con cualquier
  editor de texto.
@@ -2653,13 +2894,13 @@ Fairshare
 
 \begin_deeper
 \begin_layout Itemize
-Este tipo de estadÌsticas son mantenidas sin importar si fairshare se encuentra
+Este tipo de estad√≠sticas son mantenidas sin importar si fairshare se encuentra
  habilitado.
  Al igual que las trazas de los trabajos, estas son almacenadas en archivos
- utilizando texto plano en el directorio configurado por el par·metro STATDIR
+ utilizando texto plano en el directorio configurado por el par√°metro STATDIR
  y utilizando el formato FS.<EPOCHTIME> (p.ej., FS.982713600) por cada ventana
  de fairshare.
- Se puede obtener informaciÛn de estos archivos utilizando el comando 'diagnose
+ Se puede obtener informaci√≥n de estos archivos utilizando el comando 'diagnose
  -f'.
  
 \end_layout
@@ -2670,23 +2911,23 @@ Gold
 \end_layout
 
 \begin_layout Standard
-Gold es un sistema de contadurÌa open-source desarrollado en PNNL bajo el
+Gold es un sistema de contadur√≠a open-source desarrollado en PNNL bajo el
  proyecto Scalable Systems Software (SSS) que lleva registro y maneja el
- uso de recursos en clusters de alto desempeÒo.
- Act˙a de la misma forma que un banco en el que son depositados crÈditos
- en cuentas, estos crÈditos representan recursos en el sistema.
+ uso de recursos en clusters de alto desempe√±o.
+ Act√∫a de la misma forma que un banco en el que son depositados cr√©ditos
+ en cuentas, estos cr√©ditos representan recursos en el sistema.
  A medida que se finalizan trabajos o que son consumidos recursos en el
- sistema se debitan crÈditos de sus respectivas cuentas.
+ sistema se debitan cr√©ditos de sus respectivas cuentas.
 \end_layout
 
 \begin_layout Standard
-Es posible realizar operaciones como depÛsitos, retiros, transferencias
- o reembolsos sobre las cuentas del sistema, adem·s, provee listados de
+Es posible realizar operaciones como dep√≥sitos, retiros, transferencias
+ o reembolsos sobre las cuentas del sistema, adem√°s, provee listados de
  balances a usuarios y administradores.
 \end_layout
 
 \begin_layout Paragraph
-CaracterÌsticas generales
+Caracter√≠sticas generales
 \end_layout
 
 \begin_layout Subparagraph
@@ -2694,22 +2935,22 @@ Reservas
 \end_layout
 
 \begin_layout Standard
-Previo al inicio de un trabajo se realiza una estimaciÛn del total de recursos
- que este consumir·, en base a esta estimaciÛn se reservan crÈditos en la
+Previo al inicio de un trabajo se realiza una estimaci√≥n del total de recursos
+ que este consumir√°, en base a esta estimaci√≥n se reservan cr√©ditos en la
  cuenta correspondiente.
- Estos crÈditos 'reservados' se debitan una vez que el trabajo es terminado,
+ Estos cr√©ditos 'reservados' se debitan una vez que el trabajo es terminado,
  de esta manera se evita que un proyecto consuma mas recursos de los que
  tiene asignados.
 \end_layout
 
 \begin_layout Subparagraph
-Vencimiento de crÈditos
+Vencimiento de cr√©ditos
 \end_layout
 
 \begin_layout Standard
-Puede especificarse un lapso de validez a los crÈditos en el sistema, permitiend
-o que se implemente una polÌtica de use-it-or-lose-it previniendo el uso
- exhaustivo de crÈditos acumulados y estableciendo ciclos a un proyecto.
+Puede especificarse un lapso de validez a los cr√©ditos en el sistema, permitiend
+o que se implemente una pol√≠tica de use-it-or-lose-it previniendo el uso
+ exhaustivo de cr√©ditos acumulados y estableciendo ciclos a un proyecto.
 \end_layout
 
 \begin_layout Subparagraph
@@ -2722,7 +2963,7 @@ Permitiendo acceso remoto a usuarios y administradores.
 \end_layout
 
 \begin_layout Subparagraph
-Interfaz de programaciÛn
+Interfaz de programaci√≥n
 \end_layout
 
 \begin_layout Standard
@@ -2776,8 +3017,8 @@ El cluster fue instalado a principios de 2002 y consisten de 512 procesadores
  memoria RAM cada uno.
  Los procesadores funcionan cada uno a 1.4GHz y alcanzan un maximo teorico
  de 2.4 billiones de operaciones de punto flotante por segundo (Gflops).
- El sistema total indica un maximo teorico de desempeÒo de mas de 1.4 Teraflops.
- Las primeras mediciones de desempeÒo utilizando Linpack Benchmark mostraron
+ El sistema total indica un maximo teorico de desempe√±o de mas de 1.4 Teraflops.
+ Las primeras mediciones de desempe√±o utilizando Linpack Benchmark mostraron
  una rendimiento de 825 Gflops, ubicando el cluster en la posicion 35va
  del top 500 de supercomputadoras del mundo en Junio del 2002.
 \end_layout
@@ -2825,37 +3066,41 @@ Conclusiones
 Torque junto con Maui y Gold satisfacen los requerimientos planteados para
  el proyecto.
  Su consumo de recursos del cluster es relativamente bajo, se adapta muy
- bien al manejo de clusters pequeÒos y posee un manejo eficiente de trabajos
- paralelos (sobre todo si estos son homogÈneos).
+ bien al manejo de clusters peque√±os y posee un manejo eficiente de trabajos
+ paralelos (sobre todo si estos son homog√©neos).
  
 \end_layout
 
 \begin_layout Standard
-Pero existen ciertos aspectos en los que Torque no se desempeÒa de la mejor
+Pero existen ciertos aspectos en los que Torque no se desempe√±a de la mejor
  manera.
  Si bien se encuentra integrado el soporte para bibliotecas tipo MPI, no
  existe un correcto soporte para PVM.
- Adem·s existen ciertas carencias en sus funcionalidades de Resource Management;
+ Adem√°s existen ciertas carencias en sus funcionalidades de Resource Management;
  p.
  ej.
- no es capaz de realizar CPU Harvesting o migraciÛn de procesos.
+ no es capaz de realizar CPU Harvesting o migraci√≥n de procesos.
  
 \end_layout
 
 \begin_layout Standard
 Si bien existe un buen soporte por parte de la comunidad de usuarios de
- Torque y Maui por medio de listas de correo, la documentaciÛn disponible
+ Torque y Maui por medio de listas de correo, la documentaci√≥n disponible
  en el sitio web se encuentra incompleta en algunos aspectos (p.
  ej.
- PVM, interfaces de programaciÛn, etc.).
- Como es de esperar esta documentaciÛn se encuentra mas completa para Moab
- (la versiÛn comercial de Maui), y si bien son productos diferentes son
+ PVM, interfaces de programaci√≥n, etc.).
+ Como es de esperar esta documentaci√≥n se encuentra mas completa para Moab
+ (la versi√≥n comercial de Maui), y si bien son productos diferentes son
  similares en muchos aspectos.
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "1"
+key "key-1"
 
-\bibitem [1]{key-1}
+\end_inset
+
 B.
  Radic, E.
  Imamagic: Benchmarking the Performance of JMS on Computer Clusters, CARNet
@@ -2865,8 +3110,12 @@ B.
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "2"
+key "key-2"
 
-\bibitem [2]{key-2}
+\end_inset
+
 E.
  Imamagic, B.
  Radic, D.
@@ -2876,30 +3125,46 @@ E.
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "3"
+key "key-3"
 
-\bibitem [3]{key-3}
+\end_inset
+
 Maui Cluster Scheduler, Cluster Resources.
  http://www.clusterresources.com/products/maui/
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "4"
+key "key-4"
 
-\bibitem [4]{key-4}
+\end_inset
+
 Torque Resource Manager, Cluster Resources.
  http://www.clusterresources.com/products/torque/
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "5"
+key "key-5"
 
-\bibitem [5]{key-5}
+\end_inset
+
 William Gropp, Ewing Lusk and Thomas Sterling.
  Beowulf Cluster Computing with Linux, Second Edition.
  The MIT press, 2003 ISBN:0262692929 
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "6"
+key "key-6"
 
-\bibitem [6]{key-6}
+\end_inset
+
 M.
  Michels, W.
  Borremans: Clustering with openMosix, University of Amsterdam, February
@@ -2907,45 +3172,66 @@ M.
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-7"
 
-\bibitem {key-7}
+\end_inset
+
 http://es.wikipedia.org/wiki/Single_System_Image
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-8"
 
-\bibitem {key-8}
+\end_inset
+
 Dansk Center for Scientific Computing, http://www.dcsc.sdu.dk/
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-9"
 
-\bibitem {key-9}
+\end_inset
+
 Stony Brook University, http://www.sunysb.edu/seawulfcluster/
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-10"
 
-\bibitem {key-10}
+\end_inset
+
 University of Heidelberg, http://helics.uni-hd.de/
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-11"
 
-\bibitem {key-11}
+\end_inset
+
 University of Glasgow, http://www.gla.ac.uk/services/it/whatwedo/computecluster/
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-12"
 
-\bibitem {key-12}
+\end_inset
+
 Oregon State University, Laboratorio de fisica, http://physics.oregonstate.edu/~el
 serj/support/cluster_use.php
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-13"
 
-\bibitem {key-13}
+\end_inset
+
 Distributed Resource Management Application API (DRMAA), http://en.wikipedia.org/w
 iki/DRMAA/
 \end_layout
