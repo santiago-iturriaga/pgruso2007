@@ -443,32 +443,19 @@ Computación de Alto Rendimiento
 
 \begin_layout Standard
 En el correr de los ultimos anos a crecido la importancias de satisfacer
- requisitos crecientes de poder de conputo debido a:
+ requisitos crecientes de poder de conputo debido a la necesidad de resolver
+ problemas mas complicados con modelos mas complejos, asi como trabajar
+ con grandes volumenes de datos sin perder de vista la capacidad de respuesta
+ en un tiempo limitado
 \end_layout
 
 \begin_layout Standard
--la necesidad de resolver problemas mas complicados
-\end_layout
-
-\begin_layout Standard
--resolver modelos mas complejos
-\end_layout
-
-\begin_layout Standard
--grandes volumenes de datos
-\end_layout
-
-\begin_layout Standard
--capacidad de respuesta en tiempo limitado
-\end_layout
-
-\begin_layout Standard
-El procesamiento paralelo o Computacion Paralela de alto renedimiento a
+El Procesamiento Paralelo o Computacion Paralela de Alto Renedimiento a
  ganado terreno y se a vuelo muy importante en la resolución de estos requisitos.
 \end_layout
 
 \begin_layout Standard
-La computación de alto rendimiento se apoya en tecnologías como los clusters,
+La Computación de Alto Rendimiento se apoya en tecnologías como los clusters,
  supercomputadores o mediante el uso de la computación paralela y distribuida.
  
 \end_layout
@@ -484,16 +471,16 @@ La computación distribuida es un modelo para resolver problemas de computación
 \end_layout
 
 \begin_layout Standard
-La informática distribuida consiste en compartir recursos heterogéneos (basadas
- en distintas plataformas, arquitecturas de equipos y programas, lenguajes
- de programación), situados en distintos lugares y pertenecientes a diferentes
- dominios de administración sobre una red que utiliza estándares abiertos.
+Consiste en compartir recursos heterogéneos (basadas en distintas plataformas,
+ arquitecturas de equipos y programas, lenguajes de programación), situados
+ en distintos lugares y pertenecientes a diferentes dominios de administración
+ sobre una red que utiliza estándares abiertos.
  
 \end_layout
 
 \begin_layout Standard
 Exiten varios grados de distribucion: dsitribucion de hardware y procesamiento,
- distribucion de datos y distrubucion del control
+ distribucion de datos y distrubucion del control.
 \end_layout
 
 \begin_layout Standard
@@ -506,8 +493,9 @@ La computación distribuida ha sido diseñada para resolver problemas demasiado
 \end_layout
 
 \begin_layout Standard
-Ventajas de la computacion distribuida: mejora en desempeno, robustez, seguridad
- no centralizada, acceso transparente a los datos no locales.
+Algunas de las ventajas de la computacion distribuida son la mejora en el
+ desempeno, robustez, seguridad no centralizada y acceso transparente a
+ los datos no locales.
 \end_layout
 
 \begin_layout Subsection
@@ -524,9 +512,9 @@ a.
 \end_layout
 
 \begin_layout Standard
-Esta tecnica se ha visto posibilitada por avances en diferentes tecnologias
- como microporcesadores con mayor poder de procesamiento, comunicacion de
- datos, desarrollo de bibliotecas e interfaces para programacion de procesos.
+El avances en diferentes tecnologias como microporcesadores con mayor poder
+ de procesamiento, comunicacion de datos, desarrollo de bibliotecas e interfaces
+ para programacion de procesos han posibilitado esta tecnica.
 \end_layout
 
 \begin_layout Standard
@@ -545,8 +533,9 @@ El mayor problema de la computación paralela radica en la complejidad de
 \end_layout
 
 \begin_layout Standard
-Ventajas de la programacion paralela: mayor capacidad de proceso, menosr
- tiempo de procesamiento, aprovechar la escalabilidad potencial de los recursos
+Esta tecnica proporciona ventajas como mayor capacidad de proceso, menor
+ tiempo de procesamiento y aprovechamiento de la escalabilidaad potencial
+ de los recursos
 \end_layout
 
 \begin_layout Subsubsection
@@ -792,7 +781,7 @@ A continuacion veremos algunos tipos de disenos de redes de procesadores.
 \end_layout
 
 \begin_layout Subsubsection
-BUS Y ETHERNET
+Bus y Ethernet
 \end_layout
 
 \begin_layout Standard
@@ -810,40 +799,8 @@ Esta arquitectura es fácil y económica de implementar, pero es altamente
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-C:
-\backslash
-Documents and Settings
-\backslash
-Paulo
-\backslash
-Mis documentos
-\backslash
-Facultad
-\backslash
-Proyecto
-\backslash
-Source
-\backslash
-Documentacion
-\backslash
-Images
-\backslash
-bus.png
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset Graphics
+	filename Images/bus.png
 
 \end_inset
 
@@ -874,40 +831,8 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-C:
-\backslash
-Documents and Settings
-\backslash
-Paulo
-\backslash
-Mis documentos
-\backslash
-Facultad
-\backslash
-Proyecto
-\backslash
-Source
-\backslash
-Documentacion
-\backslash
-Images
-\backslash
-malla1.png
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset Graphics
+	filename Images/malla1.png
 
 \end_inset
 
@@ -919,44 +844,12 @@ Mariposa
 \end_layout
 
 \begin_layout Standard
-Simaleres a las mallas pero presentan menor diametro.
+Esta organización es simaleres a las mallas pero presentan menor diametro.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-C:
-\backslash
-Documents and Settings
-\backslash
-Paulo
-\backslash
-Mis documentos
-\backslash
-Facultad
-\backslash
-Proyecto
-\backslash
-Source
-\backslash
-Documentacion
-\backslash
-Images
-\backslash
-mariposa.png
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset Graphics
+	filename Images/mariposa.png
 
 \end_inset
 
@@ -984,40 +877,8 @@ Estas redes intentan combinar las ventajas de las mallas y los arboles,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-C:
-\backslash
-Documents and Settings
-\backslash
-Paulo
-\backslash
-Mis documentos
-\backslash
-Facultad
-\backslash
-Proyecto
-\backslash
-Source
-\backslash
-Documentacion
-\backslash
-Images
-\backslash
-piramide.png
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset Graphics
+	filename Images/piramide.png
 
 \end_inset
 
@@ -1045,6 +906,15 @@ uno conecta dos hipercubos de dimensión-cero.
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/hipercubos.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Omega
 \end_layout
@@ -1068,13 +938,31 @@ Lasig siguiente figura muestra una red omega de 3 etapas que conecta 8 procesado
 res.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/omega3e8p.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Fibras de interconexion
 \end_layout
 
 \begin_layout Standard
-Estas so un conjunto de switches, llamados routers, enlazados por distintas
+Estas son un conjunto de switches, llamados routers, enlazados por distintas
  configuraciones o topologías.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/firasinterconexion.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1488,7 +1376,7 @@ lidad.
 \end_layout
 
 \begin_layout Subsubsection
-MULTICOMPUTADORES
+Multicomputadores
 \end_layout
 
 \begin_layout Standard
@@ -1500,7 +1388,7 @@ a) y la interacción entre ellos es a través de pase de mensajes.
 \end_layout
 
 \begin_layout Subsubsection
-MAQUINAS DE MEMORIA COMPARTIDA DISTRIBUIDA
+Maquinas de memoria compartida distribuida
 \end_layout
 
 \begin_layout Standard
@@ -1522,7 +1410,7 @@ Este tipo de maquinas entra dentro de la categoría de NUMA y un ejemplo
 \end_layout
 
 \begin_layout Subsubsection
-MULTIPROCESADORES MULTI-HEBRADOS
+Multiprocesadores multi-hebrados
 \end_layout
 
 \begin_layout Standard
@@ -1568,7 +1456,7 @@ Los estudios realizados muestran que el costo del multi-hebrado es pequeño,
 \end_layout
 
 \begin_layout Subsubsection
-TAXONOMIA DE FLYNN
+Taxonomía de Flynn
 \end_layout
 
 \begin_layout Standard
@@ -1665,7 +1553,7 @@ Pese a no ser una categoría definida por Flynn es muy usada y pueder ser
 \end_layout
 
 \begin_layout Subsubsection
-EL IBM SCALABLE POWER PARALLEL SYSTEM (SP2)
+El IBM Scalable Power Parallel System (SP2)
 \end_layout
 
 \begin_layout Standard
@@ -1740,7 +1628,7 @@ La SP2 esta basada en el sistema operativo AIX/6000 y en la tecnología RISC
 \end_layout
 
 \begin_layout Subsubsection
-LA SGI ORIGIN 2000
+La SGI Origin 2000
 \end_layout
 
 \begin_layout Standard
@@ -1771,7 +1659,12 @@ disponible a todos los procesadores.
 \end_layout
 
 \begin_layout Standard
-FIGURA
+\begin_inset Graphics
+	filename Images/origin2000.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1807,7 +1700,7 @@ A medida que se agregan nodos a la fibra de interconexión, el ancho de banda
 \end_layout
 
 \begin_layout Subsubsection
-CLUSTERS DE PC'S
+Cluster de PC's
 \end_layout
 
 \begin_layout Standard
@@ -1972,7 +1865,7 @@ Robustez.
 \end_layout
 
 \begin_layout Subsubsection
-HERRAMIENTAS
+HErramientas
 \end_layout
 
 \begin_layout Standard
@@ -2034,100 +1927,34 @@ MPI es una biliotca que provee funcionalidades para la comunicacion de procesos
 ion paralela.
 \end_layout
 
-\begin_layout Subsubsection*
-Caracteristicas
-\end_layout
-
-\begin_layout Itemize
-Memoria distribuida
-\end_layout
-
-\begin_layout Itemize
-Paralelismo explicito
-\end_layout
-
-\begin_layout Itemize
-Unico mecanismo de comunicacion
-\end_layout
-
-\begin_layout Itemize
-Modelo de programa: SPMD
-\end_layout
-
-\begin_layout Itemize
-Numero de tareas fijado en tiepo pre-ejecucion
-\end_layout
-
-\begin_layout Itemize
-125 funciones
-\end_layout
-
-\begin_layout Subsubsection*
-Ventajas
+\begin_layout Standard
+Esta biblioteca permite trabajar con memoria distribuida, tener paralelismo
+ explicito y contiene un unico mecanismo de comunicacion que puede ser punto
+ a punto.
+ 
 \end_layout
 
 \begin_layout Standard
-Permite comunicacion punto a punto
+El modelo de programacion es SPMD el cual provee de 125 funciones de las
+ cuales algunas son colectivas, tambien contien soporte para Fortan y C.
+ 
 \end_layout
 
 \begin_layout Standard
-Contiene operaciones colectivas
+El numero de tareas es fijado en tiempo de pre-ejecucion y tambien permite
+ agrupamiento de procesos e incluye contextos de comunicacion entre grupos
+ de procesos.
 \end_layout
 
 \begin_layout Standard
-Permite agrupamiento de procesos
+Permite el manejo del entorno programacion con interfases personalizadas.
 \end_layout
 
 \begin_layout Standard
-Incluye contextos de comunicacion entre grupos de proceso
-\end_layout
-
-\begin_layout Standard
-Topologias de procesos
-\end_layout
-
-\begin_layout Standard
-Contiene soporte para Fortan y C
-\end_layout
-
-\begin_layout Standard
-Permite el manejo del entorno de programacion
-\end_layout
-
-\begin_layout Standard
-Contiene una interfase personalizada
-\end_layout
-
-\begin_layout Subsubsection*
-Desventajas
-\end_layout
-
-\begin_layout Standard
-No permite comunicacion de memoria compartida
-\end_layout
-
-\begin_layout Standard
-No tiene soporte de SO para recepciones por interrucion
-\end_layout
-
-\begin_layout Standard
-No tiene ejecucion remota de procesos
-\end_layout
-
-\begin_layout Standard
-Pocas facilidades de debug
-\end_layout
-
-\begin_layout Standard
-No soporta hilos
-\end_layout
-
-\begin_layout Standard
-No contiene soporte de tareas
-\end_layout
-
-\begin_layout Standard
-Tiene un pobre manejo de I/O
+Algunas de sus deventajas son: no permite comunicacion de memoria compartida,
+ no tiene soporte de SO para recepciones por interrucion ,no tiene ejecucion
+ remota de procesos, pocas facilidades de debug, no soporta hilos, no contiene
+ soporte de tareas y tiene un pobre manejo de I/O
 \end_layout
 
 \begin_layout Subsection*
@@ -2144,33 +1971,20 @@ Es una biblioteca para el desarrollo de aplicaciones paralelas y distribuidas.
 Algunas de sus cualidades son: potencia, simplicidad, portabilidad, practicidad.
 \end_layout
 
-\begin_layout Subsubsection*
-Caracteristicas
-\end_layout
-
-\begin_layout Itemize
+\begin_layout Standard
 Permite la administracion dinamica de un conjunto de equipos que conforman
- la maquina virtual
+ la maquina virtual.
 \end_layout
 
-\begin_layout Itemize
-Contiene mecanismos de creacion e identificacion de procesos
+\begin_layout Standard
+Contiene mecanismos de creacion e identificacion de procesos,un modelo de
+ comunicacion entre proceos basado en pasaje de mensajes y brinda mecanismos
+ de sincronizacion de procesos.
 \end_layout
 
-\begin_layout Itemize
-Modelo de comunicacion entre proceos basado en pasaje de mensajes
-\end_layout
-
-\begin_layout Itemize
-Brinda mecanismos de sincronizacion de procesos
-\end_layout
-
-\begin_layout Itemize
-Brinda soporte para manejar heterogeneidad
-\end_layout
-
-\begin_layout Itemize
-Permite aprovechar arquitecturas multiprocesador
+\begin_layout Standard
+Brinda soporte para manejar heterogeneidad y aprovecha la arquitecturas
+ multiprocesador.
 \end_layout
 
 \begin_layout Standard
