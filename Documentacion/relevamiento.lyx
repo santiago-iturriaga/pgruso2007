@@ -75,16 +75,16 @@ Introducción
 \begin_layout Standard
 
 \lang english
-En el principio de la historia de las computadoras, se tenía la idea de
- que un servidor tenia que ser necesariamente una máquina, conocida como
- super computador o mainframe, que contaba con un súper procesador que daba
+En el principio de la historia de las computadoras se tenía la idea de que
+ un servidor tenia que ser necesariamente una máquina, conocida como super
+ computador o mainframe, que contaba con un procesador muy potente que daba
  servicio a varias terminales tontas.
- Asi, para asegurar mayor poder de cálculo es necesario tener un procesador
- más poderoso.
- De este modo, cuando los requerimientos de procesamiento aumentan, es necesario
-, en la mayoría de los casos, cambiar la super computadora actual por una
- nueva mejor, pasando a subutilizar la super computadora anterior, con un
- alto costo asociado.
+ Según esta doctrina, para asegurar mayor poder de cálculo era necesario
+ tener un procesador más poderoso.
+ De este modo, cuando los requerimientos de procesamiento aumentan, se hacía
+ necesario en la mayoría de los casos, cambiar la super computadora actual
+ por una nueva mejor, pasando a subutilizar la super computadora anterior,
+ con un alto costo asociado.
 \end_layout
 
 \begin_layout Standard
@@ -100,18 +100,141 @@ to poniendo a trabajar varias computadoras en paralelo con procesadores
 
 \lang english
 A partir de ese momento, y debido al éxito alcanzado en el proyecto, muchos
- otros proyectos siguieron la investigaci´n del tema, bajo la premisa de
+ otros proyectos siguieron la investigación del tema, bajo la premisa de
  convertir hardware de relativo bajo costo en clusters que logren equiparar
  o superar la performance alcanzada por las supercomputadoras.
+\end_layout
+
+\begin_layout Subsection
+
+\lang english
+Clusters
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+El término cluster se aplica a los conjuntos o conglomerados de computadoras
+ construidos mediante la utilización de componentes de hardware comunes
+ y que se comportan como si fuesen una única computadora.
+ Juegan hoy en día un papel importante en la solución de problemas de las
+ ciencias, las ingenierías y del comercio moderno.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+El cómputo con clusters surge como resultado de la convergencia de varias
+ tendencias actuales que incluyen la disponibilidad de microprocesadores
+ económicos de alto rendimiento y redes de alta velocidad, el desarrollo
+ de herramientas de software para cómputo distribuido de alto rendimiento,
+ así como la creciente necesidad de potencia computacional para aplicaciones
+ que la requieran.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Un cluster es un grupo de múltiples ordenadores unidos mediante una red
+ de alta velocidad, de tal forma que el conjunto es visto como un único
+ ordenador, más potente que los comunes de escritorio.
+ De un cluster se espera que presente combinaciones de los siguientes servicios:
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Alto rendimiento
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Alta disponibilidad
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Equilibrio de carga
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Escalabilidad
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+La construcción de los ordenadores del cluster es más fácil y económica
+ debido a su flexibilidad: pueden tener todos la misma configuración de
+ hardware y sistema operativo (cluster homogéneo), diferente rendimiento
+ pero con arquitecturas y sistemas operativos similares (cluster semi-homogéneo)
+, o tener diferente hardware y sistema operativo (cluster heterogéneo).
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Para que un cluster funcione como tal, no basta solo con conectar entre
+ sí los ordenadores, sino que es necesario proveer un sistema de manejo
+ del cluster, el cual se encargue de interactuar con el usuario y los procesos
+ que corren en él para optimizar el funcionamiento.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+En general, un cluster necesita de varios componentes de software y hardware
+ para poder funcionar.
+ A saber:
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Nodos (los ordenadores o servidores)
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Sistemas Operativos
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Conexiones de Red
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Middleware (capa de abstracción entre el usuario y los sistemas operativos)
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Protocolos de Comunicación y servicios.
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Aplicaciones (pueden ser paralelas o no) 
 \end_layout
 
 \begin_layout Standard
 
 \lang english
 Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
- tareas como Data Mining, Servidores de Archivos, Servidores de Base de
- Datos, Servidores Web, Simuladores de Vuelo, Graphics Rendering, Modeladores
- Climáticos o incluso para CD Ripping alcanzando velocidades realmente altas.
+ tareas como data mining, servidores de archivos, servidores de base de
+ datos, servidores web, simuladores de vuelo, graphics rendering, modeladores
+ climáticos o incluso para CD ripping alcanzando velocidades realmente altas.
 \end_layout
 
 \begin_layout Standard
@@ -120,19 +243,19 @@ Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
 La idea es simplemente reunir el poder de cómputo de una serie de nodos
  para proveer alta escabilidad, poder de cómputo, o construir redundancia
  y de esta manera proveer alta disponibilidad.
- Entonces en vez de un simple cliente haciendo peticiones de uno o más servidore
+ Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
 s, los cluster utilizan múltiples máquinas para proveer un ambiente más
- poderoso de cómputo, a través de una sola imagen de sistema, esto es que
- el procesamiento sea visible al usuario como una sola unidad, aunque se
- componga de muchas computadoras trabajando en paralelo para el mismo fin.
+ poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
+nto sea visible al usuario como una sola unidad, aunque se componga de muchas
+ computadoras trabajando en paralelo para el mismo fin.
 \end_layout
 
 \begin_layout Standard
 
 \lang english
-El alto poder de procesamiento de varias computadoras trabajando en paralelo,
- (o cluster de computadoras), se perfila como una solución viable a las
- empresas, universidades y escuelas a un bajo costo de implementación.
+El alto poder de procesamiento de varias computadoras trabajando en paralelo
+ (o cluster de computadoras) se perfila como una solución viable a las empresas,
+ universidades y escuelas a un bajo costo de implementación.
  
 \end_layout
 
@@ -140,10 +263,63 @@ El alto poder de procesamiento de varias computadoras trabajando en paralelo,
 
 \lang english
 Con el tiempo, la investigación se ha ido especializando en áreas específicas.
- El Cluster de Alto Rendimiento se aplica principalmente a aplicaciones
- científicas mientras que el Cluster de Alta Disponibilidad y Cluster de
- Balanceo de Carga son más utilizado en el ambiente de negocios.
+ El cluster de alto rendimiento se aplica principalmente a aplicaciones
+ científicas mientras que el cluster de alta disponibilidad y cluster de
+ balanceo de carga son más utilizados en el ambiente de negocios.
  En este trabajo nos enfocaremos en el primero.
+\end_layout
+
+\begin_layout Subsection
+Midleware
+\end_layout
+
+\begin_layout Standard
+El middleware es un software que generalmente actúa entre el sistema operativo
+ y las aplicaciones con la finalidad de proveer a un cluster una interfaz
+ única de acceso al sistema, denominada SSI (Single System Image), la cual
+ genera la sensación al usuario de que utiliza un único ordenador muy potente.
+ Además ofrece herramientas para la optimización y mantenimiento del sistema:
+ migración de procesos, checkpoint-restart (congelar uno o varios procesos,
+ mudarlos de servidor y continuar su funcionamiento en el nuevo host), balanceo
+ de carga, tolerancia a fallos, etc.
+ Es importante que la solución sea escalable, en este caso debe poder detectar
+ automáticamente nuevos servidores conectados al cluster para proceder a
+ su utilización.
+\end_layout
+
+\begin_layout Standard
+El middleware recibe los trabajos entrantes al cluster y los redistribuye
+ de manera que el proceso se ejecute más rápido y el sistema no sufra sobrecarga
+s en un servidor.
+ Esto se realiza mediante políticas definidas en el sistema (automáticamente
+ o por un administrador) que le indican dónde y cómo debe distribuir los
+ procesos, por un sistema de monitorización, el cual controla la carga de
+ cada CPU y la cantidad de procesos en él.
+\end_layout
+
+\begin_layout Standard
+El middleware también debe poder migrar procesos entre servidores con distintas
+ finalidades:
+\end_layout
+
+\begin_layout Itemize
+balancear la carga: si un servidor está muy cargado de procesos y otro está
+ ocioso, pueden transferirse procesos a este último para liberar de carga
+ al primero y optimizar el funcionamiento
+\end_layout
+
+\begin_layout Itemize
+mantenimiento de servidores: si hay procesos corriendo en un servidor que
+ necesita mantenimiento o una actualización, es posible migrar los procesos
+ a otro servidor y proceder a desconectar del cluster al primero
+\end_layout
+
+\begin_layout Itemize
+priorización de trabajos: en caso de tener varios procesos corriendo en
+ el cluster, pero uno de ellos de mayor importancia que los demás, puede
+ migrarse este proceso a los servidores que posean más o mejores recursos
+ para acelerar su procesamiento.
+ 
 \end_layout
 
 \begin_layout Subsection
