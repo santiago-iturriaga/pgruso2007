@@ -56,7 +56,7 @@ Facultad de Ingeniería
 \end_layout
 
 \begin_layout Author
-Santiago Iturriaga, Paulo Maya, Damian Pintos
+Santiago Iturriaga, Paulo Maya, Damián Pintos
 \newpage
 
 \begin_inset LatexCommand tableofcontents
@@ -73,8 +73,6 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 En el principio de la historia de las computadoras se tenía la idea de que
  un servidor tenia que ser necesariamente una máquina, conocida como super
  computador o mainframe, que contaba con un procesador muy potente que daba
@@ -88,8 +86,6 @@ En el principio de la historia de las computadoras se tenía la idea de que
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
  crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
 to poniendo a trabajar varias computadoras en paralelo con procesadores
@@ -97,23 +93,122 @@ to poniendo a trabajar varias computadoras en paralelo con procesadores
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 A partir de ese momento, y debido al éxito alcanzado en el proyecto, muchos
  otros proyectos siguieron la investigación del tema, bajo la premisa de
  convertir hardware de relativo bajo costo en clusters que logren equiparar
- o superar la performance alcanzada por las supercomputadoras.
+ o superar la performance alcanzada por las supercomputadores.
+\end_layout
+
+\begin_layout Standard
+La construcción de los ordenadores del cluster es más fácil y económica
+ debido a su flexibilidad: pueden tener todos la misma configuración de
+ hardware y sistema operativo (cluster homogéneo), diferente rendimiento
+ pero con arquitecturas y sistemas operativos similares (cluster semi-homogéneo)
+, o tener diferente hardware y sistema operativo (cluster heterogéneo).
+\end_layout
+
+\begin_layout Standard
+Para que un cluster funcione como tal, no basta solo con conectar entre
+ sí los ordenadores, sino que es necesario proveer un sistema de manejo
+ del cluster, el cual se encargue de interactuar con el usuario y los procesos
+ que corren en él para optimizar el funcionamiento.
+\end_layout
+
+\begin_layout Standard
+En general, un cluster necesita de varios componentes de software y hardware
+ para poder funcionar.
+ A saber:
+\end_layout
+
+\begin_layout Itemize
+Nodos (los ordenadores o servidores)
+\end_layout
+
+\begin_layout Itemize
+Sistemas Operativos
+\end_layout
+
+\begin_layout Itemize
+Conexiones de Red
+\end_layout
+
+\begin_layout Itemize
+Middleware (capa de abstracción entre el usuario y los sistemas operativos)
+\end_layout
+
+\begin_layout Itemize
+Protocolos de Comunicación y servicios.
+\end_layout
+
+\begin_layout Itemize
+Aplicaciones (pueden ser paralelas o no) 
+\end_layout
+
+\begin_layout Standard
+Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
+ tareas como data mining, servidores de archivos, servidores de base de
+ datos, servidores web, simuladores de vuelo, graphics rendering, modeladores
+ climáticos o incluso para CD ripping alcanzando velocidades realmente altas.
+\end_layout
+
+\begin_layout Standard
+La idea es simplemente reunir el poder de cómputo de una serie de nodos
+ para proveer alta escalabilidad, poder de cómputo, o construir redundancia
+ y de esta manera proveer alta disponibilidad.
+ Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
+s, los cluster utilizan múltiples máquinas para proveer un ambiente más
+ poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
+nto sea visible al usuario como una sola unidad, aunque se componga de muchas
+ computadoras trabajando en paralelo para el mismo fin.
+\end_layout
+
+\begin_layout Standard
+El alto poder de procesamiento de varias computadoras trabajando en paralelo
+ (o cluster de computadoras) se perfila como una solución viable a las empresas,
+ universidades y escuelas a un bajo costo de implementación.
+ 
 \end_layout
 
 \begin_layout Subsection
+Motivación y objetivos del proyecto
+\end_layout
 
-\lang english
+\begin_layout Standard
+Actualmente existe en el CeCal (Centro de Cálculo) un cluster de computadores
+ utilizado para investigación en proyectos internos y se proyecta como servicio
+ a prestar a entidades externas.
+ El software utilizado permite un nivel de abstraccion muy bajo, esto limita
+ los perfiles de usuarios capaces de utilizar el cluster.
+ Además se otorgan demasiadas libertades a los usuarios, por lo que es dificil
+ garantizar la disponibilidad de recursos en un determinado momento.
+ Es importante notar que los usuarios finales serán en la mayoría de los
+ casos profesionales en areas dispares como por ejemplo las ciencias básicas
+ (matemática, física, química, etc.), no necesariamente relacionadas con
+ la informatica.
+ 
+\end_layout
+
+\begin_layout Standard
+Otro objetivo importante es mantener un historial de utilización de recursos
+ por parte de los distintos usuarios y procesos.
+ Tanto para poder realizar un seguimiento del estado actual del cluster
+ y verificar su correcto funcionamiento, como para realizar mediciones referidas
+ a la utilización de recursos por parte de los usuarios ya que se lo considera
+ un activo.
+\end_layout
+
+\begin_layout Standard
+El proyecto intenta resolver estos problemas permitiendo, mediante un frontend
+ amigable, la utilización del cluster por parte de usuarios no especializados.
+ Así como también permitir el monitoreo del mismo en tiempo real por parte
+ de los administradores del cluster.
+\end_layout
+
+\begin_layout Subsection
 Clusters
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 El término cluster se aplica a los conjuntos o conglomerados de computadoras
  construidos mediante la utilización de componentes de hardware comunes
  y que se comportan como si fuesen una única computadora.
@@ -122,8 +217,6 @@ El término cluster se aplica a los conjuntos o conglomerados de computadoras
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 El cómputo con clusters surge como resultado de la convergencia de varias
  tendencias actuales que incluyen la disponibilidad de microprocesadores
  económicos de alto rendimiento y redes de alta velocidad, el desarrollo
@@ -133,8 +226,6 @@ El cómputo con clusters surge como resultado de la convergencia de varias
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Un cluster es un grupo de múltiples ordenadores unidos mediante una red
  de alta velocidad, de tal forma que el conjunto es visto como un único
  ordenador, más potente que los comunes de escritorio.
@@ -142,38 +233,34 @@ Un cluster es un grupo de múltiples ordenadores unidos mediante una red
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Alto rendimiento
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Alta disponibilidad
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Equilibrio de carga
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Escalabilidad
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Standard
+Con el tiempo, la investigación se ha ido especializando en áreas específicas.
+ El cluster de alto rendimiento se aplica principalmente a aplicaciones
+ científicas mientras que el cluster de alta disponibilidad y cluster de
+ balanceo de carga son más utilizados en el ambiente de negocios.
+ En este trabajo nos enfocaremos en el primero.
+\end_layout
 
-\lang english
+\begin_layout Subsubsection
 Cluster de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Un cluster de alto rendimiento es un conjunto de ordenadores que está diseñado
  para dar altas prestaciones en cuanto a capacidad de cálculo.
  Los motivos para utilizar un cluster de alto rendimiento son el tamaño
@@ -181,16 +268,12 @@ Un cluster de alto rendimiento es un conjunto de ordenadores que está diseñado
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 A través de un cluster se pueden conseguir capacidades de cálculo superiores
  a las de un ordenador más caro que el costo conjunto de los ordenadores
  del cluster.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Para garantizar esta capacidad de cálculo, los problemas necesitan ser paraleliz
 ables, ya que el método con el que los clusters agilizan el procesamiento
  es dividir el problema en problemas más pequeños y calcularlos en los nodos,
@@ -199,25 +282,19 @@ ables, ya que el método con el que los clusters agilizan el procesamiento
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-Para que un problema sea paralelizable se debe hacer uso de librerias especiales
- como lo es PVM (parallel virtual machine) o MPI (Message passage interfase)
- , donde la primera es usada especialmente en cluster con nodos hetereogeneos
- (arquitectura del procesador, sistemas operativo, entre otras), y perteneciente
-s a diferentes dominios de red, la segunda libreria es utilizada en cluster
- homogéneos.
+Para que un problema sea paralelizable se debe hacer uso de bibliotecas
+ especiales como lo es PVM (parallel virtual machine) o MPI (Message passage
+ interfase) , donde la primera es usada especialmente en cluster con nodos
+ heterogeneos (arquitectura del procesador, sistemas operativo, entre otras),
+ y pertenecientes a diferentes dominios de red, la segunda biblioteca es
+ utilizada en cluster homogéneos.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang english
 Cluster de alta disponibilidad
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Un cluster de alta disponibilidad es un conjunto de dos o más máquinas que
  se caracterizan por compartir los discos de almacenamiento de datos y por
  estar constantemente monitorizándose entre sí.
@@ -226,11 +303,9 @@ Un cluster de alta disponibilidad es un conjunto de dos o más máquinas que
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Un cluster se considera de alta disponibilidad de infraestructura si cuando
  se produce un fallo de hardware en alguna de las máquinas, es capaz de
- rearrancar automáticamente los servicios en cualquiera de las otras máquinas
+ reiniciar automáticamente los servicios en cualquiera de las otras máquinas
  del cluster, y cuando la máquina que ha fallado se recupera, los servicios
  son nuevamente migrados a la máquina original.
  Esta capacidad de recuperación automática de servicios nos garantiza la
@@ -240,11 +315,9 @@ Un cluster se considera de alta disponibilidad de infraestructura si cuando
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Por otro lado, un cluster se considera de alta disponibilidad de aplicación
  si cuando se produce un fallo del hardware o de las aplicaciones de alguna
- de las máquinas, es capaz de rearrancar automáticamente los servicios que
+ de las máquinas, es capaz de reiniciar automáticamente los servicios que
  han fallado en cualquiera de las otras máquinas del cluster.
  Y cuando la máquina que ha fallado se recupera, los servicios son nuevamente
  migrados a la máquina original.
@@ -255,25 +328,19 @@ Por otro lado, un cluster se considera de alta disponibilidad de aplicación
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang english
 Equilibrio de carga
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
  por uno o más ordenadores (llamados nodos) que actúan como frontend del
  cluster, y que se ocupan de repartir las peticiones de servicio que reciba
- el cluster, a otros ordenadores del cluster que forman el back-end de éste.
+ el cluster, a otros ordenadores del cluster que forman el backend de éste.
  Un tipo concreto de cluster cuya función es repartir la carga de proceso
  entre los nodos en lugar de los servicios es el cluster openMosix.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Una de las ventajas de este tipo de cluster es la posibilidad de ampliar
  su capacidad fácilmente añadiendo más ordenadores al cluster.
  Además ante la caída de alguno de los ordenadores del cluster el servicio
@@ -282,14 +349,10 @@ Una de las ventajas de este tipo de cluster es la posibilidad de ampliar
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang english
 Escalabilidad
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 En telecomunicaciones y en ingeniería informática, la escalabilidad es la
  propiedad deseable de un sistema, una red o un proceso, que indica su habilidad
  para, o bien manejar el crecimiento continuo de trabajo de manera fluida,
@@ -305,8 +368,6 @@ En telecomunicaciones y en ingeniería informática, la escalabilidad es la
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 La escalabilidad como propiedad de los sistemas es generalmente difícil
  de definir en cualquier caso, en particular es necesario definir los requerimie
 ntos específicos para la escalabilidad en esas dimensiones donde se crea
@@ -316,119 +377,8 @@ ntos específicos para la escalabilidad en esas dimensiones donde se crea
  pasa a ser "un sistema escalable".
 \end_layout
 
-\begin_layout Standard
-
-\lang english
-\SpecialChar \textcompwordmark{}
-
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-La construcción de los ordenadores del cluster es más fácil y económica
- debido a su flexibilidad: pueden tener todos la misma configuración de
- hardware y sistema operativo (cluster homogéneo), diferente rendimiento
- pero con arquitecturas y sistemas operativos similares (cluster semi-homogéneo)
-, o tener diferente hardware y sistema operativo (cluster heterogéneo).
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-Para que un cluster funcione como tal, no basta solo con conectar entre
- sí los ordenadores, sino que es necesario proveer un sistema de manejo
- del cluster, el cual se encargue de interactuar con el usuario y los procesos
- que corren en él para optimizar el funcionamiento.
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-En general, un cluster necesita de varios componentes de software y hardware
- para poder funcionar.
- A saber:
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Nodos (los ordenadores o servidores)
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Sistemas Operativos
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Conexiones de Red
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Middleware (capa de abstracción entre el usuario y los sistemas operativos)
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Protocolos de Comunicación y servicios.
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Aplicaciones (pueden ser paralelas o no) 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
- tareas como data mining, servidores de archivos, servidores de base de
- datos, servidores web, simuladores de vuelo, graphics rendering, modeladores
- climáticos o incluso para CD ripping alcanzando velocidades realmente altas.
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-La idea es simplemente reunir el poder de cómputo de una serie de nodos
- para proveer alta escabilidad, poder de cómputo, o construir redundancia
- y de esta manera proveer alta disponibilidad.
- Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
-s, los cluster utilizan múltiples máquinas para proveer un ambiente más
- poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
-nto sea visible al usuario como una sola unidad, aunque se componga de muchas
- computadoras trabajando en paralelo para el mismo fin.
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-El alto poder de procesamiento de varias computadoras trabajando en paralelo
- (o cluster de computadoras) se perfila como una solución viable a las empresas,
- universidades y escuelas a un bajo costo de implementación.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-Con el tiempo, la investigación se ha ido especializando en áreas específicas.
- El cluster de alto rendimiento se aplica principalmente a aplicaciones
- científicas mientras que el cluster de alta disponibilidad y cluster de
- balanceo de carga son más utilizados en el ambiente de negocios.
- En este trabajo nos enfocaremos en el primero.
-\end_layout
-
 \begin_layout Subsection
-Midleware
+Middleware
 \end_layout
 
 \begin_layout Standard
@@ -481,33 +431,28 @@ priorización de trabajos: en caso de tener varios procesos corriendo en
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Trabajos previos
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 No son pocos los trabajos realizados sobre investigación, desarrollo, construcci
-ón y aplicaciones de clusters, pero es relativamente poca la bibliografía
- asociada, dado que el tema ha ganado auge principalmente en la última década,
- más alla de que la idea no es nueva.
- Se remontan estudios desde 1970, pero se puede decir que IBM fue la primera
- en establecer una teoría formal con respecto a los clusters.
+ón y aplicaciones de clusters.
+ Sin embargo es relativamente poca la bibliografía asociada, dado que el
+ tema ha ganado auge principalmente en la última década, a pesar de que
+ la idea no es nueva.
+ Los estudios se remontan desde 1970, pero se puede decir que IBM fue la
+ primera en establecer una teoría formal con respecto a los clusters.
  Este trabajo fue realizado por Gene Myron Amdahl (arquitecto de computadoras
- estadounidense noruego), que en el momento de realizar el estudio donde
- demostró la ley de Amdal (llamada axial en honor a su nombre).
+ estadounidense de origen noruego), que en el momento de realizar el estudio
+ demostró la ley de Amdal (llamada así en honor a su nombre).
  Esta ley se usa para encontrar la máxima mejora esperada a un sistema en
  su totalidad, cuando solo parte del sistema se mejora.
- Esto es usado muy a menudo en computación paralela para predecir la máxima
+ La ley es usada muy a menudo en computación paralela para predecir la máxima
  mejora de velocidad usando múltiples procesadores.
  
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Ley de amdahl: 
 \begin_inset Quotes eld
 \end_inset
@@ -523,8 +468,6 @@ La mejora obtenida en el rendimiento de un sistema debido a la alteración
 
 \begin_deeper
 \begin_layout Itemize
-
-\lang english
 \begin_inset Formula $A=F_{a}*((1-F_{m})+F_{m}/A_{m}$
 \end_inset
 
@@ -549,228 +492,10 @@ La mejora obtenida en el rendimiento de un sistema debido a la alteración
 
 \end_deeper
 \begin_layout Standard
-
-\lang english
-Hoy en día, hay muchísimos trabajos de diferente índole con respecto a los
- clusters de computadoras, debido a que en elámbito de computación paralela,
- el cluster es la nueva modalidad de construcción de supercomputadoras,
- por su bajo costo y accesibilidad.
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Proyectos / Productos de Clusters
-\end_layout
-
-\begin_layout Subsubsection
-
-\lang english
-Clusters de Alta Disponibilidad
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Oracle Real Application Clusters
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-IBM DB2 Integrated Cluster Environment
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Linux HA
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-FreeNAS
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-HA-OSCAR: The High Availability Linux Project
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Kimberlite 
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Lifekeeper
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Linux FailSafe
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Linux Replicated High Availability Manager
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-MC/Serviceguard
-\end_layout
-
-\begin_layout Subsubsection
-
-\lang english
-Clusters de Alto Rendimiento
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-PVM
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-pvmsync
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-MPI
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-LAM/MPI
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-PLUS: MPI&PVM integration
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Beowulf (for Linux)
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Berkeley NOW (for Solaris)
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Parallel Knoppix
-\end_layout
-
-\begin_layout Subsubsection
-
-\lang english
-Mallas (Grids) de computadoras
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-SGE (Sun Grid Engine)
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-GridSim toolkit for Simulation of Application Scheduling
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Gridbus: Toolkit for service-oriented cluster and grid computing 
-\end_layout
-
-\begin_layout Subsubsection
-
-\lang english
-Balanceo de Carga
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Alinka Oranges 
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Keepalived
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Linux Virtual Server
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-LVSM
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Red Hat Cluster Suite
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Turbolinux Cluster Server
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Ultra Monkey
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Condor
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-openMosix
-\end_layout
-
-\begin_layout Itemize
-
-\lang english
-Cluster Knoppix
+Hoy en día, hay muchos trabajos de diferente índole con respecto a los clusters
+ de computadoras, debido a que en el ámbito de la computación paralela el
+ cluster es la nueva modalidad de construcción de supercomputadoras, por
+ su bajo costo y accesibilidad.
 \end_layout
 
 \begin_layout Section
@@ -778,21 +503,18 @@ Computación de Alto Rendimiento
 \end_layout
 
 \begin_layout Standard
-En el correr de los ultimos anos a crecido la importancias de satisfacer
- requisitos crecientes de poder de conputo debido a la necesidad de resolver
+En el correr de los ultimos años ha crecido la importancia de satisfacer
+ requisitos crecientes de poder de computo debido a la necesidad de resolver
  problemas mas complicados con modelos mas complejos, asi como trabajar
  con grandes volumenes de datos sin perder de vista la capacidad de respuesta
- en un tiempo limitado
+ en un tiempo limitado.
 \end_layout
 
 \begin_layout Standard
-El Procesamiento Paralelo o Computacion Paralela de Alto Renedimiento a
- ganado terreno y se a vuelo muy importante en la resolución de estos requisitos.
-\end_layout
-
-\begin_layout Standard
-La Computación de Alto Rendimiento se apoya en tecnologías como los clusters,
- supercomputadores o mediante el uso de la computación paralela y distribuida.
+El procesamiento paralelo (o computación paralela de alto rendimiento) ha
+ ganado terreno y se a vuelto muy importante en la resolución de estos problemas.
+ La computación de alto rendimiento se apoya en tecnologías como los clusters,
+ supercomputadores y mediante el uso de la computación paralela y distribuida.
  
 \end_layout
 
@@ -807,30 +529,35 @@ La computación distribuida es un modelo para resolver problemas de computación
 \end_layout
 
 \begin_layout Standard
-Consiste en compartir recursos heterogéneos (basadas en distintas plataformas,
- arquitecturas de equipos y programas, lenguajes de programación), situados
- en distintos lugares y pertenecientes a diferentes dominios de administración
- sobre una red que utiliza estándares abiertos.
+Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
+ arquitecturas de computadores y programas, lenguajes de programación),
+ situados en distintos lugares y pertenecientes a diferentes dominios de
+ administración sobre una red que utiliza estándares abiertos.
  
 \end_layout
 
 \begin_layout Standard
-Exiten varios grados de distribucion: dsitribucion de hardware y procesamiento,
- distribucion de datos y distrubucion del control.
+Exiten varios grados de distribucion: de hardware y procesamiento, de datos
+ y de control.
+ (detallar)
 \end_layout
 
 \begin_layout Standard
 La computación distribuida ha sido diseñada para resolver problemas demasiado
- grandes para cualquier supercomputadora y main-frame, manteniendose la
- flexibilidad de trabajar en múltiples problemas más pequeños.
- Por lo tanto, la computación en grid es naturalmente un entorno multi-usuario;
- por ello, las técnicas de autorización segura son esenciales antes de permitir
+ grandes para cualquier supercomputadora o mainframe, manteniendose la flexibili
+dad de trabajar en múltiples problemas más pequeños.
+ 
+\end_layout
+
+\begin_layout Standard
+La computación distribuida es naturalmente un entorno multiusuario; por
+ ello, las técnicas de autorización segura son esenciales antes de permitir
  que los recursos informáticos sean controlados por usuarios remotos.
 \end_layout
 
 \begin_layout Standard
 Algunas de las ventajas de la computacion distribuida son la mejora en el
- desempeno, robustez, seguridad no centralizada y acceso transparente a
+ desempeño, robustez, seguridad no centralizada y acceso transparente a
  los datos no locales.
 \end_layout
 
@@ -884,12 +611,12 @@ Podemos hacer una division de las aplicaciones que requieren una demanda
 \end_layout
 
 \begin_layout Subsubsection*
-Aplicacions de calculo intencivas
+Aplicaciones de cálculo intensivas
 \end_layout
 
 \begin_layout Standard
-Son aplicaciones que requieren un alto numero de ciclos de máquinas, estas
- son las que han impulsado el desarrollo de supercomputadores.
+Son aplicaciones que requieren un alto número de ciclos de máquina, estas
+ aplicaciones han impulsado el desarrollo de supercomputadores.
  Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
  en otras áreas como simulación financiera y económica.
  Dependen grandemente de la velocidad y el procesamiento de punto flotantes
@@ -2364,7 +2091,7 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
 
 \begin_layout Standard
 (*) Moshe Bar, fundador y director de proyecto de openMosix, anuncio el
- 15 de julio del 2007 el cierre del proyecto y que se congelara tanto su
+ 15 de julio del 2007 el cierre del proyecto y que se congelará tanto su
  desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
 \end_layout
 
@@ -2486,9 +2213,8 @@ Sun Grid Engine es un software para administración de recursos distribuídos
 Sun Grid Engine actúa como el sistema nervioso central de un cluster de
  computadoras conectadas.
  A partir de algunos demoniso, el Sun Grid Master supervisa todos los recursos
- de la red 
-\lang english
-para permitir control completo y alcanzar la utilización óptima de los mismos.
+ de la red para permitir control completo y alcanzar la utilización óptima
+ de los mismos.
 \end_layout
 
 \begin_layout Standard
@@ -3209,7 +2935,7 @@ El cluster consta de 200 nodos Dell PowerEdge 1950 1U con dos procesadores
 \end_layout
 
 \begin_layout Subsubsection
-Conclusiones
+Conclusión
 \end_layout
 
 \begin_layout Standard
