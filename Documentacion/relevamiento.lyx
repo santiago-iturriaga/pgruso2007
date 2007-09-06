@@ -57,6 +57,10 @@ Facultad de Ingeniería
 
 \begin_layout Author
 Santiago Iturriaga, Paulo Maya, Damián Pintos
+\end_layout
+
+\begin_layout Standard
+
 \newpage
 
 \begin_inset LatexCommand tableofcontents
@@ -175,33 +179,31 @@ Motivación y objetivos del proyecto
 
 \begin_layout Standard
 Actualmente existe en el CeCal (Centro de Cálculo) un cluster de computadores
- utilizado para investigación en proyectos internos y se proyecta como servicio
- a prestar a entidades externas.
- El software utilizado permite un nivel de abstraccion muy bajo, esto limita
- los perfiles de usuarios capaces de utilizar el cluster.
- Además se otorgan demasiadas libertades a los usuarios, por lo que es dificil
- garantizar la disponibilidad de recursos en un determinado momento.
+ utilizado para investigación en proyectos internos.
+ A corto plazo se proyecta alquilar el mismo como servicio a entidades externas.
+ El software utilizado permite un nivel de abstracción muy bajo, esto limita
+ los perfiles de usuarios capaces de utilizar el sistema.
  Es importante notar que los usuarios finales serán en la mayoría de los
  casos profesionales en areas dispares como por ejemplo las ciencias básicas
  (matemática, física, química, etc.), no necesariamente relacionadas con
- la informatica.
- 
+ la informática.
 \end_layout
 
 \begin_layout Standard
-Otro objetivo importante es mantener un historial de utilización de recursos
- por parte de los distintos usuarios y procesos.
- Tanto para poder realizar un seguimiento del estado actual del cluster
- y verificar su correcto funcionamiento, como para realizar mediciones referidas
- a la utilización de recursos por parte de los usuarios ya que se lo considera
- un activo.
+Se desea mantener un control estricto de las actividades de los usuarios
+ de manera de poder garantizar la disponibilidad de recursos en un determinado
+ momento.
+ Otro objetivo importante es mantener un historial de utilización de recursos
+ por parte de los distintos usuarios y procesos; tanto para poder realizar
+ un seguimiento de su estado actual y verificar su correcto funcionamiento,
+ como para realizar mediciones referidas a la utilización de recursos por
+ parte de los usuarios ya que se lo considera un activo.
 \end_layout
 
 \begin_layout Standard
-El proyecto intenta resolver estos problemas permitiendo, mediante un frontend
- amigable, la utilización del cluster por parte de usuarios no especializados.
- Así como también permitir el monitoreo del mismo en tiempo real por parte
- de los administradores del cluster.
+El proyecto intenta resolver estos problemas permitiendo la utilización
+ del sistema por parte de usuarios no especializados, así como también permitir
+ el monitoreo del mismo en tiempo real por parte de los administradores.
 \end_layout
 
 \begin_layout Subsection
@@ -438,64 +440,147 @@ Trabajos previos
 No son pocos los trabajos realizados sobre investigación, desarrollo, construcci
 ón y aplicaciones de clusters.
  Sin embargo es relativamente poca la bibliografía asociada, dado que el
- tema ha ganado auge principalmente en la última década, a pesar de que
- la idea no es nueva.
- Los estudios se remontan desde 1970, pero se puede decir que IBM fue la
- primera en establecer una teoría formal con respecto a los clusters.
- Este trabajo fue realizado por Gene Myron Amdahl (arquitecto de computadoras
- estadounidense de origen noruego), que en el momento de realizar el estudio
- demostró la ley de Amdal (llamada así en honor a su nombre).
- Esta ley se usa para encontrar la máxima mejora esperada a un sistema en
- su totalidad, cuando solo parte del sistema se mejora.
- La ley es usada muy a menudo en computación paralela para predecir la máxima
- mejora de velocidad usando múltiples procesadores.
+ tema ha ganado auge principalmente en la última década.
+ Los estudios se remontan desde 1970, pero puede decirse que IBM fue la
+ primera en establecer una teoría formal con respecto a los clusters a traves
+ de un estudio realizado por Gene Myron Amdahl.
  
 \end_layout
 
-\begin_layout Itemize
-Ley de amdahl: 
-\begin_inset Quotes eld
-\end_inset
-
-La mejora obtenida en el rendimiento de un sistema debido a la alteración
- de uno de sus componentes está limitada por la fracción de tiempo que se
- utiliza dicho componente
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $A=F_{a}*((1-F_{m})+F_{m}/A_{m}$
-\end_inset
-
-) donde 
-\begin_inset Formula $F_{a}$
-\end_inset
-
- es el tiempo de ejecución antiguo, 
-\begin_inset Formula $A$
-\end_inset
-
- es la aceleración obtenida, 
-\begin_inset Formula $A_{m}$
-\end_inset
-
- es el factor de mejora introducido y 
-\begin_inset Formula $F_{m}$
-\end_inset
-
- es la fracción de tiempo que el sistema utiliza el subsistema mejorado
-\end_layout
-
-\end_deeper
 \begin_layout Standard
-Hoy en día, hay muchos trabajos de diferente índole con respecto a los clusters
- de computadoras, debido a que en el ámbito de la computación paralela el
- cluster es la nueva modalidad de construcción de supercomputadoras, por
- su bajo costo y accesibilidad.
+En el CeCal se han llevado a cabo en los últimos años una gran cantidad
+ de trabajos de investigación por parte de docentes y de estudiantes.
+ Dentro del ambito académico-docente podemos destacar los siguientes trabajos:
+\end_layout
+
+\begin_layout Paragraph
+Algoritmos genéticos paralelos y su aplicación al diseño de redes de comunicacio
+nes confiables (2004)
+\end_layout
+
+\begin_layout Standard
+Tésis de maestria realizada por Mg.
+ Ing.
+ Sergio Nesmachnow, finalizada en Julio de 2004 (http://www.fing.edu.uy/~sergion/Te
+sis.pdf).
+\end_layout
+
+\begin_layout Paragraph
+Mejora del desempeño de modelos numéricos del Río de la Plata (2006)
+\end_layout
+
+\begin_layout Standard
+Tésis de maestria del Ing.
+ Pablo Ezzatti, finalizada en Junio de 2006 (http://www.fing.edu.uy/inco/grupos/cec
+al/hpc/mej_des/tesis.pdf).
+\end_layout
+
+\begin_layout Paragraph
+Algoritmos genéticos paralelos aplicados a la resolución de problemas de
+ asinación de frecuencias en redes celulares (2006)
+\end_layout
+
+\begin_layout Standard
+Tesina de licenciatura en informática de la Universidad Nacional de la Patagonia
+ San Juan Bosco (Argentina) realizada por Cristian Perfumo, Gerardo Mora
+ y Lucas Rojas, tutoreada por el Mg.
+ Ing.
+ Sergio Nesmachnow e Ing.
+ José Gallardo (http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf).
+\end_layout
+
+\begin_layout Paragraph
+Una versión paralela del algoritmo evolutivo para optimización multiobjetivo
+ NSGA-II y su aplicación al diseño de redes de comunicaciones confiables
+ (2003)
+\end_layout
+
+\begin_layout Standard
+Proyecto realizado por el Mg.
+ Ing.
+ Sergio Nesmachnow realizado como proyecto final del curso "Introducción
+ a la Optimización Multiobjetivo usando Metaheurísticas", dictado por el
+ Prof.
+ Dr.
+ Carlos Coello en el marco de la VII Escuela Internacional de Informática
+ en el CACIC 2003 (http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf).
+\end_layout
+
+\begin_layout Standard
+\SpecialChar \textcompwordmark{}
+
+\end_layout
+
+\begin_layout Standard
+Por parte de los estudiantes podemos mencionar como ejemplo algunos de los
+ proyectos de grado realizados recientemente:
+\end_layout
+
+\begin_layout Paragraph
+Proyecto MPI.net (2003)
+\end_layout
+
+\begin_layout Standard
+Proyecto de grado realizado por Sebastián Baña, Gonzalo Ferres y Nicolás
+ Pepe (http://www.fing.edu.uy/~sergion/mpinet/).
+\end_layout
+
+\begin_layout Paragraph
+Proyecto algoritmos genéticos incrementales (2003)
+\end_layout
+
+\begin_layout Standard
+Proyecto de grado realizado por Federico Dominioni y Pablo Musso (http://www.fing.
+edu.uy/~sergion/agi/).
+\end_layout
+
+\begin_layout Paragraph
+Metaheurísticas aplicadas a la reconstrucción de árboles filogenéticos (2007,
+ en curso).
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Implementación de alto desempeño del algoritmo de radiosidad en tiempo real
+ utilizando GPUs.
+ (2007, en curso).
+ 
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Laboratorio de simulación numérica para flujos de superficie libre (2006,
+ en curso).
+ 
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Paralelismo aplicado a algoritmos evolutivos para optimización multiobjetivo
+ (2006, en curso).
+ 
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Diseño, configuración, administración y evaluación de performance de un
+ clúster para procesamiento paralelo (2006, en curso).
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
 \end_layout
 
 \begin_layout Section
@@ -503,21 +588,18 @@ Computación de Alto Rendimiento
 \end_layout
 
 \begin_layout Standard
-En el correr de los ultimos anos a crecido la importancias de satisfacer
- requisitos crecientes de poder de conputo debido a la necesidad de resolver
+En el correr de los ultimos años ha crecido la importancia de satisfacer
+ requisitos crecientes de poder de computo debido a la necesidad de resolver
  problemas mas complicados con modelos mas complejos, asi como trabajar
  con grandes volumenes de datos sin perder de vista la capacidad de respuesta
- en un tiempo limitado
+ en un tiempo limitado.
 \end_layout
 
 \begin_layout Standard
-El Procesamiento Paralelo o Computacion Paralela de Alto Renedimiento a
- ganado terreno y se a vuelo muy importante en la resolución de estos requisitos.
-\end_layout
-
-\begin_layout Standard
-La Computación de Alto Rendimiento se apoya en tecnologías como los clusters,
- supercomputadores o mediante el uso de la computación paralela y distribuida.
+El procesamiento paralelo (o computación paralela de alto rendimiento) ha
+ ganado terreno y se a vuelto muy importante en la resolución de estos problemas.
+ La computación de alto rendimiento se apoya en tecnologías como los clusters,
+ supercomputadores y mediante el uso de la computación paralela y distribuida.
  
 \end_layout
 
@@ -532,30 +614,35 @@ La computación distribuida es un modelo para resolver problemas de computación
 \end_layout
 
 \begin_layout Standard
-Consiste en compartir recursos heterogéneos (basadas en distintas plataformas,
- arquitecturas de equipos y programas, lenguajes de programación), situados
- en distintos lugares y pertenecientes a diferentes dominios de administración
- sobre una red que utiliza estándares abiertos.
+Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
+ arquitecturas de computadores y programas, lenguajes de programación),
+ situados en distintos lugares y pertenecientes a diferentes dominios de
+ administración sobre una red que utiliza estándares abiertos.
  
 \end_layout
 
 \begin_layout Standard
-Exiten varios grados de distribucion: dsitribucion de hardware y procesamiento,
- distribucion de datos y distrubucion del control.
+Exiten varios grados de distribucion: de hardware y procesamiento, de datos
+ y de control.
+ (detallar)
 \end_layout
 
 \begin_layout Standard
 La computación distribuida ha sido diseñada para resolver problemas demasiado
- grandes para cualquier supercomputadora y main-frame, manteniendose la
- flexibilidad de trabajar en múltiples problemas más pequeños.
- Por lo tanto, la computación en grid es naturalmente un entorno multi-usuario;
- por ello, las técnicas de autorización segura son esenciales antes de permitir
+ grandes para cualquier supercomputadora o mainframe, manteniendose la flexibili
+dad de trabajar en múltiples problemas más pequeños.
+ 
+\end_layout
+
+\begin_layout Standard
+La computación distribuida es naturalmente un entorno multiusuario; por
+ ello, las técnicas de autorización segura son esenciales antes de permitir
  que los recursos informáticos sean controlados por usuarios remotos.
 \end_layout
 
 \begin_layout Standard
 Algunas de las ventajas de la computacion distribuida son la mejora en el
- desempeno, robustez, seguridad no centralizada y acceso transparente a
+ desempeño, robustez, seguridad no centralizada y acceso transparente a
  los datos no locales.
 \end_layout
 
@@ -609,12 +696,12 @@ Podemos hacer una division de las aplicaciones que requieren una demanda
 \end_layout
 
 \begin_layout Subsubsection*
-Aplicacions de calculo intencivas
+Aplicaciones de cálculo intensivas
 \end_layout
 
 \begin_layout Standard
-Son aplicaciones que requieren un alto numero de ciclos de máquinas, estas
- son las que han impulsado el desarrollo de supercomputadores.
+Son aplicaciones que requieren un alto número de ciclos de máquina, estas
+ aplicaciones han impulsado el desarrollo de supercomputadores.
  Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
  en otras áreas como simulación financiera y económica.
  Dependen grandemente de la velocidad y el procesamiento de punto flotantes
@@ -861,7 +948,7 @@ Esta arquitectura es fácil y económica de implementar, pero es altamente
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/bus.png
+	filename Images/bus.png
 
 \end_inset
 
@@ -893,7 +980,7 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/malla1.png
+	filename Images/malla1.png
 
 \end_inset
 
@@ -910,7 +997,7 @@ Esta organización es simaleres a las mallas pero presentan menor diametro.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/mariposa.png
+	filename Images/mariposa.png
 	rotateOrigin center
 
 \end_inset
@@ -940,7 +1027,7 @@ Estas redes intentan combinar las ventajas de las mallas y los arboles,
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/piramide.png
+	filename Images/piramide.png
 
 \end_inset
 
@@ -970,7 +1057,7 @@ uno conecta dos hipercubos de dimensión-cero.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/hipercubos.png
+	filename Images/hipercubos.png
 
 \end_inset
 
@@ -1002,7 +1089,7 @@ res.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/omega3e8p.png
+	filename Images/omega3e8p.png
 
 \end_inset
 
@@ -1020,7 +1107,7 @@ Estas son un conjunto de switches, llamados routers, enlazados por distintas
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/firasinterconexion.png
+	filename Images/firasinterconexion.png
 
 \end_inset
 
@@ -1553,7 +1640,7 @@ La mayor parte de computadores seriales son SISD.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/SISD.png
+	filename Images/SISD.png
 
 \end_inset
 
@@ -1595,7 +1682,7 @@ Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/SIMD.png
+	filename Images/SIMD.png
 
 \end_inset
 
@@ -1618,7 +1705,7 @@ Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/MISD.png
+	filename Images/MISD.png
 
 \end_inset
 
@@ -1643,7 +1730,7 @@ Podemos categorizarlos tambien según como esté organizada su memoria: memoria
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/MIMD.png
+	filename Images/MIMD.png
 
 \end_inset
 
@@ -1773,7 +1860,7 @@ disponible a todos los procesadores.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename E:/paulo/Proyecto/Source/Documentacion/Images/origin2000.png
+	filename Images/origin2000.png
 
 \end_inset
 
