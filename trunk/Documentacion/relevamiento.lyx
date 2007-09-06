@@ -503,18 +503,21 @@ Computación de Alto Rendimiento
 \end_layout
 
 \begin_layout Standard
-En el correr de los ultimos años ha crecido la importancia de satisfacer
- requisitos crecientes de poder de computo debido a la necesidad de resolver
+En el correr de los ultimos anos a crecido la importancias de satisfacer
+ requisitos crecientes de poder de conputo debido a la necesidad de resolver
  problemas mas complicados con modelos mas complejos, asi como trabajar
  con grandes volumenes de datos sin perder de vista la capacidad de respuesta
- en un tiempo limitado.
+ en un tiempo limitado
 \end_layout
 
 \begin_layout Standard
-El procesamiento paralelo (o computación paralela de alto rendimiento) ha
- ganado terreno y se a vuelto muy importante en la resolución de estos problemas.
- La computación de alto rendimiento se apoya en tecnologías como los clusters,
- supercomputadores y mediante el uso de la computación paralela y distribuida.
+El Procesamiento Paralelo o Computacion Paralela de Alto Renedimiento a
+ ganado terreno y se a vuelo muy importante en la resolución de estos requisitos.
+\end_layout
+
+\begin_layout Standard
+La Computación de Alto Rendimiento se apoya en tecnologías como los clusters,
+ supercomputadores o mediante el uso de la computación paralela y distribuida.
  
 \end_layout
 
@@ -529,35 +532,30 @@ La computación distribuida es un modelo para resolver problemas de computación
 \end_layout
 
 \begin_layout Standard
-Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
- arquitecturas de computadores y programas, lenguajes de programación),
- situados en distintos lugares y pertenecientes a diferentes dominios de
- administración sobre una red que utiliza estándares abiertos.
+Consiste en compartir recursos heterogéneos (basadas en distintas plataformas,
+ arquitecturas de equipos y programas, lenguajes de programación), situados
+ en distintos lugares y pertenecientes a diferentes dominios de administración
+ sobre una red que utiliza estándares abiertos.
  
 \end_layout
 
 \begin_layout Standard
-Exiten varios grados de distribucion: de hardware y procesamiento, de datos
- y de control.
- (detallar)
+Exiten varios grados de distribucion: dsitribucion de hardware y procesamiento,
+ distribucion de datos y distrubucion del control.
 \end_layout
 
 \begin_layout Standard
 La computación distribuida ha sido diseñada para resolver problemas demasiado
- grandes para cualquier supercomputadora o mainframe, manteniendose la flexibili
-dad de trabajar en múltiples problemas más pequeños.
- 
-\end_layout
-
-\begin_layout Standard
-La computación distribuida es naturalmente un entorno multiusuario; por
- ello, las técnicas de autorización segura son esenciales antes de permitir
+ grandes para cualquier supercomputadora y main-frame, manteniendose la
+ flexibilidad de trabajar en múltiples problemas más pequeños.
+ Por lo tanto, la computación en grid es naturalmente un entorno multi-usuario;
+ por ello, las técnicas de autorización segura son esenciales antes de permitir
  que los recursos informáticos sean controlados por usuarios remotos.
 \end_layout
 
 \begin_layout Standard
 Algunas de las ventajas de la computacion distribuida son la mejora en el
- desempeño, robustez, seguridad no centralizada y acceso transparente a
+ desempeno, robustez, seguridad no centralizada y acceso transparente a
  los datos no locales.
 \end_layout
 
@@ -611,12 +609,12 @@ Podemos hacer una division de las aplicaciones que requieren una demanda
 \end_layout
 
 \begin_layout Subsubsection*
-Aplicaciones de cálculo intensivas
+Aplicacions de calculo intencivas
 \end_layout
 
 \begin_layout Standard
-Son aplicaciones que requieren un alto número de ciclos de máquina, estas
- aplicaciones han impulsado el desarrollo de supercomputadores.
+Son aplicaciones que requieren un alto numero de ciclos de máquinas, estas
+ son las que han impulsado el desarrollo de supercomputadores.
  Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
  en otras áreas como simulación financiera y económica.
  Dependen grandemente de la velocidad y el procesamiento de punto flotantes
@@ -800,7 +798,7 @@ La organización de los procesadores o red se refiere a como se conectan
 \end_layout
 
 \begin_layout Standard
-Existen varios criteriospara evaluar los distintos diseños de organizacion:
+Existen varios criterios para evaluar los distintos diseños de organizacion:
  
 \end_layout
 
@@ -863,7 +861,7 @@ Esta arquitectura es fácil y económica de implementar, pero es altamente
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/bus.png
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/bus.png
 
 \end_inset
 
@@ -895,7 +893,7 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/malla1.png
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/malla1.png
 
 \end_inset
 
@@ -912,7 +910,8 @@ Esta organización es simaleres a las mallas pero presentan menor diametro.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/mariposa.png
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/mariposa.png
+	rotateOrigin center
 
 \end_inset
 
@@ -941,7 +940,7 @@ Estas redes intentan combinar las ventajas de las mallas y los arboles,
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/piramide.png
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/piramide.png
 
 \end_inset
 
@@ -971,7 +970,7 @@ uno conecta dos hipercubos de dimensión-cero.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/hipercubos.png
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/hipercubos.png
 
 \end_inset
 
@@ -1003,7 +1002,7 @@ res.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/omega3e8p.png
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/omega3e8p.png
 
 \end_inset
 
@@ -1021,7 +1020,7 @@ Estas son un conjunto de switches, llamados routers, enlazados por distintas
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/firasinterconexion.png
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/firasinterconexion.png
 
 \end_inset
 
@@ -1400,6 +1399,14 @@ Son equipos formados por un número de procesadores completamente programables
  capaces de ejecutar su propio programa.
 \end_layout
 
+\begin_layout Standard
+La principal debilidad que presentan los multiprocesadores (máquinas de
+ memoria compartida) radica en que no se pueden agregar procesadores indefinidam
+ente ya que a partir de cierto número y dependiendo de la aplicación, el
+ mecanismo de switches o enrutamiento se satura , en otras palabras, tienen
+ poca extensibilidad.
+\end_layout
+
 \begin_layout Subsubsection
 UMA: Multiprocesadores de Acceso Uniforme a Memoria
 \end_layout
@@ -1407,8 +1414,8 @@ UMA: Multiprocesadores de Acceso Uniforme a Memoria
 \begin_layout Standard
 Estos computadores tienen sus procesadores interconectados a través de un
  mecanismo de switches a una memoria compartida centralizada.
- Entre estos mecanismos estan: un bus común, crossbar switches, packet-switched
- networks9.
+ Entre estos mecanismos estan: un bus común, crossbar switches o packet-switched
+ networks.
 \end_layout
 
 \begin_layout Standard
@@ -1428,14 +1435,6 @@ Estos multiprocesadores tienen el espacio de direccionamiento compartido
  o no.
  La BBN TC2000 y la SGI Origin 2000 son ejemplos de este modelo de computación
  paralela.
-\end_layout
-
-\begin_layout Standard
-El principal problema que presentan los multiprocesadores (máquinas de memoria
- compartida) radica en que no se pueden agregar procesadores indefinidamente
- ya que a partir de cierto número y dependiendo de la aplicación, el mecanismo
- de switches o enrutamiento se satura , en otras palabras, tienen poca extensibi
-lidad.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1542,21 +1541,46 @@ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
 Dentro de la clasificacion de Flynn tenemos la siguientes categorías.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 SISD Single instruction stream, single data stream
 \end_layout
 
 \begin_layout Standard
 La mayor parte de computadores seriales son SISD.
- Estas tienen un CPU que ejecuta una instrucciones, busca o guarda datos
+ Estas tienen un CPU que ejecuta una instrucciones y busca o guarda datos
  en un momento dado.
 \end_layout
 
 \begin_layout Standard
-Figura
+\begin_inset Graphics
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/SISD.png
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Standard
+UP: Unidad de Procesamiento
+\end_layout
+
+\begin_layout Standard
+UC: Unidad de Control 
+\end_layout
+
+\begin_layout Standard
+M: Memoria 
+\end_layout
+
+\begin_layout Standard
+FI: Flujo de Instrucciones 
+\end_layout
+
+\begin_layout Standard
+FD: Flujo de Datos
+\end_layout
+
+\begin_layout Subsubsection*
 SIMD Single instruction stream, multiple data stream
 \end_layout
 
@@ -1565,15 +1589,20 @@ En esta categoria entrarn los arreglos de procesadores.
 \end_layout
 
 \begin_layout Standard
-Hay un conjunto de unidades de procesamiento cada una ejecutando la misma
+Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
  operación sobre datos distintos
 \end_layout
 
 \begin_layout Standard
-Figura
+\begin_inset Graphics
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/SIMD.png
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 MISD Multiple instruction stream, single data stream
 \end_layout
 
@@ -1588,9 +1617,21 @@ Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
 \end_layout
 
 \begin_layout Standard
-MIMD Multiple instruction stream, multiple data stream La mayoría de los
- multiprocesadores y multicomputadores pueden ser clasificados bajo esta
- categoría.
+\begin_inset Graphics
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/MISD.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+MIMD Multiple instruction stream, multiple data stream
+\end_layout
+
+\begin_layout Standard
+La mayoría de los multiprocesadores y multicomputadores pueden ser clasificados
+ bajo esta categoría.
  Estos tienen más de un procesador independiente, y cada uno puede ejecutar
  un programa diferente sobre sus propios datos.
 \end_layout
@@ -1600,7 +1641,16 @@ Podemos categorizarlos tambien según como esté organizada su memoria: memoria
  compartida o memoria distribuida.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Standard
+\begin_inset Graphics
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/MIMD.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 SPMD Single program, multiple data
 \end_layout
 
@@ -1723,7 +1773,7 @@ disponible a todos los procesadores.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/origin2000.png
+	filename E:/paulo/Proyecto/Source/Documentacion/Images/origin2000.png
 
 \end_inset
 
@@ -1767,10 +1817,11 @@ Cluster de PC's
 \end_layout
 
 \begin_layout Standard
-El término cluster se aplica a los conjuntos de computadoras que se comportan
- como si fuesen una única computadora.
- Hoy en día tiene un papel importante en aplicaciones científicas y de ingenierí
-a, comerciales, simulaciones, etc.
+El término cluster se aplica a los conjuntos de computadoras unidos mediante
+ una red de alta velocidad que se comportan como si fuesen una sola con
+ mayor poder de computo.
+ Hoy en día tiene un papel importante en aplicaciones científicas, de ingeniería
+, comerciales, simulaciones, etc.
 \end_layout
 
 \begin_layout Standard
@@ -1788,31 +1839,9 @@ El uso de clusters surge gracias a la convergencia de varias tendencias
 \end_layout
 
 \begin_layout Standard
-Un cluster es un grupo de múltiples ordenadores unidos mediante una red
- de alta velocidad, de tal forma que el conjunto es visto como un único
- ordenador, más potente que los comunes de escritorio.
- 
-\end_layout
-
-\begin_layout Standard
 Se espera de un cluster que presente combinaciones de los siguientes característ
-icas:
-\end_layout
-
-\begin_layout Itemize
-Alto rendimiento
-\end_layout
-
-\begin_layout Itemize
-Alta disponibilidad
-\end_layout
-
-\begin_layout Itemize
-Equilibrio de carga 
-\end_layout
-
-\begin_layout Itemize
-Escalabilidad 
+icas: alto rendimiento, alta disponibilidad, equilibrio de carga y escalabilidad.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1844,15 +1873,8 @@ Un cluster de alto rendimiento está diseñado para dar altas prestaciones
 \end_layout
 
 \begin_layout Standard
-Los motivos para utilizar un cluster de alto rendimiento son:
-\end_layout
-
-\begin_layout Itemize
-el tamaño del problema por resolver y
-\end_layout
-
-\begin_layout Itemize
-el precio de la máquina necesaria para resolverlo.
+Los motivos para utilizar un cluster de alto rendimiento son el tamaño del
+ problema por resolver y el precio de la máquina necesaria para resolverlo.
 \end_layout
 
 \begin_layout Standard
@@ -1878,15 +1900,8 @@ Un cluster de alta disponibilidad se caracterizan por compartir los discos
 \end_layout
 
 \begin_layout Standard
-Podemos dividirlo en dos clases:
-\end_layout
-
-\begin_layout Itemize
-Alta disponibilidad de infrestructura
-\end_layout
-
-\begin_layout Itemize
-Alta disponibilidad de aplicación
+Podemos dividirlo en dos clases: de alta disponibilidad de infrestructura
+ y de alta disponibilidad de aplicación
 \end_layout
 
 \begin_layout Paragraph
@@ -1913,22 +1928,18 @@ La escalabilidad es la propiedad deseable de un sistema, una red o un proceso,
 \end_layout
 
 \begin_layout Standard
-Las características más destacadas de este tipo de cluster son:
+En este tipo de cluster se puede ampliar su capacidad fácilmente añadiendo
+ más ordenadores al cluster.
 \end_layout
 
-\begin_layout Itemize
-Se puede ampliar su capacidad fácilmente añadiendo más ordenadores al cluster.
-\end_layout
-
-\begin_layout Itemize
-Robustez.
- Ante la caída de alguno de los ordenadores del cluster el servicio se puede
- ver mermado, pero mientras haya ordenadores en funcionamiento, éstos seguirán
- dando servicio
+\begin_layout Standard
+La robustez es una caracteristicas importante ya que ante la caída de alguno
+ de los ordenadores del cluster el servicio se puede ver mermado, pero mientras
+ haya ordenadores en funcionamiento, éstos seguirán dando servicio.
 \end_layout
 
 \begin_layout Subsubsection
-HErramientas
+Herramientas
 \end_layout
 
 \begin_layout Standard
@@ -2048,10 +2059,6 @@ Contiene mecanismos de creacion e identificacion de procesos,un modelo de
 \begin_layout Standard
 Brinda soporte para manejar heterogeneidad y aprovecha la arquitecturas
  multiprocesador.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Section
