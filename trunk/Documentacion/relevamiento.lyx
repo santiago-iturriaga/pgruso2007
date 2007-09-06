@@ -384,11 +384,29 @@ Middleware
 \end_layout
 
 \begin_layout Standard
-El middleware es un software que generalmente actúa entre el sistema operativo
- y las aplicaciones con la finalidad de proveer a un cluster una interfaz
- única de acceso al sistema, denominada SSI (Single System Image), la cual
- genera la sensación al usuario de que utiliza un único ordenador muy potente.
- Además ofrece herramientas para la optimización y mantenimiento del sistema:
+El Middleware es un software de conectividad que ofrece un conjunto de servicios
+ que hacen posible el funcionamiento de aplicaciones distribuidas sobre
+ plataformas heterogéneas.
+ Funciona como una capa de abstracción de software distribuida, que se sitúa
+ entre las capas de aplicaciones y las capas inferiores (sistema operativo
+ y red).
+ El Middleware nos abstrae de la complejidad y heterogeneidad de las redes
+ de comunicaciones subyacentes, así como de los sistemas operativos y lenguajes
+ de programación, proporcionando una API para la fácil programación y manejo
+ de aplicaciones distribuidas, dando a su vez la sensación al usuario de
+ que utiliza un único computador muy potente.
+ Dependiendo del problema a resolver y de las funciones necesarias, serán
+ útiles diferentes tipo de servicios de middleware.
+\end_layout
+
+\begin_layout Standard
+Por lo general el middleware del lado cliente está implementado por el Sistema
+ Operativo subyacente, el cual posee las librerías que implementan todas
+ las funcionalidades para la comunicación a través de la red.
+\end_layout
+
+\begin_layout Standard
+Además ofrece herramientas para la optimización y mantenimiento del sistema:
  migración de procesos, checkpoint-restart (congelar uno o varios procesos,
  mudarlos de servidor y continuar su funcionamiento en el nuevo host), balanceo
  de carga, tolerancia a fallos, etc.
@@ -409,27 +427,29 @@ s en un servidor.
 
 \begin_layout Standard
 El middleware también debe poder migrar procesos entre servidores con distintas
- finalidades:
-\end_layout
-
-\begin_layout Itemize
-balancear la carga: si un servidor está muy cargado de procesos y otro está
- ocioso, pueden transferirse procesos a este último para liberar de carga
- al primero y optimizar el funcionamiento
-\end_layout
-
-\begin_layout Itemize
-mantenimiento de servidores: si hay procesos corriendo en un servidor que
- necesita mantenimiento o una actualización, es posible migrar los procesos
- a otro servidor y proceder a desconectar del cluster al primero
-\end_layout
-
-\begin_layout Itemize
-priorización de trabajos: en caso de tener varios procesos corriendo en
- el cluster, pero uno de ellos de mayor importancia que los demás, puede
- migrarse este proceso a los servidores que posean más o mejores recursos
- para acelerar su procesamiento.
+ finalidades.
+ Debe ser capaz de balancear la carga, si un servidor está muy cargado de
+ procesos y otro está ocioso, pueden transferirse procesos a este último
+ para liberar de carga al primero y optimizar el funcionamiento.
+ Además debe permitir al administrador realizar un mantenimiento los servidores,
+ si hay procesos corriendo en un servidor que necesita mantenimiento o una
+ actualización, deberá ser posible migrar los procesos a otro servidor y
+ proceder a desconectar del cluster al primero.
+ A su vez es el encargado de priorizar los trabajos.
+ En caso de tener varios procesos corriendo en el cluster, pero uno de ellos
+ de mayor importancia que los demás, puede migrarse este proceso a los servidore
+s que posean más o mejores recursos para acelerar su procesamiento.
  
+\end_layout
+
+\begin_layout Standard
+Los Middleware han aparecido de manera relativamente reciente en el mundo
+ de la informática.
+ Ganaron popularidad en los 1980s ya que eran la solución de como integrar
+ las nuevas aplicaciones con los sistemas antiguos (legacy systems), en
+ todo caso, el termino ha sido usado desde 1968.
+ También facilitaba la computación distribuida, mediante conexión de multiples
+ aplicaciones para crear una mucho mayor, sobre una red.
 \end_layout
 
 \begin_layout Subsection
