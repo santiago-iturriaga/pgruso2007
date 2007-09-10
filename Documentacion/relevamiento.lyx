@@ -756,11 +756,11 @@ Computación de Alto Rendimiento
 \end_layout
 
 \begin_layout Standard
-En el correr de los ultimos años ha crecido la importancia de satisfacer
- requisitos crecientes de poder de computo debido a la necesidad de resolver
- problemas mas complicados con modelos mas complejos, asi como trabajar
- con grandes volumenes de datos sin perder de vista la capacidad de respuesta
- en un tiempo limitado.
+En el correr de los últimos años ha crecido la importancia de satisfacer
+ los requisitos crecientes de poder de cómputo debido a la necesidad de
+ resolver problemas mas complicados con modelos más complejos, así como
+ trabajar con grandes volumenes de datos sin perder de vista la capacidad
+ de respuesta en un tiempo limitado.
 \end_layout
 
 \begin_layout Standard
@@ -809,7 +809,7 @@ La computación distribuida es naturalmente un entorno multiusuario; por
 \end_layout
 
 \begin_layout Standard
-Algunas de las ventajas de la computacion distribuida son la mejora en el
+Algunas de las ventajas de la computación distribuida son la mejora en el
  desempeño, robustez, seguridad no centralizada y acceso transparente a
  los datos no locales.
 \end_layout
@@ -829,8 +829,8 @@ a.
 
 \begin_layout Standard
 El avances en diferentes tecnologias como microporcesadores con mayor poder
- de procesamiento, comunicacion de datos, desarrollo de bibliotecas e interfaces
- para programacion de procesos han posibilitado esta tecnica.
+ de procesamiento, comunicación de datos, desarrollo de bibliotecas e interfaces
+ para programación de procesos han posibilitado esta técnica.
 \end_layout
 
 \begin_layout Standard
@@ -849,7 +849,7 @@ El mayor problema de la computación paralela radica en la complejidad de
 \end_layout
 
 \begin_layout Standard
-Esta tecnica proporciona ventajas como mayor capacidad de proceso, menor
+Esta técnica proporciona ventajas como mayor capacidad de proceso, menor
  tiempo de procesamiento y aprovechamiento de la escalabilidaad potencial
  de los recursos
 \end_layout
@@ -859,8 +859,8 @@ Aplicaciones demandantes de recursos
 \end_layout
 
 \begin_layout Standard
-Podemos hacer una division de las aplicaciones que requieren una demanda
- de recusrsos computaionales importantes de la siguiente manera.
+Podemos hacer una división de las aplicaciones que requieren una demanda
+ de recursos computacionales importantes de la siguiente manera.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -977,7 +977,7 @@ Texto por demanda.
 \end_layout
 
 \begin_layout Itemize
-Vídeo por demanda.
+Video por demanda.
 \end_layout
 
 \begin_layout Itemize
@@ -989,8 +989,8 @@ Simulación por demanda.
 \end_layout
 
 \begin_layout Standard
-Obviamente que todas las aplicaciones anteriores dependen en cierto grado
- de cada uno de los aspectos computacionales mencionados: poder de computo,
+Obviamente todas las aplicaciones anteriores dependen en cierto grado de
+ cada uno de los aspectos computacionales mencionados: poder de cómputo,
  capacidades de almacenamiento y eficientes canales de comunicación, sin
  embargo las podemos agrupar por su característica dominante.
 \end_layout
@@ -1031,7 +1031,7 @@ Educación.
 \end_layout
 
 \begin_layout Standard
-Existe una alta correspondencia entre la evolución de tecnologías informaticas
+Existe una alta correspondencia entre la evolución de tecnologías informáticas
  y el desarrollo de aplicaciones; en particular el hardware tiene gran influenci
 a en el éxito de ciertas áreas.
  La aplicaciones intensivas en cálculo fueron estimuladas principalmente
@@ -1044,7 +1044,7 @@ a en el éxito de ciertas áreas.
 \end_layout
 
 \begin_layout Subsection
-Organizacion de computadores
+Organización de computadores
 \end_layout
 
 \begin_layout Standard
@@ -1053,7 +1053,7 @@ La organización de los procesadores o red se refiere a como se conectan
 \end_layout
 
 \begin_layout Standard
-Existen varios criterios para evaluar los distintos diseños de organizacion:
+Existen varios criterios para evaluar los distintos diseños de organización:
  
 \end_layout
 
@@ -1093,7 +1093,7 @@ te del tamaño de la red, ya que hace más fácil incrementar el número de
 \end_layout
 
 \begin_layout Standard
-A continuacion veremos algunos tipos de disenos de redes de procesadores.
+A continuacion veremos algunos tipos de diseños de redes de procesadores.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1160,7 +1160,7 @@ Mariposa
 \end_layout
 
 \begin_layout Standard
-Esta organización es simaleres a las mallas pero presentan menor diametro.
+Estas organizaciones son similares a las mallas pero presentan menor diametro.
 \end_layout
 
 \begin_layout Standard
@@ -1174,7 +1174,7 @@ Esta organización es simaleres a las mallas pero presentan menor diametro.
 \end_layout
 
 \begin_layout Subsubsection
-Arboles binarios
+Árboles binarios
 \end_layout
 
 \begin_layout Standard
@@ -1189,7 +1189,7 @@ Piramides
 \end_layout
 
 \begin_layout Standard
-Estas redes intentan combinar las ventajas de las mallas y los arboles,
+Estas redes intentan combinar las ventajas de las mallas y los árboles,
  se incrementa la tolerancia a fallas y el número de vias de comunicación.
 \end_layout
 
@@ -1214,7 +1214,7 @@ Un hipercubo puede ser considerado como una malla con conexiones largas
 \end_layout
 
 \begin_layout Standard
-Se puede definir recursibamente un hipercubo de la siguiente manera: un
+Se puede definir recursivamente un hipercubo de la siguiente manera: un
  hipercubo de dimensión-cero es un único procesador y un hipercubo de dimensión-
 uno conecta dos hipercubos de dimensión-cero.
  En general, un hipercubo de dimensión d+1 con 2d+1 nodos, se construye
@@ -1239,7 +1239,7 @@ Omega
 \begin_layout Standard
 Es una red formada por crossbar switches 2x2.
  Estos tiene cuatro estados posibles: recto, cruzado, broadcast superior
- y broadcast inferior que son configurados segun la conexión que se tien.
+ y broadcast inferior que son configurados según la conexión que se tiene.
  Estas topologías se llaman dinámicas o reconfigurables.
  
 \end_layout
@@ -1251,8 +1251,7 @@ Estas redes reducen considerablemente la competencia por ancho de banda,
 \end_layout
 
 \begin_layout Standard
-Lasig siguiente figura muestra una red omega de 3 etapas que conecta 8 procesado
-res.
+La siguiente figura muestra una red omega de 3 etapas que conecta 8 procesadores.
 \end_layout
 
 \begin_layout Standard
@@ -1265,7 +1264,7 @@ res.
 \end_layout
 
 \begin_layout Subsubsection
-Fibras de interconexion
+Fibras de interconexión
 \end_layout
 
 \begin_layout Standard
@@ -1306,11 +1305,7 @@ El diseño de algoritmos paralelos involucra cuatro etapas, las cuales se
 \begin_layout Standard
 3) Agrupación: Se evalua en terminos de eficiencia y costos de implementacion
  a las dos etapas anteriores.
- 
-\end_layout
-
-\begin_layout Standard
-se agrupan tareas pequeñas en tareas más grandes.
+ Se agrupan tareas pequeñas en tareas más grandes.
 \end_layout
 
 \begin_layout Standard
@@ -1321,7 +1316,7 @@ se agrupan tareas pequeñas en tareas más grandes.
 \end_layout
 
 \begin_layout Subsubsection
-Particion
+Partición
 \end_layout
 
 \begin_layout Standard
@@ -1332,7 +1327,7 @@ En la etapa de partición se buscan oportunidades de paralelismo y se trata
 \end_layout
 
 \begin_layout Standard
-Existen dos formas de descomposicion.
+Existen dos formas de descomposición.
  Descomposición del dominio: se centra en los datos.
  Se determina la partición
 \end_layout
@@ -1349,11 +1344,11 @@ Descomposición funcional: es el contrario al enfoque anterior, primero se
 \end_layout
 
 \begin_layout Standard
-En el proceso de particion existen aspectos a tener en cuenta: 
+En el proceso de partición existen aspectos a tener en cuenta: 
 \end_layout
 
 \begin_layout Itemize
-el orden de tareas debe ser por lo menos superior al numero de procesadores
+el orden de tareas debe ser por lo menos superior al número de procesadores
  para tener flexibilidad en etapas siguientes
 \end_layout
 
@@ -1388,27 +1383,27 @@ La comunicación puede ser definida en dos fases.
 \end_layout
 
 \begin_layout Standard
-se especifica la información o mensajes que deben ser enviado y recibidos
+se especifica la información o mensajes que deben ser enviados y recibidos
  en estos canales.
 \end_layout
 
 \begin_layout Standard
 Dependiendo de si estamos en el caso de memoria distribuida o memoria compartida
- dependera la forma de atacar la comunicación entre tareas varía.
+ dependerá la forma de atacar la comunicación entre tareas varía.
 \end_layout
 
 \begin_layout Standard
-En un ambientes de memoria distribuida, las tareas tiene una identificación
- única y interactuan enviando y recibiendo mensajes hacia y desde tareas
+En ambientes de memoria distribuida, las tareas tienen una identificación
+ única e interactúan enviando y recibiendo mensajes hacia y desde tareas
  específicas.
- Las librerías más conocidas para implementar el pase de mensajes en ambientes
+ Las librerías más conocidas para implementar el pasaje de mensajes en ambientes
  de memoria distribuida son: MPI (Message Passing Interface) y PVM (Parallel
  Virtual Machine).
 \end_layout
 
 \begin_layout Standard
 En ambientes de memoria compartida no existe la noción de pertenencia y
- el envío de datos no se dá como tal.
+ el envío de datos no se da como tal.
  Todas las tareas comparten la misma memoria.
 \end_layout
 
@@ -1442,7 +1437,7 @@ los cómputos de diferentes tareas deben poder proceder concurrentemente.
 \end_layout
 
 \begin_layout Subsubsection
-Agrupacion
+Agrupación
 \end_layout
 
 \begin_layout Standard
@@ -1472,11 +1467,7 @@ Esto no necesariamente produce un algoritmo eficiente ya que el costo de
 
 \begin_layout Standard
 Mediante la agrupación de tareas se puede reducir la cantidad de datos a
- enviar y así reducir el número de
-\end_layout
-
-\begin_layout Standard
-mensajes y el costo de comunicación.
+ enviar y así reducir el número de mensajes y el costo de comunicación.
 \end_layout
 
 \begin_layout Standard
@@ -1514,12 +1505,12 @@ si el agrupamiento ha reducido las oportunidades de ejecución concurrente,
 \end_layout
 
 \begin_layout Itemize
-nalizar si es posible reducir aun más el número de tareas sin introducir
+analizar si es posible reducir aun más el número de tareas sin introducir
  desbalances de cargas o reducir la extensibilidad.
 \end_layout
 
 \begin_layout Subsubsection
-Asignacion
+Asignación
 \end_layout
 
 \begin_layout Standard
@@ -1529,14 +1520,14 @@ En este proceso se determina en que procesador se ejecutará cada tarea.
 
 \begin_layout Standard
 En maquinas de memoria compartida tipo UMA no se presenta este problema
- ya que proveen asignación dinámica de procesos y los procesos.
+ ya que proveen asignación dinámica de procesos.
  
 \end_layout
 
 \begin_layout Standard
 Actualmente no hay mecanismos generales de asignación de tareas para máquinas
  distribuidas por lo que este problema debe ser atacado explícitamente en
- el diseno de algoritmos paralelos.
+ el diseño de algoritmos paralelos.
 \end_layout
 
 \begin_layout Standard
@@ -1550,14 +1541,11 @@ La asignación de tareas puede ser estática o dinámica.
 
 \begin_layout Standard
 En la asignación dinámica se hacen cambios en la distribución de las tareas
- entre los procesadores en tiempo de ejecución Esto es con el fin de balancear
- la carga del sistema y reducir el tiempo de ejecución.
- Sin embargo, el
-\end_layout
-
-\begin_layout Standard
-costo de balanceo puede ser significativo y por ende incrementar el tiempo
+ entre los procesadores en tiempo de ejecución.
+ Esto es con el fin de balancear la carga del sistema y reducir el tiempo
  de ejecución.
+ Sin embargo, el costo de balanceo puede ser significativo y por ende incrementa
+r el tiempo de ejecución.
  Entre los algoritmos de balanceo de carga están los siguientes:
 \end_layout
 
@@ -1579,7 +1567,7 @@ Balanceo semi-distribuido: divide los procesadores en regiones, cada una
 \end_layout
 
 \begin_layout Subsection
-Modelos de computacion paralela
+Modelos de computación paralela
 \end_layout
 
 \begin_layout Subsubsection
@@ -1587,7 +1575,7 @@ Arreglos de procesadores
 \end_layout
 
 \begin_layout Standard
-Una maquina cuyo conjunto de instruccuines permite operaciones tanto sobre
+Una máquina cuyo conjunto de instrucciones permite operaciones tanto sobre
  vectores como escalares lo denominamos computador vectorial.
 \end_layout
 
@@ -1615,7 +1603,7 @@ La etapas están separadas por registros de alta velocidad usados para guardar
 \end_layout
 
 \begin_layout Standard
-En esta categoría tenemos maquinas como la Cray-1 y la Cyber-205.
+En esta categoría tenemos máquinas como la Cray-1 y la Cyber-205.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1685,7 +1673,7 @@ NUMA: Multiprocesadores de Acceso No-Uniforme a Memoria
 \begin_layout Standard
 Estos multiprocesadores tienen el espacio de direccionamiento compartido
  y la memoria distribuida.
- La memoria compartida esta formada por la memoria local de los procesadores.
+ La memoria compartida está formada por la memoria local de los procesadores.
  El tiempo de acceso a memoria depende de si el acceso es local al procesador
  o no.
  La BBN TC2000 y la SGI Origin 2000 son ejemplos de este modelo de computación
@@ -1705,7 +1693,7 @@ a) y la interacción entre ellos es a través de pase de mensajes.
 \end_layout
 
 \begin_layout Subsubsection
-Maquinas de memoria compartida distribuida
+Máquinas de memoria compartida distribuida
 \end_layout
 
 \begin_layout Standard
@@ -1722,7 +1710,7 @@ Este modelo conecta entre si módulos de multiprocesadores manteniendo la
 \end_layout
 
 \begin_layout Standard
-Este tipo de maquinas entra dentro de la categoría de NUMA y un ejemplo
+Este tipo de máquinas entra dentro de la categoría de NUMA y un ejemplo
  es la SGI Origin 2000.
 \end_layout
 
@@ -1736,16 +1724,13 @@ En estas máquinas cada procesador tiene cierto número de flujos de instruccion
  cada uno destinado a ejecutar una hebra.
  En cada ciclo el procesador ejecuta instrucciones de una de la hebras.
  En el ciclo siguiente, el procesador hace un cambio de contexto y ejecuta
- instrucciones de otra hebra
+ instrucciones de otra hebra.
 \end_layout
 
 \begin_layout Standard
-La Tera MTA (multithreaded architecture), es la primera de estas máquinas
+La Tera MTA (multithreaded architecture) es la primera de estas máquinas
  , cada procesador tiene 128 flujos de instrucciones.
-\end_layout
-
-\begin_layout Standard
-Un acceso a memoria dura aproximadamente 100 ciclos por lo que en en la
+ Un acceso a memoria dura aproximadamente 100 ciclos por lo que en en la
  próxima ejecución de la hebra se tendrán los datos requeridos.
  Este mecanismo permite a la MTA tolerar la latencia a memoria y por lo
  tanto no requiere de memorias cache.
@@ -1754,13 +1739,13 @@ Un acceso a memoria dura aproximadamente 100 ciclos por lo que en en la
 \begin_layout Standard
 Cada instrucción de 64-bits codifica 3 operaciones(una de memoria y dos
  que pueden ser aritméticas o de control).
- Cuenta con in sistema operativo de versión distribuida completamente simétrica
+ Cuenta con un sistema operativo de versión distribuida completamente simétrica
  de UNIX.
 \end_layout
 
 \begin_layout Standard
 El sistema cuenta con 1 a 256 procesadores que comparten una enorme memoria.
- A su ves cada procesador tiene 1 o 2 Gb de memoria, un mapeo aleatorio
+ A su vez cada procesador tiene 1 o 2 Gb de memoria, un mapeo aleatorio
  de la memoria y una red altamente interconectada proveen acceso casi uniforme
  de cualquier procesador a cualquier memoria.
 \end_layout
@@ -1793,7 +1778,7 @@ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
 \end_layout
 
 \begin_layout Standard
-Dentro de la clasificacion de Flynn tenemos la siguientes categorías.
+Dentro de la clasificación de Flynn tenemos la siguientes categorías.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1952,7 +1937,7 @@ finos: son preferibles para ejecutar tareas.
 \end_layout
 
 \begin_layout Itemize
-altos constan de hasta 8 procesadores que comparten la misma memoria.
+altos: constan de hasta 8 procesadores que comparten la misma memoria.
  
 \end_layout
 
