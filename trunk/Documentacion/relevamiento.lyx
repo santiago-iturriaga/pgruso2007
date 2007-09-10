@@ -481,8 +481,48 @@ nes confiables (2004)
 \begin_layout Standard
 Tésis de maestria realizada por Mg.
  Ing.
- Sergio Nesmachnow, finalizada en Julio de 2004 (http://www.fing.edu.uy/~sergion/Te
-sis.pdf).
+ Sergio Nesmachnow, finalizada en Julio de 2004.
+\end_layout
+
+\begin_layout Standard
+Al tratar con problemas de optimización combinatoria NP difíciles, para
+ los cuales la complejidad de los algoritmos conocidos aumenta de manera
+ superpolinomial con el tamaño del problema, la aplicabilidad de los métodos
+ exactos de resolución se encuentra limitada por el enorme tiempo y consumo
+ de recursos computacionales que demandan.
+ Es aquí cuando las técnicas heurísticas aparecen como la única alternativa
+ viable para abordar problemas NP difíciles.
+ A diferencia de las técnicas exactas, las técnicas heurísticas no pueden
+ garantizar a priori la obtención de la solución óptima del problema, pero
+ en la práctica, numerosas técnicas heurísticas se comportan satisfactoriamente
+ para la resolución de complejos problemas de optimización.
+ 
+\end_layout
+
+\begin_layout Standard
+En un nivel superior de abstracción, las técnicas metaheurísticas proporcionan
+ esquemas o enfoques genéricos para la resolución de problemas complejos.
+ Estos enfoques genéricos pueden ser instanciados para producir algoritmos
+ específicos que trabajan bajo un mismo lineamiento general.
+ Las técnicas de computación evolutiva constituyen una familia de metaheurística
+s estocásticas utilizadas exitosamente para la resolución de variados problemas
+ en las áreas de búsqueda y análisis de información, optimización combinatoria,
+ entre otras.
+\end_layout
+
+\begin_layout Standard
+En este trabajo se presenta un estudio de las técnicas de computación evolutiva
+ y la aplicación de técnicas de procesamiento de alta performance para implement
+ar modelos de algoritmos genéticos capaces de ejecutar en un ambiente paralelo-d
+istribuido y se presentan algoritmos evolutivos aprocados al caso concreto
+ de diseñar redes de comunicaciones de alta conectividad topológica.
+ Finalmente se evalúan diferentes algoritmos evolutivos puros e híbridos
+ en sus versiones secuenciales y paralelas, presentando un estudio comparativo
+ que reporta resultados satisfactorios tanto desde el punto de vista de
+ la calidad de resultados obtenidos como desde el punto de vista de la mejora
+ de eficiencia computacional alcanzada por las versiones paralelas de los
+ algoritmos con respecto a sus contrapartes secuenciales.
+ 
 \end_layout
 
 \begin_layout Paragraph
@@ -491,8 +531,54 @@ Mejora del desempeño de modelos numéricos del Río de la Plata (2006)
 
 \begin_layout Standard
 Tésis de maestria del Ing.
- Pablo Ezzatti, finalizada en Junio de 2006 (http://www.fing.edu.uy/inco/grupos/cec
-al/hpc/mej_des/tesis.pdf).
+ Pablo Ezzatti, finalizada en Junio de 2006.
+\end_layout
+
+\begin_layout Standard
+En las ultimas décadas, la simulación computacional de fluidos ha emergido
+ como un área de intenso trabajo.
+ A medida que las técnicas computacionales se fueron perfeccionando, el
+ interés de modelar con precisión el comportamiendo de los flujos de fluidos
+ fué en aumento, provocando importantes inversiones en equipamiento infirmático.
+\end_layout
+
+\begin_layout Standard
+En Uruguay, en el Instituto de Mecánica de Fluidos e Ingeniería Ambiental
+ (IMFIA) de la Facultad de Ingeniería de la Universidad de la República,
+ desde hace algunos años, se está trabajando en el modelado numérico del
+ Río de la Plata.
+\end_layout
+
+\begin_layout Standard
+Con el fin de obtener mejoras significativas en diversas características
+ del modelado, se buscó un nuevo modelo.
+ Finalmente se optó por el modelo RMA-10, ampliamente utilizado en el modelado
+ de estuarios.
+\end_layout
+
+\begin_layout Standard
+Las cualidades de este nuevo modelo permiten la obtención de resultados
+ sumamente alentadores en diversas simulaciones realizadas.
+ En contraposición a la mejora del modelado, se incrementan de forma abrupta
+ los costos computacionales (tiempo de procesamiento), lo que implica un
+ gran obstáculo para su utilización y para aplicar mejoras al modelo.
+\end_layout
+
+\begin_layout Standard
+En esta tesis se estudian técnicas de computación de alto desempeño aplicadas
+ al cálculo científico, con el fin de mejorar el desempeño computacional
+ de modelos numéricos que utilizan el paradigma de elementos finitos (MEF).
+ Se aborda la aplicación de estas técnicas al modelo hidrodinámico RMA-10
+ aplicado al Río de la Plata.
+\end_layout
+
+\begin_layout Standard
+Se presenta una estrategia secuencial para el cálculo de la matriz de regidez
+ del modelo RMA-10 utilizando tablas de dispersión y su posterior resolución
+ empleando métodos multifrontales para sistemas lineales dispersos.
+ También se evalúa la aplicación de distintas estrategias de programación
+ paralela a la modificación propuesta y se presenta un estudio comparativo
+ de las diferentes estrategias.
 \end_layout
 
 \begin_layout Paragraph
@@ -506,7 +592,25 @@ Tesina de licenciatura en informática de la Universidad Nacional de la Patagoni
  y Lucas Rojas, tutoreada por el Mg.
  Ing.
  Sergio Nesmachnow e Ing.
- José Gallardo (http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf).
+ José Gallardo.
+\end_layout
+
+\begin_layout Standard
+Con la masificación de las redes inalámbricas, los entes reguladores del
+ espectro de radiofrecuencias se han encontrado con el problema de asignar
+ una frecuencia a cada comunicación sin que esto conlleve a interferencias.
+ Dado que las frecuencias son un recurso finito, el objetivo es maximizar
+ la reutilización de las frecuencias sin disminuir la calidad de la transmisión.
+ En este trabajo se investiga sobre la aplicación de los algoritmos genéticos
+ como herramienta de resolución del problema de asignación de frecuencias
+ en redes inalámbricas.
+\end_layout
+
+\begin_layout Standard
+En este trabajo se presenta una investigación sobre algoritmos genéticos,
+ considerando sus variantes secuenciales y paralelas, y su aplicación a
+ la resolución del problema de la asignación de frecuencias en las redes
+ de telefonía celular.
 \end_layout
 
 \begin_layout Paragraph
@@ -523,7 +627,19 @@ Proyecto realizado por el Mg.
  Prof.
  Dr.
  Carlos Coello en el marco de la VII Escuela Internacional de Informática
- en el CACIC 2003 (http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf).
+ en el CACIC 2003.
+\end_layout
+
+\begin_layout Standard
+Este trabajo presenta una versión Paralela del Algoritmo Evolutivo para
+ Optimización Multiobjetivo NSGA-II.
+ Se introducen los detalles de diseño e implementación de una versión paralela
+ y se analiza la calidad de resultados y la eficiencia computacional, comparando
+ con los resultados y tiempos de ejecución de la versión secuencial del
+ algoritmo NSGA-II sobre un conjunto de problemas de prueba estándar.
+ Adicionalmente, se estudia la aplicación de la versión paralela propuesta
+ a la resolución de un problema de diseño de redes de comunicaciones confiables.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -542,7 +658,12 @@ Proyecto MPI.net (2003)
 
 \begin_layout Standard
 Proyecto de grado realizado por Sebastián Baña, Gonzalo Ferres y Nicolás
- Pepe (http://www.fing.edu.uy/~sergion/mpinet/).
+ Pepe.
+\end_layout
+
+\begin_layout Standard
+El proyecto propone la adaptación de la biblioteca MPI para su utilización
+ desde lenguajes a través de la plataforma .NET.
 \end_layout
 
 \begin_layout Paragraph
@@ -550,8 +671,14 @@ Proyecto algoritmos genéticos incrementales (2003)
 \end_layout
 
 \begin_layout Standard
-Proyecto de grado realizado por Federico Dominioni y Pablo Musso (http://www.fing.
-edu.uy/~sergion/agi/).
+Proyecto de grado realizado por Federico Dominioni y Pablo Musso.
+\end_layout
+
+\begin_layout Standard
+El proyecto plantea el estudio, diseño e implementación del modelo de algoritmos
+ genéticos incrementales.
+ El modelo fue aplicado a la resolución de un problema de optimización combinato
+ria en el área de diseño de redes de comunicaciones confiables.
 \end_layout
 
 \begin_layout Paragraph
@@ -601,6 +728,34 @@ Diseño, configuración, administración y evaluación de performance de un
 
 \begin_layout Standard
 (faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Performance de la red 3G (2007, en curso).
+\end_layout
+
+\begin_layout Standard
+Convenio ANTEL-FING.
+ (faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Análisis de performance de la red celular de ANTEL (2006, en curso).
+\end_layout
+
+\begin_layout Standard
+Convenio ANTEL-FING.
+ (faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Asesoramiento para la adquisición de un sistema automático de identificación
+ de huellas dactilares (2006, en curso).
+\end_layout
+
+\begin_layout Standard
+Convenio FING–Ministerio del Interior.
+ (faltan datos)
 \end_layout
 
 \begin_layout Section
@@ -3224,6 +3379,78 @@ key "key-13"
 
 Distributed Resource Management Application API (DRMAA), http://en.wikipedia.org/w
 iki/DRMAA/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Mg.
+ Ing.
+ Sergio Nesmachnow: Algoritmos genéticos paralelos y su aplicación al diseño
+ de redes de comunicaciones confiables, 2004.
+ http://www.fing.edu.uy/~sergion/Tesis.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Ing.
+ Pablo Ezzatti: Mejora del desempeño de modelos numéricos del Río de la
+ Plata, 2006.
+ http://www.fing.edu.uy/inco/grupos/cecal/hpc/mej_des/tesis.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+Cristian Perfumo, Gerardo Mora, Lucas Rojas: Algoritmos genéticos paralelos
+ aplicados a la resolución de problemas de asinación de frecuencias en redes
+ celulares, 2006.
+ http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf).
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+Mg.
+ Ing.
+ Sergio Nesmachnow: Una versión paralela del algoritmo evolutivo para optimizaci
+ón multiobjetivo NSGA-II y su aplicación al diseño de redes de comunicaciones
+ confiables, 2003.
+ http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+Sebastián Baña, Gonzalo Ferres y Nicolás Pepe: Proyecto MPI.net, 2003.
+ http://www.fing.edu.uy/~sergion/mpinet/.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+Federico Dominioni y Pablo Musso: Proyecto algoritmos genéticos incrementales,
+ 2003.
+ http://www.fing.edu.uy/~sergion/agi/.
 \end_layout
 
 \end_body
