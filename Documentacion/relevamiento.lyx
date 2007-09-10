@@ -78,7 +78,7 @@ Introducción
 
 \begin_layout Standard
 En el principio de la historia de las computadoras se tenía la idea de que
- un servidor tenia que ser necesariamente una máquina, conocida como super
+ un servidor tenía que ser necesariamente una máquina, conocida como super
  computador o mainframe, que contaba con un procesador muy potente que daba
  servicio a varias terminales tontas.
  Según esta doctrina, para asegurar mayor poder de cálculo era necesario
@@ -273,14 +273,11 @@ Un cluster de alto rendimiento es un conjunto de ordenadores que está diseñado
 A través de un cluster se pueden conseguir capacidades de cálculo superiores
  a las de un ordenador más caro que el costo conjunto de los ordenadores
  del cluster.
-\end_layout
-
-\begin_layout Standard
-Para garantizar esta capacidad de cálculo, los problemas necesitan ser paraleliz
-ables, ya que el método con el que los clusters agilizan el procesamiento
- es dividir el problema en problemas más pequeños y calcularlos en los nodos,
- por lo tanto, si el problema no cumple con esta característica, no puede
- utilizarse el cluster para su cálculo.
+ Para garantizar esta capacidad de cálculo, los problemas necesitan ser
+ paralelizables, ya que el método con el que los clusters agilizan el procesamie
+nto es dividir el problema en problemas más pequeños y calcularlos en los
+ nodos, por lo tanto, si el problema no cumple con esta característica,
+ no puede utilizarse el cluster para su cálculo.
 \end_layout
 
 \begin_layout Standard
@@ -323,10 +320,6 @@ Por otro lado, un cluster se considera de alta disponibilidad de aplicación
  han fallado en cualquiera de las otras máquinas del cluster.
  Y cuando la máquina que ha fallado se recupera, los servicios son nuevamente
  migrados a la máquina original.
- Esta capacidad de recuperación automática de servicios nos garantiza la
- integridad de la información, ya que no hay pérdida de datos, y además
- evita molestias a los usuarios, que no tienen por qué notar que se ha producido
- un problema.
 \end_layout
 
 \begin_layout Subsubsection
