@@ -790,22 +790,22 @@ Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
 \end_layout
 
 \begin_layout Standard
+Esta ha sido diseñada para resolver problemas demasiado grandes para cualquier
+ supercomputadora o mainframe, manteniendose la flexibilidad de trabajar
+ en múltiples problemas más pequeños.
+ 
+\end_layout
+
+\begin_layout Standard
 Exiten varios grados de distribucion: de hardware y procesamiento, de datos
  y de control.
  (detallar)
 \end_layout
 
 \begin_layout Standard
-La computación distribuida ha sido diseñada para resolver problemas demasiado
- grandes para cualquier supercomputadora o mainframe, manteniendose la flexibili
-dad de trabajar en múltiples problemas más pequeños.
- 
-\end_layout
-
-\begin_layout Standard
-La computación distribuida es naturalmente un entorno multiusuario; por
- ello, las técnicas de autorización segura son esenciales antes de permitir
- que los recursos informáticos sean controlados por usuarios remotos.
+Las técnicas de autorización segura son esenciales antes de permitir que
+ los recursos informáticos sean controlados por usuarios remotos dado que
+ estamos naturalmente en un entorno multiusuario.
 \end_layout
 
 \begin_layout Standard
@@ -1328,18 +1328,14 @@ En la etapa de partición se buscan oportunidades de paralelismo y se trata
 
 \begin_layout Standard
 Existen dos formas de descomposición.
- Descomposición del dominio: se centra en los datos.
- Se determina la partición
+ Descomposición del dominio que se centra en los datos.
+ Se determina la partición apropiada de los datos y luego se trabaja en
+ los cómputos asociados con los datos.
 \end_layout
 
 \begin_layout Standard
-apropiada de los datos y luego se trabaja en los cómputos asociados con
- los datos.
-\end_layout
-
-\begin_layout Standard
-Descomposición funcional: es el contrario al enfoque anterior, primero se
- descomponen los cómputos y luego se ocupa de los datos.
+Descomposición funcional que es el contrario al enfoque anterior, primero
+ se descomponen los cómputos y luego se ocupa de los datos.
  
 \end_layout
 
@@ -1579,7 +1575,7 @@ Una máquina cuyo conjunto de instrucciones permite operaciones tanto sobre
  vectores como escalares lo denominamos computador vectorial.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 Procesador Vectorial Pipelined
 \end_layout
 
@@ -1606,7 +1602,7 @@ La etapas están separadas por registros de alta velocidad usados para guardar
 En esta categoría tenemos máquinas como la Cray-1 y la Cyber-205.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 Arreglos de Procesadores
 \end_layout
 
@@ -1650,7 +1646,7 @@ ente ya que a partir de cierto número y dependiendo de la aplicación, el
  poca extensibilidad.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 UMA: Multiprocesadores de Acceso Uniforme a Memoria
 \end_layout
 
@@ -1666,7 +1662,7 @@ Encore Multimax y Sequent Symetry S81 son ejemplos comerciales de este tipo
  de multiprocesadores.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NUMA: Multiprocesadores de Acceso No-Uniforme a Memoria
 \end_layout
 
@@ -2229,7 +2225,7 @@ Message Passing Interface (MPI): Similar a PVM pero, tal como HPF, MPI se
 convertido un estándar.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsubsection*
 MPI: Message Passing Interface
 \end_layout
 
@@ -2271,7 +2267,7 @@ Algunas de sus deventajas son: no permite comunicacion de memoria compartida,
  soporte de tareas y tiene un pobre manejo de I/O
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsubsection*
 PVM: Parallel Virtual Machine
 \end_layout
 
