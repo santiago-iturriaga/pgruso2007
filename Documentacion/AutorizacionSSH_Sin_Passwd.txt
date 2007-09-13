@@ -1,0 +1,17 @@
+ Setup on the Operating System Level
+To eliminate the need to enter a password every time, set up the RSA key control, as follows; this needs to be done only once. Log in to pc51 and start by saying in your home directory
+
+  ssh-keygen -t dsa
+
+at the Linux prompt; do not choose any passphrase, rather just hit RETURN. Then copy .ssh/id_dsa.pub to .ssh/authorized_keys2 by
+
+  cp .ssh/id_dsa.pub .ssh/authorized_keys2
+
+Try to see that you can now log onto the other machines from pc51 just by saying ssh node2 without being prompted for a password.
+
+Finally, set up one environment variable and add the MPI directory to the path, as follows. Add the following two lines to your .cshrc file:
+
+  setenv MPIHOME /usr/local/mpich
+  set path = ( $path $MPIHOME/bin )
+
+Do a source .cshrc to activate the changes in .cshrc in your current shell. To be precise, you will have to enter your password once to enable the automatic authentication; to this end, you may want to ssh to all machines (node2, node3, and node4) manually at this time. From then on, you should be able to log in to these other machines as well as run your parallel code without entering your password.
