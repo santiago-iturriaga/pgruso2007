@@ -1,0 +1,37 @@
+[TORQUE]
+Requerimientos:
+	- make
+	- C compiler (p.ej.: gcc 4.1)
+	- libc-dev (p.ej: libc6-dev)
+	- C++ compiler (p.ej.: g++ 4.1)
+	- tcl8.4
+	- tcl8.4-dev
+	- tk8.4
+	- tk8.4-dev
+
+Instalacion servidor:
+1) ./configure --with-tcl=/usr/lib/tcl8.4 --with-tk=/usr/lib/tk8.4 --enable-gui --enable-doc
+2) make
+3) make install
+4) make packages
+
+Instalacion nodos:
+1) ./torque-package-mom-linux-i686.sh --install
+2) ./torque-package-clients-linux-i686.sh --install
+
+Configuracion servidor:
+1) pbs_server -t create
+2) qmgr
+3) set server operators = root@localhost
+4) create queue prueba
+5) set queue prueba queue_type = Execution
+6) set queue prueba started = True
+7) set queue prueba enabled = True
+8) set server default_queue = prueba
+9) set server resources_default.nodes = 1
+10) set server scheduling = True
+11) create node localhost
+12) vim /var/spool/torque/mom_priv/config
+	$pbsserver      headnode
+	$logevent       255               # bitmap of which events to log
+13) reinicar el servidor (qterm -t quick; pbs_server)
