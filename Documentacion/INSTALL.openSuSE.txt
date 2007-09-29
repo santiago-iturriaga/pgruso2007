@@ -11,38 +11,43 @@ Requerimientos:
 	- xorg-devel
 
 Instalacion servidor:
-2) ln -s /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libX11.so
-1) export LD_RUN_PATH=/usr/local/lib 
-1) ./configure --enable-gui --enable-doc
-3) make
-4) make install
-5) make packages
+1) ln -s /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libX11.so
+2) export LD_RUN_PATH=/usr/local/lib 
+3) ./configure --enable-gui --enable-doc
+4) make
+5) make install
+6) make packages
 
 Instalacion nodos:
 1) ./torque-package-mom-linux-i686.sh --install
 2) ./torque-package-clients-linux-i686.sh --install
 
-Configuracion servidor:
 [ NOTA: ejemplo nombre de la maquina: marga   ]
 [       ejemplo ip de la maquina: 192.168.0.1 ]
+Configuracion servidor:
 
-0) vim /etc/hosts, agregar "192.168.0.1		marga" de la maquina si no esta agregado
-1) pbs_server -t create
-2) qmgr
-3) set server operators = root@marga
-	3.1) set server operators += operador2@marga
-4) create queue prueba
-5) set queue prueba queue_type = Execution
-6) set queue prueba started = True
-7) set queue prueba enabled = True
-8) set server default_queue = prueba
-9) set server resources_default.nodes = 1
-10) set server scheduling = True
-11) create node marga
-12) vim /var/spool/torque/mom_priv/config
+1) vim /etc/hosts, agregar "192.168.0.1		marga" de la maquina si no esta agregado
+2) pbs_server -t create
+3) qmgr
+4) set server operators = root@marga
+	4.1) set server operators += operador2@marga
+5) create queue prueba
+6) set queue prueba queue_type = Execution
+7) set queue prueba started = True
+8) set queue prueba enabled = True
+9) set server default_queue = prueba
+10) set server resources_default.nodes = 1
+11) set server scheduling = True
+12) create node marga
+13) vim /var/spool/torque/mom_priv/config
 	$pbsserver      marga
 	$logevent       255               # bitmap of which events to log
-13) reinicar el servidor (qterm -t quick; pbs_server)
+14) reinicar el servidor (qterm -t quick; pbs_server)
+
+Configuracion de los nodos:
+1) vim /var/spool/torque/mom_priv/config
+	$pbsserver      marga
+	$logevent       255               # bitmap of which events to log
 
 [GOLD]
 Requerimientos:
@@ -96,4 +101,21 @@ Instalacion:
 4) editar /usr/local/maui
 	RMCFG[MARGA]	TYPE=PBS
 	RMPOLLINTERVAL	00:00:05
-0) agregar /usr/local/maui/bin al PATH
+5) agregar /usr/local/maui/bin al PATH del usuario
+
+[TEST]
+
+# verificar que las colas esten configuradas
+> qstat -q
+
+# informacion del server
+> qmgr -c 'p s'
+
+# informacion de los nodos
+> pbsnodes -a 
+
+# encolar un trabajo
+> qsub sleep.sh
+
+# ver lista de trabajos
+> qstat
