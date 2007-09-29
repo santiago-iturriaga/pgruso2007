@@ -87,3 +87,13 @@ Instalacion:
 	</VirtualHost>
 
 15) http://localhost/cgi-bin/gold.cgi
+
+[MAUI]
+1) ./configure --with-gold --with-pbs 
+	(el usuario que corre el config es admin de maui, debe ser admin de torque tambien)
+2) make
+3) [root] make install
+4) editar /usr/local/maui
+	RMCFG[MARGA]	TYPE=PBS
+	RMPOLLINTERVAL	00:00:05
+0) agregar /usr/local/maui/bin al PATH
