@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# moab         This shell script takes care of starting and stopping
+#              the TORQUE resource manager and Moab workload manager.
+#
+# description: TORQUE is a scalable resource manager which manages jobs in
+# 	           cluster environments. Moab is a cluster scheduler which uses
+#	             TORQUE to schedule jobs on that cluster.
+#
+
+# Source function library.
+if [ -f /etc/init.d/functions ] ; then
+  . /etc/init.d/functions
+elif [ -f /etc/rc.d/init.d/functions ] ; then
+  . /etc/rc.d/init.d/functions
+  #else
+  #exit 0
+fi
+
+# Read in the command arguments
+case "$1" in
+  start)
+	# Start TORQUE services first...
+	
+	echo -n $"Starting TORQUE services: "
+	startproc /usr/local/sbin/pbs_mom
+	startproc /usr/local/sbin/pbs_server
+	echo
+
+	# Next start Maui scheduler...
+	echo -n $"Starting Maui scheduler: "
+	startproc /usr/local/maui/sbin/maui
+	echo
+	;;
+  stop)
+	# Stop Maui first...
+
+	echo -n $"Shutting down Maui scheduler: "
+	killproc maui
+	echo
+
+	echo -n $"Shutting down TORQUE services: "
+	killproc pbs_server
+	echo
+	killproc pbs_mom
+	echo
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  *)
+	echo $"Usage: torque {start|stop|restart}"
+	exit 1
+esac
+
+exit 0
