@@ -1,0 +1,67 @@
+http://gentoo-wiki.com/HOWTO_Torque/Maui_-_grid_scheduler_and_resource_manager#Maui
+
+$TORQUECFG=/home/PBS_spool
+$MAUIDIR=/home/maui 
+
+torque:
+instalar tk8.4
+./configure --enable-server --enable-monitor --enable-clients --with-server-home=$TORQUECFG --with-scp --with-tcl=/usr/lib/tcl8.4 --with-tk=/usr/lib/tk8.4 --enable-gui --enable-doc
+make
+sudo make install
+sudo make packages
+-- configuracion
+sudo pbs_server -t create
+sudo qmgr
+	set server operators = root@localhost
+	set server operators += pbsuser@localhost
+	create queue batch
+	set queue batch queue_type = Execution
+	set queue batch started = True
+	set queue batch enabled = True
+	set server default_queue = batch
+	set server resources_default.nodes = 1
+	set server scheduling = True
+	create node localhost
+	quit
+
+sudo mousepad /home/PBS_spool/mom_priv/config
+	$pbsserver      localhost
+	$logevent       255 
+
+PARA LOS OTROS NODOS
+	cd directorio donde este el torque
+	make packages
+	pscp compute torque-package-mom-linux-i686.sh
+	pscp compute torque-package-clients-linux-i686.sh
+	psh compute torque-package-clients-linux-i686.sh --install
+	psh compute torque-package-mom-linux-i686.sh --install
+VER SI LOS NODOS CONOCEN AL MASTER
+	cat $TORQUECFG/server_name -> deberia devolver main
+
+pbs_mom en todos los nodos
+
+EN EL SERVIDOR:
+qterm -t quick
+pbs_server
+
+pbsnodes -a -> chequear nodos
+
+MAUI
+
+deberia ser ./configure --with-pbs=$TORQUECFG --with-spooldir=$MAUIDIR
+pero pusimos
+./configure --with-spooldir=$MAUIDIR
+make
+sudo mkdir /home/maui/log
+sudo mkdir /home/maui/traces
+sudo mkdir /home/maui/stats
+sudo mkdir /home/maui/spool
+sudo mkdir /home/maui/tools
+
+sudo make install
+
+qmgr
+	set server managers += root@localhost
+	set server resources_default.nodect = 1
+	set server resources_default.walltime = 00:05:00
+	quit
