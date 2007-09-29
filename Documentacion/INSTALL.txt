@@ -23,9 +23,14 @@ Instalacion nodos:
 2) ./torque-package-clients-linux-i686.sh --install
 
 Configuracion servidor:
+[ NOTA: ejemplo nombre de la maquina: marga   ]
+[       ejemplo ip de la maquina: 192.168.0.1 ]
+
+0) vim /etc/hosts, agregar "192.168.0.1		marga" de la maquina si no esta agregado
 1) pbs_server -t create
 2) qmgr
-3) set server operators = root@localhost
+3) set server operators = root@marga
+	3.1) set server operators += operador2@marga
 4) create queue prueba
 5) set queue prueba queue_type = Execution
 6) set queue prueba started = True
@@ -33,9 +38,9 @@ Configuracion servidor:
 8) set server default_queue = prueba
 9) set server resources_default.nodes = 1
 10) set server scheduling = True
-11) create node localhost
+11) create node marga
 12) vim /var/spool/torque/mom_priv/config
-	$pbsserver      headnode
+	$pbsserver      marga
 	$logevent       255               # bitmap of which events to log
 13) reinicar el servidor (qterm -t quick; pbs_server)
 
@@ -53,24 +58,24 @@ Requerimientos:
 	- ssslib (opcional)
 
 Instalacion:
-1) [root] useradd -m gold
-2) [root] passwd gold
-3) [gold] ./configure --with-cgi-bin=/srv/www/cgi-bin
-4) [gold] make
-5) [root] make deps
-6) [root] make install
-7) [root] make instal-gui
-8) [root] make auth_key (ingresar: sss)
-9) Editar home (Optional)
-	echo export PATH=$PATH:$GOLD_HOME/bin:$GOLD_HOME/sbin >> $HOME/.bash_profile
-	echo export GOLD_HOME=/usr/local/gold >> $HOME/.bash_profile
-10) [root] /var/lib/pgsql/data/pg_hba.conf
-	local	all	all			trust
-	host	all	all	127.0.0.1/32	trust
-11) [postgres]  createuser gold
-12) [gold]  createdb gold
-13) [gold]  psql gold < bank.sql
-14) [root] Editar apache httpd.conf:
+1) [root] 	useradd -m gold
+2) [root] 	passwd gold
+3) [gold] 	./configure --with-cgi-bin=/srv/www/cgi-bin
+4) [gold] 	make
+5) [root] 	make deps
+6) [root] 	make install
+7) [root] 	make instal-gui
+8) [root] 	make auth_key (ingresar: sss)
+9) Editar home (opcional?)
+		echo export PATH=$PATH:$GOLD_HOME/bin:$GOLD_HOME/sbin >> $HOME/.bash_profile
+		echo export GOLD_HOME=/usr/local/gold >> $HOME/.bash_profile
+10) [root] 	/var/lib/pgsql/data/pg_hba.conf
+		local	all	all			trust
+		host	all	all	127.0.0.1/32	trust
+11) [postgres]	createuser gold
+12) [gold] 	createdb gold
+13) [gold] 	psql gold < bank.sql
+14) [root] 	Editar apache httpd.conf:
 	
 	<Directory "/var/www/cgi-bin">
 		Options ExecCGI
