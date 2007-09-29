@@ -8,12 +8,15 @@ Requerimientos:
 	- tcl8.4-dev
 	- tk8.4
 	- tk8.4-dev
+	- xorg-devel
 
 Instalacion servidor:
-1) ./configure --with-tcl=/usr/lib/tcl8.4 --with-tk=/usr/lib/tk8.4 --enable-gui --enable-doc
-2) make
-3) make install
-4) make packages
+2) ln -s /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libX11.so
+1) export LD_RUN_PATH=/usr/local/lib 
+1) ./configure --enable-gui --enable-doc
+3) make
+4) make install
+5) make packages
 
 Instalacion nodos:
 1) ./torque-package-mom-linux-i686.sh --install
@@ -35,3 +38,47 @@ Configuracion servidor:
 	$pbsserver      headnode
 	$logevent       255               # bitmap of which events to log
 13) reinicar el servidor (qterm -t quick; pbs_server)
+
+[GOLD]
+Requerimientos:
+	- perl (con suidperl)
+	- PostgreSQL
+		- postgresql 
+		- postgresql-libs 
+		- postgresql-devel 
+		- postgresql-server
+	- libxml2
+	- gnu readline 2.0 (opcional)
+	- apache 2.0 (opcional)s
+	- ssslib (opcional)
+
+Instalacion:
+1) [root] useradd -m gold
+2) [root] passwd gold
+3) [gold] ./configure --with-cgi-bin=/srv/www/cgi-bin
+4) [gold] make
+5) [root] make deps
+6) [root] make install
+7) [root] make instal-gui
+8) [root] make auth_key (ingresar: sss)
+9) Editar home (Optional)
+	echo export PATH=$PATH:$GOLD_HOME/bin:$GOLD_HOME/sbin >> $HOME/.bash_profile
+	echo export GOLD_HOME=/usr/local/gold >> $HOME/.bash_profile
+10) [root] /var/lib/pgsql/data/pg_hba.conf
+	local	all	all			trust
+	host	all	all	127.0.0.1/32	trust
+11) [postgres]  createuser gold
+12) [gold]  createdb gold
+13) [gold]  psql gold < bank.sql
+14) [root] Editar apache httpd.conf:
+	
+	<Directory "/var/www/cgi-bin">
+		Options ExecCGI
+		AddHandler cgi-script .cgi .pl
+	</Directory>
+	
+	<VirtualHost *>
+		DocumentRoot /var/www/cgi-bin
+	</VirtualHost>
+
+15) http://localhost/cgi-bin/gold.cgi
