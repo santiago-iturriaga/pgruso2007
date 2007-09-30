@@ -92,6 +92,7 @@ Instalacion:
 	</VirtualHost>
 
 15) http://localhost/cgi-bin/gold.cgi
+16) deshabilitar seguridad en la comunicacion (/usr/local/gold/etc/goldd)
 
 [MAUI]
 1) ./configure --with-gold --with-pbs 
@@ -102,6 +103,11 @@ Instalacion:
 	RMCFG[MARGA]	TYPE=PBS
 	RMPOLLINTERVAL	00:00:05
 5) agregar /usr/local/maui/bin al PATH del usuario
+
+[MPIExec]
+1) ./configure --with-pbs
+2) make
+3) ?? TEST ?? make install
 
 [TEST]
 
