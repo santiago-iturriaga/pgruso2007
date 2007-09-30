@@ -26,7 +26,8 @@ Instalacion nodos:
 [       ejemplo ip de la maquina: 192.168.0.1 ]
 Configuracion servidor:
 
-1) vim /etc/hosts, agregar "192.168.0.1		marga" de la maquina si no esta agregado
+1) editar /etc/hosts
+	si no esta agregado, agregar: "192.168.0.1	marga"
 2) pbs_server -t create
 3) qmgr
 4) set server operators = root@marga
@@ -71,9 +72,9 @@ Instalacion:
 6) [root] 	make install
 7) [root] 	make instal-gui
 8) [root] 	make auth_key (ingresar: sss)
-9) Editar home (opcional?)
-		echo export PATH=$PATH:$GOLD_HOME/bin:$GOLD_HOME/sbin >> $HOME/.bash_profile
-		echo export GOLD_HOME=/usr/local/gold >> $HOME/.bash_profile
+9) (OPCIONAL) Editar perfil del usuario ($HOME/.bash_profile)
+		PATH=$PATH:$GOLD_HOME/bin:$GOLD_HOME/sbin
+		GOLD_HOME=/usr/local/gold
 10) [root] 	/var/lib/pgsql/data/pg_hba.conf
 		local	all	all			trust
 		host	all	all	127.0.0.1/32	trust
@@ -81,7 +82,6 @@ Instalacion:
 12) [gold] 	createdb gold
 13) [gold] 	psql gold < bank.sql
 14) [root] 	Editar apache httpd.conf:
-	
 	<Directory "/var/www/cgi-bin">
 		Options ExecCGI
 		AddHandler cgi-script .cgi .pl
@@ -90,27 +90,30 @@ Instalacion:
 	<VirtualHost *>
 		DocumentRoot /var/www/cgi-bin
 	</VirtualHost>
-
+    Nota: el manual recomienda utilizar SSL para la interfaz web
+    Nota: no la pude probar, se queja de que el browser no soporta frames, solo anda con el IE?
 15) http://localhost/cgi-bin/gold.cgi
-16) deshabilitar seguridad en la comunicacion (/usr/local/gold/etc/goldd)
+16) editar /usr/local/gold/etc/goldd
+	Deshabilitar seguridad en la comunicacion, sino falla la conexion de maui al gold :(
 
 [MAUI]
 1) ./configure --with-gold --with-pbs 
 	(el usuario que corre el config es admin de maui, debe ser admin de torque tambien)
 2) make
 3) [root] make install
-4) editar /usr/local/maui
-	RMCFG[MARGA]	TYPE=PBS
-	RMPOLLINTERVAL	00:00:05
-5) agregar /usr/local/maui/bin al PATH del usuario
+4) editar /usr/local/maui/maui.cfg
+	RMCFG[MARGA]	TYPE=PBS (no funciona con el por defecto)
+	RMPOLLINTERVAL	00:00:05 (pooling mas rapido)
+5) (OPCIONAL) agregar /usr/local/maui/bin al PATH del usuario
 
 [MPIExec]
+Nota: no lo pude terminar de probar
+
 1) ./configure --with-pbs
 2) make
 3) ?? TEST ?? make install
 
 [TEST]
-
 # verificar que las colas esten configuradas
 > qstat -q
 
