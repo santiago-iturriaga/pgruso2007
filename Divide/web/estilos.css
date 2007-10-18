@@ -1,0 +1,105 @@
+* {		MARGIN:0px 0px 0px 0px;  
+		padding: 0px 0px 0px 0px;
+ }
+
+body {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size:1.5ex;
+	}
+
+a {
+	text-decoration: none;
+	color: #0000FF;
+}
+a:hover{
+	text-decoration: underline;
+	}
+h1{
+	font-family: Verdana, Lucida, Geneva, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	display: block;
+	text-align:left;
+	color:#ffffff;
+	margin-left: 120px;
+	margin-top: 17px;
+}
+
+b {
+	color:#ff3030;
+	font-weight:bold;
+}
+
+ul#menu {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        white-space: nowrap;
+        position:absolute;
+        left: 0px;
+        top:89px;
+}
+
+ul#menu li {
+        float: left;
+        font-family: verdana, arial, sans-serif;
+        font-size: 9px;
+        margin: 0;
+        padding: 5px 0 4px 0;
+        background-color: #eef4f1;
+        border-top: 1px solid #a0ada9;
+        border-bottom: 1px solid #a0ada9;
+}
+
+#menu a, #menu a:link {
+        margin: 0;
+        padding: 5px 9px 4px 9px;
+        color: #000000;
+        border-right: 1px dashed #a1a3ab;
+        text-decoration: none;
+}
+
+ul#menu li#actual {
+        color: #95bbae;
+        background-color: #deebe5;
+        font-weight: bold;
+}
+
+#menu a:hover {
+        background-color: #d1e3db;
+}
+
+#pagina
+	{
+	position:absolute;
+	top: 30px;
+	left:20px;
+	}
+
+.boton 
+	{
+	MARGIN:3px 3px 3px 0px;  
+	padding: 2px 3px 2px 3px;	
+	text-align:center;
+	}
+
+.boton a, .boton input
+	{
+	font-size: 1.8ex;
+	font-weight:bold;
+	height:20px;
+	color:#FDFDF5;
+	text-decoration: none;
+    MARGIN:3px 0px 3px 0px;  
+	padding: 0px 1px 1px 1px;
+    background-color: #eef4f1;
+    border: 1px solid #e0ede9;
+    color: #95bbae;
+}
+
+.boton a:hover,.boton a:focus, .boton input:hover,.boton input:focus
+	{
+    color: #74a893;
+    background-color: #d1e3db;
+    border: 1px solid #000000;
+	}
