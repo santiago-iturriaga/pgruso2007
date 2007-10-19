@@ -2,6 +2,8 @@
 include_once("Sesion.php");
 include_once("Directorio.php");
 include_once("Constantes.php");
+include_once("Conexion.php");
+include_once("Usuario.php");
 
 class MiSesion extends Sesion {
 	
@@ -9,6 +11,8 @@ class MiSesion extends Sesion {
 	var $mensajeError	=	"";
 	
 	var $Directorio;
+	var $Conexion;
+	var $Usuario;
 	
 	function MiSesion($nueva = false) {
 		$this->Sesion($nueva);
@@ -19,6 +23,8 @@ class MiSesion extends Sesion {
 			}
 		if($nueva){
 			$this->Directorio	=	new Directorio(RAIZ);
+			$this->Conexion		=	new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+			$this->Usuario		=	new Usuario($this->Conexion); 
 		}
 	}
 	
