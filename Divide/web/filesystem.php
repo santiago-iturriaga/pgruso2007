@@ -11,12 +11,18 @@
 	
 		
 	if(isset($_GET["archivo"])){
-		$archivo	=	$sesion->Directorio->getContenido($_GET["archivo"]);
-		header ("Content-Disposition: attachment; filename=".$_GET["archivo"]."\n\n");
-		header ("Content-Type: application/text");
-		header ("Content-Length: ".strlen($archivo));
-		echo $archivo; 
-		exit;
+		if($_GET["accion"]=="descargar"){
+			$archivo	=	$sesion->Directorio->getContenido($_GET["archivo"]);
+			header ("Content-Disposition: attachment; filename=".$_GET["archivo"]."\n\n");
+			header ("Content-Type: application/text");
+			header ("Content-Length: ".strlen($archivo));
+			echo $archivo; 
+			exit;
+		}
+		if($_GET["accion"]=="eliminar"){
+			$res	=	$sesion->Directorio->eliminar($_GET["archivo"]);
+			error_log(print_r($res,1));
+		}
 	}
 	if(isset($_GET["ruta"])){
 		$sesion->Directorio->mover($_GET["ruta"]);

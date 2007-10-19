@@ -31,6 +31,12 @@ class Directorio{
 	function getContenido($archivo){
 		return file_get_contents ($this->getRuta().SEPARADOR_RUTA.$archivo);
 	}
+	function eliminar($archivo){
+		error_log("eliminar: ".$this->getRuta().SEPARADOR_RUTA.$archivo);
+		if($this->getRuta().SEPARADOR_RUTA.$archivo) return array("error"=>0);
+		else return array("error"=>1,
+    			 		  "codError"=>"D003");
+		}
 	
 	function mover($carpeta){
 		if($carpeta != CARPETA_ACTUAL){
