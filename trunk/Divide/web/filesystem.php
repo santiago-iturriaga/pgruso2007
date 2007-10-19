@@ -4,7 +4,10 @@
 	include_once("MiSesion.php");
 	$sesion	=	new MiSesion();
 	if ($sesion ==NULL)
-		$sesion = new MiSesion(1);
+		{
+		header("Location: index.php");
+		exit;
+		}
 	
 		
 	if(isset($_GET["archivo"])){
