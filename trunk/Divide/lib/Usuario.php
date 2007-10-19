@@ -63,7 +63,7 @@ class Usuario{
 	function _getTrabajos(){
 		$consulta="select t.*
 				   from cliente c, trabajo t
-				   where t.id=c.trabajo
+				   where t.cliente=c.id
 				   	 and c.id=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($this->cliente["id"]),true))
 			return array("error"=>1,
