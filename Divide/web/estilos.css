@@ -224,18 +224,18 @@ input {
 }
 /* Left Sidebar */
 
-#left_sidebar {
+#menu_vertical {
 	width: 129px;
 	float: left;
 	text-align: left;
 	color: #8989b6;
 }
 
-#left_sidebar a {
+#menu_vertical a {
 	color: #8989b6;
 }
 
-#left_sidebar a:hover {
+#menu_vertical a:hover {
 	color: #75759c;
 }
 
@@ -632,9 +632,9 @@ ul.archivos li{
 	}
 pre#resultados{
 	border:1px solid #000000;
-	width: 600px;
+	width: 500px;
 	height: 280px;
-	margin-left:80px;
+	margin-left:180px;
 	margin-top:10px;	
 	text-align:left;
 	padding: 10px 10px 10px 10px;
