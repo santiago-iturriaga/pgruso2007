@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+	<TITLE>Divide</TITLE>
+	<LINK media=all href="estilos.css" type=text/css rel=stylesheet>
+	 <script language="JavaScript" type="text/JavaScript"></script>
+</HEAD>
+<BODY>
+<div id="contenedor">
+	<div id="encabezado">
+		<h1>Fenton</h1>
+		<img src="imagenes/Fenton_.gif" />
+	</div>
+	<div id="menu">
+
+		<ul>
+		<li><a href="archivos.html">Administrar archivos</a></li>
+		<li><a href="resultados.html">Ver resultados</a></li>
+		<li><a href="trabajos.html">Cambiar de trabajo</a></li>
+		<li id="actual" class="last"><a href="clave.html">Cambiar clave</a></li>
+		</ul>
+
+	</div>
+
+	<div id="cuerpo">
+		<div id="pagina">
+			<h1>Cambiar Clave</h1>
+			<form action="index.php" method="POST" id="form_clave">
+				<fieldset>
+					<p>
+						<label for="form_actual">Clave actual:</label>
+						<input type="password" name="form_actual" id="form_actual" />
+					</p>
+					<p>
+						<label for="form_nueva">Nueva clave:</label>
+						<input type="password" name="form_nueva" id="form_nueva" />
+					</p>
+					<p>
+						<label for="form_confirmacion">Confirmaci&oacute;n:</label>
+						<input type="password" name="form_confirmacion" id="form_confirmacion" />
+					</p>
+					<p>	
+						<INPUT TYPE="submit" value="Cambiar clave">
+					</p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
