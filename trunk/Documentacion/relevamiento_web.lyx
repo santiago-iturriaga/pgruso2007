@@ -1,0 +1,184 @@
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Requerimientos Aplicacion Web
+\end_layout
+
+\begin_layout Title
+Cluster de Computadores de Alto Desempeño con Acceso Remoto
+\end_layout
+
+\begin_layout Title
+Carrera de Ingeniería en Computación
+\end_layout
+
+\begin_layout Title
+Facultad de Ingeniería
+\end_layout
+
+\begin_layout Author
+Santiago Iturriaga, Paulo Maya, Damián Pintos
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Parte de los objetivos del proyecto es la posibilidad de contar con una
+ interfaz para la administracion del cluster.
+\end_layout
+
+\begin_layout Standard
+Dado que nos encontramos en un ambiente multiusuario, se deberá disponer
+ de una interfaz que permita administrar las reservas del clúster, y así
+ organizar la utilización de recursos por varios usuarios, y de forma simultánea.
+ La usabilidad en estas aplicaciones es crítica, ya que es uno de los elementos
+ clave en la toma de decisiones sobre la utilización o no del clúster por
+ parte de los usuarios.
+ Para contemplar la usabilidad, debe conocerse a los potenciales usuarios,
+ las funcionalidades requeridas y las demandas actuales y futuras.
+ Se desea que dicha administracion se realice en forma remota por los que
+ la aplicacion sera web.
+ 
+\end_layout
+
+\begin_layout Standard
+Podemos identificar dos tipos de actores, el usuario administrador de cluster
+ y los usuarios finales del mismo.
+\end_layout
+
+\begin_layout Section
+Usuario administrador
+\end_layout
+
+\begin_layout Standard
+Este como tareas la adiministracion de usuarios finales y recursos del cluster.
+ Debe velar por el buen funcionamiento del mismo por lo cual se probera
+ uan serie de reportes estadisticos sobre los recursos del cluster.
+\end_layout
+
+\begin_layout Subsection
+Estadísticas
+\end_layout
+
+\begin_layout Standard
+Se debe contar con un conjunto de reportes estadisticos sobre los recursos
+ del cluster para la administracion del mismo.
+\end_layout
+
+\begin_layout Standard
+Mas especificamente se contara con el porcentaje total de carga de CPU y
+ memoria.
+ Tambien se podra detallar esta informacion por nodo del cluster, usuario
+ y proceso.
+\end_layout
+
+\begin_layout Standard
+Ademas se podra verificar los tiempos de procesamiento de usuario y por
+ proceso.
+\end_layout
+
+\begin_layout Standard
+Para esta funcionalidad se evaluara la posibilidad de utilizar Ganglia como
+ proveedor de reportes.
+\end_layout
+
+\begin_layout Subsection
+Administración de usuarios
+\end_layout
+
+\begin_layout Standard
+El usuario administrador podra dar de alta, baja y modificar datos a usuarios
+ finales del cluster, tambien podra mantener usuarios administradores.
+\end_layout
+
+\begin_layout Standard
+A traves de la interfaz web se podra administrar los recursos por usuarios
+ finales, asignacion de recursos, permisos por nodos.
+ 
+\end_layout
+
+\begin_layout Subsection
+Administración de nodos
+\end_layout
+
+\begin_layout Standard
+Se podra adiminstrar mediante la interfz web los recursos del cluter.
+\end_layout
+
+\begin_layout Section
+Usuario final
+\end_layout
+
+\begin_layout Standard
+Los usuarios finalas trabajaran con proyectos mediante la interfaz web,
+ se podra crear, eliminar y modificar los mismos.
+ Los proyectos de los usuarios contaran con paquetes fuentes o ejecutables.
+\end_layout
+
+\begin_layout Standard
+El usuario final podra lanzar trabajos al cluster, ver resultados y el estado
+ de ejecucion
+\end_layout
+
+\end_body
+\end_document
