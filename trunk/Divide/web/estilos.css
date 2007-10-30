@@ -8,7 +8,7 @@ body {
 	background-color: #ffffff;
 	color: #85859c;
 	font-family: tahoma, arial, sans-serif;
-	font-size: 10px;
+	font-size: 12px;
 	text-align: center;
 }
 
@@ -73,17 +73,19 @@ input {
 	color: #fff;
 	background: url('imagenes/header_background.gif') repeat-x 0px 0px;
 	overflow: hidden;
+	text-align: left;
+	
 }
 
 #encabezado h1{
 	margin-top: 30px;
 	font-size: 40px;
+	display: inline;
+	vertical-align: 80%;
 }
 
 #encabezado img{
-	position:absolute;
-	top:0;
-	left:121px;
+	margin-left:0px;
 	height:112px;
 }
 #page_heading {
@@ -225,10 +227,11 @@ input {
 /* Left Sidebar */
 
 #menu_vertical {
-	width: 129px;
+	width: 135px;
 	float: left;
 	text-align: left;
 	color: #8989b6;
+	font-size: 12px;
 }
 
 #menu_vertical a {
@@ -294,7 +297,7 @@ input {
 
 #categories_header {
 	margin-bottom: 2px;
-	width: 127px;
+	width: 134px;
 	height: 20px;
 	background-color: #9e9ec3;
 	overflow: hidden;
@@ -316,7 +319,6 @@ input {
 
 #categories li {
 	width: 120px;
-	height: 21px;
 	list-style-type: none;
 	text-align: left;
 	border-bottom: #b6b6d2 1px solid;
@@ -598,8 +600,14 @@ form p{
 	text-align:right;
 	margin-right: 20px;
 	}
+form legend{
+	font-size: 15px;
+
+}
 #form_login{
 	width: 250px;
+	margin-left: 50px;
+	margin-top: 50px;
 }
 
 #form_clave{
@@ -630,6 +638,9 @@ ul.archivos li{
 	margin-left: 10px;
 	font-size: 12px;
 	}
+table.archivos{
+	margin-left: 10px;
+}
 pre#resultados{
 	border:1px solid #000000;
 	width: 500px;
