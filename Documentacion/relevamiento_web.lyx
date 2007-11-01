@@ -169,15 +169,43 @@ Se podra adiminstrar mediante la interfz web los recursos del cluter.
 Usuario final
 \end_layout
 
-\begin_layout Standard
-Los usuarios finalas trabajaran con proyectos mediante la interfaz web,
- se podra crear, eliminar y modificar los mismos.
- Los proyectos de los usuarios contaran con paquetes fuentes o ejecutables.
+\begin_layout Subsection
+Ingreso al sitio
 \end_layout
 
 \begin_layout Standard
-El usuario final podra lanzar trabajos al cluster, ver resultados y el estado
- de ejecucion
+Se accedera al sistema mediante un mecanismo de autentificacion de usuario
+ y pasword.
+ Cada usuario sera capaz de cambiar su clave de acceso.
+\end_layout
+
+\begin_layout Subsection
+Proyectos
+\end_layout
+
+\begin_layout Standard
+Los usuarios finalas trabajaran con proyectos mediante la interfaz web,
+ se podra crear, eliminar y modificar los mismos.
+ Los proyectos de los usuarios contendran paquetes con fuentes que se podran
+ compilar o ejecutables.
+ Se podra acceder a los fuentes o ejecutables mediante un file system.
+\end_layout
+
+\begin_layout Subsection
+Trabajos
+\end_layout
+
+\begin_layout Standard
+Una ves dentro del sitio se podra lanzar trabajos al cluster.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ejecucion de trabajos
+\end_layout
+
+\begin_layout Standard
+Tambien se podra ver el estado de ejecucion y los resultados de los mismos.
 \end_layout
 
 \end_body
