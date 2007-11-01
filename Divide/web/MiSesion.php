@@ -10,6 +10,7 @@ class MiSesion extends Sesion {
 	var $codigoError	=	"";
 	var $mensajeError	=	"";
 	
+	var $logueado	= false;
 	var $Directorio;
 	var $Conexion;
 	var $Usuario;
@@ -22,9 +23,7 @@ class MiSesion extends Sesion {
 			$this->setMensajeError("");
 			}
 		if($nueva){
-			$this->Directorio	=	new Directorio(RAIZ);
-			$this->Conexion		=	new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
-			$this->Usuario		=	new Usuario($this->Conexion); 
+			 
 		}
 	}
 	

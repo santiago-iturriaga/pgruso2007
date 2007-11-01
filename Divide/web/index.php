@@ -1,13 +1,18 @@
 <?php
+	echo phpinfo();
+	exit;
 	set_include_path(get_include_path().';'.
 					 '../lib');
-	include_once("Ruso/lib/TPL.php");
-	$logueado 	=	false;
+	include_once("TPL.php");
+	include_once("MiSesion.php");
+	$sesion = new MiSesion();
+	if($sesion==null) $sesion = new MiSesion(1);
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.htm");
 	$ppal		= 	"";
 	
-	if(!$sesion->Usuario->Logueado()){
+	
+	if(!$sesion->logueado){
 		$ppal	=	$plantilla->load("plantillas/login/login.html");
 	}
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,

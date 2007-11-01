@@ -12,10 +12,10 @@ create table trabajo (
 	
 create table usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    login VARCHAR(12) not null,
-	password VARCHAR(12) not null,
-	cliente int not null,
-	foreign key (cliente) references cliente(id),
-	UNIQUE (login));
+ 	 login VARCHAR(12) not null,
+	 password VARCHAR(12) not null,
+	 cliente int not null,
+ 	 foreign key (cliente) references cliente(id),
+	 UNIQUE (login));
 
 	
