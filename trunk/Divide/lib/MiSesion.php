@@ -23,7 +23,8 @@ class MiSesion extends Sesion {
 			$this->setMensajeError("");
 			}
 		if($nueva){
-			 
+			echo "OPA";
+			$this->Usuario=new Usuario(); 
 		}
 	}
 	

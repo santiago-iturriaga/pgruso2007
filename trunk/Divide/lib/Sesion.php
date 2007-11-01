@@ -3,7 +3,7 @@
 class Sesion {
 
 	function Sesion ($nueva = false)
-		{
+		{echo "hola $nueva";
 		if (session_id()) {
 			$this = null;
 			return;	
