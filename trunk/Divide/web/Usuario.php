@@ -6,10 +6,12 @@ class Usuario{
 	var $cliente	=	null;
 	var $trabajos	=	null;
 	
-	function Usuario($bd){
-		$this->conexion	=	$bd;
+	function Usuario(){
 	}
 	
+	function setBD($bd){
+		$this->conexion	=	$bd;
+	}
 	function Logueado(){
 		return $this->login != null;
 	}
