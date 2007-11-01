@@ -1,6 +1,4 @@
 <?php
-	echo phpinfo();
-	exit;
 	set_include_path(get_include_path().';'.
 					 '../lib');
 	include_once("TPL.php");
