@@ -71,7 +71,8 @@ class Usuario{
 			return array("error"=>1,
 						 "codError"=>$this->conexion->codError);
 		$trabajos	=	array();
-		while($res=$this->conexion->Next()) array_push($trabajos,$res);
+		while($res=$this->conexion->Next()) 
+			$trabajos[$res["id"]]=$res;
 			
 		return array("error"=>0,
 					 "trabajos"=>$trabajos);

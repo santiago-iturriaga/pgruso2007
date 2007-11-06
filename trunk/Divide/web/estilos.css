@@ -284,9 +284,9 @@ input {
 }
 
 
-/* Left Sidebar : Categories */
+/* Left Sidebar : menu_vertical */
 
-#categories {
+#menu_vertical {
 	margin-bottom: 1px;
 	padding: 1px 1px 1px 0px;
 	border-color: #9e9ec3;
@@ -295,7 +295,7 @@ input {
 	text-align: center;
 }
 
-#categories_header {
+#menu_vertical_encabezado {
 	margin-bottom: 2px;
 	width: 134px;
 	height: 20px;
@@ -303,7 +303,7 @@ input {
 	overflow: hidden;
 }
 
-#categories_header h2 {
+#menu_vertical_encabezado h2 {
 	margin-top: 3px;
 	margin-left: 5px;
 	color: #fff;
@@ -311,13 +311,13 @@ input {
 	font-weight: bold;
 }
 
-#categories ul {
+#menu_vertical ul {
 	margin: 0px auto;
 	width: 120px;
 	list-style-type: none;
 }
 
-#categories li {
+#menu_vertical li {
 	width: 120px;
 	list-style-type: none;
 	text-align: left;
@@ -325,19 +325,19 @@ input {
 	float: left;
 }
 
-#categories li.last {
+#menu_vertical li.last {
 	border: none;
 }
 
-#categories li a {
+#menu_vertical li a {
 	margin-top: 4px;
 	margin-left: 6px;
 	display: block;
-	color: #7575a9;
+	color: #ff0000;
 	text-decoration: none;
 }
 
-#categories li a:hover {
+#menu_vertical li a:hover {
 	color: #56567c;
 }
 
@@ -630,6 +630,9 @@ ul.path li {
 	font-size: 11px;
 	font-weight: bold;
 }
+ul.path li a{
+	text-decoration: none;
+	}
 ul.archivos {
 	text-align: left;
 	list-style-type: none;

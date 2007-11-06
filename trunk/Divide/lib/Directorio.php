@@ -13,12 +13,16 @@ class Directorio{
 	function getArchivos(){
 		$archivos		=	array();
 		$directorios	=	array();
+		$ruta			=	$this->getRuta();
 		if ($handle = opendir($this->getRuta())) {
     		while (false !== ($file = readdir($handle))){
-    			if(is_dir($this->getRuta().SEPARADOR_RUTA.$file))
+    			if(is_dir($ruta.SEPARADOR_RUTA.$file))
     				$directorios[$file]=1;
-    			else	
-    				$archivos[$file]=1;
+    			else{
+    				$size	= filesize($ruta.SEPARADOR_RUTA.$file);
+    				$archivos[$file]=array("size_"=>$size,
+    									   "size"=>$this->getStrSize($size));
+    			}
     		}
     		return array("error"=>0,
     					 "archivos"=>$archivos,
@@ -28,12 +32,28 @@ class Directorio{
     				 "codError"=>"D001"); 
 	}
 	
+	function getStrSize($size){
+		if($size<1024) return $size."B";
+		else{
+			$size=round($size/1024,1);
+			if($size<1024) return $size."KB";
+			else{
+				round($size/1024,1);
+				if($size<1024) return $size."MB";
+				else{
+					round($size/1024,1);
+					return $size."GB";
+				}
+			}
+		}
+	}
+	
 	function getContenido($archivo){
 		return file_get_contents ($this->getRuta().SEPARADOR_RUTA.$archivo);
 	}
 	function eliminar($archivo){
 		error_log("eliminar: ".$this->getRuta().SEPARADOR_RUTA.$archivo);
-		if($this->getRuta().SEPARADOR_RUTA.$archivo) return array("error"=>0);
+		if(unlink($this->getRuta().SEPARADOR_RUTA.$archivo)) return array("error"=>0);
 		else return array("error"=>1,
     			 		  "codError"=>"D003");
 		}
@@ -51,6 +71,18 @@ class Directorio{
 			}else{
 				array_push($this->camino,$carpeta);
 			}
+		}
+		return array("error"=>0);
+	}
+	
+	function retroceder($cantidad){
+		if(!is_numeric ( $cantidad) or $cantidad<0){
+			return array("error"=>1,
+    				 	 "codError"=>"D003");
+		}
+		while($cantidad>0 and count($this->camino)>1){
+			array_pop($this->camino);
+			$cantidad--;
 		}
 	}
 	function getRuta(){

@@ -11,10 +11,11 @@ class MiSesion extends Sesion {
 	var $mensajeError	=	"";
 	
 	var $logueado	= false;
-	var $Directorio;
+	
+	var $Directorio	= null;
 	var $Conexion;
 	var $Usuario;
-	
+	var $TrabajoActual	=	null;
 	function MiSesion($nueva = false) {
 		$this->Sesion($nueva);
 		if($this!=NULL)
@@ -23,7 +24,6 @@ class MiSesion extends Sesion {
 			$this->setMensajeError("");
 			}
 		if($nueva){
-			echo "OPA";
 			$this->Usuario=new Usuario(); 
 		}
 	}
@@ -41,6 +41,14 @@ class MiSesion extends Sesion {
 	function setMensajeError($var){
 		$this->mensajeError=$var;
 	}
-
+	
+	function getMenuVertical($html,$tpl){
+		return $tpl->replace($html,array("USUARIO"=>$this->Usuario->login,
+										 "CLIENTE"=>$this->Usuario->cliente["nombre"],
+										 "TRABAJO"=>$this->Usuario->trabajos[$this->TrabajoActual]["nombre"],
+										 "USO_DISCO"=>"0",
+										 "TRABAJOS_EJECUCION"=>"0",
+										 "ALERTAS"=>"0"));
+	}
 }
 ?>
