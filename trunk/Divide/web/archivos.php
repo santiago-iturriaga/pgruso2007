@@ -38,10 +38,9 @@
 	$p_archivo	=	$plantilla->load("plantillas/archivos/archivo.html");
 	$p_ruta		=	$plantilla->load("plantillas/archivos/ruta.html");
 	$menu		=	$sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
-	
 	if($sesion->Directorio == null)
 		{
-		$sesion->Directorio	= new Directorio(RAIZ."/".$sesion->Usuario->cliente["id"]."/".$sesion->TrabajoActual);
+		$sesion->Directorio	= new Directorio(RAIZ."/".$sesion->ClienteActual."/".$sesion->TrabajoActual);
 		}
 	
 	

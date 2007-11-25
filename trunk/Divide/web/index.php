@@ -7,7 +7,8 @@
 	include_once("Conexion.php");
 	include_once("Constantes.php");
 	
-	$sesion = new MiSesion();
+	$sesion = new MiSesion(0);
+	error_log(print_r($sesion,1));
 	if($sesion==null) $sesion = new MiSesion(1);
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
@@ -17,12 +18,19 @@
 		$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 		$sesion->Usuario->setBD($conexion);
 		$res=$sesion->Usuario->Login($_POST["login"],$_POST["password"]);
-		if($sesion->Usuario->Logueado())
-			{
+		if($res["error"]) error_log(print_r($res,1));
+		if($sesion->Usuario->Logueado()){
 			$sesion->salvar();
-			header("Location: trabajos.php");
-			exit; 
+			if(!$sesion->Usuario->administrador){
+				header("Location: trabajos.php");
+				exit;
 			}
+			else{
+				header("Location: admin/index.php");
+				exit;
+			}
+			
+		}
 	}
 	
 	if(!$sesion->Usuario->Logueado()){
