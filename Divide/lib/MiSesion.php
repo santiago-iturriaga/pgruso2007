@@ -22,9 +22,9 @@ class MiSesion extends Sesion {
 			{
 			$this->setCodigoError("");
 			$this->setMensajeError("");
+			if($this->Usuario==null){
+				$this->Usuario=new Usuario(); 
 			}
-		if($nueva){
-			$this->Usuario=new Usuario(); 
 		}
 	}
 	

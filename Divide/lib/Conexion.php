@@ -32,8 +32,9 @@ class Conexion{
 		$this->result=mysql_query($select,$this->link);
 		if($this->result==false)
 			{
+			error_log("Consulta erronea: ".$select);
 			$this->result=null;
-			$this->msgError=getMensajeError('CX04',array("CONSULTA"=>$select));
+			$this->msgError='CX04';
 			return false;	
 			}
 		return true;
@@ -80,6 +81,7 @@ class Conexion{
 			}
 		if(!mysql_query($consulta,$this->link))
 			{
+			error_log("Consulta erronea: ".$consulta);
 			$this->codError='CX04';
 			return false;
 			}
@@ -100,14 +102,14 @@ class Conexion{
 		$cons=array_shift($array_cons);
 		foreach ($parametros as $parametro)
 			{
-			if(!is_numeric($parametro) and $parametro!=null)
-				$parametro="'".$this->esc($parametro)."'";
 			if($parametro==null)
 				$parametro='null';
+			elseif(!is_numeric($parametro) and $parametro!=null)
+				$parametro="'".$this->esc($parametro)."'";
 			$cons.=$parametro.array_shift($array_cons);
 			}
 		if($select)
-			return $this->Consulta($cons);
+			return $this->Consulta($cons);	
 		else
 			return $this->Insertar($cons);
 	}
