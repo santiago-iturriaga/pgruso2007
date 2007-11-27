@@ -1,24 +1,24 @@
 <?php 
 
 class Sesion {
-
+	var $sesion = null;
+	var $hay_sesion = false;
 	function Sesion ($nueva = false)
 		{
 		if (session_id()) {
-			$this = null;
 			return;	
 		}
 		if (!$nueva) {
 			session_start();
 			if (!isset($_SESSION['PHPSesion'])) {
 				$this->cerrar();
-				$this = null;
+				$this->hay_sesion = false;
 				return;
 			}
-			$this = unserialize($_SESSION['PHPSesion']);
+			$this->sesion = unserialize($_SESSION['PHPSesion']);
 			if (!is_object($this)) {
 				$this->cerrar();
-				$this = null;
+				$this->hay_sesion = false;
 				return;
 			}
 		}
@@ -35,13 +35,15 @@ class Sesion {
 			}
 			session_start();
 			session_unset();
+			$this->hay_sesion = true;
+
 			$this->salvar();
 		}
 	}		
 
 
 	function salvar() {
-		$_SESSION['PHPSesion'] = serialize($this);
+		$_SESSION['PHPSesion'] = serialize($this->sesion);
 		return true;
 	}
 
@@ -50,7 +52,8 @@ class Sesion {
 		   setcookie(session_name(), '', time()-42000, '/');
 		}
 		session_destroy();
-		$this = null;
+		$this->sesion = null;
+		$this->hay_sesion = false;
 	}
 	
 }
