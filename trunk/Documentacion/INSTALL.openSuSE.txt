@@ -15,7 +15,7 @@ Instalacion servidor:
 2) export LD_RUN_PATH=/usr/local/lib 
 3) ./configure --enable-gui --enable-doc
 4) make
-5) make install
+5) make install (root)
 6) make packages
 
 Instalacion nodos:
@@ -28,8 +28,8 @@ Configuracion servidor:
 
 1) editar /etc/hosts
 	si no esta agregado, agregar: "192.168.0.1	marga"
-2) pbs_server -t create
-3) qmgr
+2) pbs_server -t create (root)
+3) qmgr (root)
 4) set server operators = root@marga
 	4.1) set server operators += operador2@marga
 5) create queue prueba
@@ -45,7 +45,7 @@ Configuracion servidor:
 	$logevent       255               # bitmap of which events to log
 14) reinicar el servidor (qterm -t quick; pbs_server)
 
-Configuracion de los nodos:
+Configuracion de los nodos: (root)
 1) vim /var/spool/torque/mom_priv/config
 	$pbsserver      marga
 	$logevent       255               # bitmap of which events to log
@@ -60,7 +60,7 @@ Requerimientos:
 		- postgresql-server
 	- libxml2
 	- gnu readline 2.0 (opcional)
-	- apache 2.0 (opcional)s
+	- apache 2.0 (opcional)
 	- ssslib (opcional)
 
 Instalacion:
