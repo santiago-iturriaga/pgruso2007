@@ -3,13 +3,16 @@
 					 '../lib');
 	include_once("TPL.php");
 	include_once("Sesion.php");	
-	include_once("MiSesion.php");
 	include_once("Conexion.php");
 	include_once("Constantes.php");
-	
-	$sesion = new MiSesion(0);
+	$manejador = new ManejadorSesion();
+	$sesion = $manejador->getSesion();
 	error_log(print_r($sesion,1));
-	if($sesion==null) $sesion = new MiSesion(1);
+	if($sesion==null) $sesion = $manejador->getSesion(true);
+	if($sesion->Usuario==null){
+		$sesion->Usuario=new Usuario(); 
+		}
+
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	"";
@@ -38,6 +41,6 @@
 	}
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>""));
-	$sesion->salvar();
+	$manejador->salvar();
 	echo $base;												
 ?>
