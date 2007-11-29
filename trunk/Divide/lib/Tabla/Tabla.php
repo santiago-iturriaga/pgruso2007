@@ -1,8 +1,8 @@
 <?
 	set_include_path(get_include_path().';'.
-					 '../');
+					 '../../lib');
 	include_once("TPL.php");
-	
+
 	class Tabla{
 		var $renglones=array();
 		var $columnas=array();
@@ -27,7 +27,7 @@
 			$tabla=$plantilla->load($this->dir_relativa."../lib/Tabla/plantillas/tabla.html");
 			$renglon=$plantilla->load($this->dir_relativa."../lib/Tabla/plantillas/renglon.html");
 			$columna=$plantilla->load($this->dir_relativa."../lib/Tabla/plantillas/columna.html");
-			
+
 			// cabezal
 			$thead="";
 			if($mostrar_head){
@@ -51,7 +51,7 @@
 													"CABEZAL"=>$thead,
 													"CUERPO"=>$renglones,
 													"PIE"=>""));
-			return $salida;													
+			return $salida;
 		}
 	}
 ?>

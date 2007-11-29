@@ -1,7 +1,7 @@
 <?php
-define("RAIZ", "c:");
+define("RAIZ", "/home");
 define("CONEXION_HOST", "localhost");
 define("CONEXION_USUARIO", "root");
-define("CONEXION_PASSWORD", "root");
-define("CONEXION_BASE", "divide");
+define("CONEXION_PASSWORD", "");
+define("CONEXION_BASE", "ruso");
 ?>

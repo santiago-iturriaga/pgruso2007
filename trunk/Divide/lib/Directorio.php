@@ -9,13 +9,13 @@ class Directorio{
 		$this->inicio	= $inicio;
 		$this->camino	= array($inicio);
 	}
-	
+
 	function getArchivos(){
 		$archivos		=	array();
 		$directorios	=	array();
 		$ruta			=	$this->getRuta();
 		if ($handle = opendir($this->getRuta())) {
-    		while (false !== ($file = readdir($handle))){
+			while (false !== ($file = readdir($handle))){
     			if(is_dir($ruta.SEPARADOR_RUTA.$file))
     				$directorios[$file]=1;
     			else{
@@ -26,12 +26,12 @@ class Directorio{
     		}
     		return array("error"=>0,
     					 "archivos"=>$archivos,
-    					 "directorios"=>$directorios);	
+    					 "directorios"=>$directorios);
     	}
     	return array("error"=>1,
-    				 "codError"=>"D001"); 
+    				 "codError"=>"D001");
 	}
-	
+
 	function getStrSize($size){
 		if($size<1024) return $size."B";
 		else{
@@ -47,7 +47,7 @@ class Directorio{
 			}
 		}
 	}
-	
+
 	function getContenido($archivo){
 		return file_get_contents ($this->getRuta().SEPARADOR_RUTA.$archivo);
 	}
@@ -57,7 +57,7 @@ class Directorio{
 		else return array("error"=>1,
     			 		  "codError"=>"D003");
 		}
-	
+
 	function mover($carpeta){
 		if($carpeta != CARPETA_ACTUAL){
 			if($carpeta == CARPETA_ANTERIOR){
@@ -74,7 +74,7 @@ class Directorio{
 		}
 		return array("error"=>0);
 	}
-	
+
 	function retroceder($cantidad){
 		if(!is_numeric ( $cantidad) or $cantidad<0){
 			return array("error"=>1,
