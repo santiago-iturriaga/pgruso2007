@@ -31,13 +31,19 @@
 		$res	=	$s->sesion->Directorio->eliminar($_GET["eliminar"]);
 		error_log(print_r($res,1));
 	}
+	if(isset($_GET["ejecutar"])){
+		$res	=	$s->sesion->Directorio->ejecutar($_GET["ejecutar"]);
+		error_log(print_r($res,1));
+	}
+
+
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/archivos/archivos.html");
 	$p_directorio	=	$plantilla->load("plantillas/archivos/directorio.html");
 	$p_archivo	=	$plantilla->load("plantillas/archivos/archivo.html");
 	$p_ruta		=	$plantilla->load("plantillas/archivos/ruta.html");
-	$menu		=	$plantilla->load("plantillas/menu.html");;//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+	$menu		=	$plantilla->load("plantillas/menu.html");//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
 	if($s->esion->Directorio == null)
 		{
 		$s->sesion->Directorio	= new Directorio(RAIZ."/".$s->sesion->ClienteActual."/".$s->sesion->TrabajoActual);

@@ -57,6 +57,11 @@ class Directorio{
 		else return array("error"=>1,
     			 		  "codError"=>"D003");
 		}
+	function ejecutar($archivo){
+		error_log("ejecutar: ".$this->getRuta().SEPARADOR_RUTA.$archivo);
+		error_log(print_r(exec( "cd ".$this->getRuta().";"."./".$archivo),1));
+		return array("error"=>0);
+		}
 
 	function mover($carpeta){
 		if($carpeta != CARPETA_ACTUAL){
