@@ -21,7 +21,6 @@
 		$res=$s->sesion->Usuario->Login($_POST["login"],$_POST["password"]);
 		if($res["error"]) error_log(print_r($res,1));
 		if($s->sesion->Usuario->Logueado()){
-			error_log(print_r($s,1)."<-+");
 			$s->salvar();
 			if(!$s->sesion->Usuario->administrador){
 				header("Location: trabajos.php");
@@ -35,12 +34,11 @@
 		}
 	}
 
-	if(!$sesion->Usuario->Logueado()){
+	if(!$s->sesion->Usuario->Logueado()){
 		$ppal	=	$plantilla->load("plantillas/login/login.html");
 	}
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>""));
-							 error_log(get_class($sesion)."<-SESION?");
 	$s->salvar();
 	echo $base;
 ?>
