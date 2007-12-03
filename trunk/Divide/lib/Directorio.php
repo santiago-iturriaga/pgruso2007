@@ -2,6 +2,7 @@
 define("CARPETA_ACTUAL",".");
 define("CARPETA_ANTERIOR","..");
 define("SEPARADOR_RUTA", "/");
+include_once ("TPL.php");
 class Directorio{
 	var $inicio	=	null;
 	var $camino	=	array();
@@ -9,21 +10,50 @@ class Directorio{
 		$this->inicio	= $inicio;
 		$this->camino	= array($inicio);
 	}
-
+	function es_vacio($dir){
+		if ($handle = opendir($dir) and readdir($handle)===true)
+			return true;
+		else
+			return false;
+	}
 	function getArchivos(){
 		$archivos		=	array();
 		$directorios	=	array();
 		$ruta			=	$this->getRuta();
 		if ($handle = opendir($this->getRuta())) {
 			while (false !== ($file = readdir($handle))){
-    			if(is_dir($ruta.SEPARADOR_RUTA.$file))
-    				$directorios[$file]=1;
+    			if(is_dir($ruta.SEPARADOR_RUTA.$file)){
+    				if($file=='.')
+    					$directorios[$file]=array("entrar"=>false,
+    							  				 "eliminar"=>false);
+    				else if($file=='..'){
+    					if(count($this->camino)>1)
+    						$directorios[$file]=array("entrar"=>true,
+    						  					   "eliminar"=>false);
+    					else
+    						$directorios[$file]=array("entrar"=>false,
+    						  					   "eliminar"=>false);
+    				}
+    				else if(!$this->es_vacio($ruta.SEPARADOR_RUTA.$file))
+    					$directorios[$file]=array("entrar"=>true,
+    										  "eliminar"=>false);
+					else $directorios[$file]=array("entrar"=>true,
+    											  "eliminar"=>true);
+    				$directorios[$file]["ultima_modificacion"] = date ("F d Y H:i:s.", filemtime($ruta.SEPARADOR_RUTA.$file));
+
+    			}
     			else{
     				$size	= filesize($ruta.SEPARADOR_RUTA.$file);
+    				$ejecutable = is_executable  ($ruta.SEPARADOR_RUTA.$file);
+					$fecha = date ("F d Y H:i:s.", filemtime($ruta.SEPARADOR_RUTA.$file));
+
     				$archivos[$file]=array("size_"=>$size,
-    									   "size"=>$this->getStrSize($size));
+    									   "size"=>$this->getStrSize($size),
+    									   "ejecutar"=>$ejecutable,
+    									   "ultima_modificacion"=>$fecha);
     			}
     		}
+    		clearstatcache();
     		return array("error"=>0,
     					 "archivos"=>$archivos,
     					 "directorios"=>$directorios);
@@ -58,8 +88,14 @@ class Directorio{
     			 		  "codError"=>"D003");
 		}
 	function ejecutar($archivo){
-		error_log("ejecutar: ".$this->getRuta().SEPARADOR_RUTA.$archivo);
-		error_log(print_r(exec( "cd ".$this->getRuta().";"."./".$archivo),1));
+		$plantilla	=	new TPL();
+		$ejecutar = $plantilla->replace($plantilla->load("plantillas/archivos/ejecutar.sh"),
+										array("NODOS"=>1,
+											  "RUTA_EJECUTABLE"=>$this->getRuta(),
+											  "EJECUTABLE"=>$archivo));
+		error_log("ejecutar: ".$ejecutar);
+		error_log(print_r(exec( $ejecutar),1));
+		//error_log(print_r(shell_exec( $ejecutar),1));
 		return array("error"=>0);
 		}
 
