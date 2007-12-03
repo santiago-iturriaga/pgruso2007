@@ -1,4 +1,7 @@
-all: prueba prueba2
+all: prueba prueba2 serial
+
+serial: src/serial.c
+	mpicc src/serial.c -o bin/serial
 
 prueba: src/prueba.c
 	mpicc src/prueba.c -o bin/prueba

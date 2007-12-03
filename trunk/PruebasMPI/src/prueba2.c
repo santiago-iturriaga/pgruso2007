@@ -16,10 +16,13 @@ int main(int argc, char *argv[]) {
   		source = 1;
   		
   		for (iter = 0; iter <= 3; iter++) {
-  			rc = MPI_Send(&iter, 1, MPI_INT, dest, tag, MPI_COMM_WORLD);
+  			if (numtasks > 1) {
+  				rc = MPI_Send(&iter, 1, MPI_INT, dest, tag, MPI_COMM_WORLD);
+  			}
   			printf("<< Out %d \n\n", iter);
-  			sleep(2);
+  			sleep(1);
   		}
+  		printf("== Fin! \n\n");
   	} else if (rank == 1) {
   		dest = 0;
   		source = 0;
@@ -28,7 +31,7 @@ int main(int argc, char *argv[]) {
   			rc = MPI_Recv(&inmsg, 1, MPI_INT, source, tag, MPI_COMM_WORLD, &Stat);
   			printf(">> Task %d: Received int from task %d with tag %d \n", rank, Stat.MPI_SOURCE, Stat.MPI_TAG);
   			printf(">> In %d \n\n", inmsg);
-  			sleep(1);
+  			sleep(5);
   		}
 	} else {
 		printf ("== Number of tasks= %d My rank= %d \n", numtasks,rank);

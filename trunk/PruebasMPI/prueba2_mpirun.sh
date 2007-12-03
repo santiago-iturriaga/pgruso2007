@@ -3,4 +3,11 @@
 echo "Nodos: "
 cat $PBS_NODEFILE
 
-mpirun -np 4 /pgruso/trunk/PruebasMPI/bin/prueba2
+cd /pgruso/trunk/PruebasMPI
+echo "Directorio: "
+pwd
+
+echo "inicio " > log.txt
+mpirun -np 4 bin/prueba2
+echo "fin " >> log.txt
+

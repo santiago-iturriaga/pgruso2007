@@ -93,8 +93,8 @@ class Directorio{
 										array("NODOS"=>1,
 											  "RUTA_EJECUTABLE"=>$this->getRuta(),
 											  "EJECUTABLE"=>$archivo));
-		error_log("ejecutar: ".$ejecutar);
-		error_log(print_r(exec( $ejecutar),1));
+		error_log("ejecutar: cd /home/1/1; echo \"".$ejecutar."\" | /usr/local/torque/bin/qsub");
+		error_log(print_r(exec("cd /home/1/1; echo \"".$ejecutar."\" | /usr/local/torque/bin/qsub"),1));
 		//error_log(print_r(shell_exec( $ejecutar),1));
 		return array("error"=>0);
 		}
