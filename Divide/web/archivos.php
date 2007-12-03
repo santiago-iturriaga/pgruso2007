@@ -33,7 +33,7 @@
 	}
 	if(isset($_GET["ejecutar"])){
 		$res	=	$s->sesion->Directorio->ejecutar($_GET["ejecutar"]);
-		error_log(print_r($res,1));
+		if($re["error"]) error_log(print_r($res,1));
 	}
 
 
@@ -59,14 +59,19 @@
 	$res		=	$s->sesion->Directorio->getArchivos();
 	$archivos	=	$res["archivos"];
 	$directorios=	$res["directorios"];
-	//asort($archivos);
-	//asort($directorios);
+	asort($archivos);
+	asort($directorios);
 	$p_archivos	=	"";
 	foreach($directorios as $d=>$valores){
-		$p_archivos	.=	$plantilla->replace($p_directorio,array("NOMBRE"=>$d));
+		$directorio_nuevo= 	$plantilla->replace($p_directorio,array("NOMBRE"=>$d,"FECHA"=>$valores["ultima_modificacion"]));
+		if($valores["entrar"])  $directorio_nuevo= 	$plantilla->uncomment($directorio_nuevo,array("ENTRAR"));
+		if($valores["eliminar"])  $directorio_nuevo= 	$plantilla->uncomment($directorio_nuevo,array("ELIMINAR"));
+		$p_archivos	.= $directorio_nuevo;
 	}
 	foreach($archivos as $archivo=>$valores){
-		$p_archivos	.=	$plantilla->replace($p_archivo,array("NOMBRE"=>$archivo,"TAMANIO"=>$valores["size"]));
+		$archivo_nuevo = $plantilla->replace($p_archivo,array("NOMBRE"=>$archivo,"TAMANIO"=>$valores["size"],"FECHA"=>$valores["ultima_modificacion"]));
+		if($valores["ejecutar"])  $archivo_nuevo= 	$plantilla->uncomment($archivo_nuevo,array("EJECUTAR"));
+		$p_archivos	.=	$archivo_nuevo;
 	}
 
 	$camino		=	$s->sesion->Directorio->camino;
