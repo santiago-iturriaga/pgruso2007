@@ -3,6 +3,7 @@ define("CARPETA_ACTUAL",".");
 define("CARPETA_ANTERIOR","..");
 define("SEPARADOR_RUTA", "/");
 include_once ("TPL.php");
+include_once ("Constantes.php");
 class Directorio{
 	var $inicio	=	null;
 	var $camino	=	array();
@@ -93,12 +94,20 @@ class Directorio{
 										array("NODOS"=>1,
 											  "RUTA_EJECUTABLE"=>$this->getRuta(),
 											  "EJECUTABLE"=>$archivo));
-		error_log("ejecutar: cd /home/1/1; echo \"".$ejecutar."\" | /usr/local/torque/bin/qsub");
-		error_log(print_r(exec("cd /home/1/1; echo \"".$ejecutar."\" | /usr/local/torque/bin/qsub"),1));
+		$ruta			=	$this->getRuta();
+		error_log("ejecutar: cd ".$ruta."; echo \"".$ejecutar."\" | ".QSUB);
+		$salida = exec("cd ".$ruta."; echo \"".$ejecutar."\" | ".QSUB);
+		$salida = $this->parsear_salida($salida);
+		error_log(print_r($salida,1));
 		//error_log(print_r(shell_exec( $ejecutar),1));
-		return array("error"=>0);
+		return array("error"=>0,"salida"=>$salida);
 		}
-
+	function parsear_salida($salida){
+		if(ereg("([0-9]+)\.([a-zA-Z0-9]+)",$salida,$array))
+			return array("id"=>$array[0],"maquina"=>$array[1]);
+		else
+			return $salida;
+	}
 	function mover($carpeta){
 		if($carpeta != CARPETA_ACTUAL){
 			if($carpeta == CARPETA_ANTERIOR){
