@@ -74,7 +74,7 @@ input {
 	background: url('imagenes/header_background.gif') repeat-x 0px 0px;
 	overflow: hidden;
 	text-align: left;
-	
+
 }
 
 #encabezado h1{
@@ -120,7 +120,7 @@ input {
 }
 
 #page_headerlinks ul {
-	list-style-type: none;	
+	list-style-type: none;
 }
 
 #page_headerlinks li {
@@ -649,7 +649,13 @@ pre#resultados{
 	width: 500px;
 	height: 280px;
 	margin-left:180px;
-	margin-top:10px;	
+	margin-top:10px;
 	text-align:left;
 	padding: 10px 10px 10px 10px;
 }
+form.parametros_ocultos{
+	visibility: hidden;
+	}
+form.parametros_visibles{
+	visibility: visible;
+	}
