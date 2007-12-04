@@ -13,7 +13,7 @@ Requerimientos:
 Instalacion servidor:
 1) ln -s /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libX11.so
 2) export LD_RUN_PATH=/usr/local/lib 
-3) ./configure --enable-gui --enable-doc
+3) ./configure --prefix=/usr/local/torque --enable-gui --enable-doc
 4) make
 5) make install (root)
 6) make packages
@@ -97,7 +97,7 @@ Instalacion:
 	Deshabilitar seguridad en la comunicacion, sino falla la conexion de maui al gold :(
 
 [MAUI]
-1) ./configure --with-gold --with-pbs 
+1) ./configure --prefix=/usr/local/maui --with-gold --with-pbs 
 	(el usuario que corre el config es admin de maui, debe ser admin de torque tambien)
 2) make
 3) [root] make install
@@ -109,7 +109,7 @@ Instalacion:
 [MPIExec]
 Nota: no lo pude terminar de probar
 
-1) ./configure --with-pbs
+1) ./configure --prefix=/usr/local/mpiexec --with-default-comm=mpich-p4 --with-pbs=/usr/local/torque
 2) make
 3) ?? TEST ?? make install
 

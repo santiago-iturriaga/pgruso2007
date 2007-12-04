@@ -4,6 +4,7 @@ define("CARPETA_ANTERIOR","..");
 define("SEPARADOR_RUTA", "/");
 include_once ("TPL.php");
 include_once ("Constantes.php");
+include_once ("Momento.php");
 class Directorio{
 	var $inicio	=	null;
 	var $camino	=	array();
@@ -88,26 +89,11 @@ class Directorio{
 		else return array("error"=>1,
     			 		  "codError"=>"D003");
 		}
-	function ejecutar($archivo){
-		$plantilla	=	new TPL();
-		$ejecutar = $plantilla->replace($plantilla->load("plantillas/archivos/ejecutar.sh"),
-										array("NODOS"=>1,
-											  "RUTA_EJECUTABLE"=>$this->getRuta(),
-											  "EJECUTABLE"=>$archivo));
-		$ruta			=	$this->getRuta();
-		error_log("ejecutar: cd ".$ruta."; echo \"".$ejecutar."\" | ".QSUB);
-		$salida = exec("cd ".$ruta."; echo \"".$ejecutar."\" | ".QSUB);
-		$salida = $this->parsear_salida($salida);
-		error_log(print_r($salida,1));
-		//error_log(print_r(shell_exec( $ejecutar),1));
-		return array("error"=>0,"salida"=>$salida);
+	function ejecutar($archivo,$parametros,$argumentos){
+		$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+		$momento = new Momento($conexion);
+		return $momento->ejecutar($archivo,$this->getRuta(),$parametros,$argumentos);
 		}
-	function parsear_salida($salida){
-		if(ereg("([0-9]+)\.([a-zA-Z0-9]+)",$salida,$array))
-			return array("id"=>$array[0],"maquina"=>$array[1]);
-		else
-			return $salida;
-	}
 	function mover($carpeta){
 		if($carpeta != CARPETA_ACTUAL){
 			if($carpeta == CARPETA_ANTERIOR){
