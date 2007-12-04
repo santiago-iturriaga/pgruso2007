@@ -3,4 +3,8 @@
 echo "Nodos: "
 cat $PBS_NODEFILE
 
-/usr/local/mpiexec/bin/mpiexec -n 2 /pgruso/trunk/PruebasMPI/bin/prueba2
+cd /pgruso/trunk/PruebasMPI
+echo "Directorio: "
+pwd
+
+/usr/local/mpiexec/bin/mpiexec bin/prueba2
