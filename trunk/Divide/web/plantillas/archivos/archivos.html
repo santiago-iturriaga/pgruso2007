@@ -4,18 +4,11 @@ function mostrar() {
 	document.getElementById('parametros').className='parametros_visibles';
 }
 
-function ocultarImagenes(recolocar) {
-
-/** recolocar indica que se recoloque el documento **/
-/** si no recolocamos, solo ocultamos las imágenes **/
-
-  for (x=0;x<document.images.length;x++){
-    if (recolocar)
-      document.images[x].className = "imagenNO";
-    else
-      document.images[x].style.visibility = "hidden";
-  }
+function ejecutar(archivo){
+	mostrar();
+	document.getElementById('archivo').value = archivo;
 }
+
 </script>
 		{MENU_VERTICAL}
 		<div id="pagina">
@@ -23,8 +16,23 @@ function ocultarImagenes(recolocar) {
 			<ul class="path">
 				{RUTA}
 			</ul>
-			<form id="parametros" name="parametros" class="parametros_ocultos">
-				<input type="text"/>
+			<form id="parametros" name="parametros" class="parametros_ocultos" action="archivos.php" method="POST">
+				<fieldset>
+				<legend>Ejecutar Archivo</legend>
+					<p>
+						<label for="argumentos">Argumentos</label>
+						<input type="text" id="argumentos" name="argumentos"/>
+					</p>
+					<p>
+						<label for="params">Par&aacute;metros</label>
+						<input type="text" id="params" name="params"/>
+					</p>
+					<input type="hidden" id="archivo" name="archivo"/>
+					<p>
+						<input type="submit" id="ejecutar" name="ejecutar" value="Ejecutar"/>
+					</p>
+				</fieldset>
+				
 			</form>
 			<table class="archivos">
 				<thead>
