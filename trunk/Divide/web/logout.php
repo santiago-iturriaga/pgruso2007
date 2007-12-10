@@ -4,9 +4,9 @@
 	include_once("TPL.php");
 	include_once("Sesion.php");
 
-	$manejador = new ManejadorSesion();
-	$sesion = $manejador->getSesion();
-	$manejador->cerrar();
+
+	$s = new Sesion();
+	$s->cerrar();
 	header("Location: index.php");
 	exit;
 

@@ -2,11 +2,11 @@
 include_once("Conexion.php");
 class Usuarios{
 	var $conexion	=	null;
-	
+
 	function Usuarios($bd){
 		$this->conexion=$bd;
 	}
-	
+
 	function altaGrupo($nombre){
 		$consulta="insert into grupo (nombre) values (?)";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre),false))
@@ -27,7 +27,7 @@ class Usuarios{
 			}
 		return array("error"=>0);
 	}
-		
+
 	function desasociarTrabajoGrupo($idTrabajo,$idGrupo){
 		$consulta="delete from trabajo_grupo where trabajo=? and grupo=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo,$idGrupo),false))
@@ -37,8 +37,8 @@ class Usuarios{
 			}
 		return array("error"=>0);
 	}
-	
-	
+
+
 	function altaUsuario($login,$clave,$administrador='N',$email="",$idGrupos=array()){
 		$consulta="insert into usuario (login,password,administrador,email) values (?,?,?,?)";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($login,$clave,$administrador,$email),false))
@@ -78,7 +78,7 @@ class Usuarios{
 			}
 		return array("error"=>0);
 	}
-	
+
 	function getUsuarios($idGrupos = array()){
 		$consulta= "select * from usuario u";
 		if(count($idGrupos)>0){
@@ -99,9 +99,9 @@ class Usuarios{
 			}
 		return array("error"=>0,"usuarios"=>$salida);
 	}
-	
+
 	function getGrupos(){
-		$consulta= "select * from grupo"; 
+		$consulta= "select * from grupo";
 		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
 			{
 			return array("error"=>1,
@@ -114,9 +114,9 @@ class Usuarios{
 			}
 		return array("error"=>0,"grupos"=>$salida);
 	}
-	
+
 	function getTrabajosGrupo($idGrupo){
-		$consulta= "select t.* from trabajo t, trabajo_grupo tg where t.id=tg.trabajo and tg.grupo=?"; 
+		$consulta= "select t.* from trabajo t, trabajo_grupo tg where t.id=tg.trabajo and tg.grupo=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idGrupo),true))
 			{
 			return array("error"=>1,
@@ -129,9 +129,9 @@ class Usuarios{
 			}
 		return array("error"=>0,"trabajos"=>$salida);
 	}
-	
+
 	function getTrabajos(){
-		$consulta= "select t.* from trabajo a"; 
+		$consulta= "select t.* from trabajo a";
 		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
 			{
 			return array("error"=>1,
@@ -144,9 +144,9 @@ class Usuarios{
 			}
 		return array("error"=>0,"trabajo"=>$salida);
 	}
-	
+
 	function getUsuariosGrupo($idGrupo){
-		$consulta= "select u.* from usuario u, usuario_grupo ug where u.id=ug.usuario and ug.grupo=?"; 
+		$consulta= "select u.* from usuario u, usuario_grupo ug where u.id=ug.usuario and ug.grupo=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idGrupo),true))
 			{
 			return array("error"=>1,
@@ -159,9 +159,9 @@ class Usuarios{
 			}
 		return array("error"=>0,"usuarios"=>$salida);
 	}
-	
+
 	function getGruposUsuario($idUsuario){
-		$consulta= "select g.* from grupo g, usuario_grupo ug where ?=ug.usuario and ug.grupo=g.id"; 
+		$consulta= "select g.* from grupo g, usuario_grupo ug where ?=ug.usuario and ug.grupo=g.id";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario),true))
 			{
 			return array("error"=>1,
@@ -174,11 +174,11 @@ class Usuarios{
 			}
 		return array("error"=>0,"grupos"=>$salida);
 	}
-	
+
 	function getTrabajosUsuario($idUsuario){
-		$consulta= "select t.id, t.nombre trabajo, c.id id_cliente, c.nombre cliente
-				    from trabajo t, trabajo_grupo tg, usuario_grupo ug,cliente c
-				    where t.id=tg.trabajo and tg.grupo=ug.grupo and ug.usuario=? and t.cliente=c.id"; 
+		$consulta= "select t.id, t.nombre as trabajo, c.id as id_cliente, c.nombre as cliente ".
+				   "from trabajo t, trabajo_grupo tg, usuario_grupo ug,cliente c ".
+				   "where t.id=tg.trabajo and tg.grupo=ug.grupo and ug.usuario=? and t.cliente=c.id";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario),true))
 			{
 			return array("error"=>1,
@@ -191,11 +191,11 @@ class Usuarios{
 			}
 		return array("error"=>0,"trabajos"=>$salida);
 	}
-	
+
 	function validarUsuario($login,$clave){
-		$consulta= "select id,administrador
-				    from usuario
-				    where login=? and password=?"; 
+		$consulta= "select id,administrador ".
+				   "from usuario ".
+				   "where login=? and password=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($login,$clave),true))
 			{
 			return array("error"=>1,
