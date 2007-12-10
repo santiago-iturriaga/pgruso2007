@@ -9,7 +9,7 @@
     }
     while (!feof(STDIN)) {
         $bufer = fgets($gestor, 4096);
-        $FILE = fopen('archivo_'.$argv[1],'a');
+        $FILE = fopen($argv[1],'a');
         fwrite($FILE,$bufer);
         fclose($FILE);
         echo $bufer;
