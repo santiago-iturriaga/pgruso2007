@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### Cambiar de directorio
-cd /pgruso/trunk/PruebasMPI
+cd /pgruso/trunk/MPI
 
 ### Nombre del trabajo
 #PBS -N prueba2
@@ -115,5 +115,6 @@ echo ------------------------------------------------------
 ###MACHINES=${WORKDIR}/NODEFILE
 ###LAUNCH="/opt/mpich-1.2.4/bin/mpirun -np $NCPU -machinefile $MACHINES "
 
-(/usr/local/mpiexec/bin/mpiexec bin/serial 100000 | cat > /pgruso/trunk/PruebasMPI/salida.txt)
+###(/usr/local/mpiexec/bin/mpiexec bin/serial 100000 | cat > /pgruso/trunk/PruebasMPI/salida.txt)
+/usr/local/mpiexec/bin/mpiexec /pgruso/trunk/MPI/bin/serial 100000
 
