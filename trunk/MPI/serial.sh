@@ -116,5 +116,5 @@ echo ------------------------------------------------------
 ###LAUNCH="/opt/mpich-1.2.4/bin/mpirun -np $NCPU -machinefile $MACHINES "
 
 ###(/usr/local/mpiexec/bin/mpiexec bin/serial 100000 | cat > /pgruso/trunk/PruebasMPI/salida.txt)
-/usr/local/mpiexec/bin/mpiexec /pgruso/trunk/MPI/bin/serial 100000
-
+###/usr/local/mpiexec/bin/mpiexec /pgruso/trunk/MPI/bin/serial 100000
+(/usr/local/mpiexec/bin/mpiexec bin/serial 100000 | /pgruso/trunk/Divide/bin/redireccion_salida.php /pgruso/trunk/MPI/salida.txt)
