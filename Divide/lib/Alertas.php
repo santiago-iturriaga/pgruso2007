@@ -9,10 +9,10 @@ function Usuarios($bd){
 		$this->conexion=$bd;
 	}
 
-function crearAlerta($idTrabajo,$idUsuario, $asunto,$body  ){
-	$consulta="insert into alertas (usuario,trabajo,asunto,body) values (?,?,?,?)";
+function crearAlerta($asunto,$body  ){
+	$consulta="insert into alertas (asunto,body) values (?,?)";
 
-	if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario,$idTrabajo,$asunto,$body),false))
+	if(!$this->conexion->EjecutarConsulta($consulta,array($asunto,$body),false))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->conexion->msgError);
@@ -22,9 +22,9 @@ function crearAlerta($idTrabajo,$idUsuario, $asunto,$body  ){
 }
 
 function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
-		$consulta= "select id,usuario, trabajo, asunto,body, leida
-				    from alertas
-				    where usuario=? and trabajo=?";
+		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto,a.body, ua.leida, ua.fecha
+				    from alertas a, usuario_alerta ua
+				    where ua.usuario=? and ua.trabajo=? and ua.leida = 0 and a.id = ua.alerta";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo),true))
 			{
 			return array("error"=>1,
@@ -33,15 +33,25 @@ function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null)
 			{
-			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"]);
+			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"]);
 			}
 		return array("error"=>0,"alerta"=>$salida);
 
 	}
 
 function marcarAlertaLeida($idAlerta){
-	$consulta= "UPDATE alertas SET leida = 1
-				     where id=?";
+	$consulta= "UPDATE usuario_alerta SET leida = 1
+				     where alerta=?";
+	if(!$this->conexion->EjecutarConsulta($consulta,array($idAlerta),true))
+			{
+			return array("error"=>1,
+						 codError=>$this->conexion->msgError);
+			}
+		return array("error"=>0);
+	}
+
+function deleteAlertaLeida($idAlerta){
+	$consulta= "DELETE FROM uasuario_alerta WHERE alerta = ?";
 	if(!$this->conexion->EjecutarConsulta($consulta,array($idAlerta),true))
 			{
 			return array("error"=>1,
