@@ -8,7 +8,7 @@
         define("STDIN", fopen('php://stdin','r'));
     }
     while (!feof(STDIN)) {
-        $bufer = fgets(STDIN, 4096);
+        $bufer = fgets(STDIN);
         $FILE = fopen($argv[1],'a');
         fwrite($FILE,$bufer);
         fclose($FILE);
