@@ -1,4 +1,6 @@
 #!/bin/sh
+SCRIPT_PHP="/pgruso/trunk/Divide/bin/post_ejecucion.php"
+
 echo "------------------------------------------"
 echo "Epilogue Args:"
 echo "Job ID: $1"
@@ -11,5 +13,8 @@ echo "Resources Used: $7"
 echo "Queue Name: $8"
 echo "Account String: $9"
 echo ""
+
+$SCRIPT_PHP $1
+
 exit 0
 
