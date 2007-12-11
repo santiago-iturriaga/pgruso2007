@@ -128,3 +128,21 @@ Nota: no lo pude terminar de probar
 
 # ver lista de trabajos
 > qstat
+
+--------------------------------------------------------------
+
+PostgreSQL
+- cambiar al usuario de postgres:
+	su -
+	su - postgres
+- crear usuario
+	createuser pgccadar
+- crear base de datos
+	createdb pgccadar
+- entrar a la base
+	psql pgccadar
+- setear password para el usuario en la base
+	alter user pgccadar password 'pgccadar'
+- ejecutar sentencias sql desde un archivo externo
+	\i 1.tablas.sql
+
