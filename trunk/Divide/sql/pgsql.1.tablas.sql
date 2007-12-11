@@ -36,11 +36,18 @@ CREATE TABLE trabajo_grupo(
 	foreign key (trabajo) references trabajo(id));
 
 CREATE TABLE alertas(
-	id SERIAL PRIMARY KEY,
-	usuario int not null,
-	trabajo int not null,
-	asunto VARCHAR(256) not null,
-	body VARCHAR(1000) not null,
-	fecha timestamp default CURRENT_TIMESTAMP,
-		foreign key (trabajo) references trabajo(id),
-		foreign key (usuario) references usuario(id));
+id SERIAL PRIMARY KEY,
+asunto VARCHAR(256) not null,
+body VARCHAR(1000) not null);
+
+
+CREATE TABLE usuario_alerta(
+alerta int not null,
+usuario int not null,
+trabajo int not null,
+fecha timestamp default CURRENT_TIMESTAMP,
+leida int not null default 0,
+foreign key (alerta) references alertas(id),
+foreign key (trabajo) references trabajo(id),
+foreign key (usuario) references usuario(id));
+
