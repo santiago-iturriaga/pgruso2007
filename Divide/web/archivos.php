@@ -33,7 +33,11 @@
 	}
 	if(isset($_POST["ejecutar"])){
 		error_log(print_r($_POST,1));
-		$res	=	$s->sesion->Directorio->ejecutar($_POST["archivo"],$_POST["params"],$_POST["argumentos"]);
+		$res	=	$s->sesion->Directorio->ejecutar($_POST["archivo"],
+													 $_POST["params"],
+													 $_POST["argumentos"],
+													 $s->sesion->ClienteActual,
+													 $s->sesion->TrabajoActual);
 		//$res	=	$s->sesion->Directorio->ejecutar($_GET["ejecutar"]);
 		//if($re["error"]) error_log(print_r($res,1));
 	}
