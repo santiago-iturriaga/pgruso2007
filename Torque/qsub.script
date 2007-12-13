@@ -1,19 +1,20 @@
 #!/bin/bash
 
+
 ####################################################################################
 
 ### Configurable por PHP
-EJECUTABLE="bin/serial"
-DIRECTORIO_EJECUCION="/pgruso/trunk/MPI"
-ARGUMENTOS_EJECUCION="100000"
-NOMBRE_TRABAJO="prueba"
-NOMBRE_COLA="prueba"
-CANTIDAD_NODOS="nodes=1"
-TIEMPO_MAX_EJECUCION="01:00:00"
-SALIDA="/pgruso/trunk/PruebasMPI/prueba2.out"
-ERROR="/pgruso/trunk/PruebasMPI/prueba2.err"
-PHP_REDIRECCION="/pgruso/trunk/Divide/bin/redireccion_salida.php"
-PHP_REDIRECCION_ARGUMENTOS="/pgruso/trunk/MPI/salida.txt"
+EJECUTABLE="{0}" 					#"bin/serial"
+DIRECTORIO_EJECUCION="{1}" 				#"/pgruso/trunk/MPI"
+ARGUMENTOS_EJECUCION="{2}"				#"100000"
+NOMBRE_TRABAJO="{3}"					#"prueba"
+NOMBRE_COLA="{4}"					#"prueba"
+CANTIDAD_NODOS="{5}"					#"nodes=1"
+TIEMPO_MAX_EJECUCION="{6}"				#"01:00:00"
+SALIDA="{7}"						#"/pgruso/trunk/PruebasMPI/prueba2.out"
+ERROR="{8}"						#"/pgruso/trunk/PruebasMPI/prueba2.err"
+PHP_REDIRECCION="{9}"					#"/pgruso/trunk/Divide/bin/redireccion_salida.php"
+PHP_REDIRECCION_ARGUMENTOS="{10}"			#"/pgruso/trunk/MPI/salida.txt"
 
 ### Configuracion base
 MPIEXEC="/usr/local/mpiexec/bin/mpiexec"

@@ -1,50 +1,24 @@
 #!/bin/bash
-
-####################################################################################
-
-### Configurable por PHP
-EJECUTABLE="bin/serial"
-DIRECTORIO_EJECUCION="/pgruso/trunk/MPI"
-ARGUMENTOS_EJECUCION="100000"
-NOMBRE_TRABAJO="serial"
-NOMBRE_COLA="prueba"
-CANTIDAD_NODOS="nodes=1"
-TIEMPO_MAX_EJECUCION="01:00:00"
-SALIDA="/pgruso/trunk/PruebasMPI/serial.out"
-ERROR="/pgruso/trunk/PruebasMPI/serial.err"
-PHP_REDIRECCION="/pgruso/trunk/Divide/bin/redireccion_salida.php"
-PHP_REDIRECCION_ARGUMENTOS="/pgruso/trunk/MPI/serial.txt"
-
-### Configuracion base
-MPIEXEC="/usr/local/mpiexec/bin/mpiexec"
-
-####################################################################################
-### Script QSUB ####################################################################
-####################################################################################
-
-### Cambiar de directorio
-cd $DIRECTORIO_EJECUCION
-
 ### Nombre del trabajo
-#PBS -N $NOMBRE_TRABAJO
+#PBS -N serial
 
 ### Recursos
 ### Cantidad de nodos
 ### PBS -l nodes=4:ppn=2
-#PBS -l $CANTIDAD_NODOS
+#PBS -l nodes=1
 ### Cantidad de memoria usada
 ### PBS -l mem=213mb
 ### Tiempo maximo de duracion del trabajo
-#PBS -l walltime=$TIEMPO_MAX_EJECUCION
+#PBS -l walltime=01:00:00
 
 ### Cola del trabajo
-#PBS -q $NOMBRE_COLA
+#PBS -q prueba
 
 ### Salida estandar
-#PBS -o $SALIDA  
+#PBS -o /pgruso/trunk/MPI/serial.out
 
 ### Salida error
-#PBS -e $ERROR  
+#PBS -e /pgruso/trunk/MPI/serial.err
 
 ### Unifica la salida estandar con la salida de error
 ###PBS -j oe   
@@ -91,6 +65,26 @@ cd $DIRECTORIO_EJECUCION
 ### if checkpointing is desired, in terms of an integer number
 ### of minutes of CPU time.
 ###PBS -c c=2 ??
+
+####################################################################################
+
+### Configurable por PHP
+EJECUTABLE="bin/serial"
+DIRECTORIO_EJECUCION="/pgruso/trunk/MPI"
+ARGUMENTOS_EJECUCION="100000"
+
+PHP_REDIRECCION="/pgruso/trunk/Divide/bin/redireccion_salida.php"
+PHP_REDIRECCION_ARGUMENTOS="/pgruso/trunk/MPI/serial.txt"
+
+### Configuracion base
+MPIEXEC="/usr/local/mpiexec/bin/mpiexec"
+
+####################################################################################
+### Script QSUB ####################################################################
+####################################################################################
+
+### Cambiar de directorio
+cd $DIRECTORIO_EJECUCION
 
 ##########################################
 #                                        #
