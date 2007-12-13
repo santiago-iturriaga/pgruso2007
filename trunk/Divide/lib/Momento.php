@@ -55,7 +55,7 @@ class Momento{
 
 	function setFinalizado($id_torque){
 		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP where id_torque = ?";
-		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),false))
+		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
