@@ -22,3 +22,8 @@ insert into trabajo_grupo (trabajo,grupo) values (2,1);
 
 insert into trabajo_grupo (trabajo,grupo) values (1,2);
 insert into trabajo_grupo (trabajo,grupo) values (2,2);
+
+
+
+insert into alertas (asunto,body) values ('Finalización de taea','La tarea a finalizado');
+insert into usuario_alerta(usuario,alerta,trabajo) values(1,1,1);
