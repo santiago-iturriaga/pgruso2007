@@ -1,6 +1,6 @@
 <?php
 include_once("Conexion.php");
-include_once("Alerta.php");
+//include_once("Alerta.php");
 
 class Alertas{
 var $conexion	=	null;
