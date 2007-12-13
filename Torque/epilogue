@@ -1,8 +1,9 @@
 #!/bin/sh
 SCRIPT_PHP="/pgruso/trunk/Divide/bin/post_ejecucion.php"
 
-echo "------------------------------------------"
-echo "Epilogue Args:"
+echo ""
+echo ""
+echo "[ Epilogue ]"
 echo "Job ID: $1"
 echo "User ID: $2"
 echo "Group ID: $3"

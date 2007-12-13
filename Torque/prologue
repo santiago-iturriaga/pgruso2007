@@ -1,13 +1,13 @@
 #!/bin/sh
 SCRIPT_PHP="/pgruso/trunk/Divide/bin/pre_ejecucion.php"
 
-echo "Prologue Args:"
+echo "[ Prologue ]"
 echo "Job ID: $1"
 echo "User ID: $2"
 echo "Group ID: $3"
 echo "" 
+echo ""
 
-###$SCRIPT_PHP $1
+$SCRIPT_PHP $1
 
 exit 0
-echo "------------------------------------"
