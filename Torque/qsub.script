@@ -6,7 +6,7 @@
 #PBS -l nodes={PBS_1}
 
 ### Tiempo maximo de duracion del trabajo
-#PBS -l {PBS_2}
+#PBS -l walltime={PBS_2}
 
 ### Cola del trabajo
 #PBS -q {PBS_3}
