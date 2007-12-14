@@ -1,0 +1,61 @@
+#!/bin/bash
+### Nombre del trabajo
+#PBS -N {PBS_0}
+
+### Cantidad de nodos
+#PBS -l nodes={PBS_1}
+
+### Tiempo maximo de duracion del trabajo
+#PBS -l walltime={PBS_2}
+
+### Cola del trabajo
+#PBS -q {PBS_3}
+
+### Salida estandar
+#PBS -o {PBS_4}
+
+### Salida error
+#PBS -e {PBS_5}
+
+### Specify the priority for the job.  The priority argument must be
+### an integer between -1024 and +1023 inclusive.  The default is 0.
+###PBS -p {PBS_6}
+
+####################################################################################
+
+### Configurable por PHP
+EJECUTABLE="{0}" 			#"bin/serial"
+DIRECTORIO_EJECUCION="{1}"		#"/pgruso/trunk/MPI"
+ARGUMENTOS_EJECUCION="{2}"		#"100000"
+PHP_REDIRECCION="{3}"			#"/pgruso/trunk/Divide/bin/redireccion_salida.php"
+PHP_REDIRECCION_ARGUMENTOS="{4}"	#"/pgruso/trunk/MPI/salida.txt"
+
+### Configuracion base
+MPIEXEC="/usr/local/mpiexec/bin/mpiexec"
+
+####################################################################################
+### Script QSUB ####################################################################
+####################################################################################
+
+### Cambiar de directorio
+cd $DIRECTORIO_EJECUCION
+
+NCPU=`wc -l < $PBS_NODEFILE`
+echo ""
+echo "This job is allocated on "${NCPU}" cpu(s)"
+echo "Job is running on node(s): "
+cat $PBS_NODEFILE
+echo ""
+echo PBS: qsub is running on $PBS_O_HOST
+echo PBS: originating queue is $PBS_O_QUEUE
+echo PBS: executing queue is $PBS_QUEUE
+echo PBS: working directory is $PBS_O_WORKDIR
+echo PBS: execution mode is $PBS_ENVIRONMENT
+echo PBS: job identifier is $PBS_JOBID
+echo PBS: job name is $PBS_JOBNAME
+echo PBS: node file is $PBS_NODEFILE
+echo PBS: current home directory is $PBS_O_HOME
+echo PBS: PATH = $PBS_O_PATH
+echo ""
+
+($MPIEXEC $EJECUTABLE $ARGUMENTOS_EJECUCION | $PHP_REDIRECCION $PHP_REDIRECCION_ARGUMENTOS)
