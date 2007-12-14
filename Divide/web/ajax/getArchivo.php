@@ -11,11 +11,11 @@
 	$ini = $s->sesion->bytes_leidos;
 	$leido = "";
 	if(filesize  ($archivo) > $ini){
-		$s->sesion->ultima_fecha	= $nueva_fecha;
-
 		$leido	=  file_get_contents  ( $archivo  , true, null,$ini);
 		$s->sesion->bytes_leidos += strlen($leido);
+			error_log($leido."<--");
 	}
 	$s->salvar();
-	echo $leido
+	echo $leido;
+
 ?>

@@ -32,14 +32,27 @@
 		error_log(print_r($res,1));
 	}
 	if(isset($_POST["ejecutar"])){
-		error_log(print_r($_POST,1));
 		$res	=	$s->sesion->Directorio->ejecutar($_POST["archivo"],
 													 $_POST["params"],
 													 $_POST["argumentos"],
 													 $s->sesion->ClienteActual,
 													 $s->sesion->TrabajoActual);
-		//$res	=	$s->sesion->Directorio->ejecutar($_GET["ejecutar"]);
-		//if($re["error"]) error_log(print_r($res,1));
+		$s->sesion->archivo_actual = $res["salida"];
+		error_log("->!".print_r($res,1));
+		error_log("->!-".print_r($s->sesion->archivo_actual,1));
+		$s->sesion->bytes_leidos = 0;
+		$s->salvar();
+		if($res["error"]){
+			echo "<pre>";
+			print_r($res);
+			echo '</pre>';
+		}
+		else{
+			error_log("archivo salida:".$res->salida);
+			header("Location: resultados.php");
+		}
+		exit;
+
 	}
 
 
@@ -94,7 +107,8 @@
 												"ARCHIVOS"=>$p_archivos,
 												"RUTA"=>$ruta));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>$menu));
+							"MENU"=>$menu,
+							"BODY"=>''));
 	$s->salvar();
 	echo $base;
 ?>
