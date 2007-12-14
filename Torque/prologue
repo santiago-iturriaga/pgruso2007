@@ -1,5 +1,6 @@
 #!/bin/sh
-SCRIPT_PHP="/pgruso/trunk/Divide/bin/pre_ejecucion.php"
+PATH_PHP="/pgruso/trunk/Divide/bin/"
+SCRIPT_PHP="pre_ejecucion.php"
 
 echo "[ Prologue ]"
 echo "Job ID: $1"
@@ -8,6 +9,7 @@ echo "Group ID: $3"
 echo "" 
 echo ""
 
-$SCRIPT_PHP $1
+cd $PATH_PHP
+./$SCRIPT_PHP $1
 
 exit 0

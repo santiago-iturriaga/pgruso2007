@@ -1,5 +1,6 @@
 #!/bin/sh
-SCRIPT_PHP="/pgruso/trunk/Divide/bin/post_ejecucion.php"
+PATH_PHP="/pgruso/trunk/Divide/bin/"
+SCRIPT_PHP="post_ejecucion.php"
 
 echo ""
 echo ""
@@ -15,7 +16,8 @@ echo "Queue Name: $8"
 echo "Account String: $9"
 echo ""
 
-$SCRIPT_PHP $1
+cd $PATH_PHP
+./$SCRIPT_PHP $1
 
 exit 0
 
