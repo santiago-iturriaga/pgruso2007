@@ -5,4 +5,7 @@ define("CONEXION_USUARIO", "pgccadar");
 define("CONEXION_PASSWORD", "pgccadar");
 define("CONEXION_BASE", "pgccadar");
 define("QSUB", "/usr/local/torque/bin/qsub");
+define("REDIRECCION_SALIDA", "/pgruso/Divide/bin/redireccion_salida.php");
+define("OUTPUT", "melacomoyque");
+
 ?>

@@ -21,22 +21,41 @@ class Momento{
 
 	function ejecutar($archivo,$ruta,$parametros,$argumentos,$id_cliente,$id_trabajo){
 		$plantilla	=	new TPL();
+		$consulta = "select nombre,nodos,tiempo_maximo,cola from trabajo where id = ?";
+		if(!$this->db->EjecutarConsulta($consulta,array($id_trabajo),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$trabajo = $this->conexion->Next();
+		if($trabajo == null){
+			return array("error"=>1,
+						 "codError"=>"M000");
+		}
 
 		$consulta = "insert into ejecucion (archivo,ruta,parametros,argumentos) values(?,?,?,?)";
 		if(!$this->db->EjecutarConsulta($consulta,array($archivo,$ruta,$parametros,$argumentos),true))
-			{echo "<pre>";print_r($this->db);echo '</pre>';
+			{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
 			}
 		$id =$this->db->getUltimoNumerador();
 
 		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
+		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
 		touch($archivo_salida);
 		$ejecutar = $plantilla->replace($plantilla->load("plantillas/archivos/ejecutar.sh"),
-										array("NODOS"=>1,
-											  "RUTA_EJECUTABLE"=>$ruta,
-											  "EJECUTABLE"=>$archivo,
-											  "SALIDA"=>$archivo_salida));
+										array("PBS_0"=>$trabajo["nombre"],
+											  "PBS_1"=>$trabajo["nodos"],
+											  "PBS_2"=>$trabajo["tiempo_maximo"],
+											  "PBS_3"=>$trabajo["cola"],
+											  "PBS_4"=>$archivo_salida,
+											  "PBS_5"=>$archivo_error,
+											  "0"=>$archivo,
+											  "1"=>$ruta,
+											  "2"=>$argumentos,
+											  "3"=>REDIRECCION_SALIDA,
+											  "4"=>$ruta.'/'.OUTPUT));
 		$salida = exec("cd ".$ruta."; echo \"".$ejecutar."\" | ".QSUB);
 		$salida = $this->parsear_salida($salida);
 		error_log("Momento.php SALIDA:".print_r($salida,1));
