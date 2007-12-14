@@ -1,5 +1,26 @@
 #!/bin/bash
+### Nombre del trabajo
+#PBS -N {PBS_0}
 
+### Cantidad de nodos
+### PBS -l nodes=4
+#PBS -l {PBS_1}
+
+### Tiempo maximo de duracion del trabajo
+#PBS -l {PBS_2}
+
+### Cola del trabajo
+#PBS -q {PBS_3}
+
+### Salida estandar
+#PBS -o {PBS_4}
+
+### Salida error
+#PBS -e {PBS_5}
+
+### Specify the priority for the job.  The priority argument must be
+### an integer between -1024 and +1023 inclusive.  The default is 0.
+###PBS -p {PBS_6}
 
 ####################################################################################
 
@@ -7,14 +28,8 @@
 EJECUTABLE="{0}" 					#"bin/serial"
 DIRECTORIO_EJECUCION="{1}" 				#"/pgruso/trunk/MPI"
 ARGUMENTOS_EJECUCION="{2}"				#"100000"
-NOMBRE_TRABAJO="{3}"					#"prueba"
-NOMBRE_COLA="{4}"					#"prueba"
-CANTIDAD_NODOS="{5}"					#"nodes=1"
-TIEMPO_MAX_EJECUCION="{6}"				#"01:00:00"
-SALIDA="{7}"						#"/pgruso/trunk/PruebasMPI/prueba2.out"
-ERROR="{8}"						#"/pgruso/trunk/PruebasMPI/prueba2.err"
-PHP_REDIRECCION="{9}"					#"/pgruso/trunk/Divide/bin/redireccion_salida.php"
-PHP_REDIRECCION_ARGUMENTOS="{10}"			#"/pgruso/trunk/MPI/salida.txt"
+PHP_REDIRECCION="{3}"					#"/pgruso/trunk/Divide/bin/redireccion_salida.php"
+PHP_REDIRECCION_ARGUMENTOS="{4}"			#"/pgruso/trunk/MPI/salida.txt"
 
 ### Configuracion base
 MPIEXEC="/usr/local/mpiexec/bin/mpiexec"
@@ -25,79 +40,6 @@ MPIEXEC="/usr/local/mpiexec/bin/mpiexec"
 
 ### Cambiar de directorio
 cd $DIRECTORIO_EJECUCION
-
-### Nombre del trabajo
-#PBS -N $NOMBRE_TRABAJO
-
-### Recursos
-### Cantidad de nodos
-### PBS -l nodes=4:ppn=2
-#PBS -l $CANTIDAD_NODOS
-### Cantidad de memoria usada
-### PBS -l mem=213mb
-### Tiempo maximo de duracion del trabajo
-#PBS -l walltime=$TIEMPO_MAX_EJECUCION
-
-### Cola del trabajo
-#PBS -q $NOMBRE_COLA
-
-### Salida estandar
-#PBS -o $SALIDA  
-
-### Salida error
-#PBS -e $ERROR  
-
-### Unifica la salida estandar con la salida de error
-###PBS -j oe   
-
-### Copia archivos al host de ejecucion antes de que inicie la ejecucion
-###PBS -W stagein=file_list
-
-### Copia archivos desde el host de ejecucion despues de finalizar la ejecucion
-###PBS -W stageout=file_list   
-
-### Envia un mail al usuario cuando inicia el trabajo
-### PBS -m b   
-### Envia un mail al usuario cuando termina el trabajo
-### PBS -m e   
-### Envia un mail al usuario cuando el trabajo es abortado
-### PBS -m a   
-### Se deben agrupar si se quiere mas de uno
-### PBS -m bea
-### Mail del usuario
-### PBS -M user_email_address
-	
-### Indica que el trabajo no puede re-ejecutarse si falla
-###PBS -r n ??
-
-### Exporta todas las variables de entorno al trabajo
-###PBS -V
-
-### Declare the time after which the job is eligible for execution.
-### If you wish the job to be immediately eligible for execution,
-### comment out this directive.  If you wish to run at some time in 
-### future, the date-time argument format is
-###     [DD]hhmm
-### If the day DD is not specified, it will default to today if the
-### time hhmm is in the future, otherwise, it defaults to tomorrow.
-### If the day DD is specified as in the future, it defaults to the
-### current month, otherwise, it defaults to next month.
-###PBS -a 2215  commented out
-
-### Specify the priority for the job.  The priority argument must be
-### an integer between -1024 and +1023 inclusive.  The default is 0.
-###PBS -p 0
-
-### Define the interval at which the job will be checkpointed,
-### if checkpointing is desired, in terms of an integer number
-### of minutes of CPU time.
-###PBS -c c=2 ??
-
-##########################################
-#                                        #
-#   Output some useful job information.  #
-#                                        #
-##########################################
 
 NCPU=`wc -l < $PBS_NODEFILE`
 echo ""
