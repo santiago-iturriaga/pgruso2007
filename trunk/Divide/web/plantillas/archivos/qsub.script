@@ -24,11 +24,11 @@
 ####################################################################################
 
 ### Configurable por PHP
-EJECUTABLE="{0}" 			#"bin/serial"
-DIRECTORIO_EJECUCION="{1}"		#"/pgruso/trunk/MPI"
-ARGUMENTOS_EJECUCION="{2}"		#"100000"
-PHP_REDIRECCION="{3}"			#"/pgruso/trunk/Divide/bin/redireccion_salida.php"
-PHP_REDIRECCION_ARGUMENTOS="{4}"	#"/pgruso/trunk/MPI/salida.txt"
+EJECUTABLE="{0}"
+DIRECTORIO_EJECUCION="{1}"
+ARGUMENTOS_EJECUCION="{2}"
+PHP_REDIRECCION="{3}"
+PHP_REDIRECCION_ARGUMENTOS="{4}"
 
 ### Configuracion base
 MPIEXEC="/usr/local/mpiexec/bin/mpiexec"

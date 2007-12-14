@@ -44,6 +44,7 @@ class Momento{
 		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
 		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
 		touch($archivo_salida);
+		chmod($archivo_salida,0666);
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("PBS_0"=>$trabajo["nombre"],
 											  "PBS_1"=>$trabajo["nodos"],
@@ -56,7 +57,15 @@ class Momento{
 											  "2"=>$argumentos,
 											  "3"=>REDIRECCION_SALIDA,
 											  "4"=>$ruta.'/'.OUTPUT));
-		$salida = exec("cd ".$ruta."; echo \"".$ejecutar."\" | ".QSUB);
+		error_log("VA EL EXEC");
+		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
+		$fscript = fopen($script,'w+');
+		if($fscript ==NULL) error_log("ERROR1");
+		$caracteres = fwrite  ($fscript, $ejecutar);
+		fclose($fscript);
+		chmod($script,0777);
+		$salida = exec("cd $ruta;".QSUB." $script");
+		error_log($salida."<-- salida");
 		error_log("\ncd ".$ruta."; echo '".$ejecutar."' | ".QSUB,3,LOG_EJECUCIONES);
 		$salida = $this->parsear_salida($salida);
 		if(!isset($salida["id"])) return array("error"=>1);
