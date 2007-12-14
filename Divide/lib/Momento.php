@@ -27,7 +27,7 @@ class Momento{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
 			}
-		$trabajo = $this->conexion->Next();
+		$trabajo = $this->db->Next();
 		if($trabajo == null){
 			return array("error"=>1,
 						 "codError"=>"M000");
@@ -44,7 +44,7 @@ class Momento{
 		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
 		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
 		touch($archivo_salida);
-		$ejecutar = $plantilla->replace($plantilla->load("plantillas/archivos/ejecutar.sh"),
+		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("PBS_0"=>$trabajo["nombre"],
 											  "PBS_1"=>$trabajo["nodos"],
 											  "PBS_2"=>$trabajo["tiempo_maximo"],
@@ -57,8 +57,8 @@ class Momento{
 											  "3"=>REDIRECCION_SALIDA,
 											  "4"=>$ruta.'/'.OUTPUT));
 		$salida = exec("cd ".$ruta."; echo \"".$ejecutar."\" | ".QSUB);
+		error_log("\ncd ".$ruta."; echo '".$ejecutar."' | ".QSUB,3,LOG_EJECUCIONES);
 		$salida = $this->parsear_salida($salida);
-		error_log("Momento.php SALIDA:".print_r($salida,1));
 		if(!isset($salida["id"])) return array("error"=>1);
 		$id_torque = $salida["id"];
 
