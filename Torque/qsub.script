@@ -3,8 +3,7 @@
 #PBS -N {PBS_0}
 
 ### Cantidad de nodos
-### PBS -l nodes=4
-#PBS -l {PBS_1}
+#PBS -l nodes={PBS_1}
 
 ### Tiempo maximo de duracion del trabajo
 #PBS -l {PBS_2}
