@@ -1,3 +1,57 @@
+<script language="JavaScript" type="text/javascript">
+
+	var http_request = false;
+
+    function makeRequest(url) {
+
+        http_request = false;
+
+        if (window.XMLHttpRequest) { // Mozilla, Safari,...
+            http_request = new XMLHttpRequest();
+            if (http_request.overrideMimeType) {
+                http_request.overrideMimeType('text/xml');
+                // Ver nota sobre esta linea al final
+            }
+        } else if (window.ActiveXObject) { // IE
+            try {
+                http_request = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+
+        if (!http_request) {
+            alert('Falla :( No es posible crear una instancia XMLHTTP');
+            return false;
+        }
+        http_request.onreadystatechange = alertContents;
+        http_request.open('GET', url, true);
+        http_request.send(null);
+
+    }
+
+
+    function alertContents() {
+        if (http_request.readyState == 4) {
+            if (http_request.status == 200) {
+                document.getElementById('resultados').innerHTML =document.getElementById('resultados').innerHTML+http_request.responseText;
+            } else {
+                alert('Hubo problemas con la petición:');
+            }
+        }
+
+    }
+
+	function delay(){ 
+	    setInterval('cargar()',10000)
+	}
+	function cargar(){
+		makeRequest('ajax/getArchivo.php');
+	}
+
+</script>
 		<div id="menu_vertical">
 			<div id="categories">
 				<div id="categories_header">
@@ -20,10 +74,7 @@
 		</div> 
 		<div id="pagina">
 			<h1>Resultados de las &uacute;ltimas ejecuciones</h1>
-			<pre id="resultados">	90
-0
-	1
-			</pre>
+			<pre id="resultados"></pre>
 			<a href="trabajos.html">Descargar salida</a>
 			<a href="trabajos.html">Descargar errores</a>
 		</div>

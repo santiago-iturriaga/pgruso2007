@@ -28,7 +28,8 @@
 
 	$ppal	=	$plantilla->replace($ppal,array());
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>$menu));
+							"MENU"=>$menu,
+							"BODY"=>'onload="delay();"'));
 	$s->salvar();
 	echo $base;
 ?>

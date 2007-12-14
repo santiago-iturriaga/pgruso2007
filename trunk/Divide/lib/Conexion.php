@@ -109,7 +109,7 @@ class Conexion{
 	}
 
 	function getUltimoNumerador(){
-		if(!$res=$this->EjecutarConsulta("SELECT LASTVAL() num",array(),true))
+		if(!$res=$this->EjecutarConsulta("SELECT LASTVAL() as num",array(),true))
 			return false;
 		if(!$res=$this->Next())
 			return false;

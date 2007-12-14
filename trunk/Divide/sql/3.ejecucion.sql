@@ -6,5 +6,5 @@ create table ejecucion (
     parametros varchar(250),
     argumentos varchar(250),
     fecha_fin timestamp,
-    id_torque INT not null
+    id_torque
     );
