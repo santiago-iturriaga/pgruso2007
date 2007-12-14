@@ -6,7 +6,7 @@
 	}
 
 	set_include_path(get_include_path().PATH_SEPARATOR.
-					 '/pgruso/trunk/Divide/lib');
+					 '../lib');
 	include_once("Constantes.php");
 	include_once("Conexion.php");
 	include_once("Momento.php");
