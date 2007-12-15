@@ -56,7 +56,7 @@ class Momento{
 											  "1"=>$ruta,
 											  "2"=>$argumentos,
 											  "3"=>REDIRECCION_SALIDA,
-											  "4"=>$ruta.'/'.OUTPUT));
+											  "4"=>$ruta.'/'.OUTPUT."_".$id));
 		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
 		$fscript = fopen($script,'w+');
 		if($fscript ==NULL) error_log("ERROR1");
@@ -64,7 +64,6 @@ class Momento{
 		fclose($fscript);
 		chmod($script,0777);
 		$salida = exec("cd $ruta;".QSUB." $script");
-		error_log($salida."<-- salida");
 		error_log("\ncd ".$ruta."; echo '".$ejecutar."' | ".QSUB,3,LOG_EJECUCIONES);
 		$salida = $this->parsear_salida($salida);
 		if(!isset($salida["id"])) return array("error"=>1);
@@ -76,7 +75,9 @@ class Momento{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
 			}
-
+		$archivo_salida = $ruta.'/'.OUTPUT."_".$id;
+		touch($archivo_salida);
+		chmod($archivo_salida,0666);
 		return array("error"=>0,"id"=>$id,"id_trabajo"=>$id_torque,"salida"=>$archivo_salida);
 	}
 
@@ -136,6 +137,21 @@ class Momento{
 		return array("error"=>0,
 					 "salida"=>$salida);
 	}
+
+	function getFinalizado($id){
+		$consulta = "select fecha_fin " .
+					"from ejecucion " .
+					"where id=? ";
+		if(!$this->db->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$row=$this->db->Next();
+		return array("error"=>0,
+					 "salida"=>$row["fecha_fin"]);
+	}
+
 	function getSalida($id,$error=false){
 		$consulta = "select t.id as id_trabajo," .
 					"		t.cliente as id_cliente " .
