@@ -12,10 +12,11 @@
 	error_log("INI:".$ini);
 	$leido = "";
 	if(filesize  ($archivo) > $ini){
-		$leido	=  file_get_contents  ( $archivo  , true, null,$ini);
+		$leido	=  file_get_contents  ( $archivo  , false, null,$ini);
 		$s->sesion->bytes_leidos += strlen($leido);
 	}
 	$s->salvar();
+	error_log($leido,3,$archivo."coso");
 	echo $leido;
 
 ?>
