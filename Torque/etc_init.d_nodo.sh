@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Read in the command arguments
+case "$1" in
+  start)
+	echo -n $"Starting services: "
+	sudo /usr/local/torque/sbin/qnoded
+	echo "[MOM] "
+	;;
+  stop)
+	echo -n $"Shutting down services: "
+	sudo /usr/local/torque/sbin/momctl -s
+	echo "[MOM] "
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  *)
+	echo $"Usage: nodo {start|stop|restart}"
+	exit 1
+esac
+
+exit 0
