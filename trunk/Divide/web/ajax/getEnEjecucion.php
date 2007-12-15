@@ -1,5 +1,4 @@
 <?
-error_log("GETENEJECUCION");
 	set_include_path(get_include_path().PATH_SEPARATOR.
 					 '../../lib');
 	include_once("Sesion.php");
@@ -16,7 +15,6 @@ error_log("GETENEJECUCION");
 	$res = $momento->getFinalizado($s->sesion->ejecucion_actual);
 	if($res["error"]) error_log(print_r($res,1));
 	else{
-		error_log('*'.$res["salida"].'*');
 		echo $res["salida"];
 	}
 
