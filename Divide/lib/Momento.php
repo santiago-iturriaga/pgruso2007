@@ -33,8 +33,8 @@ class Momento{
 						 "codError"=>"M000");
 		}
 
-		$consulta = "insert into ejecucion (archivo,ruta,parametros,argumentos) values(?,?,?,?)";
-		if(!$this->db->EjecutarConsulta($consulta,array($archivo,$ruta,$parametros,$argumentos),true))
+		$consulta = "insert into ejecucion (archivo,ruta,parametros,argumentos,trabajo) values(?,?,?,?,?)";
+		if(!$this->db->EjecutarConsulta($consulta,array($archivo,$ruta,$parametros,$argumentos,$id_trabajo),true))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
@@ -57,7 +57,6 @@ class Momento{
 											  "2"=>$argumentos,
 											  "3"=>REDIRECCION_SALIDA,
 											  "4"=>$ruta.'/'.OUTPUT));
-		error_log("VA EL EXEC");
 		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
 		$fscript = fopen($script,'w+');
 		if($fscript ==NULL) error_log("ERROR1");
@@ -88,7 +87,23 @@ class Momento{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
 			}
-		return array("error"=>0);
+		$consulta = "select t.id as id_trabajo," .
+					"		t.cliente as id_cliente," .
+					"	    e.id as id_ejecutable " .
+					"from trabajo t, ejecucion e " .
+					"where e.id_torque=? " .
+					"  and e.trabajo=t.id";
+		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$row=$this->db->Next();
+		$script = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
+		if(unlink($script))
+			return array("error"=>0);
+		else
+			return array("error"=>0,"codError"=>"M001");
 
 	}
 
@@ -101,6 +116,69 @@ class Momento{
 			}
 		return array("error"=>0);
 
+	}
+	function getEnEjecucion($id_trabajo){
+		$consulta = "select id, id_torque, archivo, ruta, parametros, argumentos " .
+					"from ejecucion " .
+					"where trabajo=? " .
+					"  and fecha_ejecucion is not null" .
+					"  and fecha_fin is null";
+		if(!$this->db->EjecutarConsulta($consulta,array($id_trabajo),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$salida=array();
+		while(($row=$this->db->Next()) != null)
+			{
+			$salida[$row["id"]]=$row;
+			}
+		return array("error"=>0,
+					 "salida"=>$salida);
+	}
+	function getSalida($id,$error=false){
+		$consulta = "select t.id as id_trabajo," .
+					"		t.cliente as id_cliente " .
+					"from trabajo t, ejecucion e " .
+					"where e.id=? " .
+					"  and e.trabajo=t.id";
+		if(!$this->db->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$row=$this->db->Next();
+		$salida="";
+		if(!$error){
+			$archivo_salida = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'salida_'.$id;
+			$salida= file_get_contents  ($archivo_salida);
+		}
+		else{
+			$archivo_error = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'error_'.$id;
+			$salida= file_get_contents  ($archivo_error);
+		}
+		if($salida===false)
+			return array("error"=>1,"codError"=>"M002");
+		else
+			return array("error"=>0,"archivo"=>$salida);
+	}
+
+	function getEjecuciones($id_trabajo){
+		$consulta = "select id, id_torque, archivo, fecha_ini, fecha_ejecucion, fecha_fin " .
+					"from ejecucion " .
+					"where trabajo=? ";
+		if(!$this->db->EjecutarConsulta($consulta,array($id_trabajo),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$salida=array();
+		while(($row=$this->db->Next()) != null)
+			{
+			$salida[$row["id"]]=$row;
+			}
+		return array("error"=>0,
+					 "salida"=>$salida);
 	}
 
 }

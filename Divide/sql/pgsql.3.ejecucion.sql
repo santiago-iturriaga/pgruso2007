@@ -7,5 +7,7 @@ create table ejecucion (
     argumentos varchar(250),
     fecha_fin timestamp,
     fecha_ejecucion timestamp,
-    id_torque int
+    id_torque int,
+    trabajo int not null,
+    foreign key (trabajo) references trabajo(id)
     );

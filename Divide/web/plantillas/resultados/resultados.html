@@ -45,7 +45,8 @@
     }
 
 	function delay(){ 
-	    setInterval('cargar()',10000)
+	    setInterval('cargar()',{SEGUNDOS}000)
+	    cargar();
 	}
 	function cargar(){
 		makeRequest('ajax/getArchivo.php');
@@ -75,6 +76,6 @@
 		<div id="pagina">
 			<h1>Resultados de las &uacute;ltimas ejecuciones</h1>
 			<pre id="resultados"></pre>
-			<a href="trabajos.html">Descargar salida</a>
-			<a href="trabajos.html">Descargar errores</a>
+			<a href="descargar.php?id={ID_EJECUCION}&error=0">Descargar salida</a>
+			<a href="descargar.php?id={ID_EJECUCION}&error=1">Descargar errores</a>
 		</div>
