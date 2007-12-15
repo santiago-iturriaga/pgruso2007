@@ -26,7 +26,8 @@
 
 
 
-	$ppal	=	$plantilla->replace($ppal,array());
+	$ppal	=	$plantilla->replace($ppal,array("SEGUNDOS"=>TIEMPO_REFRESH_RESULTADOS,
+												"ID_EJECUCION"=>$s->sesion->ejecucion_actual));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
 							"BODY"=>'onload="delay();"'));

@@ -38,6 +38,7 @@
 													 $s->sesion->ClienteActual,
 													 $s->sesion->TrabajoActual);
 		$s->sesion->archivo_actual = $res["salida"];
+		$s->sesion->ejecucion_actual = $res["id"];
 		error_log("->!".print_r($res,1));
 		error_log("->!-".print_r($s->sesion->archivo_actual,1));
 		$s->sesion->bytes_leidos = 0;

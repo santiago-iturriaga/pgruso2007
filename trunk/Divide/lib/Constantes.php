@@ -9,4 +9,5 @@ define("REDIRECCION_SALIDA", "/pgruso/Divide/bin/redireccion_salida.php");
 define("OUTPUT", "melacomoyque");
 define("EJECUTABLE","plantillas/archivos/qsub.script");
 define("LOG_EJECUCIONES","../log/ejecuciones.log");
+define("TIEMPO_REFRESH_RESULTADOS","5");
 ?>
