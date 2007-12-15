@@ -146,3 +146,8 @@ PostgreSQL
 - ejecutar sentencias sql desde un archivo externo
 	\i 1.tablas.sql
 
+-----------------------------------------------------------------
+Para redirigir salida y error se usa prog 2>&1 | prog2
+El buffer del | es de 1024
+EL usuario puede hacer fflush(stdout) y fflush(stderr)
+

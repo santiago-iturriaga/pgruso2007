@@ -9,6 +9,7 @@
 	}
 	$archivo = $s->sesion->archivo_actual;
 	$ini = $s->sesion->bytes_leidos;
+	error_log("INI:".$ini);
 	$leido = "";
 	if(filesize  ($archivo) > $ini){
 		$leido	=  file_get_contents  ( $archivo  , true, null,$ini);

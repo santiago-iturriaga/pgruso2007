@@ -5,7 +5,7 @@
 ### Recursos
 ### Cantidad de nodos
 ### PBS -l nodes=4:ppn=2
-#PBS -l nodes=1
+#PBS -l nodes=2
 ### Cantidad de memoria usada
 ### PBS -l mem=213mb
 ### Tiempo maximo de duracion del trabajo
@@ -15,10 +15,10 @@
 #PBS -q prueba
 
 ### Salida estandar
-#PBS -o /pgruso/trunk/MPI/serial.out
+#PBS -o /pgruso/MPI/serial.out
 
 ### Salida error
-#PBS -e /pgruso/trunk/MPI/serial.err
+#PBS -e /pgruso/MPI/serial.err
 
 ### Unifica la salida estandar con la salida de error
 ###PBS -j oe   
@@ -70,11 +70,11 @@
 
 ### Configurable por PHP
 EJECUTABLE="bin/serial"
-DIRECTORIO_EJECUCION="/pgruso/trunk/MPI"
+DIRECTORIO_EJECUCION="/pgruso/MPI"
 ARGUMENTOS_EJECUCION="100000"
 
-PHP_REDIRECCION="/pgruso/trunk/Divide/bin/redireccion_salida.php"
-PHP_REDIRECCION_ARGUMENTOS="/pgruso/trunk/MPI/serial.txt"
+PHP_REDIRECCION="/pgruso/Divide/bin/redireccion_salida.php"
+PHP_REDIRECCION_ARGUMENTOS="/pgruso/MPI/serial.txt"
 
 ### Configuracion base
 MPIEXEC="/usr/local/mpiexec/bin/mpiexec"
