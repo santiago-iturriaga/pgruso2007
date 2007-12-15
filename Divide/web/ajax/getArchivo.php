@@ -13,7 +13,6 @@
 	if(filesize  ($archivo) > $ini){
 		$leido	=  file_get_contents  ( $archivo  , true, null,$ini);
 		$s->sesion->bytes_leidos += strlen($leido);
-			error_log($leido."<--");
 	}
 	$s->salvar();
 	echo $leido;

@@ -1,39 +1,41 @@
 <script language="JavaScript" type="text/javascript">
 
 	var http_request = false;
+	var request_en_ejecucion = false;
+	
+	var intervalo;
+    function makeRequest(url,handler) {
 
-    function makeRequest(url) {
-
-        http_request = false;
+        request = false;
 
         if (window.XMLHttpRequest) { // Mozilla, Safari,...
-            http_request = new XMLHttpRequest();
-            if (http_request.overrideMimeType) {
-                http_request.overrideMimeType('text/xml');
+            request = new XMLHttpRequest();
+            if (request.overrideMimeType) {
+                request.overrideMimeType('text/xml');
                 // Ver nota sobre esta linea al final
             }
         } else if (window.ActiveXObject) { // IE
             try {
-                http_request = new ActiveXObject("Msxml2.XMLHTTP");
+                request = new ActiveXObject("Msxml2.XMLHTTP");
             } catch (e) {
                 try {
-                    http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                    request = new ActiveXObject("Microsoft.XMLHTTP");
                 } catch (e) {}
             }
         }
 
-        if (!http_request) {
+        if (!request) {
             alert('Falla :( No es posible crear una instancia XMLHTTP');
             return false;
         }
-        http_request.onreadystatechange = alertContents;
-        http_request.open('GET', url, true);
-        http_request.send(null);
-
+        request.onreadystatechange = handler;
+        request.open('GET', url, true);
+        request.send(null);
+		return request;
     }
 
 
-    function alertContents() {
+    function handlerSalida() {
         if (http_request.readyState == 4) {
             if (http_request.status == 200) {
                 document.getElementById('resultados').innerHTML =document.getElementById('resultados').innerHTML+http_request.responseText;
@@ -43,13 +45,25 @@
         }
 
     }
-
+	function handlerEnEjecucion() {
+        if (request_en_ejecucion.readyState == 4) {
+            if (request_en_ejecucion.status == 200) {
+            	if(request_en_ejecucion.responseText != ""){
+            		alert('La ejecución finalizó correctamente.');
+					clearInterval(intervalo);
+	                }
+            } else {
+                alert('Hubo problemas con la petición:');
+            }
+        }
+    }
 	function delay(){ 
-	    setInterval('cargar()',{SEGUNDOS}000)
+	    intervalo = setInterval('cargar()',{SEGUNDOS}000);
 	    cargar();
 	}
 	function cargar(){
-		makeRequest('ajax/getArchivo.php');
+		http_request = makeRequest('ajax/getArchivo.php',handlerSalida);
+		request_en_ejecucion = makeRequest('ajax/getEnEjecucion.php',handlerEnEjecucion);
 	}
 
 </script>
