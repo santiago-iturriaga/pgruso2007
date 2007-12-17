@@ -70,13 +70,28 @@ function marcarAlertaLeida($idUsuario,$idTrabajo,$idAlerta){
 	}
 
 function deleteAlertaLeida($idUsuario,$idTrabajo,$idAlerta){
-	$consulta= "DELETE FROM uasuario_alerta WHERE usuario=? and trabajo=? and alerta = ?";
+	$consulta= "DELETE FROM usuario_alerta WHERE usuario=? and trabajo=? and alerta = ?";
 	if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta),true))
 			{
 			return array("error"=>1,
 						 codError=>$this->conexion->msgError);
 			}
 		return array("error"=>0);
+	}
+
+function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
+	$consulta= "Select count(alerta) as cantidad FROM usuario_alerta WHERE usuario=? and trabajo=? and leida = 0";
+	if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo),true))
+			{
+			return array("error"=>1,
+						 codError=>$this->conexion->msgError);
+			}
+			$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=array("id"=>$row["id"],"cantAlertas"=>$row["cantidad"]);
+			}
+		return array("error"=>0,"alerta"=>$salida);
 	}
 
 }
