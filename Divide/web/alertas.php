@@ -40,9 +40,12 @@
 	//obtengo las alertas
 	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$alertas = new Alertas($conexion);
+	$resCantAlertas = $alertas->cantidadAlertasNoLeida($s->sesion->ClienteActual,$s->sesion->TrabajoActual);
 	$resConsulta = $alertas->getAlertasUsuarioTrabajo($s->sesion->ClienteActual,$s->sesion->TrabajoActual);
-
+	$cantAlertas = 0;
 	$tabAlertas= "";
+
+
 	if($resConsulta["error"]) error_log(print_r($resConsulta,1));
 	else{
 		$tabla = new Tabla();
@@ -54,17 +57,33 @@
 		foreach ($resConsulta["alertas"] as $id=>$rowAlertas){
 			$rowAlertas["link"]=$plantilla->replace($link,array("ID"=>$id));
 			$rowAlertas["eliminar"]=$checkbox;
-			$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</>";
-			$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</>";
+			if($rowAlertas{"leida"} == 0){
+				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</>";
+				$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</>";
+			}
 			$tabla->addRenglon($rowAlertas);
-
 		}
 
 		$tabla->clase = "";
 		$tabAlertas = $tabla->getTabla();
+
 	}
 
+if($resCantAlertas["error"]) error_log(print_r($resCantAlertas,1));
+else{
 
+	//print_r($resCantAlertas);
+	//printf(" ------     ");
+	$tempArray = $resCantAlertas["alerta"];
+	//print_r(array_shift ($tempArray));
+	//printf(" ------     ");
+	$cantAlertasArr = array_shift ($tempArray);
+	//print_r($cantAlertasArr);
+	$cantAlertas = $cantAlertasArr["cantAlertas"];
+
+}
+
+	$menuvert = $plantilla->replace($menuvert,array("CANTALERTAS"=>$cantAlertas));
 	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$menuvert,"ALERTAS"=>$tabAlertas));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu));
 	$s->salvar();
