@@ -51,7 +51,8 @@ class Momento{
 		touch($archivo_salida);
 		chmod($archivo_salida,0666);
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
-										array("PBS_0"=>$trabajo["nombre"],
+										array("MPIEXEC"=>MPIEXEC,
+											  "PBS_0"=>$trabajo["nombre"],
 											  "PBS_1"=>$trabajo["nodos"],
 											  "PBS_2"=>$trabajo["tiempo_maximo"],
 											  "PBS_3"=>$trabajo["cola"],
