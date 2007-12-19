@@ -111,7 +111,7 @@ class Conexion{
 	function getUltimoNumerador(){
 		error_log('cambiar esto');
 		//if(!$res=$this->EjecutarConsulta("SELECT LASTVAL() as num",array(),true))
-		if(!$res=$this->EjecutarConsulta("select max(id)+1 num from ejecucion",array(),true))
+		if(!$res=$this->EjecutarConsulta("select (max(id)+1) as num from ejecucion",array(),true))
 			return false;
 		if(!$res=$this->Next())
 			return false;
