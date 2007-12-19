@@ -49,7 +49,7 @@
 			echo '</pre>';
 		}
 		else{
-			error_log("archivo salida:".$res);
+			error_log("archivo salida:".print_r($res,1));
 			header("Location: resultados.php");
 		}
 		exit;
