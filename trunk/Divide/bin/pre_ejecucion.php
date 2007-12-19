@@ -15,8 +15,6 @@
 	$conexion	= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$momento 	= new Momento($conexion);
 	$res = $momento->setIniciado($jobID);
-error_log("PHP!!!!".$jobId);
 	echo "[pre_ejecucion] Job ID: ".$jobID."\n";
 	/* echo "Maquina: ".$maquina."\n"; */
 ?>
-
