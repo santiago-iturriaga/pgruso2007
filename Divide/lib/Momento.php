@@ -81,7 +81,7 @@ error_log("parseado:".print_r($salida,1));
 		error_log("llego:".print_r($salida,1));
 		if(!isset($salida["id"])) return array("error"=>1);
 		$id_torque = $salida["id"];
-error_log("update ejecucion set id_torque= $id_torque where id= $id");
+error_log("*******update ejecucion set id_torque= $id_torque where id= $id");
 		$consulta = "update ejecucion set id_torque=? where id=?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque,$id),true))
 			{
