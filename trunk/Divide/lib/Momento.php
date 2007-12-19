@@ -14,8 +14,11 @@ class Momento{
 	}
 
 	function parsear_salida($salida){
+error_log("voy a parsear:".$salida);
 		$salida = explode(".",$salida);
-		return array("id"=>$salida[0],"maquina"=>$salida[1]);
+error_log("parseado:".print_r($salida,1));
+
+		return array("id"=>array_shift($salida),"maquina"=>implode(".",$salida));
 
 	}
 
@@ -75,6 +78,7 @@ class Momento{
 		$salida = exec("cd $ruta;".QSUB." $script");
 		error_log("\ncd ".$ruta."; echo '".$ejecutar."' | ".QSUB,3,LOG_EJECUCIONES);
 		$salida = $this->parsear_salida($salida);
+		error_log("llego:".print_r($salida,1));
 		if(!isset($salida["id"])) return array("error"=>1);
 		$id_torque = $salida["id"];
 
