@@ -7,7 +7,10 @@ create table trabajo (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(12) not null,
     cliente int not null,
-	foreign key (cliente) references cliente(id)
+	foreign key (cliente) references cliente(id),
+	nodos int,
+	tiempo_maximo time,
+	cola varchar(25)
     );
 
 CREATE TABLE grupo(
