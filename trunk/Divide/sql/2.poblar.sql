@@ -1,10 +1,10 @@
 insert into cliente (nombre) values ('prueba1');
 insert into cliente (nombre) values ('prueba2');
 
-insert into trabajo(nombre,cliente) values ('trab1',1);
-insert into trabajo(nombre,cliente) values ('trab2',1);
-insert into trabajo(nombre,cliente) values ('trab3',2);
-insert into trabajo(nombre,cliente) values ('trab4',2);
+insert into trabajo(nombre,cliente,nodos,cola,tiempo_maximo) values ('trab1',1,4,'prueba','15:00:00');
+insert into trabajo(nombre,cliente,nodos,cola,tiempo_maximo) values ('trab2',1,4,'prueba','15:00:00');
+insert into trabajo(nombre,cliente,nodos,cola,tiempo_maximo) values ('trab3',2,4,'prueba','15:00:00');
+insert into trabajo(nombre,cliente,nodos,cola,tiempo_maximo) values ('trab4',2,4,'prueba','15:00:00');
 
 insert into grupo (nombre) values ('grupo1');
 insert into grupo (nombre) values ('administrador');
