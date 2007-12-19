@@ -64,7 +64,7 @@
 	$p_archivo	=	$plantilla->load("plantillas/archivos/archivo.html");
 	$p_ruta		=	$plantilla->load("plantillas/archivos/ruta.html");
 	$menu		=	$plantilla->load("plantillas/menu.html");//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
-	if($s->esion->Directorio == null)
+	if($s->sesion->Directorio == null)
 		{
 		$s->sesion->Directorio	= new Directorio(RAIZ."/".$s->sesion->ClienteActual."/".$s->sesion->TrabajoActual);
 		}
