@@ -1,5 +1,5 @@
 <?php
-define("RAIZ", "/home");
+define("RAIZ", "/net/home/pgccadar");
 define("CONEXION_HOST", "localhost");
 define("CONEXION_USUARIO", "pgccadar");
 define("CONEXION_PASSWORD", "pgccadar");
