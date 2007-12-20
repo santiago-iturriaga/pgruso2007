@@ -14,10 +14,7 @@ class Momento{
 	}
 
 	function parsear_salida($salida){
-error_log("voy a parsear:".$salida);
 		$salida = explode(".",$salida);
-error_log("parseado:".print_r($salida,1));
-
 		return array("id"=>array_shift($salida),"maquina"=>implode(".",$salida));
 
 	}
@@ -26,7 +23,6 @@ error_log("parseado:".print_r($salida,1));
 
 		// ARREGLOS PARA Q ANDE SIN JAVASCRIPT
 		error_log("sacar esto");
-		error_log($ruta);
 		$archivo = 'serial';
 		// fin arreglos
 
@@ -58,10 +54,8 @@ error_log("parseado:".print_r($salida,1));
 
 		touch($archivo_salida);
 		if(!chmod($archivo_salida,0777)) error_log("no funco el chmod");
-		if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
 		touch($archivo_error);
 		chmod($archivo_error,0777);
-		if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
 
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("MPIEXEC"=>MPIEXEC,
@@ -82,15 +76,12 @@ error_log("parseado:".print_r($salida,1));
 		$caracteres = fwrite  ($fscript, $ejecutar);
 		fclose($fscript);
 		chmod($script,0777);
-		error_log("ssh -l pgccadar lennon.fing.edu.uy 'cd $ruta; ".QSUB." $script; exit'");
+
 		$salida = exec("ssh -l pgccadar lennon.fing.edu.uy 'cd $ruta; ".QSUB." $script; exit'");
 
-		error_log("\ncd ".$ruta."; echo '".$ejecutar."' | ".QSUB,3,LOG_EJECUCIONES);
 		$salida = $this->parsear_salida($salida);
-		error_log("llego:".print_r($salida,1));
 		if(!isset($salida["id"])) return array("error"=>1);
 		$id_torque = $salida["id"];
-error_log("*******update ejecucion set id_torque= $id_torque where id= $id");
 		$consulta = "update ejecucion set id_torque=? where id=?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque,$id),true))
 			{
