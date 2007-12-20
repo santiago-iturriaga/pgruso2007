@@ -26,6 +26,7 @@ error_log("parseado:".print_r($salida,1));
 
 		// ARREGLOS PARA Q ANDE SIN JAVASCRIPT
 		error_log("sacar esto");
+		error_log($ruta);
 		$archivo = 'serial';
 		// fin arreglos
 
