@@ -58,11 +58,11 @@ error_log("parseado:".print_r($salida,1));
 
 		touch($archivo_salida);
 		error_log("CHMOD:");
-		if(!chmod($archivo_salida,0666)) error_log("no funco el chmod");
+		if(!chmod($archivo_salida,0777)) error_log("no funco el chmod");
 		error_log("CHOWN:");
-		if(! chown($archivo_salida, 'pgccadar')) error_log("no funco el chown");
+		if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
 		touch($archivo_error);
-		chmod($archivo_error,0666);
+		chmod($archivo_error,0777);
 		error_log("CHOWN2:");
 		if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
 
