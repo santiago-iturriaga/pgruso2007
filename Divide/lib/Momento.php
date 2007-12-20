@@ -55,8 +55,14 @@ error_log("parseado:".print_r($salida,1));
 
 		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
 		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
+
+		error_log("esto tambien se va");
+		$archivo_salida = '/tmp/salida_'.$id;
+		$archivo_error = '/tmp/error_'.$id;
 		touch($archivo_salida);
 		chmod($archivo_salida,0666);
+		touch($archivo_error);
+		chmod($archivo_error,0666);
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("MPIEXEC"=>MPIEXEC,
 											  "PBS_0"=>$trabajo["nombre"],
