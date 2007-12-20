@@ -42,8 +42,6 @@ cd $DIRECTORIO_EJECUCION
 
 NCPU=`wc -l < $PBS_NODEFILE`
 echo ""
-echo 'This job is allocated on '${NCPU}' cpu(s)'
-echo 'Job is running on node(s): '
 cat $PBS_NODEFILE
 echo ""
 echo PBS: qsub is running on $PBS_O_HOST
