@@ -1,4 +1,4 @@
-#!/usr/bin/php -q
+#!/usr/bin/php5 -q
 <?php
 	if ($argc != 2 ) {
 		echo "Error: Cantidad de parametros incorrecta";
