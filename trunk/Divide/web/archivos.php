@@ -39,8 +39,6 @@
 													 $s->sesion->TrabajoActual);
 		$s->sesion->archivo_actual = $res["salida"];
 		$s->sesion->ejecucion_actual = $res["id"];
-		error_log("->!".print_r($res,1));
-		error_log("->!-".print_r($s->sesion->archivo_actual,1));
 		$s->sesion->bytes_leidos = 0;
 		$s->salvar();
 		if($res["error"]){
@@ -49,7 +47,6 @@
 			echo '</pre>';
 		}
 		else{
-			error_log("archivo salida:".print_r($res,1));
 			header("Location: resultados.php");
 		}
 		exit;
