@@ -599,10 +599,11 @@ fieldset {
 form p{
 	text-align:right;
 	margin-right: 20px;
+	width:50%;
 	}
 form legend{
 	font-size: 15px;
-
+	font-weight: bold;
 }
 #form_login{
 	width: 250px;
@@ -655,8 +656,23 @@ pre#resultados{
 	overflow: auto;
 }
 form.parametros_ocultos{
-	visibility: hidden;
+	display: none;
+
 	}
 form.parametros_visibles{
-	visibility: visible;
+	display: inline;
 	}
+table{
+	border:1px solid #85859c;
+	margin-left: 10px;
+	border-collapse: collapse;
+	font-size: 14px;
+}
+table thead{
+	color:#ffffff;
+	background-color:#85859c;
+	font-weight: bold;
+}
+table tr td{
+	padding: 2px 2px 2px 2px;
+}
