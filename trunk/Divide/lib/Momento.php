@@ -82,7 +82,9 @@ error_log("parseado:".print_r($salida,1));
 		$caracteres = fwrite  ($fscript, $ejecutar);
 		fclose($fscript);
 		chmod($script,0777);
+		error_log("ssh -l pgccadar lennon.fing.edu.uy 'cd $ruta; ".QSUB." $script; exit'");
 		$salida = exec("ssh -l pgccadar lennon.fing.edu.uy 'cd $ruta; ".QSUB." $script; exit'");
+
 		error_log("\ncd ".$ruta."; echo '".$ejecutar."' | ".QSUB,3,LOG_EJECUCIONES);
 		$salida = $this->parsear_salida($salida);
 		error_log("llego:".print_r($salida,1));
