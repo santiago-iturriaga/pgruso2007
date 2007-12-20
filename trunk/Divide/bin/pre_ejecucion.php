@@ -1,4 +1,4 @@
-#!/usr/bin/php -q
+#!/usr/bin/php5 -q
 <?
 	set_include_path(get_include_path().PATH_SEPARATOR.
 					 '../lib');
