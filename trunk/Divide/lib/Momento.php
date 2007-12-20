@@ -57,7 +57,8 @@ error_log("parseado:".print_r($salida,1));
 		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
 
 		touch($archivo_salida);
-		chmod($archivo_salida,0666);
+		error_log("CHMOD:");
+		if(!chmod($archivo_salida,0666)) error_log("no funco el chmod");
 		error_log("CHOWN:");
 		if(! chown($archivo_salida, 'pgccadar')) error_log("no funco el chown");
 		touch($archivo_error);
