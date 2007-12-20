@@ -115,10 +115,11 @@ error_log("*******update ejecucion set id_torque= $id_torque where id= $id");
 			}
 		$row=$this->db->Next();
 		$script = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
-		if(unlink($script))
+		error_log("poner de vuelta despues");
+		//if(unlink($script))
 			return array("error"=>0);
-		else
-			return array("error"=>0,"codError"=>"M001");
+		//else
+			//return array("error"=>0,"codError"=>"M001");
 
 	}
 
