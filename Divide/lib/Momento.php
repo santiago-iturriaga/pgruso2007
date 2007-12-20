@@ -21,11 +21,6 @@ class Momento{
 
 	function ejecutar($archivo,$ruta,$parametros,$argumentos,$id_cliente,$id_trabajo){
 
-		// ARREGLOS PARA Q ANDE SIN JAVASCRIPT
-		error_log("sacar esto");
-		$archivo = 'serial';
-		// fin arreglos
-
 		$plantilla	=	new TPL();
 		$consulta = "select nombre,nodos,tiempo_maximo,cola from trabajo where id = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_trabajo),true))
