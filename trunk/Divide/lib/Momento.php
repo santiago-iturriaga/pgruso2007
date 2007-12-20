@@ -56,10 +56,12 @@ error_log("parseado:".print_r($salida,1));
 		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
 		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
 
-		//touch($archivo_salida);
-		//chmod($archivo_salida,0666);
-		//touch($archivo_error);
-		//chmod($archivo_error,0666);
+		touch($archivo_salida);
+		chmod($archivo_salida,0666);
+		if(! chown($archivo_salida, 'pgccadar')) error_log("no funco el chown");
+		touch($archivo_error);
+		chmod($archivo_error,0666);
+		if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("MPIEXEC"=>MPIEXEC,
 											  "PBS_0"=>$trabajo["nombre"],
