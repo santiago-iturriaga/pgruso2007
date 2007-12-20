@@ -56,15 +56,15 @@ error_log("parseado:".print_r($salida,1));
 		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
 		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
 
-		//touch($archivo_salida);
-		//error_log("CHMOD: $archivo_salida");
-		//if(!chmod($archivo_salida,0755)) error_log("no funco el chmod");
-		//error_log("CHOWN:");
-		//if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
-		//touch($archivo_error);
-		//chmod($archivo_error,0777);
-		//error_log("CHOWN2:");
-		//if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
+		touch($archivo_salida);
+		error_log("CHMOD: $archivo_salida");
+		if(!chmod($archivo_salida,0755)) error_log("no funco el chmod");
+		error_log("CHOWN:");
+		if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
+		touch($archivo_error);
+		chmod($archivo_error,0777);
+		error_log("CHOWN2:");
+		if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
 
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("MPIEXEC"=>MPIEXEC,
@@ -85,7 +85,7 @@ error_log("parseado:".print_r($salida,1));
 		$caracteres = fwrite  ($fscript, $ejecutar);
 		fclose($fscript);
 		chmod($script,0777);
-		$salida = exec("cd $ruta;".QSUB." $script");
+		$salida = exec("ssh -l pgccadar lennon.fing.edu.uy 'cd $ruta; ".QSUB." $script; exit'");
 		error_log("\ncd ".$ruta."; echo '".$ejecutar."' | ".QSUB,3,LOG_EJECUCIONES);
 		$salida = $this->parsear_salida($salida);
 		error_log("llego:".print_r($salida,1));
