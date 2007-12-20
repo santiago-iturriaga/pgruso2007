@@ -62,6 +62,7 @@ error_log("parseado:".print_r($salida,1));
 		touch($archivo_error);
 		chmod($archivo_error,0666);
 		if(! chown($archivo_error, 'pgccadar')) error_log("no funco el chown");
+
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("MPIEXEC"=>MPIEXEC,
 											  "PBS_0"=>$trabajo["nombre"],
