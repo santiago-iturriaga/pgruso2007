@@ -35,6 +35,8 @@
 	$enejecucion="";
 	if($res["error"]) error_log(print_r($res,1));
 	else $enejecucion = $res["cantidad"];
+	error_log("**********".print_r($res,1));
+	error_log("**********>".$enejecucion);
 	$ppal	=	$plantilla->replace($ppal,array("SEGUNDOS"=>TIEMPO_REFRESH_RESULTADOS,
 												"ID_EJECUCION"=>$s->sesion->ejecucion_actual,
 												"ENEJECUCION"=>$enejecucion));
