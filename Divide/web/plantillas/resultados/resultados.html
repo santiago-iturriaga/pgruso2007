@@ -2,6 +2,7 @@
 
 	var http_request = false;
 	var request_en_ejecucion = false;
+	var request_cantidad = false;
 	
 	var intervalo;
     function makeRequest(url,handler) {
@@ -45,6 +46,19 @@
         }
 
     }
+
+    function handlerCantidad() {
+        if (request_cantidad.readyState == 4) {
+            if (request_cantidad.status == 200) {
+                document.getElementById('enejecucion').innerHTML =request_cantidad.responseText;
+            } else {
+                alert('Hubo problemas con la petición:');
+            }
+        }
+
+    }
+
+
 	function handlerEnEjecucion() {
         if (request_en_ejecucion.readyState == 4) {
             if (request_en_ejecucion.status == 200) {
@@ -57,6 +71,8 @@
             }
         }
     }
+
+
 	function delay(){ 
 	    intervalo = setInterval('cargar()',{SEGUNDOS}000);
 	    cargar();
@@ -64,6 +80,7 @@
 	function cargar(){
 		http_request = makeRequest('ajax/getArchivo.php',handlerSalida);
 		request_en_ejecucion = makeRequest('ajax/getEnEjecucion.php',handlerEnEjecucion);
+		request_cantidad = makeRequest('ajax/getCantEnEjecucion.php',handlerCantidad);
 	}
 
 </script>
