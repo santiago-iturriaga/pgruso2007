@@ -131,6 +131,8 @@ Nota: no lo pude terminar de probar
 
 --------------------------------------------------------------
 
+./configure --prefix=/net/local/postgresql-8.2.5 --with-perl --with-tcl --enable-thread-safety
+
 PostgreSQL
 - cambiar al usuario de postgres:
 	su -
@@ -155,4 +157,9 @@ SSH Tunneling a lennon
 
 ssh -L 8888:localhost:7777 pgccadar@lulu.fing.edu.uy
 ssh -L 7777:localhost:80 pgccadar@lennon
+
+-------------------------------------
+PHP
+
+
 
