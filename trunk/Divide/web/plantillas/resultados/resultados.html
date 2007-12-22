@@ -49,9 +49,9 @@
         if (request_en_ejecucion.readyState == 4) {
             if (request_en_ejecucion.status == 200) {
             	if(request_en_ejecucion.responseText != ""){
-            		alert('La ejecución finalizó correctamente.');
-					clearInterval(intervalo);
-	                }
+            		clearInterval(intervalo);
+	                alert('La ejecución finalizó correctamente.');
+					}
             } else {
                 alert('Hubo problemas con la petición:');
             }
@@ -79,7 +79,7 @@
 				<<li><a href="logout.php">Desconectarse</a></li>
 				<li>Uso del disco: 80%</li>
 				<li><a href="alertas.php">Alertas: 0</a></li>
-				<li class="last">Trabajos en ejecuci&oacute;n: 1</li>
+				<li class="last">Trabajos en ejecuci&oacute;n: <span id="enejecucion">{ENEJECUCION}</span></li>
 	
 				
 				</ul>

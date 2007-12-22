@@ -28,7 +28,8 @@
 
 
 	$ppal	=	$plantilla->replace($ppal,array("SEGUNDOS"=>TIEMPO_REFRESH_RESULTADOS,
-												"ID_EJECUCION"=>$s->sesion->ejecucion_actual));
+												"ID_EJECUCION"=>$s->sesion->ejecucion_actual,
+												"ENEJECUCION"=>$momento->getCantEnEjecucion($s->sesion->TrabajoActual)));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
 							"BODY"=>'onload="delay();"'));

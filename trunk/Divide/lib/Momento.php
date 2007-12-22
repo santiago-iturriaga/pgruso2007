@@ -126,8 +126,27 @@ class Momento{
 		return array("error"=>0);
 
 	}
-	function getEnEjecucion($id_trabajo){
+	function getEnEjecucion($id){
 		$consulta = "select id, id_torque, archivo, ruta, parametros, argumentos " .
+					"from ejecucion " .
+					"where id=? " .
+					"  and fecha_ejecucion is not null" .
+					"  and fecha_fin is null";
+		if(!$this->db->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$salida=array();
+		while(($row=$this->db->Next()) != null)
+			{
+			$salida[$row["id"]]=$row;
+			}
+		return array("error"=>0,
+					 "salida"=>$salida);
+	}
+	function getCantEnEjecucion($id_trabajo){
+		$consulta = "select count(*) cantidad " .
 					"from ejecucion " .
 					"where trabajo=? " .
 					"  and fecha_ejecucion is not null" .
