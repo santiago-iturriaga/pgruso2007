@@ -146,7 +146,7 @@ class Momento{
 					 "salida"=>$salida);
 	}
 	function getCantEnEjecucion($id_trabajo){
-		$consulta = "select count(*) cantidad " .
+		$consulta = "select count(*) as cantidad " .
 					"from ejecucion " .
 					"where trabajo=? " .
 					"  and fecha_ejecucion is not null" .
