@@ -34,7 +34,9 @@
 	$ppal		= 	$plantilla->load("plantillas/alertas/alertas.html");
 	$link		= 	$plantilla->load("plantillas/alertas/link.html");
 	$checkbox = 	$plantilla->load("plantillas/alertas/checkbox.html");
-	$menu		=	$plantilla->load("plantillas/menu.html");
+	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
+										array("CLASE_ALERTAS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+
 	$menuvert		=	$plantilla->load("plantillas/menu_vertical.html");
 
 	//obtengo las alertas

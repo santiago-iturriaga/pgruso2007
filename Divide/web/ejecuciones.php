@@ -32,7 +32,9 @@
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/ejecuciones/ejecuciones.html");
 	$link		= 	$plantilla->load("plantillas/ejecuciones/link.html");
-	$menu		=	$plantilla->load("plantillas/menu.html");
+	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
+										array("CLASE_RESULTADOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+
 
 	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$momento = new Momento($conexion);

@@ -33,7 +33,6 @@
 	}
 	if(isset($_POST["ejecutar"])){
 		$res	=	$s->sesion->Directorio->ejecutar($_POST["archivo"],
-													 $_POST["params"],
 													 $_POST["argumentos"],
 													 $s->sesion->ClienteActual,
 													 $s->sesion->TrabajoActual);
@@ -60,7 +59,8 @@
 	$p_directorio	=	$plantilla->load("plantillas/archivos/directorio.html");
 	$p_archivo	=	$plantilla->load("plantillas/archivos/archivo.html");
 	$p_ruta		=	$plantilla->load("plantillas/archivos/ruta.html");
-	$menu		=	$plantilla->load("plantillas/menu.html");//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
+										array("CLASE_ARCHIVOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
 	if($s->sesion->Directorio == null)
 		{
 		$s->sesion->Directorio	= new Directorio(RAIZ."/".$s->sesion->ClienteActual."/".$s->sesion->TrabajoActual);
