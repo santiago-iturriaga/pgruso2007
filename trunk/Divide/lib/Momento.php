@@ -19,7 +19,7 @@ class Momento{
 
 	}
 
-	function ejecutar($archivo,$ruta,$parametros,$argumentos,$id_cliente,$id_trabajo){
+	function ejecutar($archivo,$ruta,$argumentos,$id_cliente,$id_trabajo){
 
 		$plantilla	=	new TPL();
 		$consulta = "select nombre,nodos,tiempo_maximo,cola from trabajo where id = ?";
@@ -36,8 +36,8 @@ class Momento{
 
 		//$consulta = "insert into ejecucion (archivo,ruta,parametros,argumentos,trabajo) values(?,?,?,?,?)";
 		error_log("sacar esto");
-		$consulta = "insert into ejecucion (id,archivo,ruta,parametros,argumentos,trabajo) values((select max(id)+1 from ejecucion),?,?,?,?,?)";
-		if(!$this->db->EjecutarConsulta($consulta,array($archivo,$ruta,$parametros,$argumentos,$id_trabajo),true))
+		$consulta = "insert into ejecucion (id,archivo,ruta,argumentos,trabajo) values((select max(id)+1 from ejecucion),?,?,?,?,?)";
+		if(!$this->db->EjecutarConsulta($consulta,array($archivo,$ruta,$argumentos,$id_trabajo),true))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);

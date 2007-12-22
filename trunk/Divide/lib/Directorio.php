@@ -89,12 +89,12 @@ class Directorio{
 		else return array("error"=>1,
     			 		  "codError"=>"D003");
 		}
-	function ejecutar($archivo,$parametros,$argumentos,$id_cliente,$id_trabajo){
+	function ejecutar($archivo,$argumentos,$id_cliente,$id_trabajo){
 		$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 
 		$momento = new Momento($conexion);
 		//ejecutar($archivo,$ruta,$parametros,$argumentos,$id_cliente,$id_trabajo)
-		$res = $momento->ejecutar($archivo,$this->getRuta(),$parametros,$argumentos,$id_cliente,$id_trabajo);
+		$res = $momento->ejecutar($archivo,$this->getRuta(),$argumentos,$id_cliente,$id_trabajo);
 		return $res;
 
 		}

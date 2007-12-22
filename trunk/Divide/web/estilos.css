@@ -62,6 +62,7 @@ input {
 	color: #85859c;
 	font-family: tahoma, arial, sans-serif;
 	font-size: 11px;
+	border: 1px solid #65657c;
 }
 
 
@@ -599,7 +600,6 @@ fieldset {
 form p{
 	text-align:right;
 	margin-right: 20px;
-	width:50%;
 	}
 form legend{
 	font-size: 15px;
@@ -610,6 +610,15 @@ form legend{
 	margin-left: 50px;
 	margin-top: 50px;
 }
+#form_login fieldset{
+	border: 1px solid #85859c;
+	width: 100%;
+}
+
+#parametros fieldset{
+	width: 250px;
+}
+
 
 #form_clave{
 	width: 250px;
@@ -634,17 +643,6 @@ ul.path li {
 ul.path li a{
 	text-decoration: none;
 	}
-ul.archivos {
-	text-align: left;
-	list-style-type: none;
-		}
-ul.archivos li{
-	margin-left: 10px;
-	font-size: 12px;
-	}
-table.archivos{
-	margin-left: 10px;
-}
 pre#resultados{
 	border:1px solid #000000;
 	width: 500px;
@@ -667,6 +665,9 @@ table{
 	margin-left: 10px;
 	border-collapse: collapse;
 	font-size: 14px;
+	margin: 0px auto;
+
+
 }
 table thead{
 	color:#ffffff;
@@ -675,4 +676,16 @@ table thead{
 }
 table tr td{
 	padding: 2px 2px 2px 2px;
+}
+.boton{
+	background-color:#e5e5fc;
+	border: 1px solid #65657c;
+	color: #65657c;
+	text-decoration: none;
+	padding:1px 2px 1px 2px;
+	margin: 1px 0px 1px 0px;
+}
+.boton:hover{
+	color:#ff0000;
+	border: 1px solid #ff0000;
 }
