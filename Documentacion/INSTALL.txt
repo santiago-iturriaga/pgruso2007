@@ -1,0 +1,158 @@
+[TORQUE]
+Requerimientos:
+	- make
+	- C compiler (p.ej.: gcc 4.1)
+	- libc-dev (p.ej: libc6-dev)
+	- C++ compiler (p.ej.: g++ 4.1)
+	- tcl8.4
+	- tcl8.4-dev
+	- tk8.4
+	- tk8.4-dev
+	- xorg-devel
+
+Instalacion servidor:
+1) ln -s /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libX11.so
+2) export LD_RUN_PATH=/usr/local/lib 
+3) ./configure --prefix=/usr/local/torque --enable-gui --enable-doc
+4) make
+5) make install (root)
+6) make packages
+
+Instalacion nodos:
+1) ./torque-package-mom-linux-i686.sh --install
+2) ./torque-package-clients-linux-i686.sh --install
+
+[ NOTA: ejemplo nombre de la maquina: marga   ]
+[       ejemplo ip de la maquina: 192.168.0.1 ]
+Configuracion servidor:
+
+1) editar /etc/hosts
+	si no esta agregado, agregar: "192.168.0.1	marga"
+2) pbs_server -t create (root)
+3) qmgr (root)
+4) set server operators = root@marga
+	4.1) set server operators += operador2@marga
+5) create queue prueba
+6) set queue prueba queue_type = Execution
+7) set queue prueba started = True
+8) set queue prueba enabled = True
+9) set server default_queue = prueba
+10) set server resources_default.nodes = 1
+11) set server scheduling = True
+12) create node marga
+13) vim /var/spool/torque/mom_priv/config
+	$pbsserver      marga
+	$logevent       255               # bitmap of which events to log
+14) reinicar el servidor (qterm -t quick; pbs_server)
+
+Configuracion de los nodos: (root)
+1) vim /var/spool/torque/mom_priv/config
+	$pbsserver      marga
+	$logevent       255               # bitmap of which events to log
+
+[GOLD]
+Requerimientos:
+	- perl (con suidperl)
+	- PostgreSQL
+		- postgresql 
+		- postgresql-libs 
+		- postgresql-devel 
+		- postgresql-server
+	- libxml2
+	- gnu readline 2.0 (opcional)
+	- apache 2.0 (opcional)
+	- ssslib (opcional)
+
+Instalacion:
+1) [root] 	useradd -m gold
+2) [root] 	passwd gold
+3) [gold] 	./configure --with-cgi-bin=/srv/www/cgi-bin
+4) [gold] 	make
+5) [root] 	make deps
+6) [root] 	make install
+7) [root] 	make instal-gui
+8) [root] 	make auth_key (ingresar: sss)
+9) (OPCIONAL) Editar perfil del usuario ($HOME/.bash_profile)
+		PATH=$PATH:$GOLD_HOME/bin:$GOLD_HOME/sbin
+		GOLD_HOME=/usr/local/gold
+10) [root] 	/var/lib/pgsql/data/pg_hba.conf
+		local	all	all			trust
+		host	all	all	127.0.0.1/32	trust
+11) [postgres]	createuser gold
+12) [gold] 	createdb gold
+13) [gold] 	psql gold < bank.sql
+14) [root] 	Editar apache httpd.conf:
+	<Directory "/var/www/cgi-bin">
+		Options ExecCGI
+		AddHandler cgi-script .cgi .pl
+	</Directory>
+	
+	<VirtualHost *>
+		DocumentRoot /var/www/cgi-bin
+	</VirtualHost>
+    Nota: el manual recomienda utilizar SSL para la interfaz web
+    Nota: no la pude probar, se queja de que el browser no soporta frames, solo anda con el IE?
+15) http://localhost/cgi-bin/gold.cgi
+16) editar /usr/local/gold/etc/goldd
+	Deshabilitar seguridad en la comunicacion, sino falla la conexion de maui al gold :(
+
+[MAUI]
+1) ./configure --prefix=/usr/local/maui --with-gold --with-pbs 
+	(el usuario que corre el config es admin de maui, debe ser admin de torque tambien)
+2) make
+3) [root] make install
+4) editar /usr/local/maui/maui.cfg
+	RMCFG[MARGA]	TYPE=PBS (no funciona con el por defecto)
+	RMPOLLINTERVAL	00:00:05 (pooling mas rapido)
+5) (OPCIONAL) agregar /usr/local/maui/bin al PATH del usuario
+
+[MPIExec]
+Nota: no lo pude terminar de probar
+
+1) ./configure --prefix=/usr/local/mpiexec --with-default-comm=mpich-p4 --with-pbs=/usr/local/torque
+2) make
+3) ?? TEST ?? make install
+
+[TEST]
+# verificar que las colas esten configuradas
+> qstat -q
+
+# informacion del server
+> qmgr -c 'p s'
+
+# informacion de los nodos
+> pbsnodes -a 
+
+# encolar un trabajo
+> qsub sleep.sh
+
+# ver lista de trabajos
+> qstat
+
+--------------------------------------------------------------
+
+PostgreSQL
+- cambiar al usuario de postgres:
+	su -
+	su - postgres
+- crear usuario
+	createuser pgccadar
+- crear base de datos
+	createdb pgccadar
+- entrar a la base
+	psql pgccadar
+- setear password para el usuario en la base
+	alter user pgccadar password 'pgccadar'
+- ejecutar sentencias sql desde un archivo externo
+	\i 1.tablas.sql
+
+-----------------------------------------------------------------
+Para redirigir salida y error se usa prog 2>&1 | prog2
+El buffer del | es de 1024
+EL usuario puede hacer fflush(stdout) y fflush(stderr)
+------------------------------------------------------------------
+SSH Tunneling a lennon
+
+ssh -L 8888:localhost:7777 pgccadar@lulu.fing.edu.uy
+ssh -L 7777:localhost:80 pgccadar@lennon
+
