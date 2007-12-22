@@ -8,6 +8,8 @@
 	include_once("Directorio.php");
 	include_once("Alertas.php");
 	include_once("Tabla/Tabla.php");
+	include_once("Interfaz.php");
+
 	$s = new Sesion();
 
 if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
@@ -31,6 +33,7 @@ if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
 
 	//obtengo la alerta
 	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+	$i = new Interfaz($conexion,$plantilla,$s);
 	$alertas = new Alertas($conexion);
 	$resConsulta = $alertas->getAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 
@@ -45,10 +48,14 @@ if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
 
 			$tabalerta = $plantilla->replace($tabalerta,array("FECHA"=>$rowAlerta["fecha"],"ASUNTO"=>$rowAlerta["asunto"],"BODY"=>$rowAlerta["body"]));
 		}
-		$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$menuvert,"TABALERTA"=>$tabalerta));
+
 		//DESCOMENTAR PARA MARCAR LAS ALERTAS COMO LEIDAS
 		//$res = $alertas->marcarAlertaLeida($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>$tabalerta));
+
 	}
+
+
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu));
 	$s->salvar();
