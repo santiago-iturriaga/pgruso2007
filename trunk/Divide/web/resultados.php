@@ -6,6 +6,11 @@
 	include_once("Conexion.php");
 	include_once("Constantes.php");
 	include_once("Directorio.php");
+	include_once("Momento.php");
+
+
+	$conexion	= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+	$momento 	= new Momento($conexion);
 
 	$s = new Sesion();
 
