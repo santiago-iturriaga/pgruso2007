@@ -12,7 +12,7 @@
 	error_log("INI:".$ini);
 	$leido = "";
 	if(filesize  ($archivo) > $ini){
-		error_log("cambiar esto cuando este php 5.1");
+		error_log("cambiar esto cuando este php 5.1 (acordarse de cambiar tambien en javascript)");
 		//$leido	=  file_get_contents  ( $archivo  , false, null,$ini);
 		$leido	=  file_get_contents  ( $archivo  , false);
 		$s->sesion->bytes_leidos += strlen($leido);
