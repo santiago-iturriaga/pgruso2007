@@ -31,10 +31,13 @@
 										array("CLASE_RESULTADOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
 
 
-
+	$res = $momento->getCantEnEjecucion($s->sesion->TrabajoActual);
+	$enejecucion="";
+	if($res["error"]) error_log(print_r($res,1));
+	else $enejecucion = $res["cantidad"];
 	$ppal	=	$plantilla->replace($ppal,array("SEGUNDOS"=>TIEMPO_REFRESH_RESULTADOS,
 												"ID_EJECUCION"=>$s->sesion->ejecucion_actual,
-												"ENEJECUCION"=>$momento->getCantEnEjecucion($s->sesion->TrabajoActual)));
+												"ENEJECUCION"=>$enejecucion));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
 							"BODY"=>'onload="delay();"'));

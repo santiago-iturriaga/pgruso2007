@@ -157,12 +157,9 @@ class Momento{
 						 "codError"=>$this->db->msgError);
 			}
 		$salida=array();
-		while(($row=$this->db->Next()) != null)
-			{
-			$salida[$row["id"]]=$row;
-			}
+		$row=$this->db->Next();
 		return array("error"=>0,
-					 "salida"=>$salida);
+					 "cantidad"=>$row["cantidad"]);
 	}
 
 	function getFinalizado($id){
