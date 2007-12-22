@@ -207,5 +207,17 @@ class Usuarios{
 		else
 			return array("error"=>1,codError=>"U001");
 	}
+
+	function cambiarClaveUsuario($login,$clave){
+		$consulta= "UPDATE usuario SET password = ?
+					     where login=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($clave, $login),true))
+				{
+				return array("error"=>1,
+							 codError=>$this->conexion->msgError);
+				}
+		return array("error"=>0);
+
+	}
 }
 ?>
