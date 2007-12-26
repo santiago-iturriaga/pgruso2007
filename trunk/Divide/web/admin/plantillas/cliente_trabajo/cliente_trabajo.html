@@ -10,41 +10,14 @@
 			</div>
 		</div> 
 		<div id="pagina">
-			Cliente:
-			<select>
-				{OPCIONES}
-			</select>
-			<a href="clientes.html">Nuevo</a>
-			<table>
-				<thead>
-					<tr>
-						<td>
-							Trabajo
-						</td>
-						<td>
-							<a href="crear_trabajo.html">Nuevo</a>
-						</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							Proyecto de Grado
-						</td>
-						<td>
-							<a href="eliminar_trabajo.html">Eliminar</a>
-							<a href="ejecutables.html">Ejecutables...</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							HPC
-						</td>
-						<td>
-							<a href="eliminar_trabajo.html">Eliminar</a>
-							<a href="ejecutables.html">Ejecutables...</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<form action="cliente_trabajo.php" method="POST">
+				<fieldset>
+					<label for="cliente">Cliente</label>
+					<select id="cliente" name="cliente" onchange="submit();">
+					{OPCIONES}
+					</select>
+								<a href="clientes.html" class="boton" >Nuevo</a>
+				</fieldset>
+			</form>
+			{TABLA}
 		</div>

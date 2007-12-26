@@ -234,5 +234,20 @@ class Usuarios{
 			}
 		return array("error"=>0,"clientes"=>$salida);
 	}
+
+	function getTrabajosCliente($idCliente){
+		$consulta= "select t.* from trabajo t where t.cliente=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idCliente),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=$row;
+			}
+		return array("error"=>0,"trabajos"=>$salida);
+	}
 }
 ?>
