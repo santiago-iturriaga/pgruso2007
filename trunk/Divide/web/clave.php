@@ -22,12 +22,48 @@ set_include_path(get_include_path().PATH_SEPARATOR.
 	}
 
 	$plantilla	=	new TPL();
-	$base		=	$plantilla->load("plantillas/base.html");
-	$ppal		= 	$plantilla->load("plantillas/clave.html");
-	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
-										array("CLASE_ALERTAS"=>'id="actual"'));
-$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$i = new Interfaz($conexion,$plantilla,$s);
+	$ppal = null;
+
+	if(isset($_POST["form_actual"])){
+
+		$u = new Usuarios($conexion);
+		$validos = $u->validarUsuario($s->sesion->Usuario->login,$_POST["form_actual"]);
+
+		if($validos["error"] == 0){
+			$res = $u->cambiarClaveUsuario($s->sesion->Usuario->login,$_POST["form_nueva"]);
+			if($res["error"] == 0){
+				$ppal		= 	$plantilla->load("plantillas/mensaje.html");
+				$ppal = $plantilla->replace($ppal,array("MSJ"=>"La clave fue cambiada.","TITULO"=>"Cambiar Clave"));
+				exit;
+			}
+			else{
+				$ppal		= 	$plantilla->load("plantillas/error.html");
+				$ppal = $plantilla->replace($ppal,array("MSJERROR"=>"Error al cambiar la clave."));
+				exit;
+			}
+		}
+		else{
+
+			$ppal		= 	$plantilla->load("plantillas/error.html");
+			$ppal = $plantilla->replace($ppal,array("MSJERROR"=>"Contrasena invalida"));
+			exit;
+
+		}
+
+
+
+	}
+	else{
+		$ppal		= 	$plantilla->load("plantillas/clave.html");
+	}
+
+
+	$base		=	$plantilla->load("plantillas/base.html");
+	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
+										array("CLASE_CLAVE"=>'id="actual"'));
+
 
 	//$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical()));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu));
