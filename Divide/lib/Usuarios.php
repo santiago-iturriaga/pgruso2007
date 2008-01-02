@@ -205,7 +205,7 @@ class Usuarios{
 		if(($row=$this->conexion->Next()) != null)
 			return array("error"=>0,"id"=>$row["id"],"administrador"=>$row["administrador"]);
 		else
-			return array("error"=>1,codError=>"U001");
+			return array("error"=>1,"codError"=>"U001");
 	}
 
 	function cambiarClaveUsuario($login,$clave){
