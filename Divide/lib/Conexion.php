@@ -87,6 +87,7 @@ class Conexion{
 	}
 
 	function EjecutarConsulta($consulta,$parametros,$select=false){
+		$select = true;
 		$array_cons=explode ('?',$consulta);
 		if(count($array_cons)!=(count($parametros)+1))
 			{
@@ -110,8 +111,8 @@ class Conexion{
 
 	function getUltimoNumerador(){
 		//error_log('cambiar esto');
-		//if(!$res=$this->EjecutarConsulta("SELECT LASTVAL() as num",array(),true))
-		if(!$res=$this->EjecutarConsulta("select (max(id)) as num from ejecucion",array(),true))
+		if(!$res=$this->EjecutarConsulta("SELECT LASTVAL() as num",array(),true))
+		//if(!$res=$this->EjecutarConsulta("select (max(id)) as num from ejecucion",array(),true))
 			return false;
 		if(!$res=$this->Next())
 			return false;

@@ -115,8 +115,9 @@ class Usuarios{
 		return array("error"=>0,"grupos"=>$salida);
 	}
 
-	function getTrabajosGrupo($idGrupo){
+	function getTrabajosGrupo($idGrupo,$noBorrados=true){
 		$consulta= "select t.* from trabajo t, trabajo_grupo tg where t.id=tg.trabajo and tg.grupo=?";
+		if($noBorrados) $consulta.=" and t.fecha_fin is null";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idGrupo),true))
 			{
 			return array("error"=>1,
@@ -130,8 +131,9 @@ class Usuarios{
 		return array("error"=>0,"trabajos"=>$salida);
 	}
 
-	function getTrabajos(){
-		$consulta= "select t.* from trabajo a";
+	function getTrabajos($noBorrados = true){
+		$consulta= "select t.* from trabajo t";
+		if($noBorrados) $consulta.=" and t.fecha_fin is null";
 		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
 			{
 			return array("error"=>1,
@@ -144,6 +146,17 @@ class Usuarios{
 			}
 		return array("error"=>0,"trabajo"=>$salida);
 	}
+
+	function eliminarTrabajo($id){
+		$consulta= "update trabajo set fecha_fin=CURRENT_TIMESTAMP where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($id),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		return array("error"=>0);
+	}
+
 
 	function getUsuariosGrupo($idGrupo){
 		$consulta= "select u.* from usuario u, usuario_grupo ug where u.id=ug.usuario and ug.grupo=?";
@@ -175,10 +188,11 @@ class Usuarios{
 		return array("error"=>0,"grupos"=>$salida);
 	}
 
-	function getTrabajosUsuario($idUsuario){
+	function getTrabajosUsuario($idUsuario,$noBorrados=true){
 		$consulta= "select t.id, t.nombre as trabajo, c.id as id_cliente, c.nombre as cliente ".
 				   "from trabajo t, trabajo_grupo tg, usuario_grupo ug,cliente c ".
 				   "where t.id=tg.trabajo and tg.grupo=ug.grupo and ug.usuario=? and t.cliente=c.id";
+		if($noBorrados) $consulta.=" and t.fecha_fin is null";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario),true))
 			{
 			return array("error"=>1,
@@ -235,8 +249,9 @@ class Usuarios{
 		return array("error"=>0,"clientes"=>$salida);
 	}
 
-	function getTrabajosCliente($idCliente){
+	function getTrabajosCliente($idCliente,$noBorrados=true){
 		$consulta= "select t.* from trabajo t where t.cliente=?";
+		if($noBorrados) $consulta.=" and t.fecha_fin is null";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idCliente),true))
 			{
 			return array("error"=>1,
@@ -248,6 +263,36 @@ class Usuarios{
 			$salida[$row["id"]]=$row;
 			}
 		return array("error"=>0,"trabajos"=>$salida);
+	}
+	function getTrabajo($id){
+		$consulta= "select t.* from trabajo t where t.id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		return array("error"=>0,"trabajo"=>$row);
+	}
+	function crearTrabajo($cliente,$nombre,$nodos,$tiempo_maximo,$cola){
+		$consulta= "insert into trabajo (cliente,nombre,nodos,tiempo_maximo,cola) values (?,?,?,?,?)";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($cliente,$nombre,$nodos,$tiempo_maximo,$cola),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$id=$this->conexion->getUltimoNumerador();
+		return array("error"=>0,"id"=>$id);
+	}
+
+	function editarTrabajo($id,$nombre,$nodos,$tiempo_maximo,$cola){
+		$consulta= "update trabajo set nombre=?,nodos=?,tiempo_maximo=?,cola=? where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre,$nodos,$tiempo_maximo,$cola,$id),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		return array("error"=>0);
 	}
 }
 ?>
