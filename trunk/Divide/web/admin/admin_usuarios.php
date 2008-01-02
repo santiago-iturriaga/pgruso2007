@@ -19,6 +19,8 @@
 	$opcion_select=$plantilla->load("plantillas/usuarios/grupo.html");
 	$link_nuevo_usuario=$plantilla->load("plantillas/usuarios/link_nuevo.html");
 	$link_eliminar_usuario=$plantilla->load("plantillas/usuarios/link_eliminar.html");
+	$mensaje = "";
+	$error = "";
 
 	$conexion = new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$Usuarios	= new Usuarios($conexion);
@@ -89,7 +91,9 @@
 	$ppal  = $plantilla->replace($ppal,array("GRUPOS"=>$opciones_grupos,
 												"TABLA_USUARIOS"=>$tabla_usuarios,
 												"NUEVO"=>$form_nuevo));
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal));
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENSAJE"=>$mensaje,
+												"ERROR"=>$error));
 	$s->salvar();
 
 	echo $base;

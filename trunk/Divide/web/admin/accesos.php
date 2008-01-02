@@ -17,6 +17,8 @@
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/accesos/accesos.html");
 	$opcion_select=$plantilla->load("plantillas/usuarios/grupo.html");
+	$mensaje = "";
+	$error = "";
 
 	$opciones_grupos	= "";
 
@@ -88,7 +90,9 @@
 
 
 	$ppal  = $plantilla->replace($ppal,array("GRUPOS"=>$opciones_grupos,"ACCESOS"=>$form_accesos));
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal));
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENSAJE"=>$mensaje,
+												"ERROR"=>$error));
 	$s->salvar();
 
 	echo $base;

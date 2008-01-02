@@ -30,5 +30,14 @@ class Interfaz{
 		$menuvert = $this->plantilla->replace($menuvert,array("CANTALERTAS"=>$cantAlertas,"USUARIO"=>$this->sesion->sesion->Usuario->login,"CLIENTE"=>$this->sesion->sesion->Usuario->trabajos{$this->sesion->sesion->TrabajoActual}["cliente"],"TRABAJO"=>$this->sesion->sesion->Usuario->trabajos{$this->sesion->sesion->TrabajoActual}["trabajo"],"IDTRABAJO"=>$this->sesion->sesion->TrabajoActual));
 		return $menuvert;
 	}
+
+	function getMensaje($mensaje){
+		include("Mensajes.php");
+		return $this->plantilla->replace($this->plantilla->load("plantillas/mensaje.html"),array("MENSAJE"=>$MENSAJES[$mensaje]));
+	}
+	function getError($error){
+		error_log(print_r($error,1));
+		return $this->plantilla->replace($this->plantilla->load("plantillas/mensaje.html"),array("MENSAJE"=>print_r($error,1)));
+	}
 }
 ?>

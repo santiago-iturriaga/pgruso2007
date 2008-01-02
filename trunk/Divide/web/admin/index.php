@@ -11,9 +11,13 @@
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	"";
+	$mensaje = "";
+	$error = "";
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>""));
+							"MENU"=>"",
+												"MENSAJE"=>$mensaje,
+												"ERROR"=>$error));
 	$s->salvar();
 	echo $base;
 ?>
