@@ -34,6 +34,8 @@
 	$link		= 	$plantilla->load("plantillas/ejecuciones/link.html");
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
 										array("CLASE_RESULTADOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+	$msj = null;
+	$msjerror = null;
 
 
 	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
@@ -58,7 +60,7 @@
 
 	$ppal	=	$plantilla->replace($ppal,array("EJECUCION"=>$ejecuciones));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>$menu));
+							"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>

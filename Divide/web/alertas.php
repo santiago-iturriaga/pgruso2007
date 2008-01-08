@@ -38,6 +38,8 @@
 	$checkbox = 	$plantilla->load("plantillas/alertas/checkbox.html");
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
 										array("CLASE_ALERTAS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+	$msj = null;
+	$msjerror = null;
 
 	//$menuvert		=	$plantilla->load("plantillas/menu_vertical.html");
 
@@ -75,7 +77,7 @@
 
 	//echo "<pre>";print_r($s->sesion->Usuario);echo '</pre>';exit;
 	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"ALERTAS"=>$tabAlertas));
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu));
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>

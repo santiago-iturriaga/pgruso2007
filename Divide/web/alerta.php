@@ -26,6 +26,8 @@ if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/alertas/veralerta.html");
 	$tabalerta		= 	$plantilla->load("plantillas/alertas/tabalerta.html");
+	$msj = null;
+	$msjerror = null;
 
 
 	$menu		=	$plantilla->load("plantillas/menu.html");
@@ -57,7 +59,7 @@ if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
 
 
 
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu));
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 
