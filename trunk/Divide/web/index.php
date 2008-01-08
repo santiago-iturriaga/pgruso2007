@@ -14,6 +14,8 @@
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	"";
+	$msj = null;
+	$msjerror = null;
 
 	if(isset($_POST["login"])){
 		$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
@@ -38,7 +40,7 @@
 		$ppal	=	$plantilla->load("plantillas/login/login.html");
 	}
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>""));
+							"MENU"=>"","MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>

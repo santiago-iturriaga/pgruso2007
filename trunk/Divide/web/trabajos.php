@@ -26,6 +26,8 @@
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/trabajos/trabajos.html");
 	$link		= 	$plantilla->load("plantillas/trabajos/link.html");
+	$msj = null;
+	$msjerror = null;
 
 	$trabajos	= "";
 	$tabla = new Tabla();
@@ -40,7 +42,7 @@
 	$ppal	=	$plantilla->replace($ppal,array("TRABAJOS"=>$tabla->getTabla()));
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>""));
+							"MENU"=>"","MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>

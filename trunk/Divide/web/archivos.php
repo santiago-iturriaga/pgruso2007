@@ -61,6 +61,9 @@
 	$p_ruta		=	$plantilla->load("plantillas/archivos/ruta.html");
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
 										array("CLASE_ARCHIVOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+	$msj = null;
+	$msjerror = null;
+
 	if($s->sesion->Directorio == null)
 		{
 		$s->sesion->Directorio	= new Directorio(RAIZ."/".$s->sesion->ClienteActual."/".$s->sesion->TrabajoActual);
@@ -106,7 +109,7 @@
 												"RUTA"=>$ruta));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
-							"BODY"=>''));
+							"BODY"=>'',"MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>

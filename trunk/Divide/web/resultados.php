@@ -29,6 +29,8 @@
 	$ppal		= 	$plantilla->load("plantillas/resultados/resultados.html");
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
 										array("CLASE_RESULTADOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+	$msj = null;
+	$msjerror = null;
 
 
 	$res = $momento->getCantEnEjecucion($s->sesion->TrabajoActual);
@@ -42,7 +44,7 @@
 												"ENEJECUCION"=>$enejecucion));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
-							"BODY"=>'onload="delay();"'));
+							"BODY"=>'onload="delay();"',"MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>
