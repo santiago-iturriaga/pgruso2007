@@ -24,7 +24,9 @@ set_include_path(get_include_path().PATH_SEPARATOR.
 	$plantilla	=	new TPL();
 	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$i = new Interfaz($conexion,$plantilla,$s);
-	$ppal = null;
+	$msj = null;
+	$msjerror = null;
+
 
 if(isset($_POST["form_actual"])){
 	$u = new Usuarios($conexion);
@@ -33,34 +35,32 @@ if(isset($_POST["form_actual"])){
 		if($_POST["form_nueva"] == $_POST["form_confirmacion"]){
 			$res = $u->cambiarClaveUsuario($s->sesion->Usuario->login,$_POST["form_nueva"]);
 			if($res["error"] == 0){
-				$ppal		= 	$plantilla->load("plantillas/mensaje.html");
-				$ppal = $plantilla->replace($ppal,array("MSJ"=>"La clave fue cambiada.","TITULO"=>"Cambiar Clave"));
+				$msj		= 	$plantilla->load("plantillas/mensaje.html");
+				$msj = $plantilla->replace($msj,array("MENSAJE"=>"La clave fue cambiada."));
 			}else{
-				$ppal		= 	$plantilla->load("plantillas/error.html");
-				$ppal = $plantilla->replace($ppal,array("MSJERROR"=>"Error al cambiar la clave."));
+				$msjerror		= 	$plantilla->load("plantillas/error.html");
+				$msjerror = $plantilla->replace($msjerror,array("MSJERROR"=>"Error al cambiar la clave."));
 			}
 		}else{
-			$ppal		= 	$plantilla->load("plantillas/error.html");
-			$ppal = $plantilla->replace($ppal,array("MSJERROR"=>"La contrasena nueva no es igual a la confirmacion"));
+			$msjerror		= 	$plantilla->load("plantillas/error.html");
+			$msjerror = $plantilla->replace($msjerror,array("MSJERROR"=>"La contrasena nueva no es igual a la confirmacion"));
 		}
 	}
 	else{
-		$ppal		= 	$plantilla->load("plantillas/error.html");
-		$ppal = $plantilla->replace($ppal,array("MSJERROR"=>"Contrasena invalida"));
+		$msjerror		= 	$plantilla->load("plantillas/error.html");
+		$msjerror = $plantilla->replace($msjerror,array("MSJERROR"=>"Contrasena invalida"));
 	}
 }
-else{
+
+
 	$ppal		= 	$plantilla->load("plantillas/clave.html");
-}
-
-
 	$base		=	$plantilla->load("plantillas/base.html");
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
 										array("CLASE_CLAVE"=>'id="actual"'));
 
 
-	//$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical()));
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu));
+	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),));
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>
