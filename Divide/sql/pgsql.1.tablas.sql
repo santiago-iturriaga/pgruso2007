@@ -43,6 +43,14 @@ id SERIAL PRIMARY KEY,
 asunto VARCHAR(256) not null,
 body VARCHAR(1000) not null);
 
+CREATE TABLE  trabajo_alerta(
+alerta int not null,
+trabajo int not null,
+body VARCHAR(1000) not null
+foreign key (alerta) references alertas(id),
+foreign key (trabajo) references trabajo(id),
+UNIQUE (alerta,trabajo)
+);
 
 CREATE TABLE usuario_alerta(
 alerta int not null,
@@ -50,7 +58,5 @@ usuario int not null,
 trabajo int not null,
 fecha timestamp default CURRENT_TIMESTAMP,
 leida int not null default 0,
-foreign key (alerta) references alertas(id),
-foreign key (trabajo) references trabajo(id),
+foreign key (alerta,trabajo) references trabajo_alerta(alerta,trabajo),
 foreign key (usuario) references usuario(id));
-
