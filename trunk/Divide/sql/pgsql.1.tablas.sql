@@ -10,7 +10,8 @@ create table trabajo (
 	foreign key (cliente) references cliente(id),
 	nodos int,
 	tiempo_maximo time,
-	cola varchar(25)
+	cola varchar(25),
+	fecha_fin timestamp default null
     );
 
 CREATE TABLE grupo(
