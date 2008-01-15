@@ -46,7 +46,7 @@ body VARCHAR(1000) not null);
 CREATE TABLE  trabajo_alerta(
 alerta int not null,
 trabajo int not null,
-body VARCHAR(1000) not null
+body VARCHAR(1000) not null,
 foreign key (alerta) references alertas(id),
 foreign key (trabajo) references trabajo(id),
 UNIQUE (alerta,trabajo)
