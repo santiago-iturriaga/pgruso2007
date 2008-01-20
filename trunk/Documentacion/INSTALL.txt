@@ -109,7 +109,10 @@ Instalacion:
 [MPIExec]
 Nota: no lo pude terminar de probar
 
-1) ./configure --prefix=/usr/local/mpiexec --with-default-comm=mpich-p4 --with-pbs=/usr/local/torque
+1) ./configure --prefix=/net/local/pgccadar 
+	--with-default-comm=mpich-p4 
+	--with-pbs=/net/local/pgccadar 
+	--with-mpicc=/net/local/mpich-1.2.7p1/bin/mpicc
 2) make
 3) ?? TEST ?? make install
 
@@ -161,5 +164,9 @@ ssh -L 7777:localhost:80 pgccadar@lennon
 -------------------------------------
 PHP
 
+-----------------------------------
+MPICH-1.2.7p1
 
-
+configure --with-device=ch_p4 --prefix=/net/local/mpich-1.2.7p1 --with-common-prefix=/net/local/mpich-1.2.7p1
+make
+make install
