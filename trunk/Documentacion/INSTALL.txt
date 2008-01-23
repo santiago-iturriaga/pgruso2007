@@ -133,9 +133,16 @@ Nota: no lo pude terminar de probar
 > qstat
 
 --------------------------------------------------------------
-
+[INSTALAR]
 ./configure --prefix=/net/local/postgresql-8.2.5 --with-perl --with-tcl --enable-thread-safety
+adduser postgres
+mkdir /net/local/postgresql-8.2.5/data
+chown postgres /net/local/postgresql-8.2.5/data
+su - postgres
+/net/local/postgresql-8.2.5/bin/initdb -D /net/local/postgresql-8.2.5/data
+/net/local/postgresql-8.2.5/bin/pg_ctl -D /net/local/postgresql-8.2.5/data
 
+[CREAR DB y USUARIO]
 PostgreSQL
 - cambiar al usuario de postgres:
 	su -
