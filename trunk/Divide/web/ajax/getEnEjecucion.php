@@ -10,7 +10,7 @@
 	if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
 		exit;
 	}
-	$conexion	= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+	$conexion	= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$momento 	= new Momento($conexion);
 	$res = $momento->getFinalizado($s->sesion->ejecucion_actual);
 	if($res["error"]) error_log(print_r($res,1));

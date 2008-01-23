@@ -45,7 +45,7 @@
 
 	//obtengo las alertas
 
-	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+	$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$i = new Interfaz($conexion,$plantilla,$s);
 	$alertas = new Alertas($conexion);
 	$resConsulta = $alertas->getAlertasUsuarioTrabajo($s->sesion->ClienteActual,$s->sesion->TrabajoActual);

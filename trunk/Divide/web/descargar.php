@@ -6,7 +6,7 @@
 	include_once("Constantes.php");
 	include_once("Momento.php");
 	if(isset($_GET["id"])){
-		$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+		$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 		$momento = new Momento($conexion);
 		$error = $_GET["error"]==1;
 		$res = $momento->getSalida($_GET["id"],$error);

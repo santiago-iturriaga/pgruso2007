@@ -27,7 +27,7 @@
 	$opcion		= 	$plantilla->load("plantillas/cliente_trabajo/cliente.html");
 	$opciones	=	"";
 	$form		= 	"";
-	$conexion = new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+	$conexion = new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 
 	$usuarios	= new Usuarios($conexion);
 	$interfaz = new Interfaz($conexion,$plantilla,$s);

@@ -90,7 +90,7 @@ class Directorio{
     			 		  "codError"=>"D003");
 		}
 	function ejecutar($archivo,$argumentos,$id_cliente,$id_trabajo){
-		$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+		$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 
 		$momento = new Momento($conexion);
 		//ejecutar($archivo,$ruta,$parametros,$argumentos,$id_cliente,$id_trabajo)

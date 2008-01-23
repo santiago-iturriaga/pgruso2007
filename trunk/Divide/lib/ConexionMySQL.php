@@ -5,7 +5,7 @@ class Conexion{
 	var $codError="";
 	var $result=null;
 	
-	function Conexion($host,$usuario,$pwd,$bd){
+	function Conexion($host,$port,$usuario,$pwd,$bd){
 		if (!($this->link=mysql_connect($host,$usuario,$pwd)))
    			{
       		$this->codError='CX01';

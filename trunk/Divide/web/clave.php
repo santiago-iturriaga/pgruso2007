@@ -22,7 +22,7 @@ set_include_path(get_include_path().PATH_SEPARATOR.
 	}
 
 	$plantilla	=	new TPL();
-	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+	$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$i = new Interfaz($conexion,$plantilla,$s);
 	$msj = null;
 	$msjerror = null;

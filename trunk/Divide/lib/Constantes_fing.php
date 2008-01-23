@@ -1,6 +1,7 @@
 <?php
 define("RAIZ", "/net/home/pgccadar");
 define("CONEXION_HOST", "lennon.fing.edu.uy");
+define("CONEXION_PORT", "54320");
 define("CONEXION_USUARIO", "pgccadar");
 define("CONEXION_PASSWORD", "pgccadar");
 define("CONEXION_BASE", "pgccadar");
