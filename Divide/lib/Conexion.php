@@ -4,8 +4,8 @@ class Conexion{
 	var $conexion_ok=false;
 	var $codError="";
 	var $result=null;
-	function Conexion($host,$usuario,$pwd,$bd){
-		if (!($this->link=pg_connect("host=".$host." dbname=".$bd." user=".$usuario." password=".$pwd)))
+	function Conexion($host,$port,$usuario,$pwd,$bd){
+		if (!($this->link=pg_connect("host=".$host." port=".$port." dbname=".$bd." user=".$usuario." password=".$pwd)))
    			{
       		$this->codError='CX01';
    			}

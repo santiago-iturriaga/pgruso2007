@@ -36,7 +36,7 @@
 	$resConsulta = null;
 
 
-	$conexion= new Conexion(CONEXION_HOST,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+	$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$i = new Interfaz($conexion,$plantilla,$s);
 	$alertas = new Alertas($conexion);
 
