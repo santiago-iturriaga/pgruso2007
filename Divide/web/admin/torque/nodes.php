@@ -9,9 +9,6 @@
 	$selected=$menu_nodes;
 	include_once("menu.inc.php");
 
-	$username = "santiago";
-	$host = "localhost";
-
 	$qnodes = `ssh -l $username $host "$qnodes_cmd -x; exit" 2>&1`;
 
 	print("<span style='font-size: 2.0em'>Nodes Status</span>");

@@ -1,4 +1,7 @@
 <?
+	$username = "santiago";
+	$host = "localhost";
+
 	$menu_jobs=0;
 	$menu_queues=1;
 	$menu_nodes=2;

@@ -12,9 +12,6 @@
 	$selected=$menu_jobs;
 	include_once("menu.inc.php");
 
-	$username = "santiago";
-	$host = "localhost";
-
 	if (ISSET($_REQUEST["id"])) {
 		// Detalle de un trabajo
 		$id = $_REQUEST["id"];

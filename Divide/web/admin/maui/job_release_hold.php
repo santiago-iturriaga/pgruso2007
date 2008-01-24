@@ -6,9 +6,6 @@
 </head>
 <body>
 	<?
-	$username = "santiago";
-	$host = "localhost";
-
 	if (ISSET($_REQUEST["id"])) {
 		$id = $_REQUEST["id"];
 		$releasehold = `ssh -l $username $host "$releasehold_cmd $id; exit" 2>&1`;
