@@ -6,9 +6,6 @@
 </head>
 <body>
 	<?
-	$username = "santiago";
-	$host = "localhost";
-
 	if (ISSET($_REQUEST["id"])) {
 		$id = $_REQUEST["id"];
 		$canceljob = `ssh -l $username $host "$canceljob_cmd $id; exit" 2>&1`;

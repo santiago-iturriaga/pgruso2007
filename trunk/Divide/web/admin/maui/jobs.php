@@ -14,10 +14,6 @@
 	-i // IDLE QUEUE
 	-r // ACTIVE QUEUE
 	*/
-
-	$username = "santiago";
-	$host = "localhost";
-
 	//print("<div style='font-size: 2.0em'>Jobs</div>");
 	$selected=0;
 	include_once("menu.inc.php");

@@ -6,9 +6,6 @@
 </head>	
 <body>
 	<?
-	$username = "santiago";
-	$host = "localhost";
-
 	/*	u - USER
 		o - OTHER
 		s - SYSTEM

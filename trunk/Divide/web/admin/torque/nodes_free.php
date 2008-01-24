@@ -6,9 +6,6 @@
 </head>
 <body>
 	<?
-	$username = "santiago";
-	$host = "localhost";
-
 	print("<span style='font-size: 2.0em'>Node enabled</span>&nbsp;".
 		"<span style='font-size: 0.7em'>[<a href='nodes.php'>volver</a>]</span>");
 	if (ISSET($_REQUEST["id"])) {

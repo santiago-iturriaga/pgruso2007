@@ -6,9 +6,6 @@
 </head>
 <body>
 	<?
-	$username = "santiago";
-	$host = "localhost";
-
 	$config = `ssh -l $username $host "$config_cmd; exit" 2>&1`;
 	print("<span style='font-size: 2.0em'>Maui configuration</span>&nbsp;".
 		"<span style='font-size: 0.7em'>[<a href='status.php'>volver</a>]</span>");

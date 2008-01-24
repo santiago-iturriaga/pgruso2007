@@ -6,9 +6,6 @@
 </head>
 <body>
 	<?
-	$username = "santiago";
-	$host = "localhost";
-
 	$selected=0;
 	include_once("menu.inc.php");
 

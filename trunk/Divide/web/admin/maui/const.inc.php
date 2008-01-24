@@ -1,4 +1,7 @@
 <?
+	$username = "santiago";
+	$host = "localhost";
+
 	$config_cmd = "/usr/local/maui/bin/showconfig";
 	$canceljob_cmd = "/usr/local/maui/bin/canceljob";
 	$diagnose_cmd = "/usr/local/maui/bin/diagnose";

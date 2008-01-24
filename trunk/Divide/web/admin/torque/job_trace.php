@@ -6,9 +6,6 @@
 </head>
 <body>
 	<?
-	$username = "santiago";
-	$host = "localhost";
-
 	if (ISSET($_REQUEST["id"])) {
 		$id = $_REQUEST["id"];
 		$qstat_job = `ssh -l $username $host "$qstat_cmd -f $id; exit" 2>&1`;
