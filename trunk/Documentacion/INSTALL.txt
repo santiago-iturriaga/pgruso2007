@@ -171,6 +171,11 @@ ssh -L 7777:localhost:80 pgccadar@lennon
 -------------------------------------
 PHP
 
+./configure --prefix=/net/local/php-5.2.5 --with-apxs2=/usr/sbin/apxs2 --with-pgsql=/net/local/postgresql-8.2.5 ??
+./configure --prefix=/net/local/php-5.2.5 --with-pgsql=/net/local/postgresql-8.2.5 ??
+make
+make install
+
 -----------------------------------
 MPICH-1.2.7p1
 
