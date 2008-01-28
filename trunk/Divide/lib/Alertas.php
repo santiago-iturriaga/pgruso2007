@@ -76,7 +76,7 @@ function deleteAlerta($idUsuario,$idTrabajo,$idAlerta){
 				codError=>$this->conexion->msgError);
 			}
 
-	$consulta2	= "SELECT count(alerta) FROM usuario_alerta WUERE usuario=? and trabajo=? and alerta = ?";
+	$consulta2	= "SELECT count(alerta) FROM usuario_alerta WHERE usuario=? and trabajo=? and alerta = ?";
 	if(!$this->conexion->EjecutarConsulta($consulta2,array($idUsuario, $idTrabajo, $idAlerta),true))
 			{
 			return array("error"=>1,
@@ -108,6 +108,32 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 			}
 		return array("error"=>0,"alerta"=>$salida);
 	}
+
+}
+
+function enviarAlerta($idUsuario,$idTrabajo,$idAlerta){
+	$consulta= "select  a.asunto as asunto, ta.body as body, u.email as email
+				    from alertas a, usuario u, trabajo_alerta ta
+				    where u.usuario=? and  a.id = ? and  ta.alerta = a.id and ta.trabajo = ?  ";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idAlerta, $idTrabajo),true))
+			{
+			return array("error"=>1,
+						 codError=>$this->conexion->msgError);
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=array("id"=>$row["id"],"asunto"=>$row["asunto"],"body"=>$row["body"],"email"=>$row["email"]);
+			}
+
+		if(!mail($salida["email"], $salida["asunto"], $salida["body"])){
+
+			return array("error"=>1, codError=>"Error en el envio de mail");
+
+		}
+
+		return array("error"=>0);
+
 
 }
 ?>

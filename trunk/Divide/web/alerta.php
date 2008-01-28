@@ -48,12 +48,12 @@
 	 	}else{
 	 		$msj = "La alerta fue eliminada";
 	 	}
-	 	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$menuvert,"TABALERTA"=>""));
+	 	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>""));
 	}else{
 		$resConsulta = $alertas->getAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 		if($resConsulta["error"]){
 		 error_log(print_r($resConsulta,1));
-		 $ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$menuvert,"TABALERTA"=>""));
+		 $ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>""));
 		 $msjerror = "Error al obtener la alertas";
 		}else{
 
@@ -61,18 +61,11 @@
 				$tabalerta = $plantilla->replace($tabalerta,array("FECHA"=>$rowAlerta["fecha"],"ASUNTO"=>$rowAlerta["asunto"],"BODY"=>$rowAlerta["body"]));
 			}
 			//DESCOMENTAR PARA MARCAR LAS ALERTAS COMO LEIDAS
-			//$res = $alertas->marcarAlertaLeida($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+			$res = $alertas->marcarAlertaLeida($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 			$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>$tabalerta));
 			$msj = "La alerta fue marcada como leida";
 		}
 	}
-
-
-
-
-
-
-
 
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
