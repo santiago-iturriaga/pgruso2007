@@ -11,13 +11,14 @@
 		</div> 
 		<div id="pagina">
 			{FORM}
+			{FORM_CLIENTE}
 			<form action="cliente_trabajo.php" method="POST">
 				<fieldset>
 					<label for="cliente">Cliente</label>
 					<select id="cliente" name="cliente" onchange="submit();">
 					{OPCIONES}
 					</select>
-								<a href="clientes.html" class="boton" >Nuevo (FALTA)</a>
+								<a href="cliente_trabajo.php?nuevo_cliente=1" class="boton" >Nuevo</a>
 				</fieldset>
 			</form>
 			{TABLA}
