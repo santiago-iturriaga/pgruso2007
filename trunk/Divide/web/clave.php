@@ -42,6 +42,7 @@ if(isset($_POST["form_actual"])){
 				$msjerror = $plantilla->replace($msjerror,array("MSJERROR"=>"Error al cambiar la clave."));
 			}
 		}else{
+
 			$msjerror		= 	$plantilla->load("plantillas/error.html");
 			$msjerror = $plantilla->replace($msjerror,array("MSJERROR"=>"La contrasena nueva no es igual a la confirmacion"));
 		}

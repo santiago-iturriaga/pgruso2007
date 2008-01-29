@@ -285,6 +285,37 @@ class Usuarios{
 		return array("error"=>0,"id"=>$id);
 	}
 
+	function crearCliente($nombre){
+		$consulta= "insert into cliente (nombre) values (?)";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$id=$this->conexion->getUltimoNumerador();
+		return array("error"=>0,"id"=>$id);
+	}
+
+	function editarCliente($id,$nombre){
+		$consulta= "update cliente set nombre=? where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre,$id),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		return array("error"=>0);
+	}
+
+	function eliminarCliente($id){
+		$consulta= "delete from cliente where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($id),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		return array("error"=>0);
+	}
+
 	function editarTrabajo($id,$nombre,$nodos,$tiempo_maximo,$cola){
 		$consulta= "update trabajo set nombre=?,nodos=?,tiempo_maximo=?,cola=? where id=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre,$nodos,$tiempo_maximo,$cola,$id),false))

@@ -25,6 +25,7 @@
 	$links		= 	$plantilla->load("plantillas/cliente_trabajo/links.html");
 	$nuevo		= 	$plantilla->load("plantillas/cliente_trabajo/nuevo.html");
 	$opcion		= 	$plantilla->load("plantillas/cliente_trabajo/cliente.html");
+	$form_cliente	= "";
 	$opciones	=	"";
 	$form		= 	"";
 	$conexion = new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
@@ -34,6 +35,14 @@
 	$mensaje = "";
 	$error = "";
 
+
+	if(isset($_POST["nombre_cliente"])){
+		$res	= $usuarios->crearCliente($_POST["nombre_cliente"]);
+		if($res["error"])
+			$error	= $interfaz->getError($res);
+		else
+			$mensaje = $interfaz->getMensaje("CT004");
+	}
 	if(isset($_POST["nodos"])){
 		$s->sesion->trabajo_editado["NOMBRE"]=$_POST["nombre"];
 		$s->sesion->trabajo_editado["TIEMPO"]=$_POST["tiempo_maximo"];
@@ -63,6 +72,10 @@
 				$mensaje = $interfaz->getMensaje("CT003");
 			$s->sesion->trabajo_editado=null;
 		}
+	}
+
+	if(isset($_GET["nuevo_cliente"])){
+		$form_cliente	= 	$plantilla->load("plantillas/cliente_trabajo/form_cliente.html");
 	}
 
 	if(isset($_GET["eliminar"])){
@@ -131,7 +144,10 @@
 		$form	= $plantilla->replace($plantilla->load("plantillas/cliente_trabajo/form_trabajo.html"),
 									  $s->sesion->trabajo_editado);
 
-	$ppal	=	$plantilla->replace($ppal,array("OPCIONES"=>$opciones,"TABLA"=>$t,"FORM"=>$form));
+	$ppal	=	$plantilla->replace($ppal,array("OPCIONES"=>$opciones,
+												"TABLA"=>$t,
+												"FORM"=>$form,
+												"FORM_CLIENTE"=>$form_cliente));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"ERROR"=>$error));
