@@ -60,7 +60,8 @@
 										   $s->sesion->trabajo_editado["NOMBRE"],
 										   $s->sesion->trabajo_editado["NODOS"],
 										   $s->sesion->trabajo_editado["TIEMPO"],
-										   $s->sesion->trabajo_editado["COLA"]
+										   $s->sesion->trabajo_editado["COLA"],
+										   $s->sesion->grupo_actual
 										   );
 
 		if($res["error"])

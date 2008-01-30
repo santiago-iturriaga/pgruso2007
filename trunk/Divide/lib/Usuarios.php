@@ -272,7 +272,7 @@ class Usuarios{
 		$row=$this->conexion->Next();
 		return array("error"=>0,"trabajo"=>$row);
 	}
-	function crearTrabajo($cliente,$nombre,$nodos,$tiempo_maximo,$cola){
+	function crearTrabajo($cliente,$nombre,$nodos,$tiempo_maximo,$cola,$idGrupo=null){
 		$consulta= "insert into trabajo (cliente,nombre,nodos,tiempo_maximo,cola) values (?,?,?,?,?)";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($cliente,$nombre,$nodos,$tiempo_maximo,$cola),false))
 			{
@@ -280,6 +280,12 @@ class Usuarios{
 						 "codError"=>$this->conexion->msgError);
 			}
 		$id=$this->conexion->getUltimoNumerador();
+
+		if($idGrupo!=null){
+			$res = $this->asociarTrabajoGrupo($id,$idGrupo);
+			if($res["error"]) return $res;
+		}
+
 		return array("error"=>0,"id"=>$id);
 	}
 

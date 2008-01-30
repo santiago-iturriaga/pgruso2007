@@ -1,18 +1,16 @@
 <?
+	include_once("Tabla/Tabla.php");
 function linea_vacia($val) {
 	return ($val != "");
 }
 
 function parsear_tabla_queues($tabla) {
+	$salida	= "";
 	$tabla_aux = stristr($tabla,"Queue: ");
 	while (strlen($tabla_aux) > 0) {
-		//print("<pre>");
 
 		$nombre_array = explode("\n", $tabla_aux,2);
 		$nombre = substr($nombre_array[0],7);
-
-		//print_r($nombre_array);
-		//print_r("NOMBRE:$nombre.");
 
 		$datos_fin = stripos($nombre_array[1],"Queue: ") - 1;
 		if ($datos_fin == "") {
@@ -20,7 +18,6 @@ function parsear_tabla_queues($tabla) {
 		} else {
 			$datos = substr($nombre_array[1],0,$datos_fin);
 		}
-		//print($datos);
 
 		$started_str = stristr($datos,"started = ");
 		if ($started_str=="") {
@@ -30,34 +27,106 @@ function parsear_tabla_queues($tabla) {
 			$started = substr($started_array[0],10,1);
 		}
 
-		//print_r($started_str);
-		//print_r($started_array);
-		//print_r("STARTED:$started.");
 
-		//print("</pre>");
-
-		print("<table border=1>");
-		print("<tr><td>");
-		print("<b>Queue: </b>$nombre&nbsp;");
+		$salida.= "<table border=1>";
+		$salida.= "<tr><td>";;
+		$salida.= "<b>Queue: </b>$nombre&nbsp;";
 		if ($started=="F") {
-			print("<a href='queue_start.php?id=$nombre'>[Start]</a>");
+			$salida.= "<a href='queue_start.php?id=$nombre'>[Start]</a>";
 		} else if ($started=="T") {
-			print("<a href='queue_stop.php?id=$nombre'>[Stop]</a>");
+			$salida.= "<a href='queue_stop.php?id=$nombre'>[Stop]</a>";
 		} else {
-			print("[No disponible]");
+			$salida.= "[No disponible]";
 		}
-		print("</td></tr>");
-		print("<tr><td>");
-		print("<pre>$datos</pre>");
-		print("</td></tr>");
-		print("</table>");
+		$salida.= "</td></tr>";
+		$salida.= "<tr><td>";
+		$salida.= "<pre>$datos</pre>";
+		$salida.= "</td></tr>";
+		$salida.= "</table>";
 
 		//Siguiente queue
-		$tabla_aux = stristr(substr($tabla_aux,6),"Queue: ");	
+		$tabla_aux = stristr(substr($tabla_aux,6),"Queue: ");
 	}
+	return $salida;
+}
+
+function getTablaTrabajos($datos){
+	$tabla = new Tabla("","","../../");
+	$tabla->addColumna(0,"Job id","Id");
+	$tabla->addColumna(1,"Name","Nombre");
+	$tabla->addColumna(2,"User","Usuario");
+	$tabla->addColumna(3,"Time Use","Tiempo");
+	$tabla->addColumna(4," S ","Estado");
+	$tabla->addColumna(5,"Queue","Cola");
+	$tabla->addColumna(6,"botones","");
+
+	$lineas = explode("\n", $datos);
+	$lineas = array_values(array_filter($lineas,"linea_vacia"));
+
+	$posiciones = array();
+	$cabezal	= array_shift($lineas);
+	array_shift($lineas);
+	$cabezales = array("Job id","Name","User","Time Use"," S ","Queue");
+	foreach($cabezales as $etiqueta) {
+			$inicio_cabezal = stripos($cabezal,$etiqueta);
+			$posiciones[$etiqueta] = $inicio_cabezal;
+		}
+	$status_column = 4;
+	foreach ($lineas as $linea){
+		$renglon = array();
+		$job_id = "";
+		$job_status = "";
+
+		foreach($cabezales as $i=>$columna) {
+			$valor = "";
+			if ($i == (sizeof($cabezales)-1)) {
+					// Ultima columna
+				$fin_td = strlen($linea);
+				$valor = trim(substr($linea,$posiciones[$columna],$fin_td-$posiciones[$columna]));
+				}
+			elseif ($i == 0) {
+				// Primer columna (ID)
+				$fin_td = $posiciones[$cabezales[1]]-1;
+				$fullid = trim(substr($linea,$posiciones[$columna],$fin_td-$posiciones[$columna]+1));
+				list($job_id, $maquina) = split("\.",$fullid,2);
+				$valor = $fullid;
+				}
+			else {
+				$fin_td = $posiciones[$cabezales[$i+1]]-1;
+				$hasta =$fin_td-$posiciones[$columna]+1;
+				$valor = trim(substr($linea,$posiciones[$columna],$hasta));
+				}
+
+			if ($i == $status_column) {
+				$job_status = $valor;
+				switch($valor) {
+						case "H":
+							$valor="Held";
+							break;
+						case "Q":
+							$valor="Queued";
+							break;
+						case "R":
+							$valor="Running";
+							break;
+						default:
+							break;
+					}
+				}
+			if ($i == 0) {
+				$valor	= "<a href='job_status.php?id=$job_id'>$valor</a></td>";
+				}
+			$renglon[$columna] = $valor;
+			}
+		$tabla->addRenglon($renglon);
+
+	}
+	return $tabla;
 }
 
 function parsear_tabla_trabajos($tabla) {
+	$salida	= "";
+
 	$cabezal = array("Job id","Name","User","Time Use"," S ","Queue");
 	$cabezal_transformado = array("Job id","Name","User","Time Use","Status","Queue");
 	$status_column = 4;
@@ -68,20 +137,20 @@ function parsear_tabla_trabajos($tabla) {
 
 	// Cabecera
 	if ($tabla_lineas_cant > 2) {
-		print("<table border=1>");
-		print("<tr>");
+		$salida	.= "<table border=1>";
+		$salida	.= "<tr>";
 		$cabezal_pos = array();
 		foreach($cabezal as $key => $value) {
-			print("<td style='font-weight: bold'>$cabezal_transformado[$key]");
+			$salida	.= "<td style='font-weight: bold'>$cabezal_transformado[$key]";
 			$inicio_cabezal = stripos($tabla_lineas[0],$cabezal[$key]);
 			$cabezal_pos[$key] = $inicio_cabezal;
-			print("</td>");
+			$salida	.= "</td>";
 		}
-		print("</tr>");
+		$salida	.= "</tr>";
 
 		// Trabajos
 		for ($linea = 2; $linea < $tabla_lineas_cant; $linea++) {
-			print("<tr>");
+			$salida	.= "<tr>";
 			$job_id = "";
 			$job_status = "";
 			foreach($cabezal as $key => $value) {
@@ -120,32 +189,33 @@ function parsear_tabla_trabajos($tabla) {
 
 				if ($key == 0) {
 					// Primer columna (ID)
-					print("<td><a href='job_status.php?id=$job_id'>$valor</a></td>");
+					$salida	.= "<td><a href='job_status.php?id=$job_id'>$valor</a></td>";
 				} else {
-					print("<td>$valor</td>");
+					$salida	.= "<td>$valor</td>";
 				}
 			}
 
-			print("<td><a href='job_dequeue.php?id=$job_id'>Delete</a></td>");
+			$salida	.= "<td><a href='job_dequeue.php?id=$job_id'>Delete</a></td>";
 			switch ($job_status) {
 				case "H":
-					print("<td><a href='job_release_hold.php?id=$job_id'>Release</a></td>");
+					$salida	.= "<td><a href='job_release_hold.php?id=$job_id'>Release</a></td>";
 					break;
 				default:
-					print("<td><a href='job_hold.php?id=$job_id'>Hold</a></td>");
+					$salida	.= "<td><a href='job_hold.php?id=$job_id'>Hold</a></td>";
 					break;
 			}
-			print("</tr>");
+			$salida	.= "</tr>";
 		}
-		print("</table>");
+		$salida	.= "</table>";
 	} else {
-		print("<pre>Empty.</pre>");
+		$salida	.= "<pre>Empty.</pre>";
 	}
 
 	// Pie
 	if ($tipo < 2) {
-		print("$tabla_lineas[$tabla_lineas_pie]");
+		$salida	.= "$tabla_lineas[$tabla_lineas_pie]";
 	}
+	return $salida;
 }
 
 function parsear_tabla_una_fila($tabla,$cabezal,$tienepie) {
