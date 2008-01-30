@@ -3,6 +3,7 @@ include_once("Conexion.php");
 include_once("TPL.php");
 include_once("Alertas.php");
 include_once("Sesion.php");
+include("Mensajes.php");
 
 class Interfaz{
 
@@ -37,7 +38,12 @@ class Interfaz{
 	}
 	function getError($error){
 		error_log(print_r($error,1));
-		return $this->plantilla->replace($this->plantilla->load("plantillas/mensaje.html"),array("MENSAJE"=>print_r($error,1)));
+		include("Mensajes.php");
+		return $this->plantilla->replace($this->plantilla->load("plantillas/mensaje.html"),array("MENSAJE"=>$MENSAJES[$error["codError"]]));
+	}
+	function getError2($mensaje){
+		include("Mensajes.php");
+		return $this->plantilla->replace($this->plantilla->load("plantillas/mensaje.html"),array("MENSAJE"=>$MENSAJES[$mensaje]));
 	}
 }
 ?>
