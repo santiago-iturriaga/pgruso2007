@@ -37,11 +37,9 @@
 	$link		= 	$plantilla->load("plantillas/alertas/link.html");
 	$checkbox = 	$plantilla->load("plantillas/alertas/checkbox.html");
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
-										array("CLASE_ALERTAS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
+										array("CLASE_ALERTAS"=>'id="actual"'));
 	$msj = null;
 	$msjerror = null;
-
-	//$menuvert		=	$plantilla->load("plantillas/menu_vertical.html");
 
 	//obtengo las alertas
 
@@ -52,7 +50,9 @@
 	$tabAlertas= "";
 
 
-	if($resConsulta["error"]) error_log(print_r($resConsulta,1));
+	if($resConsulta["error"]){
+		$msjerror = $i->getError($res);
+	}
 	else{
 		$tabla = new Tabla();
 		$tabla->addColumna(1,"fecha","Fecha");

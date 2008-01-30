@@ -25,12 +25,13 @@
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/alertas/veralerta.html");
-	$tabalerta		= 	$plantilla->load("plantillas/alertas/tabalerta.html");
+	$tabalerta		= $plantilla->load("plantillas/alertas/tabalerta.html");
 	$msj = null;
 	$msjerror = null;
 
-
-	$menu		=	$plantilla->load("plantillas/menu.html");
+	$interfaz = new Interfaz($conexion,$plantilla,$s);
+	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
+										array("CLASE_ALERTAS"=>'id="actual"'));
 	$menuvert		=	$plantilla->load("plantillas/menu_vertical.html");
 
 	$resConsulta = null;
@@ -43,31 +44,38 @@
 	if(isset($_POST["form_eliminar"])){
 	 	$resConsulta = $alertas->deleteAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 	 	if($resConsulta["error"]){
-	 		error_log(print_r($resConsulta,1));
-	 		$msjerror = "Error al eliminar la alertas";
+	 		$msjerror = $interfaz->getError($resConsulta);
 	 	}else{
-	 		$msj = "La alerta fue eliminada";
+	 		$msj = $interfaz->getMensaje("A001");
 	 	}
 	 	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>""));
 	}else{
 		$resConsulta = $alertas->getAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 		if($resConsulta["error"]){
-		 error_log(print_r($resConsulta,1));
+		 $msjerror = $interfaz->getError($resConsulta);
 		 $ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>""));
-		 $msjerror = "Error al obtener la alertas";
+
 		}else{
 
 			foreach ($resConsulta["alerta"] as $id=>$rowAlerta){
 				$tabalerta = $plantilla->replace($tabalerta,array("FECHA"=>$rowAlerta["fecha"],"ASUNTO"=>$rowAlerta["asunto"],"BODY"=>$rowAlerta["body"]));
 			}
-			//DESCOMENTAR PARA MARCAR LAS ALERTAS COMO LEIDAS
+			// MARCAR LAS ALERTAS COMO LEIDAS
 			$res = $alertas->marcarAlertaLeida($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+			if($res["error"]){
+	 			$msjerror = $interfaz->getError($res);
+	 		}else{
+	 			$msj = $interfaz->getMensaje("A002");
+	 		}
+
+			//Enviar por mail SACAR
+			//echo "antes enviar - ";
+			$res = $alertas->enviarAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+			//echo "des enviar";
 			$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>$tabalerta));
-			$msj = "La alerta fue marcada como leida";
+
 		}
 	}
-
-
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;

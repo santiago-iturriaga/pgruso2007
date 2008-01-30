@@ -14,11 +14,6 @@ set_include_path(get_include_path().PATH_SEPARATOR.
 	if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
 		header("Location: index.php");
 		exit;
-		}
-
-	if($s->sesion->TrabajoActual==null){
-		header("Location: trabajos.php");
-		exit;
 	}
 
 	$plantilla	=	new TPL();
@@ -35,21 +30,19 @@ if(isset($_POST["form_actual"])){
 		if($_POST["form_nueva"] == $_POST["form_confirmacion"]){
 			$res = $u->cambiarClaveUsuario($s->sesion->Usuario->login,$_POST["form_nueva"]);
 			if($res["error"] == 0){
-				$msj		= 	$plantilla->load("plantillas/mensaje.html");
-				$msj = $plantilla->replace($msj,array("MENSAJE"=>"La clave fue cambiada."));
+				$msj		= 	$i->getMensaje("U01");
+
 			}else{
-				$msjerror		= 	$plantilla->load("plantillas/error.html");
-				$msjerror = $plantilla->replace($msjerror,array("MSJERROR"=>"Error al cambiar la clave."));
+				$msjerror		= 	$i->getError($res);
+
 			}
 		}else{
 
-			$msjerror		= 	$plantilla->load("plantillas/error.html");
-			$msjerror = $plantilla->replace($msjerror,array("MSJERROR"=>"La contrasena nueva no es igual a la confirmacion"));
+			$msjerror		= 	$i->getError2("EU04");
 		}
 	}
 	else{
-		$msjerror		= 	$plantilla->load("plantillas/error.html");
-		$msjerror = $plantilla->replace($msjerror,array("MSJERROR"=>"Contrasena invalida"));
+		$msjerror		= 	$i->getError($validos);
 	}
 }
 

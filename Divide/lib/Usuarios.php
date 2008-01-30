@@ -212,14 +212,13 @@ class Usuarios{
 				   "where login=? and password=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($login,$clave),true))
 			{
-			return array("error"=>1,
-						 codError=>$this->conexion->msgError);
+			return array("error"=>1, "codError"=>"EU01");
 			}
 		$salida=array();
 		if(($row=$this->conexion->Next()) != null)
 			return array("error"=>0,"id"=>$row["id"],"administrador"=>$row["administrador"]);
 		else
-			return array("error"=>1,"codError"=>"U001");
+			return array("error"=>1,"codError"=>"EU02");
 	}
 
 	function cambiarClaveUsuario($login,$clave){
@@ -227,8 +226,7 @@ class Usuarios{
 					     where login=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($clave, $login),true))
 				{
-				return array("error"=>1,
-							 codError=>$this->conexion->msgError);
+				return array("error"=>1, "codError"=>"EU03");
 				}
 		return array("error"=>0);
 
