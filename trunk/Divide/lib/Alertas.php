@@ -1,6 +1,7 @@
 <?php
 include_once("Conexion.php");
-//include_once("Alerta.php");
+include_once("TPL.php");
+
 
 class Alertas{
 var $conexion	=	null;
@@ -120,6 +121,39 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 		if(!mail($salida["email"], $salida["asunto"], $mensaje )){
 			return array("error"=>1, "codError"=>"EA01");
 		}
+
+		return array("error"=>0);
+	}
+
+	function asignarAlerta($idUsuario,$idTrabajo,$idAlerta, $textVar){
+		$consulta= "select asunto, body from alertas where id = ?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idAlerta),true))
+			{
+				return array("error"=>1, "codError"=>"EA03");
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null){
+			$salida = array("id"=>$row["id"],"asunto"=>$row["asunto"],"body"=>$row["body"]);
+		}
+		$mensaje = $salida["body"];
+		if($textVar != null){
+		$plantilla	=	new TPL();
+		$mensaje = 	$plantilla->replace($mensaje,$textVar);
+		}
+
+		$consulta2= "insert into trabajo_alerta(alerta,trabajo,body) values(?,?,?)";
+
+		if(!$this->conexion->EjecutarConsulta($consulta2,array($idAlerta, $idTrabajo, $mensaje),true))
+			{
+				return array("error"=>1, "codError"=>"EA08");
+			}
+
+		$consulta3= "insert into usuario_alerta(usuario,alerta,trabajo) values(?,?,?)";
+
+		if(!$this->conexion->EjecutarConsulta($consulta3,array($idUsuario, $idAlerta, $idTrabajo),true))
+			{
+				return array("error"=>1, "codError"=>"EA09");
+			}
 
 		return array("error"=>0);
 	}

@@ -70,8 +70,11 @@
 
 			//Enviar por mail SACAR
 			//echo "antes enviar - ";
-			$res = $alertas->enviarAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+			//$res = $alertas->enviarAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 			//echo "des enviar";
+			//asignar alerta
+			//$res = $alertas->asignarAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,3, array("TRABAJO" => "BOLUDO"));
+
 			$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>$tabalerta));
 
 		}
