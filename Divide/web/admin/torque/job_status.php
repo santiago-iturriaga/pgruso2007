@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<? 
-	include_once("const.inc.php"); 
+<?
 	include_once("lib.inc.php");
+	include_once("const.inc.php");
 ?>
 <html>
 <head>
@@ -19,11 +19,11 @@
 		print("<span style='font-size: 2.0em'>Job status</span>&nbsp;".
 			"<span style='font-size: 0.7em'>[<a href='job_status.php'>volver</a>]</span>");
 		print("<pre>$qstat_job</pre>");
-		
+
 	} else {
 		// Listado de todos los trabajos
 		$qstat = `ssh -l $username $host "$qstat_cmd; exit" 2>&1`;
-		
+
 		print("<span style='font-size: 2.0em'>Jobs</span>");
 		print("<table border=1>");
 
@@ -35,7 +35,7 @@
 
 			// Columna que contiene el status del trabajo
 			/*$status_column = 4;
-	
+
 			for ($linea = 0; $linea < sizeof($qstat_lines) - 1; $linea++) {
 				// Salteo la linea con '---------------'
 				if ($linea != 1) {
@@ -44,17 +44,17 @@
 					} else {
 						print("<tr>");
 					}
-	
+
 					// Elimino espacios sobrantes
 					$qstat_lines_sin_espacios = ereg_replace('(  *)', " ", $qstat_lines[$linea]);
-	
+
 					// Separo segun espacios
 					$qstat_line = explode(" ", $qstat_lines_sin_espacios);
-					
+
 					if ($linea >= 2) {
 						list($jobID, $maquina) = split("\.",$qstat_line[0],2);
 					}
-	
+
 					for ($columna = 0; $columna < sizeof($qstat_line); $columna++) {
 						print("<td>");
 						if ($columna == 0 && $linea >= 2) {
@@ -80,7 +80,7 @@
 							}
 						}
 					}
-	
+
 					if ($linea >= 2) {
 						print("<td><a href='job_dequeue.php?id=$jobID'>Delete</a></td>");
 
@@ -90,7 +90,7 @@
 							print("<td><a href='job_hold.php?id=$jobID'>Hold</a></td>");
 						}
 					}
-	
+
 					print("</tr>");
 				}
 			}
