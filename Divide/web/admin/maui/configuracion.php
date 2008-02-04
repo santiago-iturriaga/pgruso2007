@@ -28,7 +28,6 @@
 	$pagina	= '<table><tr><td>';
 	$renglones = array();
 	foreach ($filas as $fila){
-		error_log($fila);
 		$fila=trim($fila);
 		if(!($fila[0]=='#' or $fila==""))
 			{
