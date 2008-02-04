@@ -1,6 +1,66 @@
 <?
+set_include_path(get_include_path().PATH_SEPARATOR.
+					 '../../lib');
+
+include_once("Tabla/Tabla.php");
+
 function linea_vacia($val) {
 	return ($val != "");
+}
+
+function getTablaTrabajos($tabla,$cabezal,$tipo) {
+	$tabla = new Tabla("","","../../");
+	$tabla_lineas = explode("\n", $tabla);
+	$tabla_lineas = array_values(array_filter($tabla_lineas,"linea_vacia"));
+	$tabla_lineas_cant = sizeof($tabla_lineas);
+
+	$cant_min_lineas = 0;
+	if ($tipo < 2) {
+		// Tiene pie de tabla
+		$cant_min_lineas = 2;
+		$tabla_lineas_pie = $tabla_lineas_cant-1;
+	} else {
+		// No tiene pie de tabla
+		$cant_min_lineas = 1;
+		$tabla_lineas_pie = $tabla_lineas_cant;
+	}
+
+	// Cabecera
+	if ($tabla_lineas_cant > $cant_min_lineas) {
+		$cabezal_fin_pos = array();
+
+		foreach($cabezal as $key => $value) {
+			$inicio_cabezal = stripos($tabla_lineas[0],$cabezal[$key]);
+			$fin_cabezal = $inicio_cabezal+strlen($cabezal[$key]);
+			$cabezal_fin_pos[$key] = $fin_cabezal-1;
+			$tabla->addColumna($key,$value);
+		}
+		$status_column = 4;
+
+		for ($linea = 1; $linea < $tabla_lineas_pie; $linea++) {
+			$renglon = array();
+			$valor = "";
+
+			foreach($cabezal as $key => $value) {
+				if ($key == 0) {
+					$inicio_td = 0;
+					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
+				} else {
+					$inicio_td = $cabezal_fin_pos[$key-1]+1;
+					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
+				}
+			}
+
+			if ($key == 0) {
+				$valor	= "<a href='jobs.php?id=$valor'>$valor</a></td>";
+			}
+
+			$renglon[$columna] = $valor;
+		}
+
+		$tabla->addRenglon($renglon);
+	}
+
 }
 
 // $tipo puede ser:
@@ -33,7 +93,7 @@ function parsear_tabla($tabla,$cabezal,$tipo) {
 			print("</td>");
 		}
 		print("</tr>");
-	
+
 		// Trabajos
 		for ($linea = 1; $linea < $tabla_lineas_pie; $linea++) {
 			print("<tr>");
@@ -46,7 +106,7 @@ function parsear_tabla($tabla,$cabezal,$tipo) {
 				} else {
 					$inicio_td = $cabezal_fin_pos[$key-1]+1;
 					print("<td>".trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1))."</td>");
-				}			
+				}
 			}
 
 			switch ($tipo) {
@@ -56,7 +116,7 @@ function parsear_tabla($tabla,$cabezal,$tipo) {
 					print("<td><a href='job_cancel.php?id=$id'>[Cancel]</a></td>");
 					print("<td><a href='job_hold.php?id=$id'>[Hold]</a></td>");
 					print("<td><a href='job_run.php?id=$id&suspend'>[Suspend]</a></td>");
-					
+
 					break;
 				case 1:
 					// Idle
