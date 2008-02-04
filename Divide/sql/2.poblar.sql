@@ -25,6 +25,7 @@ insert into trabajo_grupo (trabajo,grupo) values (2,2);
 
 insert into alertas (asunto,body) values ('Finalización de taea','La tarea a finalizado');
 insert into alertas (asunto,body) values ('Limite Cuota','Pasado de cuota');
+insert into alertas (asunto,body) values ('Limite Cuota 2','Pasado de cuota en trabajo {TRABAJO}');
 
 
 insert into trabajo_alerta(alerta,trabajo,body) values(2,1,'Pasado de cuota');

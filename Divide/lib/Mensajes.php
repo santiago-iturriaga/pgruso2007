@@ -7,11 +7,12 @@
 	//ALERTAS
 	$MENSAJES["EA01"]  = "Error en el envio de mail";
 	$MENSAJES["EA02"]  = "Error al eliminar la alerta";
-	$MENSAJES["EA03"]  = "Error al obtener la alertas";
+	$MENSAJES["EA03"]  = "Error al obtener la alerta";
 	$MENSAJES["EA04"]  = "Error al marcar como leida la alerta";
 	$MENSAJES["EA05"]  = "Error al obtener alertas no leidas";
 	$MENSAJES["EA06"]  = "Error al obtener alertas";
 	$MENSAJES["EA07"]  = "Error al crear una alerta";
+	$MENSAJES["EA08"]  = "Error al insertar en trabajo_alerta";
 	$MENSAJES["A001"] = "La alerta fue eliminada";
 	$MENSAJES["A002"] = "La alerta fue marcada como leida";
 
