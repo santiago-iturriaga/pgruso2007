@@ -61,25 +61,25 @@ function getTablaTrabajos($tabla_string,$cabezal,$tipo) {
 			switch ($tipo) {
 				case 0:
 					// Active
-					$botones .= "<td><a href='job_diagnose.php?id=$id'>[Diag]</a></td>";
-					$botones .= "<td><a href='job_cancel.php?id=$id'>[Cancel]</a></td>";
-					$botones .= "<td><a href='job_hold.php?id=$id'>[Hold]</a></td>";
-					$botones .= "<td><a href='job_run.php?id=$id&suspend'>[Suspend]</a></td>";
+					$botones .= "<a href='job_diagnose.php?id=$id'>[Diag]</a>";
+					$botones .= "<a href='job_cancel.php?id=$id'>[Cancel]</a>";
+					$botones .= "<a href='job_hold.php?id=$id'>[Hold]</a>";
+					$botones .= "<a href='job_run.php?id=$id&suspend'>[Suspend]</a>";
 
 					break;
 				case 1:
 					// Idle
-					$botones .= "<td><a href='job_diagnose.php?id=$id'>[Diag]</a></td>";
-					$botones .= "<td><a href='job_cancel.php?id=$id'>[Cancel]</a></td>";
-					$botones .= "<td><a href='job_hold.php?id=$id'>[Hold]</a></td>";
-					$botones .= "<td><a href='job_run.php?id=$id'>[Run]</a></td>";
+					$botones .= "<a href='job_diagnose.php?id=$id'>[Diag]</a>";
+					$botones .= "<a href='job_cancel.php?id=$id'>[Cancel]</a>";
+					$botones .= "<a href='job_hold.php?id=$id'>[Hold]</a>";
+					$botones .= "<a href='job_run.php?id=$id'>[Run]</a>";
 
 					break;
 				case 2:
 					// Blocked
-					$botones .= "<td><a href='job_diagnose.php?id=$id'>[Diag]</a></td>";
-					$botones .= "<td><a href='job_cancel.php?id=$id'>[Cancel]</a></td>";
-					$botones .= "<td><a href='job_release_hold.php?id=$id'>[Release]</a></td>";
+					$botones .= "<a href='job_diagnose.php?id=$id'>[Diag]</a>";
+					$botones .= "<a href='job_cancel.php?id=$id'>[Cancel]</a>";
+					$botones .= "<a href='job_release_hold.php?id=$id'>[Release]</a>";
 
 					break;
 				default:
@@ -91,6 +91,11 @@ function getTablaTrabajos($tabla_string,$cabezal,$tipo) {
 
 		$tabla->addRenglon($renglon);
 	}
+
+	// Pie
+	//if ($tipo < 2) {
+	//	print("$tabla_lineas[$tabla_lineas_pie]");
+	//}
 
 	return $tabla;
 }

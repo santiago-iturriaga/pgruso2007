@@ -56,18 +56,20 @@
 	$cabezal_blocked = array("JobName","User","Reason");
 	$tabla_blocked = getTablaTrabajos($jobs_blocked,$cabezal_blocked,2);
 
-    /* if (ISSET($_REQUEST["id"])) {
+	$info = "";
+    if (ISSET($_REQUEST["id"])) {
 		// Detalle de un trabajo
 		$id = $_REQUEST["id"];
 		$qstat_job = `ssh -l $username $host "$qstat_cmd -f $id; exit" 2>&1`;
-		$pagina.="<span style='font-size: 2.0em'>Job status</span>&nbsp;".
-			"<span style='font-size: 0.7em'>[<a href='job_status.php'>volver</a>]</span>";
-		$pagina.="<pre>$qstat_job</pre>";
-	} */
+
+		$info .= "<span style='font-size: 1.5em'>Informacion del trabajo</span>";
+		$info .= "<pre>$qstat_job</pre>";
+	}
 
 	$ppal	=	$plantilla->replace($ppal,array("TABLA_ACTIVE"=>$tabla_active->getTabla()));
 	$ppal	=	$plantilla->replace($ppal,array("TABLA_IDLE"=>$tabla_idle->getTabla()));
 	$ppal	=	$plantilla->replace($ppal,array("TABLA_BLOCKED"=>$tabla_blocked->getTabla()));
+	$ppal	=	$plantilla->replace($ppal,array("INFO_TRABAJO"=>$info));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"ERROR"=>$error));
