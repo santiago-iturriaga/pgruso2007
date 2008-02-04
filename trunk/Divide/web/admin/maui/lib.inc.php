@@ -8,9 +8,9 @@ function linea_vacia($val) {
 	return ($val != "");
 }
 
-function getTablaTrabajos($tabla,$cabezal,$tipo) {
+function getTablaTrabajos($tabla_string,$cabezal,$tipo) {
 	$tabla = new Tabla("","","../../");
-	$tabla_lineas = explode("\n", $tabla);
+	$tabla_lineas = explode("\n", $tabla_string);
 	$tabla_lineas = array_values(array_filter($tabla_lineas,"linea_vacia"));
 	$tabla_lineas_cant = sizeof($tabla_lineas);
 
