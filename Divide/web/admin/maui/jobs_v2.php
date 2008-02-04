@@ -50,11 +50,11 @@
 
 	$jobs_idle = `ssh -l $username $host "$jobs_cmd -i; exit" 2>&1`;
 	$cabezal_idle = array("JobName","Priority","XFactor","Q","User","Group","Procs","WCLimit","Class","SystemQueueTime");
-	$tabla_idle = getTablaTrabajos($jobs_active,$cabezal_idle,1);
+	$tabla_idle = getTablaTrabajos($jobs_idle,$cabezal_idle,1);
 
 	$jobs_blocked = `ssh -l $username $host "$jobs_cmd -b; exit" 2>&1`;
 	$cabezal_blocked = array("JobName","User","Reason");
-	$tabla_idle = getTablaTrabajos($jobs_active,$cabezal_blocked,2);
+	$tabla_blocked = getTablaTrabajos($jobs_blocked,$cabezal_blocked,2);
 
     /* if (ISSET($_REQUEST["id"])) {
 		// Detalle de un trabajo
@@ -67,7 +67,7 @@
 
 	$ppal	=	$plantilla->replace($ppal,array("TABLA_ACTIVE"=>$tabla_active->getTabla()));
 	$ppal	=	$plantilla->replace($ppal,array("TABLA_IDLE"=>$tabla_idle->getTabla()));
-	$ppal	=	$plantilla->replace($ppal,array("TABLA_BLOCKED"=>$tabla_idle->getTabla()));
+	$ppal	=	$plantilla->replace($ppal,array("TABLA_BLOCKED"=>$tabla_blocked->getTabla()));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"ERROR"=>$error));
