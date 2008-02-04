@@ -20,7 +20,43 @@
 	$ppal		= 	$plantilla->load("plantillas/jobs/jobs.html");
 	$mensaje = "";
 	$error = "";
+	/*        u - USER
+               o - OTHER
+               s - SYSTEM
+               n - None */
+    $held_type = "u";
+	if (ISSET($_REQUEST["eliminar"])) {
+		$id = $_REQUEST["eliminar"];
+		$qdel_result = `ssh -l $username $host "$qdel_cmd $id; exit" 2>&1`;
 
+		if ($qdel_result=="") {
+			$mensaje = "El trabajo fue eliminado.";
+		} else {
+			$mensaje = "No fue posible eliminar el trabajo.";
+			error_log($qdel_result);
+		}
+	}
+	if (ISSET($_REQUEST["detener"])) {
+		$id = $_REQUEST["detener"];
+		$qhold_result = `ssh -l $username $host "$qhold_cmd -h $held_type $id; exit" 2>&1`;
+		if ($qhold_result=="") {
+			$mensaje = "El trabajo fue detenido.";
+		} else {
+			$mensaje = "No fue posible detener el trabajo.";
+			error_log($qhold_result);
+		}
+	}
+	if (ISSET($_REQUEST["reiniciar"])) {
+		$id = $_REQUEST["reiniciar"];
+		$qrls_result = `ssh -l $username $host "$qrls_cmd -h $held_type $id; exit" 2>&1`;
+		if ($qrls_result=="") {
+			$mensaje = "El trabajo fue reiniciado.";
+		} else {
+			$mensaje = "No fue posible reiniciar el trabajo.";
+			error_log($qrls_result);
+		}
+
+	}
 	// Listado de todos los trabajos
 	$qstat = `ssh -l $username $host "$qstat_cmd; exit" 2>&1`;
 
@@ -35,9 +71,8 @@
 		// Detalle de un trabajo
 		$id = $_REQUEST["id"];
 		$qstat_job = `ssh -l $username $host "$qstat_cmd -f $id; exit" 2>&1`;
-		$pagina.="<span style='font-size: 2.0em'>Job status</span>&nbsp;".
-			"<span style='font-size: 0.7em'>[<a href='job_status.php'>volver</a>]</span>";
-		$pagina.="<pre>$qstat_job</pre>";
+		$pagina.=getStatusJob($qstat_job);
+
 
 	}
 	$ppal	=	$plantilla->replace($ppal,array("PAGINA"=>$pagina));
