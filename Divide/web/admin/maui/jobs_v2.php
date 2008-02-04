@@ -15,7 +15,7 @@
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
 	include_once("const.inc.php");
-	include_once("lib.inc.php");
+	//include_once("lib.inc.php");
 
 	$s = new Sesion(0);
 	if($s->sesion == null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
@@ -46,15 +46,15 @@
 	*/
 	$jobs_active = `ssh -l $username $host "$jobs_cmd -r; exit" 2>&1`;
 	$cabezal_active = array("JobName","S Par","Effic","XFactor","Q","User","Group","MHost","Procs","Remaining","StartTime");
-	parsear_tabla($jobs_active,$cabezal_active,0);
+	getTablaTrabajos($jobs_active,$cabezal_active,0);
 
-	$jobs_idle = `ssh -l $username $host "$jobs_cmd -i; exit" 2>&1`;
+	/*$jobs_idle = `ssh -l $username $host "$jobs_cmd -i; exit" 2>&1`;
 	$cabezal_idle = array("JobName","Priority","XFactor","Q","User","Group","Procs","WCLimit","Class","SystemQueueTime");
 	parsear_tabla($jobs_idle,$cabezal_idle,1);
 
 	$jobs_blocked = `ssh -l $username $host "$jobs_cmd -b; exit" 2>&1`;
 	$cabezal_blocked = array("JobName","User","Reason");
-	parsear_tabla($jobs_blocked,$cabezal_blocked,2);
+	parsear_tabla($jobs_blocked,$cabezal_blocked,2);*/
 
     /* if (ISSET($_REQUEST["id"])) {
 		// Detalle de un trabajo

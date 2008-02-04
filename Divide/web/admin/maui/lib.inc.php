@@ -35,6 +35,7 @@ function getTablaTrabajos($tabla,$cabezal,$tipo) {
 			$cabezal_fin_pos[$key] = $fin_cabezal-1;
 			$tabla->addColumna($key,$value);
 		}
+		$tabla->addColumna(count($cabezal),"botones");
 		$status_column = 4;
 
 		for ($linea = 1; $linea < $tabla_lineas_pie; $linea++) {
@@ -45,22 +46,49 @@ function getTablaTrabajos($tabla,$cabezal,$tipo) {
 				if ($key == 0) {
 					$inicio_td = 0;
 					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
+					$valor	= "<a href='jobs.php?id=$valor'>$valor</a></td>";
 				} else {
 					$inicio_td = $cabezal_fin_pos[$key-1]+1;
 					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
 				}
+
+				$renglon[$key] = $valor;
 			}
 
-			if ($key == 0) {
-				$valor	= "<a href='jobs.php?id=$valor'>$valor</a></td>";
-			}
+			$botones = "";
+			switch ($tipo) {
+				case 0:
+					// Active
+					$botones .= "<td><a href='job_diagnose.php?id=$id'>[Diag]</a></td>";
+					$botones .= "<td><a href='job_cancel.php?id=$id'>[Cancel]</a></td>";
+					$botones .= "<td><a href='job_hold.php?id=$id'>[Hold]</a></td>";
+					$botones .= "<td><a href='job_run.php?id=$id&suspend'>[Suspend]</a></td>";
 
-			$renglon[$columna] = $valor;
+					break;
+				case 1:
+					// Idle
+					$botones .= "<td><a href='job_diagnose.php?id=$id'>[Diag]</a></td>";
+					$botones .= "<td><a href='job_cancel.php?id=$id'>[Cancel]</a></td>";
+					$botones .= "<td><a href='job_hold.php?id=$id'>[Hold]</a></td>";
+					$botones .= "<td><a href='job_run.php?id=$id'>[Run]</a></td>";
+
+					break;
+				case 2:
+					// Blocked
+					$botones .= "<td><a href='job_diagnose.php?id=$id'>[Diag]</a></td>";
+					$botones .= "<td><a href='job_cancel.php?id=$id'>[Cancel]</a></td>";
+					$botones .= "<td><a href='job_release_hold.php?id=$id'>[Release]</a></td>";
+
+					break;
+				default:
+					// None
+					break;
+			}
+			$renglon[count($cabezal)] = $botones;
 		}
 
 		$tabla->addRenglon($renglon);
 	}
-
 }
 
 // $tipo puede ser:
