@@ -1,6 +1,6 @@
 <?
 set_include_path(get_include_path().PATH_SEPARATOR.
-					 '../../lib');
+					 '../../../lib');
 
 include_once("Tabla/Tabla.php");
 
