@@ -46,15 +46,15 @@
 	*/
 	$jobs_active = `ssh -l $username $host "$jobs_cmd -r; exit" 2>&1`;
 	$cabezal_active = array("JobName","S Par","Effic","XFactor","Q","User","Group","MHost","Procs","Remaining","StartTime");
-	getTablaTrabajos($jobs_active,$cabezal_active,0);
+	$tabla_active = getTablaTrabajos($jobs_active,$cabezal_active,0);
 
-	/*$jobs_idle = `ssh -l $username $host "$jobs_cmd -i; exit" 2>&1`;
+	$jobs_idle = `ssh -l $username $host "$jobs_cmd -i; exit" 2>&1`;
 	$cabezal_idle = array("JobName","Priority","XFactor","Q","User","Group","Procs","WCLimit","Class","SystemQueueTime");
-	parsear_tabla($jobs_idle,$cabezal_idle,1);
+	$tabla_idle = getTablaTrabajos($jobs_active,$cabezal_idle,1);
 
 	$jobs_blocked = `ssh -l $username $host "$jobs_cmd -b; exit" 2>&1`;
 	$cabezal_blocked = array("JobName","User","Reason");
-	parsear_tabla($jobs_blocked,$cabezal_blocked,2);*/
+	$tabla_idle = getTablaTrabajos($jobs_active,$cabezal_blocked,2);
 
     /* if (ISSET($_REQUEST["id"])) {
 		// Detalle de un trabajo
@@ -65,7 +65,9 @@
 		$pagina.="<pre>$qstat_job</pre>";
 	} */
 
-	$ppal	=	$plantilla->replace($ppal,array("PAGINA"=>$pagina));
+	$ppal	=	$plantilla->replace($ppal,array("TABLA_ACTIVE"=>$tabla_active->getTabla()));
+	$ppal	=	$plantilla->replace($ppal,array("TABLA_IDLE"=>$tabla_idle->getTabla()));
+	$ppal	=	$plantilla->replace($ppal,array("TABLA_BLOCKED"=>$tabla_idle->getTabla()));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"ERROR"=>$error));
