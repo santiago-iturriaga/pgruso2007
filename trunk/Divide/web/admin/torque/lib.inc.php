@@ -1,4 +1,7 @@
 <?
+set_include_path(get_include_path().PATH_SEPARATOR.
+					 '../../lib');
+
 	include_once("Tabla/Tabla.php");
 function linea_vacia($val) {
 	return ($val != "");
@@ -114,7 +117,7 @@ function getTablaTrabajos($datos){
 					}
 				}
 			if ($i == 0) {
-				$valor	= "<a href='job_status.php?id=$job_id'>$valor</a></td>";
+				$valor	= "<a href='jobs.php?id=$job_id'>$valor</a></td>";
 				}
 			$renglon[$columna] = $valor;
 			}
