@@ -40,9 +40,9 @@ function getTablaTrabajos($tabla_string,$cabezal,$tipo) {
 
 		for ($linea = 1; $linea < $tabla_lineas_pie; $linea++) {
 			$renglon = array();
-			$valor = "";
 
 			foreach($cabezal as $key => $value) {
+				$valor = "";
 				if ($key == 0) {
 					$inicio_td = 0;
 					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
@@ -89,6 +89,8 @@ function getTablaTrabajos($tabla_string,$cabezal,$tipo) {
 
 		$tabla->addRenglon($renglon);
 	}
+
+	return $tabla;
 }
 
 // $tipo puede ser:
