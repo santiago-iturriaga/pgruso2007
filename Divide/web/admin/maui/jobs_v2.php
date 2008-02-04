@@ -15,7 +15,7 @@
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
 	include_once("const.inc.php");
-	//include_once("lib.inc.php");
+	include_once("lib.inc.php");
 
 	$s = new Sesion(0);
 	if($s->sesion == null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
