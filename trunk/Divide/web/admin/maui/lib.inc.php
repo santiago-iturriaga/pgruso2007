@@ -33,9 +33,9 @@ function getTablaTrabajos($tabla_string,$cabezal,$tipo) {
 			$inicio_cabezal = stripos($tabla_lineas[0],$cabezal[$key]);
 			$fin_cabezal = $inicio_cabezal+strlen($cabezal[$key]);
 			$cabezal_fin_pos[$key] = $fin_cabezal-1;
-			$tabla->addColumna($key,$value);
+			$tabla->addColumna($key,$key,$value);
 		}
-		$tabla->addColumna(count($cabezal),"botones");
+		$tabla->addColumna(count($cabezal),count($cabezal),"botones");
 		$status_column = 4;
 
 		for ($linea = 1; $linea < $tabla_lineas_pie; $linea++) {
