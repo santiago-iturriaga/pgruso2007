@@ -35,18 +35,20 @@ function getTablaTrabajos($tabla_string,$cabezal,$tipo) {
 			$cabezal_fin_pos[$key] = $fin_cabezal-1;
 			$tabla->addColumna($key,$key,$value);
 		}
-		$tabla->addColumna(count($cabezal),count($cabezal),"botones");
+		$tabla->addColumna(count($cabezal),count($cabezal),"");
 		$status_column = 4;
 
 		for ($linea = 1; $linea < $tabla_lineas_pie; $linea++) {
 			$renglon = array();
+			$id = "";
 
 			foreach($cabezal as $key => $value) {
 				$valor = "";
 				if ($key == 0) {
 					$inicio_td = 0;
 					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
-					$valor	= "<a href='jobs.php?id=$valor'>$valor</a></td>";
+					$id = $valor;
+					$valor = "<a href='jobs.php?id=$valor'>$valor</a></td>";
 				} else {
 					$inicio_td = $cabezal_fin_pos[$key-1]+1;
 					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
