@@ -44,7 +44,7 @@
 		$diagnose = `ssh -l $username $host "$diagnose_cmd -j $id; exit" 2>&1`;
 		$cabezal_diag=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class Features");
 		$cabezal_diag_titulos=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class Features");
-		$mensaje = getTablaDiag($diagnose,$cabezal_diag,$cabezal_diag_titulos,false)->getTabla();
+		$info = getTablaDiag($diagnose,$cabezal_diag,$cabezal_diag_titulos,false)->getTabla();
 	} else if (ISSET($_REQUEST["cancel"])) {
 		$id = $_REQUEST["cancel"];
 		$canceljob = `ssh -l $username $host "$canceljob_cmd $id; exit" 2>&1`;
