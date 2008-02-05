@@ -15,7 +15,7 @@
 	$error = "";
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>"",
+												"MENU"=>"",
 												"MENSAJE"=>$mensaje,
 												"ERROR"=>$error));
 	$s->salvar();
