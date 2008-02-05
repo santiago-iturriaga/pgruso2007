@@ -1,6 +1,6 @@
 <?
 	$username = "santiago";
-	$host = "localhost";
+	$host = "192.168.0.3";
 
 	$config_cmd = "/usr/local/maui/bin/showconfig";
 	$canceljob_cmd = "/usr/local/maui/bin/canceljob";

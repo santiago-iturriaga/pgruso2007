@@ -1,40 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<? 
-	include_once("lib.inc.php"); 
-	include_once("const.inc.php");
+<?php
+/*
+ * Created on Feb 4, 2008
+ *
+ * To change the template for this generated file go to
+ * Window - Preferences - PHPeclipse - PHP - Code Templates
+ */
 ?>
-<html>
-<head>
-<title></title>
-</head>
-<body>
-	<?
+<?php
+	set_include_path(get_include_path().PATH_SEPARATOR.
+					 '../../../lib');
+	include_once("TPL.php");
+	include_once("Sesion.php");
+	include_once("Constantes.php");
+	include_once("Conexion.php");
+	include_once("Tabla/Tabla.php");
+	include_once("const.inc.php");
+	include_once("lib.inc.php");
+
+	$s = new Sesion(0);
+	if($s->sesion == null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
+		header("Location: ../../index.php");
+		exit;
+	}
+
+	$plantilla	=	new TPL();
+	$base		=	$plantilla->load("plantillas/base.html");
+	$ppal		= 	$plantilla->load("plantillas/jobs/jobs.html");
+	$mensaje = "";
+	$error = "";
+
 	/*
 	-b // BLOCKED QUEUE
 	-i // IDLE QUEUE
 	-r // ACTIVE QUEUE
 	*/
-	//print("<div style='font-size: 2.0em'>Jobs</div>");
-	$selected=0;
-	include_once("menu.inc.php");
-
 	$jobs_active = `ssh -l $username $host "$jobs_cmd -r; exit" 2>&1`;
-	print("<div><span style='font-size: 1.5em'>Active</span>");
 	$cabezal_active = array("JobName","S Par","Effic","XFactor","Q","User","Group","MHost","Procs","Remaining","StartTime");
-	parsear_tabla($jobs_active,$cabezal_active,0);
-	print("</div>");
+	$tabla_active = getTablaTrabajos($jobs_active,$cabezal_active,0);
 
 	$jobs_idle = `ssh -l $username $host "$jobs_cmd -i; exit" 2>&1`;
-	print("<br/><div><span style='font-size: 1.5em'>Idle</span>");
 	$cabezal_idle = array("JobName","Priority","XFactor","Q","User","Group","Procs","WCLimit","Class","SystemQueueTime");
-	parsear_tabla($jobs_idle,$cabezal_idle,1);
-	print("</div>");
+	$tabla_idle = getTablaTrabajos($jobs_idle,$cabezal_idle,1);
 
 	$jobs_blocked = `ssh -l $username $host "$jobs_cmd -b; exit" 2>&1`;
-	print("<br/><div><span style='font-size: 1.5em'>Blocked</span>");
 	$cabezal_blocked = array("JobName","User","Reason");
-	parsear_tabla($jobs_blocked,$cabezal_blocked,2);
-	print("</div>");
-	?>
-</body>
-</html>
+	$tabla_blocked = getTablaTrabajos($jobs_blocked,$cabezal_blocked,2);
+
+	$info = "";
+    if (ISSET($_REQUEST["id"])) {
+		// Detalle de un trabajo
+		$id = $_REQUEST["id"];
+		$checkjob_job = `ssh -l $username $host "$checkjob_cmd -v $id; exit" 2>&1`;
+
+		$tabla = new Tabla("","","../../");
+		$tabla->addColumna(0,0,"Informacion del trabajo");
+		$tabla->addRenglon(array("<pre>".$checkjob_job."</pre>"));
+		$info = $tabla->getTabla();
+	}
+
+	$ppal	=	$plantilla->replace($ppal,array("TABLA_ACTIVE"=>$tabla_active->getTabla()));
+	$ppal	=	$plantilla->replace($ppal,array("TABLA_IDLE"=>$tabla_idle->getTabla()));
+	$ppal	=	$plantilla->replace($ppal,array("TABLA_BLOCKED"=>$tabla_blocked->getTabla()));
+	$ppal	=	$plantilla->replace($ppal,array("INFO_TRABAJO"=>$info));
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENSAJE"=>$mensaje,
+												"ERROR"=>$error));
+	$s->salvar();
+
+	echo $base;
+?>
