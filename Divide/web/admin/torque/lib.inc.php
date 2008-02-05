@@ -3,6 +3,7 @@ set_include_path(get_include_path().PATH_SEPARATOR.
 					 '../../../lib');
 
 	include_once("Tabla/Tabla.php");
+
 function linea_vacia($val) {
 	return ($val != "");
 }
@@ -127,6 +128,7 @@ function getTablaTrabajos($datos){
 			$inicio_cabezal = stripos($cabezal,$etiqueta);
 			$posiciones[$etiqueta] = $inicio_cabezal;
 		}
+
 	$status_column = 4;
 	foreach ($lineas as $linea){
 		$renglon = array();
@@ -136,7 +138,7 @@ function getTablaTrabajos($datos){
 		foreach($cabezales as $i=>$columna) {
 			$valor = "";
 			if ($i == (sizeof($cabezales)-1)) {
-					// Ultima columna
+				// Ultima columna
 				$fin_td = strlen($linea);
 				$valor = trim(substr($linea,$posiciones[$columna],$fin_td-$posiciones[$columna]));
 				}
