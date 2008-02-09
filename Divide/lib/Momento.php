@@ -24,9 +24,9 @@ class Momento{
 		if(!$this->db->EjecutarConsulta($consulta,array($id_cliente),false))
 			{
 			return array("error"=>1,
-						 "codError"=>$this->conexion->msgError);
+						 "codError"=>$this->db->msgError);
 			}
-		$row=$this->conexion->Next();
+		$row=$this->db->Next();
 		$usr_linux=$row["usr_linux"];
 
 		$plantilla	=	new TPL();
@@ -102,9 +102,9 @@ class Momento{
 		if(!$this->db->EjecutarConsulta($consulta,array($idCliente),false))
 			{
 			return array("error"=>1,
-						 "codError"=>$this->conexion->msgError);
+						 "codError"=>$this->db->msgError);
 			}
-		$row=$this->conexion->Next();
+		$row=$this->db->Next();
 		$usr_linux=$row["usr_linux"];
 
 		$ruta =RAIZ;
@@ -122,9 +122,9 @@ class Momento{
 		if(!$this->db->EjecutarConsulta($consulta,array($idCliente),false))
 			{
 			return array("error"=>1,
-						 "codError"=>$this->conexion->msgError);
+						 "codError"=>$this->db->msgError);
 			}
-		$row=$this->conexion->Next();
+		$row=$this->db->Next();
 		$usr_linux=$row["usr_linux"];
 
 		$ruta =RAIZ.'/'.$idCliente;
