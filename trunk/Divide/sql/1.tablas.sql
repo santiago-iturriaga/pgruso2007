@@ -1,6 +1,7 @@
 create table cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(12) not null,
+    usr_linux  VARCHAR(64) not null,
     UNIQUE (nombre));
 
 create table trabajo (

@@ -37,7 +37,7 @@
 
 
 	if(isset($_POST["nombre_cliente"])){
-		$res	= $usuarios->crearCliente($_POST["nombre_cliente"]);
+		$res	= $usuarios->crearCliente($_POST["nombre_cliente"],$_POST["usuario_linux"]);
 		if($res["error"])
 			$error	= $interfaz->getError($res);
 		else
