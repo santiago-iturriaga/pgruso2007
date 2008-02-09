@@ -21,8 +21,8 @@
 	$mensaje = "";
 	$error = "";
 
-
-	$nodes = `ssh -l $username $host "$diagnose_cmd -n; exit" 2>&1`;
+	$command = SSH." -l ".USERNAME." ".HOST." \"".DIAGNOSE_CMD." -n; exit\" 2>&1";
+	$nodes = `$command`;
 	$nodes = trim($nodes);
 	$nodos = explode("\n",$nodes);
 	array_shift($nodos);
