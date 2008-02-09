@@ -22,9 +22,11 @@
 	$error = "";
 
 
-	$maui = `ssh -l $username $host "$status_cmd; exit" 2>&1`;
+	$command = SSH." -l ".USERNAME." ".HOST." \"".STATUS_CMD."; exit\" 2>&1";
+	$maui = `$comando`;
 
-	$sistema = `ssh -l $username $host "$showstate_cmd; exit" 2>&1`;
+	$command = SSH." -l ".USERNAME." ".HOST." \"".SHOWSTATE_CMD."; exit\" 2>&1";
+	$sistema = `$comando`;
 	$ppal	=	$plantilla->replace($ppal,array("MAUI"=>$maui,
 												"SISTEMA"=>$sistema));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,

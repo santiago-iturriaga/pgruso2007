@@ -6,7 +6,6 @@
 	include_once("Constantes.php");
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
-	include_once("const.inc.php");
 	include_once("lib.inc.php");
 
 	$s = new Sesion(0);
@@ -21,8 +20,8 @@
 	$mensaje = "";
 	$error = "";
 
-
-	$config = `ssh -l $username $host "$config_cmd; exit" 2>&1`;
+	$command = SSH." -l ".USERNAME." ".HOST." \"".CONFIG_CMD."; exit\" 2>&1";
+	$config = `$command`;
 	$filas	= explode("\n",$config);
 //	echo '<pre>';print_r($filas);echo '</pre>';exit;
 	$pagina	= '<table><tr><td>';

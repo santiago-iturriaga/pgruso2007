@@ -124,7 +124,7 @@ function getTablaTrabajos($tabla_string,$cabezal,$cabezal_titulos,$tipo) {
 					$botones .= "<a href='jobs.php?diagnose=$id'>[Diag]</a>";
 					$botones .= "<a href='jobs.php?cancel=$id'>[Cancel]</a>";
 					$botones .= "<a href='jobs.php?hold=$id'>[Hold]</a>";
-					$botones .= "<a href='jobs.php?suspend=$id&suspend'>[Suspend]</a>";
+					$botones .= "<a href='jobs.php?suspend=$id'>[Suspend]</a>";
 
 					break;
 				case 1:
