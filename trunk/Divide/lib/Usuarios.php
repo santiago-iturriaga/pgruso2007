@@ -101,8 +101,68 @@ class Usuarios{
 		return array("error"=>0,"usuarios"=>$salida);
 	}
 
+
+	function getUsuariosConAlertas(){
+		$consulta= "select * from usuario u where u.id in " .
+					"(select ug.usuario from usuario_grupo ug, grupo g where ug.grupo=g.id and g.recibe_alertas='S')";
+		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=array("login"=>$row["login"],"email"=>$row["email"]);
+			}
+		return array("error"=>0,"usuarios"=>$salida);
+	}
+	function getUsuariosSinAlertas(){
+		$consulta= "select * from usuario u where u.id not in " .
+					"(select ug.usuario from usuario_grupo ug, grupo g where ug.grupo=g.id and g.recibe_alertas='S')";
+		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=array("login"=>$row["login"],"email"=>$row["email"]);
+			}
+		return array("error"=>0,"usuarios"=>$salida);
+	}
+	function agregarUsuarioAlertas($idUsuario){
+		$consulta = "select id from grupo where recibe_alertas='S'";
+		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		$idGrupo=$row["id"];
+		return $this->asociarUsuarioGrupo($idUsuario,$idGrupo);
+	}
+	function eliminarUsuarioAlertas($idUsuario){
+		$consulta = "select id from grupo where recibe_alertas='S'";
+		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		$idGrupo=$row["id"];
+		$consulta = "delete from usuario_grupo where grupo=? and usuario=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idGrupo,$idUsuario),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		return array("error"=>0);
+	}
+
 	function getGrupos(){
-		$consulta= "select * from grupo";
+		$consulta= "select * from grupo where (recibe_alertas<>'S' or recibe_alertas is null) ";
 		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
 			{
 			return array("error"=>1,
@@ -202,7 +262,7 @@ class Usuarios{
 	}
 
 	function getGruposUsuario($idUsuario){
-		$consulta= "select g.* from grupo g, usuario_grupo ug where ?=ug.usuario and ug.grupo=g.id";
+		$consulta= "select g.* from grupo g, usuario_grupo ug where ?=ug.usuario and ug.grupo=g.id  and (g.recibe_alertas<>'S' or g.recibe_alertas is null) ";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario),true))
 			{
 			return array("error"=>1,
@@ -370,5 +430,7 @@ class Usuarios{
 			}
 		return array("error"=>0);
 	}
+
+
 }
 ?>

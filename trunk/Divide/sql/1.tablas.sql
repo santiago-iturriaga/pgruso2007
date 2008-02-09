@@ -19,6 +19,7 @@ create table trabajo (
 CREATE TABLE grupo(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(25) not null,
+    recibe_alertas char,
 	UNIQUE (nombre));
 
 create table usuario (
