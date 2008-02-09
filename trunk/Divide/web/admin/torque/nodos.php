@@ -7,7 +7,6 @@
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
 	include_once("XMLParser.php");
-	include_once("const.inc.php");
 	include_once("lib.inc.php");
 
 	$s = new Sesion(0);
@@ -22,31 +21,33 @@
 	$mensaje = "";
 	$error = "";
 
-
 	if (ISSET($_REQUEST["disable"])) {
 		$id = $_REQUEST["disable"];
-		$qnodes_result = `ssh -l $username $host "$qnodes_cmd -o $id; exit" 2>&1`;
+		$command = SSH." -l ".USERNAME." ".HOST." \"".QNODES_CMD." -o $id; exit\" 2>&1";
+		$qnodes_result = `$command`;
 
 		if ($qnodes_result=="") {
 			$mensaje ="El nodo fue deshabilitado.";
 		} else {
-			$mensaje ="No fue posible deshabilitar el nodo.";
+			$mensaje ="No fue posible deshabilitar el nodo.<br/>".$qnodes_result;
 		}
 	}
 
 	if (ISSET($_REQUEST["enable"])) {
 		$id = $_REQUEST["enable"];
-		$qnodes_result = `ssh -l $username $host "$qnodes_cmd -c $id; exit" 2>&1`;
+		$command = SSH." -l ".USERNAME." ".HOST." \"".QNODES_CMD." -c $id; exit\" 2>&1";
+		$qnodes_result = `$command`;
 
 		if ($qnodes_result=="") {
 			$mensaje ="El nodo fue habilitado.";
 		} else {
-			$mensaje ="No fue posible habilitar el nodo.";
+			$mensaje ="No fue posible habilitar el nodo.<br/>".$qnodes_result;
 		}
 	}
 
 	// Listado de todos los trabajos
-	$qnodes = `ssh -l $username $host "$qnodes_cmd -x; exit" 2>&1`;
+	$command = SSH." -l ".USERNAME." ".HOST." \"".QNODES_CMD." -x; exit\" 2>&1";
+	$qnodes = `$command`;
 
 
 	if ($qnodes == "") {
@@ -82,10 +83,12 @@
 				}
 			}
 
-			if (trim(strtolower($nodo["STATE"]))=="offline")
+			if (substr_count(trim(strtolower($nodo["STATE"])), "offline") > 0) {
 				$nodo["STATE"] = "<a href='nodos.php?enable=".$nodo["NAME"]."'>".$nodo["STATE"]." [enable]</a>";
-			elseif (trim(strtolower($nodo["STATE"]))!="down")
+			} else {
+				//elseif (trim(strtolower($nodo["STATE"]))!="down")
 				$nodo["STATE"] = "<a href='nodos.php?disable=".$nodo["NAME"]."'>".$nodo["STATE"]." [disable]</a>";
+			}
 			$tabla->addRenglon($nodo);
 		}
 

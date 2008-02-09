@@ -12,7 +12,6 @@ function parsear_tabla_queues($tabla) {
 	$salida	= "";
 	$tabla_aux = stristr($tabla,"Queue: ");
 	while (strlen($tabla_aux) > 0) {
-
 		$nombre_array = explode("\n", $tabla_aux,2);
 		$nombre = substr($nombre_array[0],7);
 

@@ -6,7 +6,6 @@
 	include_once("Constantes.php");
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
-	include_once("const.inc.php");
 	include_once("lib.inc.php");
 
 	$s = new Sesion(0);
@@ -27,53 +26,56 @@
     $held_type = "u";
 	if (ISSET($_REQUEST["eliminar"])) {
 		$id = $_REQUEST["eliminar"];
-		$qdel_result = `ssh -l $username $host "$qdel_cmd $id; exit" 2>&1`;
+		$command = SSH." -l ".USERNAME." ".HOST." \"".QDEL_CMD." $id; exit\" 2>&1";
+		$qdel_result = `$command`;
 
 		if ($qdel_result=="") {
 			$mensaje = "El trabajo fue eliminado.";
 		} else {
-			$mensaje = "No fue posible eliminar el trabajo.";
+			$mensaje = "No fue posible eliminar el trabajo.<br />".$qdel_result;
 			error_log($qdel_result);
 		}
 	}
 	if (ISSET($_REQUEST["detener"])) {
 		$id = $_REQUEST["detener"];
-		$qhold_result = `ssh -l $username $host "$qhold_cmd -h $held_type $id; exit" 2>&1`;
+		$command = SSH." -l ".USERNAME." ".HOST." \"".QHOLD_CMD." -h $held_type $id; exit\" 2>&1";
+		$qhold_result = `$command`;
 		if ($qhold_result=="") {
 			$mensaje = "El trabajo fue detenido.";
 		} else {
-			$mensaje = "No fue posible detener el trabajo.";
+			$mensaje = "No fue posible detener el trabajo.<br />".$qhold_result;
 			error_log($qhold_result);
 		}
 	}
 	if (ISSET($_REQUEST["reiniciar"])) {
 		$id = $_REQUEST["reiniciar"];
-		$qrls_result = `ssh -l $username $host "$qrls_cmd -h $held_type $id; exit" 2>&1`;
+		$command = SSH." -l ".USERNAME." ".HOST." \"".QRLS_CMD." -h $held_type $id; exit\" 2>&1";
+		$qrls_result = `$command`;
 		if ($qrls_result=="") {
 			$mensaje = "El trabajo fue reiniciado.";
 		} else {
-			$mensaje = "No fue posible reiniciar el trabajo.";
+			$mensaje = "No fue posible reiniciar el trabajo.<br />".$qrls_result;
 			error_log($qrls_result);
 		}
 
 	}
 	// Listado de todos los trabajos
-	$qstat = `ssh -l $username $host "$qstat_cmd; exit" 2>&1`;
-
+	$command = SSH." -l ".USERNAME." ".HOST." \"".QSTAT_CMD."; exit\" 2>&1";
+	$qstat = `$command`;
 
 	if ($qstat == "") {
 		$pagina	.= "<pre>Empty.</pre>";
 	} else {
 		$tabla = getTablaTrabajos($qstat);
 		$pagina =  $tabla->getTabla();
-		}
+	}
+
 	if (ISSET($_REQUEST["id"])) {
 		// Detalle de un trabajo
 		$id = $_REQUEST["id"];
-		$qstat_job = `ssh -l $username $host "$qstat_cmd -f $id; exit" 2>&1`;
-		$pagina.=getStatusJob($qstat_job);
-
-
+		$command = SSH." -l ".USERNAME." ".HOST." \"".QSTAT_CMD." -f $id; exit\" 2>&1";
+		$qstat_job = `$command`;
+		$pagina.= "<br />".getStatusJob($qstat_job);
 	}
 	$ppal	=	$plantilla->replace($ppal,array("PAGINA"=>$pagina));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
