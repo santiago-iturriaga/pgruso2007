@@ -1,5 +1,6 @@
 <?php
 include_once("Conexion.php");
+include_once("Momento.php");
 class Usuarios{
 	var $conexion	=	null;
 
@@ -307,7 +308,13 @@ class Usuarios{
 						 "codError"=>$this->conexion->msgError);
 			}
 		$id=$this->conexion->getUltimoNumerador();
-
+		$momento = new Momento($this->conexion);
+		$res	= $momento->crearDirTrabajo($cliente,$id);
+		if($res["error"]) {
+			$consulta= "delete from trabajo where id=?";
+			$this->conexion->EjecutarConsulta($consulta,array($id),false);
+			return $res;
+		}
 		if($idGrupo!=null){
 			$res = $this->asociarTrabajoGrupo($id,$idGrupo);
 			if($res["error"]) return $res;
@@ -324,6 +331,13 @@ class Usuarios{
 						 "codError"=>$this->conexion->msgError);
 			}
 		$id=$this->conexion->getUltimoNumerador();
+		$momento = new Momento($this->conexion);
+		$res	= $momento->crearDirCliente($id);
+		if($res["error"]) {
+			$consulta= "delete from cliente where id=?";
+			$this->conexion->EjecutarConsulta($consulta,array($id),false);
+			return $res;
+		}
 		return array("error"=>0,"id"=>$id);
 	}
 

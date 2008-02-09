@@ -20,6 +20,14 @@ class Momento{
 	}
 
 	function ejecutar($archivo,$ruta,$argumentos,$id_cliente,$id_trabajo){
+		$consulta = "select usr_linux from cliente where id=?";
+		if(!$this->db->EjecutarConsulta($consulta,array($id_cliente),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		$usr_linux=$row["usr_linux"];
 
 		$plantilla	=	new TPL();
 		$consulta = "select nombre,nodos,tiempo_maximo,cola from trabajo where id = ?";
@@ -70,8 +78,9 @@ class Momento{
 		$caracteres = fwrite  ($fscript, $ejecutar);
 		fclose($fscript);
 		chmod($script,0777);
+		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"cd $ruta; ".QSUB." $script; exit\" 2>&1";
 
-		$salida = exec("ssh -l pgccadar lennon.fing.edu.uy 'cd $ruta; ".QSUB." $script; exit'");
+		$salida = `$ejecutar`;
 
 		$salida = $this->parsear_salida($salida);
 		if(!isset($salida["id"])) return array("error"=>1);
@@ -86,6 +95,46 @@ class Momento{
 		touch($archivo_salida);
 		chmod($archivo_salida,0666);
 		return array("error"=>0,"id"=>$id,"id_trabajo"=>$id_torque,"salida"=>$archivo_salida);
+	}
+
+	function crearDirCliente($idCliente){
+		$consulta = "select usr_linux from cliente where id=?";
+		if(!$this->db->EjecutarConsulta($consulta,array($idCliente),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		$usr_linux=$row["usr_linux"];
+
+		$ruta =RAIZ;
+		$ejecutar =SSH." -l ".USUARIO." ".HOST." \"cd $ruta; mkdir $idCliente; chown $usr_linux $idCliente exit\" 2>&1";
+		$salida = `$ejecutar`;
+		if($salida=="")
+			return array("error"=>0);
+		else{
+			error_log($salida);
+			return array("error"=>1,"codError"=>"M101");
+		}
+	}
+	function crearDirTrabajo($idCliente,$idTrabajo){
+		$consulta = "select usr_linux from cliente where id=?";
+		if(!$this->db->EjecutarConsulta($consulta,array($idCliente),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		$usr_linux=$row["usr_linux"];
+
+		$ruta =RAIZ.'/'.$idCliente;
+		$salida = exec(SSH." -l ".$usr_linux." ".HOST." 'cd $ruta; mkdir $idTrabajo; exit'");
+		if($salida=="")
+			return array("error"=>0);
+		else{
+			error_log($salida);
+			return array("error"=>1,"codError"=>"M100");
+		}
 	}
 
 	function setFinalizado($id_torque){
