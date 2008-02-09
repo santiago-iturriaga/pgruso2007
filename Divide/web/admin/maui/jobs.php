@@ -14,7 +14,6 @@
 	include_once("Constantes.php");
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
-	include_once("const.inc.php");
 	include_once("lib.inc.php");
 
 	$s = new Sesion(0);

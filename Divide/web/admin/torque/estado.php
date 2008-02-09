@@ -6,7 +6,6 @@
 	include_once("Constantes.php");
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
-	include_once("const.inc.php");
 	include_once("lib.inc.php");
 
 	$s = new Sesion(0);
@@ -21,8 +20,8 @@
 	$mensaje = "";
 	$error = "";
 
-
-	$qstatB = `ssh -l $username $host "$qstat_cmd -Bf; exit" 2>&1`;
+	$command = SSH." -l ".USERNAME." ".HOST." \"".QSTAT_CMD." -Bf; exit\" 2>&1";
+	$qstatB = `$command`;
 
 	$lineas= explode("\n",$qstatB);
 	$head = explode(':',array_shift($lineas));
