@@ -181,7 +181,6 @@ input {
 /* Main Navigation Menu */
 
 #menu {
-	margin-bottom: 1px;
 	width: 780px;
 	height: 21px;
 }
@@ -195,7 +194,7 @@ input {
 
 #menu li {
 	margin-right: 1px;
-	width: 129px;
+	width: 155px;
 	height: 21px;
 	float: left;
 	background: url('imagenes/menu_background.gif') repeat-x 0px 0px;
@@ -205,10 +204,6 @@ input {
 	font-weight: bold;
 }
 
-#menu li.last {
-	margin-right: 0px;
-
-}
 
 #menu a {
 	padding-top: 3px;
@@ -221,10 +216,52 @@ input {
 	color: #e1e1e1;
 }
 
-#menu #actual a{
-	color: #efefaa;
+#menu li#actual {
+	background: #ff5555;
 	font-weight: bold;
 }
+
+#submenu {
+	margin-bottom: 1px;
+	width: 780px;
+	height: 21px;
+}
+
+#submenu ul {
+	width: 780px;
+	height: 21px;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+#submenu li {
+	margin-right: 0px;
+	width: 156px;
+	height: 21px;
+	float: left;
+	background: #ff5555;
+	overflow: hidden;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+
+#submenu a {
+	padding-top: 3px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+#submenu a:hover,
+#submenu li#smactual a{
+	color: #ffff00;
+
+}
+
+
 /* Left Sidebar */
 
 #menu_vertical {

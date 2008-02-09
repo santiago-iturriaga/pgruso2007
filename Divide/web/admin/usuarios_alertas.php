@@ -18,6 +18,9 @@
 	$ppal		= 	$plantilla->load("plantillas/usuarios_alertas/usuarios_alertas.html");
 	$opcion_select	=	$plantilla->load("plantillas/usuarios_alertas/usuario.html");
 	$link		=$plantilla->load("plantillas/usuarios_alertas/link.html");
+	$menu=$plantilla->replace($plantilla->load("plantillas/menu_usuarios.html"),
+							  array("SMENU_ALERTAS"=>" id='smactual' "));
+
 
 	$mensaje = "";
 	$error = "";
@@ -72,7 +75,13 @@
 											"TABLA_USUARIOS"=>$tabla_usuarios));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
-												"ERROR"=>$error));
+												"ERROR"=>$error,
+												"MENU_USUARIOS"=>" id='actual' ",
+												"MENU_GANGLIA"=>" class='menu_tab'",
+												"MENU_MAUI"=>" class='menu_tab'",
+												"MENU_TORQUE"=>" class='menu_tab'",
+												"MENU_ALERTAS"=>" class='menu_tab'",
+												"MENU"=>$menu));
 	$s->salvar();
 
 	echo $base;

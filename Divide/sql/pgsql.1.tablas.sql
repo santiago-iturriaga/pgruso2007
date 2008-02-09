@@ -1,6 +1,7 @@
 create table cliente (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(12) not null,
+    usr_linux  VARCHAR(64) not null,
     UNIQUE (nombre));
 
 create table trabajo (
@@ -11,13 +12,15 @@ create table trabajo (
 	nodos int,
 	tiempo_maximo time,
 	cola varchar(25),
+	quota int,
 	fecha_fin timestamp default null
     );
 
 CREATE TABLE grupo(
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(25) not null,
-	UNIQUE (nombre));
+    recibe_alertas char,
+    UNIQUE (nombre));
 
 create table usuario (
      id SERIAL PRIMARY KEY,

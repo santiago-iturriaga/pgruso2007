@@ -25,6 +25,9 @@
 	$links		= 	$plantilla->load("plantillas/cliente_trabajo/links.html");
 	$nuevo		= 	$plantilla->load("plantillas/cliente_trabajo/nuevo.html");
 	$opcion		= 	$plantilla->load("plantillas/cliente_trabajo/cliente.html");
+	$menu=$plantilla->replace($plantilla->load("plantillas/menu_usuarios.html"),
+							  array("SMENU_CT"=>" id='smactual' "));
+
 	$form_cliente	= "";
 	$opciones	=	"";
 	$form		= 	"";
@@ -157,8 +160,15 @@
 												"FORM"=>$form,
 												"FORM_CLIENTE"=>$form_cliente));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENU_USUARIOS"=>" id='actual' ",
+												"MENU_GANGLIA"=>" class='menu_tab'",
+												"MENU_MAUI"=>" class='menu_tab'",
+												"MENU_TORQUE"=>" class='menu_tab'",
+												"MENU_ALERTAS"=>" class='menu_tab'",
 												"MENSAJE"=>$mensaje,
-												"ERROR"=>$error));
+												"ERROR"=>$error,
+												"MENU_USUARIOS"=>" id='actual' ",
+												"MENU"=>$menu));
 	$s->salvar();
 
 	echo $base;

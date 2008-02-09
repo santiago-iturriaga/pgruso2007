@@ -17,6 +17,8 @@
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/usuarios/usuarios.html");
 	$opcion_select=$plantilla->load("plantillas/usuarios/grupo.html");
+	$menu=$plantilla->replace($plantilla->load("plantillas/menu_usuarios.html"),
+							  array("SMENU_GRUPOS"=>" id='smactual' "));
 	$link_nuevo_usuario=$plantilla->load("plantillas/usuarios/link_nuevo.html");
 	$link_eliminar_usuario=$plantilla->load("plantillas/usuarios/link_eliminar.html");
 	$mensaje = "";
@@ -90,11 +92,17 @@
 
 	$ppal  = $plantilla->replace($ppal,array("GRUPOS"=>$opciones_grupos,
 												"TABLA_USUARIOS"=>$tabla_usuarios,
-												"NUEVO"=>$form_nuevo,
-												"MENU_USUARIOS"=>" id='actual' "));
+												"NUEVO"=>$form_nuevo));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENU_USUARIOS"=>" id='actual' ",
+												"MENU_GANGLIA"=>" class='menu_tab'",
+												"MENU_MAUI"=>" class='menu_tab'",
+												"MENU_TORQUE"=>" class='menu_tab'",
+												"MENU_ALERTAS"=>" class='menu_tab'",
 												"MENSAJE"=>$mensaje,
-												"ERROR"=>$error));
+												"ERROR"=>$error,
+												"MENU_USUARIOS"=>" id='actual' ",
+												"MENU"=>$menu));
 	$s->salvar();
 
 	echo $base;
