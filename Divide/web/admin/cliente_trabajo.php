@@ -48,12 +48,14 @@
 		$s->sesion->trabajo_editado["TIEMPO"]=$_POST["tiempo_maximo"];
 		$s->sesion->trabajo_editado["NODOS"]=$_POST["nodos"];
 		$s->sesion->trabajo_editado["COLA"]=$_POST["cola"];
+		$s->sesion->trabajo_editado["QUOTA"]=$_POST["quota"];
 		if(isset($s->sesion->trabajo_editado["ID"]) and $s->sesion->trabajo_editado["ID"]!=null)
 			$res = $usuarios->editarTrabajo($s->sesion->trabajo_editado["ID"],
 										   $s->sesion->trabajo_editado["NOMBRE"],
 										   $s->sesion->trabajo_editado["NODOS"],
 										   $s->sesion->trabajo_editado["TIEMPO"],
-										   $s->sesion->trabajo_editado["COLA"]
+										   $s->sesion->trabajo_editado["COLA"],
+										   $s->sesion->trabajo_editado["QUOTA"]
 										   );
 		else
 			$res = $usuarios->crearTrabajo($s->sesion->admin_cliente_actual,
@@ -61,6 +63,7 @@
 										   $s->sesion->trabajo_editado["NODOS"],
 										   $s->sesion->trabajo_editado["TIEMPO"],
 										   $s->sesion->trabajo_editado["COLA"],
+										   $s->sesion->trabajo_editado["QUOTA"],
 										   $s->sesion->grupo_actual
 										   );
 
@@ -97,6 +100,7 @@
 			$s->sesion->trabajo_editado["TIEMPO"]=$res["trabajo"]["tiempo_maximo"];
 			$s->sesion->trabajo_editado["NODOS"]=$res["trabajo"]["nodos"];
 			$s->sesion->trabajo_editado["COLA"]=$res["trabajo"]["cola"];
+			$s->sesion->trabajo_editado["QUOTA"]=$res["trabajo"]["quota"];
 			$s->sesion->trabajo_editado["TITULO"]="Editar trabajo";
 		}
 	}
@@ -106,6 +110,7 @@
 		$s->sesion->trabajo_editado["TIEMPO"]="";
 		$s->sesion->trabajo_editado["NODOS"]="";
 		$s->sesion->trabajo_editado["COLA"]="";
+		$s->sesion->trabajo_editado["QUOTA"]="";
 		$s->sesion->trabajo_editado["TITULO"]="Crear trabajo";
 	}
 
@@ -129,13 +134,15 @@
 		$tabla->addColumna(1,"nodos","Nodos");
 		$tabla->addColumna(2,"tiempo_maximo","Tiempo m&aacute;ximo");
 		$tabla->addColumna(3,"cola","Cola");
-		$tabla->addColumna(4,"links",$nuevo);
+		$tabla->addColumna(4,"quota","Quota");
+		$tabla->addColumna(5,"links",$nuevo);
 		foreach($res["trabajos"] as $id=>$trabajo){
 			$row = array();
 			$row["trabajo"]=$trabajo["nombre"];
 			$row["nodos"]=$trabajo["nodos"];
 			$row["tiempo_maximo"]=$trabajo["tiempo_maximo"];
 			$row["cola"]=$trabajo["cola"];
+			$row["quota"]=$trabajo["quota"];
 			$row["links"]=$plantilla->replace($links,array("ID"=>$id));
 			$tabla->addRenglon($row);
 		}

@@ -1,6 +1,6 @@
 <?
 	$username = "santiago";
-	$host = "192.168.0.3";
+	$host = "localhost";
 
 	$menu_jobs=0;
 	$menu_queues=1;
