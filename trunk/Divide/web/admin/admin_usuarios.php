@@ -90,7 +90,8 @@
 
 	$ppal  = $plantilla->replace($ppal,array("GRUPOS"=>$opciones_grupos,
 												"TABLA_USUARIOS"=>$tabla_usuarios,
-												"NUEVO"=>$form_nuevo));
+												"NUEVO"=>$form_nuevo,
+												"MENU_USUARIOS"=>" id='actual' "));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"ERROR"=>$error));
