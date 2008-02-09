@@ -272,9 +272,9 @@ class Usuarios{
 		$row=$this->conexion->Next();
 		return array("error"=>0,"trabajo"=>$row);
 	}
-	function crearTrabajo($cliente,$nombre,$nodos,$tiempo_maximo,$cola,$idGrupo=null){
-		$consulta= "insert into trabajo (cliente,nombre,nodos,tiempo_maximo,cola) values (?,?,?,?,?)";
-		if(!$this->conexion->EjecutarConsulta($consulta,array($cliente,$nombre,$nodos,$tiempo_maximo,$cola),false))
+	function crearTrabajo($cliente,$nombre,$nodos,$tiempo_maximo,$cola,$quota,$idGrupo=null){
+		$consulta= "insert into trabajo (cliente,nombre,nodos,tiempo_maximo,cola,quota) values (?,?,?,?,?,?)";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($cliente,$nombre,$nodos,$tiempo_maximo,$cola,$quota),false))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->conexion->msgError);
@@ -320,9 +320,9 @@ class Usuarios{
 		return array("error"=>0);
 	}
 
-	function editarTrabajo($id,$nombre,$nodos,$tiempo_maximo,$cola){
-		$consulta= "update trabajo set nombre=?,nodos=?,tiempo_maximo=?,cola=? where id=?";
-		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre,$nodos,$tiempo_maximo,$cola,$id),false))
+	function editarTrabajo($id,$nombre,$nodos,$tiempo_maximo,$cola,$quota){
+		$consulta= "update trabajo set nombre=?,nodos=?,tiempo_maximo=?,cola=?,quota=? where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre,$nodos,$tiempo_maximo,$cola,$quota,$id),false))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->conexion->msgError);
