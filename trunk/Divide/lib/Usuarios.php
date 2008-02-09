@@ -147,6 +147,33 @@ class Usuarios{
 		return array("error"=>0,"trabajo"=>$salida);
 	}
 
+	function getTrabajosBorrados(){
+		$consulta= "select c.nombre as cliente, t.*" .
+				   " from trabajo t, cliente c " .
+				   " where t.cliente=c.id and t.fecha_fin is not null";
+		if(!$this->conexion->EjecutarConsulta($consulta,array(),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=$row;
+			}
+		return array("error"=>0,"trabajos"=>$salida);
+	}
+
+	function resucitarTrabajo($id){
+		$consulta= "update trabajo set fecha_fin = null where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		return array("error"=>0);
+	}
+
 	function eliminarTrabajo($id){
 		$consulta= "update trabajo set fecha_fin=CURRENT_TIMESTAMP where id=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($id),false))

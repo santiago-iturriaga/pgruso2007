@@ -4,6 +4,7 @@
 	$MENSAJES["CT002"] = "Se modificaron los datos del trabajo.";
 	$MENSAJES["CT003"] = "Se cre&oacute; el trabajo.";
 	$MENSAJES["CT004"] = "Se cre&oacute; el cliente.";
+	$MENSAJES["CT005"] = "El trabajo fue restaurado.";
 	//ALERTAS
 	$MENSAJES["EA01"]  = "Error en el envio de mail";
 	$MENSAJES["EA02"]  = "Error al eliminar la alerta";
