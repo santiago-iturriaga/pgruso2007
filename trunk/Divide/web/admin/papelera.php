@@ -18,6 +18,9 @@
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/papelera/papelera.html");
 	$links		= 	$plantilla->load("plantillas/papelera/links.html");
+	$menu=$plantilla->replace($plantilla->load("plantillas/menu_usuarios.html"),
+							  array("SMENU_PAPELERA"=>" id='smactual' "));
+
 
 	$conexion = new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 
@@ -59,8 +62,15 @@
 	}
 	$ppal	=	$plantilla->replace($ppal,array("TABLA"=>$t));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENU_USUARIOS"=>" id='actual' ",
+												"MENU_GANGLIA"=>" class='menu_tab'",
+												"MENU_MAUI"=>" class='menu_tab'",
+												"MENU_TORQUE"=>" class='menu_tab'",
+												"MENU_ALERTAS"=>" class='menu_tab'",
 												"MENSAJE"=>$mensaje,
-												"ERROR"=>$error));
+												"ERROR"=>$error,
+												"MENU_USUARIOS"=>" id='actual' ",
+												"MENU"=>$menu));
 	$s->salvar();
 
 	echo $base;

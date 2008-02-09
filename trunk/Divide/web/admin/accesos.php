@@ -17,6 +17,9 @@
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/accesos/accesos.html");
 	$opcion_select=$plantilla->load("plantillas/usuarios/grupo.html");
+	$menu=$plantilla->replace($plantilla->load("plantillas/menu_usuarios.html"),
+							  array("SMENU_ACCESOS"=>" id='smactual' "));
+
 	$mensaje = "";
 	$error = "";
 
@@ -91,8 +94,14 @@
 
 	$ppal  = $plantilla->replace($ppal,array("GRUPOS"=>$opciones_grupos,"ACCESOS"=>$form_accesos));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENU_USUARIOS"=>" id='actual' ",
+												"MENU_GANGLIA"=>" class='menu_tab'",
+												"MENU_MAUI"=>" class='menu_tab'",
+												"MENU_TORQUE"=>" class='menu_tab'",
+												"MENU_ALERTAS"=>" class='menu_tab'",
 												"MENSAJE"=>$mensaje,
-												"ERROR"=>$error));
+												"ERROR"=>$error,
+												"MENU"=>$menu));
 	$s->salvar();
 
 	echo $base;
