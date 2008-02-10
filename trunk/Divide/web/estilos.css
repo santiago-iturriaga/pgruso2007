@@ -632,13 +632,16 @@ input {
 }
 
 fieldset {
+	margin-top: 10px;
 	border:0;
+	width:50%;
 	}
 form p{
 	text-align:right;
 	margin-right: 20px;
 	}
 form legend{
+	padding-left: 50px;
 	font-size: 15px;
 	font-weight: bold;
 }
@@ -729,3 +732,15 @@ table tr td{
 span#enejecucion{
 	display: inline;
 }
+
+#usuario_logueado{
+	position: absolute;
+	top:10px;
+	left:200px;
+	color:#ffffff;
+	font-weight:bold;
+	border: 1px solid #ffffff;
+}
+#usuario_logueado a{
+	color: #ff0000;
+	}

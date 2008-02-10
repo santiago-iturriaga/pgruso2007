@@ -129,6 +129,7 @@
 	$ppal	=	$plantilla->replace($ppal,array("INFO_TRABAJO"=>$info));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
+												"SMENU_JOBS"=>" id='smactual' ",
 												"ERROR"=>$error));
 	$s->salvar();
 
