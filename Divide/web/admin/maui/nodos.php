@@ -49,6 +49,7 @@
 	$ppal	=	$plantilla->replace($ppal,array("PAGINA"=>$pagina));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
+												"SMENU_NODOS"=>" id='smactual' ",
 												"ERROR"=>$error));
 	$s->salvar();
 

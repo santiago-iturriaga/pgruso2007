@@ -1,27 +1,56 @@
 <HTML>
 <HEAD>
-	<TITLE>Divide</TITLE>
+	<TITLE>Fenton</TITLE>
 	<LINK media=all href="../../estilos.css" type=text/css rel=stylesheet>
+	<LINK media=all href="../../niftyCorners.css" type=text/css rel=stylesheet>
+	<script type="text/javascript" src="../../js/nifty.js"></script>
 	 <script language="JavaScript" type="text/JavaScript"></script>
+	 <script type="text/javascript">
+		window.onload=function(){
+		if(!NiftyCheck())
+		    return;
+   			Rounded("li.menu_tab","#ffffff","#9c9cc8","small");
+			RoundedTop("li#actual","#ffffff","#ff5555","small");
+
+		}
+	</script>
 </HEAD>
 <BODY>
 <div id="contenedor">
 	<div id="encabezado">
 		<img src="../imagenes/Fenton_.gif" />
 		<h1>Fenton</h1>
+		<table id="usuario_logueado">
+			<tr>
+				<td>Usuario:</td><td>{USUARIO_LOGUEADO}</td>
+			</tr>
+			<tr>
+				<td colspan="2"><a href="../logout.php">Cambiar de usuario</a></td>
+			</tr>
+		</table>
 	</div>
 	<div id="menu">
 		<ul>
-			<li><a href="jobs.php">Trabajos</a></li>
-			<li><a href="colas.php">Colas</a></li>
-			<li><a href="nodos.php">Nodos</a></li>
-			<li><a href="estado.php">Estado</a></li>
-			<li class="last"><a href="../index.php">Salir de Torque</a></li>
+			<li class='menu_tab'><a  href="../admin_usuarios.php">Usuarios</a></li>
+			<li class='menu_tab'><a  href="../ganglia/index.php">Estado del Cluster</a></li>
+			<li  class='menu_tab'><a  href="../maui/index.php">Maui</a></li>
+			<li id='actual'><a  href="index.php">Torque</a></li>
+			<li class='menu_tab'><a  href="../clave.html">Alertas</a></li>
 		</ul>
 
 	</div>
-	
+
 	<div id="cuerpo">
+
+		<div id="submenu">
+			<ul>
+				<li {SMENU_JOBS} ><a href="jobs.php">Trabajos</a></li>
+				<li {SMENU_COLAS}><a href="colas.php">Colas</a></li>
+				<li {SMENU_NODOS}><a href="nodos.php">Nodos</a></li>
+				<li {SMENU_ESTADO}><a href="estado.php">Estado</a></li>
+			</ul>
+		</div>
+
 		{PAGINA}
 		{MENSAJE}
 		{ERROR}

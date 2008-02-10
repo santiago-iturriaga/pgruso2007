@@ -27,7 +27,6 @@
 	$conexion = new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$Usuarios	= new Usuarios($conexion);
 
-	$mensaje	= "";
 	$form_nuevo	= "";
 
 	$opciones_grupos	= "";
@@ -94,6 +93,7 @@
 												"TABLA_USUARIOS"=>$tabla_usuarios,
 												"NUEVO"=>$form_nuevo));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
 												"MENU_USUARIOS"=>" id='actual' ",
 												"MENU_GANGLIA"=>" class='menu_tab'",
 												"MENU_MAUI"=>" class='menu_tab'",

@@ -7,6 +7,10 @@
 	include_once("Constantes.php");
 
 	$s = new Sesion();
+	if($s->sesion==null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
+		header("Location: ../index.php");
+		exit;
+	}
 
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
@@ -17,6 +21,11 @@
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENU"=>"",
 												"MENSAJE"=>$mensaje,
+												"MENU_USUARIOS"=>" class='menu_tab'",
+												"MENU_GANGLIA"=>" class='menu_tab'",
+												"MENU_MAUI"=>" class='menu_tab'",
+												"MENU_TORQUE"=>" class='menu_tab'",
+												"MENU_ALERTAS"=>" class='menu_tab'",
 												"ERROR"=>$error));
 	$s->salvar();
 	echo $base;
