@@ -1,0 +1,19 @@
+#summary Lista de cosas para hacer
+
+= Introduction =
+
+To Do
+
+
+= Details =
+
+- cuota por trabajo (en MB)
+	* actualizar modelo de datos [damian]
+	* modificar las paginas de admin [damian]
+- terminar alertas
+	* cron [damian]
+	* crear alertas de inicio / fin de ejecucion de trabajo [paulo]
+	* crear grupo especial y que reciba alertas aunque no este en ningun trabajo [paulo]
+	* crear php para ser invocado por cron con el chequeo de quota [paulo]
+- terminar paginas admin
+- documentar?
