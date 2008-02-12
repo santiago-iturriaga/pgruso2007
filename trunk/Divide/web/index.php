@@ -20,7 +20,7 @@
 		$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 		$s->sesion->Usuario->setBD($conexion);
 		$res=$s->sesion->Usuario->Login($_POST["login"],$_POST["password"]);
-		if($res["error"]) error_log(print_r($res,1));
+		if($res["error"]) $msj="Usuario o clave incorrecta.";
 		if($s->sesion->Usuario->Logueado()){
 			$s->salvar();
 			if(!$s->sesion->Usuario->administrador){
