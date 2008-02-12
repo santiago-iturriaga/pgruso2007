@@ -9,6 +9,9 @@ class Usuarios{
 	}
 
 	function altaGrupo($nombre){
+		$nombre = trim($nombre);
+		if($nombre=="") return array("error"=>1,
+									 "codError"=>"U50");
 		$consulta="insert into grupo (nombre) values (?)";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre),false))
 			{
@@ -41,6 +44,18 @@ class Usuarios{
 
 
 	function altaUsuario($login,$clave,$administrador='N',$email="",$idGrupos=array()){
+		$login	= trim($login);
+		if($login=="") return array("error"=>1,
+									 "codError"=>"U51");
+		$clave = trim($clave);
+		if($clave=="") return array("error"=>1,
+									 "codError"=>"U52");
+		$email = trim($email);
+		if($email=="") return array("error"=>1,
+									 "codError"=>"U53");
+		if(!eregi("^([a-z0-9._]+)@([a-z0-9.-_]+).([a-z]{2,4})(.[a-z]{2,4})*$",$email))
+			return array("error"=>1,
+						 "codError"=>"U54");
 		$consulta="insert into usuario (login,password,administrador,email) values (?,?,?,?)";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($login,$clave,$administrador,$email),false))
 			{
