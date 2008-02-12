@@ -168,6 +168,7 @@
 												"MENSAJE"=>$mensaje,
 												"ERROR"=>$error,
 												"MENU_USUARIOS"=>" id='actual' ",
+												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
 												"MENU"=>$menu));
 	$s->salvar();
 

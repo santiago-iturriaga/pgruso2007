@@ -12,7 +12,6 @@
 		}
 
 	$plantilla	=	new TPL();
-	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	"";
 	$msj = null;
 	$msjerror = null;
@@ -35,12 +34,14 @@
 
 		}
 	}
+	$base	= "";
 
-	if(!$s->sesion->Usuario->Logueado()){
-		$ppal	=	$plantilla->load("plantillas/login/login.html");
-	}
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>"","MENSAJE"=>$msj,"ERROR"=>$msjerror));
+
+	if(!$s->sesion->Usuario->Logueado())
+		$base	=	$plantilla->load("plantillas/login/login.html");
+	else
+		$base	=	$plantilla->load("plantillas/base.html");
+	$base	=	$plantilla->replace($base,array("MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>

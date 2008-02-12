@@ -4,6 +4,7 @@
 	include_once("TPL.php");
 	include_once("Usuarios.php");
 	include_once("Sesion.php");
+	include_once("Interfaz.php");
 	include_once("Constantes.php");
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
@@ -26,7 +27,7 @@
 
 	$conexion = new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$Usuarios	= new Usuarios($conexion);
-
+	$interfaz = new Interfaz($conexion,$plantilla,$s);
 	$form_nuevo	= "";
 
 	$opciones_grupos	= "";
@@ -42,7 +43,11 @@
 
 	if(isset($_GET["eliminar"])){
 		$res=$Usuarios->bajaUsuario($_GET["eliminar"]);
-		if($res["error"]) error_log(print_r($res,1));
+		if($res["error"])
+			$error	= $interfaz->getError($res);
+		else
+			$mensaje = $interfaz->getMensaje("U03");
+
 	}
 
 
@@ -51,17 +56,24 @@
 		if(isset($_POST["administrador"])) $administrador='S';
 
 		$res=$Usuarios->altaUsuario($_POST["login"],$_POST["clave"],$administrador,$_POST["email"],array($s->sesion->grupo_actual));
-		if($res["error"]) error_log(print_r($res,1));
+		if($res["error"])
+			$error	= $interfaz->getError($res);
+		else
+			$mensaje = $interfaz->getMensaje("U02");
 	}
 
 	if(isset($_POST["nombre_grupo"])){
 		$res=$Usuarios->altaGrupo($_POST["nombre_grupo"]);
-		if($res["error"]) error_log(print_r($res,1));
-		else $s->sesion->grupo_actual=$res["id"];
+		if($res["error"])
+			$error	= $interfaz->getError($res);
+		else{
+			$mensaje = $interfaz->getMensaje("U04");
+			$s->sesion->grupo_actual=$res["id"];
+		}
 	}
 
 	$res=$Usuarios->getGrupos();
-	if($res["error"]) error_log(print_r($res,1));
+	if($res["error"]) $interfaz->getMensaje("DANGER");
 	else{
 		$opciones_grupos.=$plantilla->replace($opcion_select,array("ID"=>"","NOMBRE"=>"","SELECTED"=>""));
 		foreach ($res["grupos"] as $id=>$nombre){
@@ -74,19 +86,21 @@
 	if($s->sesion->grupo_actual != null){
 		$res=$Usuarios->getUsuarios(array($s->sesion->grupo_actual));
 		$usrs = array();
-		if($res["error"]) error_log(print_r($res,1));
-		else $usrs = $res["usuarios"];
-		$tabla = new Tabla("","","../");
-		$tabla->addColumna(0,"login","Login");
-		$tabla->addColumna(2,"email","email");
-		$tabla->addColumna(3,"link",$link_nuevo_usuario);
-		foreach ($res["usuarios"] as $id=>$usuario){
-			$usu= array("login"=>$usuario["login"],
-						"email"=>$usuario["email"],
-						"link"=>$plantilla->replace($link_eliminar_usuario,array("ID"=>$id)));
-			$tabla->addRenglon($usu);
+		if($res["error"]) $interfaz->getMensaje("DANGER");
+		else{
+			$usrs = $res["usuarios"];
+			$tabla = new Tabla("","","../");
+			$tabla->addColumna(0,"login","Login");
+			$tabla->addColumna(2,"email","email");
+			$tabla->addColumna(3,"link",$link_nuevo_usuario);
+			foreach ($res["usuarios"] as $id=>$usuario){
+				$usu= array("login"=>$usuario["login"],
+							"email"=>$usuario["email"],
+							"link"=>$plantilla->replace($link_eliminar_usuario,array("ID"=>$id)));
+				$tabla->addRenglon($usu);
+			}
+			$tabla_usuarios=$tabla->getTabla();
 		}
-		$tabla_usuarios=$tabla->getTabla();
 	}
 
 	$ppal  = $plantilla->replace($ppal,array("GRUPOS"=>$opciones_grupos,

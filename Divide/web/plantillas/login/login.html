@@ -1,6 +1,25 @@
+<HTML>
+<HEAD>
+	<TITLE>Fenton</TITLE>
+	<LINK media=all href="estilos.css" type=text/css rel=stylesheet>
+	<LINK media=all href="niftyCorners.css" type=text/css rel=stylesheet>
+	 <script language="JavaScript" type="text/JavaScript"></script>
+	 <script type="text/javascript" src="js/nifty.js"></script>
+	 <script language="JavaScript" type="text/JavaScript"></script>
+	 <script type="text/javascript">
+		window.onload=function(){
+		if(!NiftyCheck())
+		    return;
+   			Rounded("div#div_login","#ffffff","#bebef3");
+
+		}
+	</script>
+</HEAD>
+<BODY>
+<div id="div_login">
+			<img src="imagenes/Fenton_.gif" />Fenton
 			<form action="index.php" method="POST" id="form_login">
 				<fieldset>
-					<legend>Ingreso al Sitio</legend>
 					<p>
 						<label for="login">Usuario:</label>
 						<input type="text" name="login" id="login" />
@@ -9,8 +28,11 @@
 						<label for="password">Clave:</label>
 						<input type="password" name="password" id="password" />
 					</p>
-					<p>	
+					<p>
 						<INPUT TYPE="submit" value="Aceptar" class="boton"/>
 					</p>
 				</fieldset>
-			</form>				
+			</form>
+</div>
+</body>
+</html>

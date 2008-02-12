@@ -81,6 +81,7 @@
 												"MENU_MAUI"=>" class='menu_tab'",
 												"MENU_TORQUE"=>" class='menu_tab'",
 												"MENU_ALERTAS"=>" class='menu_tab'",
+												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
 												"MENU"=>$menu));
 	$s->salvar();
 
