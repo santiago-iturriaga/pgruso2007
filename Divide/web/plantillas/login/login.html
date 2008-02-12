@@ -3,6 +3,9 @@
 	<TITLE>Fenton</TITLE>
 	<LINK media=all href="estilos.css" type=text/css rel=stylesheet>
 	<LINK media=all href="niftyCorners.css" type=text/css rel=stylesheet>
+
+	<script src="js/prototype.js" type="text/javascript"></script>
+	<script src="js/scriptaculous.js" type="text/javascript"></script>
 	 <script language="JavaScript" type="text/JavaScript"></script>
 	 <script type="text/javascript" src="js/nifty.js"></script>
 	 <script language="JavaScript" type="text/JavaScript"></script>
@@ -29,10 +32,11 @@
 						<input type="password" name="password" id="password" />
 					</p>
 					<p>
-						<INPUT TYPE="submit" value="Aceptar" class="boton"/>
+						<INPUT TYPE="submit" value="Aceptar" class="boton" onClick="new Effect.DropOut('div_login')"/>
 					</p>
 				</fieldset>
 			</form>
+			{MENSAJE}{ERROR}
 </div>
 </body>
 </html>
