@@ -43,7 +43,7 @@ class Momento{
 		}
 
 		//$consulta = "insert into ejecucion (archivo,ruta,argumentos,trabajo) values(?,?,?,?,?)";
-		$consulta = "insert into ejecucion (id,archivo,ruta,argumentos,trabajo) values((select max(id)+1 from ejecucion),?,?,?,?)";
+		$consulta = "insert into ejecucion (archivo,ruta,argumentos,trabajo) values(?,?,?,?)";
 		if(!$this->db->EjecutarConsulta($consulta,array($archivo,$ruta,$argumentos,$id_trabajo),true))
 			{
 			return array("error"=>1,
