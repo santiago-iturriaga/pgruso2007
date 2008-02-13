@@ -38,6 +38,7 @@
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"SMENU_ESTADO"=>" id='smactual' ",
+												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
 												"ERROR"=>$error));
 	$s->salvar();
 
