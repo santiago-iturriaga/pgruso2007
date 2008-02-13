@@ -665,3 +665,6 @@ table b{
 	color: #ff0000;
 	}
 pre {text-align:left;}
+.ganglia {
+	padding-top: 1em;
+}
