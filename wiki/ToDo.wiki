@@ -18,4 +18,9 @@ To Do
 - terminar paginas admin
         * paginas ganglias [santiago]
         * arreglar paginas torque/maui [santiago]
+
+-Navegación de los sitios web (especificar entre todos)
+-menus
+-estilos
+
 - documentar?
