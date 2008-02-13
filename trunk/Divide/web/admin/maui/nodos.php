@@ -50,6 +50,7 @@
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"SMENU_NODOS"=>" id='smactual' ",
+												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
 												"ERROR"=>$error));
 	$s->salvar();
 
