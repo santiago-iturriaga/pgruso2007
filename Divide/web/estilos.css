@@ -749,6 +749,9 @@ span#enejecucion{
 #usuario_logueado a{
 	color: #ff0000;
 	}
+#ganglia.div {
+	padding-top: 1em;
+}
 #cuerpo{
 	overflow:auto;
 	width: 780px;
