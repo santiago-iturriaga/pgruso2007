@@ -39,13 +39,14 @@
 	$url_mem = GANGLIA_URL."/graph.php?g=mem_report&c=arca";
   	$url_network = GANGLIA_URL."/graph.php?g=network_report&c=arca";
 
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-												"MENSAJE"=>$mensaje,
-												"ERROR"=>$error,
-												"LOAD"=>$url_carga,
+	$ppal	=	$plantilla->replace($ppal,array("LOAD"=>$url_carga,
 												"CPU"=>$url_cpu,
 												"MEM"=>$url_mem,
 												"NET"=>$url_network));
+
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENSAJE"=>$mensaje,
+												"ERROR"=>$error));
 	$s->salvar();
 
 	echo $base;
