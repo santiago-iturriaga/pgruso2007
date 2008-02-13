@@ -217,7 +217,7 @@ input {
 }
 
 #menu li#actual {
-	background: #ff5555;
+	background: #555555;
 	font-weight: bold;
 }
 
@@ -239,7 +239,7 @@ input {
 	width: 156px;
 	height: 21px;
 	float: left;
-	background: #ff5555;
+	background: #555555;
 	overflow: hidden;
 	text-align: center;
 	font-size: 11px;
