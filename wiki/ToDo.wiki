@@ -29,3 +29,17 @@ To Do
 -links -> iconos
 -escribir resumen -> inicio maui y torque
 - documentar?
+
+-cliente
+	redondear cosas
+	menu de inicio feo (segun el itu q es daltonico)
+	cambiar clave: no estoy de a cuerdo
+	login coso logout + cambiar trabajo
+	ñoqui por casita
+	iconitos
+	archivos: no esta de a cu erdo
+	sacar menu vertical
+	tirar salida y ejecutable a otro lado (inaxxesible)
+	en la seleccion de trabajo->iconito gay de alertas
+	en la seleccion de trabajo->iconito gay de en ejecucion
+	pagina de alertas sin tener trabajo seleccionado
