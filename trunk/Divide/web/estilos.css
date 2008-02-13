@@ -48,7 +48,6 @@ p {
 #contenedor {
 	margin: 0px auto;
 	width: 780px;
-	overflow:auto;
 	border-color: #9e9ec3;
 	border-width: 0px 1px 1px;
 	border-style: solid;
@@ -750,3 +749,8 @@ span#enejecucion{
 #usuario_logueado a{
 	color: #ff0000;
 	}
+#cuerpo{
+	overflow:auto;
+	width: 780px;
+
+}
