@@ -34,10 +34,10 @@
 	$mensaje = "";
 	$error = "";
 
-	$url_carga = "http://localhost:8888/ganglia/graph.php?g=load_report&c=arca";
-	$url_cpu = "http://localhost:8888/ganglia/graph.php?g=cpu_report&c=arca";
-	$url_mem = "http://localhost:8888/ganglia/graph.php?g=mem_report&c=arca";
-  	$url_network = "http://localhost:8888/ganglia/graph.php?g=network_report&c=arca";
+	$url_carga = GANGLIA_URL."/graph.php?g=load_report&c=arca";
+	$url_cpu = GANGLIA_URL."/graph.php?g=cpu_report&c=arca";
+	$url_mem = GANGLIA_URL."/graph.php?g=mem_report&c=arca";
+  	$url_network = GANGLIA_URL."/graph.php?g=network_report&c=arca";
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
