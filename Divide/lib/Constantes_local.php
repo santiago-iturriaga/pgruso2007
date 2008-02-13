@@ -14,11 +14,22 @@ define("EJECUTABLE","plantillas/archivos/qsub.script");
 define("LOG_EJECUCIONES","../log/ejecuciones.log");
 define("TIEMPO_REFRESH_RESULTADOS","5");
 
+// =======================================================
+// GANGLIA
+// =======================================================
+define("GANGLIA_URL","http://localhost/ganglia");
+
+// =======================================================
+// SSH
+// =======================================================
 define("SSH","ssh");
 
 define("USERNAME","santiago");
 define("HOST","localhost");
 
+// =======================================================
+// TORQUE / MAUI
+// =======================================================
 define("PATH_TORQUE","/usr/local/torque");
 define("PATH_MAUI","/usr/local/maui");
 
