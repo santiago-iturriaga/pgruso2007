@@ -14,11 +14,22 @@ define("EJECUTABLE","plantillas/archivos/qsub.script");
 define("LOG_EJECUCIONES","../log/ejecuciones.log");
 define("TIEMPO_REFRESH_RESULTADOS","5");
 
+// =======================================================
+// GANGLIA
+// =======================================================
+define("GANGLIA_URL","http://lennon.fing.edu.uy/ganglia");
+
+// =======================================================
+// SSH
+// =======================================================
 define("SSH","ssh");
 
 define("USERNAME","pgccadar");
 define("HOST","localhost");
 
+// =======================================================
+// TORQUE / MAUI
+// =======================================================
 define("PATH_TORQUE","/net/local/pgccadar");
 define("PATH_MAUI","/net/local/pgccadar");
 
