@@ -16,7 +16,7 @@ To Do
 	* crear grupo especial y que reciba alertas aunque no este en ningun trabajo [paulo]
 	* crear php para ser invocado por cron con el chequeo de quota [paulo]
 - terminar paginas admin
-        * paginas ganglias [santiago]
+        * paginas ganglias (javascript) [santiago]
         * arreglar paginas torque/maui [santiago]
 
 -Navegación de los sitios web (especificar entre todos)
