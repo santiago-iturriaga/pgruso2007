@@ -445,6 +445,20 @@ class Usuarios{
 			}
 		return array("error"=>0);
 	}
+	function getUsuariosTrabajo($idTrabajo){
+		$consulta= "select ug.usuario from usuario_grupo ug, trabajo_grupo tg where tg.grupo=ug.grupo and ug.trabajo=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			array_push($salida,$row["usuario"]);
+			}
+		return array("error"=>0,"usuarios"=>$salida);
+	}
 
 
 }
