@@ -446,7 +446,7 @@ class Usuarios{
 		return array("error"=>0);
 	}
 	function getUsuariosTrabajo($idTrabajo){
-		$consulta= "select ug.usuario from usuario_grupo ug, trabajo_grupo tg where tg.grupo=ug.grupo and ug.trabajo=?";
+		$consulta= "select ug.usuario from usuario_grupo ug, trabajo_grupo tg where tg.grupo=ug.grupo and tg.trabajo=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
 			{
 			return array("error"=>1,
