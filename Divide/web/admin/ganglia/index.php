@@ -34,12 +34,14 @@
 	$mensaje = "";
 	$error = "";
 
+	$url = GANGLIA_URL;
 	$url_carga = GANGLIA_URL."/graph.php?g=load_report&c=arca";
 	$url_cpu = GANGLIA_URL."/graph.php?g=cpu_report&c=arca";
 	$url_mem = GANGLIA_URL."/graph.php?g=mem_report&c=arca";
   	$url_network = GANGLIA_URL."/graph.php?g=network_report&c=arca";
 
-	$ppal	=	$plantilla->replace($ppal,array("LOAD"=>$url_carga,
+	$ppal	=	$plantilla->replace($ppal,array("GANGLIA_URL"=>$url,
+												"LOAD"=>$url_carga,
 												"CPU"=>$url_cpu,
 												"MEM"=>$url_mem,
 												"NET"=>$url_network));

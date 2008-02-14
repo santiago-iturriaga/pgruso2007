@@ -748,9 +748,17 @@ span#enejecucion{
 }
 #usuario_logueado a{
 	color: #ff0000;
-	}
+}
 .ganglia {
 	padding-top: 1em;
+}
+.ganglia_table {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+.ganglia_header {
+	background-color: #9c9cc8;
+	color: #ffffff;
 }
 #cuerpo{
 	overflow:auto;
