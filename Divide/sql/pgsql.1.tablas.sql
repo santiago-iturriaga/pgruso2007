@@ -11,6 +11,7 @@ create table trabajo (
 	foreign key (cliente) references cliente(id),
 	nodos int,
 	tiempo_maximo time,
+	quota int,
 	cola varchar(25),
 	quota int,
 	fecha_fin timestamp default null
