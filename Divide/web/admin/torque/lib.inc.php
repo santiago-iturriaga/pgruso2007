@@ -206,6 +206,7 @@ function getStatusJob($cadena){
 function getTablasColas($cadena) {
 	$salida	= "";
 	$cadena = stristr($cadena,"Queue: ");
+	$salida.= "<table border=1>";
 	while (strlen($cadena) > 0) {
 		$nombre_array = explode("\n", $cadena,2);
 		$nombre = substr($nombre_array[0],7);
@@ -226,8 +227,8 @@ function getTablasColas($cadena) {
 		}
 
 
-		$salida.= "<table border=1>";
-		$salida.= "<tr><td>";
+
+		$salida.= "<tr><td colspan='2' align='center' bgcolor='#dddddd' >";
 		$salida.= "<b>Cola: </b>$nombre&nbsp;";
 		if ($started=="F") {
 			$salida.= "<a href='colas.php?iniciar=$nombre'>[Iniciar]</a>";
@@ -237,14 +238,22 @@ function getTablasColas($cadena) {
 			$salida.= "[No disponible]";
 		}
 		$salida.= "</td></tr>";
-		$salida.= "<tr><td>";
-		$salida.= "<pre>$datos</pre>";
-		$salida.= "</td></tr>";
-		$salida.= "</table>";
+		//$salida.= "<tr><td>";
+
+		$datos=explode("\n",$datos);
+		$datos_ = array();
+		foreach($datos as $d) {
+			array_push($datos_,implode('</td><td>',explode("=",$d,2)));
+		}
+
+		//$salida.= "<pre>$datos</pre>";
+		$salida.=	"<tr><td>".implode('</td></tr><tr><td>',$datos_)."</td></tr>";
+		//$salida.= "</td></tr>";
+
 
 		//Siguiente queue
 		$cadena = stristr(substr($cadena,6),"Queue: ");
-	}
+	}$salida.= "</table>";
 	return $salida;
 }
 

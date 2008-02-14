@@ -721,6 +721,7 @@ table thead{
 }
 table tr td{
 	padding: 2px 2px 2px 2px;
+	vertical-align:top;
 }
 .boton{
 	background-color:#e5e5fc;
