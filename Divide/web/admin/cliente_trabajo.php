@@ -45,6 +45,7 @@
 			$error	= $interfaz->getError($res);
 		else
 			$mensaje = $interfaz->getMensaje("CT004");
+error_log($mensaje);
 	}
 	if(isset($_POST["nodos"])){
 		$s->sesion->trabajo_editado["NOMBRE"]=$_POST["nombre"];

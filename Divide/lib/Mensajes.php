@@ -8,6 +8,15 @@
 	$MENSAJES["CT003"] = "Se cre&oacute; el trabajo.";
 	$MENSAJES["CT004"] = "Se cre&oacute; el cliente.";
 	$MENSAJES["CT005"] = "El trabajo fue restaurado.";
+	$MENSAJES["CT101"] = "El nombre del trabajo no puede ser vaci&iacute;o.";
+	$MENSAJES["CT102"] = "La cantidad de nodos debe ser un n&uacute;mero mayor que 0.";
+	$MENSAJES["CT103"] = "El tiempo m&aacute;ximo no tiene el formato esperado.";
+	$MENSAJES["CT104"] = "El nombre de la cola no puede ser vaci&iacute;o.";
+	$MENSAJES["CT105"] = "La quota de nodos debe ser un n&uacute;mero mayor que 0.";
+
+
+	$MENSAJES["M101"] = "No fue posible crear la carpeta del cliente.";
+
 	//ALERTAS
 	$MENSAJES["EA01"]  = "Error en el envio de mail";
 	$MENSAJES["EA02"]  = "Error al eliminar la alerta";
