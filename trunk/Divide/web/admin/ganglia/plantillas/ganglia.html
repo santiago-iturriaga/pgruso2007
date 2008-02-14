@@ -1,18 +1,28 @@
-<div class="ganglia">
-	<table id="load">
+<script language="javascript">
+	function cargarImagenes() {
+		document.getElementBy('loadimg').src='{LOAD}';
+		document.getElementBy('loadimg').src='{CPU}';
+		document.getElementBy('loadimg').src='{MEM}';
+		document.getElementBy('loadimg').src='{NET}';
+		
+		setTimeout('cargarImagenes()',5000);
+	}	
+</script>
+<div class="ganglia" onload='cargarImagenes'>
+	<table id="load" class="ganglia">
 		<tr><td>Carga del cluster</td></tr>
-		<tr><td><img src="{LOAD}" /></td></tr>
+		<tr><td><img id="loadimg" /></td></tr>
 	</table>
-	<table id="cpu">
+	<table id="cpu" class="ganglia">
 		<tr><td>Uso de procesador del cluster</td></tr>
-		<tr><td><img src="{CPU}" /></td></tr>
+		<tr><td><img id="cpuimg" /></td></tr>
 	</table>
-	<table id="mem">
+	<table id="mem" class="ganglia">
 		<tr><td>Uso de memoria del cluster</td></tr>
-		<tr><td><img src="{MEM}" /></td></tr>
+		<tr><td><img id="memimg" /></td></tr>
 	</table>
-	<table id="net">
+	<table id="net" class="ganglia">
 		<tr><td>Uso de la red del cluster</td></tr>
-		<tr><td><img src="{NET}" /></td></tr>
+		<tr><td><img id="netimg" /></td></tr>
 	</table>
 </div>
