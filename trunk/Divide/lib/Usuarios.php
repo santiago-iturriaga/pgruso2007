@@ -376,6 +376,18 @@ class Usuarios{
 		return array("error"=>0,"trabajo"=>$row);
 	}
 	function crearTrabajo($cliente,$nombre,$nodos,$tiempo_maximo,$cola,$quota,$idGrupo=null){
+		$nombre = trim($nombre);
+		$nodos = trim($nodos);
+		$tiempo_maximo = trim($tiempo_maximo);
+		$cola = trim($cola);
+		$quota = trim($quota);
+		if($nombre == "") return array("error"=>1,"codError"=>"CT101");
+		if($nodos == "" or !is_numeric($nodos) or $nodos<0) return array("error"=>1,"codError"=>"CT102");
+		if($tiempo_maximo == "" or !ereg("[0-9][0-9]:[0-9][0-9]:[0-9][0-9]",$tiempo_maximo))
+			return array("error"=>1,"codError"=>"CT103");
+		if($cola == "") return array("error"=>1,"codError"=>"CT104");
+		if($quota == "" or !is_numeric($quota) or $quota<0) return array("error"=>1,"codError"=>"CT105");
+
 		$consulta= "insert into trabajo (cliente,nombre,nodos,tiempo_maximo,cola,quota) values (?,?,?,?,?,?)";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($cliente,$nombre,$nodos,$tiempo_maximo,$cola,$quota),false))
 			{
@@ -408,6 +420,7 @@ class Usuarios{
 		$id=$this->conexion->getUltimoNumerador();
 		$momento = new Momento($this->conexion);
 		$res	= $momento->crearDirCliente($id);
+
 		if($res["error"]) {
 			$consulta= "delete from cliente where id=?";
 			$this->conexion->EjecutarConsulta($consulta,array($id),false);
@@ -437,6 +450,19 @@ class Usuarios{
 	}
 
 	function editarTrabajo($id,$nombre,$nodos,$tiempo_maximo,$cola,$quota){
+		$nombre = trim($nombre);
+		$nodos = trim($nodos);
+		$tiempo_maximo = trim($tiempo_maximo);
+		$cola = trim($cola);
+		$quota = trim($quota);
+		if($nombre == "") return array("error"=>1,"codError"=>"CT101");
+		if($nodos == "" or !is_numeric($nodos) or $nodos<0) return array("error"=>1,"codError"=>"CT102");
+		if($tiempo_maximo == "" or !ereg("[0-9][0-9]:[0-9][0-9]:[0-9][0-9]",$tiempo_maximo))
+			return array("error"=>1,"codError"=>"CT103");
+		if($cola == "") return array("error"=>1,"codError"=>"CT104");
+		if($quota == "" or !is_numeric($quota) or $quota<0) return array("error"=>1,"codError"=>"CT105");
+
+
 		$consulta= "update trabajo set nombre=?,nodos=?,tiempo_maximo=?,cola=?,quota=? where id=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre,$nodos,$tiempo_maximo,$cola,$quota,$id),false))
 			{
