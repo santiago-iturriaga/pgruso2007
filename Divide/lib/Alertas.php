@@ -141,16 +141,19 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 		$mensaje = 	$plantilla->replace($mensaje,$textVar);
 		}
 
-		$consulta2= "insert into trabajo_alerta(alerta,trabajo,body) values(?,?,?)";
+		//$consulta2= "insert into trabajo_alerta(alerta,trabajo,body) values(?,?,?)";
 
-		if(!$this->conexion->EjecutarConsulta($consulta2,array($idAlerta, $idTrabajo, $mensaje),true))
+		$consulta2= "insert into trabajo_alerta select ?,?,? where not exists (select alerta, trabajo from trabajo_alerta where alerta = ? and trabajo = ?)";
+		if(!$this->conexion->EjecutarConsulta($consulta2,array($idAlerta, $idTrabajo, $mensaje, $idAlerta, $idTrabajo),true))
 			{
 				return array("error"=>1, "codError"=>"EA08");
 			}
 
-		$consulta3= "insert into usuario_alerta(usuario,alerta,trabajo) values(?,?,?)";
+		//$consulta3= "insert into usuario_alerta(usuario,alerta,trabajo) values(?,?,?)";
 
-		if(!$this->conexion->EjecutarConsulta($consulta3,array($idUsuario, $idAlerta, $idTrabajo),true))
+		$consulta3= "insert into usuario_alerta select ?,?,? where not exists (select alerta, usuario, trabajo from usuario_alerta where alerta = ? and usuario= ? and trabajo = ?)";
+
+		if(!$this->conexion->EjecutarConsulta($consulta3,array($idAlerta, $idUsuario, $idTrabajo, $idAlerta, $idUsuario, $idTrabajo),true))
 			{
 				return array("error"=>1, "codError"=>"EA09");
 			}
