@@ -1,9 +1,9 @@
 <script language="javascript">
 	function cargarImagenes() {
-		document.getElementBy('loadimg').src='{LOAD}';
-		document.getElementBy('loadimg').src='{CPU}';
-		document.getElementBy('loadimg').src='{MEM}';
-		document.getElementBy('loadimg').src='{NET}';
+		document.getElementById('loadimg').src='{LOAD}';
+		document.getElementById('cpuimg').src='{CPU}';
+		document.getElementById('memimg').src='{MEM}';
+		document.getElementById('netimg').src='{NET}';
 		
 		setTimeout('cargarImagenes()',5000);
 	}	
