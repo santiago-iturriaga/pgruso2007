@@ -1,14 +1,15 @@
 <script language="javascript">
 	function cargarImagenes() {
-		document.getElementById('loadimg').src='{LOAD}';
-		document.getElementById('cpuimg').src='{CPU}';
-		document.getElementById('memimg').src='{MEM}';
-		document.getElementById('netimg').src='{NET}';
+		var aleatorio = Math.random();
+		document.getElementById('loadimg').src='{LOAD}?'+aleatorio;
+		document.getElementById('cpuimg').src='{CPU}?'+aleatorio;
+		document.getElementById('memimg').src='{MEM}?'+aleatorio;
+		document.getElementById('netimg').src='{NET}?'+aleatorio;
 		
 		setTimeout('cargarImagenes()',5000);
 	}	
 </script>
-<div class="ganglia" onload='cargarImagenes'>
+<div class="ganglia">
 	<table id="load" class="ganglia">
 		<tr><td>Carga del cluster</td></tr>
 		<tr><td><img id="loadimg" /></td></tr>
@@ -26,3 +27,6 @@
 		<tr><td><img id="netimg" /></td></tr>
 	</table>
 </div>
+<script language="javascript">
+	cargarImagenes();
+</script>
