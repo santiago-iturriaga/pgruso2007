@@ -761,6 +761,14 @@ span#enejecucion{
 	background-color: #9c9cc8;
 	color: #ffffff;
 }
+.index_logo {
+	padding-top: 1em;
+}
+.index_titulo {
+	padding-top: 0.5em;
+	font-size: 1.5em;
+	font-weight: bold;
+}
 #cuerpo{
 	overflow:auto;
 	width: 780px;
