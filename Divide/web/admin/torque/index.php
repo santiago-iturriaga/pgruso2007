@@ -24,7 +24,7 @@
 
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
-	
+	$ppal		= 	$plantilla->load("plantillas/index.html");
 	$mensaje = "";
 	$error = "";
 
