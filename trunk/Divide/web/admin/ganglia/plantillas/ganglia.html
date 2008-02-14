@@ -1,12 +1,12 @@
 <script language="javascript">
 	function cargarImagenes() {
 		var aleatorio = Math.random();
-		document.getElementById('loadimg').src='{LOAD}?'+aleatorio;
-		document.getElementById('cpuimg').src='{CPU}?'+aleatorio;
-		document.getElementById('memimg').src='{MEM}?'+aleatorio;
-		document.getElementById('netimg').src='{NET}?'+aleatorio;
+		document.getElementById('loadimg').src='{LOAD}&'+aleatorio;
+		document.getElementById('cpuimg').src='{CPU}&'+aleatorio;
+		document.getElementById('memimg').src='{MEM}&'+aleatorio;
+		document.getElementById('netimg').src='{NET}&'+aleatorio;
 		
-		setTimeout('cargarImagenes()',5000);
+		setTimeout('cargarImagenes()',10000);
 	}	
 </script>
 <div class="ganglia">
