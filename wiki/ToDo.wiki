@@ -1,4 +1,4 @@
-#summary Lista de cosas para hacer
+#summary Lista de cosas para hacer...
 
 = ToDo =
 
@@ -12,8 +12,8 @@
     * MAUI
       * trabajos > titulos, resumen
     * TORQUE
-      * colas > tabla split =
-      * nodos > valign=top links nowrap
+      * colas > `tabla split =`
+      * nodos > `valign=top links nowrap`
 
   * Navegación de los sitios web (especificar entre todos)
   * menus
