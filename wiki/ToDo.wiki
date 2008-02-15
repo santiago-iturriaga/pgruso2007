@@ -7,39 +7,41 @@ To Do
 
 = Details =
 
-- cuota por trabajo (en MB)
-- terminar alertas
-	* cron [damian]
-	* crear alertas de inicio / fin de ejecucion de trabajo [paulo]
-	* crear php para ser invocado por cron con el chequeo de quota [paulo]
-- terminar paginas admin
-        * paginas ganglias (javascript) [santiago]
-        * arreglar paginas torque/maui [santiago]
+  # cuota por trabajo (en MB)
+  # terminar alertas
+    * cron [damian]
+    * crear alertas de inicio / fin de ejecucion de trabajo [paulo]
+    * crear php para ser invocado por cron con el chequeo de quota [paulo]
+  # terminar paginas admin
+    * arreglar paginas torque/maui [santiago]
+    * MAUI
+      - trabajos > titulos, resumen
+    * TORQUE
+      - colas > tabla split =
+      - nodos > valign=top links nowrap
 
--Navegación de los sitios web (especificar entre todos)
--menus
--estilos
--msgs:
-        *cliente_trabajo
-	*papelera
-	*usuarios-alerta
--arreglar maui>trabajos> titulos, resumen
--torque>colas>tabla split =
--torque>nodos>valign=top links nowrap
--links -> iconos
--escribir resumen -> inicio maui y torque
-- documentar?
+  # Navegación de los sitios web (especificar entre todos)
+  # menus
+  # estilos
+  # msgs:
+    * cliente_trabajo
+    * papelera
+    * usuarios-alerta
 
--cliente
-	redondear cosas
-	menu de inicio feo (segun el itu q es daltonico)
-	cambiar clave: no estoy de a cuerdo
-	login coso logout + cambiar trabajo
-	ñoqui por casita
-	iconitos
-	archivos: no esta de a cu erdo
-	sacar menu vertical
-	tirar salida y ejecutable a otro lado (inaxxesible)
-	en la seleccion de trabajo->iconito gay de alertas
-	en la seleccion de trabajo->iconito gay de en ejecucion
-	pagina de alertas sin tener trabajo seleccionado
+  # links -> iconos
+
+  # cliente
+    * redondear cosas
+    * menu de inicio feo (segun el itu q es daltonico)
+    * cambiar clave: no estoy de a cuerdo
+    * login coso logout + cambiar trabajo
+    * ñoqui por casita
+    * iconitos
+    * archivos: no esta de a cu erdo
+    * sacar menu vertical
+    * tirar salida y ejecutable a otro lado (inaxxesible)
+    * en la seleccion de trabajo->iconito gay de alertas
+    * en la seleccion de trabajo->iconito gay de en ejecucion
+    * pagina de alertas sin tener trabajo seleccionado
+
+  # *documentar !!!!!!!!!!!!!!*
