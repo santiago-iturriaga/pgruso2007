@@ -1,36 +1,31 @@
 #summary Lista de cosas para hacer
 
-= Introduction =
+= ToDo =
 
-To Do
-
-
-= Details =
-
-  # cuota por trabajo (en MB)
-  # terminar alertas
+  * cuota por trabajo (en MB)
+  * terminar alertas
     * cron [damian]
     * crear alertas de inicio / fin de ejecucion de trabajo [paulo]
     * crear php para ser invocado por cron con el chequeo de quota [paulo]
-  # terminar paginas admin
+  * terminar paginas admin
     * arreglar paginas torque/maui [santiago]
     * MAUI
-      - trabajos > titulos, resumen
+      * trabajos > titulos, resumen
     * TORQUE
-      - colas > tabla split =
-      - nodos > valign=top links nowrap
+      * colas > tabla split =
+      * nodos > valign=top links nowrap
 
-  # Navegación de los sitios web (especificar entre todos)
-  # menus
-  # estilos
-  # msgs:
+  * Navegación de los sitios web (especificar entre todos)
+  * menus
+  * estilos
+  * msgs:
     * cliente_trabajo
     * papelera
     * usuarios-alerta
 
-  # links -> iconos
+  * links -> iconos
 
-  # cliente
+  * cliente
     * redondear cosas
     * menu de inicio feo (segun el itu q es daltonico)
     * cambiar clave: no estoy de a cuerdo
@@ -44,4 +39,4 @@ To Do
     * en la seleccion de trabajo->iconito gay de en ejecucion
     * pagina de alertas sin tener trabajo seleccionado
 
-  # *documentar !!!!!!!!!!!!!!*
+  * *documentar !!!!!!!!!!!!!!*
