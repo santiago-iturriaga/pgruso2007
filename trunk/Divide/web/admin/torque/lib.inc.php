@@ -158,13 +158,13 @@ function getTablaTrabajos($datos){
 				$job_status = $valor;
 				switch($valor) {
 						case "H":
-							$valor="Held";
+							$valor="Held <img src='../../imagenes/cog_error.png' />";
 							break;
 						case "Q":
-							$valor="Queued";
+							$valor="Queued <img src='../../imagenes/hourglass_go.png' />";
 							break;
 						case "R":
-							$valor="Running";
+							$valor="Running <img src='../../imagenes/cog_go.png' />";
 							break;
 						default:
 							break;
@@ -176,13 +176,13 @@ function getTablaTrabajos($datos){
 			$renglon[$columna] = $valor;
 			}
 		$jobid =trim($job_id);
-		$botones = "<a href='jobs.php?eliminar=$job_id'>Eliminar</a>";
+		$botones = "<a href='jobs.php?eliminar=$job_id'><img src='../../imagenes/delete.png' title='Eliminar' /></a>";
         switch ($job_status) {
         	case "H":
-            	$botones .= "<a href='jobs.php?reiniciar=$job_id'>Reiniciar</a>";
+            	$botones .= "<a href='jobs.php?reiniciar=$job_id'><img src='../../imagenes/play_green.png' title='Reiniciar' /></a>";
                 break;
             default:
-            	$botones	.= "<a href='jobs.php?detener=$job_id'>Detener</a>";
+            	$botones .= "<a href='jobs.php?detener=$job_id'><img src='../../imagenes/pause_green.png' title='Detener' /></a>";
 				break;
             }
 		$renglon["botones"]=$botones;
@@ -231,9 +231,9 @@ function getTablasColas($cadena) {
 		$salida.= "<tr><td colspan='2' align='center' style='color:#ffffff;' bgcolor='#85859C' >";
 		$salida.= "<b>Cola: </b>$nombre&nbsp;";
 		if ($started=="F") {
-			$salida.= "<a href='colas.php?iniciar=$nombre'>[Iniciar]</a>";
+			$salida.= "(<a href='colas.php?iniciar=$nombre' style='color:#ffffff;'><img src='../../imagenes/control_play_blue.png' title='Iniciar'/> Iniciar</a>)";
 		} else if ($started=="T") {
-			$salida.= "<a href='colas.php?detener=$nombre'>[Detener]</a>";
+			$salida.= "(<a href='colas.php?detener=$nombre' style='color:#ffffff;'><img src='../../imagenes/control_pause_blue.png' title='Detener' /> Detener</a>)";
 		} else {
 			$salida.= "[No disponible]";
 		}

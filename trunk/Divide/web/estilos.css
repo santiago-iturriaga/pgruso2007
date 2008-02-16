@@ -787,7 +787,19 @@ a.boton_nuevo{
 
 }
 div.jobs_maui {
-	padding-top: 1em;
+	width: 95%;
+	overflow: auto;
+
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+
+	white-space: nowrap;
+}
+
+div.jobs_maui td {
+	white-space: nowrap;
 }
 
 h2.jobs_maui {
@@ -802,6 +814,10 @@ h2.jobs_maui {
 	width: 95%;
 	overflow: auto;
 	margin: auto;
+}
+
+.nodos_maui_tabla td {
+	white-space: nowrap;
 }
 
 .nodos_maui {
