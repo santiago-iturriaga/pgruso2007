@@ -661,13 +661,14 @@ form legend{
 }
 
 #parametros fieldset{
-	width: 250px;
+	width: 450px;
 }
 
 
 #form_clave{
-	width: 250px;
+	width: 450px;
 	margin-left: 230px;
+
 }
 
 ul.path {
