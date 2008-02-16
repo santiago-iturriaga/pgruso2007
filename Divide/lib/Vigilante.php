@@ -28,7 +28,7 @@ $alertas = new Alertas($conex);
 				//echo "<pre>";print_r($trabajos);echo '</pre>';
 			//obtnego grupos de usuarios y asigno mail
 			$resUsersAlertas = $users->getUsuariosConAlertas();
-			echo "<pre>";print_r($resUsersAlertas);echo '</pre>';
+			//echo "<pre>";print_r($resUsersAlertas);echo '</pre>';
 			if ($resUsersAlertas["error"] == 0){
 				$usersAlertas = $resUsersAlertas["usuarios"];
 				foreach ($trabajos as $id=>$trabajo){
@@ -37,10 +37,10 @@ $alertas = new Alertas($conex);
 					$dquota = dir_size($dir);
 					//$dquota = $dquota/(1024*1024);
 					if($dquota > $tquota){
-						//echo "ERROR: el trabajo ".$trabajo["id"]." se paso de cuota";
-						//echo ">>>>";
-						//echo $dquota.' MBytes';
-						//echo "<br>";
+						echo "ERROR: el trabajo ".$trabajo["id"]." se paso de cuota";
+						echo ">>>>";
+						echo $dquota.' MBytes';
+						echo "<br>";
 						//Asigno una la alerta al usuario con alertas
 						foreach   ($usersAlertas as $ucaid=>$usuarioCA){
 							$params = array("TRABAJO"=>$trabajo["id"],"CLIENTE"=>$trabajo["cliente"]);
@@ -61,10 +61,10 @@ $alertas = new Alertas($conex);
 						}
 
 					}else{
-						//echo "El trabajo ".$trabajo["id"]." esta bien de cuota";
-						//echo ">>>>";
-						//echo $dquota.' MBytes';
-						//echo "<br>";
+						echo "El trabajo ".$trabajo["id"]." esta bien de cuota";
+						echo ">>>>";
+						echo $dquota.' MBytes';
+						echo "<br>";
 					}
 				}
 			}else{
@@ -79,7 +79,7 @@ $alertas = new Alertas($conex);
 function dir_size($dir)
 {
     $handle = opendir($dir);
-
+	$mas = 0;
     while ($file = readdir($handle)) {
         if ($file != '..' && $file != '.' && !is_dir($dir.'/'.$file)) {
             $mas += filesize($dir.'/'.$file);

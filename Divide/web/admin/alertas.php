@@ -21,6 +21,7 @@
 	if(isset($_GET["alerta"])){
 
 		$s->sesion->alerta_actual = $_GET["alerta"];
+		$s->sesion->trabajo = $_GET["trabajo"];
 		$s->sesion->bytes_leidos = 0;
 		$s->salvar();
 		header("Location: alerta.php");
@@ -54,19 +55,23 @@
 	else{
 		$tabla = new Tabla();
 		$tabla->dir_relativa = "../";
-		$tabla->addColumna(1,"fecha","Fecha");
-		$tabla->addColumna(2,"asunto","Asunto");
-		$tabla->addColumna(3,"link","");
+		$tabla->addColumna(1,"cliente","Cliente");
+		$tabla->addColumna(2,"trabajo","Trabajo");
+		$tabla->addColumna(3,"fecha","Fecha");
+		$tabla->addColumna(4,"asunto","Asunto");
+		$tabla->addColumna(5,"link","");
 
 
 		//echo "<pre>";print_r($resConsulta);echo '</pre>';
 		foreach ($resConsulta["alertas"] as $id=>$rowAlertas){
 			//echo "<pre>";print_r($rowAlertas);echo '</pre>';
-			$rowAlertas["link"]=$plantilla->replace($link,array("ID"=>$id));
+			$rowAlertas["link"]=$plantilla->replace($link,array("IDA"=>$id,"IDT"=>$rowAlertas{"trabajo"},));
 			$rowAlertas["eliminar"]=$checkbox;
 			if($rowAlertas{"leida"} == 0){
 				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</b>";
 				$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</b>";
+				$rowAlertas{"trabajo"} = "<b>" . $rowAlertas{"trabajo"} . "</b>";
+				$rowAlertas{"cliente"} = "<b>" . $rowAlertas{"cliente"} . "</b>";
 			}
 			$rowAlertas->asunto = $rowAlertas{"asunto"};
 			$tabla->addRenglon($rowAlertas);
