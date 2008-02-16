@@ -23,12 +23,12 @@
 	}
 
 	if(isset($_POST["Enviar"])) {
-		if (is_uploaded_file($HTTP_POST_FILES['archivo']['tmp_name'])) {
-			if(!@copy($HTTP_POST_FILES['archivo']['tmp_name'], $s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo']['name']))
+		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
+			if(!@copy($HTTP_POST_FILES['archivo_']['tmp_name'], $s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name']))
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
 		}
-		if($HTTP_POST_FILES['archivo']['type'] == 'application/zip'){
-			$res=$s->sesion->Directorio->descomprimir($HTTP_POST_FILES['archivo']['name']);
+		if($HTTP_POST_FILES['archivo_']['type'] == 'application/zip'){
+			$res=$s->sesion->Directorio->descomprimir($HTTP_POST_FILES['archivo_']['name']);
 			if($res["error"]) $msjerror	= $interfaz->getError($res);
 		}
 

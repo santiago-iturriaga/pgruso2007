@@ -79,7 +79,7 @@ class Momento{
 		fclose($fscript);
 		chmod($script,0777);
 		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"cd $ruta; ".QSUB." $script; exit\" 2>&1";
-
+error_log($ejecutar);
 		$salida = `$ejecutar`;
 
 		$salida = $this->parsear_salida($salida);
