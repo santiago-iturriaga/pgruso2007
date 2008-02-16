@@ -228,14 +228,12 @@ function getTablasColas($cadena) {
 
 
 
-		$salida.= "<tr><td colspan='2' align='center' style='color:#ffffff;' bgcolor='#85859C' >";
-		$salida.= "<b>Cola: </b>$nombre&nbsp;";
+		$salida.= "<tr><td align='center' style='color:#ffffff;' bgcolor='#85859C'>";
+		$salida.= "<b>Cola: </b>$nombre&nbsp;</td><td  style='color:#ffffff;' bgcolor='#85859C'>";
 		if ($started=="F") {
-			$salida.= "(<a href='colas.php?iniciar=$nombre' style='color:#ffffff;'><img src='../../imagenes/control_play_blue.png' title='Iniciar'/> Iniciar</a>)";
+			$salida.= "<a href='colas.php?iniciar=$nombre' style='color:#ffffff;'><img src='../../imagenes/control_play_blue.png' title='Iniciar'/> Iniciar</a>";
 		} else if ($started=="T") {
-			$salida.= "(<a href='colas.php?detener=$nombre' style='color:#ffffff;'><img src='../../imagenes/control_pause_blue.png' title='Detener' /> Detener</a>)";
-		} else {
-			$salida.= "[No disponible]";
+			$salida.= "<a href='colas.php?detener=$nombre' style='color:#ffffff;'><img src='../../imagenes/control_pause_blue.png' title='Detener'/> Detener</a>";
 		}
 		$salida.= "</td></tr>";
 		//$salida.= "<tr><td>";

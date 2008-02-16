@@ -121,25 +121,25 @@ function getTablaTrabajos($tabla_string,$cabezal,$cabezal_titulos,$tipo) {
 			switch ($tipo) {
 				case 0:
 					// Active
-					$botones .= "<a href='jobs.php?diagnose=$id'>[Diag]</a>";
-					$botones .= "<a href='jobs.php?cancel=$id'>[Cancel]</a>";
-					$botones .= "<a href='jobs.php?hold=$id'>[Hold]</a>";
-					$botones .= "<a href='jobs.php?suspend=$id'>[Suspend]</a>";
+					$botones .= "<a href='jobs.php?diagnose=$id'><img src='../../imagenes/information.png' title='Diagnostico'/></a>";
+					$botones .= "<a href='jobs.php?cancel=$id'><img src='../../imagenes/decline.png' title='Cancelar'/></a>";
+					$botones .= "<a href='jobs.php?hold=$id'><img src='../../imagenes/pause_green.png' title='Detener'/></a>";
+					$botones .= "<a href='jobs.php?suspend=$id'><img src='../../imagenes/stop.png' title='Suspender'/></a>";
 
 					break;
 				case 1:
 					// Idle
-					$botones .= "<a href='jobs.php?diagnose=$id'>[Diag]</a>";
-					$botones .= "<a href='jobsl.php?cancel=$id'>[Cancel]</a>";
-					$botones .= "<a href='jobs.php?hold=$id'>[Hold]</a>";
-					$botones .= "<a href='jobs.php?run=$id'>[Run]</a>";
+					$botones .= "<a href='jobs.php?diagnose=$id'><img src='../../imagenes/information.png' title='Diagnostico'/></a>";
+					$botones .= "<a href='jobsl.php?cancel=$id'><img src='../../imagenes/decline.png' title='Cancelar'/></a>";
+					$botones .= "<a href='jobs.php?hold=$id'><img src='../../imagenes/pause_green.png' title='Detener'/></a>";
+					$botones .= "<a href='jobs.php?run=$id'><img src='../../imagenes/play_green.png' title='Ejecutar'/></a>";
 
 					break;
 				case 2:
 					// Blocked
-					$botones .= "<a href='jobs.php?diagnose=$id'>[Diag]</a>";
-					$botones .= "<a href='jobs.php?cancel=$id'>[Cancel]</a>";
-					$botones .= "<a href='jobs.php?release=$id'>[Release]</a>";
+					$botones .= "<a href='jobs.php?diagnose=$id'><img src='../../imagenes/information.png' title='Diagnostico'/></a>";
+					$botones .= "<a href='jobs.php?cancel=$id'><img src='../../imagenes/decline.png' title='Cancelar'/></a>";
+					$botones .= "<a href='jobs.php?release=$id'><img src='../../imagenes/play_green.png' title='Liberar'/></a>";
 
 					break;
 				default:
