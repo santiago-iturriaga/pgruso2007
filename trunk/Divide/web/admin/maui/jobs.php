@@ -36,7 +36,7 @@
 		$checkjob_job = `$command`;
 
 		$tabla = new Tabla("","","../../");
-		$tabla->addColumna(0,0,"Informacion del trabajo");
+		$tabla->addColumna(0,0,"Informaci&oacute;n del trabajo");
 		$tabla->addRenglon(array("<pre>".$checkjob_job."</pre>"));
 		$info = $tabla->getTabla();
 	} else if (ISSET($_REQUEST["diagnose"])) {
@@ -109,24 +109,28 @@
 	$jobs_active = `$command`;
 	$cabezal_active = array("JobName","S Par","Effic","XFactor","Q","User","Group","MHost","Procs","Remaining","StartTime");
 	$cabezal_titulos_active = array("Nombre","S Par","Eficiencia","XFactor","Q","Usuario","Grupo","Nodo madre","Procesadores","Restante","Inicio");
-	$tabla_active = getTablaTrabajos($jobs_active,$cabezal_active,$cabezal_titulos_active,0);
+	list($tabla_active,$resumen_active) = getTablaTrabajos($jobs_active,$cabezal_active,$cabezal_titulos_active,0);
 
 	$command = SSH." -l ".USERNAME." ".HOST." \"".JOBS_CMD." -i; exit\" 2>&1";
 	$jobs_idle = `$command`;
 	$cabezal_idle = array("JobName","Priority","XFactor","Q","User","Group","Procs","WCLimit","Class","SystemQueueTime");
 	$cabezal_titulos_idle = array("Nombre","Prioridad","XFactor","Q","Usuario","Grupo","Procesadores","WCLimit","Class","SystemQueueTime");
-	$tabla_idle = getTablaTrabajos($jobs_idle,$cabezal_idle,$cabezal_titulos_idle,1);
+	list($tabla_idle,$resumen_idle) = getTablaTrabajos($jobs_idle,$cabezal_idle,$cabezal_titulos_idle,1);
 
 	$command = SSH." -l ".USERNAME." ".HOST." \"".JOBS_CMD." -b; exit\" 2>&1";
 	$jobs_blocked = `$command`;
 	$cabezal_blocked = array("JobName","User","Reason");
-	$cabezal_titulos_blocked = array("Nombre","Usuario","Razon");
-	$tabla_blocked = getTablaTrabajos($jobs_blocked,$cabezal_blocked,$cabezal_titulos_blocked,2);
+	$cabezal_titulos_blocked = array("Nombre","Usuario","Raz&oacute;n");
+	list($tabla_blocked,$resumen_blocked) = getTablaTrabajos($jobs_blocked,$cabezal_blocked,$cabezal_titulos_blocked,2);
 
-	$ppal	=	$plantilla->replace($ppal,array("TABLA_ACTIVE"=>$tabla_active->getTabla()));
-	$ppal	=	$plantilla->replace($ppal,array("TABLA_IDLE"=>$tabla_idle->getTabla()));
-	$ppal	=	$plantilla->replace($ppal,array("TABLA_BLOCKED"=>$tabla_blocked->getTabla()));
-	$ppal	=	$plantilla->replace($ppal,array("INFO_TRABAJO"=>$info));
+	$ppal	=	$plantilla->replace($ppal,array("TABLA_ACTIVE"=>$tabla_active->getTabla(),
+												"TABLA_IDLE"=>$tabla_idle->getTabla(),
+												"TABLA_BLOCKED"=>$tabla_blocked->getTabla(),
+												"RESUMEN_ACTIVE"=>$resumen_active,
+												"RESUMEN_IDLE"=>$resumen_idle,
+												"RESUMEN_BLOCKED"=>$resumen_blocked,
+												"INFO_TRABAJO"=>$info));
+
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"SMENU_JOBS"=>" id='smactual' ",

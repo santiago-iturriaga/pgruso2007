@@ -44,9 +44,8 @@
 		}
 		$table->addRenglon($ar_nodo);
 	}
-	$pagina	=	$table->getTabla().
-				$pie;
-	$ppal	=	$plantilla->replace($ppal,array("PAGINA"=>$pagina));
+	$tabla	=	$table->getTabla();
+	$ppal	=	$plantilla->replace($ppal,array("TABLA"=>$tabla, "PIE"=>$pie));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
 												"SMENU_NODOS"=>" id='smactual' ",

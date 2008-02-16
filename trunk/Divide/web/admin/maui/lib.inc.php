@@ -153,10 +153,11 @@ function getTablaTrabajos($tabla_string,$cabezal,$cabezal_titulos,$tipo) {
 	}
 
 	// Pie
-	//if ($tipo < 2) {
-	//	print("$tabla_lineas[$tabla_lineas_pie]");
-	//}
+	$pie = "";
+	if ($tipo < 2) {
+		$pie = $tabla_lineas[$tabla_lineas_pie];
+	}
 
-	return $tabla;
+	return array($tabla,$pie);
 }
 ?>
