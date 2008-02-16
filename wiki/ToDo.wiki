@@ -5,7 +5,7 @@
   * cuota por trabajo (en MB)
   * terminar alertas
     * cron [damian]
-    * crear alertas de inicio / fin de ejecucion de trabajo [paulo]
+    * crear alertas de inicio / fin de ejecucion de trabajo *[paulo: listo estan en poblar.sql]*
     * crear php para ser invocado por cron con el chequeo de quota [paulo]
   * terminar paginas admin
     * arreglar paginas torque/maui [santiago]
