@@ -777,3 +777,33 @@ span#enejecucion{
 a.boton_nuevo{
 
 }
+div.jobs_maui {
+	padding-top: 1em;
+}
+
+h2.jobs_maui {
+	padding: 0.5em;
+}
+
+.jobs_maui_info {
+	padding: 1em;
+}
+
+.nodos_maui_tabla {
+	width: 95%;
+	overflow: auto;
+	margin: auto;
+}
+
+.nodos_maui {
+	background-color: #555555;
+	color:#ffffff;
+
+	width: 95%;
+	padding: 0.2em;
+
+	margin-top: 1em;
+	margin-bottom: 2em;
+	margin-left: auto;
+	margin-right: auto;
+}
