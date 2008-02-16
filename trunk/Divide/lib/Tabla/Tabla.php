@@ -28,6 +28,7 @@
 			$renglon=$plantilla->load($this->dir_relativa."../lib/Tabla/plantillas/renglon.html");
 			$columna=$plantilla->load($this->dir_relativa."../lib/Tabla/plantillas/columna.html");
 
+
 			// cabezal
 			$thead="";
 			if($mostrar_head){
