@@ -37,12 +37,44 @@ function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 		return array("error"=>0,"alertas"=>$salida);
 	}
 
+	function getAlertasUsuario($idUsuario){
+		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha
+				    from alertas a, usuario_alerta ua, trabajo_alerta ta
+				    where ua.usuario=? and a.id = ua.alerta and ua.alerta = ta.alerta";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario),true))
+			{
+			return array("error"=>1, "codError"=>"EA06");
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"]);
+			}
+		return array("error"=>0,"alertas"=>$salida);
+	}
+
 
 	function getAlerta($idUsuario,$idTrabajo,$idAlerta){
 		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha
 				    from alertas a, usuario_alerta ua, trabajo_alerta ta
 				    where ua.usuario=? and ua.trabajo=? and ua.alerta = ?  and a.id = ua.alerta and ua.trabajo= ta.trabajo and ua.alerta = ta.alerta";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta),true))
+			{
+			return array("error"=>1, "codError"=>"EA03");
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"]);
+			}
+		return array("error"=>0,"alerta"=>$salida);
+	}
+
+	function getAlertaUsuario($idUsuario,$idAlerta){
+		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha
+				    from alertas a, usuario_alerta ua, trabajo_alerta ta
+				    where ua.usuario=? and ua.alerta = ?  and a.id = ua.alerta and ua.trabajo= ta.trabajo and ua.alerta = ta.alerta";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idAlerta),true))
 			{
 			return array("error"=>1, "codError"=>"EA03");
 			}

@@ -32,8 +32,8 @@
 	$ppal		= 	$plantilla->load("plantillas/alertas/alertas.html");
 	$link		= 	$plantilla->load("plantillas/alertas/link.html");
 	$checkbox = 	$plantilla->load("plantillas/alertas/checkbox.html");
-	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
-										array("CLASE_ALERTAS"=>'id="actual"'));
+	$menu		=	null;//$plantilla->replace($plantilla->load("plantillas/menu.html"),
+					//					array("CLASE_ALERTAS"=>'id="actual"'));
 	$msj = null;
 	$msjerror = null;
 
@@ -43,7 +43,8 @@
 	$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$i = new Interfaz($conexion,$plantilla,$s);
 	$alertas = new Alertas($conexion);
-	$resConsulta = $alertas->getAlertasUsuarioTrabajo($s->sesion->ClienteActual,$s->sesion->TrabajoActual);
+	$resConsulta = $alertas->getAlertasUsuario($s->sesion->Usuario->id);
+	//echo "<pre>";print_r($resConsulta);echo '</pre>';
 	$tabAlertas= "";
 
 
@@ -52,29 +53,49 @@
 	}
 	else{
 		$tabla = new Tabla();
+		$tabla->dir_relativa = "../";
 		$tabla->addColumna(1,"fecha","Fecha");
 		$tabla->addColumna(2,"asunto","Asunto");
 		$tabla->addColumna(3,"link","");
-		//$tabla->addColumna(4,"eliminar","");
 
+
+		//echo "<pre>";print_r($resConsulta);echo '</pre>';
 		foreach ($resConsulta["alertas"] as $id=>$rowAlertas){
+			//echo "<pre>";print_r($rowAlertas);echo '</pre>';
 			$rowAlertas["link"]=$plantilla->replace($link,array("ID"=>$id));
 			$rowAlertas["eliminar"]=$checkbox;
 			if($rowAlertas{"leida"} == 0){
-				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</>";
-				$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</>";
+				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</b>";
+				$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</b>";
 			}
+			$rowAlertas->asunto = $rowAlertas{"asunto"};
 			$tabla->addRenglon($rowAlertas);
+
 		}
 
 		$tabla->clase = "";
 		$tabAlertas = $tabla->getTabla();
 
+
 	}
 
 	//echo "<pre>";print_r($s->sesion->Usuario);echo '</pre>';exit;
-	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"ALERTAS"=>$tabAlertas));
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
+	$ppal = $plantilla->replace($ppal,array("ALERTAS"=>$tabAlertas));
+
+	//$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
+
+
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENSAJE"=>$msj,
+												"ERROR"=>$msjerror,
+												"MENU_USUARIOS"=>" class='menu_tab' ",
+												"MENU_GANGLIA"=>" class='menu_tab'",
+												"MENU_MAUI"=>" class='menu_tab'",
+												"MENU_TORQUE"=>" class='menu_tab'",
+												"MENU_ALERTAS"=>" id='actual'",
+												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
+												"MENU"=>""));
+
 	$s->salvar();
 	echo $base;
 ?>

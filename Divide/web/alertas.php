@@ -65,8 +65,8 @@
 			$rowAlertas["link"]=$plantilla->replace($link,array("ID"=>$id));
 			$rowAlertas["eliminar"]=$checkbox;
 			if($rowAlertas{"leida"} == 0){
-				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</>";
-				$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</>";
+				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</b>";
+				$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</b>";
 			}
 			$tabla->addRenglon($rowAlertas);
 		}
