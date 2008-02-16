@@ -206,7 +206,7 @@ function getStatusJob($cadena){
 function getTablasColas($cadena) {
 	$salida	= "";
 	$cadena = stristr($cadena,"Queue: ");
-	$salida.= "<table border=1>";
+	$salida.= "<table border=0>";
 	while (strlen($cadena) > 0) {
 		$nombre_array = explode("\n", $cadena,2);
 		$nombre = substr($nombre_array[0],7);
@@ -228,7 +228,7 @@ function getTablasColas($cadena) {
 
 
 
-		$salida.= "<tr><td colspan='2' align='center' bgcolor='#dddddd' >";
+		$salida.= "<tr><td colspan='2' align='center' style='color:#ffffff;' bgcolor='#85859C' >";
 		$salida.= "<b>Cola: </b>$nombre&nbsp;";
 		if ($started=="F") {
 			$salida.= "<a href='colas.php?iniciar=$nombre'>[Iniciar]</a>";

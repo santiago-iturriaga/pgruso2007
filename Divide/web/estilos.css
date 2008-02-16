@@ -751,8 +751,17 @@ span#enejecucion{
 	color: #ff0000;
 }
 .ganglia {
-	padding-top: 1em;
+	border: 0px;
 }
+.ganglia_grafica {
+	width:397px;
+	height:182px;
+}
+.ganglia_logo {
+	padding-top: 1em;
+	/* float: right; */
+}
+
 .ganglia_table {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
@@ -806,4 +815,12 @@ h2.jobs_maui {
 	margin-bottom: 2em;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.jobs_torque {
+	padding: 1em;
+}
+
+.colas_torque {
+	padding: 1em;
 }

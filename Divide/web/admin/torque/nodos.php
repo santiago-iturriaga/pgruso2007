@@ -51,7 +51,7 @@
 
 
 	if ($qnodes == "") {
-		$pagina	.= "<pre>Empty.</pre>";
+		$pagina	.= "<pre>No se encontraron nodos disponibles.</pre>";
 	} else {
 		$xmlparser = new XMLParser();
 		$xml	= $xmlparser->parsear($qnodes,'UTF-8');
@@ -64,7 +64,28 @@
 		foreach($nodos as $nodo){
 			foreach(array_keys($nodo) as $k){
 				if(!isset($titulos[$k])){
-					$tabla->addColumna($i,$k,$k);
+					$nombre_titulo = "";
+					switch (trim(strtolower($k)))
+					{
+						case "name":
+							$nombre_titulo = "Nombre";
+						    break;
+						case "state":
+							$nombre_titulo = "Estado";
+						    break;
+						case "np":
+							$nombre_titulo = "#Procesadores";
+						    break;
+						case "ntype":
+							$nombre_titulo = "Tipo";
+						    break;
+						case "status":
+							$nombre_titulo = "Detalle";
+						    break;
+						default:
+							$nombre_titulo = $k;
+					}
+					$tabla->addColumna($i,$k,$nombre_titulo);
 					$i++;
 					$titulos[$k]=$k;
 				}
@@ -78,17 +99,18 @@
 									'</td><td>'.
 									array_shift($aux));
 					}
-					$nodo[$k] = '<table><tr><td>'.
-								implode('</td></tr><tr><td>',$status_).
-								'</td></tr></table>';
+					$nodo[$k] = "<table><tr><td>".
+								implode("</td></tr><tr><td>",$status_).
+								"</td></tr></table>";
+
 				}
 			}
 
 			if (substr_count(trim(strtolower($nodo["STATE"])), "offline") > 0) {
-				$nodo["STATE"] = "<a href='nodos.php?enable=".$nodo["NAME"]."'>".$nodo["STATE"]." [enable]</a>";
+				$nodo["STATE"] = $nodo["STATE"]."<a href='nodos.php?enable=".$nodo["NAME"]."'>[enable]</a>";
 			} else {
 				//elseif (trim(strtolower($nodo["STATE"]))!="down")
-				$nodo["STATE"] = "<a href='nodos.php?disable=".$nodo["NAME"]."'>".$nodo["STATE"]." [disable]</a>";
+				$nodo["STATE"] = $nodo["STATE"]."<a href='nodos.php?disable=".$nodo["NAME"]."'>[disable]</a>";
 			}
 			$tabla->addRenglon($nodo);
 		}
