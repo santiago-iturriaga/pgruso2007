@@ -13,8 +13,17 @@ class Directorio{
 		$this->camino	= array($inicio);
 	}
 	function es_vacio($dir){
-		if ($handle = opendir($dir) and readdir($handle)===true)
-			return true;
+		if ($handle = opendir($dir)){
+			 $aux = readdir($handle);
+			 if($aux!='.' and $aux!='..') return false;
+			 $aux = readdir($handle);
+			 if($aux!='.' and $aux!='..') return false;
+			 $aux = readdir($handle);
+			 if($aux=="")
+			 	return true;
+			 else
+			 	return false;
+		}
 		else
 			return false;
 	}
@@ -22,7 +31,7 @@ class Directorio{
 		$archivos		=	array();
 		$directorios	=	array();
 		$ruta			=	$this->getRuta();
-		if ($handle = opendir($this->getRuta())) {
+		if ($handle = @opendir($ruta)) {
 			while (false !== ($file = readdir($handle))){
     			if(is_dir($ruta.SEPARADOR_RUTA.$file)){
     				if($file=='.')
@@ -84,7 +93,6 @@ class Directorio{
 		return file_get_contents ($this->getRuta().SEPARADOR_RUTA.$archivo);
 	}
 	function eliminar($archivo){
-		error_log("eliminar: ".$this->getRuta().SEPARADOR_RUTA.$archivo);
 		if(unlink($this->getRuta().SEPARADOR_RUTA.$archivo)) return array("error"=>0);
 		else return array("error"=>1,
     			 		  "codError"=>"D003");
@@ -125,8 +133,50 @@ class Directorio{
 			$cantidad--;
 		}
 	}
+
+	function crearCarpeta($nombre){
+		$nombre = trim($nombre);
+		if($nombre == "") return array("error"=>0,
+    				 	 			   "codError"=>"D102");
+		$ruta = $this->getRuta();
+		if(mkdir($ruta.'/'.$nombre)){
+			return array("error"=>0);
+		}else return array("error"=>0,
+    				 	 "codError"=>"D103");
+	}
+	function eliminarCarpeta($nombre){
+		$nombre = trim($nombre);
+		if($nombre == "") return array("error"=>0,
+    				 	 			   "codError"=>"D102");
+		$ruta = $this->getRuta();
+		if(rmdir($ruta.'/'.$nombre)){
+			return array("error"=>0);
+		}else return array("error"=>0,
+    				 	 "codError"=>"D103");
+	}
+
 	function getRuta(){
 		return implode(SEPARADOR_RUTA,$this->camino);
+	}
+
+	function descomprimir($nombre_archivo){
+		//ejecutamos el comando unzip del sistema para descomprimir el fichero zip
+		$ruta=$this->getRuta();
+		$nombre_carpeta = array_shift(explode(".",$nombre_archivo));
+		$res = $this->crearCarpeta($nombre_carpeta);
+		if($res["error"]) return $res;
+		$ejecutar = "unzip $ruta/$nombre_archivo -d $ruta/$nombre_carpeta";
+		$rs = `$ejecutar`;
+		if($rs){
+			system("rm $ruta/$nombre_archivo");
+			return array("error"=>0);
+		}
+		else{
+			system("rm $ruta/$nombre_archivo");
+			return array("error"=>0,
+    				 	 "codError"=>"D104");
+
+		}
 	}
 }
 

@@ -6,6 +6,9 @@
 	include_once("Conexion.php");
 	include_once("Constantes.php");
 	include_once("Directorio.php");
+	include_once("Interfaz.php");
+	$interfaz = new Interfaz($conexion,$plantilla,$s);
+	$plantilla	=	new TPL();
 
 	$s = new Sesion();
 
@@ -19,6 +22,22 @@
 		exit;
 	}
 
+	if(isset($_POST["Enviar"])) {
+		if (is_uploaded_file($HTTP_POST_FILES['archivo']['tmp_name'])) {
+			if(!@copy($HTTP_POST_FILES['archivo']['tmp_name'], $s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo']['name']))
+				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
+		}
+		if($HTTP_POST_FILES['archivo']['type'] == 'application/zip'){
+			$res=$s->sesion->Directorio->descomprimir($HTTP_POST_FILES['archivo']['name']);
+			if($res["error"]) $msjerror	= $interfaz->getError($res);
+		}
+
+	}
+	if(isset($_POST["carpeta"])) {
+		$res = $s->sesion->Directorio->crearCarpeta($_POST["carpeta"]);
+		if($res["error"]) $msjerror	= $interfaz->getError($res);
+	}
+
 	if(isset($_GET["descargar"])){
 		$archivo	=	$s->sesion->Directorio->getContenido($_GET["descargar"]);
 		header ("Content-Disposition: attachment; filename=".$_GET["descargar"]."\n\n");
@@ -29,7 +48,11 @@
 	}
 	if(isset($_GET["eliminar"])){
 		$res	=	$s->sesion->Directorio->eliminar($_GET["eliminar"]);
-		error_log(print_r($res,1));
+		if($res["error"]) $msjerror	= $interfaz->getError($res);
+	}
+	if(isset($_GET["rmdir"])){
+		$res	=	$s->sesion->Directorio->eliminarCarpeta($_GET["rmdir"]);
+		if($res["error"]) $msjerror	= $interfaz->getError($res);
 	}
 	if(isset($_POST["ejecutar"])){
 		$res	=	$s->sesion->Directorio->ejecutar($_POST["archivo"],
@@ -41,19 +64,15 @@
 		$s->sesion->bytes_leidos = 0;
 		$s->salvar();
 		if($res["error"]){
-			echo "<pre>";
-			print_r($res);
-			echo '</pre>';
+			if($res["error"]) $msjerror	= $interfaz->getError($res);
 		}
 		else{
 			header("Location: resultados.php");
+			exit;
 		}
-		exit;
-
 	}
 
 
-	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/archivos/archivos.html");
 	$p_directorio	=	$plantilla->load("plantillas/archivos/directorio.html");
@@ -61,8 +80,7 @@
 	$p_ruta		=	$plantilla->load("plantillas/archivos/ruta.html");
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
 										array("CLASE_ARCHIVOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
-	$msj = null;
-	$msjerror = null;
+
 
 	if($s->sesion->Directorio == null)
 		{
@@ -77,6 +95,11 @@
 		$s->sesion->Directorio->retroceder($_GET["retroceder"]);
 		}
 	$res		=	$s->sesion->Directorio->getArchivos();
+	if($res["error"]){
+		$res["archivos"]=array();
+		$res["directorios"]=array();
+		$msjerror	= $interfaz->getError($res);
+	}
 	$archivos	=	$res["archivos"];
 	$directorios=	$res["directorios"];
 	asort($archivos);
@@ -95,7 +118,7 @@
 	}
 
 	$camino		=	$s->sesion->Directorio->camino;
-	$camino[0]	=	"~";
+	$camino[0]	=	"home";
 	$ruta	= "";
 
 	while($carpeta=array_shift($camino)){

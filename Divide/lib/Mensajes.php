@@ -45,5 +45,11 @@
 	$MENSAJES["U53"]  = "El mail del usuario no puede ser nulo.";
 	$MENSAJES["U54"]  = "El mail ingresado no es v&aacute;lido.";
 
+	$MENSAJES["D001"]  = "No fue posible abrir la carpeta.";
+	$MENSAJES["D101"]  = "No fue posible copiar el archivo.";
+	$MENSAJES["D102"]  = "El nombre de la carpeta no puede ser vac&iacute;o.";
+	$MENSAJES["D103"]  = "No fue posible crear la carpeta.";
+	$MENSAJES["D104"]  = "No fue posible descomprimir el archivo.";
+
 
 ?>
