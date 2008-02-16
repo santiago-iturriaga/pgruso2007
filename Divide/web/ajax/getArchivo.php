@@ -8,18 +8,20 @@
 		exit;
 	}
 	$archivo = $s->sesion->archivo_actual;
-	/*$ini = $s->sesion->bytes_leidos;
+	$ini = $s->sesion->bytes_leidos;
 	error_log("INI:".$ini);
 	$leido = "";
+	error_log("TAM:".filesize  ($archivo));
 	if(filesize  ($archivo) > $ini){
-		error_log("cambiar esto cuando este php 5.1 (acordarse de cambiar tambien en javascript)");
-		//$leido	=  file_get_contents  ( $archivo  , false, null,$ini);
-		$leido	=  file_get_contents  ( $archivo  , false);
+		//error_log("cambiar esto cuando este php 5.1 (acordarse de cambiar tambien en javascript)");
+		$leido	=  file_get_contents  ( $archivo  , false, null,$ini);
+		//$leido	=  file_get_contents  ( $archivo  , false);
 		$s->sesion->bytes_leidos += strlen($leido);
-	}*/
+	}
 	error_log($archivo.'<-----');
-	error_log("cambiar esto cuando este php 5.1 (acordarse de cambiar tambien en javascript)");
-	$leido	=  file_get_contents  ( $archivo  , false);
+	error_log($leido);
+	//error_log("cambiar esto cuando este php 5.1 (acordarse de cambiar tambien en javascript)");
+	//$leido	=  file_get_contents  ( $archivo  , false);
 	$s->salvar();
 	error_log($leido,3,$archivo."coso");
 	echo $leido;
