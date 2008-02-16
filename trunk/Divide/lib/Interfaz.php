@@ -37,7 +37,6 @@ class Interfaz{
 		return $this->plantilla->replace($this->plantilla->load("plantillas/mensaje.html"),array("MENSAJE"=>$MENSAJES[$mensaje]));
 	}
 	function getError($error){
-		error_log(print_r($error,1));
 		include("Mensajes.php");
 		return $this->plantilla->replace($this->plantilla->load("plantillas/mensaje.html"),array("MENSAJE"=>$MENSAJES[$error["codError"]]));
 	}
