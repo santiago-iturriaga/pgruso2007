@@ -40,12 +40,11 @@
 
 
 	if(isset($_POST["nombre_cliente"])){
-		$res	= $usuarios->crearCliente($_POST["nombre_cliente"],$_POST["usuario_linux"]);
+		$res	= $usuarios->crearCliente($_POST["nombre_cliente"],$_POST["usr_linux"]);
 		if($res["error"])
 			$error	= $interfaz->getError($res);
 		else
 			$mensaje = $interfaz->getMensaje("CT004");
-error_log($mensaje);
 	}
 	if(isset($_POST["nodos"])){
 		$s->sesion->trabajo_editado["NOMBRE"]=$_POST["nombre"];
@@ -121,12 +120,18 @@ error_log($mensaje);
 	$res	= $usuarios->getClientes();
 	if($res["error"]) $error	= $interfaz->getError($res);
 	else{
+		$clientes_ = array();
 		foreach ($res["clientes"] as $id=>$cliente){
+			$clientes_[$id] = $cliente["nombre"];
+		}
+		asort($clientes_);
+		foreach ($clientes_ as $id=>$nombre){
+
 			if($s->sesion->admin_cliente_actual==null) $s->sesion->admin_cliente_actual=$id;
 			if($s->sesion->admin_cliente_actual==$id)
-				$opciones.=	$plantilla->replace($opcion,array("ID"=>$id,"NOMBRE"=>$cliente["nombre"],"SELECTED"=>"SELECTED"));
+				$opciones.=	$plantilla->replace($opcion,array("ID"=>$id,"NOMBRE"=>$nombre,"SELECTED"=>"SELECTED"));
 			else
-				$opciones.=	$plantilla->replace($opcion,array("ID"=>$id,"NOMBRE"=>$cliente["nombre"],"SELECTED"=>""));
+				$opciones.=	$plantilla->replace($opcion,array("ID"=>$id,"NOMBRE"=>$nombre,"SELECTED"=>""));
 		}
 	}
 	$t="";

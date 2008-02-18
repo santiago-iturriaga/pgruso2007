@@ -375,7 +375,7 @@ class Usuarios{
 		$row=$this->conexion->Next();
 		return array("error"=>0,"trabajo"=>$row);
 	}
-	function crearTrabajo($cliente,$nombre,$nodos,$tiempo_maximo,$cola,$quota,$idGrupo=null){
+	function crearTrabajo($cliente,$nombre,$nodos,$tiempo_maximo,$cola,$quota){
 		$nombre = trim($nombre);
 		$nodos = trim($nodos);
 		$tiempo_maximo = trim($tiempo_maximo);
@@ -402,6 +402,14 @@ class Usuarios{
 			$this->conexion->EjecutarConsulta($consulta,array($id),false);
 			return $res;
 		}
+		$consulta= "select id from grupo where es_admin='S'";
+		if(!$this->conexion->EjecutarConsulta($consulta,array(),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		$idGrupo = $row["id"];
 		if($idGrupo!=null){
 			$res = $this->asociarTrabajoGrupo($id,$idGrupo);
 			if($res["error"]) return $res;
@@ -410,16 +418,16 @@ class Usuarios{
 		return array("error"=>0,"id"=>$id);
 	}
 
-	function crearCliente($nombre){
-		$consulta= "insert into cliente (nombre) values (?)";
-		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre),false))
+	function crearCliente($nombre,$usr_linux){
+		$consulta= "insert into cliente (nombre,usr_linux) values (?,?)";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre,$usr_linux),false))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->conexion->msgError);
 			}
 		$id=$this->conexion->getUltimoNumerador();
 		$momento = new Momento($this->conexion);
-		$res	= $momento->crearDirCliente($id);
+		$res	= $momento->crearDirCliente($id,$usr_linux);
 
 		if($res["error"]) {
 			$consulta= "delete from cliente where id=?";

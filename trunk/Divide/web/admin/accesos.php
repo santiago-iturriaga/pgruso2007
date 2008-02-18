@@ -30,7 +30,8 @@
 	$Usuarios	= new Usuarios($conexion);
 
 	$mensaje	= "";
-
+	$s->sesion->Usuario->setBD($conexion);
+	$s->sesion->Usuario->setTrabajos();
 	if(isset($_POST["asociar"])){
 		$accesos_grupo= array();
 		$res 	= $Usuarios->getTrabajosGrupo($s->sesion->grupo_actual);
@@ -62,6 +63,7 @@
 	if($res["error"]) error_log(print_r($res,1));
 	else{
 		$opciones_grupos.=$plantilla->replace($opcion_select,array("ID"=>"","NOMBRE"=>"","SELECTED"=>""));
+		asort($res["grupos"]);
 		foreach ($res["grupos"] as $id=>$nombre){
 			$selected ="";
 			if($s->sesion->grupo_actual==$id) $selected="SELECTED";

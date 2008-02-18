@@ -96,19 +96,12 @@ class Momento{
 		return array("error"=>0,"id"=>$id,"id_trabajo"=>$id_torque,"salida"=>$archivo_salida);
 	}
 
-	function crearDirCliente($idCliente){
-		$consulta = "select usr_linux from cliente where id=?";
-		if(!$this->db->EjecutarConsulta($consulta,array($idCliente),false))
-			{
-			return array("error"=>1,
-						 "codError"=>$this->db->msgError);
-			}
-		$row=$this->db->Next();
-		$usr_linux=$row["usr_linux"];
-
+	function crearDirCliente($idCliente,$usr_linux){
 		$ruta =RAIZ;
-		$ejecutar =SSH." -l ".USUARIO." ".HOST." \"cd $ruta; mkdir $idCliente; chown $usr_linux $idCliente exit\" 2>&1";
+		$ejecutar =SSH." -l ".USERNAME." ".HOST." \"cd $ruta; mkdir $idCliente; chown $usr_linux $idCliente; exit\" 2>&1";
+		error_log($ejecutar);
 		$salida = `$ejecutar`;
+
 		if($salida=="")
 			return array("error"=>0);
 		else{
