@@ -21,6 +21,7 @@ CREATE TABLE grupo(
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(25) not null,
     recibe_alertas char,
+    es_admin char,
     UNIQUE (nombre));
 
 create table usuario (

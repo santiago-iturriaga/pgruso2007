@@ -73,9 +73,12 @@
 	}
 
 	$res=$Usuarios->getGrupos();
-	if($res["error"]) $interfaz->getMensaje("DANGER");
+	if($res["error"]){
+		$mensaje= $interfaz->getMensaje("DANGER");
+	}
 	else{
 		$opciones_grupos.=$plantilla->replace($opcion_select,array("ID"=>"","NOMBRE"=>"","SELECTED"=>""));
+		asort($res["grupos"]);
 		foreach ($res["grupos"] as $id=>$nombre){
 			$selected ="";
 			if($s->sesion->grupo_actual==$id) $selected="SELECTED";
