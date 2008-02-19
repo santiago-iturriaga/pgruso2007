@@ -75,7 +75,7 @@
 			//asignar alerta
 			//$res = $alertas->asignarAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,3, array("TRABAJO" => "BOLUDO"));
 
-			$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>$tabalerta));
+			$ppal = $plantilla->replace($ppal,array("TABALERTA"=>$tabalerta));
 
 		}
 	}

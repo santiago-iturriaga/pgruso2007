@@ -13,7 +13,6 @@ create table trabajo (
 	tiempo_maximo time,
 	quota int,
 	cola varchar(25),
-	quota int,
 	fecha_fin timestamp default null
     );
 
