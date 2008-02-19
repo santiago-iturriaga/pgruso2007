@@ -33,6 +33,7 @@ define("HOST","localhost");
 define("PATH_TORQUE","/net/local/pgccadar");
 define("PATH_MAUI","/net/local/pgccadar");
 
+define("QRUN_CMD",PATH_TORQUE."/bin/qrun");
 define("QDEL_CMD",PATH_TORQUE."/bin/qdel");
 define("QHOLD_CMD",PATH_TORQUE."/bin/qhold");
 define("QSTOP_CMD",PATH_TORQUE."/bin/qstop");
