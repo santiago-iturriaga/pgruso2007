@@ -15,6 +15,7 @@
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
 	include_once("lib.inc.php");
+	include_once("Maui.php");
 
 	$s = new Sesion(0);
 	if($s->sesion == null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
@@ -25,8 +26,8 @@
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/jobs/jobs.html");
-	$mensaje = "";
-	$error = "";
+	$mensaje 	= 	"";
+	$error 		= 	"";
 
 	$info = "";
     if (ISSET($_REQUEST["id"])) {
@@ -48,56 +49,15 @@
 		$cabezal_diag_titulos=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class Features");
 		$info = getTablaDiag($diagnose,$cabezal_diag,$cabezal_diag_titulos,false)->getTabla();
 	} else if (ISSET($_REQUEST["cancel"])) {
-		$id = $_REQUEST["cancel"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".CANCELJOB_CMD." $id; exit\" 2>&1";
-		$canceljob = `$command`;
-
-		if ($canceljob == "") {
-			$mensaje = "Trabajo cancelado.";
-		} else {
-			$mensaje = $canceljob;
-		}
+		$mensaje = maui_cancelar_trabajo($_REQUEST["cancel"]);
 	} else if (ISSET($_REQUEST["hold"])) {
-		$id = $_REQUEST["hold"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".SETHOLD_CMD." $id; exit\" 2>&1";
-		$sethold = `$command`;
-
-		if ($sethold == "") {
-			$mensaje = "Trabajo detenido.";
-		} else {
-			$mensaje = $sethold;
-		}
+		$mensaje = maui_detener_trabajo($_REQUEST["hold"]);
 	} else if (ISSET($_REQUEST["suspend"])) {
-		$id = $_REQUEST["suspend"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".RUNJOB_CMD." -s $id; exit\" 2>&1";
-		echo $command;
-		$runjob = `$command`;
-
-		if ($runjob == "") {
-			$mensaje = "Trabajo suspendido.";
-		} else {
-			$mensaje = $runjob;
-		}
+		$mensaje = maui_suspender_trabajo($_REQUEST["suspend"]);
 	} else if (ISSET($_REQUEST["run"])) {
-		$id = $_REQUEST["run"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".RUNJOB_CMD." $id; exit\" 2>&1";
-		$runjob = `$command`;
-
-		if ($runjob == "") {
-			$mensaje = "Trabajo iniciado.";
-		} else {
-			$mensaje = $runjob;
-		}
+		$mensaje = maui_ejecutar_trabajo($_REQUEST["run"]);
 	} else if (ISSET($_REQUEST["release"])) {
-		$id = $_REQUEST["release"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".RELEASEHOLD_CMD." $id; exit\" 2>&1";
-		$releasehold = `$command`;
-
-		if ($releasehold == "") {
-			$mensaje = "Trabajo liberado.";
-		} else {
-			$mensaje = $releasehold;
-		}
+		$mensaje = maui_liberar_trabajo($_REQUEST["release"]);
 	}
 
 	/*
