@@ -45,9 +45,10 @@
 		$command = SSH." -l ".USERNAME." ".HOST." \"".DIAGNOSE_CMD." -j $id; exit\" 2>&1";
 		$diagnose = `$command`;
 
-		$cabezal_diag=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class Features");
-		$cabezal_diag_titulos=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class Features");
-		$info = getTablaDiag($diagnose,$cabezal_diag,$cabezal_diag_titulos,false)->getTabla();
+		$cabezal_diag=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class","Features");
+		$cabezal_diag_titulos=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class","Features");
+		list($tabla,$pie) = getTablaDiag($diagnose,$cabezal_diag,$cabezal_diag_titulos);
+		$info = $tabla->getTabla()."<br />".$pie;
 	} else if (ISSET($_REQUEST["cancel"])) {
 		$mensaje = maui_cancelar_trabajo($_REQUEST["cancel"]);
 	} else if (ISSET($_REQUEST["hold"])) {
