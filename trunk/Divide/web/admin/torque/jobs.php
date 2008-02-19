@@ -7,6 +7,7 @@
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
 	include_once("lib.inc.php");
+	include_once("Torque.php");
 
 	$s = new Sesion(0);
 	if($s->sesion == null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
@@ -24,41 +25,19 @@
                s - SYSTEM
                n - None */
     $held_type = "u";
+    if (ISSET($_REQUEST["iniciar"])) {
+		$mensaje = torque_ejecutar_trabajo($_REQUEST["iniciar"]);
+	}
 	if (ISSET($_REQUEST["eliminar"])) {
-		$id = $_REQUEST["eliminar"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".QDEL_CMD." $id; exit\" 2>&1";
-		$qdel_result = `$command`;
-
-		if ($qdel_result=="") {
-			$mensaje = "El trabajo fue eliminado.";
-		} else {
-			$mensaje = "No fue posible eliminar el trabajo.<br />".$qdel_result;
-			error_log($qdel_result);
-		}
+		$mensaje = torque_eliminar_trabajo($_REQUEST["eliminar"]);
 	}
 	if (ISSET($_REQUEST["detener"])) {
-		$id = $_REQUEST["detener"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".QHOLD_CMD." -h $held_type $id; exit\" 2>&1";
-		$qhold_result = `$command`;
-		if ($qhold_result=="") {
-			$mensaje = "El trabajo fue detenido.";
-		} else {
-			$mensaje = "No fue posible detener el trabajo.<br />".$qhold_result;
-			error_log($qhold_result);
-		}
+		$mensaje = torque_detener_trabajo($_REQUEST["detener"],$held_type);
 	}
 	if (ISSET($_REQUEST["reiniciar"])) {
-		$id = $_REQUEST["reiniciar"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".QRLS_CMD." -h $held_type $id; exit\" 2>&1";
-		$qrls_result = `$command`;
-		if ($qrls_result=="") {
-			$mensaje = "El trabajo fue reiniciado.";
-		} else {
-			$mensaje = "No fue posible reiniciar el trabajo.<br />".$qrls_result;
-			error_log($qrls_result);
-		}
-
+		$mensaje = troque_liberar_trabajo($_REQUEST["reiniciar"],$held_type);
 	}
+
 	// Listado de todos los trabajos
 	$command = SSH." -l ".USERNAME." ".HOST." \"".QSTAT_CMD."; exit\" 2>&1";
 	$qstat = `$command`;
@@ -86,4 +65,4 @@
 	$s->salvar();
 
 	echo $base;
-	?>
+?>
