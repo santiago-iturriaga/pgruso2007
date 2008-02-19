@@ -9,8 +9,7 @@ function linea_vacia($val) {
 }
 
 //// $tipo puede ser:
-////		active = 0, idle = 1, blocked = 2, diagnose = 3
-function getTablaDiag($tabla_string,$cabezal,$cabezal_titulos,$pie) {
+function getTablaDiag($tabla_string,$cabezal,$cabezal_titulos) {
 	$tabla = new Tabla("","","../../");
 	$tabla->addColumna(0,0,"Diagnostico");
 	$tabla->addColumna(1,1,"");
@@ -19,19 +18,10 @@ function getTablaDiag($tabla_string,$cabezal,$cabezal_titulos,$pie) {
 	$tabla_lineas = array_values(array_filter($tabla_lineas,"linea_vacia"));
 	$tabla_lineas_cant = sizeof($tabla_lineas);
 
-	$cant_min_lineas = 0;
-	if ($pie) {
-		// Tiene pie de tabla
-		$cant_min_lineas = 2;
-		$tabla_lineas_pie = $tabla_lineas_cant-1;
-	} else {
-		// No tiene pie de tabla
-		$cant_min_lineas = 1;
-		$tabla_lineas_pie = $tabla_lineas_cant;
-	}
+	$pie = "";
 
 	// Cabecera
-	if ($tabla_lineas_cant > $cant_min_lineas) {
+	if ($tabla_lineas_cant > 1) {
 		$cabezal_fin_pos = array();
 
 		foreach($cabezal as $key => $value) {
@@ -40,30 +30,27 @@ function getTablaDiag($tabla_string,$cabezal,$cabezal_titulos,$pie) {
 			$cabezal_fin_pos[$key] = $fin_cabezal-1;
 		}
 
-		for ($linea = 1; $linea < $tabla_lineas_pie; $linea++) {
-			$renglon = array();
-			foreach($cabezal as $key => $value) {
-				$valor = "";
-				if ($key == 0) {
-					$inicio_td = 0;
-					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
-					$valor = "<a href='jobs.php?id=$valor'>$valor</a></td>";
-				} else {
-					$inicio_td = $cabezal_fin_pos[$key-1]+1;
-					$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
-				}
-
-				$tabla->addRenglon(array($cabezal_titulos[$key],$valor));
+		$linea = 1;
+		foreach($cabezal as $key => $value) {
+			$valor = "";
+			if ($key == 0) {
+				$inicio_td = 0;
+				$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
+				$valor = "<a href='jobs.php?id=$valor'>$valor</a></td>";
+			} else {
+				$inicio_td = $cabezal_fin_pos[$key-1]+1;
+				$valor = trim(substr($tabla_lineas[$linea],$inicio_td,$cabezal_fin_pos[$key]-$inicio_td+1));
 			}
+
+			$tabla->addRenglon(array($cabezal_titulos[$key],$valor));
 		}
+
+		// Pie
+		array_splice($tabla_lineas,0,2);
+		$pie = implode("<br />",$tabla_lineas);
 	}
 
-	// Pie
-	//if ($tipo < 2) {
-	//	print("$tabla_lineas[$tabla_lineas_pie]");
-	//}
-
-	return $tabla;
+	return array($tabla,$pie);
 }
 
 //// $tipo puede ser:
@@ -147,9 +134,9 @@ function getTablaTrabajos($tabla_string,$cabezal,$cabezal_titulos,$tipo) {
 					break;
 			}
 			$renglon[count($cabezal)] = $botones;
-		}
 
-		$tabla->addRenglon($renglon);
+			$tabla->addRenglon($renglon);
+		}
 	}
 
 	// Pie
