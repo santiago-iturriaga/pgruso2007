@@ -37,15 +37,15 @@
 	$enejecucion="";
 	if($res["error"]) error_log(print_r($res,1));
 	else $enejecucion = $res["cantidad"];
-	error_log("**********".print_r($res,1));
-	error_log("**********>".$enejecucion);
-	error_log("**********> ejecucion actual".$s->sesion->ejecucion_actual);
 	$ppal	=	$plantilla->replace($ppal,array("SEGUNDOS"=>TIEMPO_REFRESH_RESULTADOS,
 												"ID_EJECUCION"=>$s->sesion->ejecucion_actual,
 												"ENEJECUCION"=>$enejecucion));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
-							"BODY"=>'onload="delay();"',"MENSAJE"=>$msj,"ERROR"=>$msjerror));
+							"BODY"=>"onload='delay();
+									 if(!NiftyCheck())
+		    							return;
+   									RoundedTop(\"div#cabezal_resultados\",\"#ffffff\",\"#dddddd\",\"small\");'","MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
 ?>

@@ -41,7 +41,6 @@ function torque_eliminar_trabajo($id){
 function torque_detener_trabajo($id,$held_type){
 	$command = SSH." -l ".USERNAME." ".HOST." \"".QHOLD_CMD." -h $held_type $id; exit\" 2>&1";
 	$qhold_result = `$command`;
-
 	$mensaje = "";
 	if ($qhold_result=="") {
 		$mensaje = "El trabajo fue detenido.";
