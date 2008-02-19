@@ -45,7 +45,7 @@
 							"BODY"=>"onload='delay();
 									 if(!NiftyCheck())
 		    							return;
-   									RoundedTop(\"div#cabezal_resultados\",\"#ffffff\",\"#dddddd\",\"small\");'","MENSAJE"=>$msj,"ERROR"=>$msjerror));
+   									RoundedTop(\"div#cabezal_resultados\",\"#ffffff\",\"#dddddd\",\"small\");'","MENSAJE"=>$msj,"ERROR"=>$msjerror,"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login));
 	$s->salvar();
 	echo $base;
 ?>
