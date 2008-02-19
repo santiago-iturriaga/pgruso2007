@@ -2,6 +2,12 @@
 
 = ToDo =
 
+*------------------------------*
+Agregar comando 'run' en el admin torque
+En archivos.php mostrar estado del trabajo en ejecucion
+Asignacion de alertas en inicio/fin/falla de trabajo
+*------------------------------*
+
   * cuota por trabajo (en MB)
   * terminar alertas *[paulo: las paginas estan listas]*
     * cron [damian]
