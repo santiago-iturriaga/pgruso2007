@@ -36,7 +36,7 @@
 	$ppal		= 	$plantilla->load("plantillas/alertas/alertas.html");
 	$link		= 	$plantilla->load("plantillas/alertas/link.html");
 	$checkbox = 	$plantilla->load("plantillas/alertas/checkbox.html");
-	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
+	$menu		= $plantilla->replace($plantilla->load("plantillas/menu.html"),
 										array("CLASE_ALERTAS"=>'id="actual"'));
 	$msj = null;
 	$msjerror = null;
@@ -77,7 +77,7 @@
 	}
 
 	//echo "<pre>";print_r($s->sesion->Usuario);echo '</pre>';exit;
-	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"ALERTAS"=>$tabAlertas));
+	$ppal = $plantilla->replace($ppal,array("ALERTAS"=>$tabAlertas));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;
