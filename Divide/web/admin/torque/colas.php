@@ -7,6 +7,7 @@
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
 	include_once("lib.inc.php");
+	include_once("Torque.php");
 
 	$s = new Sesion(0);
 	if($s->sesion == null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
@@ -22,27 +23,11 @@
 
 	if (ISSET($_REQUEST["detener"])) {
 		$id = $_REQUEST["detener"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".QSTOP_CMD." $id; exit\" 2>&1";
-		$qstop_result = `$command`;
-
-		if ($qstop_result=="")
-			$mensaje = "La cola fue detenida.";
-		else {
-			$mensaje = "No fue posible detener la cola.<br/>".$qstop_result;
-			error_log($qstop_result);
-		}
+		$mensaje = torque_detener_cola($id);
 	}
 	if (ISSET($_REQUEST["iniciar"])) {
 		$id = $_REQUEST["iniciar"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".QSTART_CMD." $id; exit\" 2>&1";
-		$qstart_result = `$command`;
-
-		if ($qstart_result=="")
-			$mensaje = "La cola fue iniciada.";
-		else {
-			$mensaje = "No fue posible iniciar la cola.<br/>".$qstart_result;
-			error_log($qstart_result);
-		}
+		$mensaje = torque_iniciar_cola($id);
 	}
 
 	$command = SSH." -l ".USERNAME." ".HOST." \"".QSTAT_CMD." -Qf; exit\" 2>&1";
