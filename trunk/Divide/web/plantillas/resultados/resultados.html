@@ -3,6 +3,7 @@
 	var http_request = false;
 	var request_en_ejecucion = false;
 	var request_cantidad = false;
+	var request_accion = false;
 	
 	var intervalo;
     function makeRequest(url,handler) {
@@ -64,6 +65,16 @@
         }
 
     }
+    function handlerEjecucion() {
+        if (request_accion.readyState == 4) {
+            if (request_accion.status == 200) {
+                alert(request_accion.responseText);
+            } else {
+                alert('Hubo problemas con la petición:');
+            }
+        }
+
+    }
 
 
 	function handlerEnEjecucion() {
@@ -89,20 +100,24 @@
 		request_en_ejecucion = makeRequest('ajax/getEnEjecucion.php',handlerEnEjecucion);
 		request_cantidad = makeRequest('ajax/getCantEnEjecucion.php',handlerCantidad);
 	}
+	
+	function detener(){
+		request_accion = makeRequest('ajax/ejecucionCliente.php?accion=Detener',handlerEjecucion);
+	}
 
 </script>
-Trabajos en ejecuci&oacute;n: <span id="enejecucion">{ENEJECUCION}</span>
 		<div id="pagina">
-			<h1>Resultados de las &uacute;ltimas ejecuciones</h1>
-			<a href="resultados.php" onclick="bloquear=!bloquear;
+			<div id="cabezal_resultados">
+			Trabajos en ejecuci&oacute;n: <span id="enejecucion">{ENEJECUCION}</span>
+			<a href="descargar.php?id={ID_EJECUCION}&error=0"><img alt="Descargar" src="imagenes/disk.png" /></a>
+				<a href="resultados.php" onclick="detener();return false;"><img alt="Detener" src="imagenes/decline.png" /></a>
+				<a href="resultados.php" onclick="bloquear=!bloquear;
 											  if(bloquear){
 											  	document.getElementById('bloquear_scroll').src='imagenes/lock.png';
 											  }else{
 											  	document.getElementById('bloquear_scroll').src='imagenes/lock_open.png';
 											  }	
 											  return false;"><img id="bloquear_scroll" alt="Bloquear/Desbloquear scroll" src="imagenes/lock_open.png" /></a>
-			
+			</div>
 			<pre id="resultados"></pre>
-			<a href="descargar.php?id={ID_EJECUCION}&error=0">Descargar salida</a>
-			<a href="descargar.php?id={ID_EJECUCION}&error=1">Descargar errores</a>
 		</div>

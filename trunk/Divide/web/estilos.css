@@ -689,8 +689,15 @@ ul.path li {
 ul.path li a{
 	text-decoration: none;
 	}
+#cabezal_resultados{
+	width: 722px;
+	margin:0 auto;
+	background-color: #dddddd;
+	margin-top: 5px;
+	text-align:right;
+}
 pre#resultados{
-	border:1px solid #000000;
+	border:1px solid #dddddd;
 	width: 700px;
 	height: 280px;
 	margin-top:10px;
