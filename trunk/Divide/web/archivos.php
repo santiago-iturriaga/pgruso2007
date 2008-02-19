@@ -132,7 +132,7 @@
 												"RUTA"=>$ruta));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
-							"BODY"=>'',"MENSAJE"=>$msj,"ERROR"=>$msjerror));
+							"BODY"=>'',"MENSAJE"=>$msj,"ERROR"=>$msjerror,"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login));
 	$s->salvar();
 	echo $base;
 ?>
