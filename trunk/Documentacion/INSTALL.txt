@@ -165,14 +165,18 @@ EL usuario puede hacer fflush(stdout) y fflush(stderr)
 ------------------------------------------------------------------
 SSH Tunneling a lennon
 
+Apache
 ssh -L 8888:localhost:7777 pgccadar@lulu.fing.edu.uy
 ssh -L 7777:localhost:80 pgccadar@lennon
+
+PostgreSQL
+ssh -L 54320:localhost:7778 pgccadar@lulu.fing.edu.uy
+ssh -L 7778:localhost:54320 pgccadar@lennon
 
 -------------------------------------
 PHP
 
-./configure --prefix=/net/local/php-5.2.5 --with-apxs2=/usr/sbin/apxs2 --with-pgsql=/net/local/postgresql-8.2.5 ??
-./configure --prefix=/net/local/php-5.2.5 --with-pgsql=/net/local/postgresql-8.2.5 ??
+./configure --prefix=/net/local/php-5.2.5 --with-pgsql=/net/local/postgresql-8.2.5 --with-gd
 make
 make install
 
