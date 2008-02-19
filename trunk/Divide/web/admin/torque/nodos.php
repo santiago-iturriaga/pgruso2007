@@ -8,6 +8,7 @@
 	include_once("Tabla/Tabla.php");
 	include_once("XMLParser.php");
 	include_once("lib.inc.php");
+	include_once("Torque.php");
 
 	$s = new Sesion(0);
 	if($s->sesion == null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
@@ -22,27 +23,11 @@
 	$error = "";
 
 	if (ISSET($_REQUEST["disable"])) {
-		$id = $_REQUEST["disable"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".QNODES_CMD." -o $id; exit\" 2>&1";
-		$qnodes_result = `$command`;
-
-		if ($qnodes_result=="") {
-			$mensaje ="El nodo fue deshabilitado.";
-		} else {
-			$mensaje ="No fue posible deshabilitar el nodo.<br/>".$qnodes_result;
-		}
+		$mensaje = torque_detener_nodo($_REQUEST["disable"]);
 	}
 
 	if (ISSET($_REQUEST["enable"])) {
-		$id = $_REQUEST["enable"];
-		$command = SSH." -l ".USERNAME." ".HOST." \"".QNODES_CMD." -c $id; exit\" 2>&1";
-		$qnodes_result = `$command`;
-
-		if ($qnodes_result=="") {
-			$mensaje ="El nodo fue habilitado.";
-		} else {
-			$mensaje ="No fue posible habilitar el nodo.<br/>".$qnodes_result;
-		}
+		$mensaje = torque_iniciar_nodo($_REQUEST["enable"]);
 	}
 
 	// Listado de todos los trabajos

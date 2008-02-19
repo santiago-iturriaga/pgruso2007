@@ -67,4 +67,59 @@ function torque_liberar_trabajo($id,$held_type){
 
 	return $mensaje;
 }
+
+function torque_detener_cola($id) {
+	$command = SSH." -l ".USERNAME." ".HOST." \"".QSTOP_CMD." $id; exit\" 2>&1";
+	$qstop_result = `$command`;
+
+	$mensaje = "";
+	if ($qstop_result=="")
+		$mensaje = "La cola fue detenida.";
+	else {
+		$mensaje = "No fue posible detener la cola.<br/>".$qstop_result;
+		error_log($qstop_result);
+	}
+
+	return $mensaje;
+}
+
+function torque_iniciar_cola($id) {
+	$command = SSH." -l ".USERNAME." ".HOST." \"".QSTART_CMD." $id; exit\" 2>&1";
+	$qstart_result = `$command`;
+
+	$mensaje = "";
+	if ($qstart_result=="")
+		$mensaje = "La cola fue iniciada.";
+	else {
+		$mensaje = "No fue posible iniciar la cola.<br/>".$qstart_result;
+		error_log($qstart_result);
+	}
+	return $mensaje;
+}
+
+function torque_iniciar_nodo($id) {
+	$command = SSH." -l ".USERNAME." ".HOST." \"".QNODES_CMD." -c $id; exit\" 2>&1";
+	$qnodes_result = `$command`;
+
+	$mensaje = "";
+	if ($qnodes_result=="") {
+		$mensaje ="El nodo fue habilitado.";
+	} else {
+		$mensaje ="No fue posible habilitar el nodo.<br/>".$qnodes_result;
+	}
+	return $mensaje;
+}
+
+function torque_detener_nodo($id) {
+	$command = SSH." -l ".USERNAME." ".HOST." \"".QNODES_CMD." -o $id; exit\" 2>&1";
+	$qnodes_result = `$command`;
+
+	$mensaje= "";
+	if ($qnodes_result=="") {
+		$mensaje ="El nodo fue deshabilitado.";
+	} else {
+		$mensaje ="No fue posible deshabilitar el nodo.<br/>".$qnodes_result;
+	}
+	return $mensaje;
+}
 ?>
