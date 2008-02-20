@@ -140,7 +140,6 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 	}
 
 	function asignarAlertaTrabajoInicio($idTrabajo){
-error_log("		asignarAlertaTrabajoInicio($idTrabajo)");
 		$consulta= "select ug.usuario from usuario_grupo as ug, trabajo_grupo as tg  where tg.trabajo = ? and tg.grupo = ug.grupo";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
 			{
@@ -148,9 +147,9 @@ error_log("		asignarAlertaTrabajoInicio($idTrabajo)");
 			}
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null){
-			$salida = array("usuario"=>$row["usuario"]);
+			array_push($salida,$row["usuario"]);
 		}
-		foreach ($salida as $idU=>$usuario){
+		foreach ($salida as $idU){
 			$params = array("TRABAJO"=>$idTrabajo);
 			$this->asignarAlerta($idU,$idTrabajo,3,$params);
 		}
@@ -159,9 +158,6 @@ error_log("		asignarAlertaTrabajoInicio($idTrabajo)");
 	}
 
 	function asignarAlertaTrabajoFin($idTrabajo){
-
-error_log($idTrabajo."<- id trabajo");
-
 		$consulta= "select ug.usuario from usuario_grupo as ug, trabajo_grupo as tg  where tg.trabajo = ? and tg.grupo = ug.grupo";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
 			{
@@ -169,11 +165,10 @@ error_log($idTrabajo."<- id trabajo");
 			}
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null){
-			$salida = array("usuario"=>$row["usuario"]);
+			array_push($salida,$row["usuario"]);
 		}
-		foreach ($salida as $idU=>$usuario){
+		foreach ($salida as $idU){
 			$params = array("TRABAJO"=>$idTrabajo);
-error_log("asignarAlerta($idU,$idTrabajo,4,$params)");
 			$this->asignarAlerta($idU,$idTrabajo,4,$params);
 		}
 		return array("error"=>0);

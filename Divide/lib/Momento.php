@@ -100,7 +100,6 @@ class Momento{
 	function crearDirCliente($idCliente,$usr_linux){
 		$ruta =RAIZ;
 		$ejecutar =SSH." -l ".USERNAME." ".HOST." \"cd $ruta; mkdir $idCliente; chown $usr_linux $idCliente; exit\" 2>&1";
-		error_log($ejecutar);
 		$salida = `$ejecutar`;
 
 		if($salida=="")
@@ -131,7 +130,6 @@ class Momento{
 	}
 
 	function setFinalizado($id_torque){
-error_log("set finalizado");
 		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP where id_torque = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
 			{
@@ -153,7 +151,6 @@ error_log("set finalizado");
 		$script = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
 		//error_log("poner de vuelta despues");
 		if(unlink($script)){
-error_log("MANDO");
 			//envio alerta de finalizacion
 			$consulta2 = "select trabajo from ejecucion where id_torque = ?";
 			if(!$this->db->EjecutarConsulta($consulta2,array($id_torque),true))
@@ -177,7 +174,6 @@ error_log("MANDO");
 	}
 
 	function setIniciado($id_torque){
-error_log("set iniciado");
 		$consulta = "update ejecucion set fecha_ejecucion=CURRENT_TIMESTAMP where id_torque = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
 			{
