@@ -54,11 +54,24 @@ class Momento{
 
 		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
 		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
+		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"touch $archivo_salida; exit\" 2>&1";
+		$salida = `$ejecutar`;
+		if($salida !="") error_log($salida);
+		//touch($archivo_salida);
+		//if(!chmod($archivo_salida,0777)) error_log("no funco el chmod");
+		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"chmod 777 $archivo_salida; exit\" 2>&1";
+		$salida = `$ejecutar`;
+		if($salida !="") error_log($salida);
 
-		touch($archivo_salida);
-		if(!chmod($archivo_salida,0777)) error_log("no funco el chmod");
-		touch($archivo_error);
-		chmod($archivo_error,0777);
+		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"touch $archivo_error; exit\" 2>&1";
+		$salida = `$ejecutar`;
+		if($salida !="") error_log($salida);
+		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"chmod 777 $archivo_error; exit\" 2>&1";
+		$salida = `$ejecutar`;
+		if($salida !="") error_log($salida);
+
+		//touch($archivo_error);
+		//chmod($archivo_error,0777);
 
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("MPIEXEC"=>MPIEXEC,
