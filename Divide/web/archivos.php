@@ -24,6 +24,8 @@
 
 	if(isset($_POST["Enviar"])) {
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
+			$command = "chown ".USERNAME." ".$HTTP_POST_FILES['archivo_']['name'];
+			$rs = `$command`;
 			$command = SSH . " -l " . USERNAME . " " . HOST . " \"cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name']."; exit\" 2>&1";
 			$rs = `$command`;
 			if($rs!=""){
