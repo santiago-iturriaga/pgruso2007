@@ -28,6 +28,8 @@
 	$tabalerta		= $plantilla->load("plantillas/alertas/tabalerta.html");
 	$msj = null;
 	$msjerror = null;
+	$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+
 
 	$interfaz = new Interfaz($conexion,$plantilla,$s);
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
@@ -37,7 +39,7 @@
 	$resConsulta = null;
 
 
-	$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
+
 	$i = new Interfaz($conexion,$plantilla,$s);
 	$alertas = new Alertas($conexion);
 
