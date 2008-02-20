@@ -24,6 +24,8 @@
 
 	if(isset($_POST["Enviar"])) {
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
+			$command = SSH . " -l " . USERNAME . " " . HOST . " \"cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name']."; exit\" 2>&1";
+
 			if(!@copy($HTTP_POST_FILES['archivo_']['tmp_name'], $s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name']))
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
 		}
