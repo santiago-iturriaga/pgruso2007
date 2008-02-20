@@ -118,7 +118,8 @@
 	}
 
 	$camino		=	$s->sesion->Directorio->camino;
-	$camino[0]	=	"home";
+	//$camino[0]	=	"home";
+	$camino[0] = "<img src='imagenes/house.png' title='Home' alt='Home' />";
 	$ruta	= "";
 
 	while($carpeta=array_shift($camino)){
