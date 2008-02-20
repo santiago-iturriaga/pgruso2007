@@ -43,7 +43,7 @@
 	$qstat = `$command`;
 
 	if ($qstat == "") {
-		$pagina	.= "<pre>Empty.</pre>";
+		$pagina	.= "<pre>No hay trabajos.</pre>";
 	} else {
 		$tabla = getTablaTrabajos($qstat);
 		$pagina =  $tabla->getTabla();
