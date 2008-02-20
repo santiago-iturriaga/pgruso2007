@@ -172,14 +172,16 @@ class Directorio{
 		$nombre_carpeta = array_shift(explode(".",$nombre_archivo));
 		$res = $this->crearCarpeta($nombre_carpeta);
 		if($res["error"]) return $res;
-		$ejecutar = "unzip $ruta/$nombre_archivo -d $ruta/$nombre_carpeta";
-		$rs = `$ejecutar`;
+
+		$command = SSH . " -l " . USERNAME . " " . HOST . " \"unzip $ruta/$nombre_archivo -d $ruta/$nombre_carpeta; exit\" 2>&1";
+		$rs = `$command`;
+		$command = SSH . " -l " . USERNAME . " " . HOST . " \"rm $ruta/$nombre_archivo; exit\" 2>&1";
 		if($rs){
-			system("rm $ruta/$nombre_archivo");
+			$rs = `$command`;
 			return array("error"=>0);
 		}
 		else{
-			system("rm $ruta/$nombre_archivo");
+			$rs = `$command`;
 			return array("error"=>0,
     				 	 "codError"=>"D104");
 
