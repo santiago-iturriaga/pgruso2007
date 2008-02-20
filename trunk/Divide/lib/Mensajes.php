@@ -26,6 +26,8 @@
 	$MENSAJES["EA06"]  = "Error al obtener alertas";
 	$MENSAJES["EA07"]  = "Error al crear una alerta";
 	$MENSAJES["EA08"]  = "Error al insertar en trabajo_alerta";
+	$MENSAJES["EA09"] = "Error al obtener el trabajo que se ejecuto";
+	$MENSAJES["EA10"] = "Error al obtener los usuarios del trabajo que se ejecuto";
 	$MENSAJES["A001"] = "La alerta fue eliminada";
 	$MENSAJES["A002"] = "La alerta fue marcada como leida";
 
