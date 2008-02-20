@@ -1,6 +1,7 @@
 <?php
 include_once ("Constantes.php");
 include_once ("Conexion.php");
+include_once ("Alertas.php");
 
 class Momento{
 	var $db = null;
@@ -149,11 +150,28 @@ class Momento{
 			}
 		$row=$this->db->Next();
 		$script = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
-		error_log("poner de vuelta despues");
-		//if(unlink($script))
+		//error_log("poner de vuelta despues");
+		if(unlink($script)){
+			//envio alerta de finalizacion
+			$consulta2 = "select trabajo from ejecucion where id_torque = ?";
+			if(!$this->db->EjecutarConsulta($consulta2,array($id_torque),true))
+				{
+				return array("error"=>1,
+							 "codError"=>"EA09");
+				}
+			$trabajo=array();
+			while(($row=$this->conexion->Next()) != null){
+				$trabajo = array("trabajo"=>$row["trabajo"]);
+			}
+			$alertas = new Alertas($this->db);
+			$result = $alertas->asignarAlertaTrabajoInicio($trabajo);
+			if($result["error"] = 1){
+				return $result;
+			}
 			return array("error"=>0);
-		//else
-			//return array("error"=>0,"codError"=>"M001");
+		}
+		else
+			return array("error"=>1,"codError"=>"M001");
 
 	}
 
@@ -164,9 +182,28 @@ class Momento{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
 			}
-		return array("error"=>0);
 
+		//envio alerta de inicio
+		$consulta2 = "select trabajo from ejecucion where id_torque = ?";
+		if(!$this->db->EjecutarConsulta($consulta2,array($id_torque),true))
+			{
+			return array("error"=>1,
+						 "codError"=>"EA09");
+			}
+		$trabajo=array();
+		while(($row=$this->conexion->Next()) != null){
+			$trabajo = array("trabajo"=>$row["trabajo"]);
+		}
+
+		$alertas = new Alertas($this->db);
+		$result = $alertas->asignarAlertaTrabajoInicio($trabajo);
+		if($result["error"] = 1){
+			return $result;
+		}
+
+		return array("error"=>0);
 	}
+
 	function getEnEjecucion($id){
 		$consulta = "select id, id_torque, archivo, ruta, parametros, argumentos " .
 					"from ejecucion " .
