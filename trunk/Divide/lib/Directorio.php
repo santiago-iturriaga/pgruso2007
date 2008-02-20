@@ -149,10 +149,17 @@ class Directorio{
 		if($nombre == "") return array("error"=>0,
     				 	 			   "codError"=>"D102");
 		$ruta = $this->getRuta();
-		if(rmdir($ruta.'/'.$nombre)){
+
+		$command = SSH . " -l " . USERNAME . " " . HOST . " \"mkdir $ruta/$nombre; exit\" 2>&1";
+		$res = `$command`;
+
+		if($res==""){
 			return array("error"=>0);
-		}else return array("error"=>0,
+		}else {
+			error_log($res);
+			return array("error"=>0,
     				 	 "codError"=>"D103");
+		}
 	}
 
 	function getRuta(){
