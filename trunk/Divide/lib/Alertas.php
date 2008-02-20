@@ -88,17 +88,23 @@ function deleteAlerta($idUsuario,$idTrabajo,$idAlerta){
 			return array("error"=>1, "codError"=>"EA02");
 			}
 
-	$consulta2	= "SELECT count(alerta) FROM usuario_alerta WHERE usuario=? and trabajo=? and alerta = ?";
-	if(!$this->conexion->EjecutarConsulta($consulta2,array($idUsuario, $idTrabajo, $idAlerta),true))
+	$consulta2	= "SELECT count(alerta) as cantidad FROM usuario_alerta WHERE  trabajo=? and alerta = ?";
+	if(!$this->conexion->EjecutarConsulta($consulta2,array($idTrabajo, $idAlerta),true))
 			{
 			return array("error"=>1,"codError"=>"EA02");
 			}
 	else{
+			$resCant = 	$this->conexion->Next();
+			$cant = $resCant["cantidad"];
+			//echo $cant;
 
-		$consulta3 ="DELETE FROM trabajo_alerta WHERE trabajo=? and alerta = ?";
-		if(!$this->conexion->EjecutarConsulta($consulta3,array($idTrabajo, $idAlerta),true))
-			{
-			return array("error"=>1, "codError"=>"EA02");
+			if($cant = 0){
+				$consulta3 ="DELETE FROM trabajo_alerta WHERE trabajo=? and alerta = ?";
+				if(!$this->conexion->EjecutarConsulta($consulta3,array($idTrabajo, $idAlerta),true))
+					{
+					return array("error"=>1, "codError"=>"EA02");
+					}
+
 			}
 	}
 	return array("error"=>0);
