@@ -131,6 +131,7 @@ class Momento{
 	}
 
 	function setFinalizado($id_torque){
+error_log("set finalizado");
 		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP where id_torque = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
 			{
@@ -152,6 +153,7 @@ class Momento{
 		$script = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
 		//error_log("poner de vuelta despues");
 		if(unlink($script)){
+error_log("MANDO");
 			//envio alerta de finalizacion
 			$consulta2 = "select trabajo from ejecucion where id_torque = ?";
 			if(!$this->db->EjecutarConsulta($consulta2,array($id_torque),true))
@@ -159,10 +161,9 @@ class Momento{
 				return array("error"=>1,
 							 "codError"=>"EA09");
 				}
-			$trabajo=array();
-			while(($row=$this->conexion->Next()) != null){
-				$trabajo = array("trabajo"=>$row["trabajo"]);
-			}
+			$row=$this->db->Next();
+			$trabajo = $row["trabajo"];
+
 			$alertas = new Alertas($this->db);
 			$result = $alertas->asignarAlertaTrabajoFin($trabajo);
 			if($result["error"] = 1){
@@ -176,6 +177,7 @@ class Momento{
 	}
 
 	function setIniciado($id_torque){
+error_log("set iniciado");
 		$consulta = "update ejecucion set fecha_ejecucion=CURRENT_TIMESTAMP where id_torque = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
 			{
@@ -190,10 +192,8 @@ class Momento{
 			return array("error"=>1,
 						 "codError"=>"EA09");
 			}
-		$trabajo=array();
-		while(($row=$this->conexion->Next()) != null){
-			$trabajo = array("trabajo"=>$row["trabajo"]);
-		}
+		$row=$this->db->Next();
+		$trabajo = $row["trabajo"];
 
 		$alertas = new Alertas($this->db);
 		$result = $alertas->asignarAlertaTrabajoInicio($trabajo);
