@@ -47,7 +47,8 @@
 	$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
 	$i = new Interfaz($conexion,$plantilla,$s);
 	$alertas = new Alertas($conexion);
-	$resConsulta = $alertas->getAlertasUsuarioTrabajo($s->sesion->ClienteActual,$s->sesion->TrabajoActual);
+	//echo "<pre>";print_r($s);echo '</pre>';
+	$resConsulta = $alertas->getAlertasUsuarioTrabajo($s->sesion->Usuario->id,$s->sesion->TrabajoActual);
 	$tabAlertas= "";
 
 
@@ -73,6 +74,7 @@
 
 		$tabla->clase = "";
 		$tabAlertas = $tabla->getTabla();
+		//echo "<pre>";print_r($tabla);echo '</pre>';
 
 	}
 
