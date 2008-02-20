@@ -164,7 +164,7 @@ class Momento{
 				$trabajo = array("trabajo"=>$row["trabajo"]);
 			}
 			$alertas = new Alertas($this->db);
-			$result = $alertas->asignarAlertaTrabajoInicio($trabajo);
+			$result = $alertas->asignarAlertaTrabajoFin($trabajo);
 			if($result["error"] = 1){
 				return $result;
 			}
