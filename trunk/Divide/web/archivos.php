@@ -26,8 +26,10 @@
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
 			$command = SSH . " -l " . USERNAME . " " . HOST . " \"cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name']."; exit\" 2>&1";
 			$rs = `$command`;
-			if($res!="")
+			if($rs!=""){
+				error_log($rs);
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
+			}
 		}
 		if($HTTP_POST_FILES['archivo_']['type'] == 'application/zip'){
 			$res=$s->sesion->Directorio->descomprimir($HTTP_POST_FILES['archivo_']['name']);
