@@ -22,9 +22,11 @@ function crearAlerta($asunto,$body  ){
 }
 
 function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
+
 		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha
 				    from alertas a, usuario_alerta ua, trabajo_alerta ta
 				    where ua.usuario=? and ua.trabajo=? and a.id = ua.alerta and ua.trabajo= ta.trabajo and ua.alerta = ta.alerta";
+
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo),true))
 			{
 			return array("error"=>1, "codError"=>"EA06");
@@ -34,6 +36,7 @@ function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 			{
 			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"]);
 			}
+
 		return array("error"=>0,"alertas"=>$salida);
 	}
 

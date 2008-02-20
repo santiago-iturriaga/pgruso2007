@@ -42,7 +42,7 @@
 	$alertas = new Alertas($conexion);
 
 	if(isset($_POST["form_eliminar"])){
-	 	$resConsulta = $alertas->deleteAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+	 	$resConsulta = $alertas->deleteAlerta($s->sesion->Usuario->id,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 	 	if($resConsulta["error"]){
 	 		$msjerror = $interfaz->getError($resConsulta);
 	 	}else{
@@ -50,7 +50,7 @@
 	 	}
 	 	$ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>""));
 	}else{
-		$resConsulta = $alertas->getAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+		$resConsulta = $alertas->getAlerta($s->sesion->Usuario->id,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 		if($resConsulta["error"]){
 		 $msjerror = $interfaz->getError($resConsulta);
 		 $ppal = $plantilla->replace($ppal,array("MENU_VERTICAL"=>$i->getMenuVertical(),"TABALERTA"=>""));
@@ -61,7 +61,7 @@
 				$tabalerta = $plantilla->replace($tabalerta,array("FECHA"=>$rowAlerta["fecha"],"ASUNTO"=>$rowAlerta["asunto"],"BODY"=>$rowAlerta["body"]));
 			}
 			// MARCAR LAS ALERTAS COMO LEIDAS
-			$res = $alertas->marcarAlertaLeida($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+			$res = $alertas->marcarAlertaLeida($s->sesion->Usuario->id,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 			if($res["error"]){
 	 			$msjerror = $interfaz->getError($res);
 	 		}else{
@@ -70,10 +70,10 @@
 
 			//Enviar por mail SACAR
 			//echo "antes enviar - ";
-			//$res = $alertas->enviarAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
+			//$res = $alertas->enviarAlerta($s->sesion->Usuario->id,$s->sesion->TrabajoActual,$s->sesion->alerta_actual);
 			//echo "des enviar";
 			//asignar alerta
-			//$res = $alertas->asignarAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,3, array("TRABAJO" => "BOLUDO"));
+			//$res = $alertas->asignarAlerta($s->sesion->Usuario->id,$s->sesion->TrabajoActual,3, array("TRABAJO" => "BOLUDO"));
 
 			$ppal = $plantilla->replace($ppal,array("TABALERTA"=>$tabalerta));
 
