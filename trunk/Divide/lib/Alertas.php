@@ -139,6 +139,42 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 		return array("error"=>0);
 	}
 
+	function asignarAlertaTrabajoInicio($idTrabajo){
+		$consulta= "select ug.usuario from usuario_grupo as ug, trabajo_grupo as tg,  where tg.trabajo = ? and tg.grupo = ug.grupo";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
+			{
+				return array("error"=>1, "codError"=>"EA10");
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null){
+			$salida = array("usuario"=>$row["usuario"]);
+		}
+		foreach ($salida as $idU=>$usuario){
+			$params = array("TRABAJO"=>$idTrabajo);
+			this->asignarAlerta($idU,$idTrabajo,3,$params);
+		}
+		return array("error"=>0);
+
+	}
+
+	function asignarAlertaTrabajoFin($idTrabajo){
+		$consulta= "select ug.usuario from usuario_grupo as ug, trabajo_grupo as tg,  where tg.trabajo = ? and tg.grupo = ug.grupo";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
+			{
+				return array("error"=>1, "codError"=>"EA10");
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null){
+			$salida = array("usuario"=>$row["usuario"]);
+		}
+		foreach ($salida as $idU=>$usuario){
+			$params = array("TRABAJO"=>$idTrabajo);
+			this->asignarAlerta($idU,$idTrabajo,4,$params);
+		}
+		return array("error"=>0);
+
+	}
+
 	function asignarAlerta($idUsuario,$idTrabajo,$idAlerta, $textVar){
 		$consulta= "select asunto, body from alertas where id = ?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idAlerta),true))
