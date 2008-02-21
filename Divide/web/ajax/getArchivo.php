@@ -18,6 +18,9 @@
 	$salida = ejecutar_servidor("wc -c $archivo");
 	$filesize = array_shift(explode(" ",$salida));
 	if(!is_numeric($filesize)){ error_log($salida);exit;}
+
+	error_log("tamaño:".$filesize);
+
 	if($filesize > $ini){
 		$leido	=  file_get_contents  ( $archivo  , false, null,$ini);
 		$s->sesion->bytes_leidos += strlen($leido);
