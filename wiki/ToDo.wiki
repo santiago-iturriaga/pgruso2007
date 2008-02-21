@@ -3,6 +3,7 @@
 = ToDo =
 
 *------------------------------*
+  * Comente el error al no poder borrar el script del qsub (momento linea 170 +/-)
   * error da error al descargar desde el navegador de archivos
   * En archivos.php mostrar estado del trabajo en ejecucion
   * Asignacion de alertas en inicio/fin/falla de trabajo
