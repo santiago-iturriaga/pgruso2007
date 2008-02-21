@@ -23,7 +23,6 @@
 		$s->sesion->bytes_leidos += strlen($leido);
 	}
 	$s->salvar();
-	//error_log($leido,3,$archivo."coso");
 	echo $leido;
 
 ?>
