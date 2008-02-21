@@ -187,6 +187,7 @@ class Directorio{
 		}
 		else{
 			$rs = `$command`;
+			error_log($rs);
 			return array("error"=>0,
     				 	 "codError"=>"D104");
 

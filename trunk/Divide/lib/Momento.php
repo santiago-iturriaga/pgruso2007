@@ -145,15 +145,11 @@ class Momento{
 
 	function setFinalizado($id_torque){
 		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP where id_torque = ?";
-echo "1\n";
-echo $consulta." - $id_torque \n";
-
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
 			}
-echo "2\n";
 		$consulta = "select t.id as id_trabajo," .
 					"		t.cliente as id_cliente," .
 					"	    e.id as id_ejecutable " .
@@ -165,7 +161,6 @@ echo "2\n";
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
 			}
-echo "3\n";
 
 		$row=$this->db->Next();
 		$script = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
@@ -195,7 +190,6 @@ echo "3\n";
 	}
 
 	function setIniciado($id_torque){
-error_log("update:".$id_torque);
 		$consulta = "update ejecucion set fecha_ejecucion=CURRENT_TIMESTAMP where id_torque = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
 			{
