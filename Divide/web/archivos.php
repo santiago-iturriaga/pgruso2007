@@ -28,7 +28,6 @@
 			$rs = ejecutar_servidor($command);
 			$command = "cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
 			$rs = ejecutar_servidor($command);
-			$rs = `$command`;
 			if($rs!=""){
 				error_log($rs);
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
