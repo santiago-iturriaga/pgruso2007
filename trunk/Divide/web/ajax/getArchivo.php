@@ -15,11 +15,12 @@
 	//error_log("TAM:".filesize  ($archivo));
 
 	// filesize:
-	$salida = ejecutar_servidor("wc -c $archivo");
-	$filesize = array_shift(explode(" ",$salida));
+	//$salida = ejecutar_servidor("wc -c $archivo");
+	//error_log($salida."<--");
+	//$filesize = array_shift(explode(" ",$salida));
+	$filesize = filesize($archivo);
 
-	error_log($salida."<--");
-	if(!is_numeric($filesize)){ error_log($salida);exit;}
+	//if(!is_numeric($filesize)){ error_log($salida);exit;}
 
 	if($filesize > $ini){
 		$leido	=  file_get_contents  ( $archivo  , false, null,$ini);
