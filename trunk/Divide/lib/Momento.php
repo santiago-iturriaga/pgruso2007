@@ -85,7 +85,7 @@ class Momento{
 		fclose($fscript);
 		chmod($script,0777);
 
-		$salida = ejecutar_servidor("mv ".TMP.'/'.'PGCCADAR_'.$id.
+		$salida = ejecutar_servidor("cp ".TMP.'/'.'PGCCADAR_'.$id.
 									" ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id,$usr_linux);
 		if($salida !="") error_log($salida);
 		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
