@@ -15,7 +15,7 @@
 	//error_log("TAM:".filesize  ($archivo));
 
 	// filesize:
-	$salida = ejecutar_servidor("wc $archivo");
+	$salida = ejecutar_servidor("wc -c $archivo");
 	$filesize = array_shift(explode(" ",$salida));
 	if(!is_numeric($filesize)){ error_log($salida);exit;}
 	if($filesize > $ini){
