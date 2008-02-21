@@ -1,5 +1,8 @@
 <?php
 define("RAIZ", "/net/home/pgccadar");
+define("TMP", "/tmp");
+
+
 define("CONEXION_HOST", "lennon.fing.edu.uy");
 define("CONEXION_PORT", "54320");
 define("CONEXION_USUARIO", "pgccadar");
