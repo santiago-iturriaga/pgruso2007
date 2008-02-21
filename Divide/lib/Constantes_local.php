@@ -1,5 +1,6 @@
 <?php
 define("RAIZ", "/home");
+define("TMP", "/tmp");
 define("CONEXION_HOST", "localhost");
 define("CONEXION_PORT", "5432");
 define("CONEXION_USUARIO", "pgccadar");

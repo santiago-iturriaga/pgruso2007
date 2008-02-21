@@ -2,6 +2,7 @@
 include_once ("Constantes.php");
 include_once ("Conexion.php");
 include_once ("Alertas.php");
+include_once ("Servidor.php");
 
 class Momento{
 	var $db = null;
@@ -54,24 +55,14 @@ class Momento{
 
 		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
 		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
-		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"touch $archivo_salida; exit\" 2>&1";
-		$salida = `$ejecutar`;
+		$salida = ejecutar_servidor("touch $archivo_salida",$usr_linux);
 		if($salida !="") error_log($salida);
-		//touch($archivo_salida);
-		//if(!chmod($archivo_salida,0777)) error_log("no funco el chmod");
-		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"chmod 777 $archivo_salida; exit\" 2>&1";
-		$salida = `$ejecutar`;
+		$salida = ejecutar_servidor("chmod 777 $archivo_salida",$usr_linux);
 		if($salida !="") error_log($salida);
-
-		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"touch $archivo_error; exit\" 2>&1";
-		$salida = `$ejecutar`;
+		$salida = ejecutar_servidor("touch $archivo_error",$usr_linux);
 		if($salida !="") error_log($salida);
-		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"chmod 777 $archivo_error; exit\" 2>&1";
-		$salida = `$ejecutar`;
+		$salida = ejecutar_servidor("chmod 777 $archivo_error",$usr_linux);
 		if($salida !="") error_log($salida);
-
-		//touch($archivo_error);
-		//chmod($archivo_error,0777);
 
 		$ejecutar = $plantilla->replace($plantilla->load(EJECUTABLE),
 										array("MPIEXEC"=>MPIEXEC,
@@ -86,14 +77,20 @@ class Momento{
 											  "2"=>$argumentos,
 											  "3"=>REDIRECCION_SALIDA,
 											  "4"=>$ruta.'/'.OUTPUT."_".$id));
-		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
+
+		$script  = TMP.'/'.'PGCCADAR_'.$id;
 		$fscript = fopen($script,'w+');
 		if($fscript ==NULL) error_log("ERROR1");
 		$caracteres = fwrite  ($fscript, $ejecutar);
 		fclose($fscript);
 		chmod($script,0777);
-		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"cd $ruta; ".QSUB." $script; exit\" 2>&1";
-		$salida = `$ejecutar`;
+
+		$salida = ejecutar_servidor("mv ".TMP.'/'.'PGCCADAR_'.$id.
+									" ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id,$usr_linux);
+		if($salida !="") error_log($salida);
+		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
+		$salida = ejecutar_servidor("cd $ruta; ".QSUB." $script; exit\" 2>&1",$usr_linux);
+		if($salida !="") error_log($salida);
 
 		$salida = $this->parsear_salida($salida);
 		if(!isset($salida["id"])) return array("error"=>1);
@@ -105,8 +102,12 @@ class Momento{
 						 "codError"=>$this->db->msgError);
 			}
 		$archivo_salida = $ruta.'/'.OUTPUT."_".$id;
-		touch($archivo_salida);
-		chmod($archivo_salida,0666);
+
+		$salida = ejecutar_servidor("touch $archivo_salida",$usr_linux);
+		if($salida !="") error_log($salida);
+
+		$salida = ejecutar_servidor("chmod 0666 $archivo_salida",$usr_linux);
+		if($salida !="") error_log($salida);
 		return array("error"=>0,"id"=>$id,"id_trabajo"=>$id_torque,"salida"=>$archivo_salida);
 	}
 
