@@ -2,6 +2,7 @@
 	set_include_path(get_include_path().PATH_SEPARATOR.
 					 '../../lib');
 	include_once("Sesion.php");
+	include_once("Servidor.php");
 	$s = new Sesion();
 
 	if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
@@ -12,16 +13,15 @@
 	//error_log("INI:".$ini);
 	$leido = "";
 	//error_log("TAM:".filesize  ($archivo));
-	if(filesize  ($archivo) > $ini){
-		//error_log("cambiar esto cuando este php 5.1 (acordarse de cambiar tambien en javascript)");
+
+	// filesize:
+	$salida = ejecutar_servidor("wc $archivo");
+	$filesize = array_shift(explode(" ",$salida));
+	if(!is_numeric($filesize)){ error_log($salida);exit;}
+	if($filesize > $ini){
 		$leido	=  file_get_contents  ( $archivo  , false, null,$ini);
-		//$leido	=  file_get_contents  ( $archivo  , false);
 		$s->sesion->bytes_leidos += strlen($leido);
 	}
-	//error_log($archivo.'<-----');
-	//error_log($leido);
-	//error_log("cambiar esto cuando este php 5.1 (acordarse de cambiar tambien en javascript)");
-	//$leido	=  file_get_contents  ( $archivo  , false);
 	$s->salvar();
 	error_log($leido,3,$archivo."coso");
 	echo $leido;
