@@ -1,8 +1,11 @@
 					<tr>
-						<td><a href="archivos.php?descargar={NOMBRE}">{NOMBRE}</a></td>
+						<td><a href="archivos.php?descargar={NOMBRE}">
+						<!--{EJECUTAR}<img src="imagenes/application_xp_terminal.png" />{EJECUTAR}-->
+						<!--{NO_EJECUTAR}<img src="imagenes/page_white.png" />{NO_EJECUTAR}-->
+						{NOMBRE}</a></td>
 						<td>{TAMANIO}</td>
 						<td>{FECHA}</td>
 						<td><a href="archivos.php?descargar={NOMBRE}"><img src="imagenes/disk.png" title="Descargar" alt="Descargar" /></a></td>
 						<td><a href="archivos.php?eliminar={NOMBRE}"><img src="imagenes/delete.png" title="Eliminar" alt="Eliminar" /></a></td>
-						<td><!--{EJECUTAR}<a href="archivos.php" onclick="ejecutar('{NOMBRE}'); return false;"><img src="imagenes/cog_go.png" title="Ejecutar" alt="Ejecutar" /></a>{EJECUTAR}--></td>
+						<td><!--{EJECUTAR}<a href="archivos.php" onclick="ejecutar('{NOMBRE}'); return false;"><img src="imagenes/cog_start.png" title="Ejecutar" alt="Ejecutar" /></a>{EJECUTAR}--></td>
 					</tr>

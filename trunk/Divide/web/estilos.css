@@ -753,10 +753,15 @@ span#enejecucion{
 	left:200px;
 	color:#ffffff;
 	font-weight:bold;
-	border: 1px solid #ffffff;
+	border: 0px solid #ffffff;
 }
 #usuario_logueado a{
 	color: #ff0000;
+}
+
+#usuario_logueado img{
+	width:16px;
+	height:16px;
 }
 .ganglia {
 	border: 0px;
