@@ -24,6 +24,13 @@
 
 	if(isset($_POST["Enviar"])) {
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
+			//$command = "chown ".USERNAME." ".$HTTP_POST_FILES['archivo_']['tmp_name'];
+			//$rs = ejecutar_servidor($command);
+			$rs = chmod(0777,$HTTP_POST_FILES['archivo_']['tmp_name']);
+			if(!$rs){
+				error_log($rs);
+				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
+			}
 			$command = "cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
 			$rs = ejecutar_servidor($command);
 			if($rs!=""){
