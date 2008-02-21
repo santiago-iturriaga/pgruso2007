@@ -7,10 +7,10 @@
 	include_once("Constantes.php");
 	include_once("Directorio.php");
 	include_once("Interfaz.php");
-	$interfaz = new Interfaz($conexion,$plantilla,$s);
-	$plantilla	=	new TPL();
 
 	$s = new Sesion();
+	$interfaz = new Interfaz($conexion,$plantilla,$s);
+	$plantilla	=	new TPL();
 
 	if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
 		header("Location: index.php");
@@ -26,6 +26,10 @@
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
 			$command = "chown ".USERNAME." ".$HTTP_POST_FILES['archivo_']['name'];
 			$rs = ejecutar_servidor($command);
+			if($rs!=""){
+				error_log($rs);
+				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
+			}
 			$command = "cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
 			$rs = ejecutar_servidor($command);
 			if($rs!=""){
