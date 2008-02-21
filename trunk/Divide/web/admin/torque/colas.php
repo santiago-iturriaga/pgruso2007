@@ -23,11 +23,11 @@
 
 	if (ISSET($_REQUEST["detener"])) {
 		$id = $_REQUEST["detener"];
-		$mensaje = torque_detener_cola($id);
+		list($mensaje,$error) =  torque_detener_cola($id);
 	}
 	if (ISSET($_REQUEST["iniciar"])) {
 		$id = $_REQUEST["iniciar"];
-		$mensaje = torque_iniciar_cola($id);
+		list($mensaje,$error) =  torque_iniciar_cola($id);
 	}
 
 	$command = SSH." -l ".USERNAME." ".HOST." \"".QSTAT_CMD." -Qf; exit\" 2>&1";
@@ -35,12 +35,30 @@
 
 	$pagina = getTablasColas($qstatQ);
 
+	if ($mensaje != "") {
+		$mensajepl = $plantilla->load("plantillas/mensaje.html");
+		$mensajepl = $plantilla->replace($mensajepl, array (
+			"MENSAJE" => $mensaje
+		));
+	} else {
+		$mensajepl = "";
+	}
+
+	if ($error != "") {
+		$errorpl = $plantilla->load("plantillas/error.html");
+		$errorpl = $plantilla->replace($errorpl, array (
+			"ERROR" => $error
+		));
+	} else {
+		$errorpl = "";
+	}
+
 	$ppal	=	$plantilla->replace($ppal,array("PAGINA"=>$pagina));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-												"MENSAJE"=>$mensaje,
+												"MENSAJE"=>$mensajepl,
 												"SMENU_COLAS"=>" id='smactual' ",
 												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
-												"ERROR"=>$error));
+												"ERROR"=>$errorpl));
 	$s->salvar();
 
 	echo $base;?>

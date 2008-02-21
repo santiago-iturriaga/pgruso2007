@@ -84,6 +84,24 @@
 	$cabezal_titulos_blocked = array("Nombre","Usuario","Raz&oacute;n");
 	list($tabla_blocked,$resumen_blocked) = getTablaTrabajos($jobs_blocked,$cabezal_blocked,$cabezal_titulos_blocked,2);
 
+	if ($mensaje != "") {
+		$mensajepl = $plantilla->load("plantillas/mensaje.html");
+		$mensajepl = $plantilla->replace($mensajepl, array (
+			"MENSAJE" => $mensaje
+		));
+	} else {
+		$mensajepl = "";
+	}
+
+	if ($error != "") {
+		$errorpl = $plantilla->load("plantillas/error.html");
+		$errorpl = $plantilla->replace($errorpl, array (
+			"ERROR" => $error
+		));
+	} else {
+		$errorpl = "";
+	}
+
 	$ppal	=	$plantilla->replace($ppal,array("TABLA_ACTIVE"=>$tabla_active->getTabla(),
 												"TABLA_IDLE"=>$tabla_idle->getTabla(),
 												"TABLA_BLOCKED"=>$tabla_blocked->getTabla(),
@@ -93,10 +111,10 @@
 												"INFO_TRABAJO"=>$info));
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-												"MENSAJE"=>$mensaje,
+												"MENSAJE"=>$mensajepl,
 												"SMENU_JOBS"=>" id='smactual' ",
 												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
-												"ERROR"=>$error));
+												"ERROR"=>$errorpl));
 	$s->salvar();
 
 	echo $base;

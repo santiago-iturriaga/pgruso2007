@@ -23,11 +23,11 @@
 	$error = "";
 
 	if (ISSET($_REQUEST["disable"])) {
-		$mensaje = torque_detener_nodo($_REQUEST["disable"]);
+		list($mensaje,$error) = torque_detener_nodo($_REQUEST["disable"]);
 	}
 
 	if (ISSET($_REQUEST["enable"])) {
-		$mensaje = torque_iniciar_nodo($_REQUEST["enable"]);
+		list($mensaje,$error) = torque_iniciar_nodo($_REQUEST["enable"]);
 	}
 
 	// Listado de todos los trabajos
@@ -104,12 +104,31 @@
 
 		$pagina =  $tabla->getTabla();
 		}
+
+	if ($mensaje != "") {
+		$mensajepl = $plantilla->load("plantillas/mensaje.html");
+		$mensajepl = $plantilla->replace($mensajepl, array (
+			"MENSAJE" => $mensaje
+		));
+	} else {
+		$mensajepl = "";
+	}
+
+	if ($error != "") {
+		$errorpl = $plantilla->load("plantillas/error.html");
+		$errorpl = $plantilla->replace($errorpl, array (
+			"ERROR" => $error
+		));
+	} else {
+		$errorpl = "";
+	}
+
 	$ppal	=	$plantilla->replace($ppal,array("PAGINA"=>$pagina));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-												"MENSAJE"=>$mensaje,
+												"MENSAJE"=>$mensajepl,
 												"SMENU_NODOS"=>" id='smactual' ",
 												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
-												"ERROR"=>$error));
+												"ERROR"=>$errorpl));
 	$s->salvar();
 
 	echo $base;

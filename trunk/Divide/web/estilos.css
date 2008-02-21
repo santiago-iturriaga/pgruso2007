@@ -848,3 +848,54 @@ h2.jobs_maui {
 .colas_torque {
 	padding: 1em;
 }
+
+.error {
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+	width: 80%;
+	border-width: 1px;
+	border-color: orange;
+	border-style: solid;
+	background-color: #FAD163;
+	color: black;
+	font-weight: bold;
+}
+
+.mensaje {
+	vertical-align: middle;
+	text-align: center;
+	width: 80%;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	color: #ffffff;
+	background-color: #85859c;
+	font-weight: bold;
+}
+
+.mensajeOK {
+	vertical-align: middle;
+	text-align: center;
+	width: 80%;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	border-width: 1px;
+	border-color: #85859c;
+	border-style: solid;
+	margin-left: auto;
+	margin-right: auto;
+	color: #000000;
+	background-color: #D1EFD5;
+	font-weight: bold;
+}
