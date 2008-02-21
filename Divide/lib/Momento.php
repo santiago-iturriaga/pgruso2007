@@ -89,7 +89,7 @@ class Momento{
 									" ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id,$usr_linux);
 		if($salida !="") error_log($salida);
 		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
-		$salida = ejecutar_servidor("cd $ruta; ".QSUB." $script; exit\" 2>&1",$usr_linux);
+		$salida = ejecutar_servidor("cd $ruta; ".QSUB." $script",$usr_linux);
 		if($salida !="") error_log($salida);
 
 		$salida = $this->parsear_salida($salida);
