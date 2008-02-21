@@ -5,6 +5,7 @@ define("SEPARADOR_RUTA", "/");
 include_once ("TPL.php");
 include_once ("Constantes.php");
 include_once ("Momento.php");
+include_once ("Servidor.php");
 class Directorio{
 	var $inicio	=	null;
 	var $camino	=	array();
@@ -93,9 +94,13 @@ class Directorio{
 		return file_get_contents ($this->getRuta().SEPARADOR_RUTA.$archivo);
 	}
 	function eliminar($archivo){
-		if(unlink($this->getRuta().SEPARADOR_RUTA.$archivo)) return array("error"=>0);
-		else return array("error"=>1,
+		$salida = ejecutar_servidor("rm ".$this->getRuta().SEPARADOR_RUTA.$archivo);
+		if($salida=="") return array("error"=>0);
+		else{
+			error_log($salida);
+			 return array("error"=>1,
     			 		  "codError"=>"D003");
+			}
 		}
 	function ejecutar($archivo,$argumentos,$id_cliente,$id_trabajo){
 		$conexion= new Conexion(CONEXION_HOST,CONEXION_PORT,CONEXION_USUARIO,CONEXION_PASSWORD,CONEXION_BASE);
