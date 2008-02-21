@@ -26,7 +26,8 @@
 
 	$id_torque = $res["salida"][$s->sesion->ejecucion_actual]["id_torque"];
 	if($_GET["accion"]=='Detener'){
-		$res=  torque_eliminar_trabajo($id_torque);
+		list($res,$error)=  torque_eliminar_trabajo($id_torque);
+		if ($res == "") { $res = $error; }
 		echo $res;
 		exit;
 	}

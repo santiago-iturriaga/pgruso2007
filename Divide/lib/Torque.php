@@ -13,14 +13,15 @@ function torque_ejecutar_trabajo($id){
 	$qrun_result = `$command`;
 
 	$mensaje = "";
+	$error = "";
 	if ($qrun_result=="") {
 		$mensaje = "El trabajo fue iniciado.";
 	} else {
-		$mensaje = "No fue posible iniciar el trabajo (".$qrun_result.")";
+		$error = "No fue posible iniciar el trabajo (".$qrun_result.")";
 		error_log($qrun_result);
 	}
 
-	return $mensaje;
+	return array($mensaje,$error);
 }
 
 function torque_eliminar_trabajo($id){
@@ -28,28 +29,30 @@ function torque_eliminar_trabajo($id){
 	$qdel_result = `$command`;
 
 	$mensaje = "";
+	$error = "";
 	if ($qdel_result=="") {
 		$mensaje = "El trabajo fue eliminado.";
 	} else {
-		$mensaje = "No fue posible eliminar el trabajo.<br />".$qdel_result;
+		$error = "No fue posible eliminar el trabajo.<br />".$qdel_result;
 		error_log($qdel_result);
 	}
 
-	return $mensaje;
+	return array($mensaje,$error);
 }
 
 function torque_detener_trabajo($id,$held_type){
 	$command = SSH." -l ".USERNAME." ".HOST." \"".QHOLD_CMD." -h $held_type $id; exit\" 2>&1";
 	$qhold_result = `$command`;
 	$mensaje = "";
+	$error = "";
 	if ($qhold_result=="") {
 		$mensaje = "El trabajo fue detenido.";
 	} else {
-		$mensaje = "No fue posible detener el trabajo.<br />".$qhold_result;
+		$error = "No fue posible detener el trabajo.<br />".$qhold_result;
 		error_log($qhold_result);
 	}
 
-	return $mensaje;
+	return array($mensaje,$error);
 }
 
 function torque_liberar_trabajo($id,$held_type){
@@ -57,14 +60,15 @@ function torque_liberar_trabajo($id,$held_type){
 	$qrls_result = `$command`;
 
 	$mensaje = "";
+	$error = "";
 	if ($qrls_result=="") {
 		$mensaje = "El trabajo fue reiniciado.";
 	} else {
-		$mensaje = "No fue posible reiniciar el trabajo.<br />".$qrls_result;
+		$error = "No fue posible reiniciar el trabajo.<br />".$qrls_result;
 		error_log($qrls_result);
 	}
 
-	return $mensaje;
+	return array($mensaje,$error);
 }
 
 function torque_detener_cola($id) {
@@ -72,14 +76,15 @@ function torque_detener_cola($id) {
 	$qstop_result = `$command`;
 
 	$mensaje = "";
+	$error = "";
 	if ($qstop_result=="")
 		$mensaje = "La cola fue detenida.";
 	else {
-		$mensaje = "No fue posible detener la cola.<br/>".$qstop_result;
+		$error = "No fue posible detener la cola.<br/>".$qstop_result;
 		error_log($qstop_result);
 	}
 
-	return $mensaje;
+	return array($mensaje,$error);
 }
 
 function torque_iniciar_cola($id) {
@@ -87,13 +92,14 @@ function torque_iniciar_cola($id) {
 	$qstart_result = `$command`;
 
 	$mensaje = "";
+	$error = "";
 	if ($qstart_result=="")
 		$mensaje = "La cola fue iniciada.";
 	else {
-		$mensaje = "No fue posible iniciar la cola.<br/>".$qstart_result;
+		$error = "No fue posible iniciar la cola.<br/>".$qstart_result;
 		error_log($qstart_result);
 	}
-	return $mensaje;
+	return array($mensaje,$error);
 }
 
 function torque_iniciar_nodo($id) {
@@ -101,12 +107,13 @@ function torque_iniciar_nodo($id) {
 	$qnodes_result = `$command`;
 
 	$mensaje = "";
+	$error = "";
 	if ($qnodes_result=="") {
 		$mensaje ="El nodo fue habilitado.";
 	} else {
-		$mensaje ="No fue posible habilitar el nodo.<br/>".$qnodes_result;
+		$error ="No fue posible habilitar el nodo.<br/>".$qnodes_result;
 	}
-	return $mensaje;
+	return array($mensaje,$error);
 }
 
 function torque_detener_nodo($id) {
@@ -114,11 +121,12 @@ function torque_detener_nodo($id) {
 	$qnodes_result = `$command`;
 
 	$mensaje= "";
+	$error = "";
 	if ($qnodes_result=="") {
 		$mensaje ="El nodo fue deshabilitado.";
 	} else {
-		$mensaje ="No fue posible deshabilitar el nodo.<br/>".$qnodes_result;
+		$error ="No fue posible deshabilitar el nodo.<br/>".$qnodes_result;
 	}
-	return $mensaje;
+	return array($mensaje,$error);
 }
 ?>

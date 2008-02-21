@@ -45,12 +45,31 @@
 		$table->addRenglon($ar_nodo);
 	}
 	$tabla	=	$table->getTabla();
+
+	if ($mensaje != "") {
+		$mensajepl = $plantilla->load("plantillas/mensaje.html");
+		$mensajepl = $plantilla->replace($mensajepl, array (
+			"MENSAJE" => $mensaje
+		));
+	} else {
+		$mensajepl = "";
+	}
+
+	if ($error != "") {
+		$errorpl = $plantilla->load("plantillas/error.html");
+		$errorpl = $plantilla->replace($errorpl, array (
+			"ERROR" => $error
+		));
+	} else {
+		$errorpl = "";
+	}
+
 	$ppal	=	$plantilla->replace($ppal,array("TABLA"=>$tabla, "PIE"=>$pie));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-												"MENSAJE"=>$mensaje,
+												"MENSAJE"=>$mensajepl,
 												"SMENU_NODOS"=>" id='smactual' ",
 												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
-												"ERROR"=>$error));
+												"ERROR"=>$errorpl));
 	$s->salvar();
 
 	echo $base;?>
