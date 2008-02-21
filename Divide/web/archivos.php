@@ -9,8 +9,8 @@
 	include_once("Interfaz.php");
 
 	$s = new Sesion();
-	$interfaz = new Interfaz($conexion,$plantilla,$s);
 	$plantilla	=	new TPL();
+	$interfaz = new Interfaz($conexion,$plantilla,$s);
 
 	if($s->sesion==null or !$s->sesion->Usuario->Logueado()){
 		header("Location: index.php");
@@ -30,7 +30,7 @@
 				error_log($rs);
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
 			}
-			$command = "cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
+			$command = "cp ".TMP."/".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
 			$rs = ejecutar_servidor($command);
 			if($rs!=""){
 				error_log($rs);
