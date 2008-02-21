@@ -26,7 +26,7 @@
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
 			//$command = "chown ".USERNAME." ".$HTTP_POST_FILES['archivo_']['tmp_name'];
 			//$rs = ejecutar_servidor($command);
-			$rs = chmod(0777,$HTTP_POST_FILES['archivo_']['tmp_name']);
+			$rs = chmod($HTTP_POST_FILES['archivo_']['tmp_name'],0777);
 			if(!$rs){
 				error_log($rs);
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
