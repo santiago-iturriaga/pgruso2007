@@ -17,6 +17,8 @@
 	// filesize:
 	$salida = ejecutar_servidor("wc -c $archivo");
 	$filesize = array_shift(explode(" ",$salida));
+
+	error_log($salida."<--");
 	if(!is_numeric($filesize)){ error_log($salida);exit;}
 
 	if($filesize > $ini){
