@@ -188,6 +188,7 @@ class Momento{
 	}
 
 	function setIniciado($id_torque){
+error_log("update:".$id_torque);
 		$consulta = "update ejecucion set fecha_ejecucion=CURRENT_TIMESTAMP where id_torque = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
 			{
