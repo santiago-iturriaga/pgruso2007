@@ -24,7 +24,7 @@
 
 	if(isset($_POST["Enviar"])) {
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
-			$command = "cp ".TMP."/".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
+			$command = "cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
 			$rs = ejecutar_servidor($command);
 			if($rs!=""){
 				error_log($rs);
