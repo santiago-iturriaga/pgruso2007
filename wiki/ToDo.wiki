@@ -6,6 +6,7 @@
   * meter en una clase o en algun lado, una funcion EJECUTAR_COSO, que reciba el usuario y lo que hay q ejecutar
   * En archivos.php mostrar estado del trabajo en ejecucion
   * Asignacion de alertas en inicio/fin/falla de trabajo
+  * la pagina de alertas del admin da un error
 *------------------------------*
 
   * cuota por trabajo (en MB)
