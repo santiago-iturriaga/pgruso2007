@@ -112,14 +112,28 @@
 	asort($directorios);
 	$p_archivos	=	"";
 	foreach($directorios as $d=>$valores){
-		$directorio_nuevo= 	$plantilla->replace($p_directorio,array("NOMBRE"=>$d,"FECHA"=>$valores["ultima_modificacion"]));
-		if($valores["entrar"])  $directorio_nuevo= 	$plantilla->uncomment($directorio_nuevo,array("ENTRAR"));
-		if($valores["eliminar"])  $directorio_nuevo= 	$plantilla->uncomment($directorio_nuevo,array("ELIMINAR"));
-		$p_archivos	.= $directorio_nuevo;
+		if($valores["entrar"]) {
+			$directorio_nuevo= 	$plantilla->replace($p_directorio,array("NOMBRE"=>$d,"FECHA"=>$valores["ultima_modificacion"]));
+			$directorio_nuevo= $plantilla->uncomment($directorio_nuevo,array("ENTRAR"));
+
+			if ($d=="..") {
+				$directorio_nuevo= $plantilla->uncomment($directorio_nuevo,array("UP"));
+				$directorio_nuevo= $plantilla->uncomment($directorio_nuevo,array("ENTRAR_UP"));
+			} elseif ($d==".") {
+				// nada?
+			} else {
+				$directorio_nuevo= $plantilla->uncomment($directorio_nuevo,array("DOWN"));
+				$directorio_nuevo= $plantilla->uncomment($directorio_nuevo,array("ENTRAR_DOWN"));
+			}
+
+			if($valores["eliminar"])  $directorio_nuevo= $plantilla->uncomment($directorio_nuevo,array("ELIMINAR"));
+			$p_archivos	.= $directorio_nuevo;
+		}
 	}
 	foreach($archivos as $archivo=>$valores){
 		$archivo_nuevo = $plantilla->replace($p_archivo,array("NOMBRE"=>$archivo,"TAMANIO"=>$valores["size"],"FECHA"=>$valores["ultima_modificacion"]));
 		if($valores["ejecutar"])  $archivo_nuevo= 	$plantilla->uncomment($archivo_nuevo,array("EJECUTAR"));
+		else   $archivo_nuevo= 	$plantilla->uncomment($archivo_nuevo,array("NO_EJECUTAR"));
 		$p_archivos	.=	$archivo_nuevo;
 	}
 
