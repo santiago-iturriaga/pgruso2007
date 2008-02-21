@@ -96,9 +96,9 @@ function deleteAlerta($idUsuario,$idTrabajo,$idAlerta){
 	else{
 			$resCant = 	$this->conexion->Next();
 			$cant = $resCant["cantidad"];
-			//echo $cant;
 
-			if($cant = 0){
+			if($cant == 0){
+
 				$consulta3 ="DELETE FROM trabajo_alerta WHERE trabajo=? and alerta = ?";
 				if(!$this->conexion->EjecutarConsulta($consulta3,array($idTrabajo, $idAlerta),true))
 					{
