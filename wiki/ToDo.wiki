@@ -1,6 +1,22 @@
 #summary Lista de cosas para hacer...
 
 = ToDo =
+Cosas para hacer después de la reunion con el ruso.
+Administrador
+-cambiar color sub menu
+- al crear nuevo cliente warning de usuario linux.
+-scropt apra crear usuario(incluir todo lo que tiene que tener el usuario).
+-Pagians: Ayudas y titulos
+-Maui: cambiar info, agreaar titulo info el id del trabajo, el pausar si no anda sacar
+-Nodos: Resumen de nodos, el servicio que se pueda levantar, Parser nombre nodos(opcional).
+
+Cliente
+
+
+Archivos: Estilos botones (aliner izq), Confirmacion de borrado, descargar zip
+Resultado: tooltips
+Ejecución: cambiar orden ejecución, estilo. Fecha de fin vacia = "En ejecución", El tiempo poner hasta los seg, Poner tiempo total
+
 
 *------------------------------*
   * Comente el error al no poder borrar el script del qsub (momento linea 170 +/-)
