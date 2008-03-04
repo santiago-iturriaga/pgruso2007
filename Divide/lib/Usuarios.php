@@ -309,6 +309,25 @@ class Usuarios{
 		return array("error"=>0,"trabajos"=>$salida);
 	}
 
+	function getClientesUsuario($idUsuario,$noBorrados=true){
+		$consulta= "select c.id, c.nombre, c.usr_linux ".
+				   "from trabajo t, trabajo_grupo tg, usuario_grupo ug,cliente c ".
+				   "where t.id=tg.trabajo and tg.grupo=ug.grupo and ug.usuario=? and t.cliente=c.id";
+		if($noBorrados) $consulta.=" and t.fecha_fin is null";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario),true))
+			{
+			return array("error"=>1,
+						 codError=>$this->conexion->msgError);
+			}
+		$salida=array();
+		while(($row=$this->conexion->Next()) != null)
+			{
+			$salida[$row["id"]]=$row;
+			}
+		return array("error"=>0,"clientes"=>$salida);
+	}
+
+
 	function validarUsuario($login,$clave){
 		$consulta= "select id,administrador ".
 				   "from usuario ".

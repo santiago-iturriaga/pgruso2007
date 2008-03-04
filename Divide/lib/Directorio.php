@@ -90,11 +90,11 @@ class Directorio{
 		}
 	}
 
-	function getContenido($archivo){
+	function getContenido($archivo,$usr_linux){
 		return file_get_contents ($this->getRuta().SEPARADOR_RUTA.$archivo);
 	}
-	function eliminar($archivo){
-		$salida = ejecutar_servidor("rm ".$this->getRuta().SEPARADOR_RUTA.$archivo);
+	function eliminar($archivo,$usr_linux){
+		$salida = ejecutar_servidor("rm ".$this->getRuta().SEPARADOR_RUTA.$archivo,$usr_linux);
 		if($salida=="") return array("error"=>0);
 		else{
 			error_log($salida);
@@ -139,12 +139,12 @@ class Directorio{
 		}
 	}
 
-	function crearCarpeta($nombre){
+	function crearCarpeta($nombre,$usr_linux){
 		$nombre = trim($nombre);
 		if($nombre == "") return array("error"=>0,
     				 	 			   "codError"=>"D102");
 		$ruta = $this->getRuta();
-		$command = SSH . " -l " . USERNAME . " " . HOST . " \"mkdir $ruta/$nombre; exit\" 2>&1";
+		$command = SSH . " -l " . $usr_linux. " " . HOST . " \"mkdir $ruta/$nombre; exit\" 2>&1";
 		$res = `$command`;
 
 		if($res == ""){
@@ -152,13 +152,13 @@ class Directorio{
 		}else return array("error"=>0,
     				 	 "codError"=>"D103");
 	}
-	function eliminarCarpeta($nombre){
+	function eliminarCarpeta($nombre,$usr_linux){
 		$nombre = trim($nombre);
 		if($nombre == "") return array("error"=>0,
     				 	 			   "codError"=>"D102");
 		$ruta = $this->getRuta();
 
-		$command = SSH . " -l " . USERNAME . " " . HOST . " \"rmdir $ruta/$nombre; exit\" 2>&1";
+		$command = SSH . " -l " .$usr_linux. " " . HOST . " \"rmdir $ruta/$nombre; exit\" 2>&1";
 		$res = `$command`;
 
 		if($res == ""){

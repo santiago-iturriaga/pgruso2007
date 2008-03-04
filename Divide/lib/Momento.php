@@ -86,7 +86,8 @@ class Momento{
 		chmod($script,0777);
 
 		$salida = ejecutar_servidor("cp ".TMP.'/'.'PGCCADAR_'.$id.
-									" ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id,$usr_linux);
+									" ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id,
+									$usr_linux);
 		if($salida !="") error_log($salida);
 		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
 		$salida = ejecutar_servidor("cd $ruta; ".QSUB." $script",$usr_linux);
@@ -113,7 +114,7 @@ class Momento{
 
 	function crearDirCliente($idCliente,$usr_linux){
 		$ruta =RAIZ;
-		$ejecutar =SSH." -l ".USERNAME." ".HOST." \"cd $ruta; mkdir $idCliente; chown $usr_linux $idCliente; exit\" 2>&1";
+		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"cd $ruta; mkdir $idCliente; exit\" 2>&1";
 		$salida = `$ejecutar`;
 
 		if($salida=="")
@@ -134,7 +135,7 @@ class Momento{
 		$usr_linux=$row["usr_linux"];
 
 		$ruta =RAIZ.'/'.$idCliente;
-		$salida = exec(SSH." -l ".$usr_linux." ".HOST." 'cd $ruta; mkdir $idTrabajo; exit'");
+		$salida = exec(SSH." -l ".$usr_linux." ".HOST." 'cd $ruta; mkdir $idTrabajo; chmod 775 $idCliente; exit'");
 		if($salida=="")
 			return array("error"=>0);
 		else{
