@@ -1,0 +1,15 @@
+[Permisos generales]
+- todo usuario linux del cliente debe tener permiso de escritura sobre el directorio base (/home)
+- el usuario apache debe tener permiso de lectura sobre el directorio base y todos sus subdirectorios
+
+[Nuevo usuario]
+1) creo el usuario con adduser (incluye home, preciso el home para crear el ~/.ssh)
+2) agrego autenticacion ssh sin password al usuario apache (www-run o www-data)
+   2.1) para esto concateno la clave publica de el usuario apache al archivo ~/.ssh/authorized_keys2
+
+[chown]
+Problemas creando directorio del cliente. En algunos sistema solo root puede chown.
+Formas de solucionarlo:
+- el usuario linux del cliente debe tener acceso de escritura sobre /home (la carpeta base de directorios)
+- se le puede agregar un u+s a chown (no recomendable)
+- se puede utilizar root como usuario de sistema (no recomendable)
