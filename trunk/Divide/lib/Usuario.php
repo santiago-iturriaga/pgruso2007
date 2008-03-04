@@ -26,6 +26,7 @@ class Usuario{
 		$this->administrador	= ($res["administrador"] == 'S');
 		$this->login	=	$login;
 		$this->setTrabajos();
+		$this->setClientes();
 		return array("error"=>0);
 	}
 
@@ -34,6 +35,13 @@ class Usuario{
 		$res = $Usuarios->getTrabajosUsuario($this->id);
 		if($res["error"]) return $res;
 		$this->trabajos	=	$res["trabajos"];
+		return array("error"=>0);
+	}
+	function setClientes(){
+		$Usuarios = new Usuarios($this->conexion);
+		$res = $Usuarios->getClientesUsuario($this->id);
+		if($res["error"]) return $res;
+		$this->clientes	=	$res["clientes"];
 		return array("error"=>0);
 	}
 

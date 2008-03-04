@@ -21,6 +21,8 @@
 		header("Location: trabajos.php");
 		exit;
 	}
+	//echo '<pre>';print_r($s->sesion);echo '</pre>';exit;
+	$usr_linux = $s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"];
 
 	if(isset($_POST["Enviar"])) {
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
@@ -32,7 +34,7 @@
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
 			}
 			$command = "cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
-			$rs = ejecutar_servidor($command);
+			$rs = ejecutar_servidor($command,$usr_linux);
 			if($rs!=""){
 				error_log($rs);
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
@@ -45,12 +47,12 @@
 
 	}
 	if(isset($_POST["carpeta"])) {
-		$res = $s->sesion->Directorio->crearCarpeta($_POST["carpeta"]);
+		$res = $s->sesion->Directorio->crearCarpeta($_POST["carpeta"],$usr_linux);
 		if($res["error"]) $msjerror	= $interfaz->getError($res);
 	}
 
 	if(isset($_GET["descargar"])){
-		$archivo	=	$s->sesion->Directorio->getContenido($_GET["descargar"]);
+		$archivo	=	$s->sesion->Directorio->getContenido($_GET["descargar"],$usr_linux);
 		header ("Content-Disposition: attachment; filename=".$_GET["descargar"]."\n\n");
 		header ("Content-Type: application/text");
 		header ("Content-Length: ".strlen($archivo));
@@ -58,11 +60,11 @@
 		exit;
 	}
 	if(isset($_GET["eliminar"])){
-		$res	=	$s->sesion->Directorio->eliminar($_GET["eliminar"]);
+		$res	=	$s->sesion->Directorio->eliminar($_GET["eliminar"],$usr_linux);
 		if($res["error"]) $msjerror	= $interfaz->getError($res);
 	}
 	if(isset($_GET["rmdir"])){
-		$res	=	$s->sesion->Directorio->eliminarCarpeta($_GET["rmdir"]);
+		$res	=	$s->sesion->Directorio->eliminarCarpeta($_GET["rmdir"],$usr_linux);
 		if($res["error"]) $msjerror	= $interfaz->getError($res);
 	}
 	if(isset($_POST["ejecutar"])){
