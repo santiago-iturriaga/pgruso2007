@@ -10,10 +10,10 @@ Administrador
   * Paginas: Ayudas y titulos
   * Maui:
     * cambiar info {??}
-    ** agregar titulo info el id del trabajo {hecho}*
+    * agregar titulo info el id del trabajo {hecho}*
     * el pausar si no anda sacar {hecho} *
   * Nodos: 
-    * * Resumen de nodos [hecho]*
+    * Resumen de nodos [hecho]*
     * el servicio que se pueda levantar [Itu]
     * Parser nombre nodos(opcional).
 
@@ -24,7 +24,9 @@ Cliente
      * Estilos botones (aliner izq)
      * Confirmacion de borrado
      * descargar zip
+
   * Resultado: tooltips
+
   * Ejecución: 
     * cambiar orden ejecución [hecho]*
     * estilo. 
