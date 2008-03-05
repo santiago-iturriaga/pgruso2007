@@ -29,8 +29,8 @@ Cliente
 
   * Ejecución: 
     * cambiar orden ejecución [hecho]*
-    * estilo. 
-    * Fecha de fin vacia = "En ejecución"
+    * estilo 
+    * Fecha de fin vacia = En ejecución
     * El tiempo poner hasta los seg Poner tiempo total
 
 * tirar salida y ejecutable a otro lado (inaxxesible) [D]
