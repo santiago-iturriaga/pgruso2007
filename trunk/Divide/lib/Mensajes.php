@@ -17,6 +17,7 @@
 
 
 	$MENSAJES["M101"] = "No fue posible crear la carpeta del cliente.";
+	$MENSAJES["M001"] = "No se pudo eliminar el archivo script de ejecucion.";
 
 	//ALERTAS
 	$MENSAJES["EA01"]  = "Error en el envio de mail";
