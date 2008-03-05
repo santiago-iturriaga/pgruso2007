@@ -10,7 +10,7 @@ Administrador
   * Paginas: Ayudas y titulos
   * Maui:
     * cambiar info {??}
-    * agregar titulo info el id del trabajo {hecho}*
+    ** agregar titulo info el id del trabajo {hecho}*
     * el pausar si no anda sacar {hecho} *
   * Nodos: 
     * * Resumen de nodos [hecho]*
@@ -26,8 +26,8 @@ Cliente
      * descargar zip
   * Resultado: tooltips
   * Ejecución: 
-    * cambiar orden ejecución [hecho]*
-   * estilo. 
+    ** cambiar orden ejecución [hecho]*
+    * estilo. 
     * Fecha de fin vacia = "En ejecución"
     * El tiempo poner hasta los seg Poner tiempo total
 
@@ -36,7 +36,7 @@ Cliente
 
 
 *------------------------------*
-   * En archivos.php mostrar estado del trabajo en ejecucion
+  * En archivos.php mostrar estado del trabajo en ejecucion
   * Asignacion de alertas en falla de trabajo
  
 *------------------------------*
