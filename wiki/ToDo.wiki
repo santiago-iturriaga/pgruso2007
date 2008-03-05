@@ -9,12 +9,12 @@ Administrador
   * script para crear usuario(incluir todo lo que tiene que tener el usuario).
   * Paginas: Ayudas y titulos
   * Maui:
-    * cambiar info {??}
-    * agregar titulo info el id del trabajo {hecho}*
-    * el pausar si no anda sacar {hecho} *
+    * cambiar info ??
+    * agregar titulo info el id del trabajo (hecho)*
+    * el pausar si no anda sacar (hecho) *
   * Nodos: 
     * Resumen de nodos [hecho]*
-    * el servicio que se pueda levantar [Itu]
+    * el servicio que se pueda levantar (Itu)
     * Parser nombre nodos(opcional).
 
 
@@ -28,7 +28,7 @@ Cliente
   * Resultado: tooltips
 
   * Ejecución: 
-    * cambiar orden ejecución [hecho]
+    ** cambiar orden ejecución (hecho)*
     * estilo 
     * Fecha de fin vacia = En ejecución
     * El tiempo poner hasta los seg Poner tiempo total
