@@ -28,7 +28,7 @@ Cliente
   * Resultado: tooltips
 
   * Ejecución: 
-    * cambiar orden ejecución [hecho]*
+    * cambiar orden ejecución [hecho]
     * estilo 
     * Fecha de fin vacia = En ejecución
     * El tiempo poner hasta los seg Poner tiempo total
