@@ -45,11 +45,13 @@
 		$titulos	= array();
 		$i = 0;
 		$tabla = new Tabla("","","../../");
+		$ultimo_titulo="";
 		if($nodos == "") $nodos=array();
 		foreach($nodos as $nodo){
 			foreach(array_keys($nodo) as $k){
 				if(!isset($titulos[$k])){
 					$nombre_titulo = "";
+					$agregarCol = true;
 					switch (trim(strtolower($k)))
 					{
 						case "name":
@@ -65,14 +67,17 @@
 							$nombre_titulo = "Tipo";
 						    break;
 						case "status":
-							$nombre_titulo = "Detalle";
-						    break;
-						default:
-							$nombre_titulo = $k;
+							$agregarCol = false;
+							break;
+						default: $nombre_titulo=$k;
 					}
-					$tabla->addColumna($i,$k,$nombre_titulo);
-					$i++;
-					$titulos[$k]=$k;
+
+					if ($agregarCol) {
+						$tabla->addColumna($i,$k,$nombre_titulo);
+						$titulos[$k]=$nombre_titulo;
+						$ultimo_titulo=$k;
+						$i++;
+					}
 				}
 				if($k=='STATUS'){
 					$status = explode(",",$nodo[$k]);
@@ -84,9 +89,11 @@
 									'</td><td>'.
 									array_shift($aux));
 					}
-					$nodo[$k] = "<table><tr><td>".
-								implode("</td></tr><tr><td>",$status_).
-								"</td></tr></table>";
+					//$nodo[$k] = "<table><tr><td>".
+					//			implode("</td></tr><tr><td>",$status_).
+					//			"</td></tr></table>";
+
+					$nodo[$ultimo_titulo] .= "</td></tr><tr><td colspan='$i' width='95%'><table><tr><td>".implode("</td></tr><tr><td>",$status_)."</td></tr></table>";
 
 				}
 			}

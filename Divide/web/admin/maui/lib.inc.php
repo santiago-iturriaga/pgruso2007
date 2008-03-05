@@ -9,10 +9,10 @@ function linea_vacia($val) {
 }
 
 //// $tipo puede ser:
-function getTablaDiag($tabla_string,$cabezal,$cabezal_titulos) {
+function getTablaDiag($id,$tabla_string,$cabezal,$cabezal_titulos) {
 	$tabla = new Tabla("","","../../");
-	$tabla->addColumna(0,0,"Diagnostico");
-	$tabla->addColumna(1,1,"");
+	$tabla->addColumna(0,0,"Diagnostico ");
+	$tabla->addColumna(1,1,"trabajo id ".$id);
 
 	$tabla_lineas = explode("\n", $tabla_string);
 	$tabla_lineas = array_values(array_filter($tabla_lineas,"linea_vacia"));
@@ -82,7 +82,7 @@ function getTablaTrabajos($tabla_string,$cabezal,$cabezal_titulos,$tipo) {
 			$cabezal_fin_pos[$key] = $fin_cabezal-1;
 			$tabla->addColumna($key,$key,$cabezal_titulos[$key]);
 		}
-		$tabla->addColumna(count($cabezal),count($cabezal),"");
+		$tabla->addColumna(-1,count($cabezal),"");
 		$status_column = 4;
 
 		for ($linea = 1; $linea < $tabla_lineas_pie; $linea++) {
@@ -111,7 +111,7 @@ function getTablaTrabajos($tabla_string,$cabezal,$cabezal_titulos,$tipo) {
 					$botones .= "<a href='jobs.php?diagnose=$id'><img src='../../imagenes/information.png' title='Diagnostico'/></a>";
 					$botones .= "<a href='jobs.php?cancel=$id'><img src='../../imagenes/decline.png' title='Cancelar'/></a>";
 					$botones .= "<a href='jobs.php?hold=$id'><img src='../../imagenes/pause_green.png' title='Detener'/></a>";
-					$botones .= "<a href='jobs.php?suspend=$id'><img src='../../imagenes/stop.png' title='Suspender'/></a>";
+					//$botones .= "<a href='jobs.php?suspend=$id'><img src='../../imagenes/stop.png' title='Suspender'/></a>";
 
 					break;
 				case 1:
