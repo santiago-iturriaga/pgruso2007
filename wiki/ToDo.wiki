@@ -9,9 +9,9 @@ Administrador
   * script para crear usuario(incluir todo lo que tiene que tener el usuario).
   * Paginas: Ayudas y titulos
   * Maui:
-    * cambiar info
-    * agregar titulo info el id del trabajo
-    * el pausar si no anda sacar
+    * cambiar info {??}
+    * agregar titulo info el id del trabajo {hecho}
+    * el pausar si no anda sacar {hecho}
   * Nodos: Resumen de nodos, el servicio que se pueda levantar, Parser nombre nodos(opcional).
 
 
