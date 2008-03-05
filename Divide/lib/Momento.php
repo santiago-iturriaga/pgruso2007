@@ -297,7 +297,8 @@ class Momento{
 	function getEjecuciones($id_trabajo){
 		$consulta = "select id, id_torque, archivo, fecha_ini, fecha_ejecucion, fecha_fin " .
 					"from ejecucion " .
-					"where trabajo=? ";
+					"where trabajo=? " .
+					"order by fecha_ini desc";
 		if(!$this->db->EjecutarConsulta($consulta,array($id_trabajo),true))
 			{
 			return array("error"=>1,

@@ -41,7 +41,7 @@
 			}
 		}
 		if($HTTP_POST_FILES['archivo_']['type'] == 'application/zip'){
-			$res=$s->sesion->Directorio->descomprimir($HTTP_POST_FILES['archivo_']['name']);
+			$res=$s->sesion->Directorio->descomprimir($HTTP_POST_FILES['archivo_']['name'],$usr_linux);
 			if($res["error"]) $msjerror	= $interfaz->getError($res);
 		}
 
