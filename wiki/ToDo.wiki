@@ -14,10 +14,9 @@ Administrador
 
 Cliente
 
-
-Archivos: Estilos botones (aliner izq), Confirmacion de borrado, descargar zip
-Resultado: tooltips
-Ejecución: cambiar orden ejecución, estilo. Fecha de fin vacia = "En ejecución", El tiempo poner hasta los seg, Poner tiempo total
+  * Archivos: Estilos botones (aliner izq), Confirmacion de borrado, descargar zip
+  * Resultado: tooltips
+  * Ejecución: cambiar orden ejecución, estilo. Fecha de fin vacia = "En ejecución", El tiempo poner hasta los seg, Poner tiempo total
 
 
 *------------------------------*
