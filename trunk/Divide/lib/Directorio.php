@@ -171,24 +171,25 @@ class Directorio{
 		return implode(SEPARADOR_RUTA,$this->camino);
 	}
 
-	function descomprimir($nombre_archivo){
+	function descomprimir($nombre_archivo,$usr_linux){
 		//ejecutamos el comando unzip del sistema para descomprimir el fichero zip
 		$ruta=$this->getRuta();
 		$nombre_carpeta = array_shift(explode(".",$nombre_archivo));
-		$res = $this->crearCarpeta($nombre_carpeta);
+		$res = $this->crearCarpeta($nombre_carpeta,$usr_linux);
 		if($res["error"]) return $res;
 
-		$command = SSH . " -l " . USERNAME . " " . HOST . " \"unzip $ruta/$nombre_archivo -d $ruta/$nombre_carpeta; exit\" 2>&1";
-		$rs = `$command`;
-		$command = SSH . " -l " . USERNAME . " " . HOST . " \"rm $ruta/$nombre_archivo; exit\" 2>&1";
+		$command = "unzip $ruta/$nombre_archivo -d $ruta/$nombre_carpeta";
+		$rs = ejecutar_servidor($command,$usr_linux);
+
 		if($rs){
-			$rs = `$command`;
+			$command = "rm $ruta/$nombre_archivo";
+			$rs = ejecutar_servidor($command,$usr_linux);
 			return array("error"=>0);
 		}
 		else{
 			$rs = `$command`;
 			error_log($rs);
-			return array("error"=>0,
+			return array("error"=>1,
     				 	 "codError"=>"D104");
 
 		}
