@@ -185,8 +185,10 @@ class Momento{
 			}
 			return array("error"=>0);
 		}
-		else
+		else {
+			error_log("Cod. Error M001 ".$salida);
 			return array("error"=>1,"codError"=>"M001");
+		}
 
 	}
 
