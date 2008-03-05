@@ -2,15 +2,13 @@
 
 = ToDo =
 
-ver bug con QRUN_CMD
-
 Cosas para hacer después de la reunion con el ruso.
 Administrador
 -cambiar color sub menu
-- al crear nuevo cliente warning de usuario linux.
--scropt apra crear usuario(incluir todo lo que tiene que tener el usuario).
--Pagians: Ayudas y titulos
--Maui: cambiar info, agreaar titulo info el id del trabajo, el pausar si no anda sacar
+-al crear nuevo cliente warning de usuario linux.
+-script para crear usuario(incluir todo lo que tiene que tener el usuario).
+-Paginas: Ayudas y titulos
+-Maui: cambiar info, agregar titulo info el id del trabajo, el pausar si no anda sacar
 -Nodos: Resumen de nodos, el servicio que se pueda levantar, Parser nombre nodos(opcional).
 
 
