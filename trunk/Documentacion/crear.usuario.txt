@@ -4,8 +4,9 @@
 
 [Nuevo usuario]
 1) creo el usuario con adduser (incluye home, preciso el home para crear el ~/.ssh)
-2) agrego autenticacion ssh sin password al usuario apache (www-run o www-data)
+2) agrego autenticacion ssh sin password al usuario apache (www-run o www-data) ($> ssh-keygen -t dsa)
    2.1) para esto concateno la clave publica de el usuario apache al archivo ~/.ssh/authorized_keys2
+3) el usuario debe estar creado en todos los nodos (clave diferente, con home, con acceso a el dir. base)
 
 [chown]
 Problemas creando directorio del cliente. En algunos sistema solo root puede chown.
