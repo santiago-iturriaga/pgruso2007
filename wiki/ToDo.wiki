@@ -10,63 +10,38 @@ Administrador
   * Paginas: Ayudas y titulos
   * Maui:
     * cambiar info {??}
-    * agregar titulo info el id del trabajo {hecho}
-    * el pausar si no anda sacar {hecho}
-  * Nodos: Resumen de nodos, el servicio que se pueda levantar, Parser nombre nodos(opcional).
+    * agregar titulo info el id del trabajo {hecho}*
+    * el pausar si no anda sacar {hecho} *
+  * Nodos: 
+    * * Resumen de nodos [hecho]*
+    * el servicio que se pueda levantar [Itu]
+    * Parser nombre nodos(opcional).
 
 
 Cliente
 
-  * Archivos: Estilos botones (aliner izq), Confirmacion de borrado, descargar zip
+  * Archivos: 
+     * Estilos botones (aliner izq)
+     * Confirmacion de borrado
+     * descargar zip
   * Resultado: tooltips
-  * Ejecución: cambiar orden ejecución, estilo. Fecha de fin vacia = "En ejecución", El tiempo poner hasta los seg, Poner tiempo total
+  * Ejecución: 
+    * cambiar orden ejecución [hecho]*
+   * estilo. 
+    * Fecha de fin vacia = "En ejecución"
+    * El tiempo poner hasta los seg Poner tiempo total
+
+* tirar salida y ejecutable a otro lado (inaxxesible) [D]
+* Paginas: Ayudas y titulos
 
 
 *------------------------------*
-  * Comente el error al no poder borrar el script del qsub (momento linea 170 +/-)
-  * error da error al descargar desde el navegador de archivos
-  * En archivos.php mostrar estado del trabajo en ejecucion
-  * Asignacion de alertas en inicio/fin/falla de trabajo
-  * la pagina de alertas del admin da un error
+   * En archivos.php mostrar estado del trabajo en ejecucion
+  * Asignacion de alertas en falla de trabajo
+ 
 *------------------------------*
 
-  * cuota por trabajo (en MB)
-  * terminar alertas *[paulo: las paginas estan listas]*
-    * cron [damian]
-    * crear alertas de inicio / fin de ejecucion de trabajo *[paulo: listo estan en      poblar.sql]*
-    * crear php para ser invocado por cron con el chequeo de quota *[paulo: listo esta en lib se llama Vigilante.php]*
-
-  * terminar paginas admin
-    * arreglar paginas torque/maui [santiago]
-    * MAUI
-      * trabajos > titulos, resumen
-    * TORQUE
-      * colas > `tabla split =`
-      * nodos > `valign=top links nowrap`
-    * pagina de alertas sin tener trabajo seleccionado *[paulo: cambie en admin, el cliente sigue por trabajo.]*
-
-
-  * Navegación de los sitios web (especificar entre todos)
-  * menus
-  * estilos
-  * msgs:
-    * cliente_trabajo
-    * papelera
-    * usuarios-alerta
-
-  * links -> iconos
-
-  * cliente
-    * redondear cosas
-    * menu de inicio feo (segun el itu q es daltonico)
-    * cambiar clave: no estoy de a cuerdo *[paulo: lo cambie]*
-    * login coso logout + cambiar trabajo
-    * ñoqui por casita
-    * iconitos
-    * archivos: no esta de a cu erdo
-    * sacar menu vertical
-    * tirar salida y ejecutable a otro lado (inaxxesible)
-    * en la seleccion de trabajo->iconito gay de alertas
-    * en la seleccion de trabajo->iconito gay de en ejecucion
+  * cron [damian] ????
     
-  * *documentar !!!!!!!!!!!!!!*
+    
+  *documentar !!!!!!!!!!!!!!*
