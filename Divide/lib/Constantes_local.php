@@ -1,5 +1,6 @@
 <?php
 define("RAIZ", "/home");
+define("RAIZ_SISTEMA", "/home/sistema");
 define("TMP", "/tmp");
 define("CONEXION_HOST", "localhost");
 define("CONEXION_PORT", "5432");

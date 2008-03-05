@@ -1,6 +1,7 @@
 <?php
 include_once("Conexion.php");
 include_once("Momento.php");
+include_once("Directorio.php");
 class Usuarios{
 	var $conexion	=	null;
 
@@ -260,7 +261,48 @@ class Usuarios{
 		return array("error"=>0);
 	}
 
+	function eliminarTrabajoFisicamente($tid){
+		$consulta	= "select t.cliente, c.usr_linux " .
+					  "from trabajo t, cliente c " .
+					  "where t.cliente=c.id and t.id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($tid),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		if(!$row) return array ("error"=>1,"codError"=>"U999");
+		$cid = $row["cliente"];
+		$usr_linux = $row["usr_linux"];
 
+		// elimino la carpeta
+		$directorio = new Directorio(RAIZ."/".$cid);
+		$res = $directorio->eliminarCarpeta($tid,$usr_linux,true);
+		if($res["error"]) return $res;
+
+		//elimino tuplas
+		$consulta	= "delete from trabajo_grupo where trabajo=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($tid),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$consulta	= "delete from trabajo_alerta where trabajo=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($tid),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$consulta	= "delete from trabajo where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($tid),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+
+		return array("error"=>0);
+
+	}
 	function getUsuariosGrupo($idGrupo){
 		$consulta= "select u.* from usuario u, usuario_grupo ug where u.id=ug.usuario and ug.grupo=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idGrupo),true))

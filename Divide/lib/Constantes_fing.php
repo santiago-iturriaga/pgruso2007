@@ -1,5 +1,6 @@
 <?php
 define("RAIZ", "/net/home/pgccadar");
+define("RAIZ_SISTEMA", "/net/home/pgccadar/sistema");
 define("TMP", "/tmp");
 
 
