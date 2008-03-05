@@ -93,7 +93,7 @@
 					//			implode("</td></tr><tr><td>",$status_).
 					//			"</td></tr></table>";
 
-					$nodo[$ultimo_titulo] .= "</td></tr><tr><td colspan='$i' width='95%'><table><tr><td>".implode("</td></tr><tr><td>",$status_)."</td></tr></table>";
+					$nodo[$ultimo_titulo] .= "</td></tr><tr><td colspan='$i' width='100%'><table><tr><td>".implode("</td></tr><tr><td>",$status_)."</td></tr></table>";
 
 				}
 			}
