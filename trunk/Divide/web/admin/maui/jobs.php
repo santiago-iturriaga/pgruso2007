@@ -37,7 +37,7 @@
 		$checkjob_job = `$command`;
 
 		$tabla = new Tabla("","","../../");
-		$tabla->addColumna(0,0,"Informaci&oacute;n del trabajo");
+		$tabla->addColumna(0,0,"Informaci&oacute;n del trabajo id ".$id);
 		$tabla->addRenglon(array("<pre>".$checkjob_job."</pre>"));
 		$info = $tabla->getTabla();
 	} else if (ISSET($_REQUEST["diagnose"])) {
@@ -47,7 +47,7 @@
 
 		$cabezal_diag=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class","Features");
 		$cabezal_diag_titulos=array("Name","State","Par","Proc","QOS","WCLimit","R","Min","User","Group","Account","QueuedTime","Network","Opsys","Arch","Mem","Disk","Procs","Class","Features");
-		list($tabla,$pie) = getTablaDiag($diagnose,$cabezal_diag,$cabezal_diag_titulos);
+		list($tabla,$pie) = getTablaDiag($id,$diagnose,$cabezal_diag,$cabezal_diag_titulos);
 		$info = $tabla->getTabla()."<br />".$pie;
 	} else if (ISSET($_REQUEST["cancel"])) {
 		$mensaje = maui_cancelar_trabajo($_REQUEST["cancel"]);
@@ -69,13 +69,13 @@
 	$command = SSH." -l ".USERNAME." ".HOST." \"".JOBS_CMD." -r; exit\" 2>&1";
 	$jobs_active = `$command`;
 	$cabezal_active = array("JobName","S Par","Effic","XFactor","Q","User","Group","MHost","Procs","Remaining","StartTime");
-	$cabezal_titulos_active = array("Nombre","S Par","Eficiencia","XFactor","Q","Usuario","Grupo","Nodo madre","Procesadores","Restante","Inicio");
+	$cabezal_titulos_active = array("Nombre","S Par","Efic","X","Q","Usu","Gru","Nodo madre","Proc","Restante","Inicio");
 	list($tabla_active,$resumen_active) = getTablaTrabajos($jobs_active,$cabezal_active,$cabezal_titulos_active,0);
 
 	$command = SSH." -l ".USERNAME." ".HOST." \"".JOBS_CMD." -i; exit\" 2>&1";
 	$jobs_idle = `$command`;
 	$cabezal_idle = array("JobName","Priority","XFactor","Q","User","Group","Procs","WCLimit","Class","SystemQueueTime");
-	$cabezal_titulos_idle = array("Nombre","Prioridad","XFactor","Q","Usuario","Grupo","Procesadores","WCLimit","Class","SystemQueueTime");
+	$cabezal_titulos_idle = array("Nombre","Prio","X","Q","Usu","Gru","Proc","WClock","Class","QueueTime");
 	list($tabla_idle,$resumen_idle) = getTablaTrabajos($jobs_idle,$cabezal_idle,$cabezal_titulos_idle,1);
 
 	$command = SSH." -l ".USERNAME." ".HOST." \"".JOBS_CMD." -b; exit\" 2>&1";
