@@ -14,3 +14,10 @@ Formas de solucionarlo:
 - el usuario linux del cliente debe tener acceso de escritura sobre /home (la carpeta base de directorios)
 - se le puede agregar un u+s a chown (no recomendable)
 - se puede utilizar root como usuario de sistema (no recomendable)
+
+=====================================================
+
+Creacion manual
+Creacion automatica
+	Bajar script para ejecucion manual
+	Ejecucion con u+s
