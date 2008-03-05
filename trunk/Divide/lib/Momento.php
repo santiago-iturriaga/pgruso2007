@@ -167,7 +167,7 @@ class Momento{
 		$script = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
 		//error_log("poner de vuelta despues");
 		$salida = ejecutar_servidor("rm $script");
-		//if($salida==""){
+		if($salida==""){
 			//envio alerta de finalizacion
 			$consulta2 = "select trabajo from ejecucion where id_torque = ?";
 			if(!$this->db->EjecutarConsulta($consulta2,array($id_torque),true))
@@ -184,9 +184,9 @@ class Momento{
 				return $result;
 			}
 			return array("error"=>0);
-//		}
-//		else
-//			return array("error"=>1,"codError"=>"M001");
+		}
+		else
+			return array("error"=>1,"codError"=>"M001");
 
 	}
 
