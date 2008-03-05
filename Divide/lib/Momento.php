@@ -53,8 +53,8 @@ class Momento{
 			}
 		$id =$this->db->getUltimoNumerador();
 
-		$archivo_salida = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
-		$archivo_error = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
+		$archivo_salida = RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.'salida_'.$id;
+		$archivo_error = RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.'error_'.$id;
 		$salida = ejecutar_servidor("touch $archivo_salida",$usr_linux);
 		if($salida !="") error_log($salida);
 		$salida = ejecutar_servidor("chmod 777 $archivo_salida",$usr_linux);
@@ -86,10 +86,10 @@ class Momento{
 		chmod($script,0777);
 
 		$salida = ejecutar_servidor("cp ".TMP.'/'.'PGCCADAR_'.$id.
-									" ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id,
+									" ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id,
 									$usr_linux);
 		if($salida !="") error_log($salida);
-		$script = RAIZ.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
+		$script = RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.'ejecutable_'.$id;
 		$salida = ejecutar_servidor("cd $ruta; ".QSUB." $script",$usr_linux);
 		if($salida !="") error_log($salida);
 
@@ -114,15 +114,18 @@ class Momento{
 
 	function crearDirCliente($idCliente,$usr_linux){
 		$ruta =RAIZ;
-		$ejecutar =SSH." -l ".$usr_linux." ".HOST." \"cd $ruta; mkdir $idCliente; exit\" 2>&1";
-		$salida = `$ejecutar`;
-
-		if($salida=="")
-			return array("error"=>0);
-		else{
-			error_log($salida);
-			return array("error"=>1,"codError"=>"M101");
+		$ejecutar ="cd $ruta; mkdir $idCliente";
+		$salida = ejecutar_servidor($ejecutar,$usr_linux);
+		if($salida==""){
+			$ruta =RAIZ_SISTEMA;
+			$ejecutar ="cd $ruta; mkdir $idCliente";
+			$salida = ejecutar_servidor($ejecutar,$usr_linux);
+			if($salida==""){
+				return array("error"=>0);
+			}
 		}
+		error_log($salida);
+		return array("error"=>1,"codError"=>"M101");
 	}
 	function crearDirTrabajo($idCliente,$idTrabajo){
 		$consulta = "select usr_linux from cliente where id=?";
@@ -135,13 +138,18 @@ class Momento{
 		$usr_linux=$row["usr_linux"];
 
 		$ruta =RAIZ.'/'.$idCliente;
-		$salida = exec(SSH." -l ".$usr_linux." ".HOST." 'cd $ruta; mkdir $idTrabajo; chmod 775 $idCliente; exit'");
-		if($salida=="")
-			return array("error"=>0);
-		else{
-			error_log($salida);
-			return array("error"=>1,"codError"=>"M100");
+		$ejecutar = "cd $ruta; mkdir $idTrabajo; chmod 775 $idCliente";
+		$salida = ejecutar_servidor($ejecutar,$usr_linux);
+		if($salida==""){
+			$ruta =RAIZ_SISTEMA.'/'.$idCliente;
+			$ejecutar = "cd $ruta; mkdir $idTrabajo; chmod 775 $idCliente";
+			$salida = ejecutar_servidor($ejecutar,$usr_linux);
+			if($salida=="")
+				return array("error"=>0);
 		}
+		error_log($salida);
+		return array("error"=>1,"codError"=>"M100");
+
 	}
 
 	function setFinalizado($id_torque){
@@ -164,7 +172,7 @@ class Momento{
 			}
 
 		$row=$this->db->Next();
-		$script = RAIZ.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
+		$script = RAIZ_SISTEMA.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
 		//error_log("poner de vuelta despues");
 		$salida = ejecutar_servidor("rm $script");
 		if($salida==""){
