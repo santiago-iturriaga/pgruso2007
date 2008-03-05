@@ -36,6 +36,13 @@
 		else
 			$mensaje = $interfaz->getMensaje("CT005");
 	}
+	if(isset($_GET["eliminar"])){
+		$res	= $usuarios->eliminarTrabajoFisicamente($_GET["eliminar"]);
+		if($res["error"])
+			$error	= $interfaz->getError($res);
+		else
+			$mensaje = $interfaz->getMensaje("CT006");
+	}
 	$res	= $usuarios->getTrabajosBorrados();
 	if($res["error"]) $error	= $interfaz->getError($res);
 	else{

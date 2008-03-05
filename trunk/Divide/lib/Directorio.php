@@ -152,14 +152,15 @@ class Directorio{
 		}else return array("error"=>0,
     				 	 "codError"=>"D103");
 	}
-	function eliminarCarpeta($nombre,$usr_linux){
+	function eliminarCarpeta($nombre,$usr_linux,$recursivo = false){
 		$nombre = trim($nombre);
 		if($nombre == "") return array("error"=>0,
     				 	 			   "codError"=>"D102");
 		$ruta = $this->getRuta();
 
-		$command = SSH . " -l " .$usr_linux. " " . HOST . " \"rmdir $ruta/$nombre; exit\" 2>&1";
-		$res = `$command`;
+		$command = "rmdir $ruta/$nombre";
+		if($recursivo) $command = "rmdir -r $ruta/$nombre";
+		$res = ejecutar_servidor($command,$usr_linux);
 
 		if($res == ""){
 			return array("error"=>0);
@@ -194,6 +195,8 @@ class Directorio{
 
 		}
 	}
+
+
 }
 
 
