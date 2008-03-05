@@ -149,7 +149,7 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 	}
 
 	function asignarAlertaTrabajoInicio($idTrabajo){
-		$consulta= "select ug.usuario from usuario_grupo as ug, trabajo_grupo as tg  where tg.trabajo = ? and tg.grupo = ug.grupo";
+		$consulta= "select distinct ug.usuario from usuario_grupo as ug, trabajo_grupo as tg  where tg.trabajo = ? and tg.grupo = ug.grupo";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
 			{
 				return array("error"=>1, "codError"=>"EA10");
@@ -167,7 +167,7 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 	}
 
 	function asignarAlertaTrabajoFin($idTrabajo){
-		$consulta= "select ug.usuario from usuario_grupo as ug, trabajo_grupo as tg  where tg.trabajo = ? and tg.grupo = ug.grupo";
+		$consulta= "select distinct ug.usuario from usuario_grupo as ug, trabajo_grupo as tg  where tg.trabajo = ? and tg.grupo = ug.grupo";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
 			{
 				return array("error"=>1, "codError"=>"EA10");

@@ -73,7 +73,8 @@
 				$rowAlertas{"trabajo"} = "<b>" . $rowAlertas{"trabajo"} . "</b>";
 				$rowAlertas{"cliente"} = "<b>" . $rowAlertas{"cliente"} . "</b>";
 			}
-			$rowAlertas->asunto = $rowAlertas{"asunto"};
+
+			//$rowAlertas->asunto = $rowAlertas{"asunto"};
 			$tabla->addRenglon($rowAlertas);
 
 		}
