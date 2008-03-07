@@ -287,7 +287,19 @@ class Usuarios{
 			return array("error"=>1,
 						 "codError"=>$this->conexion->msgError);
 			}
+		$consulta	= "delete from usuario_alerta where trabajo=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($tid),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
 		$consulta	= "delete from trabajo_alerta where trabajo=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($tid),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$consulta	= "delete from ejecucion where trabajo=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($tid),false))
 			{
 			return array("error"=>1,
