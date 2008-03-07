@@ -13,7 +13,7 @@ Administrador
     * agregar titulo info el id del trabajo (hecho)*
     * el pausar si no anda sacar (hecho) *
   * Nodos: 
-    * Resumen de nodos [hecho]*
+    * Resumen de nodos *[hecho]*
     * el servicio que se pueda levantar (Itu)
     * Parser nombre nodos(opcional).
   * Ganglia: arreglar la UI
