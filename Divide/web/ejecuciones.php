@@ -20,7 +20,8 @@
 	}
 
 	if(isset($_GET["salida"])){
-		$s->sesion->archivo_actual = $archivo_salida = RAIZ.'/'.$s->sesion->ClienteActual.'/'.$s->sesion->TrabajoActual.'/'.'salida_extra_'.$_GET["salida"];
+		$s->sesion->archivo_actual = $archivo_salida = RAIZ_SISTEMA.'/'.$s->sesion->ClienteActual.'/'.$s->sesion->TrabajoActual.'/'.OUTPUT.'_'.$_GET["salida"];
+
 		$s->sesion->ejecucion_actual = $_GET["salida"];
 		$s->sesion->bytes_leidos = 0;
 		$s->salvar();

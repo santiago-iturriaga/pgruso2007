@@ -76,7 +76,7 @@ class Momento{
 											  "1"=>$ruta,
 											  "2"=>$argumentos,
 											  "3"=>REDIRECCION_SALIDA,
-											  "4"=>$ruta.'/'.OUTPUT."_".$id));
+											  "4"=>RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.OUTPUT."_".$id));
 
 		$script  = TMP.'/'.'PGCCADAR_'.$id;
 		$fscript = fopen($script,'w+');
@@ -102,7 +102,7 @@ class Momento{
 			return array("error"=>1,
 						 "codError"=>$this->db->msgError);
 			}
-		$archivo_salida = $ruta.'/'.OUTPUT."_".$id;
+		$archivo_salida = RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.OUTPUT."_".$id;
 
 		$salida = ejecutar_servidor("touch $archivo_salida",$usr_linux);
 		if($salida !="") error_log($salida);
@@ -138,11 +138,12 @@ class Momento{
 		$usr_linux=$row["usr_linux"];
 
 		$ruta =RAIZ.'/'.$idCliente;
-		$ejecutar = "cd $ruta; mkdir $idTrabajo; chmod 775 $idCliente";
+		$ejecutar = "cd $ruta; mkdir $idTrabajo; chmod 775 $idTrabajo";
+
 		$salida = ejecutar_servidor($ejecutar,$usr_linux);
 		if($salida==""){
 			$ruta =RAIZ_SISTEMA.'/'.$idCliente;
-			$ejecutar = "cd $ruta; mkdir $idTrabajo; chmod 775 $idCliente";
+			$ejecutar = "cd $ruta; mkdir $idTrabajo; chmod 775 $idTrabajo";
 			$salida = ejecutar_servidor($ejecutar,$usr_linux);
 			if($salida=="")
 				return array("error"=>0);
