@@ -15,6 +15,7 @@
 	include_once("Conexion.php");
 	include_once("Tabla/Tabla.php");
 	include_once("lib.inc.php");
+	include_once("Process.php");
 
 	$s = new Sesion(0);
 	if($s->sesion == null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
@@ -27,6 +28,8 @@
 	$ppal		= 	$plantilla->load("plantillas/index.html");
 	$mensaje = "";
 	$error = "";
+
+	estado_procesos();
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$mensaje,
