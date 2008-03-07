@@ -16,6 +16,7 @@ Administrador
     * Resumen de nodos [hecho]*
     * el servicio que se pueda levantar (Itu)
     * Parser nombre nodos(opcional).
+  * Ganglia: arreglar la UI
 
 
 Cliente
