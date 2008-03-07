@@ -47,7 +47,7 @@ p {
 
 #contenedor {
 	margin: 0px auto;
-	width: 780px;
+	width: 850px;
 	border-color: #9e9ec3;
 	border-width: 0px 1px 1px;
 	border-style: solid;
@@ -181,12 +181,12 @@ input {
 /* Main Navigation Menu */
 
 #menu {
-	width: 780px;
+	width: 850px;
 	height: 21px;
 }
 
 #menu ul {
-	width: 780px;
+	width: 850px;
 	height: 21px;
 	list-style-type: none;
 	overflow: hidden;
@@ -223,12 +223,12 @@ input {
 
 #submenu {
 	margin-bottom: 1px;
-	width: 780px;
+	width: 850px;
 	height: 21px;
 }
 
 #submenu ul {
-	width: 780px;
+	width: 850px;
 	height: 21px;
 	list-style-type: none;
 	overflow: hidden;
@@ -578,7 +578,7 @@ input {
 /* Page Footer */
 
 #page_footer {
-	width: 780px;
+	width: 850px;
 }
 
 #powered_by {
@@ -672,7 +672,7 @@ form legend{
 }
 
 ul.path {
-	width: 780px;
+	width: 850px;
 	height: 21px;
 	list-style-type: none;
 	overflow: hidden;
@@ -767,11 +767,12 @@ span#enejecucion{
 	border: 0px;
 }
 .ganglia_grafica {
-	width:397px;
-	height:182px;
+	/* width:397px; */
+	/* height:182px; */
 }
 .ganglia_logo {
 	padding-top: 1em;
+	text-align: center;
 	/* float: right; */
 }
 
@@ -782,6 +783,7 @@ span#enejecucion{
 .ganglia_header {
 	background-color: #9c9cc8;
 	color: #ffffff;
+	text-align: center;
 }
 .index_logo {
 	padding-top: 1em;
@@ -793,7 +795,7 @@ span#enejecucion{
 }
 #cuerpo{
 	overflow:auto;
-	width: 780px;
+	width: 850px;
 
 }
 a.boton_nuevo{
