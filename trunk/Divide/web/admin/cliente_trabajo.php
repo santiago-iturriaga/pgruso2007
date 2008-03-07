@@ -8,6 +8,7 @@
 	include_once("Conexion.php");
 	include_once("Interfaz.php");
 	include_once("Tabla/Tabla.php");
+	include_once("Servidor.php");
 
 	$s = new Sesion();
 	if($s->sesion==null or !$s->sesion->Usuario->Logueado() or !$s->sesion->Usuario->administrador){
@@ -39,12 +40,22 @@
 	$error = "";
 
 
+
 	if(isset($_POST["nombre_cliente"])){
-		$res	= $usuarios->crearCliente($_POST["nombre_cliente"],$_POST["usr_linux"]);
-		if($res["error"])
-			$error	= $interfaz->getError($res);
-		else
-			$mensaje = $interfaz->getMensaje("CT004");
+		$commandFinger = "finger ".$_POST["usr_linux"];
+		$resFinger = ejecutar_servidor($commandFinger);
+
+		if(stripos($resFinger,"no such user") == null){
+			$res	= $usuarios->crearCliente($_POST["nombre_cliente"],$_POST["usr_linux"]);
+		    if($res["error"])
+			 $error	= $interfaz->getError($res);
+		    else
+		      $mensaje = $interfaz->getMensaje("CT004");
+		}else{
+			$error	= $interfaz->getError2("U55");
+
+		}
+
 	}
 	if(isset($_POST["nodos"])){
 		$s->sesion->trabajo_editado["NOMBRE"]=$_POST["nombre"];

@@ -48,6 +48,7 @@
 	$MENSAJES["U52"]  = "La clave del usuario no puede ser nula.";
 	$MENSAJES["U53"]  = "El mail del usuario no puede ser nulo.";
 	$MENSAJES["U54"]  = "El mail ingresado no es v&aacute;lido.";
+	$MENSAJES["U55"]  = "El usuario de linux no es valido. Recuerde ejecutar el script para un usuario valido de linux";
 
 	$MENSAJES["D001"]  = "No fue posible abrir la carpeta.";
 	$MENSAJES["D101"]  = "No fue posible copiar el archivo.";
