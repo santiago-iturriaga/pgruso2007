@@ -144,13 +144,41 @@ class Directorio{
 		if($nombre == "") return array("error"=>0,
     				 	 			   "codError"=>"D102");
 		$ruta = $this->getRuta();
-		$command = SSH . " -l " . $usr_linux. " " . HOST . " \"mkdir $ruta/$nombre; exit\" 2>&1";
-		$res = `$command`;
-
+		$res = ejecutar_servidor("mkdir $ruta/$nombre",$usr_linux);
 		if($res == ""){
 			return array("error"=>0);
 		}else return array("error"=>0,
     				 	 "codError"=>"D103");
+	}
+	function comprimir($usr_linux,$id_cliente,$id_trabajo){
+		$ruta = $this->getRuta();
+		$nombre = 'pgccadar_zip_'.$id_cliente.'.zip';
+		$nombre_archivo = TMP.'/'.$nombre;
+		@unlink($nombre_archivo);
+		@rmdir($nombre_archivo);
+		$comando = "zip -r ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre." ".$ruta."/*";
+		$res = ejecutar_servidor($comando,$usr_linux);
+    	$comando = "chmod 777 ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre." .";
+		$res = ejecutar_servidor($comando,$usr_linux);
+error_log($comando);
+error_log($res);
+		if($res != ""){
+			$comando = "rm ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre;
+			$res = ejecutar_servidor($comando,$usr_linux);
+			return array("error"=>1,
+					 	 "codError"=>"D201");
+		}
+
+		$comando = "mv ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre." ".$nombre_archivo;
+		$res = ejecutar_servidor($comando,$usr_linux);
+		if($res != ""){
+			$comando = "rm ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre;
+			$res = ejecutar_servidor($comando,$usr_linux);
+			return array("error"=>1,
+					 	 "codError"=>"D202");
+		}
+		return array("error"=>0,"archivo"=>$nombre_archivo);
+
 	}
 	function eliminarCarpeta($nombre,$usr_linux,$recursivo = false){
 		$nombre = trim($nombre);

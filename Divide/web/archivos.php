@@ -46,6 +46,33 @@
 		}
 
 	}
+	if(isset($_GET["generarzip"])){
+		$res = $s->sesion->Directorio->comprimir($usr_linux,$s->sesion->ClienteActual,$s->sesion->TrabajoActual);
+		if($res["error"]){
+error_log(print_r($res,1));
+			$msjerror	= $interfaz->getError($res);
+		}
+		else{
+error_log(print_r($res,1));
+error_log("res:".$res["archivo"]);
+			$data = file_get_contents  ( $res["archivo"]);
+			$filesize = strlen($data);
+error_log("tam:".$filesize);
+			$mimetype = 'application/zip';
+			$name	  = "fenton.zip";
+			header("Pragma: public"); // required
+    		header("Expires: 0");
+    		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+    		header("Cache-Control: private",false); // required for certain browsers
+    		header("Content-Transfer-Encoding: binary");
+    		header("Content-Type: " . $mimetype);
+    		header("Content-Length: " . $filesize);
+    		header("Content-Disposition: attachment; filename=\"" . $name . "\";" );
+    		echo $data;
+    		exit;
+		}
+
+	}
 	if(isset($_POST["carpeta"])) {
 		$res = $s->sesion->Directorio->crearCarpeta($_POST["carpeta"],$usr_linux);
 		if($res["error"]) $msjerror	= $interfaz->getError($res);
@@ -90,6 +117,7 @@
 	$ppal		= 	$plantilla->load("plantillas/archivos/archivos.html");
 	$p_directorio	=	$plantilla->load("plantillas/archivos/directorio.html");
 	$p_archivo	=	$plantilla->load("plantillas/archivos/archivo.html");
+	$cabezal	=	$plantilla->load("plantillas/archivos/cabezal_tabla.html");
 	$p_ruta		=	$plantilla->load("plantillas/archivos/ruta.html");
 	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
 										array("CLASE_ARCHIVOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
@@ -157,7 +185,8 @@
 
 	$ppal	=	$plantilla->replace($ppal,array("MENU_VERTICAL"=>"",
 												"ARCHIVOS"=>$p_archivos,
-												"RUTA"=>$ruta));
+												"RUTA"=>$ruta,
+												"CABEZAL_TABLA"	=> $cabezal));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
 							"BODY"=>'',"MENSAJE"=>$msj,"ERROR"=>$msjerror,"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login));

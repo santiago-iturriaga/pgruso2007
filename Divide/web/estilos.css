@@ -661,7 +661,8 @@ form legend{
 }
 
 #parametros fieldset{
-	width: 450px;
+	width: 400px;
+	margin: 0 auto;
 }
 
 
@@ -905,4 +906,8 @@ h2.jobs_maui {
 	color: #000000;
 	background-color: #D1EFD5;
 	font-weight: bold;
+}
+.form_archivos{
+	width: 400px;
+	margin: 0 auto;
 }
