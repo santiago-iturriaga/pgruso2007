@@ -158,7 +158,7 @@ class Directorio{
 error_log("unlink:".$nombre_archivo);
 		@rmdir($nombre_archivo);
 error_log("rmdir:".$nombre_archivo);
-		$comando = "cd ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.";zip -qr ".$nombre." ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo."/*";
+		$comando = "cd ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo.";zip -qr ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo."/$nombre "."*";
 		$res = ejecutar_servidor($comando,$usr_linux);
 //    	$comando = "chmod 666 ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre;
 //		$res = ejecutar_servidor($comando,$usr_linux);
@@ -172,8 +172,8 @@ error_log("rmdir:".$nombre_archivo);
 		$comando = "mv ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre." ".$nombre_archivo;
 		$res = ejecutar_servidor($comando,$usr_linux);
 		if($res != ""){
-//			$comando = "rm ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre;
-//			$res = ejecutar_servidor($comando,$usr_linux);
+			$comando = "rm ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre;
+			$res = ejecutar_servidor($comando,$usr_linux);
 			return array("error"=>1,
 					 	 "codError"=>"D202");
 		}
