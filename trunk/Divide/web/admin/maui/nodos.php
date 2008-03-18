@@ -39,6 +39,8 @@
 		$ar_nodo = array();
 		$i=0;
 		foreach ($nodo as $n){
+			if($cabezal[$i] == 'Name')
+				$n = array_shift(explode('@',$n,2));
 			$ar_nodo[$cabezal[$i]] = $n;
 			$i++;
 		}
