@@ -274,7 +274,7 @@ class Usuarios{
 			array_push($trabajos,$row["id"]);
 		}
 		foreach($trabajos as $trabajo){
-			$res = $this->eliminarTrabajoFisicamente($trabajos);
+			$res = $this->eliminarTrabajoFisicamente($trabajo);
 			if($res["error"]) return $res;
 		}
 
@@ -287,7 +287,7 @@ class Usuarios{
 						 "codError"=>$this->conexion->msgError);
 			}
 		$row=$this->conexion->Next();
-		if(!$row) return array ("error"=>1,"codError"=>"U999");
+		if(!$row) return array ("error"=>1,"codError"=>"U998");
 		$usr_linux = $row["usr_linux"];
 
 		// elimino la carpeta
