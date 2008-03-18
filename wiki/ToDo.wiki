@@ -15,8 +15,6 @@ Administrador
       * se da por lo menos cuando el grupo es >8 char
       * en trabajos en ejecucion
       * puede darse en otros casos tambien
-  * Nodos: 
-    * el servicio que se pueda levantar (Itu) FALTA TORQUE
   * Ganglia: arreglar la UI
   * Crear usuario fenton
 
