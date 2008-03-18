@@ -9,6 +9,7 @@
 	$MENSAJES["CT004"] = "Se cre&oacute; el cliente.";
 	$MENSAJES["CT005"] = "El trabajo fue restaurado.";
 	$MENSAJES["CT006"] = "El trabajo fue eliminado.";
+	$MENSAJES["CT007"] = "El cliente fue eliminado.";
 	$MENSAJES["CT101"] = "El nombre del trabajo no puede ser vaci&iacute;o.";
 	$MENSAJES["CT102"] = "La cantidad de nodos debe ser un n&uacute;mero mayor que 0.";
 	$MENSAJES["CT103"] = "El tiempo m&aacute;ximo no tiene el formato esperado.";

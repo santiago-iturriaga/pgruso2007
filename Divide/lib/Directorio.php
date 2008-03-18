@@ -187,7 +187,7 @@ error_log("rmdir:".$nombre_archivo);
 		$ruta = $this->getRuta();
 
 		$command = "rmdir $ruta/$nombre";
-		if($recursivo) $command = "rmdir -r $ruta/$nombre";
+		if($recursivo) $command = "rm -r $ruta/$nombre";
 		$res = ejecutar_servidor($command,$usr_linux);
 
 		if($res == ""){

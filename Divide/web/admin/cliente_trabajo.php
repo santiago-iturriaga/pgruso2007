@@ -104,6 +104,15 @@
 			$mensaje	= $interfaz->getMensaje("CT001");
 	}
 
+	if(isset($_GET["eliminar_cliente"])){
+		$res = $usuarios->eliminarClienteFisicamente($_GET["eliminar_cliente"]);
+		if($res["error"])
+			$error	= $interfaz->getError($res);
+		else
+			$mensaje	= $interfaz->getMensaje("CT007");
+	}
+
+
 	if(isset($_GET["editar"])){
 		$s->sesion->trabajo_editado=array("ID"=>$_GET["editar"]);
 		$res = $usuarios->getTrabajo($s->sesion->trabajo_editado["ID"]);
@@ -175,7 +184,8 @@
 	$ppal	=	$plantilla->replace($ppal,array("OPCIONES"=>$opciones,
 												"TABLA"=>$t,
 												"FORM"=>$form,
-												"FORM_CLIENTE"=>$form_cliente));
+												"FORM_CLIENTE"=>$form_cliente,
+												"CLIENTE"=>$s->sesion->admin_cliente_actual));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENU_USUARIOS"=>" id='actual' ",
 												"MENU_GANGLIA"=>" class='menu_tab'",
