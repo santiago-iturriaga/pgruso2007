@@ -50,6 +50,8 @@
 	$MENSAJES["U53"]  = "El mail del usuario no puede ser nulo.";
 	$MENSAJES["U54"]  = "El mail ingresado no es v&aacute;lido.";
 	$MENSAJES["U55"]  = "El usuario de linux no es valido. Recuerde ejecutar el script para un usuario valido de linux";
+	$MENSAJES["U998"]  = "El cliente no existe.";
+	$MENSAJES["U999"]  = "El trabajo no existe.";
 
 	$MENSAJES["D001"]  = "No fue posible abrir la carpeta.";
 	$MENSAJES["D101"]  = "No fue posible copiar el archivo.";

@@ -49,8 +49,11 @@
 			$res	= $usuarios->crearCliente($_POST["nombre_cliente"],$_POST["usr_linux"]);
 		    if($res["error"])
 			 $error	= $interfaz->getError($res);
-		    else
+		    else{
 		      $mensaje = $interfaz->getMensaje("CT004");
+		      $s->sesion->admin_cliente_actual = $res["id"];
+
+		    }
 		}else{
 			$error	= $interfaz->getError2("U55");
 
@@ -86,8 +89,9 @@
 		else{
 			if(isset($s->sesion->trabajo_editado["ID"]) and $s->sesion->trabajo_editado["ID"]!=null)
 				$mensaje = $interfaz->getMensaje("CT002");
-			else
+			else{
 				$mensaje = $interfaz->getMensaje("CT003");
+			}
 			$s->sesion->trabajo_editado=null;
 		}
 	}
@@ -108,8 +112,10 @@
 		$res = $usuarios->eliminarClienteFisicamente($_GET["eliminar_cliente"]);
 		if($res["error"])
 			$error	= $interfaz->getError($res);
-		else
+		else{
 			$mensaje	= $interfaz->getMensaje("CT007");
+			$s->sesion->admin_cliente_actual = null;
+		}
 	}
 
 
