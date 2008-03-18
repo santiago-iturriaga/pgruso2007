@@ -97,12 +97,12 @@
 
 				}
 			}
-
+			$nombre_nodo = array_shift(explode('@',$nodo["NAME"],2));
 			if (substr_count(trim(strtolower($nodo["STATE"])), "offline") > 0) {
 				//$nodo["STATE"] = $nodo["STATE"]."&nbsp;<a href='nodos.php?enable=".$nodo["NAME"]."'><img src='../../imagenes/control_play_blue.png' title='Iniciar'/></a>";
-				$nodo["NAME"] .= "&nbsp;<a href='nodos.php?enable=".$nodo["NAME"]."'><img src='../../imagenes/control_play_blue.png' title='Iniciar'/></a>";
+				$nodo["NAME"] = $nombre_nodo."&nbsp;<a href='nodos.php?enable=".$nodo["NAME"]."'><img src='../../imagenes/control_play_blue.png' title='Iniciar'/></a>";
 			} else {
-				$nodo["NAME"] .= "&nbsp;<a href='nodos.php?disable=".$nodo["NAME"]."'><img src='../../imagenes/control_pause_blue.png' title='Detener'/></a>";
+				$nodo["NAME"] = $nombre_nodo."&nbsp;<a href='nodos.php?disable=".$nodo["NAME"]."'><img src='../../imagenes/control_pause_blue.png' title='Detener'/></a>";
 				//elseif (trim(strtolower($nodo["STATE"]))!="down")
 				//$nodo["STATE"] = $nodo["STATE"]."&nbsp;<a href='nodos.php?disable=".$nodo["NAME"]."'><img src='../../imagenes/control_pause_blue.png' title='Detener'/></a>";
 			}
