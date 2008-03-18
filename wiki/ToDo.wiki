@@ -26,9 +26,8 @@ Cliente
      * estilo examinar (itu)
 
   * Ejecución: 
-    * estilo 
     * Fecha de fin vacia = En ejecución
-    * El tiempo poner hasta los seg Poner tiempo total
+    * Poner tiempo total
 
 * Paginas: Ayudas y titulos
 
