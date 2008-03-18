@@ -911,3 +911,6 @@ h2.jobs_maui {
 	width: 400px;
 	margin: 0 auto;
 }
+.tabla tr td{
+	padding: 1px 8px 1px 2px;
+}

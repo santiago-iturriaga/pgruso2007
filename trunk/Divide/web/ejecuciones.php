@@ -46,13 +46,16 @@
 	$ejecuciones= "";
 	if($res["error"]) error_log(print_r($res,1));
 	else{
-		$tabla = new Tabla();
+		$tabla = new Tabla("","tabla");
 		$tabla->addColumna(1,"archivo","Archivo");
 		$tabla->addColumna(2,"fecha_ini","Inicio");
 		$tabla->addColumna(3,"fecha_ejecucion","Ejecuci&oacute;n");
 		$tabla->addColumna(4,"fecha_fin","Fin");
 		$tabla->addColumna(5,"link","");
 		foreach ($res["salida"] as $id=>$ejecucion){
+			$ejecucion["fecha_ini"]=array_shift(explode('.',$ejecucion["fecha_ini"],2));
+			$ejecucion["fecha_fin"]=array_shift(explode('.',$ejecucion["fecha_fin"],2));
+			$ejecucion["fecha_ejecucion"]=array_shift(explode('.',$ejecucion["fecha_ejecucion"],2));
 			$ejecucion["link"]=$plantilla->replace($link,array("ID"=>$id));
 			$tabla->addRenglon($ejecucion);
 		}
@@ -61,7 +64,9 @@
 
 	$ppal	=	$plantilla->replace($ppal,array("EJECUCION"=>$ejecuciones));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
-							"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror,"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login));
+							"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror,"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login,
+							"HEAD"=>""
+							));
 	$s->salvar();
 	echo $base;
 ?>

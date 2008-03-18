@@ -13,7 +13,8 @@
 			$this->id=$id;
 			$this->dir_relativa=$dir_relativa;
 		}
-		function addColumna($orden,$nombre,$titulo,$id="''"){
+		function addColumna($orden,$nombre,$titulo,$id=""){
+			if($id!="") $id= "id=$id";
 			$this->columnas[$orden]=array("nombre"=>$nombre,
 									"titulo"=>$titulo,
 									"id"=>$id);
@@ -47,8 +48,12 @@
 				$renglon_x=$plantilla->replace($renglon,array("COLUMNAS"=>$renglon_x));
 				$renglones.=$renglon_x;
 				}
-			$salida =$plantilla->replace($tabla,array("CLASE"=>$this->clase,
-													"ID"=>$this->id,
+			$clase = "";
+			$id = "";
+			if($this->clase !="") $clase = "class='".$this->clase."'";
+			if($this->id !="")  $id = "id='".$this->id."'";
+			$salida =$plantilla->replace($tabla,array("CLASE"=>$clase,
+													"ID"=>$id,
 													"CABEZAL"=>$thead,
 													"CUERPO"=>$renglones,
 													"PIE"=>""));
