@@ -10,33 +10,23 @@ Administrador
   * Paginas: Ayudas y titulos
   * Maui:
     * cambiar info ??
-    * agregar titulo info el id del trabajo (hecho)*
-    * el pausar si no anda sacar (hecho) *
     * agregar checknode y checkjob
   * Nodos: 
-    * Resumen de nodos *[hecho]*
     * el servicio que se pueda levantar (Itu) FALTA TORQUE
     * Parser nombre nodos(opcional).
   * Ganglia: arreglar la UI
-  * Eliminar cliente
 
 
 Cliente
 
   * Archivos: 
-     * Estilos botones (aliner izq)
-     * Confirmacion de borrado
-     * descargar zip
-
-  * Resultado: tooltips
+     * estilo examinar (itu)
 
   * Ejecución: 
-    ** cambiar orden ejecución (hecho)*
     * estilo 
     * Fecha de fin vacia = En ejecución
     * El tiempo poner hasta los seg Poner tiempo total
 
-* tirar salida y ejecutable a otro lado (inaxxesible) [D]
 * Paginas: Ayudas y titulos
 
 
