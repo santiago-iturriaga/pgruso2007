@@ -261,6 +261,55 @@ class Usuarios{
 		return array("error"=>0);
 	}
 
+
+	function eliminarClienteFisicamente($id){
+		$consulta= "select id from trabajo where cliente=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($id),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$trabajos = array();
+		while($row=$this->conexion->Next()){
+			array_push($trabajos,$row["id"]);
+		}
+		foreach($trabajos as $trabajo){
+			$res = $this->eliminarTrabajoFisicamente($trabajos);
+			if($res["error"]) return $res;
+		}
+
+		$consulta	= "select usr_linux " .
+					  "from cliente " .
+					  "where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$row=$this->conexion->Next();
+		if(!$row) return array ("error"=>1,"codError"=>"U999");
+		$usr_linux = $row["usr_linux"];
+
+		// elimino la carpeta
+		$directorio = new Directorio(RAIZ);
+		$res = $directorio->eliminarCarpeta($id,$usr_linux,true);
+		if($res["error"]) return $res;
+
+		// elimino la carpeta sistema
+		$directorio = new Directorio(RAIZ_SISTEMA);
+		$res = $directorio->eliminarCarpeta($id,$usr_linux,true);
+		if($res["error"]) return $res;
+
+		$consulta = "delete from cliente where id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($id),false))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		return array("error"=>0);
+	}
+
+
 	function eliminarTrabajoFisicamente($tid){
 		$consulta	= "select t.cliente, c.usr_linux " .
 					  "from trabajo t, cliente c " .
@@ -277,6 +326,12 @@ class Usuarios{
 
 		// elimino la carpeta
 		$directorio = new Directorio(RAIZ."/".$cid);
+		$res = $directorio->eliminarCarpeta($tid,$usr_linux,true);
+		if($res["error"]) return $res;
+
+
+		// elimino la carpeta sistema
+		$directorio = new Directorio(RAIZ_SISTEMA."/".$cid);
 		$res = $directorio->eliminarCarpeta($tid,$usr_linux,true);
 		if($res["error"]) return $res;
 
@@ -513,16 +568,6 @@ class Usuarios{
 	function editarCliente($id,$nombre){
 		$consulta= "update cliente set nombre=? where id=?";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($nombre,$id),false))
-			{
-			return array("error"=>1,
-						 "codError"=>$this->conexion->msgError);
-			}
-		return array("error"=>0);
-	}
-
-	function eliminarCliente($id){
-		$consulta= "delete from cliente where id=?";
-		if(!$this->conexion->EjecutarConsulta($consulta,array($id),false))
 			{
 			return array("error"=>1,
 						 "codError"=>$this->conexion->msgError);
