@@ -41,7 +41,7 @@
 	$MENSAJES["EU04"]  = "La contrasena nueva no es igual a la confirmaci&on";
 
 	$MENSAJES["U01"]  = "La clave fue cambiada.";
-	$MENSAJES["U02"]  = "Se cre&oacute; el usuario.";
+	$MENSAJES["U02"]  = "Se cre&oacute; el usuario. Recuerde ejecutar el <a href='warning_nuevo_cliente.php'>script</a> para un usuario valido de linux";
 	$MENSAJES["U03"]  = "El usuario fue eliminado.";
 	$MENSAJES["U04"]  = "Se cre&oacute; el grupo.";
 	$MENSAJES["U50"]  = "El nombre del grupo no puede ser nulo.";
@@ -49,7 +49,7 @@
 	$MENSAJES["U52"]  = "La clave del usuario no puede ser nula.";
 	$MENSAJES["U53"]  = "El mail del usuario no puede ser nulo.";
 	$MENSAJES["U54"]  = "El mail ingresado no es v&aacute;lido.";
-	$MENSAJES["U55"]  = "El usuario de linux no es valido. Recuerde ejecutar el script para un usuario valido de linux";
+	$MENSAJES["U55"]  = "El usuario de linux no es valido. Recuerde ejecutar el <a href='warning_nuevo_cliente.php'>script</a> para un usuario valido de linux";
 	$MENSAJES["U998"]  = "El cliente no existe.";
 	$MENSAJES["U999"]  = "El trabajo no existe.";
 
