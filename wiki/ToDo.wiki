@@ -11,7 +11,7 @@ Administrador
   * Maui:
     * cambiar info ??
     * agregar checknode y checkjob
-    * problema con el parseo de trabajos
+    * *BUG* problema con el parseo de trabajos
       * se da por lo menos cuando el grupo es >8 char
       * en trabajos en ejecucion
       * puede darse en otros casos tambien
