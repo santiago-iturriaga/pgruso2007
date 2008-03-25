@@ -9,13 +9,11 @@ Administrador
   * script para crear usuario(incluir todo lo que tiene que tener el usuario).
   * Paginas: Ayudas y titulos
   * Maui:
-    * cambiar info ??
     * agregar checknode y checkjob
     * *BUG* problema con el parseo de trabajos
       * se da por lo menos cuando el grupo es >8 char
       * en trabajos en ejecucion
       * puede darse en otros casos tambien
-  * Ganglia: arreglar la UI
   * Crear usuario fenton
 
 Cliente
