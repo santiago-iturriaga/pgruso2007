@@ -15,7 +15,7 @@
 		header("Location: ../index.php");
 		exit;
 	}
-	
+
 
 	$plantilla	=	new TPL();
 	$base		=	$plantilla->load("plantillas/base.html");
@@ -24,7 +24,7 @@
 	$menu=$plantilla->replace($plantilla->load("plantillas/menu_usuarios.html"),
 							  array("SMENU_CT"=>" id='smactual' "));
 
-
+	$ppal = $plantilla->replace($ppal,array("RAIZ"=>RAIZ, "GRUPOFENTON"=>GRUPOFENTON));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENU_USUARIOS"=>" id='actual' ",
 												"MENU_GANGLIA"=>" class='menu_tab'",
