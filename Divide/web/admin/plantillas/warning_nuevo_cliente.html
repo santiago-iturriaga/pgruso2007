@@ -1,17 +1,16 @@
 <div id="pagina">
 			<h1>Condiciones para el usuario linux de un cliente</h1>
 			</br>
-			<table align="center" width="70%" border =0>
-			<tr>
-			<td>
-				<ul>
-				<li>El usuario debe estar creado en el sistema. Puede utilizar el comando adduser "usuario" para crear un usuario</li>
-				<li>El usuario debe tener permisos de escritura en la carpeta {RAIZ} o Perteneser al grupo {GRUPOFENTON}</li>
-				<li>El usuario de Apache debe poder conectarse por ssh con el usuario. Crear en el home del usuario la carpeta .ssh y agrear la clave publica al archivo ".ssh/authorized_keys2"</li>
+			<div id= "divWNU" >
+				<ul >
+				<li>El usuario debe estar creado en el sistema. Puede utilizar el comando adduser "usuario" para crear un usuario.</li>
+				<li>El usuario debe tener permisos de escritura en la carpeta "{RAIZ}" o Perteneser al grupo "{GRUPOFENTON}".</li>
+				<li>El usuario de Apache debe poder conectarse por ssh con el usuario. Crear en el home del usuario la carpeta .ssh y agrear la clave publica al archivo ".ssh/authorized_keys2".</li>
 				<li>Dependiendo de la configuracion del cluster el usuario debe ser creado en todos los nodos.</li>
-				<li>Si creo un nuevo usuario recuerde asignarle un password</li>
+				<li>Si creo un nuevo usuario recuerde asignarle un password.</li>
 				</ul>
-			</td>
-			</tr>
-			</table>
+			</br>
+			Descarge <a href='../../bin/NuevoUsuario.sh'>aqui</a> el scrpt para crear un usuario linux.
+			</div>			
+			
 		</div>
