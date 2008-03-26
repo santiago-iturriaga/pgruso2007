@@ -19,12 +19,12 @@ function ejecutar(archivo){
 			<form action="archivos.php" method="post" enctype="multipart/form-data" class="form_archivos">
 				<p align="center">Archivo:
 				<input name="archivo_" type="file" id="archivo_">
-				<input type="submit" name="Enviar" id="Enviar" value="Enviar"></p>
+				<input type="submit" name="Enviar" id="Enviar" value="Enviar" class="boton"></p>
 			</form>
 			<form action="archivos.php" method="post" class="form_archivos">
 				<p align="center">Crear carpeta:
 				<input name="carpeta" id="carpeta">
-				<input type="submit" name="Crear" id="Crear" value="Crear"></p>
+				<input type="submit" name="Crear" id="Crear" value="Crear" class="boton"></p>
 			</form>
 
 			<form id="parametros" name="parametros" class="parametros_ocultos" action="archivos.php" method="POST">
@@ -34,7 +34,7 @@ function ejecutar(archivo){
 						<label for="argumentos">Argumentos</label>
 						<input type="text" id="argumentos" name="argumentos"/>
 						<input type="hidden" id="archivo" name="archivo"/>
-						<input type="submit" id="ejecutar" name="ejecutar" value="Ejecutar"/>
+						<input type="submit" id="ejecutar" name="ejecutar" value="Ejecutar" class="boton"/>
 					</p>
 				</fieldset>
 
