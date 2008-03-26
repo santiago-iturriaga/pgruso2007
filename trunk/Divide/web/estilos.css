@@ -814,6 +814,20 @@ div.jobs_maui {
 	white-space: nowrap;
 }
 
+#divWNU {
+	width: 70%;
+	overflow: auto;
+
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:20px;
+	text-align:left;
+	list-style-type:circle;
+
+}
+
 div.jobs_maui td {
 	white-space: nowrap;
 }
