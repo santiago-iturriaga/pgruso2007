@@ -1,108 +1,45 @@
 <script language="JavaScript" type="text/javascript">
 	var bloquear= false;
-	var http_request = false;
-	var request_en_ejecucion = false;
-	var request_cantidad = false;
-	var request_accion = false;
-	
+
 	var intervalo;
-    function makeRequest(url,handler) {
-
-        request = false;
-
-        if (window.XMLHttpRequest) { // Mozilla, Safari,...
-            request = new XMLHttpRequest();
-            if (request.overrideMimeType) {
-                request.overrideMimeType('text/xml');
-                // Ver nota sobre esta linea al final
-            }
-        } else if (window.ActiveXObject) { // IE
-            try {
-                request = new ActiveXObject("Msxml2.XMLHTTP");
-            } catch (e) {
-                try {
-                    request = new ActiveXObject("Microsoft.XMLHTTP");
-                } catch (e) {}
-            }
-        }
-
-        if (!request) {
-            alert('Falla :( No es posible crear una instancia XMLHTTP');
-            return false;
-        }
-        request.onreadystatechange = handler;
-        request.open('GET', url, true);
-        request.send(null);
-		return request;
-    }
 
 
-    function handlerSalida() {
-        if (http_request.readyState == 4) {
-            if (http_request.status == 200) {
-//                document.getElementById('resultados').innerHTML =document.getElementById('resultados').innerHTML+http_request.responseText;
-                document.getElementById('resultados').innerHTML +=http_request.responseText;
-                if(bloquear == false){
-	    			t = document.getElementById('resultados');
-					t.scrollTop = t.scrollHeight - t.style.height;
+    var h_salida = function(tt) {
+            document.getElementById('resultados').innerHTML +=tt.responseText;
+   	        if(bloquear == false){
+   				t = document.getElementById('resultados');
+				t.scrollTop = t.scrollHeight - t.style.height;
 				}
-
-                
-            } else {
-                alert('Hubo problemas con la petición:');
-            }
-        }
-
     }
 
-    function handlerCantidad() {
-        if (request_cantidad.readyState == 4) {
-            if (request_cantidad.status == 200) {
-                document.getElementById('enejecucion').innerHTML =request_cantidad.responseText;
-            } else {
-                alert('Hubo problemas con la petición:');
-            }
-        }
+    var h_cantidad = function(t) {
+        document.getElementById('enejecucion').innerHTML = t.responseText;
+     }
+    var h_ejecucion = function(t) {
+    	
+        alert(t.responseText);
+     }
 
+
+	var h_enejecucion = function(t) {
+       	if(t.responseText != ""){
+       		clearInterval(intervalo);
+            alert('Trabajo finalizado.');
+		}
     }
-    function handlerEjecucion() {
-        if (request_accion.readyState == 4) {
-            if (request_accion.status == 200) {
-                alert(request_accion.responseText);
-            } else {
-                alert('Hubo problemas con la petición:');
-            }
-        }
-
-    }
-
-
-	function handlerEnEjecucion() {
-        if (request_en_ejecucion.readyState == 4) {
-            if (request_en_ejecucion.status == 200) {
-            	if(request_en_ejecucion.responseText != ""){
-            		clearInterval(intervalo);
-	                alert('Trabajo finalizado.');
-					}
-            } else {
-                alert('Hubo problemas con la petición:');
-            }
-        }
-    }
-
 
 	function delay(){ 
 	    intervalo = setInterval('cargar()',{SEGUNDOS}000);
 	    cargar();
 	}
 	function cargar(){
-		http_request = makeRequest('ajax/getArchivo.php',handlerSalida);
-		request_en_ejecucion = makeRequest('ajax/getEnEjecucion.php',handlerEnEjecucion);
-		request_cantidad = makeRequest('ajax/getCantEnEjecucion.php',handlerCantidad);
+		new Ajax.Request('ajax/getArchivo.php', {parameters:'', onSuccess:h_salida});
+		new Ajax.Request('ajax/getEnEjecucion.php', {parameters:'', onSuccess:h_enejecucion});
+		new Ajax.Request('ajax/getCantEnEjecucion', {parameters:'', onSuccess:h_cantidad});
 	}
 	
 	function detener(){
-		request_accion = makeRequest('ajax/ejecucionCliente.php?accion=Detener',handlerEjecucion);
+		new Ajax.Request('ajax/ejecucionCliente?accion=Detener', {parameters:'', onSuccess:h_ejecucion});
 	}
 
 </script>
