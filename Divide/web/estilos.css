@@ -194,7 +194,7 @@ input {
 
 #menu li {
 	margin-right: 1px;
-	width: 155px;
+	width: 169px;
 	height: 21px;
 	float: left;
 	background: url('imagenes/menu_background.gif') repeat-x 0px 0px;
@@ -236,7 +236,7 @@ input {
 
 #submenu li {
 	margin-right: 0px;
-	width: 156px;
+	width: 170px;
 	height: 21px;
 	float: left;
 	background: #555555;
