@@ -2,6 +2,7 @@
 define("RAIZ", "/net/home/pgccadar");
 define("RAIZ_SISTEMA", "/net/home/pgccadar/sistema");
 define("TMP", "/tmp");
+define("GRUPOFENTON","Fenton_Group");
 
 
 define("CONEXION_HOST", "lennon.fing.edu.uy");
