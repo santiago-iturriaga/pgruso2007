@@ -9,7 +9,7 @@ define("CONEXION_PASSWORD", "pgccadar");
 define("CONEXION_BASE", "pgccadar");
 define("QSUB", "/usr/local/torque/bin/qsub");
 define("MPIEXEC", "/usr/local/mpiexec/bin/mpiexec");
-define("GRUPOFENTON","Fenton_Group");
+define("GRUPOFENTON","Fenton");
 
 define("REDIRECCION_SALIDA", "/pgruso/Divide/bin/redireccion_salida.php");
 define("OUTPUT", "salida_extra");
