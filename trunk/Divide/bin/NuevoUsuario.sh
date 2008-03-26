@@ -5,7 +5,7 @@ if [ $# -lt 4 ]; then
    echo "Necesitas pasar cuatro parámetros: usuario, grupo Fenton, archivo de clave publica de apache y directorio de usuarios\n"
    exit 0
  fi
- useradd $1 -G $2 -m
+ useradd $1 -d $4 -G $2 -m
  mkdir $4/$1/.ssh
  cat $3 >> $4/$1/.ssh/authorized_keys2
 
