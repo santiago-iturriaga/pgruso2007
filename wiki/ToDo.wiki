@@ -18,7 +18,7 @@ Cliente
   * Archivos: 
      * *BUG?* estilo examinar
   * Ejecución: 
-    * Poner tiempo total
+    * Poner tiempo total (ver tracejob de torque)
 
 *------------------------------*
   * En archivos.php mostrar estado del trabajo en ejecucion
