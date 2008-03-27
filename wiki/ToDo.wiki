@@ -2,30 +2,23 @@
 
 = ToDo =
 
-Cosas para hacer después de la reunion con el ruso.
+*Paginas: Ayudas y titulos*
+
 Administrador
-  * cambiar color sub menu
-  * al crear nuevo cliente warning de usuario linux.
-  * script para crear usuario(incluir todo lo que tiene que tener el usuario).
-  * Paginas: Ayudas y titulos
+  * script para crear usuario (incluir todo lo que tiene que tener el usuario).
+  * tracejob
   * Maui:
     * agregar checknode y checkjob
     * *BUG* problema con el parseo de trabajos
       * se da por lo menos cuando el grupo es >8 char
       * en trabajos en ejecucion
       * puede darse en otros casos tambien
-  * Crear usuario fenton
 
 Cliente
-
   * Archivos: 
-     * estilo examinar (itu)
-
+     * *BUG?* estilo examinar
   * Ejecución: 
     * Poner tiempo total
-
-* Paginas: Ayudas y titulos
-
 
 *------------------------------*
   * En archivos.php mostrar estado del trabajo en ejecucion
