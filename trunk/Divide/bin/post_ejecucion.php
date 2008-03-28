@@ -1,7 +1,7 @@
 #!/usr/bin/php5 -q
 <?php
 error_log("post ejecucion");
-	if ($argc != 2 ) {
+	if ($argc != 3 ) {
 		echo "Error: Cantidad de parametros incorrecta";
 		exit;
 	}
