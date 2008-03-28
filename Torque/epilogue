@@ -17,7 +17,7 @@ echo "Account String: $9"
 echo ""
 
 cd $PATH_PHP
-./$SCRIPT_PHP $1
+./$SCRIPT_PHP $1 $7
 
 exit 0
 
