@@ -326,7 +326,7 @@ echo "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo
 	}
 
 	function getEjecuciones($id_trabajo){
-		$consulta = "select id, id_torque, archivo, fecha_ini, fecha_ejecucion, fecha_fin " .
+		$consulta = "select id, id_torque, archivo, fecha_ini, fecha_ejecucion, fecha_fin, tiempo_ejecucion " .
 					"from ejecucion " .
 					"where trabajo=? " .
 					"order by fecha_ini desc";
