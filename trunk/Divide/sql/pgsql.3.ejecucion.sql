@@ -9,5 +9,7 @@ create table ejecucion (
 	fecha_ejecucion timestamp,
 	id_torque int,
 	trabajo int not null,
+	log_torque text,
+	tiempo_ejecucion timestamp,
 	foreign key (trabajo) references trabajo(id)
 );
