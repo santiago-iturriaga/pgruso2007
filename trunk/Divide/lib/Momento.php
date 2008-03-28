@@ -185,7 +185,7 @@ class Momento{
 		$tiempo = 'null';
 		if (ereg("walltime=([^\n\,$]*)",$recursos,$macheo))
 			$tiempo = "'".$macheo[1]."'";
-
+echo "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo, log_torque='$log'  where id_torque = $id_torque";
 		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo, log_torque=?  where id_torque = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($log,$id_torque),true))
 			{
