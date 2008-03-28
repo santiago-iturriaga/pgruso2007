@@ -3,6 +3,7 @@ include_once ("Constantes.php");
 include_once ("Conexion.php");
 include_once ("Alertas.php");
 include_once ("Servidor.php");
+include_once ("Torque.php");
 
 class Momento{
 	var $db = null;
@@ -154,15 +155,10 @@ class Momento{
 	}
 
 	function setFinalizado($id_torque){
-		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP where id_torque = ?";
-		if(!$this->db->EjecutarConsulta($consulta,array($id_torque),true))
-			{
-			return array("error"=>1,
-						 "codError"=>$this->db->msgError);
-			}
 		$consulta = "select t.id as id_trabajo," .
 					"		t.cliente as id_cliente," .
-					"	    e.id as id_ejecutable " .
+					"	    e.id as id_ejecutable, " .
+					"       CURRENT_TIMESTAMP-fecha_ini as tiempo " .
 					"from trabajo t, ejecucion e " .
 					"where e.id_torque=? " .
 					"  and e.trabajo=t.id";
@@ -173,6 +169,30 @@ class Momento{
 			}
 
 		$row=$this->db->Next();
+		$tiempo_ejecucion=$row["tiempo"];
+
+		$dias = 1;
+		$arrayDias = split(" day",$tiempo_ejecucion);
+		if (count($arrayDias) > 1) {
+			$dias = array_shift($arrayDias) + 1;
+		}
+
+		$resultado = torque_tracejob($id_torque,$dias);
+		$tiempo = '';
+		$log = $resultado["log"];
+		if ($resultado["error"]) {
+			error_log(print_r($resultado,1));
+		} else {
+			$tiempo = $resultado["tiempo"];
+		}
+
+		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion='$tiempo', log_torque=?  where id_torque = ?";
+		if(!$this->db->EjecutarConsulta($consulta,array($log,$id_torque),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+
 		$script = RAIZ_SISTEMA.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
 		//error_log("poner de vuelta despues");
 		$salida = ejecutar_servidor("rm $script");
