@@ -44,6 +44,7 @@ define("QSTART_CMD",PATH_TORQUE."/bin/qstart");
 define("QRLS_CMD",PATH_TORQUE."/bin/qrls");
 define("QSTAT_CMD",PATH_TORQUE."/bin/qstat");
 define("QNODES_CMD",PATH_TORQUE."/bin/qnodes");
+define("TRACEJOB",PATH_TORQUE."/bin/tracejob");
 
 define("CONFIG_CMD",PATH_MAUI."/bin/showconfig");
 define("CANCELJOB_CMD",PATH_MAUI."/bin/canceljob");

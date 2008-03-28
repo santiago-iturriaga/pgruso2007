@@ -7,6 +7,7 @@
  */
 
 include_once("Constantes.php");
+include_once("Servidor.php");
 
 function torque_ejecutar_trabajo($id){
 	$command = SSH." -l ".USERNAME." ".HOST." \"".QRUN_CMD." $id; exit\" 2>&1";
@@ -128,5 +129,16 @@ function torque_detener_nodo($id) {
 		$error ="No fue posible deshabilitar el nodo.<br/>".$qnodes_result;
 	}
 	return array($mensaje,$error);
+}
+
+function torque_tracejob($id,$dias) {
+	$resultado = ejecutar_servidor(TRACEJOB." -n $dias $id");
+
+	$resultado = array_pop(explode("Job: $id",$resultado));
+	if (ereg("walltime=([^\n]*)",$resultado,$macheo)) {
+		return array("error"=>0,"tiempo"=>$macheo[1],"log"=>$resultado);
+	} else {
+		return array("error"=>1,"log"=>$resultado);
+	}
 }
 ?>
