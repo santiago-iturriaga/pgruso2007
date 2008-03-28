@@ -51,7 +51,8 @@
 		$tabla->addColumna(2,"fecha_ini","Inicio");
 		$tabla->addColumna(3,"fecha_ejecucion","Ejecuci&oacute;n");
 		$tabla->addColumna(4,"fecha_fin","Fin");
-		$tabla->addColumna(5,"link","");
+		$tabla->addColumna(5,"tiempo_ejecucion","Tiempo");
+		$tabla->addColumna(6,"link","");
 		foreach ($res["salida"] as $id=>$ejecucion){
 			$ejecucion["fecha_ini"]=array_shift(explode('.',$ejecucion["fecha_ini"],2));
 			$ejecucion["fecha_fin"]=array_shift(explode('.',$ejecucion["fecha_fin"],2));
