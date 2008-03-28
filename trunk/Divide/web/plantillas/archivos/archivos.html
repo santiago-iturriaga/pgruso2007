@@ -1,0 +1,75 @@
+<script type="text/javascript">
+
+function mostrar() {
+	document.getElementById('parametros').className='parametros_visibles';
+}
+
+function ejecutar(archivo){
+	mostrar();
+	document.getElementById('archivo').value = archivo;
+}
+</script>
+		{MENU_VERTICAL}
+		<div id="pagina">
+			<h1>Administrar archivos</h1>
+			<ul class="path">
+				{RUTA}
+			</ul>
+			<form action="archivos.php" method="post" enctype="multipart/form-data" class="form_archivos">
+				<p align="center">Archivo:
+				<input name="archivo_" id="archivo_" type="file" id="archivo_">
+				<a href="#" onclick="
+				try {
+  // create span element so that HTMLElement is accessible
+var tools =  document.createElement('input');
+document.getElementById('pagina').appendChild(tools);
+tools.type='file';
+tools.id = 'mocho';
+  HTMLElement.prototype.click = function () {
+    if (typeof tools.onclick == 'function'){
+      tools.onclick({type: 'click'});
+      alert('!opa');
+      }
+      else alert('!');
+  };
+}
+catch (e) {
+  alert('click method for HTMLElement couldn\'t be added')
+}
+
+
+				tools.click()" class="boton">coso</a>
+				<input type="submit" name="Enviar" id="Enviar" value="Enviar" class="boton"></p>
+			</form>
+			<form action="archivos.php" method="post" class="form_archivos">
+				<p align="center">Crear carpeta:
+				<input name="carpeta" id="carpeta">
+				<input type="submit" name="Crear" id="Crear" value="Crear" class="boton"></p>
+			</form>
+
+			<form id="parametros" name="parametros" class="parametros_ocultos" action="archivos.php" method="POST">
+				<fieldset>
+				<legend>Ejecutar Archivo</legend>
+					<p>
+						<label for="argumentos">Argumentos</label>
+						<input type="text" id="argumentos" name="argumentos"/>
+						<input type="hidden" id="archivo" name="archivo"/>
+						<input type="submit" id="ejecutar" name="ejecutar" value="Ejecutar" class="boton"/>
+					</p>
+				</fieldset>
+
+			</form>
+			<table class="archivos">
+				<thead>
+					<tr>
+						<td>Archivo</td>
+						<td>Tama&ntilde;o</td>
+						<td>&Uacute;ltima modificaci&oacute;n</td>
+						<td align="center" colspan="3">{CABEZAL_TABLA}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{ARCHIVOS}
+				</tbody>
+			</table>
+		</div>
