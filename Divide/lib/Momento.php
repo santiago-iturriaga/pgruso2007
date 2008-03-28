@@ -154,7 +154,7 @@ class Momento{
 
 	}
 
-	function setFinalizado($id_torque){
+	function setFinalizado($id_torque,$recursos){
 		$consulta = "select t.id as id_trabajo," .
 					"		t.cliente as id_cliente," .
 					"	    e.id as id_ejecutable, " .
@@ -178,15 +178,15 @@ class Momento{
 		}
 
 		$resultado = torque_tracejob($id_torque,$dias);
-		$tiempo = '';
 		$log = $resultado["log"];
 		if ($resultado["error"]) {
 			error_log(print_r($resultado,1));
-		} else {
-			$tiempo = $resultado["tiempo"];
 		}
+		$tiempo = 'null';
+		if (ereg("walltime=([^\n\,$]*)",$recursos,$macheo))
+			$tiempo = "'".$macheo[1]."'";
 
-		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion='$tiempo', log_torque=?  where id_torque = ?";
+		$consulta = "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo, log_torque=?  where id_torque = ?";
 		if(!$this->db->EjecutarConsulta($consulta,array($log,$id_torque),true))
 			{
 			return array("error"=>1,

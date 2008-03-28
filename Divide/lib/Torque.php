@@ -132,15 +132,11 @@ function torque_detener_nodo($id) {
 }
 
 function torque_tracejob($id,$dias) {
-	$resultado = ejecutar_servidor(TRACEJOB." -n $dias $id");
+	$comando = TRACEJOB." -n $dias $id";
+	$resultado = `$comando`;
 
-	print_r($resultado);
+	$resultado = "Job: $id".array_pop(explode("Job: $id",$resultado));
+	return array("error"=>0,"log"=>$resultado);
 
-	$resultado = array_pop(explode("Job: $id",$resultado));
-	if (ereg("walltime=([^\n]*)",$resultado,$macheo)) {
-		return array("error"=>0,"tiempo"=>$macheo[1],"log"=>$resultado);
-	} else {
-		return array("error"=>1,"log"=>$resultado);
-	}
 }
 ?>
