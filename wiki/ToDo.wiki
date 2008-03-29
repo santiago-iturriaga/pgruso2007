@@ -25,14 +25,10 @@ Cliente
   * Ejecución: 
     * Agregar boton para ver log de torque
     * que pasa con la compilacion de los proyectos? como ejecutamos el makefile?
-
-*------------------------------*
-  * En archivos.php mostrar estado del trabajo en ejecucion
+    * En archivos.php mostrar estado del trabajo en ejecucion
   * Asignacion de alertas en falla de trabajo
  
-*------------------------------*
-
   * cron [damian] ????
     
     
-  *documentar !!!!!!!!!!!!!!*
+  **documentar !!!*
