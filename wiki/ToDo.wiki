@@ -2,7 +2,7 @@
 
 = ToDo =
 
-*Paginas: Ayudas y titulos*
+*Paginas: Ayudas y titulos* (a lo wiki)
 
 Sistema
   * arreglar script de inicio para torque/maui/ganglia en el sistema
@@ -27,6 +27,7 @@ Cliente
     * que pasa con la compilacion de los proyectos? como ejecutamos el makefile?
     * En archivos.php mostrar estado del trabajo en ejecucion
   * Asignacion de alertas en falla de trabajo
+  * Modificar upload de archivos
  
   * cron [damian] ????
     
