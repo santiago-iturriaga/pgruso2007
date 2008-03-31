@@ -932,3 +932,19 @@ h2.jobs_maui {
 b {
 	color: #ff0000;
 }
+
+pre#log{
+	border:1px solid #dddddd;
+	width: 700px;
+	text-align:left;
+	margin:0 auto;
+	margin-top:10px;
+	padding: 10px 10px 10px 10px;
+	overflow: auto;
+}
+#salida_torque p{
+	width:800px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 10px;
+}
