@@ -17,7 +17,6 @@
       * en trabajos en ejecucion
       * puede darse en otros casos tambien
     * ver porque en fing me dice que los servicios no se encuentran en ejecucion
-    * arreglar indentacion del error anterior en la imagen de torque
 
 *Cliente*
   * Archivos: 
