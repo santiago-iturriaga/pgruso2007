@@ -2,12 +2,12 @@
 
 = ToDo =
 
-*Paginas: Ayudas y titulos* (a lo wiki)
+===Paginas: Ayudas y titulos=== (a lo wiki)
 
-Sistema
+*Sistema*
   * arreglar script de inicio para torque/maui/ganglia en el sistema
 
-Administrador
+*Administrador*
   * script para crear usuario (incluir todo lo que tiene que tener el usuario).
   * tracejob
   * Maui:
@@ -19,7 +19,7 @@ Administrador
     * ver porque en fing me dice que los servicios no se encuentran en ejecucion
     * arreglar indentacion del error anterior en la imagen de torque
 
-Cliente
+*Cliente*
   * Archivos: 
      * *BUG?* estilo examinar
   * Ejecución: 
