@@ -8,6 +8,10 @@ function ejecutar(archivo){
 	mostrar();
 	document.getElementById('archivo').value = archivo;
 }
+
+function mostrarSubirArchivo(){
+	document.getElementById('formSubirArchivo').style.display='';
+}
 </script>
 		{MENU_VERTICAL}
 		<div id="pagina">
@@ -15,32 +19,18 @@ function ejecutar(archivo){
 			<ul class="path">
 				{RUTA}
 			</ul>
-			<form action="archivos.php" method="post" enctype="multipart/form-data" class="form_archivos">
-				<p align="center">Archivo:
-				<input name="archivo_" id="archivo_" type="file" id="archivo_">
-				<a href="#" onclick="
-				try {
-  // create span element so that HTMLElement is accessible
-var tools =  document.createElement('input');
-document.getElementById('pagina').appendChild(tools);
-tools.type='file';
-tools.id = 'mocho';
-  HTMLElement.prototype.click = function () {
-    if (typeof tools.onclick == 'function'){
-      tools.onclick({type: 'click'});
-      alert('!opa');
-      }
-      else alert('!');
-  };
-}
-catch (e) {
-  alert('click method for HTMLElement couldn\'t be added')
-}
-
-
-				tools.click()" class="boton">coso</a>
-				<input type="submit" name="Enviar" id="Enviar" value="Enviar" class="boton"></p>
-			</form>
+			<div id="formSubirArchivo" class="mensaje" style="background-color:#85859C;padding-top:0px;padding-bottom:0px;display:none;">
+				<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Subir archivo</div>
+				<div style="margin-top:0px;">
+					<form action="archivos.php" method="post" enctype="multipart/form-data" class="form_archivos">
+						<p align="center">Archivo:
+						<input name="archivo_" id="archivo_" type="file" id="archivo_"></p>
+						<br/>
+						<p><input type="submit" name="Enviar" id="Enviar" value="Enviar" class="boton">
+						<input type="button" value="Cancelar" class="boton" onclick="document.getElementById('formSubirArchivo').style.display='none';"></p>
+					</form>
+				</div>
+			</div>
 			<form action="archivos.php" method="post" class="form_archivos">
 				<p align="center">Crear carpeta:
 				<input name="carpeta" id="carpeta">
