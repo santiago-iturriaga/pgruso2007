@@ -2,7 +2,7 @@
 
 = ToDo =
 
-===Paginas: Ayudas y titulos=== (a lo wiki)
+===Paginas: Ayudas y titulos (a lo wiki)===
 
 *Sistema*
   * arreglar script de inicio para torque/maui/ganglia en el sistema
