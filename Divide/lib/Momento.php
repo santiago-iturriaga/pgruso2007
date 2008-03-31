@@ -344,5 +344,48 @@ echo "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo
 					 "salida"=>$salida);
 	}
 
+	function getEjecucionesAdmin($id_trabajo, $desde, $hasta){
+		$consulta = "select id, id_torque, archivo, fecha_ini, fecha_ejecucion, fecha_fin, tiempo_ejecucion " .
+					"from ejecucion " .
+					"where trabajo=?";
+		$parametros = array($id_trabajo);
+		if($desde != ""){
+			$consulta.=" and fecha_ini>=?";
+			array_push($parametros,$desde);
+		}
+		if($hasta != ""){
+			$consulta.=" and fecha_ini<=?";
+			array_push($parametros,$hasta);
+		}
+		$consulta.=	" order by fecha_ini desc";
+		if(!$this->db->EjecutarConsulta($consulta,$parametros,true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$salida=array();
+		while(($row=$this->db->Next()) != null)
+			{
+			$salida[$row["id"]]=$row;
+			}
+		return array("error"=>0,
+					 "salida"=>$salida);
+	}
+
+	function getLogEnEjecucion($id){
+		$consulta = "select log_torque " .
+					"from ejecucion " .
+					"where id=?";
+		if(!$this->db->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$salida=array();
+		$row=$this->db->Next();
+		return array("error"=>0,
+					 "salida"=>$row["log_torque"]);
+	}
+
 }
 ?>
