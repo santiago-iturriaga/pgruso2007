@@ -6,8 +6,15 @@
 	<script type="text/javascript" src="js/nifty.js"></script>
 	<script type="text/javascript" src="js/prototype.js"></script>
 	
-	 <script language="JavaScript" type="text/JavaScript">
-	 {HEAD}</script>
+	 <script language="JavaScript" type="text/JavaScript">{HEAD}</script>
+	 <script type="text/javascript">
+		window.onload=function(){
+			if(!NiftyCheck())
+			    return;
+			RoundedTop("div.mensaje","#ffffff","#555555","");
+			RoundedBottom("div.mensaje","#ffffff","#85859c","");
+		}
+	</script>
 </HEAD>
 <BODY {BODY}>
 <div id="contenedor">
