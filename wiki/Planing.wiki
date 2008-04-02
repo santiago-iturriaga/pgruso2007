@@ -1,4 +1,3 @@
-
 *Fin de semana 05/04/2008*
    
   - Terminar desarrollo. (Pueden quedar chotadas para ir haciendo)
@@ -6,7 +5,7 @@
   - Fijar reunion con el RUSO para plantearle como seguimos.
 
 
-*Semana del 07/08* 
+*Semana del 07/04/2008* 
 Duracion aprox. 2 y media semana
     - Damian y paulo: Test (Test exploratorio y Funcional) arreglo de bugs de instalacion y                                                test. 
     - ITU: Manual de instalacion. Probar instalacion en cluster posta. Arreglar bugs que   puedan surgir de instalacion y test.
@@ -19,5 +18,3 @@ Duracion aprox. 2 y media semana
  Manual de Usuario (Cliente y Admin).
  Documentacion. 
  Presentacion.
-
-
