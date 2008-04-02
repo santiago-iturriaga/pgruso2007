@@ -8,15 +8,15 @@
   * arreglar script de inicio para torque/maui/ganglia en el sistema
 
 *Administrador*
-  * script para crear usuario (incluir todo lo que tiene que tener el usuario).
+  * [HECHO]script para crear usuario (incluir todo lo que tiene que tener el usuario). 
   * tracejob
   * Maui:
-    * agregar checknode y checkjob
+    * agregar checknode y checkjob 
     * *BUG* problema con el parseo de trabajos
       * se da por lo menos cuando el grupo es >8 char
       * en trabajos en ejecucion
       * puede darse en otros casos tambien
-    * ver porque en fing me dice que los servicios no se encuentran en ejecucion
+    
 
 *Cliente*
   * Archivos: 
@@ -25,7 +25,7 @@
     * Agregar boton para ver log de torque
     * que pasa con la compilacion de los proyectos? como ejecutamos el makefile?
     * En archivos.php mostrar estado del trabajo en ejecucion
-  * Asignacion de alertas en falla de trabajo
+  * Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar. Estamos cubiertos con el fin del trabajo. )
   * Modificar upload de archivos
  
   * cron [damian] ????
