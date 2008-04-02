@@ -1,3 +1,5 @@
+#summary Cronograma tentativo
+
 *Fin de semana 05/04/2008*
    
   - Terminar desarrollo. (Pueden quedar chotadas para ir haciendo)
