@@ -111,6 +111,12 @@ error_log("tam:".$filesize);
 			exit;
 		}
 	}
+	if(isset($_POST["herramientaEjecutar"])) {
+		$herramienta =$_POST["herramienta"];
+		$argumentos =$_POST["herramientaArgumentos"];
+
+
+	}
 
 
 	$base		=	$plantilla->load("plantillas/base.html");
@@ -165,6 +171,7 @@ error_log("tam:".$filesize);
 			$p_archivos	.= $directorio_nuevo;
 		}
 	}
+
 	foreach($archivos as $archivo=>$valores){
 		$archivo_nuevo = $plantilla->replace($p_archivo,array("NOMBRE"=>$archivo,"TAMANIO"=>$valores["size"],"FECHA"=>$valores["ultima_modificacion"]));
 		if($valores["ejecutar"])  $archivo_nuevo= 	$plantilla->uncomment($archivo_nuevo,array("EJECUTAR"));
@@ -177,6 +184,14 @@ error_log("tam:".$filesize);
 	$camino[0] = "<img src='imagenes/house.png' title='Home' alt='Home' />";
 	$ruta	= "";
 
+	$arrayHerramientas = ObtenerCOMANDOS_EJECUCION();
+	$listaHerramientas = "";
+	if (count($arrayHerramientas) > 0) {
+		foreach ($arrayHerramientas as $desc => $path) {
+			$listaHerramientas .= "<OPTION VALUE='$path'>$desc</OPTION>";
+		}
+	}
+
 	while($carpeta=array_shift($camino)){
 		$ruta	.= $plantilla->replace($p_ruta,array("DIRECTORIO"=>$carpeta,
 													 "PASOS"=>count($camino)));
@@ -186,6 +201,7 @@ error_log("tam:".$filesize);
 	$ppal	=	$plantilla->replace($ppal,array("MENU_VERTICAL"=>"",
 												"ARCHIVOS"=>$p_archivos,
 												"RUTA"=>$ruta,
+												"HERRAMIENTAS"=>$listaHerramientas,
 												"CABEZAL_TABLA"	=> $cabezal));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,

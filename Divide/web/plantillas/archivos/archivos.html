@@ -1,16 +1,36 @@
 <script type="text/javascript">
 
-function mostrar() {
-	document.getElementById('parametros').className='parametros_visibles';
+function ocultarTodo() {
+	ocultarSubirArchivo();
+	ocultarEjecucion();
+	ocultarEjecucionHerramientas();
 }
 
+function mostrarEjecucion() {
+	ocultarTodo();
+	/* document.getElementById('parametros').className='parametros_visibles'; */
+	document.getElementById('formParametrosEjecucion').style.display='';
+}
+function ocultarEjecucion() {
+	document.getElementById('formParametrosEjecucion').style.display='none';
+}
 function ejecutar(archivo){
-	mostrar();
+	mostrarEjecucion();
 	document.getElementById('archivo').value = archivo;
 }
-
 function mostrarSubirArchivo(){
+	ocultarTodo();
 	document.getElementById('formSubirArchivo').style.display='';
+}
+function ocultarSubirArchivo(){
+	document.getElementById('formSubirArchivo').style.display='none';
+}
+function mostrarEjecucionHerramientas(){
+	ocultarTodo();
+	document.getElementById('formEjecucionHerramientas').style.display='';
+}
+function ocultarEjecucionHerramientas(){
+	document.getElementById('formEjecucionHerramientas').style.display='none';
 }
 </script>
 		{MENU_VERTICAL}
@@ -19,35 +39,58 @@ function mostrarSubirArchivo(){
 			<ul class="path">
 				{RUTA}
 			</ul>
-			<div id="formSubirArchivo" class="mensaje" style="background-color:#85859C;padding-top:0px;padding-bottom:0px;display:none;">
+			<div id="formSubirArchivo" class="mensaje" style="text-align:center;background-color:#85859C;padding-top:0px;padding-bottom:0px;display:none;">
 				<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Subir archivo</div>
 				<div style="margin-top:0px;">
 					<form action="archivos.php" method="post" enctype="multipart/form-data" class="form_archivos">
-						<p align="center">Archivo:
-						<input name="archivo_" id="archivo_" type="file" id="archivo_"></p>
-						<br/>
-						<p><input type="submit" name="Enviar" id="Enviar" value="Enviar" class="boton">
-						<input type="button" value="Cancelar" class="boton" onclick="document.getElementById('formSubirArchivo').style.display='none';"></p>
+						<div style="margin:0.5em;">
+						Archivo:<input name="archivo_" id="archivo_" type="file" id="archivo_">
+						</div><div style="margin:0.5em;">
+						<input type="submit" name="Enviar" id="Enviar" value="Enviar" class="boton">
+						<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();">
+						</div>
 					</form>
 				</div>
 			</div>
+			<div id="formParametrosEjecucion" class="mensaje" style="text-align:center;background-color:#85859C;padding-top:0px;padding-bottom:0px;display:none;">
+				<form id="parametros" name="parametros" action="archivos.php" method="POST"> <!--class="parametros_ocultos"-->
+					<!-- <fieldset> -->
+					<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Ejecutar Archivo</div>
+					<!-- <legend>Ejecutar Archivo</legend> -->
+					<!-- <p> -->
+					<div style="margin:0.5em;">
+					<label for="argumentos">Argumentos:</label>
+					<input type="text" id="argumentos" name="argumentos"/>
+					<input type="hidden" id="archivo" name="archivo"/>
+					</div><div style="margin:0.5em;">
+					<input type="submit" id="ejecutar" name="ejecutar" value="Ejecutar" class="boton"/>
+					<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();"/>
+					</div>
+					<!-- </p> -->
+					<!-- </fieldset> -->
+				</form>
+			</div>	
+			<div id="formEjecucionHerramientas" class="mensaje" style="text-align:center;background-color:#85859C;padding-top:0px;padding-bottom:0px;display:none;">
+				<form action="archivos.php" method="POST">
+					<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Ejecutar herramienta</div>
+					<div style="margin:0.5em;">
+						<label for="herramienta">Herramienta:</label>
+						<SELECT name="herramienta" id="herramienta" Style="width:10em;">
+							{HERRAMIENTAS}
+						</SELECT>
+					</div><div style="margin:0.5em;">
+						<label for="herramientaArgumentos">Argumentos:</label>
+						<input type="text" id="herramientaArgumentos" name="herramientaArgumentos"/>
+					</div><div style="margin:0.5em;">
+					<input type="submit" id="herramientaEjecutar" name="herramientaEjecutar" value="Ejecutar" class="boton"/>
+					<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();">
+					</div>
+				</form>
+			</div>	
 			<form action="archivos.php" method="post" class="form_archivos">
 				<p align="center">Crear carpeta:
 				<input name="carpeta" id="carpeta">
 				<input type="submit" name="Crear" id="Crear" value="Crear" class="boton"></p>
-			</form>
-
-			<form id="parametros" name="parametros" class="parametros_ocultos" action="archivos.php" method="POST">
-				<fieldset>
-				<legend>Ejecutar Archivo</legend>
-					<p>
-						<label for="argumentos">Argumentos</label>
-						<input type="text" id="argumentos" name="argumentos"/>
-						<input type="hidden" id="archivo" name="archivo"/>
-						<input type="submit" id="ejecutar" name="ejecutar" value="Ejecutar" class="boton"/>
-					</p>
-				</fieldset>
-
 			</form>
 			<table class="archivos">
 				<thead>
