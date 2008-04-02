@@ -1,0 +1,23 @@
+
+*Fin de semana 05/04/2008*
+   
+  - Terminar desarrollo. (Pueden quedar chotadas para ir haciendo)
+  - Verificar planing y asignar tareas.
+  - Fijar reunion con el RUSO para plantearle como seguimos.
+
+
+*Semana del 07/08* 
+Duracion aprox. 2 y media semana
+    - Damian y paulo: Test (Test exploratorio y Funcional) arreglo de bugs de instalacion y                                                test. 
+    - ITU: Manual de instalacion. Probar instalacion en cluster posta. Arreglar bugs que   puedan surgir de instalacion y test.
+    -Posible reunion con el Ruso para mostrar y acordar como seguimos.
+
+
+
+*Proximas tareas sin fecha (luego de lo anterior)*
+
+ Manual de Usuario (Cliente y Admin).
+ Documentacion. 
+ Presentacion.
+
+
