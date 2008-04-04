@@ -1,4 +1,19 @@
-		<div id="pagina">
+<script language="JavaScript" type="text/javascript">
+    var h_salida = function(tt) {
+    		log = document.getElementById('log');
+    		log.style.display = 'block';
+            log.innerHTML =tt.responseText;
+
+    }
+
+	function ver_resultado(id){
+		new Ajax.Request('ajax/getLogEjecucion.php?log='+id, {parameters:'', onSuccess:h_salida});
+	}
+
+</script>		<div id="pagina">
 			<h1>Ejecuciones</h1>
 				{EJECUCION}
+
+			<pre id="log"></pre>
+
 		</div>
