@@ -298,6 +298,22 @@ echo "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo
 					 "salida"=>$row["fecha_fin"]);
 	}
 
+	function getEstadoEjecucion($id){
+		$consulta = "select fecha_fin, fecha_ejecucion " .
+					"from ejecucion " .
+					"where id=? ";
+		if(!$this->db->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->db->msgError);
+			}
+		$row=$this->db->Next();
+		$estado = 'F'; // finalizado
+		if($row[fecha_ejecucion] == "") $estado = 'C'; // encolado
+		elseif($row[fecha_fin] == "") $estado = 'E'; // en ejecucion
+		return array("error"=>0,
+					 "salida"=>$estado);
+	}
 	function getSalida($id,$error=false){
 		$consulta = "select t.id as id_trabajo," .
 					"		t.cliente as id_cliente " .
