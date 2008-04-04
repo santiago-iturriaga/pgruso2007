@@ -5,29 +5,35 @@
 ===Paginas: Ayudas y titulos (a lo wiki)===
 
 *Sistema*
-  * arreglar script de inicio para torque/maui/ganglia en el sistema
+  * Instalacion: arreglar script de inicio para torque/maui/ganglia en el sistema
 
 *Administrador*
-  * [HECHO]script para crear usuario (incluir todo lo que tiene que tener el usuario). 
-  * tracejob
-  * Maui:
-    * agregar checknode y checkjob 
+      
+
+*Cliente*
+  
+  * Ejecución: 
+    * Agregar boton para ver log de torque [Damian]
+
+  * que pasa con la compilacion de los proyectos? como ejecutamos el makefile? [Itu]    
+  * En archivos.php mostrar estado del trabajo en ejecucion [Damian]
+
+  * Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar.                                                                
+    Estamos cubiertos con el fin del trabajo.).
+  
+  
+ 
+  * cron [damian] ????
+    
+===DOCUMENTAR !!!===
+
+BUGS CONOCIDOS
+* *BUG* Modificar upload de archivos
+
+
+* Maui:    
     * *BUG* problema con el parseo de trabajos
       * se da por lo menos cuando el grupo es >8 char
       * en trabajos en ejecucion
       * puede darse en otros casos tambien
-    
-
-*Cliente*
-  * Archivos: 
-     * *BUG?* estilo examinar
-  * Ejecución: 
-    * Agregar boton para ver log de torque
-    * que pasa con la compilacion de los proyectos? como ejecutamos el makefile?
-    * En archivos.php mostrar estado del trabajo en ejecucion
-  * Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar. Estamos cubiertos con el fin del trabajo. )
-  * Modificar upload de archivos
- 
-  * cron [damian] ????
-    
-===documentar !!!===
+  
