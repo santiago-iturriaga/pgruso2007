@@ -9,7 +9,6 @@ define("CONEXION_PASSWORD", "pgccadar");
 define("CONEXION_BASE", "pgccadar");
 define("QSUB", "/usr/local/torque/bin/qsub");
 define("MPIEXEC", "/usr/local/mpiexec/bin/mpiexec");
-define("COMANDOS_EJECUCION","make|make&mpicc|mpicc");
 define("GRUPOFENTON","Fenton");
 
 define("REDIRECCION_SALIDA", "/pgruso/Divide/bin/redireccion_salida.php");
@@ -17,6 +16,20 @@ define("OUTPUT", "salida_extra");
 define("EJECUTABLE","plantillas/archivos/qsub.script");
 define("LOG_EJECUCIONES","../log/ejecuciones.log");
 define("TIEMPO_REFRESH_RESULTADOS","5");
+
+define("COMANDOS_EJECUCION","make=make&mpicc=mpicc");
+
+function ObtenerCOMANDOS_EJECUCION() {
+	$lista = array();
+
+	$listaPares = split("&",COMANDOS_EJECUCION);
+	foreach ($listaPares as $parEjecucion) {
+		list($desc,$path) = split("=",$parEjecucion);
+		$lista[$desc]=$path;
+	}
+
+	return $lista;
+}
 
 // =======================================================
 // GANGLIA
