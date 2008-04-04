@@ -1,0 +1,30 @@
+<script language="JavaScript" type="text/javascript">
+    var h_salida = function(tt) {
+    		log = document.getElementById('log');
+    		log.style.display = 'block';
+            log.innerHTML =tt.responseText;
+    }
+
+	function ver_resultado(id){
+		new Ajax.Request('../../ajax/getLogEjecucion.php?log='+id, {parameters:'', onSuccess:h_salida});
+	}
+
+</script>
+
+		<div id="pagina">
+			<form action="salida_torque.php" method="POST" class="form" id="salida_torque" >
+				<fieldset>
+<p>					<label for="trabajo">Cliente - Trabajo</label>
+					<select id="trabajo" name="trabajo">
+					{TRABAJOS}
+					</select>
+					<label for="desde">Desde</label>
+					<input type="text" name="desde" id="desde" value="{DESDE}"/>
+					<label for="hasta">Hasta</label>
+					<input type="text" name="hasta" id="hasta" value="{HASTA}"/>
+					<input type="submit" value="Ver" class="boton" />
+</p>				</fieldset>
+			</form>
+			{TABLA}
+			<pre id="log"></pre>
+		</div>
