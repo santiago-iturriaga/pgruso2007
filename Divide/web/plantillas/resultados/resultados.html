@@ -1,5 +1,6 @@
 <script language="JavaScript" type="text/javascript">
 	var bloquear= false;
+	var preguntar_estado = true;
 
 	var intervalo;
 
@@ -12,11 +13,16 @@
 				}
     }
 
+    var h_estado = function(t) {
+    	respuesta = t.responseText;
+        document.getElementById('estado').innerHTML = respuesta;
+        if(respuesta == "F") preguntar_estado = false;
+     }
     var h_cantidad = function(t) {
         document.getElementById('enejecucion').innerHTML = t.responseText;
      }
     var h_ejecucion = function(t) {
-    	
+
         alert(t.responseText);
      }
 
@@ -28,7 +34,7 @@
 		}
     }
 
-	function delay(){ 
+	function delay(){
 	    intervalo = setInterval('cargar()',{SEGUNDOS}000);
 	    cargar();
 	}
@@ -36,8 +42,9 @@
 		new Ajax.Request('ajax/getArchivo.php', {parameters:'', onSuccess:h_salida});
 		new Ajax.Request('ajax/getEnEjecucion.php', {parameters:'', onSuccess:h_enejecucion});
 		new Ajax.Request('ajax/getCantEnEjecucion', {parameters:'', onSuccess:h_cantidad});
+		if(preguntar_estado) new Ajax.Request('ajax/getEstadoTrabajo', {parameters:'', onSuccess:h_estado});
 	}
-	
+
 	function detener(){
 		new Ajax.Request('ajax/ejecucionCliente?accion=Detener', {parameters:'', onSuccess:h_ejecucion});
 	}
@@ -45,6 +52,7 @@
 </script>
 		<div id="pagina">
 			<div id="cabezal_resultados">
+			<p id='estado'></p>
 			Trabajos en ejecuci&oacute;n: <span id="enejecucion">{ENEJECUCION}</span>
 			<a href="descargar.php?id={ID_EJECUCION}&error=0"><img alt="Descargar salida" title="Descargar salida" src="imagenes/disk.png" /></a>
 				<a href="resultados.php" onclick="detener();return false;"><img alt="Detener" title="Detener" src="imagenes/decline.png" /></a>
@@ -53,7 +61,7 @@
 											  	document.getElementById('bloquear_scroll').src='imagenes/lock.png';
 											  }else{
 											  	document.getElementById('bloquear_scroll').src='imagenes/lock_open.png';
-											  }	
+											  }
 											  return false;"><img id="bloquear_scroll" alt="Bloquear/Desbloquear scroll" title="Bloquear/Desbloquear scroll" src="imagenes/lock_open.png" /></a>
 			</div>
 			<pre id="resultados"></pre>
