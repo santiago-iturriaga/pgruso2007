@@ -115,9 +115,9 @@ error_log("tam:".$filesize);
 		$herramienta =$_POST["herramienta"];
 		$argumentos =$_POST["herramientaArgumentos"];
 
-
+		$s = new Session();
+		print_r(s);
 	}
-
 
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/archivos/archivos.html");
@@ -125,9 +125,7 @@ error_log("tam:".$filesize);
 	$p_archivo	=	$plantilla->load("plantillas/archivos/archivo.html");
 	$cabezal	=	$plantilla->load("plantillas/archivos/cabezal_tabla.html");
 	$p_ruta		=	$plantilla->load("plantillas/archivos/ruta.html");
-	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),
-										array("CLASE_ARCHIVOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
-
+	$menu		=	$plantilla->replace($plantilla->load("plantillas/menu.html"),array("CLASE_ARCHIVOS"=>'id="actual"'));//$s->sesion->getMenuVertical($plantilla->load("plantillas/menu_vertical.html"),$plantilla);
 
 	if($s->sesion->Directorio == null)
 		{
