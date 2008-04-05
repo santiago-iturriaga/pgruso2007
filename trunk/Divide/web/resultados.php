@@ -33,10 +33,9 @@
 	$msjerror = null;
 
 
-	$res = $momento->getCantEnEjecucion($s->sesion->TrabajoActual);
-	$enejecucion="";
-	if($res["error"]) error_log(print_r($res,1));
-	else $enejecucion = $res["cantidad"];
+	$enejecucion=torque_getTrabajosEnEjecucion(
+				$s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"]
+				);
 	$ppal	=	$plantilla->replace($ppal,array("SEGUNDOS"=>TIEMPO_REFRESH_RESULTADOS,
 												"ID_EJECUCION"=>$s->sesion->ejecucion_actual,
 												"ENEJECUCION"=>$enejecucion));
