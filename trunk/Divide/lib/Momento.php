@@ -215,7 +215,8 @@ echo "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo
 
 		$script = RAIZ_SISTEMA.'/'.$row["id_cliente"].'/'.$row["id_trabajo"].'/'.'ejecutable_'.$row["id_ejecutable"];
 		//error_log("poner de vuelta despues");
-		$salida = ejecutar_servidor("rm $script");
+		//$salida = ejecutar_servidor("rm $script");
+		$salida = `rm $script`;
 		if($salida==""){
 			//envio alerta de finalizacion
 			$consulta2 = "select trabajo from ejecucion where id_torque = ?";
@@ -236,7 +237,6 @@ echo "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo
 		}
 		else {
 			error_log("Cod. Error M001 ".$salida);
-			print_r("Cod. Error M001 ".$salida);
 			return array("error"=>1,"codError"=>"M001","descripcion"=>$salida);
 		}
 
