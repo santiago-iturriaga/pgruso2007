@@ -236,7 +236,8 @@ echo "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo
 		}
 		else {
 			error_log("Cod. Error M001 ".$salida);
-			return array("error"=>1,"codError"=>"M001");
+			print_r("Cod. Error M001 ".$salida);
+			return array("error"=>1,"codError"=>"M001","descripcion"=>$salida);
 		}
 
 	}

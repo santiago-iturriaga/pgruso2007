@@ -21,7 +21,9 @@
 		header("Location: trabajos.php");
 		exit;
 	}
-	//echo '<pre>';print_r($s->sesion);echo '</pre>';exit;
+
+//echo '<pre>';print_r($s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"]);echo '</pre>';exit;
+//echo '<pre>';print_r($s->sesion);echo '</pre>';exit;
 	$usr_linux = $s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"];
 
 	if(isset($_POST["Enviar"])) {
@@ -49,15 +51,11 @@
 	if(isset($_GET["generarzip"])){
 		$res = $s->sesion->Directorio->comprimir($usr_linux,$s->sesion->ClienteActual,$s->sesion->TrabajoActual);
 		if($res["error"]){
-error_log(print_r($res,1));
 			$msjerror	= $interfaz->getError($res);
 		}
 		else{
-error_log(print_r($res,1));
-error_log("res:".$res["archivo"]);
 			$data = file_get_contents  ( $res["archivo"]);
 			$filesize = strlen($data);
-error_log("tam:".$filesize);
 			$mimetype = 'application/zip';
 			$name	  = "fenton.zip";
 			header("Pragma: public"); // required
@@ -101,6 +99,7 @@ error_log("tam:".$filesize);
 													 $s->sesion->TrabajoActual);
 		$s->sesion->archivo_actual = $res["salida"];
 		$s->sesion->ejecucion_actual = $res["id"];
+		$s->sesion->ejecucion_actual_torque = $res["id_trabajo"];
 		$s->sesion->bytes_leidos = 0;
 		$s->salvar();
 		if($res["error"]){
