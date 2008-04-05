@@ -44,40 +44,35 @@ function ocultarEjecucionHerramientasResultado(){
 			<ul class="path">
 				{RUTA}
 			</ul>
-			<div id="formSubirArchivo" class="mensaje" style="text-align:center;background-color:#85859C;padding-top:0px;padding-bottom:0px;display:none;">
-				<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Subir archivo</div>
+			<div id="formSubirArchivo" class="formArchivos" style="display:none;">
+				<div class="formArchivosTitulo">Subir archivo</div>
 				<div style="margin-top:0px;">
 					<form action="archivos.php" method="post" enctype="multipart/form-data" class="form_archivos">
 						<div style="margin:0.5em;">
-						Archivo:<input name="archivo_" id="archivo_" type="file" id="archivo_">
+							Archivo:<input name="archivo_" id="archivo_" type="file" id="archivo_">
 						</div><div style="margin:0.5em;">
-						<input type="submit" name="Enviar" id="Enviar" value="Enviar" class="boton">
-						<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();">
+							<input type="submit" name="Enviar" id="Enviar" value="Enviar" class="boton">
+							<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();">
 						</div>
 					</form>
 				</div>
 			</div>
-			<div id="formParametrosEjecucion" class="mensaje" style="text-align:center;background-color:#85859C;padding-top:0px;padding-bottom:0px;display:none;">
+			<div id="formParametrosEjecucion" class="formArchivos" style="display:none;">
 				<form id="parametros" name="parametros" action="archivos.php" method="POST"> <!--class="parametros_ocultos"-->
-					<!-- <fieldset> -->
-					<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Ejecutar Archivo</div>
-					<!-- <legend>Ejecutar Archivo</legend> -->
-					<!-- <p> -->
+					<div class="formArchivosTitulo">Ejecutar Archivo</div>
 					<div style="margin:0.5em;">
-					<label for="argumentos">Argumentos:</label>
-					<input type="text" id="argumentos" name="argumentos"/>
-					<input type="hidden" id="archivo" name="archivo"/>
+						<label for="argumentos">Argumentos:</label>
+						<input type="text" id="argumentos" name="argumentos"/>
+						<input type="hidden" id="archivo" name="archivo"/>
 					</div><div style="margin:0.5em;">
-					<input type="submit" id="ejecutar" name="ejecutar" value="Ejecutar" class="boton"/>
-					<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();"/>
+						<input type="submit" id="ejecutar" name="ejecutar" value="Ejecutar" class="boton"/>
+						<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();"/>
 					</div>
-					<!-- </p> -->
-					<!-- </fieldset> -->
 				</form>
 			</div>	
-			<div id="formEjecucionHerramientas" class="mensaje" style="text-align:center;background-color:#85859C;padding-top:0px;padding-bottom:0px;display:none;">
+			<div id="formEjecucionHerramientas" class="formArchivos" style="display:none;">
 				<form action="archivos.php" method="POST">
-					<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Ejecutar herramienta</div>
+					<div class="formArchivosTitulo">Ejecutar herramienta</div>
 					<div style="margin:0.5em;">
 						<label for="herramienta">Herramienta:</label>
 						<SELECT name="herramienta" id="herramienta" Style="width:10em;">
@@ -93,8 +88,8 @@ function ocultarEjecucionHerramientasResultado(){
 				</form>
 			</div>	
 			<!--{FORM_EJECUCION_HERRAMIENTAS_RESULTADO}
-			<div id="formEjecucionHerramientasResultado" class="mensaje" style="text-align:center;background-color:#85859C;padding-top:0px;padding-bottom:0px;">
-				<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Resultado ejecuci&oacute;n</div>
+			<div id="formEjecucionHerramientasResultado" class="formArchivos">
+				<div class="formArchivosTitulo">Resultado ejecuci&oacute;n</div>
 				<pre style="margin-top:0.5em;">
 					{EJECUCION_HERRAMIENTAS_RESULTADO}
 				</pre>
