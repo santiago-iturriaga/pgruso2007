@@ -13,8 +13,6 @@
 *Cliente*
   
   * que pasa con la compilacion de los proyectos? como ejecutamos el makefile? [Itu]    
-  * En archivos.php mostrar estado del trabajo en ejecucion [Damian]
-
   * Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar.                                                                
     Estamos cubiertos con el fin del trabajo.).
   * cron [damian]
