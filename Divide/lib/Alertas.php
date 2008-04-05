@@ -82,7 +82,7 @@ function marcarAlertaLeida($idUsuario,$idTrabajo,$idAlerta,$idUsuarioAlerta){
 	}
 
 function deleteAlerta($idUsuario,$idTrabajo,$idAlerta,$idUsuarioAlerta){
-	$consulta= "DELETE FROM usuario_alerta WHERE usuario=? and trabajo=? and alerta = ?, and idua = ?";
+	$consulta= "DELETE FROM usuario_alerta WHERE usuario=? and trabajo=? and alerta = ? and idua = ?";
 	if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta,$idUsuarioAlerta),true))
 			{
 			return array("error"=>1, "codError"=>"EA02");
