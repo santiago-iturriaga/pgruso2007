@@ -26,6 +26,9 @@
 //echo '<pre>';print_r($s->sesion);echo '</pre>';exit;
 	$usr_linux = $s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"];
 
+	$base		=	$plantilla->load("plantillas/base.html");
+	$ppal		= 	$plantilla->load("plantillas/archivos/archivos.html");
+
 	if(isset($_POST["Enviar"])) {
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
 			//$command = "chown ".USERNAME." ".$HTTP_POST_FILES['archivo_']['tmp_name'];
@@ -114,12 +117,26 @@
 		$herramienta =$_POST["herramienta"];
 		$argumentos =$_POST["herramientaArgumentos"];
 
-		$s = new Session();
-		print_r(s);
+		//echo "Trabajo actual:".$s->TrabajoActual;
+		//echo "Trabajo actual:".$s->sesion->TrabajoActual;
+		//echo "Cliente actual:".$s->sesion->ClienteActual;
+		$usr_linux = $s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"];
+		$workdir = $s->sesion->Directorio->getRuta();
+		$cmd = $herramienta." ".$argumentos;
+
+		$script = "cd ".$workdir.";".$cmd;
+		$result = ejecutar_servidor($script,$usr_linux);
+
+//		echo "<pre>";
+//		print_r($script);
+//		echo "</pre><pre>";
+//		print_r($result);
+//		echo "</pre>";
+
+		$ppal= $plantilla->uncomment($ppal,array("FORM_EJECUCION_HERRAMIENTAS_RESULTADO"));
+		$ppal= $plantilla->replace($ppal,array("EJECUCION_HERRAMIENTAS_RESULTADO"=>$result));
 	}
 
-	$base		=	$plantilla->load("plantillas/base.html");
-	$ppal		= 	$plantilla->load("plantillas/archivos/archivos.html");
 	$p_directorio	=	$plantilla->load("plantillas/archivos/directorio.html");
 	$p_archivo	=	$plantilla->load("plantillas/archivos/archivo.html");
 	$cabezal	=	$plantilla->load("plantillas/archivos/cabezal_tabla.html");
@@ -195,7 +212,8 @@
 	}
 
 
-	$ppal	=	$plantilla->replace($ppal,array("MENU_VERTICAL"=>"",
+	$ppal	=	$plantilla->replace($ppal,array("HEAD"=>"",
+												"MENU_VERTICAL"=>"",
 												"ARCHIVOS"=>$p_archivos,
 												"RUTA"=>$ruta,
 												"HERRAMIENTAS"=>$listaHerramientas,
