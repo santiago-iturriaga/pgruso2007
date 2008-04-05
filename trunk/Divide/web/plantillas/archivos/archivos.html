@@ -4,6 +4,7 @@ function ocultarTodo() {
 	ocultarSubirArchivo();
 	ocultarEjecucion();
 	ocultarEjecucionHerramientas();
+	ocultarEjecucionHerramientasResultado();
 }
 
 function mostrarEjecucion() {
@@ -31,6 +32,10 @@ function mostrarEjecucionHerramientas(){
 }
 function ocultarEjecucionHerramientas(){
 	document.getElementById('formEjecucionHerramientas').style.display='none';
+}
+function ocultarEjecucionHerramientasResultado(){
+	if (document.getElementById('formEjecucionHerramientasResultado') != null)
+		document.getElementById('formEjecucionHerramientasResultado').style.display='none';
 }
 </script>
 		{MENU_VERTICAL}
@@ -87,6 +92,15 @@ function ocultarEjecucionHerramientas(){
 					</div>
 				</form>
 			</div>	
+			<!--{FORM_EJECUCION_HERRAMIENTAS_RESULTADO}
+			<div id="formEjecucionHerramientasResultado" class="mensaje" style="text-align:center;background-color:#85859C;padding-top:0px;padding-bottom:0px;">
+				<div style="background-color:#555555;color:white;margin-top:0px;line-height:1.5em;">Resultado ejecuci&oacute;n</div>
+				<pre style="margin-top:0.5em;">
+					{EJECUCION_HERRAMIENTAS_RESULTADO}
+				</pre>
+				<input type="button" value="Cerrar" class="boton" onclick="ocultarTodo();">
+			</div>	
+			{FORM_EJECUCION_HERRAMIENTAS_RESULTADO}-->
 			<form action="archivos.php" method="post" class="form_archivos">
 				<p align="center">Crear carpeta:
 				<input name="carpeta" id="carpeta">
