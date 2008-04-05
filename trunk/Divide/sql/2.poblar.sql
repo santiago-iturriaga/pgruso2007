@@ -16,7 +16,7 @@ insert into alertas (asunto,body) values ('Cancelaci&oacute;n de trabajo','El tr
 
 
 
-Estas estan de mas
+
 insert into trabajo(nombre,cliente,nodos,cola,tiempo_maximo) values ('trab1',1,4,'prueba','15:00:00');
 insert into trabajo(nombre,cliente,nodos,cola,tiempo_maximo) values ('trab2',1,4,'prueba','15:00:00');
 insert into trabajo(nombre,cliente,nodos,cola,tiempo_maximo) values ('trab3',2,4,'prueba','15:00:00');

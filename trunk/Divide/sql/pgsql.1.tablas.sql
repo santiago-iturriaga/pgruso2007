@@ -58,6 +58,7 @@ UNIQUE (alerta,trabajo)
 );
 
 CREATE TABLE usuario_alerta(
+idUA SERIAL PRIMARY KEY,
 alerta int not null,
 usuario int not null,
 trabajo int not null,

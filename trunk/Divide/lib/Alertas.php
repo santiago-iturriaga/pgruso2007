@@ -23,7 +23,7 @@ function crearAlerta($asunto,$body  ){
 
 function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 
-		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha
+		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha, ua.idua
 				    from alertas a, usuario_alerta ua, trabajo_alerta ta
 				    where ua.usuario=? and ua.trabajo=? and a.id = ua.alerta and ua.trabajo= ta.trabajo and ua.alerta = ta.alerta";
 
@@ -34,14 +34,14 @@ function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null)
 			{
-			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"]);
+			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"],"idua"=>$row["idua"]);
 			}
 
 		return array("error"=>0,"alertas"=>$salida);
 	}
 
 	function getAlertasUsuario($idUsuario){
-		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha, t.cliente from alertas a, usuario_alerta ua, trabajo_alerta ta, trabajo t where ua.usuario=? and a.id = ua.alerta and ua.alerta = ta.alerta and t.id = ua.trabajo";
+		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha, t.cliente, ua.idua from alertas a, usuario_alerta ua, trabajo_alerta ta, trabajo t where ua.usuario=? and a.id = ua.alerta and ua.alerta = ta.alerta and t.id = ua.trabajo";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario),true))
 			{
 			return array("error"=>1, "codError"=>"EA06");
@@ -49,41 +49,41 @@ function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null)
 			{
-			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"], "cliente"=>$row["cliente"]);
+			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"], "cliente"=>$row["cliente"],"idua"=>$row["idua"]);
 			}
 		return array("error"=>0,"alertas"=>$salida);
 	}
 
 
-	function getAlerta($idUsuario,$idTrabajo,$idAlerta){
-		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha, t.cliente
+	function getAlerta($idUsuario,$idTrabajo,$idAlerta,$idUsuarioAlerta){
+		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha, t.cliente, ua.idua
 				    from alertas a, usuario_alerta ua, trabajo_alerta ta, trabajo t
-				    where ua.usuario=? and ua.trabajo=? and ua.alerta = ?  and a.id = ua.alerta and ua.trabajo= ta.trabajo and ua.alerta = ta.alerta and t.id = ta.trabajo";
-		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta),true))
+				    where ua.usuario=? and ua.trabajo=? and ua.alerta = ? and ua.idua = ? and a.id = ua.alerta and ua.trabajo= ta.trabajo and ua.alerta = ta.alerta and t.id = ta.trabajo";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta,$idUsuarioAlerta),true))
 			{
 			return array("error"=>1, "codError"=>"EA03");
 			}
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null)
 			{
-			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"],"cliente"=>$row["cliente"]);
+			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"],"cliente"=>$row["cliente"],"idua"=>$row["idua"]);
 			}
 		return array("error"=>0,"alerta"=>$salida);
 	}
 
-function marcarAlertaLeida($idUsuario,$idTrabajo,$idAlerta){
+function marcarAlertaLeida($idUsuario,$idTrabajo,$idAlerta,$idUsuarioAlerta){
 	$consulta= "UPDATE usuario_alerta SET leida = 1
-				     where usuario=? and trabajo=? and alerta=?";
-	if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta),true))
+				     where usuario=? and trabajo=? and alerta=? and idua = ?";
+	if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta,$idUsuarioAlerta),true))
 			{
 			return array("error"=>1, "codError"=>"EA04");
 			}
 		return array("error"=>0);
 	}
 
-function deleteAlerta($idUsuario,$idTrabajo,$idAlerta){
-	$consulta= "DELETE FROM usuario_alerta WHERE usuario=? and trabajo=? and alerta = ?";
-	if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta),true))
+function deleteAlerta($idUsuario,$idTrabajo,$idAlerta,$idUsuarioAlerta){
+	$consulta= "DELETE FROM usuario_alerta WHERE usuario=? and trabajo=? and alerta = ?, and idua = ?";
+	if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta,$idUsuarioAlerta),true))
 			{
 			return array("error"=>1, "codError"=>"EA02");
 			}
@@ -124,12 +124,12 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 		return array("error"=>0,"alerta"=>$salida);
 	}
 
-	function enviarAlerta($idUsuario,$idTrabajo,$idAlerta){
+	function enviarAlerta($idUsuario,$idTrabajo,$idAlerta,$idUsuarioAlerta){
 
 		$consulta= "select  a.asunto as asunto, ta.body as body, u.email as email
-				    from alertas a, usuario u, trabajo_alerta ta
-				    where u.id = ? and  a.id = ? and  ta.alerta = a.id and ta.trabajo = ?  ";
-		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idAlerta, $idTrabajo),true))
+				    from alertas a, usuario u, trabajo_alerta ta, usuario_alerta ua
+				    where u.id = ? and  a.id = ? and   ta.alerta = a.id and ta.trabajo = ? and ua.idua = ? ";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idAlerta, $idTrabajo,$idUsuarioAlerta),true))
 			{
 
 			return array("error"=>1, "codError"=>$this->conexion->msgError);
@@ -221,15 +221,11 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 		$mensaje = 	$plantilla->replace($mensaje,$textVar);
 		}
 
-		//$consulta2= "insert into trabajo_alerta(alerta,trabajo,body) values(?,?,?)";
-
 		$consulta2= "insert into trabajo_alerta select ?,?,? where not exists (select alerta, trabajo from trabajo_alerta where alerta = ? and trabajo = ?)";
 		if(!$this->conexion->EjecutarConsulta($consulta2,array($idAlerta, $idTrabajo, $mensaje, $idAlerta, $idTrabajo),true))
 			{
 				return array("error"=>1, "codError"=>"EA08");
 			}
-
-		//$consulta3= "insert into usuario_alerta(usuario,alerta,trabajo) values(?,?,?)";
 
 		$consulta3= "insert into usuario_alerta select ?,?,? where not exists (select alerta, usuario, trabajo from usuario_alerta where alerta = ? and usuario= ? and trabajo = ?)";
 
