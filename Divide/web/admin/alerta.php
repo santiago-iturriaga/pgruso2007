@@ -37,7 +37,7 @@
 	$alertas = new Alertas($conexion);
 
 	if(isset($_POST["form_eliminar"])){
-	 	$resConsulta = $alertas->deleteAlerta($s->sesion->Usuario->id,$s->sesion->trabajo,$s->sesion->alerta_actual);
+	 	$resConsulta = $alertas->deleteAlerta($s->sesion->Usuario->id,$s->sesion->trabajo,$s->sesion->alerta_actual,$s->sesion->alerta_actualIDUA);
 	 	if($resConsulta["error"]){
 	 		$msjerror = $interfaz->getError($resConsulta);
 	 	}else{
@@ -45,7 +45,7 @@
 	 	}
 	 	$ppal = $plantilla->replace($ppal,array("TABALERTA"=>""));
 	}else{
-		$resConsulta = $alertas->getAlerta($s->sesion->Usuario->id,$s->sesion->trabajo,$s->sesion->alerta_actual);
+		$resConsulta = $alertas->getAlerta($s->sesion->Usuario->id,$s->sesion->trabajo,$s->sesion->alerta_actual,$s->sesion->alerta_actualIDUA);
 		if($resConsulta["error"]){
 		 $msjerror = $interfaz->getError($resConsulta);
 		 $ppal = $plantilla->replace($ppal,array("TABALERTA"=>""));
@@ -58,19 +58,13 @@
 				$trabajo = $rowAlerta["trabajo"];
 			}
 			// MARCAR LAS ALERTAS COMO LEIDAS
-			$res = $alertas->marcarAlertaLeida($s->sesion->Usuario->id,$trabajo,$s->sesion->alerta_actual);
+			$res = $alertas->marcarAlertaLeida($s->sesion->Usuario->id,$trabajo,$s->sesion->alerta_actual,$s->sesion->alerta_actualIDUA);
 			if($res["error"]){
 	 			$msjerror = $interfaz->getError($res);
 	 		}else{
 	 			$msj = $interfaz->getMensaje("A002");
 	 		}
 
-			//Enviar por mail SACAR
-			//echo "antes enviar - ";
-			//$res = $alertas->enviarAlerta($s->sesion->ClienteActual,$s->sesion->trabajo,$s->sesion->alerta_actual);
-			//echo "des enviar";
-			//asignar alerta
-			//$res = $alertas->asignarAlerta($s->sesion->ClienteActual,$s->sesion->TrabajoActual,3, array("TRABAJO" => "BOLUDO"));
 
 			$ppal = $plantilla->replace($ppal,array("TABALERTA"=>$tabalerta));
 

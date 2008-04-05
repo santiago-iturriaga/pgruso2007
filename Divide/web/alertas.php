@@ -25,6 +25,7 @@
 	if(isset($_GET["alerta"])){
 
 		$s->sesion->alerta_actual = $_GET["alerta"];
+		$s->sesion->alerta_actualIDUA = $_GET["idUA"];
 		$s->sesion->bytes_leidos = 0;
 		$s->salvar();
 		header("Location: alerta.php");
@@ -60,11 +61,11 @@
 		$tabla->addColumna(1,"fecha","Fecha");
 		$tabla->addColumna(2,"asunto","Asunto");
 		$tabla->addColumna(3,"link","");
-		//$tabla->addColumna(4,"eliminar","");
+
 
 		foreach ($resConsulta["alertas"] as $id=>$rowAlertas){
-			$rowAlertas["link"]=$plantilla->replace($link,array("ID"=>$id));
-			$rowAlertas["eliminar"]=$checkbox;
+			$rowAlertas["link"]=$plantilla->replace($link,array("ID"=>$id,"IDUA"=>$rowAlertas["idua"]));
+
 			if($rowAlertas{"leida"} == 0){
 				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</b>";
 				$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</b>";

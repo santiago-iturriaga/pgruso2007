@@ -22,6 +22,7 @@
 
 		$s->sesion->alerta_actual = $_GET["alerta"];
 		$s->sesion->trabajo = $_GET["trabajo"];
+		$s->sesion->alerta_actualIDUA = $_GET["idUA"];
 		$s->sesion->bytes_leidos = 0;
 		$s->salvar();
 		header("Location: alerta.php");
@@ -65,7 +66,7 @@
 		//echo "<pre>";print_r($resConsulta);echo '</pre>';
 		foreach ($resConsulta["alertas"] as $id=>$rowAlertas){
 			//echo "<pre>";print_r($rowAlertas);echo '</pre>';
-			$rowAlertas["link"]=$plantilla->replace($link,array("IDA"=>$id,"IDT"=>$rowAlertas{"trabajo"},));
+			$rowAlertas["link"]=$plantilla->replace($link,array("IDA"=>$id,"IDT"=>$rowAlertas{"trabajo"},"IDUA"=>$rowAlertas["idua"]));
 			$rowAlertas["eliminar"]=$checkbox;
 			if($rowAlertas{"leida"} == 0){
 				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</b>";
@@ -87,9 +88,6 @@
 
 	//echo "<pre>";print_r($s->sesion->Usuario);echo '</pre>';exit;
 	$ppal = $plantilla->replace($ppal,array("ALERTAS"=>$tabAlertas));
-
-	//$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror));
-
 
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 												"MENSAJE"=>$msj,
