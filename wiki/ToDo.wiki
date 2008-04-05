@@ -12,7 +12,6 @@
 
 *Cliente*
   
-  * arreglar estilos CSS de la ejecucion de herramientas [Itu]    
   * Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar.                                                                
     Estamos cubiertos con el fin del trabajo.).
   * cron [damian]
