@@ -40,7 +40,10 @@
 	if(!$s->sesion->Usuario->Logueado())
 		$base	=	$plantilla->load("plantillas/login/login.html");
 	else
-		$base	=	$plantilla->load("plantillas/base.html");
+		{
+		header("Location: archivos.php");
+		exit;
+		}
 	$base	=	$plantilla->replace($base,array("MENSAJE"=>$msj,"ERROR"=>$msjerror));
 	$s->salvar();
 	echo $base;

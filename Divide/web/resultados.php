@@ -41,6 +41,7 @@
 												"ENEJECUCION"=>$enejecucion));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
+							"HEAD"=>"",
 							"BODY"=>"onload='delay();
 									 if(!NiftyCheck())
 		    							return;
