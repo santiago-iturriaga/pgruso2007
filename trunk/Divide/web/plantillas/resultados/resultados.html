@@ -15,8 +15,28 @@
 
     var h_estado = function(t) {
     	respuesta = t.responseText;
-        document.getElementById('estado').innerHTML = respuesta;
-        if(respuesta == "F") preguntar_estado = false;
+        img_estado = document.getElementById('img_estado');
+        if(respuesta == "F"){
+        	img_estado.src='imagenes/cog_error.png';
+        	img_estado.alt="Estado del trabajo: finalizado";
+        	img_estado.title="Estado del trabajo: finalizado";
+        	preguntar_estado = false;
+        	}
+        if(respuesta == "Q"){
+        	img_estado.src='imagenes/hourglass_go.png';
+        	img_estado.alt="Estado del trabajo: encolado";
+        	img_estado.title="Estado del trabajo: encolado";
+        	}
+        if(respuesta == "R"){
+	        img_estado.src='imagenes/cog_go.png';
+        	img_estado.alt="Estado del trabajo: ejecutando";
+        	img_estado.title="Estado del trabajo: ejecutando";
+	        }
+        if(respuesta == "H"){
+        	img_estado.src='imagenes/pause_green.png';
+        	img_estado.alt="Estado del trabajo: detenido";
+        	img_estado.title="Estado del trabajo: detenido";
+        	}
      }
     var h_cantidad = function(t) {
         document.getElementById('enejecucion').innerHTML = t.responseText;
@@ -52,9 +72,10 @@
 </script>
 		<div id="pagina">
 			<div id="cabezal_resultados">
-			<p id='estado'></p>
 			Trabajos en ejecuci&oacute;n: <span id="enejecucion">{ENEJECUCION}</span>
+			<img alt="Estado del trabajo" title="Estado del trabajo" src="imagenes/hourglass_go.png" id="img_estado" />
 			<a href="descargar.php?id={ID_EJECUCION}&error=0"><img alt="Descargar salida" title="Descargar salida" src="imagenes/disk.png" /></a>
+
 				<a href="resultados.php" onclick="detener();return false;"><img alt="Detener" title="Detener" src="imagenes/decline.png" /></a>
 				<a href="resultados.php" onclick="bloquear=!bloquear;
 											  if(bloquear){

@@ -139,4 +139,59 @@ function torque_tracejob($id,$dias) {
 	return array("error"=>0,"log"=>$resultado);
 
 }
+
+function torque_getEstadoJob($id){
+	$comando = QSTAT_CMD." $id";
+	$res = ejecutar_servidor($comando);
+	$res = explode("\n",$res);
+	$fila1 = $res[0];
+	$fila2 = $res[2];
+	$fila1 = split("[ \n\r\t]+",$fila1);
+	$fila2 = split("[ \n\r\t]+",$fila2);
+	array_shift($fila1);
+	array_shift($fila1);
+	$salida = array();
+	foreach($fila1 as $f){
+		$s = array_shift($fila2);
+		if($f == 'S') return $s;
+	}
+	return 'F';
+}
+function torque_getTrabajosEnEjecucion($usuario_linux){
+	$comando = QSTAT_CMD;
+	$res = ejecutar_servidor($comando);
+/*
+ *
+Job id                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+317.marvin                FinalWork        fenton          00:58:26 R prueba
+*/
+	$res = explode("\n",$res);
+	$fila1 = array_shift($res);
+	array_shift($res);
+	$fila1 = split("[ \n\r\t]+",$fila1);
+	array_shift($fila1);
+	$columna_usuario=-1;
+	$columna_estado=-1;
+	$columna_actual = 0;
+	while($columna_usuario == -1 and $f=array_shift($fila1)){
+		if($f=='User') $columna_usuario = $columna_actual;
+		$columna_actual++;
+	}
+	array_shift($fila1);
+	while($columna_estado == -1 and $f=array_shift($fila1)){
+		if($f=='S') $columna_estado = $columna_actual;
+		$columna_actual++;
+	}
+	$cantidad_en_ejecucion = 0;
+	foreach($res as $fila){
+		$fila = split("[ \n\r\t]+",$fila);
+		if($fila[$columna_usuario]==$usuario_linux
+			and $fila[$columna_estado] == 'R')
+			$cantidad_en_ejecucion++;
+	}
+	return $cantidad_en_ejecucion;
+}
+
+
 ?>

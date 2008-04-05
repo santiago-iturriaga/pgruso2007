@@ -37,7 +37,7 @@ if (ISSET ($_REQUEST["detener"])) {
 	list($mensaje,$error) = torque_detener_trabajo($_REQUEST["detener"], $held_type);
 }
 if (ISSET ($_REQUEST["reiniciar"])) {
-	list($mensaje,$error) = troque_liberar_trabajo($_REQUEST["reiniciar"], $held_type);
+	list($mensaje,$error) = torque_liberar_trabajo($_REQUEST["reiniciar"], $held_type);
 }
 
 // Listado de todos los trabajos
