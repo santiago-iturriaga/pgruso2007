@@ -154,6 +154,26 @@ class Momento{
 
 	}
 
+	function setCancelado($id_torque,$recursos){
+
+		$consulta2 = "select trabajo from ejecucion where id_torque = ?";
+			if(!$this->db->EjecutarConsulta($consulta2,array($id_torque),true))
+				{
+				return array("error"=>1,
+							 "codError"=>"EA09");
+				}
+			$row=$this->db->Next();
+			$trabajo = $row["trabajo"];
+
+			$alertas = new Alertas($this->db);
+			$result = $alertas->asignarAlertaTrabajoCancelado($trabajo);
+			if($result["error"] = 1){
+				return $result;
+			}
+			return array("error"=>0);
+
+	}
+
 	function setFinalizado($id_torque,$recursos){
 		$consulta = "select t.id as id_trabajo," .
 					"		t.cliente as id_cliente," .
