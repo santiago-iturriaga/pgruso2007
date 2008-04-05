@@ -52,8 +52,6 @@
 	$resConsulta = $alertas->getAlertasUsuarioTrabajo($s->sesion->Usuario->id,$s->sesion->TrabajoActual);
 	$tabAlertas= "";
 
-echo "<pre>";print_r($resConsulta);echo '</pre>';
-
 	if($resConsulta["error"]){
 		$msjerror = $i->getError($res);
 	}
