@@ -28,7 +28,7 @@
 
 	$base		=	$plantilla->load("plantillas/base.html");
 	$ppal		= 	$plantilla->load("plantillas/archivos/archivos.html");
-
+	$body 		=	"";
 	if(isset($_POST["Enviar"])) {
 		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
 			//$command = "chown ".USERNAME." ".$HTTP_POST_FILES['archivo_']['tmp_name'];
@@ -126,12 +126,7 @@
 
 		$script = "cd ".$workdir.";".$cmd;
 		$result = ejecutar_servidor($script,$usr_linux);
-
-//		echo "<pre>";
-//		print_r($script);
-//		echo "</pre><pre>";
-//		print_r($result);
-//		echo "</pre>";
+		$result = trim($result);
 
 		$ppal= $plantilla->uncomment($ppal,array("FORM_EJECUCION_HERRAMIENTAS_RESULTADO"));
 		$ppal= $plantilla->replace($ppal,array("EJECUCION_HERRAMIENTAS_RESULTADO"=>$result));
@@ -218,9 +213,12 @@
 												"RUTA"=>$ruta,
 												"HERRAMIENTAS"=>$listaHerramientas,
 												"CABEZAL_TABLA"	=> $cabezal));
+	$body = "onload='	RoundedTop(\"div.formArchivos\",\"#ffffff\",\"#555555\",\"\");
+							RoundedBottom(\"div.formArchivos\",\"#ffffff\",\"#85859c\",\"\");'";
+
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
-							"BODY"=>'',
+							"BODY"=>$body,
 							"MENSAJE"=>$msj,
 							"HEAD"=>"",
 							"ERROR"=>$msjerror,

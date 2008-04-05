@@ -11,6 +11,9 @@ function mostrarEjecucion() {
 	ocultarTodo();
 	/* document.getElementById('parametros').className='parametros_visibles'; */
 	document.getElementById('formParametrosEjecucion').style.display='';
+/*	RoundedTop("div.formArchivos","#ffffff","#555555","");
+	RoundedBottom("div.formArchivos","#ffffff","#85859c","");
+*/
 }
 function ocultarEjecucion() {
 	document.getElementById('formParametrosEjecucion').style.display='none';
@@ -18,10 +21,16 @@ function ocultarEjecucion() {
 function ejecutar(archivo){
 	mostrarEjecucion();
 	document.getElementById('archivo').value = archivo;
+	/* RoundedTop("div.formArchivos","#ffffff","#555555","");
+	RoundedBottom("div.formArchivos","#ffffff","#85859c","");
+*/
 }
 function mostrarSubirArchivo(){
 	ocultarTodo();
 	document.getElementById('formSubirArchivo').style.display='';
+/*	RoundedTop("div.formArchivos","#ffffff","#555555","");
+	RoundedBottom("div.formArchivos","#ffffff","#85859c","");
+*/
 }
 function ocultarSubirArchivo(){
 	document.getElementById('formSubirArchivo').style.display='none';
@@ -29,6 +38,9 @@ function ocultarSubirArchivo(){
 function mostrarEjecucionHerramientas(){
 	ocultarTodo();
 	document.getElementById('formEjecucionHerramientas').style.display='';
+/*	RoundedTop("div.formArchivos","#ffffff","#555555","");
+	RoundedBottom("div.formArchivos","#ffffff","#85859c","");
+*/
 }
 function ocultarEjecucionHerramientas(){
 	document.getElementById('formEjecucionHerramientas').style.display='none';
@@ -69,7 +81,7 @@ function ocultarEjecucionHerramientasResultado(){
 						<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();"/>
 					</div>
 				</form>
-			</div>	
+			</div>
 			<div id="formEjecucionHerramientas" class="formArchivos" style="display:none;">
 				<form action="archivos.php" method="POST">
 					<div class="formArchivosTitulo">Ejecutar herramienta</div>
@@ -86,15 +98,13 @@ function ocultarEjecucionHerramientasResultado(){
 					<input type="button" value="Cancelar" class="boton" onclick="ocultarTodo();">
 					</div>
 				</form>
-			</div>	
+			</div>
 			<!--{FORM_EJECUCION_HERRAMIENTAS_RESULTADO}
 			<div id="formEjecucionHerramientasResultado" class="formArchivos">
 				<div class="formArchivosTitulo">Resultado ejecuci&oacute;n</div>
-				<pre style="margin-top:0.5em;">
-					{EJECUCION_HERRAMIENTAS_RESULTADO}
-				</pre>
+				<pre style="margin-top:0.5em;" id="ejecucion_herramientas_resultado">{EJECUCION_HERRAMIENTAS_RESULTADO}</pre>
 				<input type="button" value="Cerrar" class="boton" onclick="ocultarTodo();">
-			</div>	
+			</div>
 			{FORM_EJECUCION_HERRAMIENTAS_RESULTADO}-->
 			<form action="archivos.php" method="post" class="form_archivos">
 				<p align="center">Crear carpeta:
