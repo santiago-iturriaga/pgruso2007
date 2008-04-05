@@ -168,18 +168,20 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 
 	function asignarAlertaTrabajoFin($idTrabajo){
 		$consulta= "select distinct ug.usuario from usuario_grupo as ug, trabajo_grupo as tg  where tg.trabajo = ? and tg.grupo = ug.grupo";
-		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true))
-			{
-				return array("error"=>1, "codError"=>"EA10");
-			}
+		if(!$this->conexion->EjecutarConsulta($consulta,array($idTrabajo),true)){
+			return array("error"=>1, "codError"=>"EA10");
+		}
+
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null){
 			array_push($salida,$row["usuario"]);
 		}
+
 		foreach ($salida as $idU){
 			$params = array("TRABAJO"=>$idTrabajo);
 			$this->asignarAlerta($idU,$idTrabajo,4,$params);
 		}
+
 		return array("error"=>0);
 
 	}
