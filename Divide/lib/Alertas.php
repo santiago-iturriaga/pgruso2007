@@ -34,7 +34,7 @@ function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null)
 			{
-			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"],"idua"=>$row["idua"]);
+			$salida[$row["idua"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"],"idua"=>$row["idua"]);
 			}
 
 		return array("error"=>0,"alertas"=>$salida);
