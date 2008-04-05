@@ -227,9 +227,10 @@ function cantidadAlertasNoLeida($idUsuario,$idTrabajo){
 				return array("error"=>1, "codError"=>"EA08");
 			}
 
-		$consulta3= "insert into usuario_alerta select ?,?,? where not exists (select alerta, usuario, trabajo from usuario_alerta where alerta = ? and usuario= ? and trabajo = ?)";
+		//$consulta3= "insert into usuario_alerta select ?,?,? where not exists (select alerta, usuario, trabajo from usuario_alerta where alerta = ? and usuario= ? and trabajo = ?)";
+		$consulta3= "insert into usuario_alerta (alerta, usuario, trabajo) values (?,?,?)";
 
-		if(!$this->conexion->EjecutarConsulta($consulta3,array($idAlerta, $idUsuario, $idTrabajo, $idAlerta, $idUsuario, $idTrabajo),true))
+		if(!$this->conexion->EjecutarConsulta($consulta3,array($idAlerta, $idUsuario, $idTrabajo),true))
 			{
 				return array("error"=>1, "codError"=>"EA09");
 			}
