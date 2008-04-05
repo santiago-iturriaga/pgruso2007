@@ -12,7 +12,7 @@ insert into alertas (asunto,body) values ('Limite Cuota','El trabajo {TRABAJO} d
 insert into alertas (asunto,body) values ('Limite Cuota','El trabajo {TRABAJO} se ha pasado en su cuota');
 insert into alertas (asunto,body) values ('Comienzo de ejecuci&oacute;n de trabajo','El trabajo {TRABAJO} ha comenzado su ejecuci&oacute;n');
 insert into alertas (asunto,body) values ('Finalizaci&oacute;n de trabajo','El trabajo {TRABAJO} ha finalizado');
-insert into alertas (asunto,body) values ('Error de ejecuci&oacute;n de trabajo','El trabajo {TRABAJO} ha fallado');
+insert into alertas (asunto,body) values ('Cancelaci&oacute;n de trabajo','El trabajo {TRABAJO} ha sido cancelado');
 
 
 
