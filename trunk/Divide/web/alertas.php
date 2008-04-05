@@ -80,7 +80,12 @@
 
 	//echo "<pre>";print_r($s->sesion->Usuario);echo '</pre>';exit;
 	$ppal = $plantilla->replace($ppal,array("ALERTAS"=>$tabAlertas));
-	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,"MENU"=>$menu,"MENSAJE"=>$msj,"ERROR"=>$msjerror,"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login));
+	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
+												"MENU"=>$menu,
+												"MENSAJE"=>$msj,
+												"ERROR"=>$msjerror,
+												"HEAD"=>"",
+												"USUARIO_LOGUEADO"=>$s->sesion->Usuario->login));
 	$s->salvar();
 	echo $base;
 ?>
