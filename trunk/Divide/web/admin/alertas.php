@@ -66,7 +66,7 @@
 		//echo "<pre>";print_r($resConsulta);echo '</pre>';
 		foreach ($resConsulta["alertas"] as $id=>$rowAlertas){
 			//echo "<pre>";print_r($rowAlertas);echo '</pre>';
-			$rowAlertas["link"]=$plantilla->replace($link,array("IDA"=>$id,"IDT"=>$rowAlertas{"trabajo"},"IDUA"=>$rowAlertas["idua"]));
+			$rowAlertas["link"]=$plantilla->replace($link,array("IDA"=>$rowAlertas["id"],"IDT"=>$rowAlertas{"trabajo"},"IDUA"=>$rowAlertas["idua"]));
 			$rowAlertas["eliminar"]=$checkbox;
 			if($rowAlertas{"leida"} == 0){
 				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</b>";

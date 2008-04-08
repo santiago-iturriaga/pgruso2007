@@ -63,7 +63,7 @@
 
 
 		foreach ($resConsulta["alertas"] as $id=>$rowAlertas){
-			$rowAlertas["link"]=$plantilla->replace($link,array("ID"=>$id,"IDUA"=>$rowAlertas["idua"]));
+			$rowAlertas["link"]=$plantilla->replace($link,array("ID"=>$rowAlertas["id"],"IDUA"=>$rowAlertas["idua"]));
 
 			if($rowAlertas{"leida"} == 0){
 				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</b>";
@@ -77,6 +77,8 @@
 		//echo "<pre>";print_r($tabla);echo '</pre>';
 
 	}
+
+
 
 	//echo "<pre>";print_r($s->sesion->Usuario);echo '</pre>';exit;
 	$ppal = $plantilla->replace($ppal,array("ALERTAS"=>$tabAlertas));
