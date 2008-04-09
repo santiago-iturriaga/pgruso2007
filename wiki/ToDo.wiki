@@ -8,7 +8,8 @@
   * Instalacion: arreglar script de inicio para torque/maui/ganglia en el sistema
 
 *Administrador*
-  * Editar cliente      
+  * Editar cliente 
+  * agrandar el nombre del trabajo!!!     
 
 *Cliente*
   
