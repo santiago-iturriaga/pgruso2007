@@ -9,7 +9,7 @@
 
 *Administrador*
   * Editar cliente 
-  * agrandar el nombre del trabajo!!!     
+  * agrandar el nombre del trabajo en la base!!! (esta maximo en 12 ratones!)
 
 *Cliente*
   
