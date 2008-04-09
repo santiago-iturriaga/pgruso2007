@@ -1,0 +1,23 @@
+#!/bin/sh
+PATH_PHP="/net/home/pgccadar/subversion/trunk/Divide/bin/"
+SCRIPT_PHP="post_ejecucion.php"
+
+echo ""
+echo ""
+echo "[ Epilogue ]"
+echo "Job ID: $1"
+echo "User ID: $2"
+echo "Group ID: $3"
+echo "Job Name: $4"
+echo "Session ID: $5"
+echo "Resource List: $6"
+echo "Resources Used: $7"
+echo "Queue Name: $8"
+echo "Account String: $9"
+echo ""
+
+cd $PATH_PHP
+./$SCRIPT_PHP "$1" "$7"
+
+exit 0
+
