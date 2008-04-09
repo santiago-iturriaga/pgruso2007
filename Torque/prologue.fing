@@ -1,0 +1,15 @@
+#!/bin/sh
+PATH_PHP="/net/home/pgccadar/subversion/trunk/Divide/bin/"
+SCRIPT_PHP="pre_ejecucion.php"
+
+echo "[ Prologue ]"
+echo "Job ID: $1"
+echo "User ID: $2"
+echo "Group ID: $3"
+echo "" 
+echo ""
+
+cd $PATH_PHP
+./$SCRIPT_PHP $1
+
+exit 0
