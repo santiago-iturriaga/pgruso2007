@@ -9,6 +9,9 @@
   * cambiar el tiempo de ejecucion en la tabla ejecucion a interval
   * si hay fecha de finalizacion y no de inicio el trabajo fue cancelado
   * cambiar los permisos del directorio .ssh creado con el script de crear usuarios
+  * generar la clave publica del usuario nuevo
+    * y agregarla a authorized_keys2 junto con la de wwwrun
+  * agregar el usuario nuevo al /etc/passwd de cada nodo (si es necesario)
 
 *Administrador*
   * Editar cliente 
