@@ -12,6 +12,7 @@
   * Editar cliente 
   * agrandar el nombre del trabajo en la base!!! (esta maximo en 12 ratones!)
   * arreglar grupos de los usuarios en el filesystem (siempre Fenton)
+  * diferenciar mensaje usuario fenton y usuario linux (por el script)
 
 *Cliente*
   
