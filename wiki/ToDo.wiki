@@ -8,6 +8,7 @@
   * Instalacion: arreglar script de inicio para torque/maui/ganglia en el sistema
   * cambiar el tiempo de ejecucion en la tabla ejecucion a interval
   * si hay fecha de finalizacion y no de inicio el trabajo fue cancelado
+  * cambiar los permisos del directorio .ssh creado con el script de crear usuarios
 
 *Administrador*
   * Editar cliente 
