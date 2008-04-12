@@ -8,4 +8,8 @@ if [ $# -lt 4 ]; then
  useradd $1 -d $4/$1 -G $2 -m
  mkdir $4/$1/.ssh
  cat $3 >> $4/$1/.ssh/authorized_keys2
+ #ssh-keygen -t dsa
+ #cat $3 >> $4/$1/.ssh/authorized_keys2
+
+ chmod $1 -R $4/$1
 
