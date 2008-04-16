@@ -56,9 +56,9 @@ function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 
 
 	function getAlerta($idUsuario,$idTrabajo,$idAlerta,$idUsuarioAlerta){
-		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha, t.cliente, ua.idua
-				    from alertas a, usuario_alerta ua, trabajo_alerta ta, trabajo t
-				    where ua.usuario=? and ua.trabajo=? and ua.alerta = ? and ua.idua = ? and a.id = ua.alerta and ua.trabajo= ta.trabajo and ua.alerta = ta.alerta and t.id = ta.trabajo";
+		$consulta= "select a.id,ua.usuario, ua.trabajo, a.asunto, ta.body, ua.leida, ua.fecha, t.cliente, ua.idua, t.nombre as nombre_trabajo, c.nombre as nombre_cliente
+				    from alertas a, usuario_alerta ua, trabajo_alerta ta, trabajo t, cliente c
+				    where ua.usuario=? and ua.trabajo=? and ua.alerta = ? and ua.idua = ? and a.id = ua.alerta and ua.trabajo= ta.trabajo and ua.alerta = ta.alerta and t.id = ta.trabajo and c.id=t.cliente";
 		if(!$this->conexion->EjecutarConsulta($consulta,array($idUsuario, $idTrabajo, $idAlerta,$idUsuarioAlerta),true))
 			{
 			return array("error"=>1, "codError"=>"EA03");
@@ -66,7 +66,7 @@ function getAlertasUsuarioTrabajo($idUsuario,$idTrabajo){
 		$salida=array();
 		while(($row=$this->conexion->Next()) != null)
 			{
-			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"],"cliente"=>$row["cliente"],"idua"=>$row["idua"]);
+			$salida[$row["id"]]=array("id"=>$row["id"],"usuario"=>$row["usuario"],"trabajo"=>$row["trabajo"],"asunto"=>$row["asunto"],"body"=>$row["body"],"leida"=>$row["leida"],"fecha"=>$row["fecha"],"cliente"=>$row["cliente"],"idua"=>$row["idua"],"nombre_cliente"=>$row["nombre_cliente"],"nombre_trabajo"=>$row["nombre_trabajo"]);
 			}
 		return array("error"=>0,"alerta"=>$salida);
 	}
