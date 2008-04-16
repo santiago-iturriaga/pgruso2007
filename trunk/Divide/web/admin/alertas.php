@@ -56,8 +56,8 @@
 	else{
 		$tabla = new Tabla();
 		$tabla->dir_relativa = "../";
-		$tabla->addColumna(1,"cliente","Cliente");
-		$tabla->addColumna(2,"trabajo","Trabajo");
+		$tabla->addColumna(1,"nombre_cliente","Cliente");
+		$tabla->addColumna(2,"nombre_trabajo","Trabajo");
 		$tabla->addColumna(3,"fecha","Fecha");
 		$tabla->addColumna(4,"asunto","Asunto");
 		$tabla->addColumna(5,"link","");
@@ -71,8 +71,8 @@
 			if($rowAlertas{"leida"} == 0){
 				$rowAlertas{"fecha"} = "<b>" . $rowAlertas{"fecha"} . "</b>";
 				$rowAlertas{"asunto"} = "<b>" . $rowAlertas{"asunto"} . "</b>";
-				$rowAlertas{"trabajo"} = "<b>" . $rowAlertas{"trabajo"} . "</b>";
-				$rowAlertas{"cliente"} = "<b>" . $rowAlertas{"cliente"} . "</b>";
+				$rowAlertas{"nombre_trabajo"} = "<b>" . $rowAlertas{"nombre_trabajo"} . "</b>";
+				$rowAlertas{"nombre_cliente"} = "<b>" . $rowAlertas{"nombre_cliente"} . "</b>";
 			}
 
 			//$rowAlertas->asunto = $rowAlertas{"asunto"};
