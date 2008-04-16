@@ -41,6 +41,7 @@
 	$MENSAJES["EU04"]  = "La contrasena nueva no es igual a la confirmaci&on";
 
 	$MENSAJES["U01"]  = "La clave fue cambiada.";
+	$MENSAJES["U021"]  = "Se cre&oacute; el usuario.";
 	$MENSAJES["U02"]  = "Se cre&oacute; el usuario. Recuerde ejecutar el <a href='warning_nuevo_cliente.php'>script</a> para un usuario valido de linux";
 	$MENSAJES["U03"]  = "El usuario fue eliminado.";
 	$MENSAJES["U04"]  = "Se cre&oacute; el grupo.";

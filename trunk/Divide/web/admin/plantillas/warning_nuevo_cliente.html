@@ -6,7 +6,9 @@
 				<li>El usuario debe estar creado en el sistema. Puede utilizar el comando adduser "usuario" para crear un usuario.</li>
 				<li>El usuario debe tener permisos de escritura en la carpeta "{RAIZ}" o Perteneser al grupo "{GRUPOFENTON}".</li>
 				<li>El usuario de Apache debe poder conectarse por ssh con el usuario. Crear en el home del usuario la carpeta .ssh y agrear la clave publica al archivo ".ssh/authorized_keys2".</li>
-				<li>Dependiendo de la configuracion del cluster el usuario debe ser creado en todos los nodos.</li>
+				<li>Crear una clave publica para el usuario y agregarla al archivo ".ssh/authorized_keys2".</li>
+				<li>Dependiendo de la configuracion del cluster el usuario debe ser creado en todos los nodos. </li>
+				<li>Tambi&eacute;n agreagar el nuevo usuario al /etc/passwd de cada nodo</li>
 				<li>Si creo un nuevo usuario recuerde asignarle un password.</li>
 				</ul>
 			</br>

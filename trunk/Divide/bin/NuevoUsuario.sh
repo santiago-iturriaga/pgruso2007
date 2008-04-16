@@ -9,7 +9,6 @@ if [ $# -lt 4 ]; then
  mkdir $4/$1/.ssh
  cat $3 >> $4/$1/.ssh/authorized_keys2
  #ssh-keygen -t dsa
- #cat $3 >> $4/$1/.ssh/authorized_keys2
-
+ #cat $4/$1/.ssh/id_dsa.pub >> $4/$1/.ssh/authorized_keys2
  chmod $1 -R $4/$1
 

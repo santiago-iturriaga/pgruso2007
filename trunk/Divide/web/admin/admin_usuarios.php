@@ -59,7 +59,7 @@
 		if($res["error"])
 			$error	= $interfaz->getError($res);
 		else
-			$mensaje = $interfaz->getMensaje("U02");
+			$mensaje = $interfaz->getMensaje("U021");
 	}
 
 	if(isset($_POST["nombre_grupo"])){
