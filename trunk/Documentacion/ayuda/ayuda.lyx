@@ -1,0 +1,106 @@
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Introducción
+\end_layout
+
+\begin_layout Standard
+Fenton es rosado y funciona a base de jugo de gomibaya.
+\end_layout
+
+\begin_layout Standard
+El sistema cuenta con dos niveles de usuarios: clientes y administradores.
+ Si bien las funcionalidades del administrador incluyen las del cliente,
+ los perfiles son muy diferentes.
+ Por lo tanto, el presente documento está dividido por tipo de usuario.
+\end_layout
+
+\begin_layout Standard
+El problema de que fenton funcione a base de jugo de gomibaya es que no
+ tenemos la fórmula y se murió grammy (una de las víctimas del asado más
+ grande del mundo).
+\end_layout
+
+\begin_layout Part
+Administrador
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+El administrador es un groso
+\end_layout
+
+\begin_layout Section
+Ingreso al sitio
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 01login.png
+
+\end_inset
+
+El usuario deberá ingresar su nombre de usuario y su clave.
+ Por seguridad, en caso de que alguno de los valores sea incorrecto no se
+ indicará cuál de los dos es el incorrecto.
+ Inicialmente existe un usuario administrador con nombre GROSO y clave del
+ FENTON O ALGO, pero luego de habr ingresado al sitio, el administrador
+ puede modificar la clave o agregar un nuevo administrador y borrar el usuario
+ inicial.
+\end_layout
+
+\begin_layout Section
+Inicio
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 02Aindex.png
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
