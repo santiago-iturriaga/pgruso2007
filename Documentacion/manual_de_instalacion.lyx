@@ -1,0 +1,508 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Manual de instalación
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sistema operativo
+\end_layout
+
+\begin_layout Standard
+El sistema operativo recomendado es Linux 2.6 (o mayor) tanto x86 como x64.
+ El sistema fué probado en SuSE 10, Ubuntu 7 y Fedora core 5.
+ Esto no quita que pueda realizarse una instalación en otras versiones,
+ distribuciones (Debian, Slackware, etc.) o hasta otro sistema operativo
+ de la familia POSIX (FreeBSD, Solaris, etc).
+\end_layout
+
+\begin_layout Standard
+Durante le resto del manual se asumirá que se utilizando Linux.
+\end_layout
+
+\begin_layout Section
+Requerimientos de hardware
+\end_layout
+
+\begin_layout Standard
+blah, blah, blah...
+\end_layout
+
+\begin_layout Section
+Requerimientos de software
+\end_layout
+
+\begin_layout Standard
+A continuación detallaremos el software requerido por el sistema.
+ Es recomendable realizar la instalación del software necesario utilizando
+ los paquetes propios de la distribución de linux utilizada (apt-get, yast2,
+ etc.).
+ A continuación veremos un breve instructivo de como realizar la instalación
+ utilizando los tarball genéricos.
+\end_layout
+
+\begin_layout Subsection
+PostgreSQL
+\end_layout
+
+\begin_layout Standard
+PostgreSQL versión 8.2.5 o mayor.
+ Suponiendo que se quiere instalar PostgreSQL en /net/local/postgresql-8.2.5:
+\end_layout
+
+\begin_layout Verse
+./configure --prefix=/net/local/postgresql-8.2.5
+\end_layout
+
+\begin_layout Verse
+adduser postgres 
+\end_layout
+
+\begin_layout Verse
+mkdir /net/local/postgresql-8.2.5/data 
+\end_layout
+
+\begin_layout Verse
+chown postgres /net/local/postgresql-8.2.5/data 
+\end_layout
+
+\begin_layout Verse
+su - postgres 
+\end_layout
+
+\begin_layout Verse
+/net/local/postgresql-8.2.5/bin/initdb -D /net/local/postgresql-8.2.5/data 
+\end_layout
+
+\begin_layout Standard
+Luego iniciamos el servicio:
+\end_layout
+
+\begin_layout Verse
+/net/local/postgresql-8.2.5/bin/pg_ctl -D /net/local/postgresql-8.2.5/data
+\end_layout
+
+\begin_layout Standard
+La base de datos debe ser accesible desde todos los nodos del cluster (tanto
+ el nodo maestro como los nodos de computo) por lo que recomendamos habilitar
+ la conexión TCP en la configuración.
+\end_layout
+
+\begin_layout Subsection
+Apache
+\end_layout
+
+\begin_layout Standard
+Apache (versión 2.0 o mayor) solo es utilizado en el nodo maestro del cluster.
+\end_layout
+
+\begin_layout Standard
+¿? cri, cri...
+ cri, cri...
+ casi 100% seguro que venga con todas las distribuciones...
+ igual capaz que se puede agregar algo choto.
+\end_layout
+
+\begin_layout Subsection
+PHP
+\end_layout
+
+\begin_layout Standard
+PHP (versión 5.2.5 o mayor) debe estar instalado en todos los nodos del cluster.
+ Siendo el directorio de instalación /net/local/php-5.2.5:
+\end_layout
+
+\begin_layout Verse
+./configure --prefix=/net/local/php-5.2.5 --with-pgsql=/net/local/postgresql-8.2.5
+ --with-gd 
+\end_layout
+
+\begin_layout Verse
+make 
+\end_layout
+
+\begin_layout Verse
+make install
+\end_layout
+
+\begin_layout Subsection
+Ganglia 
+\end_layout
+
+\begin_layout Standard
+Ganglia versión 3.0.5 o mayor.
+ blah, blah, blah...
+\end_layout
+
+\begin_layout Subsection
+Torque
+\end_layout
+
+\begin_layout Standard
+Torque versión 2.1.0 o mayor.
+ blah, blah, blah...
+\end_layout
+
+\begin_layout Standard
+Requerimientos: 
+\end_layout
+
+\begin_layout Standard
+- make 
+\end_layout
+
+\begin_layout Standard
+- C compiler (p.ej.: gcc 4.1) 
+\end_layout
+
+\begin_layout Standard
+- libc-dev (p.ej: libc6-dev) 
+\end_layout
+
+\begin_layout Standard
+- C++ compiler (p.ej.: g++ 4.1) 
+\end_layout
+
+\begin_layout Standard
+- tcl8.4 
+\end_layout
+
+\begin_layout Standard
+- tcl8.4-dev 
+\end_layout
+
+\begin_layout Standard
+- tk8.4 
+\end_layout
+
+\begin_layout Standard
+- tk8.4-dev 
+\end_layout
+
+\begin_layout Standard
+- xorg-devel
+\end_layout
+
+\begin_layout Standard
+Instalacion servidor: 
+\end_layout
+
+\begin_layout Standard
+1) ln -s /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libX11.so (solo SuSE 10)
+\end_layout
+
+\begin_layout Standard
+2) export LD_RUN_PATH=/usr/local/lib (solo SuSE 10)
+\end_layout
+
+\begin_layout Standard
+3) ./configure --prefix=/usr/local/torque --enable-gui --enable-doc 
+\end_layout
+
+\begin_layout Standard
+4) make 
+\end_layout
+
+\begin_layout Standard
+5) make install (root) 
+\end_layout
+
+\begin_layout Standard
+6) make packages
+\end_layout
+
+\begin_layout Standard
+Instalacion nodos: 
+\end_layout
+
+\begin_layout Standard
+1) ./torque-package-mom-linux-i686.sh --install 
+\end_layout
+
+\begin_layout Standard
+2) ./torque-package-clients-linux-i686.sh --install
+\end_layout
+
+\begin_layout Standard
+[ NOTA: ejemplo nombre de la maquina: marga ] 
+\end_layout
+
+\begin_layout Standard
+[ ejemplo ip de la maquina: 192.168.0.1 ] 
+\end_layout
+
+\begin_layout Standard
+Configuracion servidor:
+\end_layout
+
+\begin_layout Standard
+1) editar /etc/hosts si no esta agregado, agregar: "192.168.0.1 marga" 
+\end_layout
+
+\begin_layout Standard
+2) pbs_server -t create (root) 
+\end_layout
+
+\begin_layout Standard
+3) qmgr (root) 
+\end_layout
+
+\begin_layout Standard
+4) set server operators = root@marga 
+\end_layout
+
+\begin_layout Standard
+4.1) set server operators += operador2@marga 
+\end_layout
+
+\begin_layout Standard
+5) create queue prueba 
+\end_layout
+
+\begin_layout Standard
+6) set queue prueba queue_type = Execution 
+\end_layout
+
+\begin_layout Standard
+7) set queue prueba started = True 
+\end_layout
+
+\begin_layout Standard
+8) set queue prueba enabled = True 
+\end_layout
+
+\begin_layout Standard
+9) set server default_queue = prueba 
+\end_layout
+
+\begin_layout Standard
+10) set server resources_default.nodes = 1 
+\end_layout
+
+\begin_layout Standard
+11) set server scheduling = True 
+\end_layout
+
+\begin_layout Standard
+12) create node marga 
+\end_layout
+
+\begin_layout Standard
+13) vim /var/spool/torque/mom_priv/config 
+\end_layout
+
+\begin_layout Standard
+$pbsserver marga 
+\end_layout
+
+\begin_layout Standard
+$logevent 255 # bitmap of which events to log 
+\end_layout
+
+\begin_layout Standard
+14) reinicar el servidor (qterm -t quick; pbs_server)
+\end_layout
+
+\begin_layout Standard
+Configuracion de los nodos: (root) 
+\end_layout
+
+\begin_layout Standard
+1) vim /var/spool/torque/mom_priv/config 
+\end_layout
+
+\begin_layout Standard
+$pbsserver marga 
+\end_layout
+
+\begin_layout Standard
+$logevent 255 # bitmap of which events to log
+\end_layout
+
+\begin_layout Subsection
+Maui
+\end_layout
+
+\begin_layout Standard
+Maui versión 3.2.6p19 o mayor.
+ blah, blah, blah...
+\end_layout
+
+\begin_layout Standard
+1) ./configure --prefix=/usr/local/maui --with-gold --with-pbs 
+\end_layout
+
+\begin_layout Standard
+(el usuario que corre el config es admin de maui, debe ser admin de torque
+ tambien) 
+\end_layout
+
+\begin_layout Standard
+2) make 
+\end_layout
+
+\begin_layout Standard
+3) [root] make install 
+\end_layout
+
+\begin_layout Standard
+4) editar /usr/local/maui/maui.cfg 
+\end_layout
+
+\begin_layout Standard
+RMCFG[MARGA] TYPE=PBS (no funciona con el por defecto) 
+\end_layout
+
+\begin_layout Standard
+RMPOLLINTERVAL 00:00:05 (pooling mas rapido) 
+\end_layout
+
+\begin_layout Standard
+5) (OPCIONAL) agregar /usr/local/maui/bin al PATH del usuario
+\end_layout
+
+\begin_layout Subsection
+OpenMPI (opcional)
+\end_layout
+
+\begin_layout Standard
+bleh, bleh, bleh...
+\end_layout
+
+\begin_layout Subsection
+MPICH (opcional) 
+\end_layout
+
+\begin_layout Standard
+MPICH versión 1.2.7p1.
+ En todos los nodos del cluster.
+\end_layout
+
+\begin_layout Standard
+./configure --with-device=ch_p4 --prefix=/net/local/mpich-1.2.7p1 --with-common-pre
+fix=/net/local/mpich-1.2.7p1 
+\end_layout
+
+\begin_layout Standard
+make 
+\end_layout
+
+\begin_layout Standard
+make install
+\end_layout
+
+\begin_layout Subsubsection
+MPIExec
+\end_layout
+
+\begin_layout Standard
+Nota: no lo pude terminar de probar
+\end_layout
+
+\begin_layout Standard
+./configure --prefix=/net/local/pgccadar --with-default-comm=mpich-p4 --with-pbs=
+/net/local/pgccadar --with-mpicc=/net/local/mpich-1.2.7p1/bin/mpicc 
+\end_layout
+
+\begin_layout Standard
+make 
+\end_layout
+
+\begin_layout Standard
+make install
+\end_layout
+
+\begin_layout Section
+Instalación de Fenton
+\end_layout
+
+\begin_layout Standard
+blah, blah, blah...
+\end_layout
+
+\begin_layout Standard
+[CREAR DB y USUARIO] 
+\end_layout
+
+\begin_layout Standard
+su - 
+\end_layout
+
+\begin_layout Standard
+su - postgres 
+\end_layout
+
+\begin_layout Standard
+createuser pgccadar 
+\end_layout
+
+\begin_layout Standard
+createdb pgccadar 
+\end_layout
+
+\begin_layout Standard
+psql pgccadar
+\end_layout
+
+\begin_layout Standard
+alter user pgccadar password 'pgccadar'
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+i 1.tablas.sql (etc)
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
