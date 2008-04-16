@@ -8,16 +8,16 @@
   * Instalacion: arreglar script de inicio para torque/maui/ganglia en el sistema
   * cambiar el tiempo de ejecucion en la tabla ejecucion a interval
   * si hay fecha de finalizacion y no de inicio el trabajo fue cancelado
-  * cambiar los permisos del directorio .ssh creado con el script de crear usuarios
-  * generar la clave publica del usuario nuevo
+  * [HECHO]cambiar los permisos del directorio .ssh creado con el script de crear usuarios
+  * [HECHO]generar la clave publica del usuario nuevo
     * y agregarla a authorized_keys2 junto con la de wwwrun
-  * agregar el usuario nuevo al /etc/passwd de cada nodo (si es necesario)
+  * [HECHO]agregar el usuario nuevo al /etc/passwd de cada nodo (si es necesario)
 
 *Administrador*
   * Editar cliente 
   * agrandar el nombre del trabajo en la base!!! (esta maximo en 12 ratones!)
   * arreglar grupos de los usuarios en el filesystem (siempre Fenton)
-  * diferenciar mensaje usuario fenton y usuario linux (por el script)
+  
 
 *Cliente*
   
@@ -37,3 +37,6 @@ BUGS CONOCIDOS
       * en trabajos en ejecucion
       * puede darse en otros casos tambien
   
+
+MEJORAS
+Alertas envio de mail, configurar SMTP.
