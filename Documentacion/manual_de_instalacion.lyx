@@ -39,6 +39,10 @@
 \begin_body
 
 \begin_layout Title
+Fenton
+\end_layout
+
+\begin_layout Title
 Manual de instalación
 \end_layout
 
@@ -51,15 +55,16 @@ Manual de instalación
 \end_layout
 
 \begin_layout Section
-Sistema operativo
+Sistema operativo.
 \end_layout
 
 \begin_layout Standard
-Se recomienda utilizar Linux 2.6 (o superior), tanto x86 como x64.
- El sistema fué probado en SuSE, Ubuntu y Fedora.
- Esto no quita que pueda realizarse una instalación en otras distribuciones
- (Debian, Slackware, etc.) o hasta otro sistema operativo de la familia POSIX
- (FreeBSD, Solaris, etc).
+Se recomienda utilizar Linux 2.6 (o superior), ya sea 32-bits (x86) o 64-bits
+ (x64).
+ Si bien el sistema fué probado en SuSE, Ubuntu y Fedora, esto no quita
+ que pueda realizarse una instalación en otras distribuciones (Debian, Slackware
+, etc.) o hasta otro sistema operativo de la familia POSIX (FreeBSD, Solaris,
+ etc).
 \end_layout
 
 \begin_layout Standard
@@ -67,7 +72,7 @@ Durante le resto del manual se asumirá que se utilizando Linux.
 \end_layout
 
 \begin_layout Section
-Requerimientos de hardware
+Requerimientos de hardware.
 \end_layout
 
 \begin_layout Standard
@@ -75,7 +80,7 @@ blah, blah, blah...
 \end_layout
 
 \begin_layout Section
-Requerimientos de software
+Requerimientos de software.
 \end_layout
 
 \begin_layout Standard
@@ -87,14 +92,19 @@ A continuación detallaremos el software requerido por el sistema.
 \end_layout
 
 \begin_layout Subsection
-PostgreSQL 8.2.5 o superior [Requerido]
+PostgreSQL 8.2.5 o superior [Requerido].
 \end_layout
 
 \begin_layout Standard
 El sistema utiliza PostgreSQL para persistir la información sobre usuarios,
  trabajos, etc.
- La última versión se encuentra disponible para descargar en <http://www.postgres
-ql.org/>.
+ La última versión se encuentra disponible para descargar en 
+\begin_inset LatexCommand htmlurl
+target "http://www.postgresql.org/"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -157,13 +167,19 @@ La base de datos debe ser accesible desde todos los nodos del cluster (tanto
 \end_layout
 
 \begin_layout Subsection
-Apache 2.0 o superior [Requerido]
+Apache 2.0 o superior [Requerido].
 \end_layout
 
 \begin_layout Standard
 Fenton utiliza un interfaz de usuario web para la ejecución de trabajos
  y la administración del cluster por lo que es necesario un servidor http.
- Apache puede obtenerse en <http://httpd.apache.org/>.
+ Apache puede obtenerse en 
+\begin_inset LatexCommand htmlurl
+target "http://httpd.apache.org/"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -173,7 +189,7 @@ En la actualidad todas las distribuciones de Linux disponen de un paquete
 \end_layout
 
 \begin_layout Subsection
-PHP 5.2.5 o superior [Requerido]
+PHP 5.2.5 o superior [Requerido].
 \end_layout
 
 \begin_layout Standard
@@ -183,7 +199,13 @@ Fenton se encuentra casi completamente implementando en PHP y requiere que
  la lógica del sistema, mientras que en los nodos de computo es utilizado
  para ejecutar scripts de pre-ejecucion y post-ejecución de trabajos en
  el cluster.
- PHP se encuentra disponible en <http://www.php.net/>.
+ PHP se encuentra disponible en 
+\begin_inset LatexCommand htmlurl
+target "http://www.php.net/"
+
+\end_inset
+
+.
  Para compilar e instalar PHP en el directorio /usr/local/php-5.2.5:
 \end_layout
 
@@ -206,13 +228,19 @@ Es necesario al momento de la compilación incluir soporte para PostgreSQL
 \end_layout
 
 \begin_layout Subsection
-Ganglia 3.0.5 o superior [Requerido]
+Ganglia 3.0.5 o superior [Requerido].
 \end_layout
 
 \begin_layout Standard
 Ganglia es utilizado para monitorear el estado del cluster: carga de memoria
  de los nodos, tráfico de red, utilización de CPU, etc.
- La última versión se puede descargar desde <http://ganglia.info/>.
+ La última versión se puede descargar desde 
+\begin_inset LatexCommand htmlurl
+target "http://ganglia.info/"
+
+\end_inset
+
+.
  Cuenta con tres componentes que deben ser instalados:
 \end_layout
 
@@ -275,20 +303,26 @@ Se encuentran disponibles paquetes RPM o tarball.
 \end_layout
 
 \begin_layout Subsection
-Torque 2.2.1 o superior [Requerido]
+Torque 2.2.1 o superior [Requerido].
 \end_layout
 
 \begin_layout Standard
 Torque es un DRM y es utilizado para proveer control sobre la ejecución
  de trabajos y sobre los nodos del cluster.
- Se encuentra disponible en: <http://www.clusterresources.com/>.
+ Se encuentra disponible en: 
+\begin_inset LatexCommand htmlurl
+target "http://www.clusterresources.com/"
+
+\end_inset
+
+.
  Cuenta con dos componentes: un servidor que debe estar instalado en el
  nodo maestro del cluster y un demonio (MOM) que debe estar instalado en
  cada uno de los nodos de computo del cluster.
 \end_layout
 
 \begin_layout Paragraph
-Instalación de Torque en el nodo maestro
+Instalación y configuración de Torque en el nodo maestro.
 \end_layout
 
 \begin_layout Standard
@@ -340,7 +374,7 @@ nodo003.fing.edu.uy
 \end_layout
 
 \begin_layout Paragraph
-Instalación de Torque en los nodos de computo (MOM)
+Instalación y configuración de Torque en los nodos de computo (MOM).
 \end_layout
 
 \begin_layout Standard
@@ -369,15 +403,38 @@ El servidor MOM para cada nodo de computo debe ser configurado para confiar
 $pbsserver <SERVIDOR>
 \end_layout
 
+\begin_layout Paragraph
+Ejecución de los demonios.
+\end_layout
+
+\begin_layout Standard
+Es necesario que el servidor de Torque y los MOM se encuentren en ejecución
+ permanente en el cluster.
+ Para esto es recomendable que sean agregados como demonios en el sistema
+ creando scripts de ejecución en /etc/init.d.
+ Para facilitar esto existen dos scritps que pueden tomarse de ejemplo:
+ scripts/qserverd.example.sh y scripts/qnoded.example.sh.
+\end_layout
+
 \begin_layout Subsection
-Maui 3.2.6p19 o superior [Requerido]
+Maui 3.2.6p19 o superior [Requerido].
 \end_layout
 
 \begin_layout Standard
 Maui es un scheduler de trabajos para clusters.
  Se encarga de tomar acciones sobre la cola de trabajos: que trabajo será
  el siguiente en ser ejecutado, que trabajo debe ser detenido, etc.
- Maui se encuentra disponible en: <http://www.clusterresources.com/>.
+ Maui se encuentra disponible en: 
+\begin_inset LatexCommand htmlurl
+target "http://www.clusterresources.com/"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Compilación, instalación y configuración.
 \end_layout
 
 \begin_layout Standard
@@ -418,13 +475,29 @@ Para clusters pequeños quizas sea recomendable disminuir el un tiempo de
 \end_layout
 
 \end_deeper
+\begin_layout Paragraph
+Ejecución del demonio.
+\end_layout
+
+\begin_layout Standard
+Al igual que Torque, también es necesario que Maui se encuentre todo en
+ el tiempo en ejecución en el cluster.
+ También existe un script que puede tomarse de ejemplo en scripts/maui.example.sh.
+\end_layout
+
 \begin_layout Subsection
-Open MPI 1.2.6 o superior [Opcional] [Recomendado]
+Open MPI 1.2.6 o superior [Opcional] [Recomendado].
 \end_layout
 
 \begin_layout Standard
 Open MPI es una implementación del estandar MPI-2.
- Se encuentra disponible en <http://www.open-mpi.org/>.
+ Se encuentra disponible en 
+\begin_inset LatexCommand htmlurl
+target "http://www.open-mpi.org/"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -432,12 +505,18 @@ TODO: queda pendiente.
 \end_layout
 
 \begin_layout Subsection
-MPICH 1.2.7p1 o superior [Opcional] 
+MPICH 1.2.7p1 o superior [Opcional].
 \end_layout
 
 \begin_layout Standard
 MPICH v1 es una implementación del estandar MPI-1.
- Se encuentra disponible en <http://www-unix.mcs.anl.gov/mpi/mpich1/>.
+ Se encuentra disponible en 
+\begin_inset LatexCommand htmlurl
+target "http://www-unix.mcs.anl.gov/mpi/mpich1/"
+
+\end_inset
+
+.
  Para compilarlo e instalarlo en /usr/local/mpich-1.2.7p1:
 \end_layout
 
@@ -455,7 +534,7 @@ make
 \end_layout
 
 \begin_layout Subsubsection
-Mpiexec 0.83 o superior
+Mpiexec 0.83 o superior.
 \end_layout
 
 \begin_layout Standard
@@ -463,8 +542,13 @@ Mpiexec es un programa que reemplaza al script mpirun del paquete MPICH.
  Es utilizado para inicializar un trabajo paralelo desde Torque.
  Si bien no es obligatorio utilizar Mpiexec con MPICH, existen varias razones
  por las que es recomendable utilizarlo.
- La última versión se encuentra disponible en <http://www.osc.edu/~pw/mpiexec/inde
-x.php>.
+ La última versión se encuentra disponible en 
+\begin_inset LatexCommand htmlurl
+target "http://www.osc.edu/~pw/mpiexec/index.php"
+
+\end_inset
+
+.
  Para compilarlo e instalarlo en /usr/local/mpiexec:
 \end_layout
 
@@ -482,7 +566,11 @@ make
 \end_layout
 
 \begin_layout Section
-Instalación de Fenton
+Instalación de Fenton.
+\end_layout
+
+\begin_layout Paragraph
+Configuración de seguridad del cluster.
 \end_layout
 
 \begin_layout Standard
@@ -490,11 +578,27 @@ blah, blah, blah...
 \end_layout
 
 \begin_layout Standard
-[CREAR DB y USUARIO] 
+creacion del usuario/grupo del sistema en el cluster
+\end_layout
+
+\begin_layout Paragraph
+Configuración de la base de datos.
 \end_layout
 
 \begin_layout Standard
-su - 
+Es necesario crear un usuario para el sistema en la base de datos, asignarle
+ una contraseña y crear las tablas de datos.
+ A continuación detallaremos como crear todo esto desde la linea de comando,
+ pero puede realizarse desde un administrador de base de datos.
+\end_layout
+
+\begin_layout Itemize
+Primer paso: crear un usuario de sistema de nombre 'fentondb'
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+su -
 \end_layout
 
 \begin_layout Standard
@@ -502,29 +606,102 @@ su - postgres
 \end_layout
 
 \begin_layout Standard
-createuser pgccadar 
+createuser fentondb 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Luego creamos el esquema de datos y las tablas
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+createdb fentondb 
 \end_layout
 
 \begin_layout Standard
-createdb pgccadar 
-\end_layout
-
-\begin_layout Standard
-psql pgccadar
-\end_layout
-
-\begin_layout Standard
-alter user pgccadar password 'pgccadar'
+psql fentondb
 \end_layout
 
 \begin_layout Standard
 
 \backslash
-i 1.tablas.sql (etc)
+i database.sql (etc)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Finalmente asignamos una contraseña al nuevo usuario
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+alter user fentondb password 'fentondb'
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Configuración de la interfaz web.
 \end_layout
 
 \begin_layout Standard
+blah, blah, blah...
+\end_layout
 
+\begin_layout Standard
+/etc/apache2/conf.d
+\end_layout
+
+\begin_layout Standard
+copiar los php al directorio virtual
+\end_layout
+
+\begin_layout Standard
+agregar ssh s/pass para el usuario apache al usuario torque
+\end_layout
+
+\begin_layout Standard
+algo mas?
+\end_layout
+
+\begin_layout Paragraph
+Configuración de Torque.
+\end_layout
+
+\begin_layout Standard
+blah, blah, blah...
+\end_layout
+
+\begin_layout Standard
+agregar al usuario fenton como manager/operator
+\end_layout
+
+\begin_layout Standard
+copiar prologos y epilogos
+\end_layout
+
+\begin_layout Paragraph
+Configuración del espacio de ejecución.
+\end_layout
+
+\begin_layout Standard
+blah, blah, blah...
+\end_layout
+
+\begin_layout Standard
+creacion del repositorio de fenton (con permisos)
+\end_layout
+
+\begin_layout Paragraph
+Configuración final del sistema.
+\end_layout
+
+\begin_layout Standard
+blah, blah, blah...
+\end_layout
+
+\begin_layout Standard
+edición del archivo Constantes.php
 \end_layout
 
 \end_body
