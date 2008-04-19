@@ -55,11 +55,11 @@ Sistema operativo
 \end_layout
 
 \begin_layout Standard
-El sistema operativo recomendado es Linux 2.6 (o mayor) tanto x86 como x64.
- El sistema fué probado en SuSE 10, Ubuntu 7 y Fedora core 5.
- Esto no quita que pueda realizarse una instalación en otras versiones,
- distribuciones (Debian, Slackware, etc.) o hasta otro sistema operativo
- de la familia POSIX (FreeBSD, Solaris, etc).
+Se recomienda utilizar Linux 2.6 (o superior), tanto x86 como x64.
+ El sistema fué probado en SuSE, Ubuntu y Fedora.
+ Esto no quita que pueda realizarse una instalación en otras distribuciones
+ (Debian, Slackware, etc.) o hasta otro sistema operativo de la familia POSIX
+ (FreeBSD, Solaris, etc).
 \end_layout
 
 \begin_layout Standard
@@ -80,353 +80,370 @@ Requerimientos de software
 
 \begin_layout Standard
 A continuación detallaremos el software requerido por el sistema.
- Es recomendable realizar la instalación del software necesario utilizando
- los paquetes propios de la distribución de linux utilizada (apt-get, yast2,
- etc.).
+ Es recomendable realizar la instalación del software utilizando los paquetes
+ de la distribución de linux utilizada (apt-get, yast2, etc.).
  A continuación veremos un breve instructivo de como realizar la instalación
- utilizando los tarball genéricos.
+ utilizando los fuentes.
 \end_layout
 
 \begin_layout Subsection
-PostgreSQL
+PostgreSQL 8.2.5 o superior [Requerido]
 \end_layout
 
 \begin_layout Standard
-PostgreSQL versión 8.2.5 o mayor.
- Suponiendo que se quiere instalar PostgreSQL en /net/local/postgresql-8.2.5:
-\end_layout
-
-\begin_layout Verse
-./configure --prefix=/net/local/postgresql-8.2.5
-\end_layout
-
-\begin_layout Verse
-adduser postgres 
-\end_layout
-
-\begin_layout Verse
-mkdir /net/local/postgresql-8.2.5/data 
-\end_layout
-
-\begin_layout Verse
-chown postgres /net/local/postgresql-8.2.5/data 
-\end_layout
-
-\begin_layout Verse
-su - postgres 
-\end_layout
-
-\begin_layout Verse
-/net/local/postgresql-8.2.5/bin/initdb -D /net/local/postgresql-8.2.5/data 
+El sistema utiliza PostgreSQL para persistir la información sobre usuarios,
+ trabajos, etc.
+ La última versión se encuentra disponible para descargar en <http://www.postgres
+ql.org/>.
+ 
 \end_layout
 
 \begin_layout Standard
-Luego iniciamos el servicio:
+Para compilar e instalar PostgreSQL en /usr/local/postgresql-8.2.5 se deben
+ seguir los siguientes pasos:
 \end_layout
 
-\begin_layout Verse
-/net/local/postgresql-8.2.5/bin/pg_ctl -D /net/local/postgresql-8.2.5/data
+\begin_layout Quote
+./configure --prefix=/usr/local/postgresql-8.2.5
+\end_layout
+
+\begin_layout Quote
+make
+\end_layout
+
+\begin_layout Quote
+[root] make install
+\end_layout
+
+\begin_layout Standard
+Luego se debe crear el usuario de PostgreSQL y se debe asignar espacio fisico
+ para los datos y logs.
+\end_layout
+
+\begin_layout Quote
+[root] adduser postgres 
+\end_layout
+
+\begin_layout Quote
+[root] mkdir /usr/local/postgresql-8.2.5/data 
+\end_layout
+
+\begin_layout Quote
+[root] chown postgres /usr/local/postgresql-8.2.5/data 
+\end_layout
+
+\begin_layout Quote
+[root] su - postgres 
+\end_layout
+
+\begin_layout Quote
+/usr/local/postgresql-8.2.5/bin/initdb -D /usr/local/postgresql-8.2.5/data 
+\end_layout
+
+\begin_layout Standard
+Finalmente iniciamos el servicio:
+\end_layout
+
+\begin_layout Quote
+/usr/local/postgresql-8.2.5/bin/pg_ctl -D /usr/local/postgresql-8.2.5/data
 \end_layout
 
 \begin_layout Standard
 La base de datos debe ser accesible desde todos los nodos del cluster (tanto
- el nodo maestro como los nodos de computo) por lo que recomendamos habilitar
- la conexión TCP en la configuración.
+ el nodo maestro como los nodos de computo).
+ Para habilitar el acceso desde otras IP's a la base de datos se debe editar
+ /net/local/postgresql-8.2.5/data/pg_hba.conf y para habilitar la conexión
+ TCP se debe editar /net/local/postgresql-8.2.5/data/postgresql.conf.
 \end_layout
 
 \begin_layout Subsection
-Apache
+Apache 2.0 o superior [Requerido]
 \end_layout
 
 \begin_layout Standard
-Apache (versión 2.0 o mayor) solo es utilizado en el nodo maestro del cluster.
+Fenton utiliza un interfaz de usuario web para la ejecución de trabajos
+ y la administración del cluster por lo que es necesario un servidor http.
+ Apache puede obtenerse en <http://httpd.apache.org/>.
 \end_layout
 
 \begin_layout Standard
-¿? cri, cri...
- cri, cri...
- casi 100% seguro que venga con todas las distribuciones...
- igual capaz que se puede agregar algo choto.
+En la actualidad todas las distribuciones de Linux disponen de un paquete
+ de Apache 2.
+ Recomendamos utilizar este paquete para la instalación.
 \end_layout
 
 \begin_layout Subsection
-PHP
+PHP 5.2.5 o superior [Requerido]
 \end_layout
 
 \begin_layout Standard
-PHP (versión 5.2.5 o mayor) debe estar instalado en todos los nodos del cluster.
- Siendo el directorio de instalación /net/local/php-5.2.5:
+Fenton se encuentra casi completamente implementando en PHP y requiere que
+ este se encuentre instalado en todos los nodos del cluster.
+ En el nodo maestro es utilizado para la ejecución de la interfaz web y
+ la lógica del sistema, mientras que en los nodos de computo es utilizado
+ para ejecutar scripts de pre-ejecucion y post-ejecución de trabajos en
+ el cluster.
+ PHP se encuentra disponible en <http://www.php.net/>.
+ Para compilar e instalar PHP en el directorio /usr/local/php-5.2.5:
 \end_layout
 
-\begin_layout Verse
-./configure --prefix=/net/local/php-5.2.5 --with-pgsql=/net/local/postgresql-8.2.5
+\begin_layout Quote
+./configure --prefix=/usr/local/php-5.2.5 --with-pgsql=/usr/local/postgresql-8.2.5
  --with-gd 
 \end_layout
 
-\begin_layout Verse
+\begin_layout Quote
 make 
 \end_layout
 
-\begin_layout Verse
-make install
+\begin_layout Quote
+[root] make install
+\end_layout
+
+\begin_layout Standard
+Es necesario al momento de la compilación incluir soporte para PostgreSQL
+ y para la biblioteca gráfica GD (utilizada por Ganglia).
 \end_layout
 
 \begin_layout Subsection
-Ganglia 
+Ganglia 3.0.5 o superior [Requerido]
 \end_layout
 
 \begin_layout Standard
-Ganglia versión 3.0.5 o mayor.
- blah, blah, blah...
+Ganglia es utilizado para monitorear el estado del cluster: carga de memoria
+ de los nodos, tráfico de red, utilización de CPU, etc.
+ La última versión se puede descargar desde <http://ganglia.info/>.
+ Cuenta con tres componentes que deben ser instalados:
+\end_layout
+
+\begin_layout Itemize
+gmetad
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Es un demonio que oficia de servidor, recolectando información de los nodos
+ del cluster.
+ Solamente una instancia de este demonio debe estar en ejecución.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+<TODO: detallar pasos de instalación.>
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+gmond
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Este demonio se encarga de enviar información del estado del nodo al demonio
+ gmetad.
+ Debe correr en cada una de las maquina del cluster, por lo que debe existir
+ una instancia del demonio por nodo del cluster.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+<TODO: detallar pasos de instalación.>
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Interfaz web
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ganglia cuenta con una interfaz web implementada en PHP donde se presenta
+ la información del cluster.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+<TODO: detallar pasos de instalación.>
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+Se encuentran disponibles paquetes RPM o tarball.
 \end_layout
 
 \begin_layout Subsection
-Torque
+Torque 2.2.1 o superior [Requerido]
 \end_layout
 
 \begin_layout Standard
-Torque versión 2.1.0 o mayor.
- blah, blah, blah...
+Torque es un DRM y es utilizado para proveer control sobre la ejecución
+ de trabajos y sobre los nodos del cluster.
+ Se encuentra disponible en: <http://www.clusterresources.com/>.
+ Cuenta con dos componentes: un servidor que debe estar instalado en el
+ nodo maestro del cluster y un demonio (MOM) que debe estar instalado en
+ cada uno de los nodos de computo del cluster.
+\end_layout
+
+\begin_layout Paragraph
+Instalación de Torque en el nodo maestro
 \end_layout
 
 \begin_layout Standard
-Requerimientos: 
+Para instalar el servidor de Torque en /usr/local/torque:
+\end_layout
+
+\begin_layout Quote
+./configure --prefix=/usr/local/torque --enable-gui --enable-doc 
+\end_layout
+
+\begin_layout Quote
+make 
+\end_layout
+
+\begin_layout Quote
+[root] make install
 \end_layout
 
 \begin_layout Standard
-- make 
+Una vez que termina la instalación del servidor, es necesario configurar
+ el demonio qserverd:
+\end_layout
+
+\begin_layout Quote
+torque.setup <USUARIO>
 \end_layout
 
 \begin_layout Standard
-- C compiler (p.ej.: gcc 4.1) 
+Donde <USUARIO> es el usuario que se desempeñará como administrador de Torque.
+ Este script creará un entorno basico de trabajo.
 \end_layout
 
 \begin_layout Standard
-- libc-dev (p.ej: libc6-dev) 
+Finalmente se deben configurar los nodos de computo editando /var/spool/torque/s
+erver_priv/nodes, p.
+ ej.:
+\end_layout
+
+\begin_layout Quote
+nodo001.fing.edu.uy
+\end_layout
+
+\begin_layout Quote
+nodo002.fing.edu.uy
+\end_layout
+
+\begin_layout Quote
+nodo003.fing.edu.uy
+\end_layout
+
+\begin_layout Paragraph
+Instalación de Torque en los nodos de computo (MOM)
 \end_layout
 
 \begin_layout Standard
-- C++ compiler (p.ej.: g++ 4.1) 
+Para crear los paquetes de instalación distribuibles se debe ejecutar:
+\end_layout
+
+\begin_layout Quote
+make packages
 \end_layout
 
 \begin_layout Standard
-- tcl8.4 
+Y luego en cada nodo de computo:
+\end_layout
+
+\begin_layout Quote
+./torque-package-clients-linux-i686.sh --install (./torque-package-mom-linux-i686.sh
+ --install?)
 \end_layout
 
 \begin_layout Standard
-- tcl8.4-dev 
+El servidor MOM para cada nodo de computo debe ser configurado para confiar
+ en el servidor maestro de Torque editando /var/spool/torque/mom_priv/config:
 \end_layout
 
-\begin_layout Standard
-- tk8.4 
-\end_layout
-
-\begin_layout Standard
-- tk8.4-dev 
-\end_layout
-
-\begin_layout Standard
-- xorg-devel
-\end_layout
-
-\begin_layout Standard
-Instalacion servidor: 
-\end_layout
-
-\begin_layout Standard
-1) ln -s /usr/X11R6/lib/libX11.so.6 /usr/X11R6/lib/libX11.so (solo SuSE 10)
-\end_layout
-
-\begin_layout Standard
-2) export LD_RUN_PATH=/usr/local/lib (solo SuSE 10)
-\end_layout
-
-\begin_layout Standard
-3) ./configure --prefix=/usr/local/torque --enable-gui --enable-doc 
-\end_layout
-
-\begin_layout Standard
-4) make 
-\end_layout
-
-\begin_layout Standard
-5) make install (root) 
-\end_layout
-
-\begin_layout Standard
-6) make packages
-\end_layout
-
-\begin_layout Standard
-Instalacion nodos: 
-\end_layout
-
-\begin_layout Standard
-1) ./torque-package-mom-linux-i686.sh --install 
-\end_layout
-
-\begin_layout Standard
-2) ./torque-package-clients-linux-i686.sh --install
-\end_layout
-
-\begin_layout Standard
-[ NOTA: ejemplo nombre de la maquina: marga ] 
-\end_layout
-
-\begin_layout Standard
-[ ejemplo ip de la maquina: 192.168.0.1 ] 
-\end_layout
-
-\begin_layout Standard
-Configuracion servidor:
-\end_layout
-
-\begin_layout Standard
-1) editar /etc/hosts si no esta agregado, agregar: "192.168.0.1 marga" 
-\end_layout
-
-\begin_layout Standard
-2) pbs_server -t create (root) 
-\end_layout
-
-\begin_layout Standard
-3) qmgr (root) 
-\end_layout
-
-\begin_layout Standard
-4) set server operators = root@marga 
-\end_layout
-
-\begin_layout Standard
-4.1) set server operators += operador2@marga 
-\end_layout
-
-\begin_layout Standard
-5) create queue prueba 
-\end_layout
-
-\begin_layout Standard
-6) set queue prueba queue_type = Execution 
-\end_layout
-
-\begin_layout Standard
-7) set queue prueba started = True 
-\end_layout
-
-\begin_layout Standard
-8) set queue prueba enabled = True 
-\end_layout
-
-\begin_layout Standard
-9) set server default_queue = prueba 
-\end_layout
-
-\begin_layout Standard
-10) set server resources_default.nodes = 1 
-\end_layout
-
-\begin_layout Standard
-11) set server scheduling = True 
-\end_layout
-
-\begin_layout Standard
-12) create node marga 
-\end_layout
-
-\begin_layout Standard
-13) vim /var/spool/torque/mom_priv/config 
-\end_layout
-
-\begin_layout Standard
-$pbsserver marga 
-\end_layout
-
-\begin_layout Standard
-$logevent 255 # bitmap of which events to log 
-\end_layout
-
-\begin_layout Standard
-14) reinicar el servidor (qterm -t quick; pbs_server)
-\end_layout
-
-\begin_layout Standard
-Configuracion de los nodos: (root) 
-\end_layout
-
-\begin_layout Standard
-1) vim /var/spool/torque/mom_priv/config 
-\end_layout
-
-\begin_layout Standard
-$pbsserver marga 
-\end_layout
-
-\begin_layout Standard
-$logevent 255 # bitmap of which events to log
+\begin_layout Quote
+$pbsserver <SERVIDOR>
 \end_layout
 
 \begin_layout Subsection
-Maui
+Maui 3.2.6p19 o superior [Requerido]
 \end_layout
 
 \begin_layout Standard
-Maui versión 3.2.6p19 o mayor.
- blah, blah, blah...
+Maui es un scheduler de trabajos para clusters.
+ Se encarga de tomar acciones sobre la cola de trabajos: que trabajo será
+ el siguiente en ser ejecutado, que trabajo debe ser detenido, etc.
+ Maui se encuentra disponible en: <http://www.clusterresources.com/>.
 \end_layout
 
 \begin_layout Standard
-1) ./configure --prefix=/usr/local/maui --with-gold --with-pbs 
+Para compilar Maui es necesario ser el usuario de Linux que se desempeñará
+ como administrador del scheduler.
+ Luego, una vez con este usuario, se debe ejecutar:
+\end_layout
+
+\begin_layout Quote
+[mauiadmin] ./configure --prefix=/usr/local/maui --with-gold --with-pbs 
+\end_layout
+
+\begin_layout Quote
+[mauiadmin] make 
+\end_layout
+
+\begin_layout Quote
+[root] make install 
 \end_layout
 
 \begin_layout Standard
-(el usuario que corre el config es admin de maui, debe ser admin de torque
- tambien) 
+Luego de finalizada la instalación es necesario configurar el scheduler
+ editando /usr/local/maui/maui.cfg:
+\end_layout
+
+\begin_layout Quote
+RMCFG[MARGA] TYPE=PBS
+\end_layout
+
+\begin_layout Quote
+RMPOLLINTERVAL 00:00:05
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+Para clusters pequeños quizas sea recomendable disminuir el un tiempo de
+ pooling para tener una respuesta mas rápida del scheduler.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Open MPI 1.2.6 o superior [Opcional] [Recomendado]
 \end_layout
 
 \begin_layout Standard
-2) make 
+Open MPI es una implementación del estandar MPI-2.
+ Se encuentra disponible en <http://www.open-mpi.org/>.
 \end_layout
 
 \begin_layout Standard
-3) [root] make install 
-\end_layout
-
-\begin_layout Standard
-4) editar /usr/local/maui/maui.cfg 
-\end_layout
-
-\begin_layout Standard
-RMCFG[MARGA] TYPE=PBS (no funciona con el por defecto) 
-\end_layout
-
-\begin_layout Standard
-RMPOLLINTERVAL 00:00:05 (pooling mas rapido) 
-\end_layout
-
-\begin_layout Standard
-5) (OPCIONAL) agregar /usr/local/maui/bin al PATH del usuario
+TODO: queda pendiente.
 \end_layout
 
 \begin_layout Subsection
-OpenMPI (opcional)
+MPICH 1.2.7p1 o superior [Opcional] 
 \end_layout
 
 \begin_layout Standard
-bleh, bleh, bleh...
-\end_layout
-
-\begin_layout Subsection
-MPICH (opcional) 
-\end_layout
-
-\begin_layout Standard
-MPICH versión 1.2.7p1.
- En todos los nodos del cluster.
+MPICH v1 es una implementación del estandar MPI-1.
+ Se encuentra disponible en <http://www-unix.mcs.anl.gov/mpi/mpich1/>.
+ Para compilarlo e instalarlo en /usr/local/mpich-1.2.7p1:
 \end_layout
 
 \begin_layout Standard
-./configure --with-device=ch_p4 --prefix=/net/local/mpich-1.2.7p1 --with-common-pre
-fix=/net/local/mpich-1.2.7p1 
+./configure --with-device=ch_p4 --prefix=/usr/local/mpich-1.2.7p1 --with-common-pre
+fix=/usr/local/mpich-1.2.7p1 
 \end_layout
 
 \begin_layout Standard
@@ -434,20 +451,26 @@ make
 \end_layout
 
 \begin_layout Standard
-make install
+[root] make install
 \end_layout
 
 \begin_layout Subsubsection
-MPIExec
+Mpiexec 0.83 o superior
 \end_layout
 
 \begin_layout Standard
-Nota: no lo pude terminar de probar
+Mpiexec es un programa que reemplaza al script mpirun del paquete MPICH.
+ Es utilizado para inicializar un trabajo paralelo desde Torque.
+ Si bien no es obligatorio utilizar Mpiexec con MPICH, existen varias razones
+ por las que es recomendable utilizarlo.
+ La última versión se encuentra disponible en <http://www.osc.edu/~pw/mpiexec/inde
+x.php>.
+ Para compilarlo e instalarlo en /usr/local/mpiexec:
 \end_layout
 
 \begin_layout Standard
-./configure --prefix=/net/local/pgccadar --with-default-comm=mpich-p4 --with-pbs=
-/net/local/pgccadar --with-mpicc=/net/local/mpich-1.2.7p1/bin/mpicc 
+./configure --prefix=/usr/local/mpiexec --with-default-comm=mpich-p4 --with-pbs=/
+usr/local/torque --with-mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc 
 \end_layout
 
 \begin_layout Standard
@@ -455,7 +478,7 @@ make
 \end_layout
 
 \begin_layout Standard
-make install
+[root] make install
 \end_layout
 
 \begin_layout Section
