@@ -78,9 +78,15 @@ Ingreso al sitio
 \begin_layout Standard
 \begin_inset Graphics
 	filename 01login.png
+	scale 50
+	subcaptionText "login"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 El usuario deberá ingresar su nombre de usuario y su clave.
  Por seguridad, en caso de que alguno de los valores sea incorrecto no se
  indicará cuál de los dos es el incorrecto.
