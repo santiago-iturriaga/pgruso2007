@@ -38,7 +38,7 @@
 
 \begin_body
 
-\begin_layout Part
+\begin_layout Section
 Introducción
 \end_layout
 
@@ -59,11 +59,11 @@ El problema de que fenton funcione a base de jugo de gomibaya es que no
  grande del mundo).
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Administrador
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Introducción
 \end_layout
 
@@ -71,7 +71,7 @@ Introducción
 El administrador es un groso
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Ingreso al sitio
 \end_layout
 
@@ -90,7 +90,7 @@ El usuario deberá ingresar su nombre de usuario y su clave.
  inicial.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Inicio
 \end_layout
 
@@ -127,7 +127,7 @@ Torque: interfaz con torque.
 Alertas: acceso a las alertas recibidas.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Usuarios
 \end_layout
 
@@ -157,7 +157,7 @@ Papelera: mantenimiento de trabajos dados de baja.
 Usuarios - Alertas: asignación de usuarios a las alertas generales del sistema.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Usuarios - Grupos
 \end_layout
 
@@ -173,8 +173,8 @@ Usuarios - Grupos
 \begin_layout Standard
 Cada usuario del sistema tendrá un nombre de usuario, una dirección de correo
  electrónico y una contraseña.
- Cada usuario es creado bajo un grupo de usuarios seleccionando el grupo
- y presionando el boton 
+ Cada uno es creado bajo un grupo de usuarios seleccionando el grupo y presionan
+do el boton 
 \begin_inset Quotes eld
 \end_inset
 
@@ -198,6 +198,338 @@ Nuevo...
  que se encuentra a la derecha de la lista de grupos del sistema.
  Luego se deberá ingresar un nombre para el mismo y asociarle las funcionalidade
 s pertinentes.
+\end_layout
+
+\begin_layout Subsubsection
+Accesos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 04AAccesos.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Clientes - Trabajos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 05ACT.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 06AACT2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Papelera
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 07APapelera.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Usuarios - Alertas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 08AUA.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Maui
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 09AMaui.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Trabajos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 10AMauiT.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Nodos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 11AMauiN.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Configuración
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 12AMauiC.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Torque
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 13ATorque.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Trabajos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 14ATorqueT.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Colas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 15ATorqueC.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Nodos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 16ATorqueE.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Estado
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 17ATorqueE.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ejecuciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 18ATorqueEj.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Alertas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 19AAlertas.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 20AAlertas2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cliente
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+El administrador es un groso
+\end_layout
+
+\begin_layout Subsection
+Ingreso al sitio
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 01login.png
+
+\end_inset
+
+El usuario deberá ingresar su nombre de usuario y su clave.
+ Por seguridad, en caso de que alguno de los valores sea incorrecto no se
+ indicará cuál de los dos es el incorrecto.
+ Inicialmente existe un usuario administrador con nombre GROSO y clave del
+ FENTON O ALGO, pero luego de habr ingresado al sitio, el administrador
+ puede modificar la clave o agregar un nuevo administrador y borrar el usuario
+ inicial.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 21CTrabajos.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Archivos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 22CArchivos.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 23CArchivos.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 25CArchivos.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 27CRes.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cambiar Clave
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 28CCambiarClave.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Alertas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 29CAlertas.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 30CAlertas.png
+
+\end_inset
+
+
 \end_layout
 
 \end_body
