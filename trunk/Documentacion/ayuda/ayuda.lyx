@@ -157,6 +157,32 @@ Papelera: mantenimiento de trabajos dados de baja.
 Usuarios - Alertas: asignación de usuarios a las alertas generales del sistema.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename usuarios.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cada usuario del sistema estará asociado a un grupo.
+ A su vez cada grupo tendrá acceso a uno o más trabajos.
+ Por ejemplo, mientras que el usuario administrador seguramente deberá tener
+ acceso a todos los trabajos, un usuario final probablemente tendrá acceso
+ a un único trabajo.
+ 
+\end_layout
+
+\begin_layout Standard
+A su vez, cada trabajo estará asociado a un cliente.
+ Cada cliente del sistema tendrá un usuario linux asociado, por lo que es
+ importante recordar que todos los trabajos que se ejecuten para un mismo
+ cliente, tendrán el mismo usuario linux.
+ 
+\end_layout
+
 \begin_layout Subsubsection
 Usuarios - Grupos
 \end_layout
@@ -211,6 +237,15 @@ Accesos
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Para administrar los accesos, por grupo, a los trabajos del sistema, se
+ deberá seleccionar el grupo.
+ a continuación se mostrarán todos los pares cliente - trabajo dados de
+ alta en el sistema.
+ Simplemente seleccionando cada casilla se le estará dando acceso a todos
+ los integrantes del grupo, a los respectivos trabajos.
 \end_layout
 
 \begin_layout Subsubsection
