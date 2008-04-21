@@ -91,7 +91,7 @@ El usuario deberá ingresar su nombre de usuario y su clave.
  Por seguridad, en caso de que alguno de los valores sea incorrecto no se
  indicará cuál de los dos es el incorrecto.
  Inicialmente existe un usuario administrador con nombre GROSO y clave del
- FENTON O ALGO, pero luego de habr ingresado al sitio, el administrador
+ FENTON O ALGO, pero luego de haber ingresado al sitio, el administrador
  puede modificar la clave o agregar un nuevo administrador y borrar el usuario
  inicial.
 \end_layout
@@ -103,6 +103,7 @@ Inicio
 \begin_layout Standard
 \begin_inset Graphics
 	filename 02Aindex.png
+	scale 25
 
 \end_inset
 
@@ -166,6 +167,7 @@ Usuarios - Alertas: asignación de usuarios a las alertas generales del sistema.
 \begin_layout Standard
 \begin_inset Graphics
 	filename usuarios.png
+	scale 25
 
 \end_inset
 
@@ -196,6 +198,7 @@ Usuarios - Grupos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 03AUsuariosGrupos.png
+	scale 25
 
 \end_inset
 
@@ -239,6 +242,7 @@ Accesos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 04AAccesos.png
+	scale 25
 
 \end_inset
 
@@ -261,6 +265,7 @@ Clientes - Trabajos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 05ACT.png
+	scale 25
 
 \end_inset
 
@@ -270,6 +275,7 @@ Clientes - Trabajos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 06AACT2.png
+	scale 25
 
 \end_inset
 
@@ -283,6 +289,7 @@ Papelera
 \begin_layout Standard
 \begin_inset Graphics
 	filename 07APapelera.png
+	scale 25
 
 \end_inset
 
@@ -296,6 +303,7 @@ Usuarios - Alertas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 08AUA.png
+	scale 25
 
 \end_inset
 
@@ -309,6 +317,7 @@ Maui
 \begin_layout Standard
 \begin_inset Graphics
 	filename 09AMaui.png
+	scale 25
 
 \end_inset
 
@@ -322,6 +331,7 @@ Trabajos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 10AMauiT.png
+	scale 25
 
 \end_inset
 
@@ -335,6 +345,7 @@ Nodos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 11AMauiN.png
+	scale 25
 
 \end_inset
 
@@ -348,6 +359,7 @@ Configuración
 \begin_layout Standard
 \begin_inset Graphics
 	filename 12AMauiC.png
+	scale 25
 
 \end_inset
 
@@ -361,6 +373,7 @@ Torque
 \begin_layout Standard
 \begin_inset Graphics
 	filename 13ATorque.png
+	scale 25
 
 \end_inset
 
@@ -374,6 +387,7 @@ Trabajos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 14ATorqueT.png
+	scale 25
 
 \end_inset
 
@@ -387,6 +401,7 @@ Colas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 15ATorqueC.png
+	scale 25
 
 \end_inset
 
@@ -400,6 +415,7 @@ Nodos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 16ATorqueE.png
+	scale 25
 
 \end_inset
 
@@ -413,6 +429,7 @@ Estado
 \begin_layout Standard
 \begin_inset Graphics
 	filename 17ATorqueE.png
+	scale 25
 
 \end_inset
 
@@ -426,6 +443,7 @@ Ejecuciones
 \begin_layout Standard
 \begin_inset Graphics
 	filename 18ATorqueEj.png
+	scale 25
 
 \end_inset
 
@@ -439,6 +457,7 @@ Alertas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 19AAlertas.png
+	scale 25
 
 \end_inset
 
@@ -448,6 +467,7 @@ Alertas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 20AAlertas2.png
+	scale 25
 
 \end_inset
 
@@ -473,6 +493,7 @@ Ingreso al sitio
 \begin_layout Standard
 \begin_inset Graphics
 	filename 01login.png
+	scale 25
 
 \end_inset
 
@@ -488,6 +509,7 @@ El usuario deberá ingresar su nombre de usuario y su clave.
 \begin_layout Standard
 \begin_inset Graphics
 	filename 21CTrabajos.png
+	scale 25
 
 \end_inset
 
@@ -501,6 +523,7 @@ Archivos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 22CArchivos.png
+	scale 25
 
 \end_inset
 
@@ -510,6 +533,7 @@ Archivos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 23CArchivos.png
+	scale 25
 
 \end_inset
 
@@ -519,6 +543,7 @@ Archivos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 25CArchivos.png
+	scale 25
 
 \end_inset
 
@@ -532,6 +557,7 @@ Resultados
 \begin_layout Standard
 \begin_inset Graphics
 	filename 27CRes.png
+	scale 25
 
 \end_inset
 
@@ -545,6 +571,7 @@ Cambiar Clave
 \begin_layout Standard
 \begin_inset Graphics
 	filename 28CCambiarClave.png
+	scale 25
 
 \end_inset
 
@@ -558,6 +585,7 @@ Alertas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 29CAlertas.png
+	scale 25
 
 \end_inset
 
@@ -567,6 +595,7 @@ Alertas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 30CAlertas.png
+	scale 25
 
 \end_inset
 
