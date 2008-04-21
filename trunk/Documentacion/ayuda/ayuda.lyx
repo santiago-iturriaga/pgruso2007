@@ -208,8 +208,8 @@ Usuarios - Grupos
 \begin_layout Standard
 Cada usuario del sistema tendrá un nombre de usuario, una dirección de correo
  electrónico y una contraseña.
- Cada uno es creado bajo un grupo de usuarios seleccionando el grupo y presionan
-do el boton 
+ Cada uno es creado bajo un grupo, seleccionándolo y presionando el boton
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -250,12 +250,12 @@ Accesos
 \end_layout
 
 \begin_layout Standard
-Para administrar los accesos, por grupo, a los trabajos del sistema, se
- deberá seleccionar el grupo.
- a continuación se mostrarán todos los pares cliente - trabajo dados de
+Para administrar los accesosa los trabajos del sistema, se deberá seleccionar
+ un grupo.
+ A continuación se mostrarán todos los pares cliente - trabajo dados de
  alta en el sistema.
  Simplemente seleccionando cada casilla se le estará dando acceso a todos
- los integrantes del grupo, a los respectivos trabajos.
+ los integrantes del grupo a los respectivos trabajos.
 \end_layout
 
 \begin_layout Subsubsection
