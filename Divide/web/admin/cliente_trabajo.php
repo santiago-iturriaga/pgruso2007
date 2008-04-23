@@ -40,23 +40,31 @@
 	$error = "";
 
 
-
 	if(isset($_POST["nombre_cliente"])){
 		$commandFinger = "finger ".$_POST["usr_linux"];
 		$resFinger = ejecutar_servidor($commandFinger);
+		if($s->sesion->estado_cliente == 'NUEVO'){
 
-		if(stripos($resFinger,"no such user") == null){
-			$res	= $usuarios->crearCliente($_POST["nombre_cliente"],$_POST["usr_linux"]);
+			if(stripos($resFinger,"no such user") == null){
+					$res	= $usuarios->crearCliente($_POST["nombre_cliente"],$_POST["usr_linux"]);
+				    if($res["error"])
+					 $error	= $interfaz->getError($res);
+				    else{
+				      $mensaje = $interfaz->getMensaje("CT004");
+				      $s->sesion->admin_cliente_actual = $res["id"];
+
+				    }
+			}else{
+				$error	= $interfaz->getError2("U55");
+			}
+		}
+		else{
+			$res	= $usuarios->editarCliente($s->sesion->admin_cliente_actual,$_POST["nombre_cliente"]);
 		    if($res["error"])
 			 $error	= $interfaz->getError($res);
 		    else{
-		      $mensaje = $interfaz->getMensaje("CT004");
-		      $s->sesion->admin_cliente_actual = $res["id"];
-
+		      $mensaje = $interfaz->getMensaje("CT008");
 		    }
-		}else{
-			$error	= $interfaz->getError2("U55");
-
 		}
 
 	}
@@ -98,7 +106,16 @@
 
 	if(isset($_GET["nuevo_cliente"])){
 		$form_cliente	= 	$plantilla->load("plantillas/cliente_trabajo/form_cliente.html");
+		$s->sesion->estado_cliente = 'NUEVO';
 	}
+	if(isset($_GET["editar_cliente"])){
+		$form_cliente	= 	$plantilla->load("plantillas/cliente_trabajo/form_cliente_editar.html");
+		$s->sesion->admin_cliente_actual = $_GET["editar_cliente"];
+		$res = $usuarios->getCliente($s->sesion->admin_cliente_actual);
+		$form_cliente	=	$plantilla->replace($form_cliente,array("NOMBRE"=>$res["cliente"]["nombre"],"USR_LINUX"=>$res["cliente"]["usr_linux"]));
+		$s->sesion->estado_cliente = 'EDITAR';
+	}
+
 
 	if(isset($_GET["eliminar"])){
 		$res = $usuarios->eliminarTrabajo($_GET["eliminar"]);
