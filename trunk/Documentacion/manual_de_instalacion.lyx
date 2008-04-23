@@ -114,15 +114,15 @@ Para compilar e instalar PostgreSQL en /usr/local/postgresql-8.2.5 se deben
 \end_layout
 
 \begin_layout Quote
-# ./configure --prefix=/usr/local/postgresql-8.2.5
+$ ./configure --prefix=/usr/local/postgresql-8.2.5
 \end_layout
 
 \begin_layout Quote
-# make
+$ make
 \end_layout
 
 \begin_layout Quote
-[root]$ make install
+root:# make install
 \end_layout
 
 \begin_layout Standard
@@ -131,20 +131,20 @@ Luego se debe crear el usuario de PostgreSQL y se debe asignar espacio fisico
 \end_layout
 
 \begin_layout Quote
-[root]$ adduser postgres 
+root:# adduser postgres 
 \end_layout
 
 \begin_layout Quote
-[root]$ mkdir /usr/local/postgresql-8.2.5/data 
+root:# mkdir /usr/local/postgresql-8.2.5/data 
 \end_layout
 
 \begin_layout Quote
-[root]$ chown postgres /usr/local/postgresql-8.2.5/data 
+root:# chown postgres /usr/local/postgresql-8.2.5/data 
 \end_layout
 
 \begin_layout Quote
-[postgres]# /usr/local/postgresql-8.2.5/bin/initdb -D /usr/local/postgresql-8.2.5/da
-ta 
+postgres:$ /usr/local/postgresql-8.2.5/bin/initdb -D /usr/local/postgresql-8.2.5/dat
+a 
 \end_layout
 
 \begin_layout Standard
@@ -152,8 +152,8 @@ Finalmente iniciamos el servicio:
 \end_layout
 
 \begin_layout Quote
-[postgres]# /usr/local/postgresql-8.2.5/bin/pg_ctl -D /usr/local/postgresql-8.2.5/da
-ta
+postgres:$ /usr/local/postgresql-8.2.5/bin/pg_ctl -D /usr/local/postgresql-8.2.5/dat
+a
 \end_layout
 
 \begin_layout Standard
@@ -210,16 +210,16 @@ target "http://www.php.net/"
 \end_layout
 
 \begin_layout Quote
-# ./configure --prefix=/usr/local/php-5.2.5 --with-pgsql=/usr/local/postgresql-8.2.5
+$ ./configure --prefix=/usr/local/php-5.2.5 --with-pgsql=/usr/local/postgresql-8.2.5
  --with-gd 
 \end_layout
 
 \begin_layout Quote
-# make 
+$ make 
 \end_layout
 
 \begin_layout Quote
-[root]$ make install
+root:# make install
 \end_layout
 
 \begin_layout Standard
@@ -264,15 +264,15 @@ Para compilar e instalar el gmond:
 \end_layout
 
 \begin_layout Quote
-# ./configure --prefix=/usr/local/ganglia-3.0.7
+$ ./configure --prefix=/usr/local/ganglia-3.0.7
 \end_layout
 
 \begin_layout Quote
-# make
+$ make
 \end_layout
 
 \begin_layout Quote
-[root]$ make install
+root:# make install
 \end_layout
 
 \begin_layout Standard
@@ -283,7 +283,7 @@ Dentro del directorio ganglia-3.0.7-src/gmond podremos encontrar algunos scripts
 \end_layout
 
 \begin_layout Quote
-[root]$ /usr/local/ganglia-3.0.7/sbin/gmond --default_config > /etc/gmond.conf
+root:# /usr/local/ganglia-3.0.7/sbin/gmond --default_config > /etc/gmond.conf
 \end_layout
 
 \begin_layout Standard
@@ -309,7 +309,7 @@ Para compilar e instalar gmetad y gmond:
 \end_layout
 
 \begin_layout Quote
-# ./configure --prefix=/usr/local/ganglia-3.0.7 --with-gmetad 
+$ ./configure --prefix=/usr/local/ganglia-3.0.7 --with-gmetad 
 \end_layout
 
 \begin_deeper
@@ -319,11 +319,11 @@ Para compilar e instalar gmetad y gmond:
 
 \end_deeper
 \begin_layout Quote
-# make
+$ make
 \end_layout
 
 \begin_layout Quote
-[root]$ make install
+root:# make install
 \end_layout
 
 \begin_layout Standard
@@ -393,15 +393,15 @@ Para instalar el servidor de Torque en /usr/local/torque-2.3.0:
 \end_layout
 
 \begin_layout Quote
-# ./configure --prefix=/usr/local/torque-2.3.0 --enable-doc 
+$ ./configure --prefix=/usr/local/torque-2.3.0 --enable-doc 
 \end_layout
 
 \begin_layout Quote
-# make 
+$ make 
 \end_layout
 
 \begin_layout Quote
-[root]$ make install
+root:# make install
 \end_layout
 
 \begin_layout Standard
@@ -410,11 +410,11 @@ Una vez que termina la instalación del servidor, es necesario configurar
 \end_layout
 
 \begin_layout Quote
-[root]$ export PATH=$PATH:/usr/local/torque-2.3.0/bin/:/usr/local/torque-2.3.0/sbin/
+root:# export PATH=$PATH:/usr/local/torque-2.3.0/bin/:/usr/local/torque-2.3.0/sbin/
 \end_layout
 
 \begin_layout Quote
-[root]$ torque.setup <USUARIO>
+root:# torque.setup <USUARIO>
 \end_layout
 
 \begin_layout Standard
@@ -442,7 +442,7 @@ O mediante la interfaz de consola de torque:
 \end_layout
 
 \begin_layout Quote
-# qmgr
+$ qmgr
 \end_layout
 
 \begin_layout Quote
@@ -458,7 +458,7 @@ Para crear los paquetes de instalación distribuibles se debe ejecutar:
 \end_layout
 
 \begin_layout Quote
-# make packages
+$ make packages
 \end_layout
 
 \begin_layout Standard
@@ -466,8 +466,8 @@ Y luego en cada nodo de computo:
 \end_layout
 
 \begin_layout Quote
-[root]$ ./torque-package-clients-linux-i686.sh --install (./torque-package-mom-linu
-x-i686.sh --install?)
+root:# ./torque-package-clients-linux-i686.sh --install (./torque-package-mom-linux
+-i686.sh --install?)
 \end_layout
 
 \begin_layout Standard
@@ -519,16 +519,16 @@ or del scheduler.
 \end_layout
 
 \begin_layout Quote
-[mauiadmin]# ./configure --prefix=/usr/local/maui --with-pbs (opcional: --with-go
-ld)
+mauiadmin:$ ./configure --prefix=/usr/local/maui --with-pbs (opcional: --with-gol
+d)
 \end_layout
 
 \begin_layout Quote
-[mauiadmin]# make 
+mauiadmin:$ make 
 \end_layout
 
 \begin_layout Quote
-[root]$ make install 
+root:# make install 
 \end_layout
 
 \begin_layout Standard
@@ -585,15 +585,15 @@ target "http://www.open-mpi.org/"
 \end_layout
 
 \begin_layout Quote
-# ./configure --prefix=/usr/local/openmpi-1.2.6
+$ ./configure --prefix=/usr/local/openmpi-1.2.6
 \end_layout
 
 \begin_layout Quote
-# make
+$ make
 \end_layout
 
 \begin_layout Quote
-[root]$ make install
+root:# make install
 \end_layout
 
 \begin_layout Subsection
@@ -613,16 +613,16 @@ target "http://www-unix.mcs.anl.gov/mpi/mpich1/"
 \end_layout
 
 \begin_layout Standard
-# ./configure --with-device=ch_p4 --prefix=/usr/local/mpich-1.2.7p1 --with-common-p
+$ ./configure --with-device=ch_p4 --prefix=/usr/local/mpich-1.2.7p1 --with-common-p
 refix=/usr/local/mpich-1.2.7p1 
 \end_layout
 
 \begin_layout Standard
-# make 
+$ make 
 \end_layout
 
 \begin_layout Standard
-[root]$ make install
+root:# make install
 \end_layout
 
 \begin_layout Subsubsection
@@ -645,17 +645,17 @@ target "http://www.osc.edu/~pw/mpiexec/index.php"
 \end_layout
 
 \begin_layout Standard
-# ./configure --prefix=/usr/local/mpiexec-0.83 --with-default-comm=mpich-p4
+$ ./configure --prefix=/usr/local/mpiexec-0.83 --with-default-comm=mpich-p4
  --with-pbs=/usr/local/torque --with-mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc
  
 \end_layout
 
 \begin_layout Standard
-# make 
+$ make 
 \end_layout
 
 \begin_layout Standard
-[root]$ make install
+root:# make install
 \end_layout
 
 \begin_layout Section
@@ -677,11 +677,11 @@ El sistema necesita contar un usuario y un grupo para ejecutar.
 \end_layout
 
 \begin_layout Quote
-[root]$ addgroup fenton
+root:# addgroup fenton
 \end_layout
 
 \begin_layout Quote
-[root]$ adduser --ingroup fenton fenton
+root:# adduser --ingroup fenton fenton
 \end_layout
 
 \begin_layout Paragraph
@@ -697,11 +697,11 @@ Debemos crear el repositorio raiz donde el sistema creará la estructura
 \end_layout
 
 \begin_layout Quote
-[fenton]# mkdir -p /home/fenton/repositorio
+fenton:$ mkdir -p /home/fenton/repositorio
 \end_layout
 
 \begin_layout Quote
-[fenton]# chmod g+w+r /home/fenton/repositorio
+fenton:$ chmod g+w+r /home/fenton/repositorio
 \end_layout
 
 \begin_deeper
@@ -711,7 +711,7 @@ El grupo del directorio del repositorio debe ser fenton.
 \end_layout
 
 \begin_layout Quote
-[root]$ chgrp fenton /home/fenton/repositorio
+root:# chgrp fenton /home/fenton/repositorio
 \end_layout
 
 \end_deeper
@@ -723,11 +723,11 @@ Finalmente debemos crear un espacio para el repositorio interno del sistema.
 \end_layout
 
 \begin_layout Quote
-[fenton]# mkdir -p /home/fenton/repositorio/sistema
+fenton:$ mkdir -p /home/fenton/repositorio/sistema
 \end_layout
 
 \begin_layout Quote
-[fenton]# chmod g+w+r /home/fenton/repositorio/sistema
+fenton:$ chmod g+w+r /home/fenton/repositorio/sistema
 \end_layout
 
 \begin_deeper
@@ -782,11 +782,11 @@ A continuación creamos la clave publica y la privada necesarias para la
 \end_layout
 
 \begin_layout Quote
-[root]$ su - www-data
+root:# su - www-data
 \end_layout
 
 \begin_layout Quote
-[www-data]# ssh-keygen -t dsa
+www-data:$ ssh-keygen -t dsa
 \end_layout
 
 \begin_layout Standard
@@ -795,15 +795,15 @@ Finalmente debemos agregar a las claves publicas del usuario fenton la recien
 \end_layout
 
 \begin_layout Quote
-[fenton]# mkdir -p /home/fenton/.ssh
+fenton:$ mkdir -p /home/fenton/.ssh
 \end_layout
 
 \begin_layout Quote
-[root]$ cat /home/www-data/.ssh/id_dsa.pub >> /home/fenton/.ssh/authorized_keys2
+root:# cat /home/www-data/.ssh/id_dsa.pub >> /home/fenton/.ssh/authorized_keys2
 \end_layout
 
 \begin_layout Quote
-[root]$ chown fenton.fenton /home/fenton/.ssh/authorized_keys2
+root:# chown fenton.fenton /home/fenton/.ssh/authorized_keys2
 \end_layout
 
 \begin_layout Standard
@@ -813,7 +813,7 @@ Es necesario probar al menos una vez el acceso SSH al nodo maestro para
 \end_layout
 
 \begin_layout Quote
-[www-data]# ssh fenton@localhost
+www-data:$ ssh fenton@localhost
 \end_layout
 
 \begin_layout Subsection
@@ -828,11 +828,11 @@ Es necesario crear un usuario para el sistema en la base de datos, asignarle
 \end_layout
 
 \begin_layout Quote
-[root]$ su - postgres 
+root:# su - postgres 
 \end_layout
 
 \begin_layout Quote
-[postgres]# createuser fentondb 
+postgres:$ createuser fentondb 
 \end_layout
 
 \begin_layout Standard
@@ -840,11 +840,11 @@ Luego creamos el esquema de datos y las tablas.
 \end_layout
 
 \begin_layout Quote
-# createdb fentondb 
+$ createdb fentondb 
 \end_layout
 
 \begin_layout Quote
-# psql fentondb
+$ psql fentondb
 \end_layout
 
 \begin_layout Quote
