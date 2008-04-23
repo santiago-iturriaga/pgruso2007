@@ -612,6 +612,19 @@ class Usuarios{
 		return array("error"=>0,"usuarios"=>$salida);
 	}
 
+	function getCliente($id){
+		$consulta= "select c.*" .
+				   " from cliente c " .
+				   " where c.id=?";
+		if(!$this->conexion->EjecutarConsulta($consulta,array($id),true))
+			{
+			return array("error"=>1,
+						 "codError"=>$this->conexion->msgError);
+			}
+		$salida=array();
+		$row=$this->conexion->Next();
+		return array("error"=>0,"cliente"=>$row);
+	}
 
 }
 ?>
