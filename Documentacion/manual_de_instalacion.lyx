@@ -206,6 +206,8 @@ target "http://www.php.net/"
 \end_inset
 
 .
+ Al igual que para la instalación de Apache, es recomendable utilizar el
+ paquete de PHP propio de la distribución de linux que se este usando.
  Para compilar e instalar PHP en el directorio /usr/local/php-5.2.5:
 \end_layout
 
@@ -223,8 +225,10 @@ make
 \end_layout
 
 \begin_layout Standard
-Es necesario al momento de la compilación incluir soporte para PostgreSQL
- y para la biblioteca gráfica GD (utilizada por Ganglia).
+Es necesario incluir soporte para PostgreSQL y para la biblioteca gráfica
+ GD (utilizada por Ganglia).
+ Luego de la instalación es necesario configurar el Apache para ejecutar
+ archivos PHP.
 \end_layout
 
 \begin_layout Subsection
@@ -245,24 +249,6 @@ target "http://ganglia.info/"
 \end_layout
 
 \begin_layout Itemize
-gmetad
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Es un demonio que oficia de servidor, recolectando información de los nodos
- del cluster.
- Solamente una instancia de este demonio debe estar en ejecución.
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-<TODO: detallar pasos de instalación.>
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
 gmond
 \end_layout
 
@@ -276,7 +262,86 @@ Este demonio se encarga de enviar información del estado del nodo al demonio
 
 \begin_deeper
 \begin_layout Standard
-<TODO: detallar pasos de instalación.>
+Para compilar e instalar el gmond:
+\end_layout
+
+\begin_layout Quote
+./configure --prefix=/usr/local/ganglia-3.0.7
+\end_layout
+
+\begin_layout Quote
+make
+\end_layout
+
+\begin_layout Quote
+[root] make install
+\end_layout
+
+\begin_layout Standard
+Dentro del directorio ganglia-3.0.7-src/gmond podremos encontrar algunos scripts
+ de ejemplo para iniciar gmond al inicio del sistema.
+ Es necesario configurar gmond, para esto creamos el archivo de configuracion
+ /etc/gmond.conf con los valores por defecto ejecutando:
+\end_layout
+
+\begin_layout Quote
+/usr/local/ganglia-3.0.7/sbin/gmond --default_config > /etc/gmond.conf
+\end_layout
+
+\begin_layout Standard
+Una vez creado con valores por defecto podemos configurarlo a gusto.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+gmetad
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Es un demonio que oficia de servidor, recolectando información de los nodos
+ del cluster.
+ Solamente una instancia de este demonio debe estar en ejecución.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Para compilar e instalar gmetad y gmond:
+\end_layout
+
+\begin_layout Quote
+./configure --prefix=/usr/local/ganglia-3.0.7 --with-gmetad 
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+(con la opcion --with-gmetad se genera gmond y gmetad al mismo tiempo)
+\end_layout
+
+\end_deeper
+\begin_layout Quote
+make
+\end_layout
+
+\begin_layout Quote
+[root] make install
+\end_layout
+
+\begin_layout Standard
+Dentro del directorio ganglia-3.0.7-src/gmetad podremos encontrar algunos
+ scripts de ejemplo para iniciar gmetad al inicio del sistema.
+ A diferencia de gmond, gmetad viene además con un archivo de configuración
+ por defecto (ganglia-3.0.7-src/gmetad/gmetad.conf) que debemos copiar a /etc/gmeta
+d.conf y luego editar.
+\end_layout
+
+\begin_layout Standard
+Finalmente debemos crear el espacio en disco en donde gmetad guardará la
+ información que recopile.
+ Por defecto es en /var/lib/ganglia/rrds y su owner debe ser el usuario
+ que fué configurado en gmetad.conf como usuario de ejecución (por defecto
+ el usuario 'nobody').
 \end_layout
 
 \end_deeper
@@ -289,19 +354,19 @@ Interfaz web
 \begin_layout Itemize
 Ganglia cuenta con una interfaz web implementada en PHP donde se presenta
  la información del cluster.
+ La interfaz web de Ganglia debe estar alojada en el mismo nodo que ejecuta
+ el demonio gmetad.
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-<TODO: detallar pasos de instalación.>
+Para realizar la instalación solamente es necesario copiar el directorio
+ ganglia-3.0.7-src/web al directorio DocumentRoot de su instalación de Apache,
+ por ejemplo: /var/www/ganglia.
 \end_layout
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-Se encuentran disponibles paquetes RPM o tarball.
-\end_layout
-
 \begin_layout Subsection
 Torque 2.2.1 o superior [Requerido].
 \end_layout
@@ -326,11 +391,11 @@ Instalación y configuración de Torque en el nodo maestro.
 \end_layout
 
 \begin_layout Standard
-Para instalar el servidor de Torque en /usr/local/torque:
+Para instalar el servidor de Torque en /usr/local/torque-2.3.0:
 \end_layout
 
 \begin_layout Quote
-./configure --prefix=/usr/local/torque --enable-gui --enable-doc 
+./configure --prefix=/usr/local/torque-2.3.0 --enable-doc 
 \end_layout
 
 \begin_layout Quote
@@ -347,17 +412,22 @@ Una vez que termina la instalación del servidor, es necesario configurar
 \end_layout
 
 \begin_layout Quote
-torque.setup <USUARIO>
+su -
+\end_layout
+
+\begin_layout Quote
+[root] export PATH=$PATH:/usr/local/torque-2.3.0/bin/:/usr/local/torque-2.3.0/sbin/
+\end_layout
+
+\begin_layout Quote
+[root] torque.setup <USUARIO>
 \end_layout
 
 \begin_layout Standard
 Donde <USUARIO> es el usuario que se desempeñará como administrador de Torque.
  Este script creará un entorno basico de trabajo.
-\end_layout
-
-\begin_layout Standard
-Finalmente se deben configurar los nodos de computo editando /var/spool/torque/s
-erver_priv/nodes, p.
+ Finalmente se deben configurar los nodos de computo editando /var/spool/torque/
+server_priv/nodes, p.
  ej.:
 \end_layout
 
@@ -371,6 +441,18 @@ nodo002.fing.edu.uy
 
 \begin_layout Quote
 nodo003.fing.edu.uy
+\end_layout
+
+\begin_layout Standard
+O mediante la interfaz de consola de torque:
+\end_layout
+
+\begin_layout Quote
+qmgr
+\end_layout
+
+\begin_layout Quote
+> create node nodo001.fing.edu.uy
 \end_layout
 
 \begin_layout Paragraph
@@ -438,13 +520,16 @@ Compilación, instalación y configuración.
 \end_layout
 
 \begin_layout Standard
-Para compilar Maui es necesario ser el usuario de Linux que se desempeñará
- como administrador del scheduler.
- Luego, una vez con este usuario, se debe ejecutar:
+Existe un bug en el script de configuración e instalación de Maui por lo
+ que recomendamos realizar la instalación en /usr/local/maui.
+ Además es necesario ser el usuario de Linux que se desempeñará como administrad
+or del scheduler.
+ Una vez con este usuario, se debe ejecutar:
 \end_layout
 
 \begin_layout Quote
-[mauiadmin] ./configure --prefix=/usr/local/maui --with-gold --with-pbs 
+[mauiadmin] ./configure --prefix=/usr/local/maui --with-pbs (opcional: --with-gol
+d)
 \end_layout
 
 \begin_layout Quote
@@ -453,6 +538,14 @@ Para compilar Maui es necesario ser el usuario de Linux que se desempeñará
 
 \begin_layout Quote
 [root] make install 
+\end_layout
+
+\begin_layout Standard
+Es posible que ocurra un error durante la creación de directorios en la
+ instalación.
+ Si sucede esto es necesario crear los directorios: log, traces, stats,
+ spool, tools en el directorio de instalación manualmente y luego volver
+ a ejecutar 'make install'.
 \end_layout
 
 \begin_layout Standard
@@ -500,8 +593,16 @@ target "http://www.open-mpi.org/"
 .
 \end_layout
 
-\begin_layout Standard
-TODO: queda pendiente.
+\begin_layout Quote
+./configure --prefix=/usr/local/openmpi-1.2.6
+\end_layout
+
+\begin_layout Quote
+make
+\end_layout
+
+\begin_layout Quote
+[root] make install
 \end_layout
 
 \begin_layout Subsection
@@ -553,8 +654,9 @@ target "http://www.osc.edu/~pw/mpiexec/index.php"
 \end_layout
 
 \begin_layout Standard
-./configure --prefix=/usr/local/mpiexec --with-default-comm=mpich-p4 --with-pbs=/
-usr/local/torque --with-mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc 
+./configure --prefix=/usr/local/mpiexec-0.83 --with-default-comm=mpich-p4
+ --with-pbs=/usr/local/torque --with-mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc
+ 
 \end_layout
 
 \begin_layout Standard
