@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -43,20 +43,10 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-Fenton es rosado y funciona a base de jugo de gomibaya.
-\end_layout
-
-\begin_layout Standard
 El sistema cuenta con dos niveles de usuarios: clientes y administradores.
  Si bien las funcionalidades del administrador incluyen las del cliente,
  los perfiles son muy diferentes.
  Por lo tanto, el presente documento está dividido por tipo de usuario.
-\end_layout
-
-\begin_layout Standard
-El problema de que fenton funcione a base de jugo de gomibaya es que no
- tenemos la fórmula y se murió grammy (una de las víctimas del asado más
- grande del mundo).
 \end_layout
 
 \begin_layout Section
@@ -65,10 +55,6 @@ Administrador
 
 \begin_layout Subsection
 Introducción
-\end_layout
-
-\begin_layout Standard
-El administrador es un groso
 \end_layout
 
 \begin_layout Subsection
@@ -89,7 +75,7 @@ Ingreso al sitio
 \begin_layout Standard
 El usuario deberá ingresar su nombre de usuario y su clave.
  Por seguridad, en caso de que alguno de los valores sea incorrecto no se
- indicará cuál de los dos es el incorrecto.
+ indicará de cuál de los dos se trata.
  Inicialmente existe un usuario administrador con nombre GROSO y clave del
  FENTON O ALGO, pero luego de haber ingresado al sitio, el administrador
  puede modificar la clave o agregar un nuevo administrador y borrar el usuario
@@ -250,7 +236,7 @@ Accesos
 \end_layout
 
 \begin_layout Standard
-Para administrar los accesosa los trabajos del sistema, se deberá seleccionar
+Para administrar los accesos a los trabajos del sistema, se deberá seleccionar
  un grupo.
  A continuación se mostrarán todos los pares cliente - trabajo dados de
  alta en el sistema.
@@ -273,6 +259,63 @@ Clientes - Trabajos
 \end_layout
 
 \begin_layout Standard
+Para crear un nuevo trabajo es necesario tener por lo menos un cliente creado.
+ Para esto se deberá presionar el botón 
+\begin_inset Quotes eld
+\end_inset
+
+Nuevo
+\begin_inset Quotes erd
+\end_inset
+
+ (a la derecha de la lista de clientes).
+ A continuación se mostrarán los campos a llenar:
+\end_layout
+
+\begin_layout Itemize
+nombre: nombre descriptivo del cliente.
+\end_layout
+
+\begin_layout Itemize
+usuario linux: usuario con el que se correrán los trabajos del cliente.
+\end_layout
+
+\begin_layout Standard
+Luego de haber creado el cliente, se presentará la opción de crear un nuevo
+ trabajo para el mismo presionando el botón 
+\begin_inset Quotes eld
+\end_inset
+
+Nuevo
+\begin_inset Quotes erd
+\end_inset
+
+ mostrado en la tabla de trabajos.
+ A continuación se mostrarán los campos a llenar:
+\end_layout
+
+\begin_layout Itemize
+nombre: nombre descriptivo del trabajo.
+\end_layout
+
+\begin_layout Itemize
+nodos: cantidad de nodos sobre los que se correrá cada ejecución.
+\end_layout
+
+\begin_layout Itemize
+tiempo máximo: tiempo máximo que se le dará a cada ejecución dentro del
+ trabajo.
+\end_layout
+
+\begin_layout Itemize
+cola: cola en la que se colocará cada ejecución del trabajo.
+\end_layout
+
+\begin_layout Itemize
+quota: espacio disponible en disco para el trabajo.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Graphics
 	filename 06AACT2.png
 	scale 25
@@ -282,8 +325,26 @@ Clientes - Trabajos
 
 \end_layout
 
+\begin_layout Standard
+En cualquier momento el administrador podrá eliminar tanto los trabajos
+ como los clientes.
+ Si elimina un trabajo, ningún usuario tendrá acceso al mismo, pero este
+ podrá ser restaurado desde la papelera.
+ Por otro lado, si elimina un cliente, será eliminado físicamente el cliente
+ junto con sus respectivos trabajos, incluyendo los archivos guardados en
+ disco.
+\end_layout
+
 \begin_layout Subsubsection
 Papelera
+\end_layout
+
+\begin_layout Standard
+Desde la papelera es posible tanto eliminar como restaurar los trabajos.
+ Si se elije eliminarlos, se borrarán los archivos guardados en disco junto
+ con el resto de la información del trabajo.
+ Si se elije respaldarlos, los usuarios podrán nuevamente tener acceso a
+ los mismos.
 \end_layout
 
 \begin_layout Standard
@@ -298,6 +359,10 @@ Papelera
 
 \begin_layout Subsubsection
 Usuarios - Alertas
+\end_layout
+
+\begin_layout Standard
+zarasa preguntarle a paulo
 \end_layout
 
 \begin_layout Standard
@@ -482,10 +547,6 @@ Cliente
 Introducción
 \end_layout
 
-\begin_layout Standard
-El administrador es un groso
-\end_layout
-
 \begin_layout Subsection
 Ingreso al sitio
 \end_layout
@@ -497,13 +558,14 @@ Ingreso al sitio
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 El usuario deberá ingresar su nombre de usuario y su clave.
- Por seguridad, en caso de que alguno de los valores sea incorrecto no se
- indicará cuál de los dos es el incorrecto.
- Inicialmente existe un usuario administrador con nombre GROSO y clave del
- FENTON O ALGO, pero luego de habr ingresado al sitio, el administrador
- puede modificar la clave o agregar un nuevo administrador y borrar el usuario
- inicial.
+ A continuación, si el nombre y la clave fueron correctos, se mostrarán
+ los trabajos a los que el usuario tiene acceso.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -516,8 +578,46 @@ El usuario deberá ingresar su nombre de usuario y su clave.
 
 \end_layout
 
+\begin_layout Standard
+Luego de seleccionar uno de ellos se mostrará la página de administración
+ de archivos.
+\end_layout
+
 \begin_layout Subsection
 Archivos
+\end_layout
+
+\begin_layout Standard
+Desde la página de administración de archivos estarán las funcionalidades
+ más usuales para el usuario final.
+\end_layout
+
+\begin_layout Standard
+En primer lugar podrá subir archivos individualmente mediante el botón de
+ 
+\begin_inset Quotes eld
+\end_inset
+
+nuevo
+\begin_inset Quotes erd
+\end_inset
+
+ (segundo botón en la barra).
+ A continuación se mostrará un espacio para seleccionar el archivo y un
+ botón de aceptar.
+ Si en lugar de un archivo corriente se seleciona un archivo zip, el mismo
+ será automáticamente descomprimido en la carpeta en que se encuentre el
+ usuario.
+\end_layout
+
+\begin_layout Standard
+Los archivos creados pueden ser borrados, con la salvedad de las carpetas,
+ que deben estar vacías para poder ser eliminadas.
+\end_layout
+
+\begin_layout Standard
+El usuario podrá a su vez descargar un archivo zip con el contenido del
+ proyecto presionando el primer botón de la barra.
 \end_layout
 
 \begin_layout Standard
@@ -531,13 +631,8 @@ Archivos
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename 23CArchivos.png
-	scale 25
-
-\end_inset
-
-
+El tercer botón en la barra da la opción de ejecutar un makefile o el comando
+ mpicc, permitiendo además el pasaje de argumentos.
 \end_layout
 
 \begin_layout Standard
@@ -550,8 +645,96 @@ Archivos
 
 \end_layout
 
+\begin_layout Standard
+Los archivos ejecutables tendrán una tercera opción (ademas de descargar
+ y eliminar) que será la de ejecución.
+ Presionando este botón, se desplegará un campo a rellenar con los argumentos
+ de ejecución (opcional) y la opción de ejecutar.
+ Luego de aceptar, se mostrará la página de resultados con la salida del
+ ejecutable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 23CArchivos.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Salida del ejecutable
+\end_layout
+
+\begin_layout Standard
+Luego de ejecutar un archivo se mostrará la salida del mismo.
+ En la barra lateral se mostrará:
+\end_layout
+
+\begin_layout Itemize
+La cantidad de trabajos en ejecución asociados al cliente del usuario actual.
+\end_layout
+
+\begin_layout Itemize
+El estado del trabajo actual (en ejecución, en espera, terminado).
+\end_layout
+
+\begin_layout Itemize
+La opción de descargar la salida del mismo.
+ Si está terminado será la salida total, en caso contrario se descargará
+ la salida hasta el momento.
+\end_layout
+
+\begin_layout Itemize
+La opción de terminar la ejecución.
+\end_layout
+
+\begin_layout Itemize
+La opción de bloquear o desbloquear el scroll.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 23CArchivosb.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Resultados
+\end_layout
+
+\begin_layout Standard
+En cualquier momento será posible consultar por el histórico de ejecuciones.
+ Es importante notar que las salidas de cada ejecutable son dos: por un
+ lado se guarda la salida habitual (salida más salida de error) y por otro
+ se guarda la salida de Torque (el administrador de recursos del cluster).
+\end_layout
+
+\begin_layout Standard
+Presionando el botón 
+\begin_inset Quotes eld
+\end_inset
+
+Ver
+\begin_inset Quotes erd
+\end_inset
+
+ se mostrará la pagina de salida del ejecutable, mientras que si se presiona
+ el botón 
+\begin_inset Quotes eld
+\end_inset
+
+Log
+\begin_inset Quotes erd
+\end_inset
+
+ se mostrará la salida de Torque en la parte inferior de la página.
 \end_layout
 
 \begin_layout Standard
@@ -566,6 +749,12 @@ Resultados
 
 \begin_layout Subsection
 Cambiar Clave
+\end_layout
+
+\begin_layout Standard
+El usuario luego de haberse logueado podrá cambiar su clave (recomendado
+ la primera vez que ingrese al sitio) ingresando su clave actual, y dos
+ veces su nueva clave.
 \end_layout
 
 \begin_layout Standard
