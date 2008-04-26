@@ -59,8 +59,8 @@ Sistema operativo.
 \end_layout
 
 \begin_layout Standard
-Se recomienda utilizar Linux 2.6 (o superior), ya sea 32-bits (x86) o 64-bits
- (x64).
+Se recomienda utilizar Linux 2.6 (o superior), con una arquitectura de 32-bits
+ (x86) o 64-bits (x64).
  Si bien el sistema fué probado en SuSE, Ubuntu y Fedora, esto no quita
  que pueda realizarse una instalación en otras distribuciones (Debian, Slackware
 , etc.) o hasta otro sistema operativo de la familia POSIX (FreeBSD, Solaris,
@@ -366,7 +366,7 @@ Para realizar la instalación solamente es necesario copiar el directorio
 \end_deeper
 \end_deeper
 \begin_layout Subsection
-Torque 2.2.1 o superior [Requerido].
+Torque 2.3.0 o superior [Requerido].
 \end_layout
 
 \begin_layout Standard
@@ -414,11 +414,12 @@ root:# export PATH=$PATH:/usr/local/torque-2.3.0/bin/:/usr/local/torque-2.3.0/sb
 \end_layout
 
 \begin_layout Quote
-root:# torque.setup <USUARIO>
+root:# torque.setup <torqueadmin>
 \end_layout
 
 \begin_layout Standard
-Donde <USUARIO> es el usuario que se desempeñará como administrador de Torque.
+Donde <torqueadmin> es el usuario que se desempeñará como administrador
+ de Torque.
  Este script creará un entorno basico de trabajo.
  Finalmente se deben configurar los nodos de computo editando /var/spool/torque/
 server_priv/nodes, p.
@@ -446,7 +447,7 @@ $ qmgr
 \end_layout
 
 \begin_layout Quote
-qmgr> create node nodo001.fing.edu.uy
+qmgr: create node nodo001.fing.edu.uy
 \end_layout
 
 \begin_layout Paragraph
@@ -466,8 +467,10 @@ Y luego en cada nodo de computo:
 \end_layout
 
 \begin_layout Quote
-root:# ./torque-package-clients-linux-i686.sh --install (./torque-package-mom-linux
--i686.sh --install?)
+root:# ./torque-package-clients-linux-i686.sh --install 
+\series bold
+\color red
+(./torque-package-mom-linux-i686.sh --install?)
 \end_layout
 
 \begin_layout Standard
@@ -485,8 +488,8 @@ Es necesario que el servidor de Torque y los MOM se encuentren en ejecución
  permanente en el cluster.
  Para esto es recomendable que sean agregados como demonios en el sistema
  creando scripts de ejecución en /etc/init.d.
- Para facilitar esto existen dos scritps que pueden tomarse de ejemplo:
- scripts/qserverd.example.sh y scripts/qnoded.example.sh.
+ Existen dos scritps que pueden tomarse de base: scripts/qserverd.example.sh
+ y scripts/qnoded.example.sh.
 \end_layout
 
 \begin_layout Subsection
@@ -515,16 +518,19 @@ Existe un bug en el script de configuración e instalación de Maui por lo
  que recomendamos realizar la instalación en /usr/local/maui.
  Además es necesario ser el usuario de Linux que se desempeñará como administrad
 or del scheduler.
+ Este usuario debe ser también administrador de Torque, por lo que recomendamos
+ utilizar el mismo usuario se asignó durante el paso anterior como administrador
+ de Torque.
  Una vez con este usuario, se debe ejecutar:
 \end_layout
 
 \begin_layout Quote
-mauiadmin:$ ./configure --prefix=/usr/local/maui --with-pbs (opcional: --with-gol
-d)
+<torqueadmin>:$ ./configure --prefix=/usr/local/maui --with-pbs (opcional:
+ --with-gold)
 \end_layout
 
 \begin_layout Quote
-mauiadmin:$ make 
+<torqueadmin>:$ make 
 \end_layout
 
 \begin_layout Quote
@@ -534,9 +540,20 @@ root:# make install
 \begin_layout Standard
 Es posible que ocurra un error durante la creación de directorios en la
  instalación.
- Si sucede esto es necesario crear los directorios: log, traces, stats,
- spool, tools en el directorio de instalación manualmente y luego volver
+ Si sucede esto es necesario crear los directorios: 'log', 'traces', 'stats',
+ 'spool' y 'tools' en el directorio de instalación manualmente y luego volver
  a ejecutar 'make install'.
+ 
+\end_layout
+
+\begin_layout Standard
+Debemos asegurarnos que el usuario administrador de Maui tenga permisos
+ de escritura sobre el directorio de instalación.
+ Una posibilidad es asignarlo como owner:
+\end_layout
+
+\begin_layout Quote
+root:# chown -R <torqueadmin> /usr/local/maui
 \end_layout
 
 \begin_layout Standard
@@ -663,7 +680,7 @@ Instalación de Fenton.
 \end_layout
 
 \begin_layout Subsection
-Configuración de seguridad del cluster.
+Seguridad del sistema.
 \end_layout
 
 \begin_layout Paragraph
@@ -671,9 +688,9 @@ Usuario y grupo del sistema.
 \end_layout
 
 \begin_layout Standard
-El sistema necesita contar un usuario y un grupo para ejecutar.
+El sistema necesita contar con un usuario y un grupo para ejecutar.
  Por defecto este usuario y este grupo se llamaran fenton, para crearlos
- es necesario ejecutar:
+ es debemos ejecutar:
 \end_layout
 
 \begin_layout Quote
@@ -692,8 +709,8 @@ Repositorio del sistema.
 Debemos crear el repositorio raiz donde el sistema creará la estructura
  de trabajos y clientes para que los usuarios realicen ejecuciones y almacenen
  sus resultados.
- Por ejemplo, podemos crear el repositorio en /home/fenton/repositorio.
- Luego debemos darle los permisos adecuados.
+ Por ejemplo, creamos el repositorio en /home/fenton/repositorio y luego
+ le asignamos los permisos adecuados.
 \end_layout
 
 \begin_layout Quote
@@ -755,7 +772,7 @@ En el nodo de ejecución de la aplicación web debe ser posible realizar un
 \end_layout
 
 \begin_layout Standard
-El primer paso para esto es encontrar el usuario de ejecución configurado
+El primer paso para esto es averiguar el usuario de ejecución configurado
  en el Apache.
  Este usuario varía de distribución en distribución.
  En nuestro sistema es www-data y está configurado en /etc/apache2/apache2.conf.
@@ -772,7 +789,7 @@ www-data:x:33:33:www-data:/home/www-data:/bin/sh
 
 \begin_layout Standard
 De esta manera asignamos como home del usuario /home/www-data.
- Seguramente este directorio no existe, por lo que deberemos crearlo y asignarle
+ Seguramente este directorio no exista, por lo que deberemos crearlo y asignarle
  como owner www-data.
 \end_layout
 
@@ -817,7 +834,7 @@ www-data:$ ssh fenton@localhost
 \end_layout
 
 \begin_layout Subsection
-Configuración de la base de datos.
+Base de datos.
 \end_layout
 
 \begin_layout Standard
@@ -848,7 +865,7 @@ $ psql fentondb
 \end_layout
 
 \begin_layout Quote
-psql> 
+psql=# 
 \backslash
 i postgres/database.sql
 \end_layout
@@ -858,22 +875,31 @@ Finalmente asignamos una contraseña al nuevo usuario
 \end_layout
 
 \begin_layout Quote
-psql> alter user fentondb password 'fentondb'
+psql=# alter user fentondb password 'fentondb'
 \end_layout
 
 \begin_layout Subsection
-Instalación de la aplicación web.
+Aplicación web.
 \end_layout
 
 \begin_layout Standard
 Para instalar la aplicación web simplemente debemos copiar el directorio
- web/ a la ubicación deseada, por ejemplo /home/fenton/web, y luego crear
- un alias para la aplicación.
+ web/ a la ubicación deseada.
+ Por ejemplo /home/fenton/web, y luego crear un alias para la aplicación.
  En la mayoría de los casos basta con copiar el archivo apache/fenton.conf
  a /etc/apache2/conf.d.
 \end_layout
 
+\begin_layout Standard
+La aplicación web debe ser accesible desde cualquier nodo del cluster.
+ Esto es necesario debido a que los scripts de prologo y epilogo (ver siguiente
+ paso) requieren ejecutar scripts de la aplicación.
+\end_layout
+
 \begin_layout Paragraph
+
+\size larger
+\color red
 /* Falta CRON CRON CRON CRON */
 \end_layout
 
@@ -882,11 +908,70 @@ Configuración de Torque.
 \end_layout
 
 \begin_layout Standard
-agregar al usuario fenton como manager/operator
+Lo primero que debemos hacer es agregar al usuario fenton a la lista de
+ managers y operators del sistema.
+ Para eso ejecutamos:
+\end_layout
+
+\begin_layout Quote
+<torqueadmin> /usr/local/torque-2.3.0/bin/qmgr
+\end_layout
+
+\begin_layout Quote
+qmgr: set server managers += fenton@server.fing.edu.uy
+\end_layout
+
+\begin_layout Quote
+qmgr: set server operators += fenton@server.fing.edu.uy
 \end_layout
 
 \begin_layout Standard
-copiar prologos y epilogos
+Podemos verificar la configuración mediante:
+\end_layout
+
+\begin_layout Quote
+qmgr: list server managers
+\end_layout
+
+\begin_layout Quote
+Server server.fing.edu.uy 
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+managers = fenton@server.fing.edu.uy,<torqueadmin>@server.fing.edu.uy 
+\end_layout
+
+\end_deeper
+\begin_layout Quote
+qmgr: list server operators
+\end_layout
+
+\begin_layout Quote
+Server server.fing.edu.uy 
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+operators = fenton@server.fing.edu.uy,<torqueadmin>@server.fing.edu.uy 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Como último paso debemos editar y copiar los scripts de pre-ejecución (prologo)
+ y post-ejecución (epilogo).
+ Estos scripts se encargan de notificar al sistema cuando algún nodo del
+ cluster comienza o termina con la ejecución de un trabajo.
+ Por esta razón estos scripts deben estar disponibles en todos los nodos
+ del cluster (tanto el maestro como los nodos de cómputo).
+ 
+\end_layout
+
+\begin_layout Standard
+Se deben copiar torque/prologue y torque/epilogue a /var/spool/torque/mom_priv
+ y luego editar estos scripts configurando la variable PATH_PHP según nuestra
+ instalación de la aplicación web, p.
+ ej.: /home/fenton/web/bin.
 \end_layout
 
 \begin_layout Subsection
@@ -894,11 +979,38 @@ Configuración final del sistema.
 \end_layout
 
 \begin_layout Standard
-blah, blah, blah...
+Como último paso, debemos realizar los ajustes finales y configurar la aplicació
+n web con la ubicación de los diferentes componentes del sistema.
+ Para esto debemos editar el archivo de configuración /home/fenton/web/lib/Const
+antes.php.
 \end_layout
 
 \begin_layout Standard
-edición del archivo Constantes.php
+Si toda la instalación se realizó utilizando las ubicaciones sugeridas las
+ modificaciones al archivo de configuración deberían ser minimas.
+\end_layout
+
+\begin_layout Standard
+Algunas de las opciones que seguramente siempre debamos configurar son:
+\end_layout
+
+\begin_layout Itemize
+define("CONEXION_HOST", "servidor.fing.edu.uy");
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ubicación del host corriendo la base de datos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+define("GANGLIA_URL","http://servidor.fing.edu.uy/ganglia");
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL base de la instalación de Ganglia.
 \end_layout
 
 \end_body
