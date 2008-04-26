@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -330,9 +330,8 @@ En cualquier momento el administrador podrá eliminar tanto los trabajos
  como los clientes.
  Si elimina un trabajo, ningún usuario tendrá acceso al mismo, pero este
  podrá ser restaurado desde la papelera.
- Por otro lado, si elimina un cliente, será eliminado físicamente el cliente
- junto con sus respectivos trabajos, incluyendo los archivos guardados en
- disco.
+ Por otro lado, si elimina un cliente, será eliminado físicamente junto
+ con sus respectivos trabajos, incluyendo los archivos guardados en disco.
 \end_layout
 
 \begin_layout Subsubsection
@@ -343,7 +342,7 @@ Papelera
 Desde la papelera es posible tanto eliminar como restaurar los trabajos.
  Si se elije eliminarlos, se borrarán los archivos guardados en disco junto
  con el resto de la información del trabajo.
- Si se elije respaldarlos, los usuarios podrán nuevamente tener acceso a
+ Si se elije restaurarlos, los usuarios podrán nuevamente tener acceso a
  los mismos.
 \end_layout
 
@@ -725,7 +724,7 @@ Ver
 \begin_inset Quotes erd
 \end_inset
 
- se mostrará la pagina de salida del ejecutable, mientras que si se presiona
+ se mostrará la página de salida del ejecutable, mientras que si se presiona
  el botón 
 \begin_inset Quotes eld
 \end_inset
