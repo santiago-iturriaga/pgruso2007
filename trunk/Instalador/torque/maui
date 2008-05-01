@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+# Source function library.
+if [ -f /etc/init.d/functions ] ; then
+  . /etc/init.d/functions
+elif [ -f /etc/rc.d/init.d/functions ] ; then
+  . /etc/rc.d/init.d/functions
+  #else
+  #exit 0
+fi
+
+# Read in the command arguments
+case "$1" in
+  start)
+	/usr/local/maui/sbin/maui --configfile=/usr/local/maui/maui.cfg
+	echo "[MAUI] "
+	;;
+  stop)
+	echo -n $"Shutting down services: "
+	/usr/local/maui/bin/schedctl -k
+	echo "[MAUI] "
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  *)
+	echo $"Usage: torque {start|stop|restart}"
+	exit 1
+esac
+
+exit 0
