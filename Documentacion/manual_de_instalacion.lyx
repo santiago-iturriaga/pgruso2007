@@ -509,14 +509,6 @@ target "http://www.clusterresources.com/"
 .
 \end_layout
 
-\begin_layout Standard
-
-\series bold
-\size larger
-\color red
-SI DEJO 'SANTIAGO' COMO ADMIN DE MAUI NO ME DEJA USAR MAUI DESDE 'FENTON'!!!
-\end_layout
-
 \begin_layout Paragraph
 Compilación, instalación y configuración.
 \end_layout
@@ -912,7 +904,7 @@ La aplicación web debe ser accesible desde cualquier nodo del cluster.
 \end_layout
 
 \begin_layout Subsection
-Configuración de Torque.
+Configuración de Torque y Maui.
 \end_layout
 
 \begin_layout Standard
@@ -922,7 +914,7 @@ Lo primero que debemos hacer es agregar al usuario fenton a la lista de
 \end_layout
 
 \begin_layout Quote
-<torqueadmin> /usr/local/torque-2.3.0/bin/qmgr
+<torqueadmin>:$ /usr/local/torque-2.3.0/bin/qmgr
 \end_layout
 
 \begin_layout Quote
@@ -966,6 +958,17 @@ operators = fenton@server.fing.edu.uy,<torqueadmin>@server.fing.edu.uy
 
 \end_deeper
 \begin_layout Standard
+Una vez configurado el usuario 'fenton' como administrador de Torque, debemos
+ configurarlo también como administrador de Maui.
+ Para esto editamos el archivo de configuración /usr/local/maui/maui.cfg
+ y editamos la configuración ADMIN1 de la siguiente manera:
+\end_layout
+
+\begin_layout Quote
+ADMIN1 fenton
+\end_layout
+
+\begin_layout Standard
 Como último paso debemos editar y copiar los scripts de pre-ejecución (prologo)
  y post-ejecución (epilogo).
  Estos scripts se encargan de notificar al sistema cuando algún nodo del
@@ -998,6 +1001,145 @@ Si toda la instalación se realizó utilizando las ubicaciones sugeridas las
  modificaciones al archivo de configuración deberían ser minimas.
 \end_layout
 
+\begin_layout Itemize
+Configuración de la ubicación del repositorio y archivos temporales.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+define("RAIZ", "/home/fenton/repositorio");
+\end_layout
+
+\begin_layout Itemize
+define("RAIZ_SISTEMA", "/home/fenton/repositorio/sistema");
+\end_layout
+
+\begin_layout Itemize
+define("TMP", "/tmp");
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Configuración de la conexión a la base de datos.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+define("CONEXION_HOST", "localhost");
+\end_layout
+
+\begin_layout Itemize
+define("CONEXION_PORT", "5432");
+\end_layout
+
+\begin_layout Itemize
+define("CONEXION_USUARIO", "fentondb");
+\end_layout
+
+\begin_layout Itemize
+define("CONEXION_PASSWORD", "fentondb");
+\end_layout
+
+\begin_layout Itemize
+define("CONEXION_BASE", "fentondb");
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Configuración del launcher MPI.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+define("MPIEXEC", "/usr/local/openmpi-1.2.6/bin/mpiexec");
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+URL de la instalación de Ganglia.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+define("GANGLIA_URL","http://localhost/ganglia");
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Configuración del usuario y el host utilizado por el sistema para ejecutar
+ tareas internas.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+define("SSH","/usr/bin/ssh"); 
+\end_layout
+
+\begin_layout Itemize
+define("USERNAME","fenton"); 
+\end_layout
+
+\begin_layout Itemize
+define("HOST","localhost");
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Opciones generales del sistema.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+define("GRUPOFENTON","fenton");
+\end_layout
+
+\begin_layout Itemize
+define("REDIRECCION_SALIDA", "/home/fenton/web/bin/redireccion_salida.php");
+\end_layout
+
+\begin_layout Itemize
+define("OUTPUT", "salida_extra");
+\end_layout
+
+\begin_layout Itemize
+define("EJECUTABLE","plantillas/archivos/qsub.script");
+\end_layout
+
+\begin_layout Itemize
+define("LOG_EJECUCIONES","../log/ejecuciones.log");
+\end_layout
+
+\begin_layout Itemize
+define("TIEMPO_REFRESH_RESULTADOS","5");
+\end_layout
+
+\begin_layout Itemize
+define("COMANDOS_EJECUCION","make=make&mpicc=/usr/local/openmpi-1.2.6/bin/mpicc");
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Configuración de Torque y Maui.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+define("PATH_TORQUE","/usr/local/torque-2.3.0"); 
+\end_layout
+
+\begin_layout Itemize
+define("PATH_MAUI","/usr/local/maui");
+\end_layout
+
+\begin_layout Itemize
+define("QSUB", PATH_TORQUE."/bin/qsub");
+\end_layout
+
+\begin_layout Itemize
+etc...
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 Algunas de las opciones que seguramente siempre debamos configurar son:
 \end_layout
