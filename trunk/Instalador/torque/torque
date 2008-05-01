@@ -18,13 +18,9 @@ case "$1" in
 	echo "[TORQUE] "
 	sudo /usr/local/torque-2.3.0/sbin/qnoded
 	echo "[MOM] "
-	/usr/local/maui/sbin/maui --configfile=/usr/local/maui/maui.cfg
-	echo "[MAUI] "
 	;;
   stop)
 	echo -n $"Shutting down services: "
-	/usr/local/maui/bin/schedctl -k
-	echo "[MAUI] "
 	sudo /usr/local/torque-2.3.0/bin/qterm -t quick
 	echo "[TORQUE] "
 	sudo /usr/local/torque-2.3.0/sbin/momctl -s
