@@ -54,6 +54,13 @@ Manual de instalación
 
 \end_layout
 
+\begin_layout Paragraph
+
+\size larger
+\color red
+/* Falta CRON CRON CRON CRON */
+\end_layout
+
 \begin_layout Section
 Sistema operativo.
 \end_layout
@@ -69,14 +76,6 @@ Se recomienda utilizar Linux 2.6 (o superior), con una arquitectura de 32-bits
 
 \begin_layout Standard
 Durante le resto del manual se asumirá que se utilizando Linux.
-\end_layout
-
-\begin_layout Section
-Requerimientos de hardware.
-\end_layout
-
-\begin_layout Standard
-blah, blah, blah...
 \end_layout
 
 \begin_layout Section
@@ -611,6 +610,14 @@ $ make
 
 \begin_layout Quote
 root:# make install
+\end_layout
+
+\begin_layout Standard
+Al compilar OpenMPI de forma estatica evitamos problemas con bibliotecas
+ en los diferentes nodos.
+ Aunque tiene dos desventajas: los ejecutables terminan teniendo un mayor
+ tamaño y si se actualizan las bibliotecas de OpenMPI es necesario re-compilar
+ los proyectos compilados para utilizar la nueva versión.
 \end_layout
 
 \begin_layout Subsection
