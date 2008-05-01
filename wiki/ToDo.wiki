@@ -6,7 +6,6 @@
 
 *Sistema*
   * Instalacion: arreglar script de inicio para torque/maui/ganglia en el sistema
-  * cambiar el tiempo de ejecucion en la tabla ejecucion a interval
   * si hay fecha de finalizacion y no de inicio el trabajo fue cancelado
   * [HECHO]cambiar los permisos del directorio .ssh creado con el script de crear usuarios
   * [HECHO]generar la clave publica del usuario nuevo
@@ -21,8 +20,7 @@
 
 *Cliente*
   
-  * Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar.                                                                
-    Estamos cubiertos con el fin del trabajo.).
+  * Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar. Estamos cubiertos con el fin del trabajo.).
   * cron [damian]
     
 ===DOCUMENTAR !!!===
