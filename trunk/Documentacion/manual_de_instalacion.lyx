@@ -602,7 +602,7 @@ target "http://www.open-mpi.org/"
 \end_layout
 
 \begin_layout Quote
-$ ./configure --prefix=/usr/local/openmpi-1.2.6
+$ ./configure --prefix=/usr/local/openmpi-1.2.6 --enable-static --disable-shared
 \end_layout
 
 \begin_layout Quote
@@ -1093,6 +1093,12 @@ Opciones generales del sistema.
 define("GRUPOFENTON","fenton");
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Grupo al que pertenecen todos los usuarios del sistema.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 define("REDIRECCION_SALIDA", "/home/fenton/web/bin/redireccion_salida.php");
 \end_layout
@@ -1117,6 +1123,16 @@ define("TIEMPO_REFRESH_RESULTADOS","5");
 define("COMANDOS_EJECUCION","make=make&mpicc=/usr/local/openmpi-1.2.6/bin/mpicc");
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Lista de comandos disponibles para la ejecución por parte del usuario del
+ sistema.
+ Deben estar separados entre ellos por un '&', y cada uno esta compuesto
+ de dos partes separadas por un '=': la primer parte es la descripción y
+ la segunda parte es ubicación del comando.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 Configuración de Torque y Maui.
@@ -1150,7 +1166,7 @@ define("CONEXION_HOST", "servidor.fing.edu.uy");
 
 \begin_deeper
 \begin_layout Itemize
-Ubicación del host corriendo la base de datos.
+Ubicación del host ejecutando la base de datos.
 \end_layout
 
 \end_deeper
