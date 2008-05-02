@@ -466,10 +466,11 @@ Y luego en cada nodo de computo:
 \end_layout
 
 \begin_layout Quote
-root:# ./torque-package-clients-linux-i686.sh --install 
-\series bold
-\color red
-(./torque-package-mom-linux-i686.sh --install?)
+root:# ./torque-package-clients-linux-i686.sh --install
+\end_layout
+
+\begin_layout Quote
+root:# ./torque-package-mom-linux-i686.sh --install
 \end_layout
 
 \begin_layout Standard
