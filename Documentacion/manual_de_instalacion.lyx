@@ -79,6 +79,37 @@ Durante le resto del manual se asumirá que se utilizando Linux.
 \end_layout
 
 \begin_layout Section
+Pre-instalación.
+\end_layout
+
+\begin_layout Paragraph
+Usuario y grupo del sistema.
+\end_layout
+
+\begin_layout Standard
+El sistema necesita contar con un usuario y un grupo para ejecutar.
+ Este usuario del sistema debe ser configurado como administrador en algunos
+ de los programas utilizados.
+\end_layout
+
+\begin_layout Standard
+Por defecto este usuario y este grupo se llamaran fenton, para crearlos
+ es debemos ejecutar:
+\end_layout
+
+\begin_layout Quote
+root:# addgroup fenton
+\end_layout
+
+\begin_layout Quote
+root:# adduser fenton
+\end_layout
+
+\begin_layout Quote
+root:# adduser fenton fenton
+\end_layout
+
+\begin_layout Section
 Requerimientos de software.
 \end_layout
 
@@ -392,7 +423,7 @@ Para instalar el servidor de Torque en /usr/local/torque-2.3.0:
 \end_layout
 
 \begin_layout Quote
-$ ./configure --prefix=/usr/local/torque-2.3.0 --enable-doc 
+$ ./configure --prefix=/usr/local/torque-2.3.0 
 \end_layout
 
 \begin_layout Quote
@@ -413,12 +444,11 @@ root:# export PATH=$PATH:/usr/local/torque-2.3.0/bin/:/usr/local/torque-2.3.0/sb
 \end_layout
 
 \begin_layout Quote
-root:# torque.setup <torqueadmin>
+root:# torque.setup fenton
 \end_layout
 
 \begin_layout Standard
-Donde <torqueadmin> es el usuario que se desempeñará como administrador
- de Torque.
+Donde 'fenton' es el usuario que se desempeñará como administrador de Torque.
  Este script creará un entorno basico de trabajo.
  Finalmente se deben configurar los nodos de computo editando /var/spool/torque/
 server_priv/nodes, p.
@@ -525,16 +555,24 @@ or del scheduler.
 \end_layout
 
 \begin_layout Quote
-<torqueadmin>:$ ./configure --prefix=/usr/local/maui --with-pbs (opcional:
- --with-gold)
+fenton:$ ./configure --prefix=/usr/local/maui --with-pbs=/usr/local/torque-2.3.0
+ (opcional: --with-gold)
 \end_layout
 
 \begin_layout Quote
-<torqueadmin>:$ make 
+fenton:$ make 
 \end_layout
 
 \begin_layout Quote
-root:# make install 
+root:# mkdir -p /usr/local/maui
+\end_layout
+
+\begin_layout Quote
+root:# chown fenton.fenton /usr/local/maui
+\end_layout
+
+\begin_layout Quote
+fenton:$ make install
 \end_layout
 
 \begin_layout Standard
@@ -553,7 +591,7 @@ Debemos asegurarnos que el usuario administrador de Maui tenga permisos
 \end_layout
 
 \begin_layout Quote
-root:# chown -R <torqueadmin> /usr/local/maui
+root:# chown -R fenton /usr/local/maui
 \end_layout
 
 \begin_layout Standard
@@ -587,46 +625,26 @@ Al igual que Torque, también es necesario que Maui se encuentre todo en
 \end_layout
 
 \begin_layout Subsection
-Open MPI 1.2.6 o superior [Opcional] [Recomendado].
+MPI [Opcional].
 \end_layout
 
 \begin_layout Standard
-Open MPI es una implementación del estandar MPI-2.
- Se encuentra disponible en 
-\begin_inset LatexCommand htmlurl
-target "http://www.open-mpi.org/"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Quote
-$ ./configure --prefix=/usr/local/openmpi-1.2.6 --enable-static --disable-shared
-\end_layout
-
-\begin_layout Quote
-$ make
-\end_layout
-
-\begin_layout Quote
-root:# make install
+Para ejecutar programas paralelos utilizando MPI es necesario instalar una
+ implementación del estándar.
+ Las siguientes implementaciones fueron probadas en el sistema.
 \end_layout
 
 \begin_layout Standard
-Al compilar OpenMPI de forma estatica evitamos problemas con bibliotecas
- en los diferentes nodos.
- Aunque tiene dos desventajas: los ejecutables terminan teniendo un mayor
- tamaño y si se actualizan las bibliotecas de OpenMPI es necesario re-compilar
- los proyectos compilados para utilizar la nueva versión.
+Cualquiera sea la implementación elegida, es necesario que sea instalada
+ en todos los nodos de cómputo del cluster.
 \end_layout
 
-\begin_layout Subsection
-MPICH 1.2.7p1 o superior [Opcional].
+\begin_layout Subsubsection
+MPICH 1.2.7p1 o superior.
 \end_layout
 
 \begin_layout Standard
-MPICH v1 es una implementación del estandar MPI-1.
+MPICH es una implementación del estandar MPI-1.
  Se encuentra disponible en 
 \begin_inset LatexCommand htmlurl
 target "http://www-unix.mcs.anl.gov/mpi/mpich1/"
@@ -669,18 +687,58 @@ target "http://www.osc.edu/~pw/mpiexec/index.php"
  Para compilarlo e instalarlo en /usr/local/mpiexec:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Quote
 $ ./configure --prefix=/usr/local/mpiexec-0.83 --with-default-comm=mpich-p4
- --with-pbs=/usr/local/torque --with-mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc
+ --with-pbs=/usr/local/torque-2.3.0 --with-mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Quote
 $ make 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Quote
 root:# make install
+\end_layout
+
+\begin_layout Standard
+NOTA: Mpiexec no es necesario si se utiliza OpenMPI.
+\end_layout
+
+\begin_layout Subsubsection
+OpenMPI 1.2.6 o superior [Recomendado].
+\end_layout
+
+\begin_layout Standard
+OpenMPI es una implementación del estandar MPI-2.
+ Se encuentra disponible en 
+\begin_inset LatexCommand htmlurl
+target "http://www.open-mpi.org/"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Quote
+$ ./configure --prefix=/usr/local/openmpi-1.2.6 --with-tm=/usr/local/torque-2.3.0
+ --disable-shared --enable-static
+\end_layout
+
+\begin_layout Quote
+$ make
+\end_layout
+
+\begin_layout Quote
+root:# make install
+\end_layout
+
+\begin_layout Standard
+Al compilar OpenMPI de forma estatica evitamos problemas con bibliotecas
+ en los diferentes nodos.
+ Aunque tiene dos desventajas: los ejecutables terminan teniendo un mayor
+ tamaño y si se actualizan las bibliotecas de OpenMPI es necesario re-compilar
+ los proyectos compilados para utilizar la nueva versión.
 \end_layout
 
 \begin_layout Section
@@ -688,25 +746,7 @@ Instalación de Fenton.
 \end_layout
 
 \begin_layout Subsection
-Seguridad del sistema.
-\end_layout
-
-\begin_layout Paragraph
-Usuario y grupo del sistema.
-\end_layout
-
-\begin_layout Standard
-El sistema necesita contar con un usuario y un grupo para ejecutar.
- Por defecto este usuario y este grupo se llamaran fenton, para crearlos
- es debemos ejecutar:
-\end_layout
-
-\begin_layout Quote
-root:# addgroup fenton
-\end_layout
-
-\begin_layout Quote
-root:# adduser --ingroup fenton fenton
+Almacenamiento.
 \end_layout
 
 \begin_layout Paragraph
@@ -766,6 +806,10 @@ Al igual que en el directorio anterior, debemos segurarnos que el grupo
 El usuario y el grupo fenton deben existir en todos los nodos del cluster.
  Y ambos directorios también deben ser accesibles desde cualquier nodo del
  cluster.
+\end_layout
+
+\begin_layout Subsection
+Seguridad.
 \end_layout
 
 \begin_layout Paragraph
@@ -1185,6 +1229,27 @@ define("GANGLIA_URL","http://servidor.fing.edu.uy/ganglia");
 \begin_deeper
 \begin_layout Itemize
 URL base de la instalación de Ganglia.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Apéndice.
+\end_layout
+
+\begin_layout Subsection
+MPICH2
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Subsection
+PVM
+\end_layout
+
+\begin_layout Standard
+??
 \end_layout
 
 \end_body
