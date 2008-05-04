@@ -19,6 +19,7 @@ define("CONEXION_BASE", "fentondb");
 // MPI
 // =======================================================
 define("MPIEXEC", "/usr/local/openmpi-1.2.6/bin/mpiexec");
+//define("MPIEXEC", "/usr/local/mpiexec-0.83/bin/mpiexec");
 
 // =======================================================
 // GANGLIA
@@ -43,7 +44,7 @@ define("EJECUTABLE","plantillas/archivos/qsub.script");
 define("LOG_EJECUCIONES","../log/ejecuciones.log");
 
 define("TIEMPO_REFRESH_RESULTADOS","5");
-define("COMANDOS_EJECUCION","make=make&mpicc=/usr/local/openmpi-1.2.6/bin/mpicc");
+define("COMANDOS_EJECUCION","make=make&OpenMPI mpicc=/usr/local/openmpi-1.2.6/bin/mpicc&MPICH mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc");
 
 // =======================================================
 // TORQUE / MAUI
