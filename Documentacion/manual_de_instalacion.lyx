@@ -276,19 +276,17 @@ target "http://ganglia.info/"
  Cuenta con tres componentes que deben ser instalados:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Paragraph
 gmond
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Este demonio se encarga de enviar información del estado del nodo al demonio
  gmetad.
  Debe correr en cada una de las maquina del cluster, por lo que debe existir
  una instancia del demonio por nodo del cluster.
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 Para compilar e instalar el gmond:
 \end_layout
@@ -320,22 +318,15 @@ root:# /usr/local/ganglia-3.0.7/sbin/gmond --default_config > /etc/gmond.conf
 Una vez creado con valores por defecto podemos configurarlo a gusto.
 \end_layout
 
-\end_deeper
-\end_deeper
-\begin_layout Itemize
+\begin_layout Paragraph
 gmetad
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Es un demonio que oficia de servidor, recolectando información de los nodos
  del cluster.
  Solamente una instancia de este demonio debe estar en ejecución.
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Para compilar e instalar gmetad y gmond:
+ Para compilar e instalar gmetad y gmond:
 \end_layout
 
 \begin_layout Quote
@@ -372,29 +363,23 @@ Finalmente debemos crear el espacio en disco en donde gmetad guardará la
  el usuario 'nobody').
 \end_layout
 
-\end_deeper
-\end_deeper
-\begin_layout Itemize
+\begin_layout Paragraph
 Interfaz web
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Ganglia cuenta con una interfaz web implementada en PHP donde se presenta
  la información del cluster.
  La interfaz web de Ganglia debe estar alojada en el mismo nodo que ejecuta
  el demonio gmetad.
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 Para realizar la instalación solamente es necesario copiar el directorio
  ganglia-3.0.7-src/web al directorio DocumentRoot de su instalación de Apache,
  por ejemplo: /var/www/ganglia.
 \end_layout
 
-\end_deeper
-\end_deeper
 \begin_layout Subsection
 Torque 2.3.0 o superior [Requerido].
 \end_layout
@@ -556,7 +541,6 @@ or del scheduler.
 
 \begin_layout Quote
 fenton:$ ./configure --prefix=/usr/local/maui --with-pbs=/usr/local/torque-2.3.0
- (opcional: --with-gold)
 \end_layout
 
 \begin_layout Quote
@@ -1246,6 +1230,14 @@ MPICH2
 
 \begin_layout Subsection
 PVM
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Subsection
+Gold
 \end_layout
 
 \begin_layout Standard
