@@ -4,12 +4,12 @@
 case "$1" in
   start)
 	echo -n $"Starting services: "
-	sudo /usr/local/torque/sbin/qnoded
+	sudo /usr/local/torque-2.3.0/sbin/qnoded
 	echo "[MOM] "
 	;;
   stop)
 	echo -n $"Shutting down services: "
-	sudo /usr/local/torque/sbin/momctl -s
+	sudo /usr/local/torque-2.3.0/sbin/momctl -s
 	echo "[MOM] "
 	;;
   restart)

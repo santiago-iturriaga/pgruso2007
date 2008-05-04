@@ -16,15 +16,11 @@ case "$1" in
 	echo -n $"Starting services: "
 	sudo /usr/local/torque-2.3.0/sbin/qserverd
 	echo "[TORQUE] "
-	sudo /usr/local/torque-2.3.0/sbin/qnoded
-	echo "[MOM] "
 	;;
   stop)
 	echo -n $"Shutting down services: "
 	sudo /usr/local/torque-2.3.0/bin/qterm -t quick
 	echo "[TORQUE] "
-	sudo /usr/local/torque-2.3.0/sbin/momctl -s
-	echo "[MOM] "
 	;;
   restart)
 	$0 stop
