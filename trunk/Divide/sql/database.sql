@@ -1,10 +1,10 @@
-create table cliente (
+CREATE TABLE cliente (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(12) not null,
     usr_linux  VARCHAR(64) not null,
     UNIQUE (nombre));
 
-create table trabajo (
+CREATE TABLE trabajo (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(12) not null,
     cliente int not null,
@@ -22,7 +22,7 @@ CREATE TABLE grupo (
     es_admin char,
     UNIQUE (nombre));
 
-create table usuario (
+CREATE TABLE usuario (
      id SERIAL PRIMARY KEY,
  	 login VARCHAR(12) not null,
 	 password VARCHAR(12) not null,
@@ -90,9 +90,3 @@ INSERT INTO alertas (asunto,body) values ('Limite Cuota','El trabajo {TRABAJO} s
 INSERT INTO alertas (asunto,body) values ('Comienzo de ejecuci&oacute;n de trabajo','El trabajo {TRABAJO} ha comenzado su ejecuci&oacute;n');
 INSERT INTO alertas (asunto,body) values ('Finalizaci&oacute;n de trabajo','El trabajo {TRABAJO} ha finalizado');
 INSERT INTO alertas (asunto,body) values ('Cancelaci&oacute;n de trabajo','El trabajo {TRABAJO} ha sido cancelado');
-
-INSERT INTO trabajo_alerta(alerta,trabajo,body) values (2,1,'Pasado de cuota');
-INSERT INTO trabajo_alerta(alerta,trabajo,body) values (1,1,'La tarea a finalizado');
-
-INSERT INTO usuario_alerta(usuario,alerta,trabajo) values (1,2,1);
-INSERT INTO usuario_alerta(usuario,alerta,trabajo) values (1,1,1);
