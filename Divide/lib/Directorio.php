@@ -80,10 +80,10 @@ class Directorio{
 			$size=round($size/1024,1);
 			if($size<1024) return $size."KB";
 			else{
-				round($size/1024,1);
+				$size = round($size/1024,1);
 				if($size<1024) return $size."MB";
 				else{
-					round($size/1024,1);
+					$size = round($size/1024,1);
 					return $size."GB";
 				}
 			}
