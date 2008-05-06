@@ -57,7 +57,7 @@
 			$ejecucion["fecha_ini"]=array_shift(explode('.',$ejecucion["fecha_ini"],2));
 			$ejecucion["fecha_fin"]=array_shift(explode('.',$ejecucion["fecha_fin"],2));
 			$ejecucion["fecha_ejecucion"]=array_shift(explode('.',$ejecucion["fecha_ejecucion"],2));
-			if($ejecucion["fecha_fin"]!="")
+			if($ejecucion["fecha_fin"]=="")
 				$ejecucion["link"]=$plantilla->replace($link,array("ID"=>$id,"URL"=>""));
 			else
 				$ejecucion["link"]=$plantilla->replace($link,array("ID"=>$id,"URL"=>"&terminado=1"));
