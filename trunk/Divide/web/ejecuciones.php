@@ -25,7 +25,10 @@
 		$s->sesion->ejecucion_actual = $_GET["salida"];
 		$s->sesion->bytes_leidos = 0;
 		$s->salvar();
-		header("Location: resultados.php");
+		if(isset($_GET["terminado"]))
+			header("Location: resultados.php?terminado=1");
+		else
+			header("Location: resultados.php");
 		exit;
 	}
 
