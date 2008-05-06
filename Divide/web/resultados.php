@@ -36,8 +36,11 @@
 	$enejecucion=torque_getTrabajosEnEjecucion(
 				$s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"]
 				);
+	$mostrar_en_ejecucion = 1;
+	if(isset($_GET["terminado"])) $mostrar_en_ejecucion = 0;
 	$ppal	=	$plantilla->replace($ppal,array("SEGUNDOS"=>TIEMPO_REFRESH_RESULTADOS,
 												"ID_EJECUCION"=>$s->sesion->ejecucion_actual,
+												"MOSTRAR_EN_EJECUCION"=>$mostrar_en_ejecucion,
 												"ENEJECUCION"=>$enejecucion));
 	$base	=	$plantilla->replace($base,array("PAGINA"=>$ppal,
 							"MENU"=>$menu,
