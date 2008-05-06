@@ -230,7 +230,7 @@ echo "update ejecucion set fecha_fin=CURRENT_TIMESTAMP, tiempo_ejecucion=$tiempo
 
 			$alertas = new Alertas($this->db);
 			$result = $alertas->asignarAlertaTrabajoFin($trabajo);
-			if($result["error"] = 1){
+			if($result["error"] == 1){
 				$result["descripcion"] = "error en asignarAlertaTrabajoFin";
 				return $result;
 			}
