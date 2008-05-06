@@ -58,9 +58,11 @@
 	    intervalo = setInterval('cargar()',{SEGUNDOS}000);
 	    cargar();
 	}
-	function cargar(){
+	function cargar(mostrar_en_ejecucion){
 		new Ajax.Request('ajax/getArchivo.php', {parameters:'', onSuccess:h_salida});
-		new Ajax.Request('ajax/getEnEjecucion.php', {parameters:'', onSuccess:h_enejecucion});
+		if(1=={MOSTRAR_EN_EJECUCION}){
+			new Ajax.Request('ajax/getEnEjecucion.php', {parameters:'', onSuccess:h_enejecucion});
+			}
 		new Ajax.Request('ajax/getCantEnEjecucion', {parameters:'', onSuccess:h_cantidad});
 		if(preguntar_estado) new Ajax.Request('ajax/getEstadoTrabajo', {parameters:'', onSuccess:h_estado});
 	}

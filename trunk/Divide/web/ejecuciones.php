@@ -57,7 +57,10 @@
 			$ejecucion["fecha_ini"]=array_shift(explode('.',$ejecucion["fecha_ini"],2));
 			$ejecucion["fecha_fin"]=array_shift(explode('.',$ejecucion["fecha_fin"],2));
 			$ejecucion["fecha_ejecucion"]=array_shift(explode('.',$ejecucion["fecha_ejecucion"],2));
-			$ejecucion["link"]=$plantilla->replace($link,array("ID"=>$id));
+			if($ejecucion["fecha_fin"]=="")
+				$ejecucion["link"]=$plantilla->replace($link,array("ID"=>$id,"URL"=>""));
+			else
+				$ejecucion["link"]=$plantilla->replace($link,array("ID"=>$id,"URL"=>"&terminado=1"));
 			if($ejecucion["fecha_ejecucion"]=="") $ejecucion["fecha_ejecucion"] = "<b> - En espera - </b>";
 			elseif($ejecucion["fecha_fin"]=="") $ejecucion["fecha_fin"] = "<b> - En ejecuci&oacute;n - </b>";
 			$tabla->addRenglon($ejecucion);
