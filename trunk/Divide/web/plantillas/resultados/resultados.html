@@ -58,7 +58,7 @@
 	    intervalo = setInterval('cargar()',{SEGUNDOS}000);
 	    cargar();
 	}
-	function cargar(mostrar_en_ejecucion){
+	function cargar(){
 		new Ajax.Request('ajax/getArchivo.php', {parameters:'', onSuccess:h_salida});
 		if(1=={MOSTRAR_EN_EJECUCION}){
 			new Ajax.Request('ajax/getEnEjecucion.php', {parameters:'', onSuccess:h_enejecucion});
