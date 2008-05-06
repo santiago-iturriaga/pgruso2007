@@ -69,6 +69,9 @@ function getTablaTrabajos($datos){
 						case "R":
 							$valor="Running <img src='../../imagenes/cog_go.png' />";
 							break;
+						case "C":
+							$valor="Complete <img src='../../imagenes/cog.png' />";
+							break;
 						default:
 							break;
 				}
