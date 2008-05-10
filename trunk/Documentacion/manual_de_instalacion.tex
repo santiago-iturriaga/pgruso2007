@@ -36,7 +36,7 @@ Durante le resto del documento se asumir\'{a} que se utiliza Linux.
 
 \paragraph{Usuario y grupo del sistema.}
 
-El sistema necesita contar con un usuario y un grupo para ejecutar. Este usuario del sistema debe ser configurado como administrador en algunos de los programas utilizados (p.ej.: Maui, Torque, etc.). Por defecto este usuario y este grupo se llamar\'{a}n fenton.
+El sistema necesita contar con un usuario y un grupo para ejecutar. Este usuario del sistema debe ser configurado como administrador en algunos de los programas utilizados (p.ej.: Maui, TORQUE, etc.). Por defecto este usuario y este grupo se llamar\'{a}n fenton.
 
 Para crearlos es debemos ejecutar:
 
@@ -114,9 +114,9 @@ Ganglia es utilizado para monitorear el estado del cluster: carga de memoria de 
 
 Ganglia cuenta con tres componentes que deben ser instalados:
 
-\paragraph{gmond.}
+\subsubsection{gmond}
 
-Este demonio se encarga de enviar informaci\'{o}n del estado del nodo al demonio gmetad. Debe correr en cada una de los nodos del cluster que se desea monitorear.
+Gmond es un demonio encargado de recolectar y enviar informaci\'{o}n del estado del nodo sobre el que esta ejecutando. Por esta raz\'{o}n debe correr en cada una de los nodos del cluster que se desea monitorear.
 
 Para compilar e instalar gmond se debe ejecutar:
 
@@ -137,448 +137,302 @@ root:# ./gmond --default_config > /etc/gmond.conf
 
 Una vez creado con valores por defecto podemos configurarlo a gusto.
 
-\paragraph{gmetad.}
+\subsubsection{gmetad}
 
-Es un demonio que oficia de servidor, recolectando informaci�n de
-los nodos del cluster. Solamente una instancia de este demonio debe
-estar en ejecuci�n. Para compilar e instalar gmetad y gmond:
+Gmetad es un demonio al igual que gmond. Pero en lugar de enviar datos, oficia de servidor recolectando la informaci\'{o}n enviada por gmond desde los nodos del cluster. Solamente una instancia de este demonio debe
+estar en ejecuci\'{o}n. Para compilar e instalar gmetad y gmond:
 
-\begin{quote}
-\$ ./configure --prefix=/usr/local/ganglia-3.0.7 --with-gmetad 
-\begin{quote}
-(con la opcion --with-gmetad se genera gmond y gmetad al mismo tiempo)
-\end{quote}
-\$ make
+\begin{verbatim}
+$ ./configure --prefix=/usr/local/ganglia-3.0.7 --with-gmetad 
+$ make
+root:# make install
+\end{verbatim}
 
-root:\# make install
-\end{quote}
-Dentro del directorio ganglia-3.0.7-src/gmetad podremos encontrar
-algunos scripts de ejemplo para iniciar gmetad al inicio del sistema.
-A diferencia de gmond, gmetad viene adem�s con un archivo de configuraci�n
-por defecto (ganglia-3.0.7-src/gmetad/gmetad.conf) que debemos copiar
-a /etc/gmetad.conf y luego editar.
+Dentro del directorio \mbox{\texttt{ganglia-3.0.7-src/gmetad}} podremos encontrar algunos scripts de ejemplo para iniciar gmetad como servicio al inicio del sistema. A diferencia de gmond, gmetad viene adem\'{a}s con un archivo de configuraci\'{o}n por defecto que se encuentra en \mbox{\texttt{ganglia-3.0.7-src/gmetad/gmetad.conf}} y que debemos copiar a \mbox{\texttt{/etc/gmetad.conf}} y luego editar.
 
-Finalmente debemos crear el espacio en disco en donde gmetad guardar�
-la informaci�n que recopile. Por defecto es en /var/lib/ganglia/rrds
-y su owner debe ser el usuario que fu� configurado en gmetad.conf
-como usuario de ejecuci�n (por defecto el usuario 'nobody').
+Finalmente debemos asignar espacio en disco en donde gmetad guardar\'{a} la informaci\'{o}n que recopile. La ubicaci\'{o}n por defecto es \mbox{\texttt{/var/lib/ganglia/rrds}} y su owner debe ser el usuario que fu\'{e} configurado en \texttt{gmetad.conf} como usuario de ejecuci\'{o}n.
 
+\subsubsection{Interfaz web}
 
-\paragraph{Interfaz web}
+Ganglia cuenta con una interfaz web implementada en PHP donde se presenta visualmente la informaci\'{o}n del cluster. La interfaz web de Ganglia debe estar alojada en el mismo nodo que ejecuta el demonio gmetad.
 
-Ganglia cuenta con una interfaz web implementada en PHP donde se presenta
-la informaci�n del cluster. La interfaz web de Ganglia debe estar
-alojada en el mismo nodo que ejecuta el demonio gmetad.
+Para realizar la instalaci\'{o}n de la interfaz web es necesario copiar el directorio \mbox{\texttt{ganglia-3.0.7-src/web}} al directorio \texttt{DocumentRoot} de su instalaci\'{o}n del servidor Apache, por ejemplo: \mbox{\texttt{/var/www/ganglia}}.
 
-Para realizar la instalaci�n solamente es necesario copiar el directorio
-ganglia-3.0.7-src/web al directorio DocumentRoot de su instalaci�n
-de Apache, por ejemplo: /var/www/ganglia.
+\subsection{TORQUE 2.3.0 o superior \small{[requerido]}}
 
+TORQUE\cite{torque} es un manejador de recursos distribuidos (DRM) y es utilizado para administrar los recursos disponibles en el cluster: procesadores, memoria, tiempo de c\'{o}mputo, etc. La arquitectura de un cluster TORQUE cuenta con un nodo maestro y muchos nodos de c\'{o}mputo. El nodo maestro debe ejecutar el demonio \texttt{qserverd} y los nodos de c\'{o}mputo deben ejecutar el demonio \texttt{qnoded}. A continuaci\'{o}n veremos como instalar estos demonios.
 
-\subsection{Torque 2.3.0 o superior {[}Requerido].}
+\subsubsection{Nodo maestro: qserverd}
 
-Torque es un DRM y es utilizado para proveer control sobre la ejecuci�n
-de trabajos y sobre los nodos del cluster. Se encuentra disponible
-en: \url{http://www.clusterresources.com/}. Cuenta con dos componentes:
-un servidor que debe estar instalado en el nodo maestro del cluster
-y un demonio (MOM) que debe estar instalado en cada uno de los nodos
-de computo del cluster.
+Para instalar el servidor de TORQUE en \mbox{\texttt{/usr/local/torque-2.3.0}}:
 
+\begin{verbatim}
+$ ./configure --prefix=/usr/local/torque-2.3.0 
+$ make 
+root:# make install
+\end{verbatim}
 
-\paragraph{Instalaci�n y configuraci�n de Torque en el nodo maestro.}
+Una vez que termina la instalaci\'{o}n del servidor, es necesario configurar el demonio qserverd:
 
-Para instalar el servidor de Torque en /usr/local/torque-2.3.0:
+\begin{verbatim}
+root:# export PATH=$PATH:/usr/local/torque-2.3.0/bin
+root:# export PATH=$PATH:/usr/local/torque-2.3.0/sbin
+root:# torque.setup fenton
+\end{verbatim}
 
-\begin{quote}
-\$ ./configure --prefix=/usr/local/torque-2.3.0 
+Donde \mbox{\texttt{fenton}} es el usuario que se desempe\~{n}ar\'{a} como administrador de TORQUE. Este script se encarga de crear un entorno basico de trabajo con una configuraci\'{o}on por defecto para poder iniciar el servidor. Finalmente se deben configurar los nodos de computo editando \mbox{\texttt{/var/spool/torque/server\_priv/nodes}}, p. ej.:
 
-\$ make 
-
-root:\# make install
-\end{quote}
-Una vez que termina la instalaci�n del servidor, es necesario configurar
-el demonio qserverd:
-
-\begin{quote}
-root:\# export PATH=\$PATH:/usr/local/torque-2.3.0/bin/:/usr/local/torque-2.3.0/sbin/
-
-root:\# torque.setup fenton
-\end{quote}
-Donde 'fenton' es el usuario que se desempe�ar� como administrador
-de Torque. Este script crear� un entorno basico de trabajo. Finalmente
-se deben configurar los nodos de computo editando /var/spool/torque/server\_priv/nodes,
-p. ej.:
-
-\begin{quote}
+\begin{verbatim}
 nodo001.fing.edu.uy
-
 nodo002.fing.edu.uy
-
 nodo003.fing.edu.uy
-\end{quote}
+\end{verbatim}
+
 O mediante la interfaz de consola de torque:
 
-\begin{quote}
-\$ qmgr
-
+\begin{verbatim}
+$ qmgr
 qmgr: create node nodo001.fing.edu.uy
-\end{quote}
+\end{verbatim}
 
-\paragraph{Instalaci�n y configuraci�n de Torque en los nodos de computo (MOM).}
+\subsubsection{Nodo de c\'{o}mputo: qnoded}
 
-Para crear los paquetes de instalaci�n distribuibles se debe ejecutar:
+Una vez compilado torque es posible crear paquetes de instalaci\'{o}n distribuibles para instalar en los nodos de c\'{o}mputo. Esto simplifica la instalaci\'{o}n de los nodos de computo si se trata de un cluster homogeneo, en cambio si los nodos del cluster cuentan con sistemas operativos diferentes o arquitecturas diferentes ser\'{a} necesario compilar torque para cada nodo. Asumiremos que se trata de un cluster homogeneo, para crear los paquetes de instalaci\'{o}n distribuibles se debe ejecutar:
 
-\begin{quote}
-\$ make packages
-\end{quote}
+\begin{verbatim}
+$ make packages
+\end{verbatim}
+
 Y luego en cada nodo de computo:
 
-\begin{quote}
-root:\# ./torque-package-clients-linux-i686.sh --install
+\begin{verbatim}
+root:# ./torque-package-clients-linux-i686.sh --install
+root:# ./torque-package-mom-linux-i686.sh --install
+\end{verbatim}
 
-root:\# ./torque-package-mom-linux-i686.sh --install
-\end{quote}
-El servidor MOM para cada nodo de computo debe ser configurado para
-confiar en el servidor maestro de Torque editando /var/spool/torque/mom\_priv/config:
-\$pbsserver <SERVIDOR>.
+El servidor MOM para cada nodo de computo debe ser configurado para confiar en el servidor maestro de TORQUE editando el archivo:
 
+\begin{verbatim}
+/var/spool/torque/mom_priv/config
+\end{verbatim}
 
-\paragraph{Ejecuci�n de los demonios.}
+\paragraph{Ejecuci\'{o}n de los demonios.}
 
-Es necesario que el servidor de Torque y los MOM se encuentren en
-ejecuci�n permanente en el cluster. Para esto es recomendable que
-sean agregados como demonios en el sistema creando scripts de ejecuci�n
-en /etc/init.d. Existen dos scritps que pueden tomarse de base: scripts/qserverd.example.sh
-y scripts/qnoded.example.sh.
+Es necesario que el servidor de TORQUE (qserverd) y los demonios qnoded se encuentren en ejecuci\'{o}n permanente en el cluster. Para esto es recomendable que sean agregados como demonios en el sistema creando scripts de ejecuci\'{o}n en \mbox{\texttt{/etc/init.d}}. Para esto existen dos scripts que pueden tomarse de ejemplo:
 
+\begin{verbatim}
+scripts/qserverd.example.sh
+scripts/qnoded.example.sh
+\end{verbatim}
 
-\subsection{Maui 3.2.6p19 o superior {[}Requerido].}
+\subsection{Maui 3.2.6p19 o superior \small{[requerido]}}
 
-Maui es un scheduler de trabajos para clusters. Se encarga de tomar
-acciones sobre la cola de trabajos: que trabajo ser� el siguiente
-en ser ejecutado, que trabajo debe ser detenido, etc. Maui se encuentra
-disponible en: \url{http://www.clusterresources.com/}.
+Maui\cite{maui} es un despachador (scheduler) de c\'{o}digo abierto de trabajos para clusters que soporta varias pol\'{i}ticas de despacho, prioridades din\'{a}micas, reservas de recursos, etc.
 
+\paragraph{Compilaci\'{o}n, instalaci\'{o}n y configuraci\'{o}n.}
 
-\paragraph{Compilaci�n, instalaci�n y configuraci�n.}
+Existe un bug en el script de configuraci\'{o}n e instalaci\'{o}n de Maui por lo que recomendamos realizar la instalaci\'{o}n en \mbox{\texttt{/usr/local/maui}} (su ubicaci\'{o}n por defecto). Adem\'{a}s es necesario estar logueado con el usuario de Linux que se desempe\~{n}ar\'{a} como administrador del scheduler al momento de la compilaci\'{o}n. Este usuario debe ser tambi\'{e}n administrador de TORQUE, por lo que recomendamos utilizar el mismo usuario se asign\'{o} durante el paso anterior como administrador de TORQUE (fenton en nuestro ejemplo). Una vez con este usuario, se debe ejecutar:
 
-Existe un bug en el script de configuraci�n e instalaci�n de Maui
-por lo que recomendamos realizar la instalaci�n en /usr/local/maui.
-Adem�s es necesario ser el usuario de Linux que se desempe�ar� como
-administrador del scheduler. Este usuario debe ser tambi�n administrador
-de Torque, por lo que recomendamos utilizar el mismo usuario se asign�
-durante el paso anterior como administrador de Torque. Una vez con
-este usuario, se debe ejecutar:
+\begin{verbatim}
+fenton:$ ./configure --prefix=/usr/local/maui \
+> --with-pbs=/usr/local/torque-2.3.0
+fenton:$ make 
+root:# mkdir -p /usr/local/maui
+root:# chown fenton.fenton /usr/local/maui
+fenton:$ make install
+\end{verbatim}
 
-\begin{quote}
-fenton:\$ ./configure --prefix=/usr/local/maui --with-pbs=/usr/local/torque-2.3.0
+Es posible que ocurra un error durante la creaci\'{o}n de directorios en la instalaci\'{o}n. Si sucede esto es necesario crear manualmente los directorios: 'log', 'traces', 'stats', 'spool' y 'tools' en el directorio de instalaci\'{o}n y luego volver a ejecutar \mbox{\texttt{make install}}. 
 
-fenton:\$ make 
+Debemos asegurarnos que el usuario administrador de Maui tenga permisos totales sobre el directorio de instalaci\'{o}n. Una posibilidad para asegurar esto es asignarlo como owner ejecutando:
 
-root:\# mkdir -p /usr/local/maui
+\begin{verbatim}
+root:# chown -R fenton /usr/local/maui
+\end{verbatim}
 
-root:\# chown fenton.fenton /usr/local/maui
+Luego de esto damos por finalizada la instalaci\'{o}n. Ahora es necesario configurar el scheduler editando \mbox{\texttt{/usr/local/maui/maui.cfg}}:
 
-fenton:\$ make install
-\end{quote}
-Es posible que ocurra un error durante la creaci�n de directorios
-en la instalaci�n. Si sucede esto es necesario crear los directorios:
-'log', 'traces', 'stats', 'spool' y 'tools' en el directorio de instalaci�n
-manualmente y luego volver a ejecutar 'make install'. 
+\begin{verbatim}
+RMCFG[SERVIDOR.FING.EDU.UY] TYPE=PBS
+\end{verbatim}
 
-Debemos asegurarnos que el usuario administrador de Maui tenga permisos
-de escritura sobre el directorio de instalaci�n. Una posibilidad es
-asignarlo como owner:
+Para clusters peque\~{n}os quizas sea recomendable disminuir el tiempo de pooling para tener una respuesta mas r\'{a}pida por parte del scheduler modificando el par\'{a}metro \texttt{RMPOLLINTERVAL}, p.ej.:
 
-\begin{quote}
-root:\# chown -R fenton /usr/local/maui
-\end{quote}
-Luego de finalizada la instalaci�n es necesario configurar el scheduler
-editando /usr/local/maui/maui.cfg:
-
-\begin{quote}
-RMCFG{[}MARGA] TYPE=PBS
-
+\begin{verbatim}
 RMPOLLINTERVAL 00:00:05
-\begin{quote}
-Para clusters peque�os quizas sea recomendable disminuir el un tiempo
-de pooling para tener una respuesta mas r�pida del scheduler.
-\end{quote}
-\end{quote}
+\end{verbatim}
 
-\paragraph{Ejecuci�n del demonio.}
+\paragraph{Ejecuci\'{o}n del demonio.}
 
-Al igual que Torque, tambi�n es necesario que Maui se encuentre todo
-en el tiempo en ejecuci�n en el cluster. Tambi�n existe un script
-que puede tomarse de ejemplo en scripts/maui.example.sh.
+Al igual que TORQUE, tambi\'{e}n es necesario que Maui se encuentre en ejecuci\'{o}n constante en el cluster. Y de la misma forma que antes, tambi\'{e}n existe un script que puede tomarse de ejemplo para esto en: \mbox{\texttt{scripts/maui.example.sh}}.
 
+\subsection{MPI \small{[opcional]}}
 
-\subsection{MPI {[}Opcional].}
+Para ejecutar programas paralelos utilizando MPI es necesario contar con una implementaci\'{o}n del est\'{a}ndar. A continuaci'{o}n veremos las implementaciones que fueron probadas en el sistema.
 
-Para ejecutar programas paralelos utilizando MPI es necesario instalar
-una implementaci�n del est�ndar. Las siguientes implementaciones fueron
-probadas en el sistema.
+Cualquiera sea la implementaci\'{o}n elegida, es necesario que sea instalada (o se encuentra accesible) en todos los nodos del cluster.
 
-Cualquiera sea la implementaci�n elegida, es necesario que sea instalada
-en todos los nodos de c�mputo del cluster.
+\subsubsection{MPICH 1.2.7p1 o superior}
 
+MPICH1\cite{mpich1} es una implementaci\'{o}n del estandar MPI versi\'{o}n 1. Para compilar e instalar MPICH1 en \mbox{\texttt{/usr/local/mpich-1.2.7p1}} se debe ejecutar:
 
-\subsubsection{MPICH 1.2.7p1 o superior.}
+\begin{verbatim}
+$ ./configure --with-device=ch_p4 \
+> --prefix=/usr/local/mpich-1.2.7p1 \
+> --with-common-prefix=/usr/local/mpich-1.2.7p1 
+$ make 
+root:# make install
+\end{verbatim}
 
-MPICH es una implementaci�n del estandar MPI-1. Se encuentra disponible
-en \url{http://www-unix.mcs.anl.gov/mpi/mpich1/}. Para compilarlo
-e instalarlo en /usr/local/mpich-1.2.7p1:
+\subsubsection{Mpiexec 0.83 o superior}
 
-\$ ./configure --with-device=ch\_p4 --prefix=/usr/local/mpich-1.2.7p1
---with-common-prefix=/usr/local/mpich-1.2.7p1 
+Mpiexec\cite{mpiexec} es un programa que reemplaza al script mpirun del paquete MPICH y es utilizado para inicializar un trabajo paralelo desde TORQUE. Si bien no es obligatorio utilizar Mpiexec, este facilita la integraci\'{o}n de MPICH con TORQUE y es muy recomendable utilizarlo.
 
-\$ make 
-
-root:\# make install
-
-
-\subsubsection{Mpiexec 0.83 o superior.}
-
-Mpiexec es un programa que reemplaza al script mpirun del paquete
-MPICH. Es utilizado para inicializar un trabajo paralelo desde Torque.
-Si bien no es obligatorio utilizar Mpiexec con MPICH, existen varias
-razones por las que es recomendable utilizarlo. La �ltima versi�n
-se encuentra disponible en \url{http://www.osc.edu/~pw/mpiexec/index.php}.
-Para compilarlo e instalarlo en /usr/local/mpiexec:
+\begin{verbatim}
+$ ./configure --prefix=/usr/local/mpiexec-0.83 \
+> --with-default-comm=mpich-p4 \
+> --with-pbs=/usr/local/torque-2.3.0 \
+> --with-mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc 
+$ make 
+root:# make install
+\end{verbatim}
 
 \begin{quote}
-\$ ./configure --prefix=/usr/local/mpiexec-0.83 --with-default-comm=mpich-p4
---with-pbs=/usr/local/torque-2.3.0 --with-mpicc=/usr/local/mpich-1.2.7p1/bin/mpicc 
-
-\$ make 
-
-root:\# make install
-\end{quote}
 NOTA: Mpiexec no es necesario si se utiliza OpenMPI.
-
-
-\subsubsection{OpenMPI 1.2.6 o superior {[}Recomendado].}
-
-OpenMPI es una implementaci�n del estandar MPI-2. Se encuentra disponible
-en \url{http://www.open-mpi.org/}.
-
-\begin{quote}
-\$ ./configure --prefix=/usr/local/openmpi-1.2.6 --with-tm=/usr/local/torque-2.3.0
---disable-shared --enable-static
-
-\$ make
-
-root:\# make install
 \end{quote}
-Al compilar OpenMPI de forma estatica evitamos problemas con bibliotecas
-en los diferentes nodos. Aunque tiene dos desventajas: los ejecutables
-terminan teniendo un mayor tama�o y si se actualizan las bibliotecas
-de OpenMPI es necesario re-compilar los proyectos compilados para
-utilizar la nueva versi�n.
 
+\subsubsection{OpenMPI 1.2.6 o superior \small{[recomendado]}}
 
-\section{Instalaci�n de Fenton.}
+OpenMPI\cite{openmpi} es una implementaci\'{o}n del estandar MPI versi\'{o}n 2. Para compilar e instalar OpenMPI se debe ejecutar:
 
+\begin{verbatim}
+$ ./configure --prefix=/usr/local/openmpi-1.2.6 \
+> --with-tm=/usr/local/torque-2.3.0
+> --disable-shared --enable-static
+$ make
+root:# make install
+\end{verbatim}
 
-\subsection{Almacenamiento.}
+Compilar OpenMPI de forma estatica tiene la ventaja de que evitamos problemas de bibliotecas en los diferentes nodos. Aunque tiene dos desventajas: los ejecutables tienen un tama\~{n}o mayor y si las bibliotecas de OpenMPI son actualizadas es necesario re-compilar los proyectos y generar nuevos ejecutables para utilizar la nueva versi\'{o}n.
 
+\section{Instalaci\'{o}n de Fenton}
 
-\paragraph{Repositorio del sistema.}
+\subsection{Repositorio del sistema}
 
-Debemos crear el repositorio raiz donde el sistema crear� la estructura
-de trabajos y clientes para que los usuarios realicen ejecuciones
-y almacenen sus resultados. Por ejemplo, creamos el repositorio en
-/home/fenton/repositorio y luego le asignamos los permisos adecuados.
+Es necesario crear el repositorio raiz donde el sistema almacenar\'{a} la estructura de clientes y trabajos para que los usuarios realicen ejecuciones y almacenen sus resultados. Por ejemplo, creamos el repositorio en \mbox{\texttt{/home/fenton/repositorio}} y luego le asignamos los permisos adecuados.
 
-\begin{quote}
-fenton:\$ mkdir -p /home/fenton/repositorio
+\begin{verbatim}
+fenton:$ mkdir -p /home/fenton/repositorio
+fenton:$ chmod g+w+r /home/fenton/repositorio
+\end{verbatim}
 
-fenton:\$ chmod g+w+r /home/fenton/repositorio
+El grupo del directorio debe ser \mbox{\texttt{fenton}}. En caso de que sea otro debemos cambiarlo con el comando:
 
-El grupo del directorio del repositorio debe ser fenton. En caso contrario
-debemos cambiarlo con el comando:
+\begin{verbatim}
+root:# chgrp fenton /home/fenton/repositorio
+\end{verbatim}
 
-\begin{quote}
-root:\# chgrp fenton /home/fenton/repositorio
-\end{quote}
-\end{quote}
-Finalmente debemos crear un espacio para el repositorio interno del
-sistema. Aqui el sistema almacenar� logs de ejecuciones y otros datos
-que no estar�n directamente disponibles al los usuarios. La ubicaci�n
-recomendada para el directorio es /home/fenton/repositorio/sistema.
+Finalmente debemos crear un espacio para el repositorio interno del sistema. Aqui el sistema almacenar\'{a} logs de ejecuciones y otros datos que no estar\'{a}n directamente disponibles a los usuarios. La ubicaci\'{o}n recomendada para este directorio es \mbox{\texttt{/home/fenton/repositorio/sistema}}. Para crearlo:
 
-\begin{quote}
-fenton:\$ mkdir -p /home/fenton/repositorio/sistema
+\begin{verbatim}
+fenton:$ mkdir -p /home/fenton/repositorio/sistema
+fenton:$ chmod g+w+r /home/fenton/repositorio/sistema
+\end{verbatim}
 
-fenton:\$ chmod g+w+r /home/fenton/repositorio/sistema
+Al igual que en el directorio anterior, debemos asegurarnos que el grupo del directorio sea \mbox{\texttt{fenton}}.
 
-Al igual que en el directorio anterior, debemos segurarnos que el
-grupo del directorio sea fenton.
+El usuario y el grupo \mbox{\texttt{fenton}} deben existir en todos los nodos del cluster. Y ambos directorios tambi\'{e}n deben ser accesibles desde cualquier nodo del cluster.
 
-\end{quote}
-El usuario y el grupo fenton deben existir en todos los nodos del
-cluster. Y ambos directorios tambi�n deben ser accesibles desde cualquier
-nodo del cluster.
+\subsection{Acceso SSH con autenticaci\'{o}n RSA}
 
+En el nodo de ejecuci\'{o}n de la aplicaci\'{o}n web, debe ser posible realizar un SSH sin password desde el usuario que ejecuta la aplicaci\'{o}n web (el usuario configurado en el servidor Apache) al usuario del sistema (por defecto \mbox{\texttt{fenton}}) en el nodo maestro. 
 
-\subsection{Seguridad.}
+El primer paso para configurar este acceso es averiguar el usuario de ejecuci\'{o}n de los scripts en Apache. Este usuario var\'{i}a de distribuci\'{o}n en distribuci\'{o}n. En nuestro sistema es \mbox{\texttt{www-data}}.
 
+Luego debemos asignar a este usuario un directorio home. Para esto es necesario editar \mbox{\texttt{/etc/passwd}}:
 
-\paragraph{Acceso SSH con autenticaci�n RSA.}
-
-En el nodo de ejecuci�n de la aplicaci�n web debe ser posible realizar
-un SSH sin password desde el usuario que ejecuta la aplicaci�n web
-(el usuario configurado en el servidor Apache) al usuario fenton en
-el nodo maestro. 
-
-El primer paso para esto es averiguar el usuario de ejecuci�n configurado
-en el Apache. Este usuario var�a de distribuci�n en distribuci�n.
-En nuestro sistema es www-data y est� configurado en /etc/apache2/apache2.conf.
-
-Luego debemos asignar a este usuario un directorio home. Para esto
-es necesario editar /etc/passwd:
-
-\begin{quote}
+\begin{verbatim}
 www-data:x:33:33:www-data:/home/www-data:/bin/sh
-\end{quote}
-De esta manera asignamos como home del usuario /home/www-data. Seguramente
-este directorio no exista, por lo que deberemos crearlo y asignarle
-como owner www-data.
+\end{verbatim}
 
-A continuaci�n creamos la clave publica y la privada necesarias para
-la autenticaci�n:
+De esta manera asignamos el directorio \mbox{\texttt{/home/www-data}} como home del usuario. Seguramente este directorio no exista, por lo que deberemos crearlo y asignarle \mbox{\texttt{www-data}} como owner.
 
-\begin{quote}
-root:\# su - www-data
+A continuaci\'{o}n creamos la clave publica y la privada, estas claves son necesarias para la autenticaci\'{o}n:
 
-www-data:\$ ssh-keygen -t dsa
-\end{quote}
-Finalmente debemos agregar a las claves publicas del usuario fenton
-la recien creada clave de www-data.
+\begin{verbatim}
+root:# su - www-data
+www-data:$ ssh-keygen -t dsa
+\end{verbatim}
 
-\begin{quote}
-fenton:\$ mkdir -p /home/fenton/.ssh
+Finalmente debemos agregar a las claves publicas del usuario \mbox{\texttt{fenton}} la recien creada clave de \mbox{\texttt{www-data}}.
 
-root:\# cat /home/www-data/.ssh/id\_dsa.pub >\,{}> /home/fenton/.ssh/authorized\_keys2
+\begin{verbatim}
+fenton:$ mkdir -p /home/fenton/.ssh
+root:# cd /home/fenton/.ssh
+root:# cat /home/www-data/.ssh/id_dsa.pub > authorized_keys2
+root:# chown fenton.fenton /home/fenton/.ssh/authorized\_keys2
+\end{verbatim}
 
-root:\# chown fenton.fenton /home/fenton/.ssh/authorized\_keys2
-\end{quote}
-Es necesario probar al menos una vez el acceso SSH al nodo maestro
-para agregar el nodo maestro a los hosts conocidos de SSH. Suponiendo
-que el servidor apache se encuentra en el nodo maestro ejecutamos:
+Es necesario probar al menos una vez el acceso SSH al nodo maestro para agregar el nodo maestro a los hosts conocidos de SSH. Suponiendo que el servidor apache se encuentra en el nodo maestro ejecutamos:
 
-\begin{quote}
-www-data:\$ ssh fenton@localhost
-\end{quote}
+\begin{verbatim}
+www-data:$ ssh fenton@localhost
+\end{verbatim}
 
-\subsection{Base de datos.}
+\subsection{Base de datos}
 
-Es necesario crear un usuario para el sistema en la base de datos,
-asignarle una contrase�a y crear las tablas de datos. A continuaci�n
-detallaremos como crear todo esto desde la linea de comando. Como
-primer paso debemos crear el usuario de la base de datos.
+Es necesario crear un usuario para el sistema en la base de datos, asignarle una contrase\~{n}a y crear las tablas de datos. A continuaci\'{o}n detallaremos como crear todo esto desde la linea de comando. Como primer paso debemos crear el usuario de la base de datos:
 
-\begin{quote}
-root:\# su - postgres 
+\begin{verbatim}
+root:# su - postgres 
+postgres:$ createuser fentondb 
+\end{verbatim}
 
-postgres:\$ createuser fentondb 
-\end{quote}
-Luego creamos el esquema de datos y las tablas.
+Luego creamos el esquema de datos y las tablas:
 
-\begin{quote}
-\$ createdb fentondb 
+\begin{verbatim}
+$ createdb fentondb 
+$ psql fentondb
+psql=# \i postgres/database.sql
+\end{verbatim}
 
-\$ psql fentondb
+Finalmente asignamos una contrase\'~{n}a al nuevo usuario:
 
-psql=\# \textbackslash{}i postgres/database.sql
-\end{quote}
-Finalmente asignamos una contrase�a al nuevo usuario
+\begin{verbatim}
+psql=# alter user fentondb password 'fentondb';
+\end{verbatim}
 
-\begin{quote}
-psql=\# alter user fentondb password 'fentondb'
-\end{quote}
+\subsection{Aplicaci\'{o}n web}
 
-\subsection{Aplicaci�n web.}
+Para instalar la aplicaci\'{o}n web simplemente debemos copiar el directorio \mbox{\texttt{web/}} a la ubicaci\'{o}n deseada. Por ejemplo \mbox{\texttt{/home/fenton/web}}, y luego crear un alias para la aplicaci\'{o}n. En la mayor\'{i}a de los casos basta con copiar el archivo \mbox{\texttt{apache/fenton.conf}} a \mbox{\texttt{/etc/apache2/conf.d}}.
 
-Para instalar la aplicaci�n web simplemente debemos copiar el directorio
-web/ a la ubicaci�n deseada. Por ejemplo /home/fenton/web, y luego
-crear un alias para la aplicaci�n. En la mayor�a de los casos basta
-con copiar el archivo apache/fenton.conf a /etc/apache2/conf.d.
+La aplicaci\'{o}n web debe ser accesible desde cualquier nodo del cluster. Esto es necesario debido a que los scripts de prologo y epilogo (ver siguiente paso) requieren ejecutar scripts PHP de la aplicaci\'{o}n.
 
-La aplicaci�n web debe ser accesible desde cualquier nodo del cluster.
-Esto es necesario debido a que los scripts de prologo y epilogo (ver
-siguiente paso) requieren ejecutar scripts de la aplicaci�n.
+\textcolor{red}{\Large /{*} Falta CRON CRON CRON CRON {*}/}
 
+\subsection{Configuraci\'{o}n de TORQUE}
 
-\paragraph{\textcolor{red}{\Large /{*} Falta CRON CRON CRON CRON {*}/}}
+Es necesario que TORQUE notifique al sistema cuando un trabajo es sacado de la cola de espera para iniciar su ejecuci
+\'{o}, y cuando un trabajo termina de ejecutar (ya sea de forma exitosa o no). Para esto debemos editar y copiar el script de pre-ejecuci\'{o}n (prologo) y el script de post-ejecuci\'{o}n (epilogo). Estos scripts deben estar disponibles en todos los nodos del cluster (tanto el maestro como los nodos de c\'{o}mputo). 
 
+Los scripts se encuentran en \mbox{\texttt{torque/prologue}} y \mbox{\texttt{torque/epilogue}}, y se deben copiar a \mbox{\texttt{/var/spool/torque/mom\_priv}}. Luego de copiados es necesario editar estos scripts configurando la variable \mbox{\texttt{PATH\_PHP}} seg\'{u}n nuestra instalaci\'{o}n, p. ej.: \mbox{\texttt{/home/fenton/web/bin}}.
 
-\subsection{Configuraci�n de Torque y Maui.}
+\subsection{Configuraci\'{o}n final del sistema}
 
-Lo primero que debemos hacer es agregar al usuario fenton a la lista
-de managers y operators del sistema. Para eso ejecutamos:
+Como \'{u}ltimo paso, debemos realizar los ajustes finales y configurar la aplicaci\'{o}n web con la ubicaci\'{o}n de los diferentes componentes del sistema. Para esto debemos editar el archivo de configuraci\'{o}n \mbox{\texttt{/home/fenton/web/lib/Constantes.php}}.
 
-\begin{quote}
-<torqueadmin>:\$ /usr/local/torque-2.3.0/bin/qmgr
-
-qmgr: set server managers += fenton@server.fing.edu.uy
-
-qmgr: set server operators += fenton@server.fing.edu.uy
-\end{quote}
-Podemos verificar la configuraci�n mediante:
-
-\begin{quote}
-qmgr: list server managers
-
-Server server.fing.edu.uy 
-\begin{quote}
-managers = fenton@server.fing.edu.uy,<torqueadmin>@server.fing.edu.uy 
-\end{quote}
-qmgr: list server operators
-
-Server server.fing.edu.uy 
-\begin{quote}
-operators = fenton@server.fing.edu.uy,<torqueadmin>@server.fing.edu.uy 
-\end{quote}
-\end{quote}
-Una vez configurado el usuario 'fenton' como administrador de Torque,
-debemos configurarlo tambi�n como administrador de Maui. Para esto
-editamos el archivo de configuraci�n /usr/local/maui/maui.cfg y editamos
-la configuraci�n ADMIN1 de la siguiente manera:
-
-\begin{quote}
-ADMIN1 fenton
-\end{quote}
-Como �ltimo paso debemos editar y copiar los scripts de pre-ejecuci�n
-(prologo) y post-ejecuci�n (epilogo). Estos scripts se encargan de
-notificar al sistema cuando alg�n nodo del cluster comienza o termina
-con la ejecuci�n de un trabajo. Por esta raz�n estos scripts deben
-estar disponibles en todos los nodos del cluster (tanto el maestro
-como los nodos de c�mputo). 
-
-Se deben copiar torque/prologue y torque/epilogue a /var/spool/torque/mom\_priv
-y luego editar estos scripts configurando la variable PATH\_PHP seg�n
-nuestra instalaci�n de la aplicaci�n web, p. ej.: /home/fenton/web/bin.
-
-
-\subsection{Configuraci�n final del sistema.}
-
-Como �ltimo paso, debemos realizar los ajustes finales y configurar
-la aplicaci�n web con la ubicaci�n de los diferentes componentes del
-sistema. Para esto debemos editar el archivo de configuraci�n /home/fenton/web/lib/Constantes.php.
-
-Si toda la instalaci�n se realiz� utilizando las ubicaciones sugeridas
-las modificaciones al archivo de configuraci�n deber�an ser minimas.
+Si toda la instalaci\'{o}n fue realizada utilizando las ubicaciones sugeridas las modificaciones al archivo de configuraci\'{o}n deber\'{i}an ser minimas. A continuaci\'{o}n veremos algunos de los par\'{a}metros de confguraci\'{o}n:
 
 \begin{itemize}
-\item Configuraci�n de la ubicaci�n del repositorio y archivos temporales.
+\item Ubicaci\'{o}n del repositorio y de los archivos temporales.
 
 \begin{itemize}
 \item define(\char`\"{}RAIZ\char`\"{}, \char`\"{}/home/fenton/repositorio\char`\"{});
 \item define(\char`\"{}RAIZ\_SISTEMA\char`\"{}, \char`\"{}/home/fenton/repositorio/sistema\char`\"{});
 \item define(\char`\"{}TMP\char`\"{}, \char`\"{}/tmp\char`\"{});
 \end{itemize}
-\item Configuraci�n de la conexi�n a la base de datos.
+
+\item Conexi\'{o}n a la base de datos.
 
 \begin{itemize}
 \item define(\char`\"{}CONEXION\_HOST\char`\"{}, \char`\"{}localhost\char`\"{});
@@ -587,24 +441,27 @@ las modificaciones al archivo de configuraci�n deber�an ser minimas.
 \item define(\char`\"{}CONEXION\_PASSWORD\char`\"{}, \char`\"{}fentondb\char`\"{});
 \item define(\char`\"{}CONEXION\_BASE\char`\"{}, \char`\"{}fentondb\char`\"{});
 \end{itemize}
-\item Configuraci�n del launcher MPI.
+
+\item Configuraci\'{o}n del launcher MPI.
 
 \begin{itemize}
 \item define(\char`\"{}MPIEXEC\char`\"{}, \char`\"{}/usr/local/openmpi-1.2.6/bin/mpiexec\char`\"{});
 \end{itemize}
-\item URL de la instalaci�n de Ganglia.
+
+\item URL de la instalaci\'{o}n de Ganglia.
 
 \begin{itemize}
 \item define(\char`\"{}GANGLIA\_URL\char`\"{},\char`\"{}http://localhost/ganglia\char`\"{});
 \end{itemize}
-\item Configuraci�n del usuario y el host utilizado por el sistema para
-ejecutar tareas internas.
+
+\item Configuraci\'{o}n del usuario y el host utilizado por el sistema para ejecutar tareas administrativas.
 
 \begin{itemize}
 \item define(\char`\"{}SSH\char`\"{},\char`\"{}/usr/bin/ssh\char`\"{}); 
 \item define(\char`\"{}USERNAME\char`\"{},\char`\"{}fenton\char`\"{}); 
 \item define(\char`\"{}HOST\char`\"{},\char`\"{}localhost\char`\"{});
 \end{itemize}
+
 \item Opciones generales del sistema.
 
 \begin{itemize}
@@ -613,21 +470,23 @@ ejecutar tareas internas.
 \begin{itemize}
 \item Grupo al que pertenecen todos los usuarios del sistema.
 \end{itemize}
-\item define(\char`\"{}REDIRECCION\_SALIDA\char`\"{}, \char`\"{}/home/fenton/web/bin/redireccion\_salida.php\char`\"{});
+
+\item define(\char`\"{}REDIRECCION\_SALIDA\char`\"{},\\
+\char`\"{}/home/fenton/web/bin/redireccion\_salida.php\char`\"{});
 \item define(\char`\"{}OUTPUT\char`\"{}, \char`\"{}salida\_extra\char`\"{});
 \item define(\char`\"{}EJECUTABLE\char`\"{},\char`\"{}plantillas/archivos/qsub.script\char`\"{});
 \item define(\char`\"{}LOG\_EJECUCIONES\char`\"{},\char`\"{}../log/ejecuciones.log\char`\"{});
 \item define(\char`\"{}TIEMPO\_REFRESH\_RESULTADOS\char`\"{},\char`\"{}5\char`\"{});
-\item define(\char`\"{}COMANDOS\_EJECUCION\char`\"{},\char`\"{}make=make\&mpicc=/usr/local/openmpi-1.2.6/bin/mpicc\char`\"{});
+\item define(\char`\"{}COMANDOS\_EJECUCION\char`\"{},\\
+\char`\"{}make=make\&mpicc=/usr/local/openmpi-1.2.6/bin/mpicc\char`\"{});
 
 \begin{itemize}
-\item Lista de comandos disponibles para la ejecuci�n por parte del usuario
-del sistema. Deben estar separados entre ellos por un '\&', y cada
-uno esta compuesto de dos partes separadas por un '=': la primer parte
-es la descripci�n y la segunda parte es ubicaci�n del comando.
+\item Lista de comandos disponibles para la ejecuci\'{o}n por parte del usuario del sistema. Deben estar separados entre ellos por un '\&', y cada uno esta compuesto de dos partes separadas por un '=': la primer parte es la descripci\'{o}n y la segunda parte es ubicaci\'{o}n del comando.
 \end{itemize}
+
 \end{itemize}
-\item Configuraci�n de Torque y Maui.
+
+\item Configuraci\'{o}n de TORQUE y Maui.
 
 \begin{itemize}
 \item define(\char`\"{}PATH\_TORQUE\char`\"{},\char`\"{}/usr/local/torque-2.3.0\char`\"{}); 
@@ -635,38 +494,35 @@ es la descripci�n y la segunda parte es ubicaci�n del comando.
 \item define(\char`\"{}QSUB\char`\"{}, PATH\_TORQUE.\char`\"{}/bin/qsub\char`\"{});
 \item etc...
 \end{itemize}
+
 \end{itemize}
-Algunas de las opciones que seguramente siempre debamos configurar
-son:
+
+Algunas de las opciones que seguramente siempre debamos configurar son:
 
 \begin{itemize}
 \item define(\char`\"{}CONEXION\_HOST\char`\"{}, \char`\"{}servidor.fing.edu.uy\char`\"{});
 
 \begin{itemize}
-\item Ubicaci�n del host ejecutando la base de datos.
+\item Ubicaci\'{o}n del host ejecutando la base de datos.
 \end{itemize}
+
 \item define(\char`\"{}GANGLIA\_URL\char`\"{},\char`\"{}http://servidor.fing.edu.uy/ganglia\char`\"{});
 
 \begin{itemize}
-\item URL base de la instalaci�n de Ganglia.
-\end{itemize}
+\item URL base de la instalaci\'{o}n de Ganglia.
 \end{itemize}
 
-\section{Ap�ndice.}
+\end{itemize}
 
+\section{Ap\'{e}ndice.}
 
 \subsection{MPICH2}
-
 ??
-
 
 \subsection{PVM}
-
 ??
 
-
 \subsection{Gold}
-
 ??
 
 \begin{thebibliography}{99}
@@ -680,8 +536,22 @@ Apache, \url{http://httpd.apache.org/}.
 PHP, \url{http://www.php.net/}.
 
 \bibitem{ganglia}
-Ganglia, \url{http://ganglia.info/}
+Ganglia, \url{http://ganglia.info/}.
+
+\bibitem{torque}
+TORQUE, \url{http://www.clusterresources.com/pages/products/torque-resource-manager.php}.
+
+\bibitem{maui}
+Maui, \url{http://www.clusterresources.com/pages/products/maui-cluster-scheduler.php}.
+
+\bibitem{mpich1}
+MPICH1, \url{http://www-unix.mcs.anl.gov/mpi/mpich1/}.
+
+\bibitem{mpiexec}
+Mpiexec, \url{http://www.osc.edu/~pw/mpiexec/index.php}.
+
+\bibitem{openmpi}
+OpenMPI, \url{http://www.open-mpi.org/}.
+
 \end{thebibliography}
-
-
 \end{document}
