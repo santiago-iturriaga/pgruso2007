@@ -38,6 +38,34 @@
 
 \begin_body
 
+\begin_layout Title
+Fenton - Manual de Usuario
+\end_layout
+
+\begin_layout Author
+Damián Pintos - Santiago Iturriaga - Paulo Maya
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
 \begin_layout Section
 Introducción
 \end_layout
