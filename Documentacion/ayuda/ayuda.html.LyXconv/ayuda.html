@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="ayuda.tex"> 
+<meta name="date" content="2008-05-11 11:19:00"> 
+<link rel="stylesheet" type="text/css" href="ayuda.css"> 
+</head><body 
+>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introducción</h3>
+<!--l. 18--><p class="noindent" >Fenton presenta una interfaz gráfica amigable para que un usuario pueda utilizar un
+cluster previamente configurado para este fin, sin necesidad de conocer los
+pormenores de su funcionamiento. Para ésto el sistema cuenta con dos niveles de
+usuarios: clientes y administradores. Los clientes mantendrán sus archivos en el
+cluster, ejecutarán procesos y obtendrán los resultados de los mismos. Por otro lado
+los administradores mantendrán la información necesaria para que el sistema
+funcione correctamente. El presente documento está dividido por tipo de
+usuario.
+<!--l. 28--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Administrador</h3>
+<!--l. 31--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x1-30002.1"></a>Introducción</h4>
+<!--l. 33--><p class="noindent" >Las distintas vistas del administrador están orientadas hacia un usuario con ciertos
+conocimientos mínimos, tanto del funcionamiento del cluster como de manejo de
+aplicaciones. Por lo tanto, en la mayoría de los casos, las funcionalidades son más
+prácticas que amigables. De esta manera, un usuario que utilice frecuentemente el
+sistema necesitará pocos pasos para obtener el objetivo buscado, mas allá
+de que en una primera aproximación deba recurrir al manual más de una
+vez.
+<!--l. 42--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x1-40002.2"></a>Ingreso al sitio</h4>
+<!--l. 44--><p class="noindent" ><img 
+src="ayuda0x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda0x.png" src="0C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_01login.eps"  
+-->
+<!--l. 46--><p class="indent" >   El usuario deberá ingresar su nombre de usuario y su clave. Por seguridad, en
+caso de que alguno de los valores sea incorrecto no se indicará de cuál de los dos se
+trata. Inicialmente existe un usuario administrador con nombre GROSO y clave del
+FENTON O ALGO, pero luego de haber ingresado al sitio, el administrador podrá
+modificar la clave o agregar un nuevo administrador y borrar el usuario
+inicial.
+
+<!--l. 54--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a 
+ id="x1-50002.3"></a>Inicio</h4>
+<!--l. 56--><p class="noindent" ><img 
+src="ayuda1x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda1x.png" src="1C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_02Aindex.eps"  
+-->
+<!--l. 58--><p class="indent" >   Inicialmente al administrador se le presentarán las opciones por categorías:
+     <ul class="itemize1">
+     <li class="itemize">Usuarios: manejo de usuarios, clientes y trabajos.
+     </li>
+     <li class="itemize">Estado del cluster: interfaz con ganglia.
+     </li>
+     <li class="itemize">Maui: interfaz con maui.
+     </li>
+     <li class="itemize">Torque: interfaz con torque.
+     </li>
+     <li class="itemize">Alertas: acceso a las alertas recibidas.</li></ul>
+<!--l. 68--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">2.4   </span> <a 
+ id="x1-60002.4"></a>Usuarios</h4>
+<!--l. 70--><p class="noindent" >El manejo de usuarios del sistema está subdividido por:
+     <ul class="itemize1">
+     <li class="itemize">Usuarios - Grupos: creación de grupos del sistema, creación de usuarios y
+     asignación de usuarios a grupos.
+     </li>
+     <li class="itemize">Accesos: asociación de grupos a los respectivos trabajos definidos en el
+     sistema.
+     </li>
+     <li class="itemize">Clientes - Trabajos: creación de clientes y trabajos.
+     </li>
+     <li class="itemize">Papelera: mantenimiento de trabajos dados de baja.
+     </li>
+     <li class="itemize">Usuarios  -  Alertas:  asignación  de  usuarios  a  las  alertas  generales  del
+     sistema.</li></ul>
+
+<!--l. 82--><p class="noindent" ><img 
+src="ayuda2x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda2x.png" src="2C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_usuarios.eps"  
+-->
+<!--l. 84--><p class="indent" >   Cada usuario del sistema estará asociado a un grupo. A su vez cada grupo tendrá
+acceso a uno o más trabajos. Por ejemplo, mientras que el usuario administrador
+seguramente deberá tener acceso a todos los trabajos, un usuario final probablemente
+tendrá acceso a un único trabajo.
+<!--l. 90--><p class="indent" >   A su vez, cada trabajo estará asociado a un cliente. Cada cliente del sistema
+tendrá un usuario linux asociado, por lo que es importante recordar que todos los
+trabajos que se ejecuten para un mismo cliente, tendrán el mismo usuario
+linux.
+<!--l. 96--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.4.1   </span> <a 
+ id="x1-70002.4.1"></a>Usuarios - Grupos</h5>
+<!--l. 98--><p class="noindent" ><img 
+src="ayuda3x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda3x.png" src="3C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_03AUsuariosGrupos.eps"  
+-->
+<!--l. 100--><p class="indent" >   Cada usuario del sistema tendrá un nombre de usuario, una dirección de correo
+electrónico y una contraseña. Cada uno es creado bajo un grupo, seleccionándolo y
+presionando el boton &#8220;Nuevo&#8221; en la tabla que lista los usuarios. Es posible también
+eliminar usuarios del sistema.
+<!--l. 106--><p class="indent" >   Para crear un nuevo grupo es necesario presionar el botón &#8220;Nuevo...&#8221;
+que se encuentra a la derecha de la lista de grupos del sistema. Luego se
+deberá ingresar un nombre para el mismo y asociarle las funcionalidades
+pertinentes.
+<!--l. 112--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.4.2   </span> <a 
+ id="x1-80002.4.2"></a>Accesos</h5>
+<!--l. 114--><p class="noindent" ><img 
+src="ayuda4x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda4x.png" src="4C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_04AAccesos.eps"  
+-->
+<!--l. 116--><p class="indent" >   Para administrar los accesos a los trabajos del sistema, se deberá seleccionar un
+grupo. A continuación se mostrarán todos los pares cliente - trabajo dados de alta en
+el sistema. Simplemente seleccionando cada casilla se le estará dando acceso a todos
+los integrantes del grupo a los respectivos trabajos.
+<!--l. 123--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.4.3   </span> <a 
+ id="x1-90002.4.3"></a>Clientes - Trabajos</h5>
+<!--l. 125--><p class="noindent" ><img 
+src="ayuda5x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda5x.png" src="5C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_05ACT.eps"  
+-->
+<!--l. 127--><p class="indent" >   Para crear un nuevo trabajo es necesario tener por lo menos un cliente creado.
+Para esto se deberá presionar el botón &#8220;Nuevo&#8221; (a la derecha de la lista de clientes).
+A continuación se mostrarán los campos a llenar:
+
+     <ul class="itemize1">
+     <li class="itemize">nombre: nombre descriptivo del cliente.
+     </li>
+     <li class="itemize">usuario linux: usuario con el que se correrán los trabajos del cliente.</li></ul>
+<!--l. 136--><p class="noindent" >Luego de haber creado el cliente, se presentará la opción de crear un nuevo trabajo para
+el mismo presionando el botón &#8220;Nuevo&#8221; mostrado en la tabla de trabajos. A
+continuación se mostrarán los campos a llenar:
+     <ul class="itemize1">
+     <li class="itemize">nombre: nombre descriptivo del trabajo.
+     </li>
+     <li class="itemize">nodos: cantidad de nodos sobre los que se correrá cada ejecución.
+     </li>
+     <li class="itemize">tiempo máximo: tiempo máximo que se le dará a cada ejecución dentro
+     del trabajo.
+     </li>
+     <li class="itemize">cola: cola en la que se colocará cada ejecución del trabajo.
+     </li>
+     <li class="itemize">quota: espacio disponible en disco para el trabajo (en MB).</li></ul>
+<!--l. 149--><p class="noindent" ><img 
+src="ayuda6x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda6x.png" src="6C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_06AACT2.eps"  
+-->
+<!--l. 151--><p class="indent" >   En cualquier momento el administrador podrá eliminar tanto los trabajos como
+los clientes. Si elimina un trabajo, ningún usuario tendrá acceso al mismo, pero este
+podrá ser restaurado desde la papelera. Por otro lado, si elimina un cliente, será
+eliminado físicamente junto con sus respectivos trabajos, incluyendo los archivos
+guardados en disco.
+<!--l. 158--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.4.4   </span> <a 
+ id="x1-100002.4.4"></a>Papelera</h5>
+<!--l. 160--><p class="noindent" >Desde la papelera es posible tanto eliminar como restaurar los trabajos. Si se elije
+eliminarlos, se borrarán los archivos guardados en disco junto con el resto de la
+información del trabajo. Si se elije restaurarlos, los usuarios podrán nuevamente tener
+acceso a los mismos.
+<!--l. 165--><p class="indent" >   <img 
+src="ayuda7x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda7x.png" src="7C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_07APapelera.eps"  
+-->
+
+<!--l. 168--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.4.5   </span> <a 
+ id="x1-110002.4.5"></a>Usuarios - Alertas</h5>
+<!--l. 170--><p class="noindent" >PAULO
+<!--l. 172--><p class="indent" >   <img 
+src="ayuda8x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda8x.png" src="8C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_08AUA.eps"  
+-->
+<!--l. 175--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">2.5   </span> <a 
+ id="x1-120002.5"></a>Maui</h4>
+<!--l. 177--><p class="noindent" >ITU
+<!--l. 179--><p class="indent" >   <img 
+src="ayuda9x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda9x.png" src="9C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_09AMaui.eps"  
+-->
+<!--l. 182--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.5.1   </span> <a 
+ id="x1-130002.5.1"></a>Trabajos</h5>
+<!--l. 184--><p class="noindent" ><img 
+src="ayuda10x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda10x.png" src="10C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_10AMauiT.eps"  
+-->
+<!--l. 187--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.5.2   </span> <a 
+ id="x1-140002.5.2"></a>Nodos</h5>
+<!--l. 189--><p class="noindent" ><img 
+src="ayuda11x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda11x.png" src="11C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_11AMauiN.eps"  
+-->
+<!--l. 192--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.5.3   </span> <a 
+ id="x1-150002.5.3"></a>Configuración</h5>
+<!--l. 194--><p class="noindent" ><img 
+src="ayuda12x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda12x.png" src="12C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_12AMauiC.eps"  
+-->
+<!--l. 197--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">2.6   </span> <a 
+ id="x1-160002.6"></a>Torque</h4>
+<!--l. 199--><p class="noindent" ><img 
+src="ayuda13x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda13x.png" src="13C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_13ATorque.eps"  
+-->
+<!--l. 202--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.6.1   </span> <a 
+ id="x1-170002.6.1"></a>Trabajos</h5>
+<!--l. 204--><p class="noindent" ><img 
+src="ayuda14x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda14x.png" src="14C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_14ATorqueT.eps"  
+-->
+
+<!--l. 207--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.6.2   </span> <a 
+ id="x1-180002.6.2"></a>Colas</h5>
+<!--l. 209--><p class="noindent" ><img 
+src="ayuda15x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda15x.png" src="15C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_15ATorqueC.eps"  
+-->
+<!--l. 212--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.6.3   </span> <a 
+ id="x1-190002.6.3"></a>Nodos</h5>
+<!--l. 214--><p class="noindent" ><img 
+src="ayuda16x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda16x.png" src="16C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_16ATorqueE.eps"  
+-->
+<!--l. 217--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.6.4   </span> <a 
+ id="x1-200002.6.4"></a>Estado</h5>
+<!--l. 219--><p class="noindent" ><img 
+src="ayuda17x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda17x.png" src="17C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_17ATorqueE.eps"  
+-->
+<!--l. 222--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.6.5   </span> <a 
+ id="x1-210002.6.5"></a>Ejecuciones</h5>
+<!--l. 224--><p class="noindent" ><img 
+src="ayuda18x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda18x.png" src="18C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_18ATorqueEj.eps"  
+-->
+<!--l. 227--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">2.7   </span> <a 
+ id="x1-220002.7"></a>Alertas</h4>
+<!--l. 229--><p class="noindent" >PAULO
+<!--l. 231--><p class="indent" >   <img 
+src="ayuda19x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda19x.png" src="19C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_19AAlertas.eps"  
+-->
+<!--l. 233--><p class="indent" >   <img 
+src="ayuda20x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda20x.png" src="20C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_20AAlertas2.eps"  
+-->
+<!--l. 236--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-230003"></a>Cliente</h3>
+<!--l. 239--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-240003.1"></a>Introducción</h4>
+<!--l. 241--><p class="noindent" >Un usuario cliente de Fenton no necesita conocer los pormenores del funcionamiento
+de un cluster para poder utilizar el sistema. En todos los casos se tuvo en cuenta la
+amigabilidad y facilidad de uso para proveer al usuario de funcionalidades claras y
+
+simples. El usuario no tendrá inconvenientes para empezar a utilizar el sistema una
+vez que el administrador le asigne los privilegios necesarios.
+<!--l. 249--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-250003.2"></a>Ingreso al sitio</h4>
+<!--l. 251--><p class="noindent" ><img 
+src="ayuda21x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda21x.png" src="0C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_01login.eps"  
+-->
+<!--l. 253--><p class="indent" >   El usuario deberá ingresar su nombre de usuario y su clave. A continuación, si el
+nombre y la clave fueron correctos, se mostrarán los trabajos a los que el usuario
+tiene acceso.
+<!--l. 257--><p class="indent" >   <img 
+src="ayuda22x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda22x.png" src="21C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_21CTrabajos.eps"  
+-->
+<!--l. 259--><p class="indent" >   Luego de seleccionar uno de ellos se mostrará la página de administración de
+archivos.
+<!--l. 263--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x1-260003.3"></a>Archivos</h4>
+<!--l. 265--><p class="noindent" >Desde la página de administración de archivos estarán las funcionalidades más
+usuales para el usuario final.
+<!--l. 268--><p class="indent" >   En primer lugar podrá subir archivos individualmente mediante el botón de
+&#8220;nuevo&#8221; (segundo botón en la barra). A continuación se mostrará un espacio para
+seleccionar el archivo y un botón de aceptar. Si en lugar de un archivo corriente se
+seleciona un archivo zip, el mismo será automáticamente descomprimido en la
+carpeta en que se encuentre el usuario.
+<!--l. 275--><p class="indent" >   Los archivos creados pueden ser borrados, con la salvedad de que las carpetas
+deben estar vacías para poder ser eliminadas.
+<!--l. 278--><p class="indent" >   El usuario podrá a su vez descargar un archivo zip con el contenido del proyecto
+presionando el primer botón de la barra.
+<!--l. 281--><p class="indent" >   <img 
+src="ayuda23x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda23x.png" src="22C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_22CArchivos.eps"  
+-->
+<!--l. 283--><p class="indent" >   El tercer botón en la barra da la opción de ejecutar un makefile o el comando
+mpicc, permitiendo además el pasaje de argumentos.
+<!--l. 286--><p class="indent" >   <img 
+src="ayuda24x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda24x.png" src="23C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_25CArchivos.eps"  
+-->
+<!--l. 288--><p class="indent" >   Los archivos ejecutables tendrán una tercera opción (ademas de descargar y
+eliminar) que será la de ejecución. Presionando este botón, se desplegará un
+campo a rellenar con los argumentos de ejecución (opcional) y la opción de
+ejecutar. Luego de aceptar, se mostrará la página de resultados con la salida del
+ejecutable.
+
+<!--l. 294--><p class="indent" >   <img 
+src="ayuda25x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda25x.png" src="24C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_23CArchivos.eps"  
+-->
+<!--l. 297--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.4   </span> <a 
+ id="x1-270003.4"></a>Salida del ejecutable</h4>
+<!--l. 299--><p class="noindent" >Luego de ejecutar un archivo se mostrará la salida del mismo. En la barra lateral se
+mostrará:
+     <ul class="itemize1">
+     <li class="itemize">La cantidad de trabajos en ejecución asociados al cliente del usuario actual.
+     </li>
+     <li class="itemize">El estado del trabajo actual (en ejecución, en espera, terminado).
+     </li>
+     <li class="itemize">La opción de descargar la salida del mismo. Si está terminado será la
+     salida total, en caso contrario se descargará la salida hasta el momento.
+     </li>
+     <li class="itemize">La opción de terminar la ejecución.
+     </li>
+     <li class="itemize">La opción de bloquear o desbloquear el scroll.</li></ul>
+<!--l. 312--><p class="noindent" ><img 
+src="ayuda26x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda26x.png" src="25C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_23CArchivosb.eps"  
+-->
+<!--l. 315--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.5   </span> <a 
+ id="x1-280003.5"></a>Resultados</h4>
+<!--l. 317--><p class="noindent" >En cualquier momento será posible consultar por el histórico de ejecuciones. Es
+importante notar que las salidas de cada ejecutable son dos: por un lado se guarda la
+salida habitual (salida más salida de error) y por otro se guarda la salida de Torque
+(el administrador de recursos del cluster).
+<!--l. 323--><p class="indent" >   Presionando el botón &#8220;Ver&#8221; se mostrará la página de salida del ejecutable,
+mientras que si se presiona el botón &#8220;Log&#8221; se mostrará la salida de Torque en la parte
+inferior de la página.
+<!--l. 327--><p class="indent" >   <img 
+src="ayuda27x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda27x.png" src="26C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_27CRes.eps"  
+-->
+
+<!--l. 330--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.6   </span> <a 
+ id="x1-290003.6"></a>Cambiar Clave</h4>
+<!--l. 332--><p class="noindent" >El usuario luego de haberse logueado podrá cambiar su clave (recomendado la
+primera vez que ingrese al sitio) ingresando su clave actual, y dos veces su nueva
+clave.
+<!--l. 336--><p class="indent" >   <img 
+src="ayuda28x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda28x.png" src="27C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_28CCambiarClave.eps"  
+-->
+<!--l. 339--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.7   </span> <a 
+ id="x1-300003.7"></a>Alertas</h4>
+<!--l. 341--><p class="noindent" >PAULO
+<!--l. 343--><p class="indent" >   <img 
+src="ayuda29x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda29x.png" src="28C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_29CAlertas.eps"  
+-->
+<!--l. 345--><p class="indent" >   <img 
+src="ayuda30x.png" alt="PIC" class="graphics"><!--tex4ht:graphics  
+name="ayuda30x.png" src="29C__Documents_and_Settings_damian_cuarto_Escritorio_ayuda_30CAlertas.eps"  
+-->  
+</body></html> 
+
+
+

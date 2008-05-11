@@ -43,10 +43,16 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-El sistema cuenta con dos niveles de usuarios: clientes y administradores.
- Si bien las funcionalidades del administrador incluyen las del cliente,
- los perfiles son muy diferentes.
- Por lo tanto, el presente documento está dividido por tipo de usuario.
+Fenton presenta una interfaz gráfica amigable para que un usuario pueda
+ utilizar un cluster previamente configurado para este fin, sin necesidad
+ de conocer los pormenores de su funcionamiento.
+ Para ésto el sistema cuenta con dos niveles de usuarios: clientes y administrad
+ores.
+ Los clientes mantendrán sus archivos en el cluster, ejecutarán procesos
+ y obtendrán los resultados de los mismos.
+ Por otro lado los administradores mantendrán la información necesaria para
+ que el sistema funcione correctamente.
+ El presente documento está dividido por tipo de usuario.
 \end_layout
 
 \begin_layout Section
@@ -55,6 +61,17 @@ Administrador
 
 \begin_layout Subsection
 Introducción
+\end_layout
+
+\begin_layout Standard
+Las distintas vistas del administrador están orientadas hacia un usuario
+ con ciertos conocimientos mínimos, tanto del funcionamiento del cluster
+ como de manejo de aplicaciones.
+ Por lo tanto, en la mayoría de los casos, las funcionalidades son más prácticas
+ que amigables.
+ De esta manera, un usuario que utilice frecuentemente el sistema necesitará
+ pocos pasos para obtener el objetivo buscado, mas allá de que en una primera
+ aproximación deba recurrir al manual más de una vez.
 \end_layout
 
 \begin_layout Subsection
@@ -78,7 +95,7 @@ El usuario deberá ingresar su nombre de usuario y su clave.
  indicará de cuál de los dos se trata.
  Inicialmente existe un usuario administrador con nombre GROSO y clave del
  FENTON O ALGO, pero luego de haber ingresado al sitio, el administrador
- puede modificar la clave o agregar un nuevo administrador y borrar el usuario
+ podrá modificar la clave o agregar un nuevo administrador y borrar el usuario
  inicial.
 \end_layout
 
@@ -89,7 +106,7 @@ Inicio
 \begin_layout Standard
 \begin_inset Graphics
 	filename 02Aindex.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -153,7 +170,7 @@ Usuarios - Alertas: asignación de usuarios a las alertas generales del sistema.
 \begin_layout Standard
 \begin_inset Graphics
 	filename usuarios.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -184,7 +201,7 @@ Usuarios - Grupos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 03AUsuariosGrupos.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -228,7 +245,7 @@ Accesos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 04AAccesos.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -251,7 +268,7 @@ Clientes - Trabajos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 05ACT.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -312,13 +329,13 @@ cola: cola en la que se colocará cada ejecución del trabajo.
 \end_layout
 
 \begin_layout Itemize
-quota: espacio disponible en disco para el trabajo.
+quota: espacio disponible en disco para el trabajo (en MB).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename 06AACT2.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -349,7 +366,7 @@ Desde la papelera es posible tanto eliminar como restaurar los trabajos.
 \begin_layout Standard
 \begin_inset Graphics
 	filename 07APapelera.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -361,13 +378,13 @@ Usuarios - Alertas
 \end_layout
 
 \begin_layout Standard
-zarasa preguntarle a paulo
+PAULO
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename 08AUA.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -379,9 +396,13 @@ Maui
 \end_layout
 
 \begin_layout Standard
+ITU
+\end_layout
+
+\begin_layout Standard
 \begin_inset Graphics
 	filename 09AMaui.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -395,7 +416,7 @@ Trabajos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 10AMauiT.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -409,7 +430,7 @@ Nodos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 11AMauiN.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -423,7 +444,7 @@ Configuración
 \begin_layout Standard
 \begin_inset Graphics
 	filename 12AMauiC.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -437,7 +458,7 @@ Torque
 \begin_layout Standard
 \begin_inset Graphics
 	filename 13ATorque.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -451,7 +472,7 @@ Trabajos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 14ATorqueT.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -465,7 +486,7 @@ Colas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 15ATorqueC.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -479,7 +500,7 @@ Nodos
 \begin_layout Standard
 \begin_inset Graphics
 	filename 16ATorqueE.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -493,7 +514,7 @@ Estado
 \begin_layout Standard
 \begin_inset Graphics
 	filename 17ATorqueE.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -507,7 +528,7 @@ Ejecuciones
 \begin_layout Standard
 \begin_inset Graphics
 	filename 18ATorqueEj.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -519,9 +540,13 @@ Alertas
 \end_layout
 
 \begin_layout Standard
+PAULO
+\end_layout
+
+\begin_layout Standard
 \begin_inset Graphics
 	filename 19AAlertas.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -531,7 +556,7 @@ Alertas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 20AAlertas2.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -546,6 +571,15 @@ Cliente
 Introducción
 \end_layout
 
+\begin_layout Standard
+Un usuario cliente de Fenton no necesita conocer los pormenores del funcionamien
+to de un cluster para poder utilizar el sistema.
+ En todos los casos se tuvo en cuenta la amigabilidad y facilidad de uso
+ para proveer al usuario de funcionalidades claras y simples.
+ El usuario no tendrá inconvenientes para empezar a utilizar el sistema
+ una vez que el administrador le asigne los privilegios necesarios.
+\end_layout
+
 \begin_layout Subsection
 Ingreso al sitio
 \end_layout
@@ -553,7 +587,7 @@ Ingreso al sitio
 \begin_layout Standard
 \begin_inset Graphics
 	filename 01login.png
-	scale 25
+	scale 50
 
 \end_inset
 
@@ -570,7 +604,7 @@ El usuario deberá ingresar su nombre de usuario y su clave.
 \begin_layout Standard
 \begin_inset Graphics
 	filename 21CTrabajos.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -610,8 +644,8 @@ nuevo
 \end_layout
 
 \begin_layout Standard
-Los archivos creados pueden ser borrados, con la salvedad de las carpetas,
- que deben estar vacías para poder ser eliminadas.
+Los archivos creados pueden ser borrados, con la salvedad de que las carpetas
+ deben estar vacías para poder ser eliminadas.
 \end_layout
 
 \begin_layout Standard
@@ -622,7 +656,7 @@ El usuario podrá a su vez descargar un archivo zip con el contenido del
 \begin_layout Standard
 \begin_inset Graphics
 	filename 22CArchivos.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -637,7 +671,7 @@ El tercer botón en la barra da la opción de ejecutar un makefile o el comando
 \begin_layout Standard
 \begin_inset Graphics
 	filename 25CArchivos.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -656,7 +690,7 @@ Los archivos ejecutables tendrán una tercera opción (ademas de descargar
 \begin_layout Standard
 \begin_inset Graphics
 	filename 23CArchivos.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -739,7 +773,7 @@ Log
 \begin_layout Standard
 \begin_inset Graphics
 	filename 27CRes.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -759,7 +793,7 @@ El usuario luego de haberse logueado podrá cambiar su clave (recomendado
 \begin_layout Standard
 \begin_inset Graphics
 	filename 28CCambiarClave.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -771,9 +805,13 @@ Alertas
 \end_layout
 
 \begin_layout Standard
+PAULO
+\end_layout
+
+\begin_layout Standard
 \begin_inset Graphics
 	filename 29CAlertas.png
-	scale 25
+	scale 35
 
 \end_inset
 
@@ -783,7 +821,7 @@ Alertas
 \begin_layout Standard
 \begin_inset Graphics
 	filename 30CAlertas.png
-	scale 25
+	scale 35
 
 \end_inset
 
