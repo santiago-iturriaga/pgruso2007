@@ -43,32 +43,22 @@ Guia de Test
 \end_layout
 
 \begin_layout Title
-
-\lang spanish
 Cluster de Computadores de Alto Desempeño con Acceso Remoto
 \end_layout
 
 \begin_layout Title
-
-\lang spanish
 Carrera de Ingeniería en Computación
 \end_layout
 
 \begin_layout Title
-
-\lang spanish
 Facultad de Ingeniería
 \end_layout
 
 \begin_layout Author
-
-\lang spanish
 Santiago Iturriaga, Paulo Maya, Damián Pintos
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 
 \newpage
 
@@ -121,14 +111,10 @@ Casos de Test
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Nuevo Cliente.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features booktabs="true">
@@ -202,14 +188,10 @@ Se crea un cliente en el sistema
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -340,14 +322,10 @@ pgccadar
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -421,14 +399,10 @@ El cliente no debe eestar en el sistema
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -599,14 +573,10 @@ El cleitne se ingresa al sistema y se ve en la lista de clientes del sistema.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -708,14 +678,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Nuevo trabajo para un cliente.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features booktabs="true">
@@ -789,14 +755,10 @@ Se crea un trabajo y se asocia a un cliente
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="3">
 <features>
@@ -919,7 +881,7 @@ Nodos
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -948,7 +910,7 @@ Tiempo Max
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -977,7 +939,7 @@ prueba
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -991,7 +953,7 @@ Quota
 \begin_inset Text
 
 \begin_layout Standard
-100BM
+100
 \end_layout
 
 \end_inset
@@ -1000,7 +962,7 @@ Quota
 \begin_inset Text
 
 \begin_layout Standard
-
+El tamano es en megabytes.
 \end_layout
 
 \end_inset
@@ -1014,14 +976,10 @@ Quota
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -1095,22 +1053,18 @@ La cola esta configuada en el sistema Torque
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
-<features>
+<features islongtable="true" headTopDL="true" headBottomDL="true">
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
-<row topline="true" bottomline="true">
+<row topline="true" bottomline="true" endhead="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -1226,7 +1180,7 @@ Se despliega formulario de nuevo trabajo
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -1272,14 +1226,10 @@ El trabajo es creado en el sistea y asignado al cliente.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -1381,14 +1331,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Creacion de un grupo
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features booktabs="true">
@@ -1462,14 +1408,10 @@ Se crea un grupo para agrupar usuarios
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -1600,14 +1542,10 @@ grupoPaulo
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -1681,20 +1619,16 @@ El grupo no existe en el sistema
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="4">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -1820,14 +1754,10 @@ el grupo es creado en el sistema
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -1929,14 +1859,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Nuevo Usuario.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features booktabs="true">
@@ -2010,14 +1936,10 @@ Se crea un usuario asosiado a un grupo
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features>
@@ -2206,14 +2128,10 @@ No
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -2287,20 +2205,16 @@ El usuario no existe en el sistema
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
 <column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -2464,14 +2378,10 @@ El usauario es creado en el sistema asosiado al grupo.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -2573,14 +2483,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Asosiacion Grupo - Trabajo.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features booktabs="true">
@@ -2654,14 +2560,10 @@ Se asocia un trabajo a un grupo
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -2792,14 +2694,10 @@ clientePaulo
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="2">
 <features>
@@ -2893,20 +2791,16 @@ El trabajo existe en el sitema y pertenece al cliente
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="4">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -3031,14 +2925,10 @@ El grupo es asosicado al cliente-trabajo
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -3140,19 +3030,15 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Ejecución de Trabajo.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features booktabs="true">
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="20page%">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -3222,14 +3108,10 @@ Para un trabajo se crea una carpeta, se sube un programa, se compila y se
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features>
@@ -3418,14 +3300,10 @@ Nombre de carpeta dodnde se subiran los archivos
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="2">
 <features>
@@ -3519,20 +3397,16 @@ El usuario pertenece a un grupo que tieen asosciado el trabajo.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="4">
+<lyxtabular version="3" rows="10" columns="4">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -3648,7 +3522,7 @@ Se despiega la pantalla de Administrar Archivos
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3686,7 +3560,7 @@ La carpeta se crea en el directorio del sistema y se muestra en pantalla.
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3724,7 +3598,7 @@ Se despliga sector en pantalal para ingresar ruta de archivo.
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3763,7 +3637,7 @@ El archivo seleccionado es subido al sitio y se despliega en pantalla.
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3803,7 +3677,7 @@ Se ejecuta la compilación y se muestran los archivos en panatalla.
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3841,7 +3715,7 @@ Se depliega sectro en pantalla para ingresar argmentos.
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3864,7 +3738,1244 @@ Ingresamos argumentos para ejecución y dar click en Ejecutar.
 \begin_inset Text
 
 \begin_layout Standard
+Se despliega la pagina Ver Resultados con el log de ejecucion del trabajo.
+ Si el trabajo termina se muestra una alerta de finalización.
+ 
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Seleccionamos el menu alertas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+El usuario recibe alertas por inicio de trabajo y si el trabajo termina
+ recibe alerta de finalizacion.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Notas o comentarios
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Comentario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Actividad en Maui.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features booktabs="true">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+ID Caso Test
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+07
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Titulo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Actividad en Maui
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Desde el admistrador podemos obserbar la actividad en Maui de los trabajos
+ en ejecución en el cluseter
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Datos de entrada
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Nombre campo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Valor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Comentario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Condiciones iniciales
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Pasos para el test
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Resultado Esperado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Resultado(Pasa/Falla)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\lang spanish
+01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\lang spanish
+Correr el caso 06.
+ 
+\lang english
+Ejecución de Trabajo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\lang spanish
+02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\lang spanish
+Salir del sistema e ingresar como administrador ir al menu Maui, sub menu
+ Trabajos.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\lang spanish
+Se despliegan los trabajos en ejecucion en el cluster.
+ En porticular observamos el ejecutado en el caso de uso.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Seleccionamos en el proceso el boton diagnostico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Se despliega el diagnostico del procesos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Notas o comentarios
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Comentario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Actividad en Torque.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features booktabs="true">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+ID Caso Test
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+08
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Titulo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Actividad en Torque
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Desde el admistrador podemos obserbar la actividad en Torque de los trabajos
+ en ejecución en el cluseter
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Datos de entrada
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Nombre campo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Valor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Comentario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Condiciones iniciales
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Pasos para el test
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Resultado Esperado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Resultado(Pasa/Falla)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\lang spanish
+Correr el caso 06.
+ 
+\lang english
+Ejecución de Trabajo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\lang spanish
+Salir del sistema e ingresar como administrador ir al menu Torque, sub menu
+ Trabajos.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\lang spanish
+Se despliegan los trabajos en ejecucion en el cluster.
+ En porticular observamos el ejecutado en el caso de uso.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Seleccionamos el proceso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Observamos los parametros de ejecucion del trabajo en torque
 \end_layout
 
 \end_inset
