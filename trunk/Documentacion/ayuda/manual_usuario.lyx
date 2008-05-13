@@ -1,0 +1,344 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Fenton - Manual de Usuario
+\end_layout
+
+\begin_layout Author
+Damián Pintos - Santiago Iturriaga - Paulo Maya
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Fenton presenta una interfaz gráfica amigable para que un usuario pueda
+ utilizar un cluster previamente configurado para este fin, sin necesidad
+ de conocer los pormenores de su funcionamiento.
+ Para ésto el sistema cuenta con dos niveles de usuarios: clientes y administrad
+ores.
+ Los clientes mantendrán sus archivos en el cluster, ejecutarán procesos
+ y obtendrán los resultados de los mismos.
+ Por otro lado los administradores mantendrán la información necesaria para
+ que el sistema funcione correctamente.
+ El presente documento describe la interfaz presentada al usuario cliente.
+\end_layout
+
+\begin_layout Standard
+Un usuario cliente de Fenton no necesita conocer los pormenores del funcionamien
+to de un cluster para poder utilizar el sistema.
+ En todos los casos se tuvo en cuenta la amigabilidad y facilidad de uso
+ para proveer al usuario de funcionalidades claras y simples.
+ El usuario no tendrá inconvenientes para empezar a utilizar el sistema
+ una vez que el administrador le asigne los privilegios necesarios.
+\end_layout
+
+\begin_layout Section
+Ingreso al sitio
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 01login.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El usuario deberá ingresar su nombre de usuario y su clave.
+ A continuación, si el nombre y la clave fueron correctos, se mostrarán
+ los trabajos a los que el usuario tiene acceso.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 21CTrabajos.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego de seleccionar uno de ellos se mostrará la página de administración
+ de archivos.
+\end_layout
+
+\begin_layout Section
+Archivos
+\end_layout
+
+\begin_layout Standard
+Desde la página de administración de archivos estarán las funcionalidades
+ más usuales para el usuario final.
+\end_layout
+
+\begin_layout Standard
+En primer lugar podrá subir archivos individualmente mediante el botón de
+ 
+\begin_inset Quotes eld
+\end_inset
+
+nuevo
+\begin_inset Quotes erd
+\end_inset
+
+ (segundo botón en la barra).
+ A continuación se mostrará un espacio para seleccionar el archivo y un
+ botón de aceptar.
+ Si en lugar de un archivo corriente se seleciona un archivo zip, el mismo
+ será automáticamente descomprimido en la carpeta en que se encuentre el
+ usuario.
+\end_layout
+
+\begin_layout Standard
+Los archivos creados pueden ser borrados, con la salvedad de que las carpetas
+ deben estar vacías para poder ser eliminadas.
+\end_layout
+
+\begin_layout Standard
+El usuario podrá a su vez descargar un archivo zip con el contenido del
+ proyecto presionando el primer botón de la barra.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 22CArchivos.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tercer botón en la barra da la opción de ejecutar un makefile o el comando
+ mpicc, permitiendo además el pasaje de argumentos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 25CArchivos.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los archivos ejecutables tendrán una tercera opción (ademas de descargar
+ y eliminar) que será la de ejecución.
+ Presionando este botón, se desplegará un campo a rellenar con los argumentos
+ de ejecución (opcional) y la opción de ejecutar.
+ Luego de aceptar, se mostrará la página de resultados con la salida del
+ ejecutable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 23CArchivos.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Salida del ejecutable
+\end_layout
+
+\begin_layout Standard
+Luego de ejecutar un archivo se mostrará la salida del mismo.
+ En la barra lateral se mostrará:
+\end_layout
+
+\begin_layout Itemize
+La cantidad de trabajos en ejecución asociados al cliente del usuario actual.
+\end_layout
+
+\begin_layout Itemize
+El estado del trabajo actual (en ejecución, en espera, terminado).
+\end_layout
+
+\begin_layout Itemize
+La opción de descargar la salida del mismo.
+ Si está terminado será la salida total, en caso contrario se descargará
+ la salida hasta el momento.
+\end_layout
+
+\begin_layout Itemize
+La opción de terminar la ejecución.
+\end_layout
+
+\begin_layout Itemize
+La opción de bloquear o desbloquear el scroll.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 23CArchivosb.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Resultados
+\end_layout
+
+\begin_layout Standard
+En cualquier momento será posible consultar por el histórico de ejecuciones.
+ Es importante notar que las salidas de cada ejecutable son dos: por un
+ lado se guarda la salida habitual (salida más salida de error) y por otro
+ se guarda la salida de Torque (el administrador de recursos del cluster).
+\end_layout
+
+\begin_layout Standard
+Presionando el botón 
+\begin_inset Quotes eld
+\end_inset
+
+Ver
+\begin_inset Quotes erd
+\end_inset
+
+ se mostrará la página de salida del ejecutable, mientras que si se presiona
+ el botón 
+\begin_inset Quotes eld
+\end_inset
+
+Log
+\begin_inset Quotes erd
+\end_inset
+
+ se mostrará la salida de Torque en la parte inferior de la página.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 27CRes.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cambiar Clave
+\end_layout
+
+\begin_layout Standard
+El usuario luego de haberse logueado podrá cambiar su clave (recomendado
+ la primera vez que ingrese al sitio) ingresando su clave actual, y dos
+ veces su nueva clave.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 28CCambiarClave.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Alertas
+\end_layout
+
+\begin_layout Standard
+PAULO
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 29CAlertas.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 30CAlertas.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
