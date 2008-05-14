@@ -1,0 +1,3308 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Estado del Arte
+\end_layout
+
+\begin_layout Title
+Cluster de Computadores de Alto Desempeño con Acceso Remoto (CCADAR)
+\end_layout
+
+\begin_layout Title
+Facultad de Ingeniería
+\end_layout
+
+\begin_layout Title
+Universidad de la República
+\end_layout
+
+\begin_layout Author
+Santiago Iturriaga, Paulo Maya, Damián Pintos
+\end_layout
+
+\begin_layout Standard
+Tutor, Supervisor
+\end_layout
+
+\begin_layout Standard
+Resumen! (que contiene el documento, en que consiste el proyecto)
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+En el principio de la historia de las computadoras se tenía la idea de que
+ un servidor tenía que ser necesariamente una máquina, conocida como super
+ computador o mainframe, que contaba con un procesador muy potente que daba
+ servicio a varias terminales tontas.
+ Según esta doctrina, para asegurar mayor poder de cálculo era necesario
+ tener un procesador más poderoso.
+ De este modo, cuando los requerimientos de procesamiento aumentaban, se
+ hacía necesario en la mayoría de los casos, cambiar la super computadora
+ actual por una nueva mejor, pasando a subutilizar la super computadora
+ anterior, con un alto costo asociado.
+\end_layout
+
+\begin_layout Standard
+Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
+ crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
+to poniendo a trabajar varias computadoras en paralelo con procesadores
+ 16 DX4, interconectadas en una red de 10 Mbit Ethernet.
+\end_layout
+
+\begin_layout Standard
+A partir de ese momento, y debido al éxito alcanzado en el proyecto, muchos
+ otros proyectos siguieron la investigación del tema, bajo la premisa de
+ convertir hardware de relativo bajo costo en clusters que logren equiparar
+ o superar la performance alcanzada por las supercomputadores.
+\end_layout
+
+\begin_layout Standard
+La construcción de los ordenadores del cluster es más fácil y económica
+ debido a su flexibilidad: pueden tener todos la misma configuración de
+ hardware y sistema operativo (cluster homogéneo), diferente rendimiento
+ pero con arquitecturas y sistemas operativos similares (cluster semi-homogéneo)
+, o tener diferente hardware y sistema operativo (cluster heterogéneo).
+\end_layout
+
+\begin_layout Standard
+Para que un cluster funcione como tal, no basta solo con conectar entre
+ sí los ordenadores, sino que es necesario proveer un sistema de manejo
+ del cluster, el cual se encargue de interactuar con el usuario y los procesos
+ que corren en él para optimizar el funcionamiento.
+\end_layout
+
+\begin_layout Standard
+En general, un cluster necesita de varios componentes de software y hardware
+ para poder funcionar.
+ A saber:
+\end_layout
+
+\begin_layout Itemize
+Nodos (los ordenadores o servidores)
+\end_layout
+
+\begin_layout Itemize
+Sistemas Operativos
+\end_layout
+
+\begin_layout Itemize
+Conexiones de Red
+\end_layout
+
+\begin_layout Itemize
+Middleware (capa de abstracción entre el usuario y los sistemas operativos)
+\end_layout
+
+\begin_layout Itemize
+Protocolos de Comunicación y servicios.
+\end_layout
+
+\begin_layout Itemize
+Aplicaciones (pueden ser paralelas o no) 
+\end_layout
+
+\begin_layout Standard
+Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
+ tareas como data mining, servidores de archivos, servidores de base de
+ datos, servidores web, simuladores de vuelo, graphics rendering, modeladores
+ climáticos o incluso para CD ripping alcanzando velocidades realmente altas.
+\end_layout
+
+\begin_layout Standard
+La idea es simplemente reunir el poder de cómputo de una serie de nodos
+ para proveer alta escalabilidad, poder de cómputo, o construir redundancia
+ y de esta manera proveer alta disponibilidad.
+ Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
+s, los cluster utilizan múltiples máquinas para proveer un ambiente más
+ poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
+nto sea visible al usuario como una sola unidad, aunque se componga de muchas
+ computadoras trabajando en paralelo para el mismo fin.
+\end_layout
+
+\begin_layout Standard
+El alto poder de procesamiento de varias computadoras trabajando en paralelo
+ (o cluster de computadoras) se perfila como una solución viable a las empresas,
+ universidades y escuelas a un bajo costo de implementación.
+ 
+\end_layout
+
+\begin_layout Subsection
+Motivación y objetivos del proyecto
+\end_layout
+
+\begin_layout Standard
+Actualmente existe en el CeCal (Centro de Cálculo) un cluster de computadores
+ utilizado para investigación en proyectos internos.
+ A corto plazo se proyecta alquilar el mismo como servicio a entidades externas.
+ El software utilizado permite un nivel de abstracción muy bajo, esto limita
+ los perfiles de usuarios capaces de utilizar el sistema.
+ Es importante notar que los usuarios finales serán en la mayoría de los
+ casos profesionales en areas dispares como por ejemplo las ciencias básicas
+ (matemática, física, química, etc.), no necesariamente relacionadas con
+ la informática.
+\end_layout
+
+\begin_layout Standard
+Se desea mantener un control estricto de las actividades de los usuarios
+ de manera de poder garantizar la disponibilidad de recursos en un determinado
+ momento.
+ Otro objetivo importante es mantener un historial de utilización de recursos
+ por parte de los distintos usuarios y procesos; tanto para poder realizar
+ un seguimiento de su estado actual y verificar su correcto funcionamiento,
+ como para realizar mediciones referidas a la utilización de recursos por
+ parte de los usuarios ya que se lo considera un activo.
+\end_layout
+
+\begin_layout Standard
+El proyecto intenta resolver estos problemas permitiendo la utilización
+ del sistema por parte de usuarios no especializados, así como también permitir
+ el monitoreo del mismo en tiempo real por parte de los administradores.
+\end_layout
+
+\begin_layout Subsection
+Clusters
+\end_layout
+
+\begin_layout Standard
+El término cluster se aplica a los conjuntos o conglomerados de computadoras
+ construidos mediante la utilización de componentes de hardware comunes
+ y que se comportan como si fuesen una única computadora.
+ Juegan hoy en día un papel importante en la solución de problemas de las
+ ciencias, las ingenierías y del comercio moderno.
+\end_layout
+
+\begin_layout Standard
+El cómputo con clusters surge como resultado de la convergencia de varias
+ tendencias actuales que incluyen la disponibilidad de microprocesadores
+ económicos de alto rendimiento y redes de alta velocidad, el desarrollo
+ de herramientas de software para cómputo distribuido de alto rendimiento,
+ así como la creciente necesidad de potencia computacional para aplicaciones
+ que la requieran.
+\end_layout
+
+\begin_layout Standard
+Un cluster es un grupo de múltiples ordenadores unidos mediante una red
+ de alta velocidad, de tal forma que el conjunto es visto como un único
+ ordenador, más potente que los comunes de escritorio.
+ De un cluster se espera que presente combinaciones de los siguientes servicios:
+\end_layout
+
+\begin_layout Itemize
+Alto rendimiento
+\end_layout
+
+\begin_layout Itemize
+Alta disponibilidad
+\end_layout
+
+\begin_layout Itemize
+Equilibrio de carga
+\end_layout
+
+\begin_layout Itemize
+Escalabilidad
+\end_layout
+
+\begin_layout Standard
+Con el tiempo, la investigación se ha ido especializando en áreas específicas.
+ El cluster de alto rendimiento se aplica principalmente a aplicaciones
+ científicas mientras que el cluster de alta disponibilidad y cluster de
+ balanceo de carga son más utilizados en el ambiente de negocios.
+ En este trabajo nos enfocaremos en el primero.
+\end_layout
+
+\begin_layout Subsubsection
+Cluster de alto rendimiento
+\end_layout
+
+\begin_layout Standard
+Un cluster de alto rendimiento es un conjunto de ordenadores que está diseñado
+ para dar altas prestaciones en cuanto a capacidad de cálculo.
+ Los motivos para utilizar un cluster de alto rendimiento son el tamaño
+ del problema por resolver y el precio de la máquina necesaria para resolverlo.
+\end_layout
+
+\begin_layout Standard
+A través de un cluster se pueden conseguir capacidades de cálculo superiores
+ a las de un ordenador más caro que el costo conjunto de los ordenadores
+ del cluster.
+ Para garantizar esta capacidad de cálculo, los problemas necesitan ser
+ paralelizables, ya que el método con el que los clusters agilizan el procesamie
+nto es dividir el problema en problemas más pequeños y calcularlos en los
+ nodos, por lo tanto, si el problema no cumple con esta característica,
+ no puede utilizarse el cluster para su cálculo.
+\end_layout
+
+\begin_layout Standard
+Para que un problema sea paralelizable se debe hacer uso de bibliotecas
+ especiales como lo es PVM (parallel virtual machine) o MPI (Message passage
+ interfase) , donde la primera es usada especialmente en cluster con nodos
+ heterogeneos (arquitectura del procesador, sistemas operativo, entre otras),
+ y pertenecientes a diferentes dominios de red, la segunda biblioteca es
+ utilizada en cluster homogéneos.
+\end_layout
+
+\begin_layout Subsubsection
+Cluster de alta disponibilidad
+\end_layout
+
+\begin_layout Standard
+Un cluster de alta disponibilidad es un conjunto de dos o más máquinas que
+ se caracterizan por compartir los discos de almacenamiento de datos y por
+ estar constantemente monitorizándose entre sí.
+ Podemos dividirlo en dos clases: alta disponibilidad de infraestructura
+ y alta disponibilidad de aplicación.
+\end_layout
+
+\begin_layout Standard
+Un cluster se considera de alta disponibilidad de infraestructura si cuando
+ se produce un fallo de hardware en alguna de las máquinas, es capaz de
+ reiniciar automáticamente los servicios en cualquiera de las otras máquinas
+ del cluster, y cuando la máquina que ha fallado se recupera, los servicios
+ son nuevamente migrados a la máquina original.
+ Esta capacidad de recuperación automática de servicios nos garantiza la
+ integridad de la información, ya que no hay pérdida de datos, y además
+ evita molestias a los usuarios, que no tienen por qué notar que se ha producido
+ un problema.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, un cluster se considera de alta disponibilidad de aplicación
+ si cuando se produce un fallo del hardware o de las aplicaciones de alguna
+ de las máquinas, es capaz de reiniciar automáticamente los servicios que
+ han fallado en cualquiera de las otras máquinas del cluster.
+ Y cuando la máquina que ha fallado se recupera, los servicios son nuevamente
+ migrados a la máquina original.
+\end_layout
+
+\begin_layout Subsubsection
+Equilibrio de carga
+\end_layout
+
+\begin_layout Standard
+Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
+ por uno o más ordenadores (llamados nodos) que actúan como frontend del
+ cluster, y que se ocupan de repartir las peticiones de servicio que reciba
+ el cluster, a otros ordenadores del cluster que forman el backend de éste.
+ Un tipo concreto de cluster cuya función es repartir la carga de proceso
+ entre los nodos en lugar de los servicios es el cluster openMosix.
+\end_layout
+
+\begin_layout Standard
+Una de las ventajas de este tipo de cluster es la posibilidad de ampliar
+ su capacidad fácilmente añadiendo más ordenadores al cluster.
+ Además ante la caída de alguno de los ordenadores del cluster el servicio
+ se puede ver mermado, pero mientras haya ordenadores en funcionamiento,
+ éstos seguirán dando servicio.
+\end_layout
+
+\begin_layout Subsubsection
+Escalabilidad
+\end_layout
+
+\begin_layout Standard
+En telecomunicaciones y en ingeniería informática, la escalabilidad es la
+ propiedad deseable de un sistema, una red o un proceso, que indica su habilidad
+ para, o bien manejar el crecimiento continuo de trabajo de manera fluida,
+ o bien para estar preparado para hacerse más grande sin perder calidad
+ en los servicios ofrecidos.
+ En general, también se podría definir como la capacidad del sistema informático
+ de cambiar su tamaño o configuración para adaptarse a las circunstancias
+ cambiantes.
+ Por ejemplo, una empresa que establece una red de usuarios por Internet,
+ no solamente quiere que su sistema informático tenga capacidad para acoger
+ a los actuales clientes, sino también a los clientes que pueda tener en
+ el futuro y, también, que pueda cambiar su configuración si es necesario.
+\end_layout
+
+\begin_layout Standard
+La escalabilidad como propiedad de los sistemas es generalmente difícil
+ de definir en cualquier caso, en particular es necesario definir los requerimie
+ntos específicos para la escalabilidad en esas dimensiones donde se crea
+ que son importantes.
+ A un sistema cuyo rendimiento es mejorado después de haberle añadido más
+ capacidad hardware, proporcionalmente a la capacidad añadida, se dice que
+ pasa a ser "un sistema escalable".
+\end_layout
+
+\begin_layout Subsection
+Middleware
+\end_layout
+
+\begin_layout Standard
+El Middleware es un software de conectividad que ofrece un conjunto de servicios
+ que hacen posible el funcionamiento de aplicaciones distribuidas sobre
+ plataformas heterogéneas.
+ Funciona como una capa de abstracción de software distribuida, que se sitúa
+ entre las capas de aplicaciones y las capas inferiores (sistema operativo
+ y red).
+ El Middleware nos abstrae de la complejidad y heterogeneidad de las redes
+ de comunicaciones subyacentes, así como de los sistemas operativos y lenguajes
+ de programación, proporcionando una API para la fácil programación y manejo
+ de aplicaciones distribuidas, dando a su vez la sensación al usuario de
+ que utiliza un único computador muy potente.
+ Dependiendo del problema a resolver y de las funciones necesarias, serán
+ útiles diferentes tipo de servicios de middleware.
+\end_layout
+
+\begin_layout Standard
+Por lo general el middleware del lado cliente está implementado por el Sistema
+ Operativo subyacente, el cual posee las librerías que implementan todas
+ las funcionalidades para la comunicación a través de la red.
+\end_layout
+
+\begin_layout Standard
+Además ofrece herramientas para la optimización y mantenimiento del sistema:
+ migración de procesos, checkpoint-restart (congelar uno o varios procesos,
+ mudarlos de servidor y continuar su funcionamiento en el nuevo host), balanceo
+ de carga, tolerancia a fallos, etc.
+ Es importante que la solución sea escalable, en este caso debe poder detectar
+ automáticamente nuevos servidores conectados al cluster para proceder a
+ su utilización.
+\end_layout
+
+\begin_layout Standard
+El middleware recibe los trabajos entrantes al cluster y los redistribuye
+ de manera que el proceso se ejecute más rápido y el sistema no sufra sobrecarga
+s en un servidor.
+ Esto se realiza mediante políticas definidas en el sistema (automáticamente
+ o por un administrador) que le indican dónde y cómo debe distribuir los
+ procesos, por un sistema de monitorización, el cual controla la carga de
+ cada CPU y la cantidad de procesos en él.
+\end_layout
+
+\begin_layout Standard
+El middleware también debe poder migrar procesos entre servidores con distintas
+ finalidades.
+ Debe ser capaz de balancear la carga, si un servidor está muy cargado de
+ procesos y otro está ocioso, pueden transferirse procesos a este último
+ para liberar de carga al primero y optimizar el funcionamiento.
+ Además debe permitir al administrador realizar un mantenimiento los servidores,
+ si hay procesos corriendo en un servidor que necesita mantenimiento o una
+ actualización, deberá ser posible migrar los procesos a otro servidor y
+ proceder a desconectar del cluster al primero.
+ A su vez es el encargado de priorizar los trabajos.
+ En caso de tener varios procesos corriendo en el cluster, pero uno de ellos
+ de mayor importancia que los demás, puede migrarse este proceso a los servidore
+s que posean más o mejores recursos para acelerar su procesamiento.
+ 
+\end_layout
+
+\begin_layout Standard
+Los Middleware han aparecido de manera relativamente reciente en el mundo
+ de la informática.
+ Ganaron popularidad en los 1980s ya que eran la solución de como integrar
+ las nuevas aplicaciones con los sistemas antiguos (legacy systems), en
+ todo caso, el termino ha sido usado desde 1968.
+ También facilitaba la computación distribuida, mediante conexión de multiples
+ aplicaciones para crear una mucho mayor, sobre una red.
+\end_layout
+
+\begin_layout Subsection
+Trabajos previos
+\end_layout
+
+\begin_layout Standard
+No son pocos los trabajos realizados sobre investigación, desarrollo, construcci
+ón y aplicaciones de clusters.
+ Sin embargo es relativamente poca la bibliografía asociada, dado que el
+ tema ha ganado auge principalmente en la última década.
+ Los estudios se remontan desde 1970, pero puede decirse que IBM fue la
+ primera en establecer una teoría formal con respecto a los clusters a traves
+ de un estudio realizado por Gene Myron Amdahl.
+ 
+\end_layout
+
+\begin_layout Standard
+En el CeCal se han llevado a cabo en los últimos años una gran cantidad
+ de trabajos de investigación por parte de docentes y de estudiantes.
+ Dentro del ambito académico-docente podemos destacar los siguientes trabajos:
+\end_layout
+
+\begin_layout Paragraph
+Algoritmos genéticos paralelos y su aplicación al diseño de redes de comunicacio
+nes confiables (2004)
+\end_layout
+
+\begin_layout Standard
+Tésis de maestria realizada por Mg.
+ Ing.
+ Sergio Nesmachnow, finalizada en Julio de 2004.
+\end_layout
+
+\begin_layout Standard
+Al tratar con problemas de optimización combinatoria NP difíciles, para
+ los cuales la complejidad de los algoritmos conocidos aumenta de manera
+ superpolinomial con el tamaño del problema, la aplicabilidad de los métodos
+ exactos de resolución se encuentra limitada por el enorme tiempo y consumo
+ de recursos computacionales que demandan.
+ Es aquí cuando las técnicas heurísticas aparecen como la única alternativa
+ viable para abordar problemas NP difíciles.
+ A diferencia de las técnicas exactas, las técnicas heurísticas no pueden
+ garantizar a priori la obtención de la solución óptima del problema, pero
+ en la práctica, numerosas técnicas heurísticas se comportan satisfactoriamente
+ para la resolución de complejos problemas de optimización.
+ 
+\end_layout
+
+\begin_layout Standard
+En un nivel superior de abstracción, las técnicas metaheurísticas proporcionan
+ esquemas o enfoques genéricos para la resolución de problemas complejos.
+ Estos enfoques genéricos pueden ser instanciados para producir algoritmos
+ específicos que trabajan bajo un mismo lineamiento general.
+ Las técnicas de computación evolutiva constituyen una familia de metaheurística
+s estocásticas utilizadas exitosamente para la resolución de variados problemas
+ en las áreas de búsqueda y análisis de información, optimización combinatoria,
+ entre otras.
+\end_layout
+
+\begin_layout Standard
+En este trabajo se presenta un estudio de las técnicas de computación evolutiva
+ y la aplicación de técnicas de procesamiento de alta performance para implement
+ar modelos de algoritmos genéticos capaces de ejecutar en un ambiente paralelo-d
+istribuido y se presentan algoritmos evolutivos aprocados al caso concreto
+ de diseñar redes de comunicaciones de alta conectividad topológica.
+ Finalmente se evalúan diferentes algoritmos evolutivos puros e híbridos
+ en sus versiones secuenciales y paralelas, presentando un estudio comparativo
+ que reporta resultados satisfactorios tanto desde el punto de vista de
+ la calidad de resultados obtenidos como desde el punto de vista de la mejora
+ de eficiencia computacional alcanzada por las versiones paralelas de los
+ algoritmos con respecto a sus contrapartes secuenciales.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Mejora del desempeño de modelos numéricos del Río de la Plata (2006)
+\end_layout
+
+\begin_layout Standard
+Tésis de maestria del Ing.
+ Pablo Ezzatti, finalizada en Junio de 2006.
+\end_layout
+
+\begin_layout Standard
+En las ultimas décadas, la simulación computacional de fluidos ha emergido
+ como un área de intenso trabajo.
+ A medida que las técnicas computacionales se fueron perfeccionando, el
+ interés de modelar con precisión el comportamiendo de los flujos de fluidos
+ fué en aumento, provocando importantes inversiones en equipamiento infirmático.
+\end_layout
+
+\begin_layout Standard
+En Uruguay, en el Instituto de Mecánica de Fluidos e Ingeniería Ambiental
+ (IMFIA) de la Facultad de Ingeniería de la Universidad de la República,
+ desde hace algunos años, se está trabajando en el modelado numérico del
+ Río de la Plata.
+\end_layout
+
+\begin_layout Standard
+Con el fin de obtener mejoras significativas en diversas características
+ del modelado, se buscó un nuevo modelo.
+ Finalmente se optó por el modelo RMA-10, ampliamente utilizado en el modelado
+ de estuarios.
+\end_layout
+
+\begin_layout Standard
+Las cualidades de este nuevo modelo permiten la obtención de resultados
+ sumamente alentadores en diversas simulaciones realizadas.
+ En contraposición a la mejora del modelado, se incrementan de forma abrupta
+ los costos computacionales (tiempo de procesamiento), lo que implica un
+ gran obstáculo para su utilización y para aplicar mejoras al modelo.
+\end_layout
+
+\begin_layout Standard
+En esta tesis se estudian técnicas de computación de alto desempeño aplicadas
+ al cálculo científico, con el fin de mejorar el desempeño computacional
+ de modelos numéricos que utilizan el paradigma de elementos finitos (MEF).
+ Se aborda la aplicación de estas técnicas al modelo hidrodinámico RMA-10
+ aplicado al Río de la Plata.
+\end_layout
+
+\begin_layout Standard
+Se presenta una estrategia secuencial para el cálculo de la matriz de regidez
+ del modelo RMA-10 utilizando tablas de dispersión y su posterior resolución
+ empleando métodos multifrontales para sistemas lineales dispersos.
+ También se evalúa la aplicación de distintas estrategias de programación
+ paralela a la modificación propuesta y se presenta un estudio comparativo
+ de las diferentes estrategias.
+\end_layout
+
+\begin_layout Paragraph
+Algoritmos genéticos paralelos aplicados a la resolución de problemas de
+ asinación de frecuencias en redes celulares (2006)
+\end_layout
+
+\begin_layout Standard
+Tesina de licenciatura en informática de la Universidad Nacional de la Patagonia
+ San Juan Bosco (Argentina) realizada por Cristian Perfumo, Gerardo Mora
+ y Lucas Rojas, tutoreada por el Mg.
+ Ing.
+ Sergio Nesmachnow e Ing.
+ José Gallardo.
+\end_layout
+
+\begin_layout Standard
+Con la masificación de las redes inalámbricas, los entes reguladores del
+ espectro de radiofrecuencias se han encontrado con el problema de asignar
+ una frecuencia a cada comunicación sin que esto conlleve a interferencias.
+ Dado que las frecuencias son un recurso finito, el objetivo es maximizar
+ la reutilización de las frecuencias sin disminuir la calidad de la transmisión.
+ En este trabajo se investiga sobre la aplicación de los algoritmos genéticos
+ como herramienta de resolución del problema de asignación de frecuencias
+ en redes inalámbricas.
+\end_layout
+
+\begin_layout Standard
+En este trabajo se presenta una investigación sobre algoritmos genéticos,
+ considerando sus variantes secuenciales y paralelas, y su aplicación a
+ la resolución del problema de la asignación de frecuencias en las redes
+ de telefonía celular.
+\end_layout
+
+\begin_layout Paragraph
+Una versión paralela del algoritmo evolutivo para optimización multiobjetivo
+ NSGA-II y su aplicación al diseño de redes de comunicaciones confiables
+ (2003)
+\end_layout
+
+\begin_layout Standard
+Proyecto realizado por el Mg.
+ Ing.
+ Sergio Nesmachnow realizado como proyecto final del curso "Introducción
+ a la Optimización Multiobjetivo usando Metaheurísticas", dictado por el
+ Prof.
+ Dr.
+ Carlos Coello en el marco de la VII Escuela Internacional de Informática
+ en el CACIC 2003.
+\end_layout
+
+\begin_layout Standard
+Este trabajo presenta una versión Paralela del Algoritmo Evolutivo para
+ Optimización Multiobjetivo NSGA-II.
+ Se introducen los detalles de diseño e implementación de una versión paralela
+ y se analiza la calidad de resultados y la eficiencia computacional, comparando
+ con los resultados y tiempos de ejecución de la versión secuencial del
+ algoritmo NSGA-II sobre un conjunto de problemas de prueba estándar.
+ Adicionalmente, se estudia la aplicación de la versión paralela propuesta
+ a la resolución de un problema de diseño de redes de comunicaciones confiables.
+ 
+\end_layout
+
+\begin_layout Standard
+\SpecialChar \textcompwordmark{}
+
+\end_layout
+
+\begin_layout Standard
+Por parte de los estudiantes podemos mencionar como ejemplo algunos de los
+ proyectos de grado realizados recientemente:
+\end_layout
+
+\begin_layout Paragraph
+Proyecto MPI.net (2003)
+\end_layout
+
+\begin_layout Standard
+Proyecto de grado realizado por Sebastián Baña, Gonzalo Ferres y Nicolás
+ Pepe.
+\end_layout
+
+\begin_layout Standard
+El proyecto propone la adaptación de la biblioteca MPI para su utilización
+ desde lenguajes a través de la plataforma .NET.
+\end_layout
+
+\begin_layout Paragraph
+Proyecto algoritmos genéticos incrementales (2003)
+\end_layout
+
+\begin_layout Standard
+Proyecto de grado realizado por Federico Dominioni y Pablo Musso.
+\end_layout
+
+\begin_layout Standard
+El proyecto plantea el estudio, diseño e implementación del modelo de algoritmos
+ genéticos incrementales.
+ El modelo fue aplicado a la resolución de un problema de optimización combinato
+ria en el área de diseño de redes de comunicaciones confiables.
+\end_layout
+
+\begin_layout Paragraph
+Metaheurísticas aplicadas a la reconstrucción de árboles filogenéticos (2007,
+ en curso).
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Implementación de alto desempeño del algoritmo de radiosidad en tiempo real
+ utilizando GPUs.
+ (2007, en curso).
+ 
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Laboratorio de simulación numérica para flujos de superficie libre (2006,
+ en curso).
+ 
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Paralelismo aplicado a algoritmos evolutivos para optimización multiobjetivo
+ (2006, en curso).
+ 
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Diseño, configuración, administración y evaluación de performance de un
+ clúster para procesamiento paralelo (2006, en curso).
+\end_layout
+
+\begin_layout Standard
+(faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Performance de la red 3G (2007, en curso).
+\end_layout
+
+\begin_layout Standard
+Convenio ANTEL-FING.
+ (faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Análisis de performance de la red celular de ANTEL (2006, en curso).
+\end_layout
+
+\begin_layout Standard
+Convenio ANTEL-FING.
+ (faltan datos)
+\end_layout
+
+\begin_layout Paragraph
+Asesoramiento para la adquisición de un sistema automático de identificación
+ de huellas dactilares (2006, en curso).
+\end_layout
+
+\begin_layout Standard
+Convenio FING–Ministerio del Interior.
+ (faltan datos)
+\end_layout
+
+\begin_layout Section
+Computación de Alto Rendimiento
+\end_layout
+
+\begin_layout Standard
+En el correr de los últimos años ha crecido la importancia de satisfacer
+ los requisitos crecientes de poder de cómputo debido a la necesidad de
+ resolver problemas mas complicados con modelos más complejos, así como
+ trabajar con grandes volumenes de datos sin perder de vista la capacidad
+ de respuesta en un tiempo limitado.
+\end_layout
+
+\begin_layout Standard
+El procesamiento paralelo (o computación paralela de alto rendimiento) ha
+ ganado terreno y se a vuelto muy importante en la resolución de estos problemas.
+ La computación de alto rendimiento se apoya en tecnologías como los clusters,
+ supercomputadores y mediante el uso de la computación paralela y distribuida.
+ 
+\end_layout
+
+\begin_layout Subsection
+Computación Distribuida
+\end_layout
+
+\begin_layout Standard
+La computación distribuida es un modelo para resolver problemas de computación
+ masiva utilizando un gran número de computadoras en una infraestructura
+ de telecomunicaciones distribuida.
+\end_layout
+
+\begin_layout Standard
+Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
+ arquitecturas de computadores y programas, lenguajes de programación),
+ situados en distintos lugares y pertenecientes a diferentes dominios de
+ administración sobre una red que utiliza estándares abiertos.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta ha sido diseñada para resolver problemas demasiado grandes para cualquier
+ supercomputadora o mainframe, manteniendose la flexibilidad de trabajar
+ en múltiples problemas más pequeños.
+ 
+\end_layout
+
+\begin_layout Standard
+Exiten varios grados de distribucion: de hardware y procesamiento, de datos
+ y de control.
+ (detallar)
+\end_layout
+
+\begin_layout Standard
+Las técnicas de autorización segura son esenciales antes de permitir que
+ los recursos informáticos sean controlados por usuarios remotos dado que
+ estamos naturalmente en un entorno multiusuario.
+\end_layout
+
+\begin_layout Standard
+Algunas de las ventajas de la computación distribuida son la mejora en el
+ desempeño, robustez, seguridad no centralizada y acceso transparente a
+ los datos no locales.
+\end_layout
+
+\begin_layout Subsection
+Programación Paralela
+\end_layout
+
+\begin_layout Standard
+La programación paralela es una técnica de programación basada en la ejecución
+ simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
+ o en un cluster de ordenadores, en cuyo caso se denomina computación distribuid
+a.
+ Al contrario que en la programación concurrente, esta técnica enfatiza
+ la verdadera simultaneidad en el tiempo de la ejecución de las tareas.
+\end_layout
+
+\begin_layout Standard
+El avances en diferentes tecnologias como microporcesadores con mayor poder
+ de procesamiento, comunicación de datos, desarrollo de bibliotecas e interfaces
+ para programación de procesos han posibilitado esta técnica.
+\end_layout
+
+\begin_layout Standard
+Los sistemas con multiprocesador y multicomputadores consiguen un aumento
+ del rendimiento si se utilizan estas técnicas.
+ En los sistemas monoprocesador el beneficio en rendimiento no es tan evidente,
+ ya que la CPU es compartida por múltiples procesos en el tiempo, lo que
+ se denomina multiplexación o multiprogramación.
+\end_layout
+
+\begin_layout Standard
+El mayor problema de la computación paralela radica en la complejidad de
+ sincronizar unas tareas con otras, ya sea mediante secciones críticas,
+ semáforos o paso de mensajes, para garantizar la exclusión mutua en las
+ zonas del código en las que sea necesario.
+\end_layout
+
+\begin_layout Standard
+Esta técnica proporciona ventajas como mayor capacidad de proceso, menor
+ tiempo de procesamiento y aprovechamiento de la escalabilidaad potencial
+ de los recursos
+\end_layout
+
+\begin_layout Subsubsection
+Aplicaciones demandantes de recursos
+\end_layout
+
+\begin_layout Standard
+Podemos hacer una división de las aplicaciones que requieren una demanda
+ de recursos computacionales importantes de la siguiente manera.
+\end_layout
+
+\begin_layout Paragraph
+Aplicaciones de cálculo intensivas
+\end_layout
+
+\begin_layout Standard
+Son aplicaciones que requieren un alto número de ciclos de máquina, estas
+ aplicaciones han impulsado el desarrollo de supercomputadores.
+ Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
+ en otras áreas como simulación financiera y económica.
+ Dependen grandemente de la velocidad y el procesamiento de punto flotantes
+ de los supercomputadores.
+ 
+\end_layout
+
+\begin_layout Standard
+Algunos ejemplos son:
+\end_layout
+
+\begin_layout Itemize
+Dinámica de fluidos computacional.
+\end_layout
+
+\begin_layout Itemize
+Simulaciones electromagnéticas.
+\end_layout
+
+\begin_layout Itemize
+Modelado ambiental.
+\end_layout
+
+\begin_layout Itemize
+Dinámica estructural.
+\end_layout
+
+\begin_layout Itemize
+Modelado biológico.
+\end_layout
+
+\begin_layout Itemize
+Dinámica molecular.
+\end_layout
+
+\begin_layout Itemize
+Simulación de redes.
+\end_layout
+
+\begin_layout Itemize
+Modelado financiero y económico.
+\end_layout
+
+\begin_layout Paragraph
+Aplicaciones de almacenemiento masivo
+\end_layout
+
+\begin_layout Standard
+Dependen de la capacidad para almacenar y procesar grandes cantidades de
+ información.
+ Requieren de un acceso rápido y seguro a una masa considerable de datos
+ almacenados.
+ 
+\end_layout
+
+\begin_layout Standard
+Algunas de ellas son:
+\end_layout
+
+\begin_layout Itemize
+Análisis de data sísmica.
+\end_layout
+
+\begin_layout Itemize
+Procesamiento de imágenes.
+\end_layout
+
+\begin_layout Itemize
+Minería de datos.
+\end_layout
+
+\begin_layout Itemize
+Análisis estadístico de datos.
+\end_layout
+
+\begin_layout Itemize
+Análisis de mercados.
+\end_layout
+
+\begin_layout Paragraph
+Aplicaciones exigentes comunicacionalmente
+\end_layout
+
+\begin_layout Standard
+Estas son relativamente nuevas y pueden ser llamadas servicios por demanda.
+ Requieren de recursos computacionales conectados por redes con anchos de
+ banda considerables.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplos:
+\end_layout
+
+\begin_layout Itemize
+Procesamiento de transacciones en línea.
+\end_layout
+
+\begin_layout Itemize
+Sistemas colaborativos.
+\end_layout
+
+\begin_layout Itemize
+Texto por demanda.
+\end_layout
+
+\begin_layout Itemize
+Video por demanda.
+\end_layout
+
+\begin_layout Itemize
+Imágenes por demanda.
+\end_layout
+
+\begin_layout Itemize
+Simulación por demanda.
+\end_layout
+
+\begin_layout Standard
+Obviamente todas las aplicaciones anteriores dependen en cierto grado de
+ cada uno de los aspectos computacionales mencionados: poder de cómputo,
+ capacidades de almacenamiento y eficientes canales de comunicación, sin
+ embargo las podemos agrupar por su característica dominante.
+\end_layout
+
+\begin_layout Paragraph
+Sistemas de sistemas
+\end_layout
+
+\begin_layout Standard
+Las aplicaciones en este grupo combinan en forma más compleja las característica
+s anteriores y dependen, en muchos casos, de sistemas computacionales integrados
+ diseñados primordialmente para ellas.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplos:
+\end_layout
+
+\begin_layout Itemize
+Soporte a decisiones corporativas y gubernamentales.
+\end_layout
+
+\begin_layout Itemize
+Control de sistemas a tiempo real.
+\end_layout
+
+\begin_layout Itemize
+Banca electrónica.
+\end_layout
+
+\begin_layout Itemize
+Compras electrónicas.
+\end_layout
+
+\begin_layout Itemize
+Educación.
+\end_layout
+
+\begin_layout Standard
+Existe una alta correspondencia entre la evolución de tecnologías informáticas
+ y el desarrollo de aplicaciones; en particular el hardware tiene gran influenci
+a en el éxito de ciertas áreas.
+ La aplicaciones intensivas en cálculo fueron estimuladas principalmente
+ por máquinas vectoriales y procesadores masivamente paralelos.
+ Las aplicaciones de almacenamiento masivo han sido guiadas por dispositivos
+ de almacenamiento como RAID y robots de cintas.
+ Las aplicaciones exigentes comunicacionales como herramientas colaborativas
+ basadas en WWW y servicios por demanda en línea originalmente surgieron
+ con las LAN y estan creciendo drásticamente con Internet.
+\end_layout
+
+\begin_layout Subsection
+Organización de computadores
+\end_layout
+
+\begin_layout Standard
+La organización de los procesadores o red se refiere a como se conectan
+ o enlazan los procesadores o nodos en un computador paralelo.
+ Existen varios criterios para evaluar los distintos diseños de organización.
+\end_layout
+
+\begin_layout Standard
+Diámetro: viene dado por la mayor distancia entre dos nodos.
+ Mientras menor sea el diámetro menor será el tiempo de comunicación entre
+ nodos.
+\end_layout
+
+\begin_layout Standard
+Ancho de bisección de la red: es el menor número de enlaces que deben ser
+ removidos para dividir la red por la mitad.
+ Un ancho de bisección alto puede reducir el tiempo de comunicación cuando
+ el movimiento de datos es sustancial, y un ancho de bisección alto hace
+ el sistema más tolerante a fallas debido a que defectos en un nodo no hacen
+ inoperable a todo el sistema.
+\end_layout
+
+\begin_layout Standard
+Redes estáticas y dinámicas: en las redes estáticas la topología de interconexió
+n se define cuando se construye la máquina.
+ Si la red es dinámica, la interconexión puede variar durante la ejecución
+ de un programa o entre la ejecución de programas.
+\end_layout
+
+\begin_layout Standard
+A continuacion veremos algunos tipos de diseños de redes de procesadores.
+\end_layout
+
+\begin_layout Subsubsection
+Bus y Ethernet
+\end_layout
+
+\begin_layout Standard
+En una red donde los procesadores comparten el mismo recurso de comunicación:
+ el bus.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta arquitectura es fácil y económica de implementar, pero es altamente
+ no escalable ya que solo un procesador puede usar el bus en un momento
+ dado; a medida que se incrementa el número de procesadores, el bus se convierte
+ en un cuello de botella debido a la congestión.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/bus.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Mallas
+\end_layout
+
+\begin_layout Standard
+Al igual que el bus (o ethernet), las mallas son fáciles y económicas de
+ implementar, sin embargo el diámetro se incrementa al añadir nodos.
+ En las mallas de dimensión 1, si los dos nodos extremos también son conectados,
+ entonces se tiene un anillo.
+\end_layout
+
+\begin_layout Standard
+Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
+ y tiene la ventaja de que pueden ser construidas sin conexiones largas.
+ El diámetro de las mallas puede ser reducido a la mitad si se extiende
+ la malla con conexiones toroidales de forma que los procesadores en los
+ bordes también estén conectados con vecinos.
+ Esto sin embargo presenta dos desventajas: a) conexiones más largas son
+ requeridas y b) un subconjunto de un torus no es un torus y los beneficios
+ de esta interconexión se pierden si la máquina es particionada entre varios
+ usuarios.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/malla1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Mariposa
+\end_layout
+
+\begin_layout Standard
+Estas organizaciones son similares a las mallas pero presentan menor diametro.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/mariposa.png
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Árboles binarios
+\end_layout
+
+\begin_layout Standard
+Son particularmente útiles en problemas de ordenamiento, multiplicación
+ de matrices, y algunos problemas en los que los tiempos sw solución crecen
+ exponencialmente con el tamaño del problema (NP-complejos).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Pirámides
+\end_layout
+
+\begin_layout Standard
+Estas redes intentan combinar las ventajas de las mallas y los árboles,
+ se incrementa la tolerancia a fallas y el número de vias de comunicación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/piramide.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Hipercubo
+\end_layout
+
+\begin_layout Standard
+Un hipercubo puede ser considerado como una malla con conexiones largas
+ adicionales, estas conexiones reducen el diámetro e incrementan el ancho
+ de bisección.
+ 
+\end_layout
+
+\begin_layout Standard
+Se puede definir recursivamente un hipercubo de la siguiente manera: un
+ hipercubo de dimensión-cero es un único procesador y un hipercubo de dimensión-
+uno conecta dos hipercubos de dimensión-cero.
+ En general, un hipercubo de dimensión d+1 con 2d+1 nodos se construye conectand
+o los procesadores respectivos de dos hipercubos de dimensión d.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/hipercubos.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Omega
+\end_layout
+
+\begin_layout Standard
+Omega es una red formada por crossbar switches 2x2, con cuatro estados posibles:
+ recto, cruzado, broadcast superior y broadcast inferior que son configurados
+ según la conexión que se tiene.
+ Estas topologías se llaman dinámicas o reconfigurables.
+ 
+\end_layout
+
+\begin_layout Standard
+Estas redes reducen considerablemente la competencia por ancho de banda,
+ pero son altamente no escalables y costosas.
+ El switch de alto desempeño de la SP2 es una red omega.
+\end_layout
+
+\begin_layout Standard
+La siguiente figura muestra una red omega de 3 etapas que conecta 8 procesadores.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/omega3e8p.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Fibras de interconexión
+\end_layout
+
+\begin_layout Standard
+Las fibras de interconexión son un conjunto de switches, llamados routers,
+ enlazados por distintas configuraciones o topologías.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/firasinterconexion.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diseño de algoritmos paralelos
+\end_layout
+
+\begin_layout Standard
+El diseño de algoritmos paralelos involucra cuatro etapas, las cuales se
+ presentan como secuenciales pero que en la práctica no lo son.
+\end_layout
+
+\begin_layout Standard
+Partición: el cómputo y los datos sobre los cuales se opera se descomponen
+ en tareas.
+ Se ignoran aspectos como el número de procesadores de la máquina a usar
+ y se concentra la atención en explotar oportunidades de paralelismo.
+\end_layout
+
+\begin_layout Standard
+Comunicación: se determina la comunicación para coordinar las tareas.
+ Se definen estructuras y algoritmos de comunicación.
+\end_layout
+
+\begin_layout Standard
+Agrupación: se evalua en terminos de eficiencia y costos de implementacion
+ a las dos etapas anteriores.
+ Se agrupan tareas pequeñas en tareas más grandes.
+\end_layout
+
+\begin_layout Standard
+Asignación: cada tarea es asignada a un procesador tratando de maximizar
+ la utilización de los procesadores y de reducir el costo de comunicación.
+ La asignación puede ser estática (se establece antes de la ejecución del
+ programa) o en tiempo de ejecución mediante algoritmos de balanceo de carga.
+\end_layout
+
+\begin_layout Subsubsection
+Partición
+\end_layout
+
+\begin_layout Standard
+En la etapa de partición se buscan oportunidades de paralelismo y se trata
+ de subdividir el problema lo más finamente posible.
+ Se dividen tanto los cómputos como los datos.
+ 
+\end_layout
+
+\begin_layout Standard
+Existen dos formas de descomposición.
+ Descomposición del dominio que se centra en los datos.
+ Se determina la partición apropiada de los datos y luego se trabaja en
+ los cómputos asociados con los datos.
+\end_layout
+
+\begin_layout Standard
+Descomposición funcional que es el contrario al enfoque anterior, primero
+ se descomponen los cómputos y luego se ocupa de los datos.
+ 
+\end_layout
+
+\begin_layout Standard
+En el proceso de partición existen aspectos a tener en cuenta: 
+\end_layout
+
+\begin_layout Itemize
+el orden de tareas debe ser por lo menos superior al número de procesadores
+ para tener flexibilidad en etapas siguientes.
+\end_layout
+
+\begin_layout Itemize
+evitar cómputos y almacenamientos redundantes.
+\end_layout
+
+\begin_layout Itemize
+las tareas deben ser de tamaños equivalentes para facilitar el balanceo
+ de la carga de los procesadores.
+\end_layout
+
+\begin_layout Itemize
+el número de tareas debe ser proporcional al tamaño del problema.
+\end_layout
+
+\begin_layout Subsubsection
+Comunicación
+\end_layout
+
+\begin_layout Standard
+El proceso de partición de tareas no es independiente del proceso de comunicació
+n.
+ En esta se especifica como los datos serán transferidos o compartidos entre
+ tareas.
+\end_layout
+
+\begin_layout Standard
+La comunicación puede ser definida en dos fases.
+ Primero se definen los canales que conectan las tareas.
+ Segundo
+\end_layout
+
+\begin_layout Standard
+se especifica la información o mensajes que deben ser enviados y recibidos
+ en estos canales.
+\end_layout
+
+\begin_layout Standard
+Dependiendo de si estamos en el caso de memoria distribuida o memoria compartida
+ dependerá la forma de atacar la comunicación entre tareas varía.
+\end_layout
+
+\begin_layout Standard
+En ambientes de memoria distribuida, las tareas tienen una identificación
+ única e interactúan enviando y recibiendo mensajes hacia y desde tareas
+ específicas.
+ Las librerías más conocidas para implementar el pasaje de mensajes en ambientes
+ de memoria distribuida son: MPI (Message Passing Interface) y PVM (Parallel
+ Virtual Machine).
+\end_layout
+
+\begin_layout Standard
+En ambientes de memoria compartida no existe la noción de pertenencia y
+ el envío de datos no se da como tal.
+ Todas las tareas comparten la misma memoria.
+\end_layout
+
+\begin_layout Standard
+Semáforos, semáforos binarios, barreras y otros mecanismos de sincronizacion
+ son usados para controlar el acceso a la memoria compartida y coordinar
+ las tareas.
+\end_layout
+
+\begin_layout Standard
+En esta etapa hay que tener en cuenta los siguientes aspectos:
+\end_layout
+
+\begin_layout Itemize
+las tareas deben efectuar aproximadamente el mismo número de operaciones
+ de comunicación.
+ De otra forma es muy probable que el algoritmo no sea extensible a problemas
+ mayores ya que habrán cuellos de botella.
+\end_layout
+
+\begin_layout Itemize
+la comunicación entre tareas debe ser tan pequeña como sea posible.
+\end_layout
+
+\begin_layout Itemize
+las operaciones de comunicación deben poder proceder concurrentemente.
+\end_layout
+
+\begin_layout Itemize
+los cómputos de diferentes tareas deben poder proceder concurrentemente.
+\end_layout
+
+\begin_layout Subsubsection
+Agrupación
+\end_layout
+
+\begin_layout Standard
+En las dos tareas anteriores el algoritmo resultante es aún abstracto en
+ el sentido de que no se tomó en cuenta la máquina sobre el cual correrá.
+ En este proceso se busca un algoritmo concreto, que corra eficientemente
+ sobre cierta clase de computadores.
+ 
+\end_layout
+
+\begin_layout Standard
+En particular se considera si es útil agrupar tareas y si vale la pena replicar
+ datos y/o cómputos.
+\end_layout
+
+\begin_layout Standard
+En el proceso de partición se trata de establecer el mayor número posible
+ de tareas con la intensión de maximizar el paralelismo.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto no necesariamente produce un algoritmo eficiente ya que el costo de
+ comunicación puede ser significativo.
+ 
+\end_layout
+
+\begin_layout Standard
+Mediante la agrupación de tareas se puede reducir la cantidad de datos a
+ enviar y así reducir el número de mensajes y el costo de comunicación.
+\end_layout
+
+\begin_layout Standard
+Se puede intentar replicar cómputos y/o datos para reducir los requerimientos
+ de comunicación.
+ 
+\end_layout
+
+\begin_layout Standard
+Aspectos a considerar en esta etapa:
+\end_layout
+
+\begin_layout Itemize
+chequear si la agrupación redujo los costos de comunicación.
+\end_layout
+
+\begin_layout Itemize
+si se han replicado cómputos y/o datos, se debe verificar que los beneficios
+ son superiores a los costos.
+\end_layout
+
+\begin_layout Itemize
+se debe verificar que las tareas resultantes tengan costos de computo y
+ comunicación similares.
+\end_layout
+
+\begin_layout Itemize
+revisar si el número de tareas es extensible con el tamaño del problema.
+\end_layout
+
+\begin_layout Itemize
+si el agrupamiento ha reducido las oportunidades de ejecución concurrente,
+ se debe verificar que aun hay suficiente concurrencia y posiblemente considerar
+ diseños alternativos.
+\end_layout
+
+\begin_layout Itemize
+analizar si es posible reducir aun más el número de tareas sin introducir
+ desbalances de cargas o reducir la extensibilidad.
+\end_layout
+
+\begin_layout Subsubsection
+Asignación
+\end_layout
+
+\begin_layout Standard
+En este proceso se determina en que procesador se ejecutará cada tarea.
+ 
+\end_layout
+
+\begin_layout Standard
+En maquinas de memoria compartida tipo UMA no se presenta este problema
+ ya que proveen asignación dinámica de procesos.
+ 
+\end_layout
+
+\begin_layout Standard
+Actualmente no hay mecanismos generales de asignación de tareas para máquinas
+ distribuidas por lo que este problema debe ser atacado explícitamente en
+ el diseño de algoritmos paralelos.
+\end_layout
+
+\begin_layout Standard
+La asignación de tareas puede ser estática o dinámica.
+ En la asignación estática, las tareas son asignadas a un procesador al
+ comienzo de la ejecución del algoritmo paralelo y corren ahí hasta el final.
+ La asignación estática en ciertos casos puede resultar en un tiempo de
+ ejecución menor respecto a asignaciones dinámicas y también puede reducir
+ el costo de creación de procesos, sincronización y terminación.
+\end_layout
+
+\begin_layout Standard
+En la asignación dinámica se hacen cambios en la distribución de las tareas
+ entre los procesadores en tiempo de ejecución.
+ Esto es con el fin de balancear la carga del sistema y reducir el tiempo
+ de ejecución.
+ Sin embargo, el costo de balanceo puede ser significativo y por ende incrementa
+r el tiempo de ejecución.
+ Entre los algoritmos de balanceo de carga están los siguientes:
+\end_layout
+
+\begin_layout Itemize
+Balanceo centralizado: un nodo ejecuta el algoritmo y mantiene el estado
+ global del sistema.
+\end_layout
+
+\begin_layout Itemize
+Balanceo completamente distribuido: cada procesador mantiene su propia visión
+ del sistema intercambiando información con sus vecinos y así hacer cambios
+ locales.
+\end_layout
+
+\begin_layout Itemize
+Balanceo semi-distribuido: divide los procesadores en regiones, cada una
+ con un algoritmo centralizado local.
+ Otro algoritmo balancea la carga entre las regiones.
+\end_layout
+
+\begin_layout Subsection
+Taxonomía de Flynn
+\end_layout
+
+\begin_layout Standard
+Una forma de clasificar las diferentes arquitecturas de computación, tanto
+ serial como paralela, es mediante la taxonomía de Flynn.
+\end_layout
+
+\begin_layout Standard
+Es basada en la multiplicidad del flujo de instrucciones y del flujo de
+ datos en un computador.
+ 
+\end_layout
+
+\begin_layout Standard
+Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
+ el computador y un flujo de datos es la secuencia de datos sobre los cuales
+ operan las instrucciones.
+\end_layout
+
+\begin_layout Standard
+Dentro de la clasificación de Flynn tenemos la siguientes categorías.
+\end_layout
+
+\begin_layout Subsubsection
+SISD Single instruction stream, single data stream
+\end_layout
+
+\begin_layout Standard
+La mayor parte de computadores seriales son SISD.
+ Estas tienen un CPU que ejecuta una instrucciones y busca o guarda datos
+ en un momento dado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SISD.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+UP: Unidad de Procesamiento
+\end_layout
+
+\begin_layout Standard
+UC: Unidad de Control 
+\end_layout
+
+\begin_layout Standard
+M: Memoria 
+\end_layout
+
+\begin_layout Standard
+FI: Flujo de Instrucciones 
+\end_layout
+
+\begin_layout Standard
+FD: Flujo de Datos
+\end_layout
+
+\begin_layout Subsubsection
+SIMD Single instruction stream, multiple data stream
+\end_layout
+
+\begin_layout Standard
+En esta categoria entrarn los arreglos de procesadores.
+\end_layout
+
+\begin_layout Standard
+Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
+ operación sobre datos distintos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SIMD.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+MISD Multiple instruction stream, single data stream
+\end_layout
+
+\begin_layout Standard
+Existen n procesadores, cada uno recibiendo una instrucción diferente y
+ operando sobre el mismo flujo de datos.
+\end_layout
+
+\begin_layout Standard
+Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
+ de que ciertas MIMD puedan ser usadas de esta forma.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/MISD.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+MIMD Multiple instruction stream, multiple data stream
+\end_layout
+
+\begin_layout Standard
+La mayoría de los multiprocesadores y multicomputadores pueden ser clasificados
+ bajo esta categoría.
+ Estos tienen más de un procesador independiente, y cada uno puede ejecutar
+ un programa diferente sobre sus propios datos.
+\end_layout
+
+\begin_layout Standard
+Podemos categorizarlos tambien según como esté organizada su memoria: memoria
+ compartida o memoria distribuida.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/MIMD.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+SPMD Single program, multiple data
+\end_layout
+
+\begin_layout Standard
+En esta categoria cada procesador ejecuta una copia exacta del mismo programa,
+ pero opera sobre datos diferentes.
+ 
+\end_layout
+
+\begin_layout Standard
+Pese a no ser una categoría definida por Flynn es muy usada y pueder ser
+ considerada como un caso particular de MIMD.
+\end_layout
+
+\begin_layout Subsection
+Arquitecturas de computación paralela
+\end_layout
+
+\begin_layout Subsubsection
+Arreglos de procesadores
+\end_layout
+
+\begin_layout Standard
+Una máquina cuyo conjunto de instrucciones permite operaciones tanto sobre
+ vectores como escalares lo denominamos computador vectorial.
+\end_layout
+
+\begin_layout Paragraph
+Procesador Vectorial Pipelined
+\end_layout
+
+\begin_layout Standard
+En estas máquinas los vectores fluyen a través de las unidades aritméticas
+ pipelined.
+\end_layout
+
+\begin_layout Standard
+Las unidades consisten de una cascada de etapas de procesamiento compuestas
+ de circuitos que efectúan operaciones aritméticas o lógicas sobre el flujo
+ de datos que pasan a través de ellas.
+\end_layout
+
+\begin_layout Standard
+La etapas están separadas por registros de alta velocidad usados para guardar
+ resultados intermedios.
+ La información que fluye entre las etapas adyacentes esta bajo el control
+ de un reloj R que se aplica a todos los registros simultáneamente.
+ 
+\end_layout
+
+\begin_layout Standard
+En esta categoría tenemos máquinas como la Cray-1 y la Cyber-205.
+\end_layout
+
+\begin_layout Paragraph
+Arreglos de Procesadores
+\end_layout
+
+\begin_layout Standard
+Son máquinas que constan de un computador secuencial conectado a un arreglo
+ de elementos de procesamiento sincronizados e idénticos capaces de ejecutar
+ las mismas operaciones sobre datos diferentes.
+ El computador secuencial generalmente es un CPU de propósito general que
+ almacena el programa y los datos que serán operados en paralelo, además
+ de ejecutar la porción del programa que es secuencial.
+ Los elementos de procesamiento se asemejan a CPUs pero no tienen unidades
+ de control propias; el computador secuencial genera todas las señales de
+ control para la unidades de procesamiento en el computador.
+\end_layout
+
+\begin_layout Standard
+Los arreglos de procesamiento difieren fundamentalmente en la complejidad
+ y la topología de interconexión de sus elementos de procesamiento.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplos de estas máquinas son: IILIAC IV, Goodyear MPP y Connection Machine
+ CM-200.
+\end_layout
+
+\begin_layout Subsubsection
+Multiprocesadores
+\end_layout
+
+\begin_layout Standard
+Son equipos formados por un número de procesadores completamente programables
+ capaces de ejecutar su propio programa.
+\end_layout
+
+\begin_layout Standard
+La principal debilidad que presentan los multiprocesadores (máquinas de
+ memoria compartida) radica en que no se pueden agregar procesadores indefinidam
+ente ya que a partir de cierto número y dependiendo de la aplicación, el
+ mecanismo de switches o enrutamiento se satura , en otras palabras, tienen
+ poca extensibilidad.
+\end_layout
+
+\begin_layout Paragraph
+UMA: Multiprocesadores de Acceso Uniforme a Memoria
+\end_layout
+
+\begin_layout Standard
+Estos computadores tienen sus procesadores interconectados a través de un
+ mecanismo de switches a una memoria compartida centralizada.
+ Entre estos mecanismos estan: un bus común, crossbar switches o packet-switched
+ networks.
+\end_layout
+
+\begin_layout Standard
+Encore Multimax y Sequent Symetry S81 son ejemplos comerciales de este tipo
+ de multiprocesadores.
+\end_layout
+
+\begin_layout Paragraph
+NUMA: Multiprocesadores de Acceso No-Uniforme a Memoria
+\end_layout
+
+\begin_layout Standard
+Estos multiprocesadores tienen el espacio de direccionamiento compartido
+ y la memoria distribuida.
+ La memoria compartida está formada por la memoria local de los procesadores.
+ El tiempo de acceso a memoria depende de si el acceso es local al procesador
+ o no.
+ La BBN TC2000 y la SGI Origin 2000 son ejemplos de este modelo de computación
+ paralela.
+\end_layout
+
+\begin_layout Subsubsection
+Multicomputadores
+\end_layout
+
+\begin_layout Standard
+En esta categoría, los procesadores no comparten memoria.
+ Cada procesador tiene su propia memoria privada (máquinas de memoria distribuid
+a) y la interacción entre ellos es a través de pase de mensajes.
+ Ejemplos son: Intel ParagonXP/S, Meikos Computing Surface, nCUBE 2, Parsytec
+ SuperCluster, Thinking Machine CM-5 y la IBM SP2.
+\end_layout
+
+\begin_layout Subsubsection
+Máquinas de memoria compartida distribuida
+\end_layout
+
+\begin_layout Standard
+Actualmente las máquinas paralelas tienden a aprovechar las facilidades
+ de programación que ofrecen los ambientes de memoria compartida y la escalabili
+dad de los ambientes de memoria distribuida.
+ 
+\end_layout
+
+\begin_layout Standard
+Este modelo conecta entre si módulos de multiprocesadores manteniendo la
+ visión global de la memoria.
+ 
+\end_layout
+
+\begin_layout Standard
+Este tipo de máquinas entra dentro de la categoría de NUMA y un ejemplo
+ es la SGI Origin 2000.
+\end_layout
+
+\begin_layout Subsubsection
+Multiprocesadores multi-hebrados
+\end_layout
+
+\begin_layout Standard
+En estas máquinas cada procesador tiene cierto número de flujos de instrucciones
+ implementados en hardware, incluyendo el contador de programa y registros,
+ cada uno destinado a ejecutar una hebra.
+ En cada ciclo el procesador ejecuta instrucciones de una de la hebras.
+ En el ciclo siguiente, el procesador hace un cambio de contexto y ejecuta
+ instrucciones de otra hebra.
+\end_layout
+
+\begin_layout Standard
+La Tera MTA (multithreaded architecture) es la primera de estas máquinas
+ , cada procesador tiene 128 flujos de instrucciones.
+ Un acceso a memoria dura aproximadamente 100 ciclos por lo que en en la
+ próxima ejecución de la hebra se tendrán los datos requeridos.
+ Este mecanismo permite a la MTA tolerar la latencia a memoria y por lo
+ tanto no requiere de memorias cache.
+\end_layout
+
+\begin_layout Standard
+Cada instrucción de 64-bits codifica 3 operaciones(una de memoria y dos
+ que pueden ser aritméticas o de control).
+ Cuenta con un sistema operativo de versión distribuida completamente simétrica
+ de UNIX.
+\end_layout
+
+\begin_layout Standard
+El sistema cuenta con 1 a 256 procesadores que comparten una enorme memoria.
+ A su vez cada procesador tiene 1 o 2 Gb de memoria, un mapeo aleatorio
+ de la memoria y una red altamente interconectada proveen acceso casi uniforme
+ de cualquier procesador a cualquier memoria.
+\end_layout
+
+\begin_layout Standard
+Los estudios realizados muestran que el costo del multi-hebrado es pequeño,
+ con un rendimiento comparable con el de la T90 y los códigos de la MTA
+ son significativamente más fáciles de optimizar que en máquinas masivamente
+ paralelas o estaciones de trabajo de alto rendimiento.
+\end_layout
+
+\begin_layout Subsubsection
+Cluster de PC's
+\end_layout
+
+\begin_layout Standard
+El término cluster se aplica a los conjuntos de computadoras unidos mediante
+ una red de alta velocidad que se comportan como si fuesen una sola con
+ mayor poder de computo.
+ Hoy en día tiene un papel importante en aplicaciones científicas, de ingeniería
+, comerciales, simulaciones, etc.
+\end_layout
+
+\begin_layout Standard
+La tecnología de clusters ha evolucionado apoyándose en actividades que
+ van desde aplicaciones de supercómputo y software de misiones críticas,
+ servidores Web y comercio electrónico, hasta bases de datos de alto rendimiento.
+\end_layout
+
+\begin_layout Standard
+El uso de clusters surge gracias a la convergencia de varias tendencias
+ actuales como la disponibilidad de microprocesadores económicos de alto
+ rendimiento y redes de alta velocidad, la existentica de herramientas para
+ cómputo distribuido de alto rendimiento, así como la creciente necesidad
+ de potencia computacional para aplicaciones que la requieran.
+\end_layout
+
+\begin_layout Standard
+Se espera de un cluster que presente combinaciones de los siguientes característ
+icas: alto rendimiento, alta disponibilidad, equilibrio de carga y escalabilidad.
+ 
+\end_layout
+
+\begin_layout Standard
+La construcción de los cluster es muy fácil y económica, debido a su flexibilida
+d: pueden tener todos la misma configuración de hardware y sistema operativo
+ (cluster homogéneo), diferente rendimiento pero con arquitecturas y sistemas
+ operativos similares (cluster semi-homogéneo), o tener diferente hardware
+ y sistema operativo (cluster heterogéneo).
+\end_layout
+
+\begin_layout Standard
+Se pueden construir cluster con ordenadores personales desechados por "anticuado
+s" que consiguen competir en capacidad de cálculo con superordenadores carísimos.
+\end_layout
+
+\begin_layout Standard
+Es necesario proveer un sistema para el manejo del cluster, el cual se encargue
+ de interactuar con el usuario y los procesos que corren en él para optimizar
+ el funcionamiento.
+\end_layout
+
+\begin_layout Paragraph
+Cluster de alto rendimiento
+\end_layout
+
+\begin_layout Standard
+Un cluster de alto rendimiento está diseñado para dar altas prestaciones
+ en cuanto a capacidad de cálculo.
+\end_layout
+
+\begin_layout Standard
+Los motivos para utilizar un cluster de alto rendimiento son el tamaño del
+ problema por resolver y el precio de la máquina necesaria para resolverlo.
+\end_layout
+
+\begin_layout Standard
+Por medio de un cluster se pueden conseguir capacidades de cálculo superiores
+ a las de un ordenador más caro.
+\end_layout
+
+\begin_layout Standard
+Para garantizar esta capacidad de cálculo, los problemas necesitan ser paraleliz
+ables, ya que el método con el que los clusters agilizan el procesamiento
+ es dividir el problema en problemas más pequeños y calcularlos en los nodos.
+\end_layout
+
+\begin_layout Paragraph
+Cluster de alta disponibilidad
+\end_layout
+
+\begin_layout Standard
+Un cluster de alta disponibilidad se caracterizan por compartir los discos
+ de almacenamiento de datos y por estar constantemente monitorizándose entre
+ sí.
+ 
+\end_layout
+
+\begin_layout Standard
+Podemos dividirlo en dos clases: de alta disponibilidad de infrestructura
+ y de alta disponibilidad de aplicación
+\end_layout
+
+\begin_layout Paragraph
+Cluster de balanceo de carga
+\end_layout
+
+\begin_layout Standard
+Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
+ por uno o más ordenadores que actúan como frontend del cluster, y que se
+ ocupan de repartir las peticiones de servicio que reciba el cluster, a
+ otros ordenadores del cluster que forman el back-end de éste.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Escalabilidad
+\end_layout
+
+\begin_layout Standard
+La escalabilidad es la propiedad deseable de un sistema, una red o un proceso,
+ que indica su habilidad para, o bien manejar el crecimiento continuo de
+ trabajo de manera fluida, o bien para estar preparado para hacerse más
+ grande sin perder calidad en los servicios ofrecidos.
+\end_layout
+
+\begin_layout Standard
+En este tipo de cluster se puede ampliar su capacidad fácilmente añadiendo
+ más ordenadores al cluster.
+\end_layout
+
+\begin_layout Standard
+La robustez es una caracteristicas importante ya que ante la caída de alguno
+ de los ordenadores del cluster el servicio se puede ver mermado, pero mientras
+ haya ordenadores en funcionamiento, éstos seguirán dando servicio.
+\end_layout
+
+\begin_layout Subsection
+Herramientas
+\end_layout
+
+\begin_layout Standard
+En programación paralela existen diferentes lenguajes y herramientas de
+ programación con caracteristicas espesificas para diferentes clases de
+ problema.
+\end_layout
+
+\begin_layout Standard
+C++ Composicional (C++): Es una extensión de C++ que provee al programador
+ facilidades para controlar localidad, concurrencia, comunicaciones, y asignació
+n de tareas.
+ Puede ser usado para construir librerías que implementen tareas, canales,
+ y otras abstracciones básicas de la programación paralela.
+\end_layout
+
+\begin_layout Standard
+High Performance Fortran (HPF): Es un ejemplo de lenguajes datos-paralelos
+ y se ha convertido en un estándar para aplicaciones científicas e ingenieriles.
+ El paralelismo es expresado en términos de operaciones sobre matrices y
+ la comunicación es inferida por el compilador.
+\end_layout
+
+\begin_layout Standard
+Parallel Virtual Machine (PVM): Es una librería de subrutinas para enviar
+ y recibir mensajes.
+\end_layout
+
+\begin_layout Standard
+Message Passing Interface (MPI): Similar a PVM pero, tal como HPF, MPI se
+ ha convertido un estándar.
+\end_layout
+
+\begin_layout Subsubsection
+MPI: Message Passing Interface
+\end_layout
+
+\begin_layout Standard
+MPI es una biliotca que provee funcionalidades para la comunicacion de procesos
+ mediante el pasaje de mensajes.
+ Esta fue creada por cientificos desarrolladores de software y aplicaciones
+ bajo el objetivo de desarrollar un estandar portable y eficiente para programac
+ion paralela.
+\end_layout
+
+\begin_layout Standard
+Esta biblioteca permite trabajar con memoria distribuida, tener paralelismo
+ explicito y contiene un unico mecanismo de comunicacion que puede ser punto
+ a punto.
+ 
+\end_layout
+
+\begin_layout Standard
+El modelo de programacion es SPMD el cual provee de 125 funciones de las
+ cuales algunas son colectivas, tambien contien soporte para Fortan y C.
+ 
+\end_layout
+
+\begin_layout Standard
+El numero de tareas es fijado en tiempo de pre-ejecucion y tambien permite
+ agrupamiento de procesos e incluye contextos de comunicacion entre grupos
+ de procesos.
+\end_layout
+
+\begin_layout Standard
+Permite el manejo del entorno programacion con interfases personalizadas.
+\end_layout
+
+\begin_layout Standard
+Algunas de sus deventajas son: no permite comunicacion de memoria compartida,
+ no tiene soporte de SO para recepciones por interrucion ,no tiene ejecucion
+ remota de procesos, pocas facilidades de debug, no soporta hilos, no contiene
+ soporte de tareas y tiene un pobre manejo de I/O
+\end_layout
+
+\begin_layout Subsubsection
+PVM: Parallel Virtual Machine
+\end_layout
+
+\begin_layout Standard
+Es una biblioteca para el desarrollo de aplicaciones paralelas y distribuidas.
+ PVM surge como proyecto de laboratorio universitario y fue adoptado como
+ estandar de facto, no es standar de la industria.
+\end_layout
+
+\begin_layout Standard
+Algunas de sus cualidades son: potencia, simplicidad, portabilidad, practicidad.
+\end_layout
+
+\begin_layout Standard
+Permite la administracion dinamica de un conjunto de equipos que conforman
+ la maquina virtual.
+\end_layout
+
+\begin_layout Standard
+Contiene mecanismos de creacion e identificacion de procesos,un modelo de
+ comunicacion entre proceos basado en pasaje de mensajes y brinda mecanismos
+ de sincronizacion de procesos.
+\end_layout
+
+\begin_layout Standard
+Brinda soporte para manejar heterogeneidad y aprovecha la arquitecturas
+ multiprocesador.
+\end_layout
+
+\begin_layout Section
+Relevamiento de tecnologias
+\end_layout
+
+\begin_layout Subsection
+SSI: OpenMosix*, OpenSSI y Kerrighed
+\end_layout
+
+\begin_layout Standard
+A diferencia de un cluster tradicional en SSI todas las computadoras vinculadas
+ dependen de un sistema operativo identico en común.
+\end_layout
+
+\begin_layout Standard
+Un SSI oculta la naturaleza heterogénea y distribuida de los recursos, y
+ los presenta a los usuarios y a las aplicaciones como un recurso computacional
+ unificado y sencillo.
+ Una de las metas que mas diferencia un SSI de un cluster o un grid tradicional
+ es su completa transparencia en la gestión de recursos.
+ Es debido a esta completa transparencia que es posible migrar procesos
+ de un nodo a otro.
+ Tampoco es necesario programacion adicional para beneficiarse del paralelismo,
+ de esta manera no es necesario re-escribir programas utilizando bibliotecas
+ como PVM (Parallel Virtual Machine) o MPI (Message Passing Interface).
+\end_layout
+
+\begin_layout Standard
+A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
+ no creemos que se ajusten a los requerimientos planteados principalmente
+ debido a que el cluster ya se encuentra en funcionamiento siguiendo un
+ paradigma estilo beowulf mas clasico.
+ Quizas sea interesante construir un pequeño cluster SSI e investigar mas
+ a fondo este tipo de tecnologias de manera de poder compara ambas soluciones.
+\end_layout
+
+\begin_layout Standard
+(*) Moshe Bar, fundador y director de proyecto de openMosix, anuncio el
+ 15 de julio del 2007 el cierre del proyecto y que se congelará tanto su
+ desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
+\end_layout
+
+\begin_layout Subsection
+Condor
+\end_layout
+
+\begin_layout Subsubsection
+Caracteristicas generales
+\end_layout
+
+\begin_layout Standard
+Condor es un proyecto open-source de la universidad de Wisconsin especificamente
+ diseñado para High-Throughput Computing (HTC).
+ Si bien Condor puede utilizarse con fines de High-Performance Computing
+ (HPC) existen importantes diferencias entre HPC y HTC.
+ Fundamentalmente los trabajos ejecutados en un entorno HPC se caracterizan
+ por necesitar resolver un problema en el menor tiempo posible, en cambio
+ en un entorno HTC ya es sabido que no es posible resolver los problemas
+ en tiempos pequeños, estamos hablando de meses o años en lugar de horas
+ o días.
+ Como consecuencia en HPC el poder computacional de un cluster normalmente
+ es medido en operaciones de punto flotante por segundo (FLOPS), en cambio
+ la comunidad HTC se interesa mas en la cantidad de trabajos que posible
+ completar en un largo periodo de tiempo, no le interesa que tan rapido
+ puede terminarse un trabajo individual.
+ Debido a este perfil de tipo HTC, Condor se enfoca principalmente en la
+ robustez y la confiabilidad brindando funcionalidades como: CPU harvesting,
+ migración de procesos, tolerancia a fallas y process checkpoint.
+\end_layout
+
+\begin_layout Standard
+Paradojicamente si bien se trata de un proyecto open-source su codigo fuente
+ no se distribuye libremente.
+ Para obtener el codigo fuente de Condor es necesario enviar un correo electroni
+co explicando la razón por la que se quiere obtener el código fuente y cada
+ petición es analizada puntualmente.
+\end_layout
+
+\begin_layout Subsubsection
+Bibliotecas para programación paralela
+\end_layout
+
+\begin_layout Standard
+Condor se encuentra diseñado principalmente para la ejecucion de trabajos
+ seriales.
+ Si bien provee soporte limitado para las bibliotecas PVM y MPI para procesamien
+to paralelo su desempeño en esta area se encuentra por debajo de otros DRM's
+ como Torque o SGE.
+\end_layout
+
+\begin_layout Subsubsection
+Interfaz de programación
+\end_layout
+
+\begin_layout Standard
+Condor brinda una interfaz de programacion propietaria, pero no soporta
+ el estandar DRMAA.
+\end_layout
+
+\begin_layout Subsubsection
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Condor no parece ser el software ideal para el proyecto.
+ Si bien puede adaptarse a los requerimientos planteados y brinda funcionalidade
+s interesantes (p.ej.
+ migracion de procesos, cpu harvesting, etc.) existen areas en las que se
+ encuentra claramente en desventaja con respecto a otros productos.
+\end_layout
+
+\begin_layout Subsection
+Generic NQS
+\end_layout
+
+\begin_layout Itemize
+Codigo legado
+\end_layout
+
+\begin_layout Itemize
+Desarrollo detenido
+\end_layout
+
+\begin_layout Subsection
+OpenPBS
+\end_layout
+
+\begin_layout Standard
+OpenPBS se trata de la version original de PBS desarrollada para la NASA
+ a principios de los 90's.
+ Actualmente es ofrecida por Altair Grid Technologies, aunque no se encuentra
+ en desarrollo y la empresa no brinda ningún tipo de soporte sobre el software.
+ Atair ha apostado a una versión comercial del producto llamada PBS Pro,
+ y en lo que a Alatir respecta OpenPBS se trata de una forma de comenzar
+ a utilizar PBS con el objectivo de comprar PBS Pro.
+\end_layout
+
+\begin_layout Subsection
+SLURM
+\end_layout
+
+\begin_layout Itemize
+No soporta PVM
+\end_layout
+
+\begin_layout Subsection
+Sun grid engine 6.1
+\end_layout
+
+\begin_layout Standard
+Sun Grid Engine es un software para administración de recursos distribuídos
+ que dinámicamente asocia requerimientos de hardware y software de los usuarios
+ con los recursos disponibles en la red (generalmente heterogéneos) de acuerdo
+ a políticas predefinidas.
+\end_layout
+
+\begin_layout Standard
+Sun Grid Engine actúa como el sistema nervioso central de un cluster de
+ computadoras conectadas.
+ A partir de algunos demoniso, el Sun Grid Master supervisa todos los recursos
+ de la red para permitir control completo y alcanzar la utilización óptima
+ de los mismos.
+\end_layout
+
+\begin_layout Standard
+Sun Grid Engine fue desarrollado como realce de Codine de Genias GmbH y
+ Grisdware inc, de acuerdo a requerimientos de varios clientes tales como
+ el laboratorio de investigación del ejército de Aberdeen y BMW.
+ Con Sun Grid Engine, el uso medio de los recursos aumentó de menos del
+ 50% a más del 90% en ambos ambientes.
+\end_layout
+
+\begin_layout Standard
+Sun grid Engine reune el poder de cálculo disponible en granjas de computadoras
+ dedicadas, servidores conectados y computadoras de escritorio, y las presenta
+ desde un único punto de acceso para el usuario que necesita ciclos de cómputo.
+ Esto se logra distribuyendo la carga de trabajo entre los sistemas disponibles,
+ aumentando la productividad de máquinas y del uso de licencias, mientras
+ se maximiza el número de trabajos que pueden ser completados.
+\end_layout
+
+\begin_layout Standard
+Los requerimientos de hardware son mínimos (100 MB de memoria disponible
+ y 500MB de disco) y soporta la mayoría de los sistemas operativos populares.
+ Soporta las plataformas SPARC Ultra III, SPARC Ultra IV, AMD64, x86 y Mac.
+\end_layout
+
+\begin_layout Standard
+Permite control de usuarios, limitando tanto el número máximo de trabajos
+ por usuario, grupo y proyecto, como recursos tales como colas, hosts, memoria
+ y licencias de software.
+\end_layout
+
+\begin_layout Standard
+Los recursos requeridos por cada trabajo se pueden indicar mediante expresiones
+ lógicas, (por ejemplo, un usuario puede requerir que un trabajo corra en
+ un host que cumpla la condición 
+\begin_inset Quotes eld
+\end_inset
+
+Solaris o Linux pero no Linux en IA64
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Distributed Resource Management Application API (DRMAA) es un conjunto de
+ APIs standard desarrollado por Global Grid Forum para application builders,
+ portal builders e ISV's.
+ La versión 6.1 soporta los últimos C y Java bindings de DRMAA 1.0.
+ Adicionalmente, es provisto de compatibilidad hacia atrás para: DRMAA 0.5
+ Java binding y DRMAA 0.95 C binding.
+\end_layout
+
+\begin_layout Standard
+Guarda la información referida a la cuenta de cada trabajo en una base de
+ datos relacional (soportando Oracle, MySQL y PostgreSQL).
+\end_layout
+
+\begin_layout Standard
+Maneja aplicaciones paralelas (MPI o PVM habilitados) a travez de una interface
+ dedicada.
+ 
+\end_layout
+
+\begin_layout Standard
+Permite la distribución de recursos a equipos o departamentos, por ejemplo
+ proporcionalmente a su contribución económica.
+ 
+\end_layout
+
+\begin_layout Standard
+El código muestra una complejidad alta, además el sistema es integrado,
+ no muestra facilidades a la hora de dividirlo en subsistemas.
+ Estas carácterísticas hacen que en algunos aspectos se vea como un sistema
+ cerrado, que no permite adaptaciones en caso de realidades no abarcadas
+ por el mismo.
+\end_layout
+
+\begin_layout Subsubsection
+Resumen
+\end_layout
+
+\begin_layout Standard
+Sun grid engine 6.1 provee la mayoría de las funcionalidades requeridas para
+ el proyecto.
+ Por otro lado, tiene como desventaja el ser un único gran paquete indivisible,
+ lo cual hace muy difícil cualquier adaptación o modificación de su funcionamien
+to.
+ 
+\end_layout
+
+\begin_layout Standard
+Si nos basamos en la historia reciente del producto, en una versión anterior
+ se encontró un problema de seguridad (un salto en las restricciones) y
+ quienes lo estaban utilizando en ese momento descartaron la idea de buscar
+ el problema y solucionarlo, limitándose sólamente a esperar que los creadores
+ de la herramienta lo corrigieran.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto se debe a que la herramienta cuenta con un código muy complejo y dificil
+ de modificar, lo que lo coloca como una opción poco vialble para ser utilizada
+ dentro del proyecto propuesto.
+\end_layout
+
+\begin_layout Subsection
+TORQUE
+\end_layout
+
+\begin_layout Standard
+TORQUE (Terascale Open-source Resource and QUEue manager) se trata de un
+ 'fork' open-source de la versión 2.3.12 de OpenPBS mantenido por Cluster
+ Resources.
+ 
+\end_layout
+
+\begin_layout Standard
+Incorpora muchas mejoras con respecto al proyecto PBS original provistas
+ por NCSA (National Center of Supercomputing Applications), OSC (Ohio Supercompu
+ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
+ centros HPC junto con las mejoras desarrolladas por Cluster Resources.
+\end_layout
+
+\begin_layout Subsubsection
+Requerimientos
+\end_layout
+
+\begin_layout Standard
+Plataformas soportadas:
+\end_layout
+
+\begin_layout Itemize
+Linux
+\end_layout
+
+\begin_layout Itemize
+UNIX
+\end_layout
+
+\begin_layout Subsubsection
+Características generales
+\end_layout
+
+\begin_layout Standard
+Los trabajos son manejados en el cluster de la misma manera que lo hace
+ OpenPBS.
+ Cuenta con un conjunto de colas de trabajos que definen propiedades generales
+ para los trabajos que contienen (p.ej.
+ recursos disponibles, etc.) y al ingresar un trabajo al sistema, este debe
+ especificar características especificas de si mismo que ayuden al sistema
+ a planificar la ejecución del mismo (p.ej.
+ nodos a utilizar, memoria máxima a utilizar, etc.).
+ Con esta información (los datos de la cola a la que pertenece el trabajo
+ y los datos específicos del trabajo en cuestión) el scheduler decide el
+ momento en que un trabajo comienza a ejecutarse y con que recursos cuenta
+ en cada instante.
+\end_layout
+
+\begin_layout Standard
+Existen tres tipos de nodos en el sistema:
+\end_layout
+
+\begin_layout Itemize
+Nodo Maestro
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Es necesario que exista un nodo maestro en el sistema, en este nodo se debe
+ ejecutar pbs_server.
+ Dependiendo del sistema este nodo maestro puede encontrarse dedicado únicamente
+ a este rol o compartir otros roles.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Nodos Interactivos
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Los nodos interactivos proveen un punto de entrada al sistema para los usuarios.
+ Es en estos nodos en que los usuarios puede ingresar tareas al sistema
+ y monitorear su progreso.
+ Estos nodos deben tener comandos como qsub, qhold, etc disponibles.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Nodos de computo
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Estos son los responsables de la ejecución de los trabajos encolados en
+ el sistema.
+ En cada uno de estos nodos debe ejecutarse pbs_mom (Machine Oriented Mini-serve
+r) que es el encargado de iniciar, detener y manejar los trabajos encolados.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Torque cuenta con una interfaz de usuario de linea de comando (CLI) como
+ principal manera de interactuar con el sistema, también cuenta con una
+ interfaz gráfica para X-Windows y una biblioteca para desarrollo en C.
+ Es posible utilizar bibliotecas desarrolladas por 3eros para otros lenguajes
+ (p.ej.
+ Perl o Python).
+\end_layout
+
+\begin_layout Subsubsection
+Bibliotecas para programación paralela
+\end_layout
+
+\begin_layout Paragraph
+MPI (Message Passing Interface)
+\end_layout
+
+\begin_layout Standard
+El soporte para bibliotecas tipo MPI se encuentra integrado en TORQUE, el
+ sistema puede correr con cualquier implementación de MPI.
+ Particularmente para MPICH existe un reemplazo para el script mpirun (mpirun
+ se encuentra incluido en el paquete de mpich) llamado mpiexec.
+ Mpiexec es usado para inicializar trabajos paralelos dentro de un sistema
+ PBS.
+ Los recursos utilizados por procesos paralelos son correctamente registrados
+ cuando se utiliza mpiexec y se reporta su uso en el log del PBS, a diferencia
+ de lo que sucede cuando se utiliza el script mpirun original.
+\end_layout
+
+\begin_layout Paragraph
+PVM (Parallel Virtual Machine)
+\end_layout
+
+\begin_layout Standard
+Una de las principales desventajas de TORQUE es la dificultad que plantea
+ el uso de la biblioteca PVM.
+ A diferencia de MPI, el soporte para PVM no se encuentra integrado al sistema
+ por lo que debe manejarse cuidadosamente.
+ Para ejecutar una aplicación paralela utilizando PVM se debe iniciar el
+ demonio pvmd en el script del trabajo, configurar los nodos esclavos para
+ luego iniciar la ejecución del trabajo (todo esto puede realizarse utilizando
+ mpiexec).
+\end_layout
+
+\begin_layout Subsubsection
+Interfaz de programación
+\end_layout
+
+\begin_layout Standard
+Torque soporta el estandar Distributed Resource Management Application API
+ (DRMAA) al igual que la mayoria de los manejadores de recursos.
+\end_layout
+
+\begin_layout Subsubsection
+Maui
+\end_layout
+
+\begin_layout Standard
+TORQUE contiene la lógica necesaria para llevar a cabo la planificación
+ de trabajos, pero se trata de una lógica muy simple que no resulta adecuada
+ para un ambiente de producción.
+ Básicamente el planificador que se encuentra incorporado a TORQUE maneja
+ los trabajos como una cola FIFO (First-In First-Out).
+ Para mejorar esto se utiliza Maui, una aplicación especializada en la planifica
+ción de trabajos.
+\end_layout
+
+\begin_layout Standard
+Maui se enfoca en la planificación de trabajos y deja la problemática de
+ iniciar los trabajos y la interacción con los usuarios a los manejadores
+ de recursos (distributed resource managers, DRM) como OpenPBS, TORQUE,
+ SGE, etc.
+\end_layout
+
+\begin_layout Paragraph
+Requerimientos
+\end_layout
+
+\begin_layout Itemize
+Hardware
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+20-50 MB de RAM (para clusters de hasta 10 teraflops)
+\end_layout
+
+\begin_layout Itemize
+>20 MB de disco duro para los fuentes, binarios, estadísticas y archivos
+ de logs
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plataformas soportadas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linux
+\end_layout
+
+\begin_layout Itemize
+AIX
+\end_layout
+
+\begin_layout Itemize
+OSF/Tru-64
+\end_layout
+
+\begin_layout Itemize
+Solaris
+\end_layout
+
+\begin_layout Itemize
+HP-UX
+\end_layout
+
+\begin_layout Itemize
+IRIX
+\end_layout
+
+\begin_layout Itemize
+FreeBSD
+\end_layout
+
+\begin_layout Itemize
+Other UNIX platforms
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+DRM soportados
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OpenPBS
+\end_layout
+
+\begin_layout Itemize
+'Scalable' Open PBS
+\end_layout
+
+\begin_layout Itemize
+PBSPro
+\end_layout
+
+\begin_layout Itemize
+Sun Grid Engine (SGE)
+\end_layout
+
+\begin_layout Itemize
+SGE Enterprise Edition
+\end_layout
+
+\begin_layout Itemize
+LoadLeveler
+\end_layout
+
+\begin_layout Itemize
+LSF
+\end_layout
+
+\begin_layout Itemize
+BProc/Scyld
+\end_layout
+
+\begin_layout Itemize
+Scalable System Software (SSSRM)
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Características generales
+\end_layout
+
+\begin_layout Standard
+El algoritmo de planificación de Maui soporta fairness, preemption, backfill,
+ etc.
+ y tiene una interfaz para la interacción con un allocation management externo.
+ Un allocation manager (también conocido como allocation bank o cpu bank)
+ funciona como un banco en el cual la moneda son los recursos del sistema
+ (p.ej.
+ procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
+ de recursos.
+\end_layout
+
+\begin_layout Subparagraph
+Backfill
+\end_layout
+
+\begin_layout Standard
+Backfill es un acercamiento en la planificación que permite ejecutar algunos
+ trabajos 'desordenadamente' siempre y cuando estos no retrasen los trabajos
+ de prioridad superior de la cola.
+ Para determinar si un trabajo será retrasado, cada trabajo debe proveer
+ una estimación de cuánto tiempo necesitará para su ejecución.
+ Esta estimación, conocida como límite wallclock, es una valoración del
+ tiempo desde el comienzo del trabajo hasta su final.
+ Es a menudo sabio sobrestimar levemente este límite porque el planificador
+ se puede configurar para matar a los trabajos que exceden sus límites del
+ wallclock.
+ Sin embargo, la sobrestimación demasiado grande del tiempo del wallclock
+ de un trabajo evitará que el planificador pueda optimizar correctamente
+ la cola de trabajo.
+ Cuanto más exacto el límite del wallclock, mayor sera la posibilidad de
+ que Maui encuentre agujeros en la planificación para comenzar a ejecutar
+ su trabajo con mayor anticipación.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Gerenciamiento de asignación
+\end_layout
+
+\begin_layout Standard
+Maui posee interfaces para sistemas de gerenciamiento de asignación tales
+ como Gold de PNNL.
+ Estos sistemas permiten que a cada usuario le sea asignada una porción
+ de los recursos totales de cálculo disponibles en el sistema.
+ Estos sistemas trabajan asociando a cada usuario a unas o más cuentas.
+ Cuando se envía un trabajo, el usuario especifica a que cuenta se debe
+ cargar los recursos consumidos por el trabajo.
+\end_layout
+
+\begin_layout Subparagraph
+Reservas anticipadas
+\end_layout
+
+\begin_layout Standard
+Las reservas anticipadas permiten que un sitio disponga ciertos recursos
+ a un lado para el uso específico de de ciertas aplicaciones durante cierto
+ tiempo.
+ El acceso a una reserva dada es controlado por un Access Control List (ACL)
+ que determina quién puede utilizar los recursos reservados.
+ Es importante observar que mientras que un ACL permite que trabajos particulare
+s utilicen recursos reservados, no fuerzan al trabajo a utilizar estos recursos.
+ Maui procurará utilizar la mejor combinación posible de recursos disponibles
+ sean éstos reservados o no.
+ Maui puede ser configurado para que ciertos trabajos sean restringidos
+ y que funcionen utilizando solamente recursos reservados, aplicando restriccion
+es a nivel de trabajo o especificando ciertas restricciones especiales de
+ QoS.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Quality of Service (QoS)
+\end_layout
+
+\begin_layout Standard
+Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios,
+ estos beneficios pueden incluir acceso a recursos adicionales, exclusiones
+ de determinadas políticas, acceso a capacidades especiales, y mejoras en
+ la priorizacion de trabajos.
+\end_layout
+
+\begin_layout Subparagraph
+Faireshare
+\end_layout
+
+\begin_layout Standard
+Este componente permite favorecer trabajos en base al uso histórico a corto
+ plazo.
+ Es posible así ajustar la prioridad de un trabajo dependiendo de la utilización
+ porcentual del sistema de usuarios, grupos, o QoS.
+ Dada una ventana de tiempo determinado sobre la cual se evalúa la utilización
+ de recursos del sistema se determina si esta siendo mantenido un cierto
+ balanceo o no.
+\end_layout
+
+\begin_layout Paragraph
+Interfaz de programación
+\end_layout
+
+\begin_layout Itemize
+Interfaz de extensión (Extension Interface)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Esta interfaz permite que bibliotecas externas sean 'linkeadas' al servidor
+ de Maui brindando acceso a todos los datos y objetos utilizados por el
+ planificador.
+ Además, permite que estas bibliotecas realicen override de las principales
+ funciones de Maui.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Interfaz local
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se trata de una interfaz en C que permite el desarrollo de nuevos algoritmos.
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Estadísticas
+\end_layout
+
+\begin_layout Standard
+Maui almacena tres diferentes clases de estadísticas:
+\end_layout
+
+\begin_layout Itemize
+Estadísticas de tiempo real
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Estas estadísticas son mantenidas en memoria y pueden ser consultadas mediante
+ comandos.
+ El comando 'showstats' provee información detallada por usuario, por grupo,
+ por cuenta o por nodo.
+ Además en cualquier momento estas estadísticas pueden resetearse utilizando
+ el comando 'resetstats'.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Histórico
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Estas estadísticas pueden ser obtenidas para un lapso de tiempo, un tipo
+ de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
+ Este comando trabaja con la traza de información detallada de un trabajo,
+ que es guardada al dar por finalizado un trabajo.
+ Estas trazas son almacenadas en el directorio configurado por el parámetro
+ STATDIR (por defecto $(MAUIHOMEDIR)/stats) en archivos utilizando el formato
+ WWW_MMM_DD_YYYY (p.
+ ej.
+ Mon_Jul_16_2001), siendo esta fecha la fecha de finalización del trabajo.
+ La traza de un trabajo se almacena en texto plano utilizando espacios como
+ separadores, por lo que puede ser analizado directamente con cualquier
+ editor de texto.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Fairshare
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
+ habilitado.
+ Al igual que las trazas de los trabajos, estas son almacenadas en archivos
+ utilizando texto plano en el directorio configurado por el parámetro STATDIR
+ y utilizando el formato FS.<EPOCHTIME> (p.ej., FS.982713600) por cada ventana
+ de fairshare.
+ Se puede obtener información de estos archivos utilizando el comando 'diagnose
+ -f'.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Gold
+\end_layout
+
+\begin_layout Standard
+Gold es un sistema de contaduría open-source desarrollado en PNNL bajo el
+ proyecto Scalable Systems Software (SSS) que lleva registro y maneja el
+ uso de recursos en clusters de alto desempeño.
+ Actúa de la misma forma que un banco en el que son depositados créditos
+ en cuentas, estos créditos representan recursos en el sistema.
+ A medida que se finalizan trabajos o que son consumidos recursos en el
+ sistema se debitan créditos de sus respectivas cuentas.
+\end_layout
+
+\begin_layout Standard
+Es posible realizar operaciones como depósitos, retiros, transferencias
+ o reembolsos sobre las cuentas del sistema, además, provee listados de
+ balances a usuarios y administradores.
+\end_layout
+
+\begin_layout Paragraph
+Características generales
+\end_layout
+
+\begin_layout Subparagraph
+Reservas
+\end_layout
+
+\begin_layout Standard
+Previo al inicio de un trabajo se realiza una estimación del total de recursos
+ que este consumirá, en base a esta estimación se reservan créditos en la
+ cuenta correspondiente.
+ Estos créditos 'reservados' se debitan una vez que el trabajo es terminado,
+ de esta manera se evita que un proyecto consuma mas recursos de los que
+ tiene asignados.
+\end_layout
+
+\begin_layout Subparagraph
+Vencimiento de créditos
+\end_layout
+
+\begin_layout Standard
+Puede especificarse un lapso de validez a los créditos en el sistema, permitiend
+o que se implemente una política de use-it-or-lose-it previniendo el uso
+ exhaustivo de créditos acumulados y estableciendo ciclos a un proyecto.
+\end_layout
+
+\begin_layout Subparagraph
+Interfaz web
+\end_layout
+
+\begin_layout Standard
+Permitiendo acceso remoto a usuarios y administradores.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Interfaz de programación
+\end_layout
+
+\begin_layout Standard
+Existen diferentes formas de integrar Gold al sistema: Perl API, Java API
+ o directamente utilizando el protocolo SSSRMAP (basado en XML).
+\end_layout
+
+\begin_layout Subsubsection
+Casos de estudio
+\end_layout
+
+\begin_layout Paragraph
+Oregon State University, Laboratorio de fisica
+\end_layout
+
+\begin_layout Standard
+Actualmente cuenta con 34 computadoras Dell Optiplex GX620's con procesadores
+ Intel Pentium D 830 (3.0 GHz) y 1 GB of RAM con sistema operativo Suse GNU/Linux
+ 10.1 64-bit.
+\end_layout
+
+\begin_layout Standard
+Estas computadoras cuentan con compiladores Intel para C, C++ y Fortran
+ compilers, la bilbioteca Math Kernel Library (cluster edition).
+ Para el procesamiento paralelo se utilizan las bibliotecas MPI.
+ El cluster utiliza Torque como manejador de recursos, y desde el 4 de febrero
+ del 2007 se utiliza Maui para la planificacion de tareas.
+ 
+\end_layout
+
+\begin_layout Paragraph
+University of Glasgow
+\end_layout
+
+\begin_layout Standard
+El cluster utiliza Torque y Maui sobre Redhat Enterprise GNU/Linux 3.
+ Actualmente cuenta con 60 nodos de procesamiento disponibles, cada uno
+ con procesadores dual opteron 248 y 2GB RAM.
+ Ademas de los componentes estandares de incluidos en la distribucion (p.ej.
+ compilador gcc, g++, g77, etc.) se han instalado las bibliotecas mpich 1.2.6
+ (MPI) para procesamiento paralelo.
+\end_layout
+
+\begin_layout Paragraph
+University of Heidelberg
+\end_layout
+
+\begin_layout Standard
+El cluster fue instalado a principios de 2002 y consisten de 512 procesadores
+ AMD Athlon MP, instalados en 256 nodos de procesamiento SMP con 2 GB de
+ memoria RAM cada uno.
+ Los procesadores funcionan cada uno a 1.4GHz y alcanzan un maximo teorico
+ de 2.4 billiones de operaciones de punto flotante por segundo (Gflops).
+ El sistema total indica un maximo teorico de desempeño de mas de 1.4 Teraflops.
+ Las primeras mediciones de desempeño utilizando Linpack Benchmark mostraron
+ una rendimiento de 825 Gflops, ubicando el cluster en la posicion 35va
+ del top 500 de supercomputadoras del mundo en Junio del 2002.
+\end_layout
+
+\begin_layout Standard
+Como base del cluster se utiliza un sistema Debian GNU/Linux.
+ Para procesamiento paralelo se utiliza la biblioteca mpich (MPI) y como
+ manejador de recursos se utiliza Torque.
+ Por sobre Torque se encuentra instalado Moab, el sucesor de Maui.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Stony Brook University
+\end_layout
+
+\begin_layout Standard
+El cluster tiene 235 nodos de procesamiento dual (470 procesadores individuales).
+ Cada procesador es un Dell Pentium IV Xeon de 3.4Ghz con 2GB de memoria
+ RAM y 40GB de disco duro.
+ Las computadores operan con Debian GNU/Linux, utilizan Torque y Maui para
+ manejar los trabajos y la version 1.4 de MPI para el procesamiento paralelo.
+\end_layout
+
+\begin_layout Paragraph
+Dansk Center for Scientific Computing
+\end_layout
+
+\begin_layout Standard
+El cluster consta de 200 nodos Dell PowerEdge 1950 1U con dos procesadores
+ Intel Woodcrest de 2,66Ghz.
+ De estos 200 nodos 160 cuentan con 4 GB de RAM y 40 cuentan con 8GB de
+ RAM.
+ Como sistema se utiliza OpenSuSE GNU/Linux 10.1 con kernel 2.6 y para la
+ planificacion y manejo de trabajos de utiliza Torque 2.1.2 y MAUI 3.2.6.
+ Para el procesamiento paralelo se disponen de bibliotecas tanto de tipo
+ MPI como de tipo PVM.
+\end_layout
+
+\begin_layout Subsubsection
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Torque junto con Maui y Gold satisfacen los requerimientos planteados para
+ el proyecto.
+ Su consumo de recursos del cluster es relativamente bajo, se adapta muy
+ bien al manejo de clusters pequeños y posee un manejo eficiente de trabajos
+ paralelos (sobre todo si estos son homogéneos).
+ 
+\end_layout
+
+\begin_layout Standard
+Pero existen ciertos aspectos en los que Torque no se desempeña de la mejor
+ manera.
+ Si bien se encuentra integrado el soporte para bibliotecas tipo MPI, no
+ existe un correcto soporte para PVM.
+ Además existen ciertas carencias en sus funcionalidades de Resource Management;
+ p.
+ ej.
+ no es capaz de realizar CPU Harvesting o migración de procesos.
+ 
+\end_layout
+
+\begin_layout Standard
+Si bien existe un buen soporte por parte de la comunidad de usuarios de
+ Torque y Maui por medio de listas de correo, la documentación disponible
+ en el sitio web se encuentra incompleta en algunos aspectos (p.
+ ej.
+ PVM, interfaces de programación, etc.).
+ Como es de esperar esta documentación se encuentra mas completa para Moab
+ (la versión comercial de Maui), y si bien son productos diferentes son
+ similares en muchos aspectos.
+\end_layout
+
+\begin_layout Section
+Solución desarrollada
+\end_layout
+
+\begin_layout Standard
+Se describen en esta sección los artefactos obtenidos como resultado del
+ trabajo realizado en el marco del proyecto.
+ 
+\end_layout
+
+\begin_layout Subsection
+Tecnologías elegidas
+\end_layout
+
+\begin_layout Subsection
+Interfaz web desarrollada
+\end_layout
+
+\begin_layout Standard
+Proceso de desarrollo de la interfaz web.
+\end_layout
+
+\begin_layout Subsection
+Testeo de la solución
+\end_layout
+
+\begin_layout Section
+Proceso del proyecto
+\end_layout
+
+\begin_layout Section
+Caso de estudio
+\end_layout
+
+\begin_layout Standard
+Completada la descripción del trabajo realizado, se presenta en esta sección
+ un caso de estudio que permita mostrar la aplicación de la solución desarrollad
+a en un ejemplo concreto de problema a resolver.
+ (cluster Medusa)
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Section
+Trabajo futuro
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "1"
+key "key-1"
+
+\end_inset
+
+B.
+ Radic, E.
+ Imamagic: Benchmarking the Performance of JMS on Computer Clusters, CARNet
+ Users' Conference, 28.
+ 9.
+ 2004.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "2"
+key "key-2"
+
+\end_inset
+
+E.
+ Imamagic, B.
+ Radic, D.
+ Dobrenic: Job Management Systems Analysis, CARNet Users' Conference, 28.
+ 9.
+ 2004.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "3"
+key "key-3"
+
+\end_inset
+
+Maui Cluster Scheduler, Cluster Resources.
+ http://www.clusterresources.com/products/maui/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "4"
+key "key-4"
+
+\end_inset
+
+Torque Resource Manager, Cluster Resources.
+ http://www.clusterresources.com/products/torque/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "5"
+key "key-5"
+
+\end_inset
+
+William Gropp, Ewing Lusk and Thomas Sterling.
+ Beowulf Cluster Computing with Linux, Second Edition.
+ The MIT press, 2003 ISBN:0262692929 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "6"
+key "key-6"
+
+\end_inset
+
+M.
+ Michels, W.
+ Borremans: Clustering with openMosix, University of Amsterdam, February
+ 2005.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+http://es.wikipedia.org/wiki/Single_System_Image
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-8"
+
+\end_inset
+
+Dansk Center for Scientific Computing, http://www.dcsc.sdu.dk/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-9"
+
+\end_inset
+
+Stony Brook University, http://www.sunysb.edu/seawulfcluster/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-10"
+
+\end_inset
+
+University of Heidelberg, http://helics.uni-hd.de/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-11"
+
+\end_inset
+
+University of Glasgow, http://www.gla.ac.uk/services/it/whatwedo/computecluster/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-12"
+
+\end_inset
+
+Oregon State University, Laboratorio de fisica, http://physics.oregonstate.edu/~el
+serj/support/cluster_use.php
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-13"
+
+\end_inset
+
+Distributed Resource Management Application API (DRMAA), http://en.wikipedia.org/w
+iki/DRMAA/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Mg.
+ Ing.
+ Sergio Nesmachnow: Algoritmos genéticos paralelos y su aplicación al diseño
+ de redes de comunicaciones confiables, 2004.
+ http://www.fing.edu.uy/~sergion/Tesis.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Ing.
+ Pablo Ezzatti: Mejora del desempeño de modelos numéricos del Río de la
+ Plata, 2006.
+ http://www.fing.edu.uy/inco/grupos/cecal/hpc/mej_des/tesis.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+Cristian Perfumo, Gerardo Mora, Lucas Rojas: Algoritmos genéticos paralelos
+ aplicados a la resolución de problemas de asinación de frecuencias en redes
+ celulares, 2006.
+ http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf).
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+Mg.
+ Ing.
+ Sergio Nesmachnow: Una versión paralela del algoritmo evolutivo para optimizaci
+ón multiobjetivo NSGA-II y su aplicación al diseño de redes de comunicaciones
+ confiables, 2003.
+ http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+Sebastián Baña, Gonzalo Ferres y Nicolás Pepe: Proyecto MPI.net, 2003.
+ http://www.fing.edu.uy/~sergion/mpinet/.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+Federico Dominioni y Pablo Musso: Proyecto algoritmos genéticos incrementales,
+ 2003.
+ http://www.fing.edu.uy/~sergion/agi/.
+\end_layout
+
+\end_body
+\end_document
