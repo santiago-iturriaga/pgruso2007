@@ -1,7 +1,10 @@
 #summary Cronograma tentativo
 
 19 mayo - enviamos los 3 docs (ayuda, instalacion y testeo)
+
 20 mayo - arreglamos el esquema del documento del proyecto
 
+
 26 mayo - enviamos esquema del documento
+
 27 mayo - corregimos 3 docs, instalamos, continuamos con la doc?
