@@ -10,7 +10,8 @@
 %opening
 \title{Fenton\\Manual de instalaci\'{o}n}
 \author{Santiago Iturriaga, Paulo Maya, Dami\'{a}n Pintos\\
-\texttt{\{santiago.iturriaga,paulo.maya,damian.pintos\}@gmail.com}\\
+\texttt{\{santiago.iturriaga,paulo.maya,damianpintos\}@gmail.com}\\
+\\
 Facultad de Ingenier\'{i}a,\\
 Universidad de la Rep\'{u}blica,\\
 Montevideo,\\
@@ -20,8 +21,6 @@ Uruguay}
 \begin{document}
 \maketitle
 \tableofcontents{}
-
-\textcolor{red}{\Large /{*} Falta CRON CRON CRON CRON {*}/}
 
 \section{Sistema operativo}
 
@@ -405,7 +404,19 @@ Para instalar la aplicaci\'{o}n web simplemente debemos copiar el directorio \mb
 
 La aplicaci\'{o}n web debe ser accesible desde cualquier nodo del cluster. Esto es necesario debido a que los scripts de prologo y epilogo (ver siguiente paso) requieren ejecutar scripts PHP de la aplicaci\'{o}n.
 
-\textcolor{red}{\Large /{*} Falta CRON CRON CRON CRON {*}/}
+Por \'{u}ltimo debemos configurar el script de control de cuota para que ejecute periodicamente en el nodo maestro. Para esto podemos utilizar el comando cron de Linux. 
+
+El script de control se encuentra en \mbox{\texttt{/home/fenton/web/lib/Vigilante.php}} y para ejecutarlo peri\'{o}dicamente debemos editar la confguraci\'{o}n del cron ejecutando:
+
+\begin{verbatim}
+root:# crontab -e
+\end{verbatim}
+
+Este comando nos abrir\'{a} para edici\'{o}n el archivo de configuraci\'{o}n del cron del usuario. Supongamos que se quiere ejecutar el script de control una vez cada hora, para esto editamos la configuraci\'{o}n agregando la siguiente linea:
+
+\begin{verbatim}
+01  * * * * php /home/fenton/web/lib/Vigilante.php
+\end{verbatim}
 
 \subsection{Configuraci\'{o}n de TORQUE}
 
@@ -499,41 +510,33 @@ define("GANGLIA_URL","http://servidor.fing.edu.uy/ganglia");
 URL base de la instalaci\'{o}n de Ganglia.
 \end{quote}
 
-\section{Ap\'{e}ndice.}
-
-\subsection{MPICH2}
-??
-
-\subsection{PVM}
-??
-
 \begin{thebibliography}{99}
 \bibitem{postgres}
-PostgreSQL, \url{http://www.postgresql.org/}.
+PostgreSQL\\\url{http://www.postgresql.org/}
 
 \bibitem{apache}
-Apache, \url{http://httpd.apache.org/}.
+Apache\\\url{http://httpd.apache.org/}
 
 \bibitem{php}
-PHP, \url{http://www.php.net/}.
+PHP\\\url{http://www.php.net/}
 
 \bibitem{ganglia}
-Ganglia, \url{http://ganglia.info/}.
+Ganglia\\\url{http://ganglia.info/}
 
 \bibitem{torque}
-TORQUE, \url{http://www.clusterresources.com/pages/products/torque-resource-manager.php}.
+TORQUE\\\url{http://www.clusterresources.com/pages/products/torque-resource-manager.php}
 
 \bibitem{maui}
-Maui, \url{http://www.clusterresources.com/pages/products/maui-cluster-scheduler.php}.
+Maui\\\url{http://www.clusterresources.com/pages/products/maui-cluster-scheduler.php}
 
 \bibitem{mpich1}
-MPICH1, \url{http://www-unix.mcs.anl.gov/mpi/mpich1/}.
+MPICH1\\\url{http://www-unix.mcs.anl.gov/mpi/mpich1/}
 
 \bibitem{mpiexec}
-Mpiexec, \url{http://www.osc.edu/~pw/mpiexec/index.php}.
+Mpiexec\\\url{http://www.osc.edu/~pw/mpiexec/index.php}
 
 \bibitem{openmpi}
-OpenMPI, \url{http://www.open-mpi.org/}.
+OpenMPI\\\url{http://www.open-mpi.org/}
 
 \end{thebibliography}
 \end{document}
