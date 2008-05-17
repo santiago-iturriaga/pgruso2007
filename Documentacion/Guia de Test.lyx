@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -69,43 +69,68 @@ Objetivos
 \end_layout
 
 \begin_layout Standard
-En este documento se presenta una descripcion del procesos de test implementado
- en el proyecto apra detectar y verificar requerimientos en el sitio remoto.
- Y tambien comprobar la integaración de las diferentes funcioanlidades con
- los Programas seleccionados , Torque, Maui, para implementar el scheduler
- en el cluster.
+El objetivo de este documento es presentar el proceso de test al cual se
+ sometio la solución construida.
+ El mismo pretende ser una guia de test para verificar y validar el funcionamien
+to de la solución en procesos de test futuros.
 \end_layout
 
 \begin_layout Standard
-El objetivo del proceso de test es la deteccion de defectos y y probar la
- correctitud del programa.
+El proceso de test tiene por objetivo la detección de defectos y probar
+ la correctitud de las funcionalidades de la solución.
 \end_layout
 
 \begin_layout Section
-Proceso de test y metodologi de trabajo.
+Proceso de test y metodologia de trabajo.
 \end_layout
 
 \begin_layout Standard
-Se deciddio ralizar dos tipos de test: test expñoratorio y test funcional.
+Durante el proceso de testing se aplicaron dos tipos de test.
+ Se ralizo un test funcional apoyado o cmplemntado con un test exploratorio
 \end_layout
 
 \begin_layout Standard
-En el test exploratorio se recorrienron las funcionalidades pagian por pagina
- en busca de defectos de diseño, links erroneos, cualquier mal funcionamiento
+El testing funcional verifica el cumplimiento de los requerimientos funcionales
+ contra los casos de test, en un entorno que emula un ambiente de producción
+ del sistema.
+\end_layout
+
+\begin_layout Standard
+El objetivo de este test es verificar si el comportamiento observado del
+ software a prueba coincide o no con sus especificaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+El test exploratorio es un proceso simultáneo de exploración y aprendizaje
+ del producto, diseño y ejecución de pruebas.
+ La estrategia en este caso fue recorre las paginas del sitio Fenton en
+ busca de defectos de diseño, de programación, cualquier mal funcionamiento
  , etc.
 \end_layout
 
 \begin_layout Standard
-Para el test funcional se dessarrolaron un set de casos de test los cuales
- apuntan a cubrir los requerimientos criticos del acceso remoto al cluster,
- asi tambien las funcionalidades mas importantes del conjunto de aplicaciones
- seleccionadas para el scheduler.
+Para la ejecución del test funcional se creo un set de casos de test, los
+ cuales apuntan a cubrir los requerimientos funcionales principales del
+ scheduler implementado para el cluster; y del acceso remoto al mismo.
+ Estos casos de test se crearon en paralelo al test exploratorio.
+ 
 \end_layout
 
 \begin_layout Standard
-Estes casos de tes son independientes entre si pero si se ejecuta la guia
- o pasos de test presentado mas adelante podemos verificar la integraci´pn
- de cada funcionalidad.
+El testing funcional tambien apunto a evalaur la integración de las distintas
+ funcionalidadesde Fenton y el scheduler (Torque-Maui).
+\end_layout
+
+\begin_layout Standard
+Cada caso de test es independiente de otro, pero en conjunto y siguiendo
+ la guia de test presentada en este documento verifican la integración de
+ cada funcionalidad.
+\end_layout
+
+\begin_layout Standard
+Los dos tipos de testing pueden ejecutarse en paralelo y esa fue la forma
+ en que se realizo el testing para esta oportunidad.
 \end_layout
 
 \begin_layout Section
@@ -113,9 +138,123 @@ Herramientas utilizadas
 \end_layout
 
 \begin_layout Standard
-en el proceso de test se tiliz como herramientas los Grupos de google.
- El mismo tiene la funcionalidad e ingesar y mantener issues.
- esta herramienta fue muy importante para el seguimiento de los mismos.
+En el proceso de test se utilizaron como herramientas la guia de test presentata
+da en este documento asi como el set de casos de test.
+ Para el registro y de issues se utilizo el grupo de Google creado para
+ este proyecto Los grupos de Google tiene la funcionalidad de ingesar y
+ mantener issues asi como otras funcionalidades utiles, por ejemplo una
+ wiki.
+ 
+\end_layout
+
+\begin_layout Section
+Como usar este documento
+\end_layout
+
+\begin_layout Standard
+Este documento incluye dos secciones con las cuales podemos ejecutar el
+ proceso de testing.
+\end_layout
+
+\begin_layout Standard
+La primera es la sección de casos de test que incluye los mismos.
+ La segunda seccion es la guia de test la cual da un orden a lso casos de
+ test para probar la integración de los requerimientos funcionales.
+\end_layout
+
+\begin_layout Standard
+Los casos de test pueden aplicarse independientemente o siguiendo la guia
+ de test.
+\end_layout
+
+\begin_layout Standard
+Cada caso de test consta de cinco tablas:
+\end_layout
+
+\begin_layout Itemize
+Identificación del caso de test
+\end_layout
+
+\begin_layout Itemize
+Datos de entrada
+\end_layout
+
+\begin_layout Itemize
+Condiciones iniciales
+\end_layout
+
+\begin_layout Itemize
+Pasos para el test
+\end_layout
+
+\begin_layout Itemize
+Notas o comentarios
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Identificación del caso de test
+\end_layout
+
+\begin_layout Standard
+Contiene id, titulo y descripcion del caso de test.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Datos de entra
+\end_layout
+
+\begin_layout Standard
+Aqui se indican los datos de entrada para el caso.
+ Se ingres nombre , valor y comentario apra cada campo.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Condiciones iniciales
+\end_layout
+
+\begin_layout Standard
+Se ingresan las condiciones necesarias para que el caso se ejecute satisfactoria
+mente.
+ Se asigna un id y la descripcion de la condición.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Paso para el test
+\end_layout
+
+\begin_layout Standard
+Describe la secuencias de pasos y el resultado esperado para la ejecución
+ del test.
+ En el momento de ejecución del test se indica si cada paso fallo o no.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Notas o comentarios
+\end_layout
+
+\begin_layout Standard
+Puede utilizarse de diferente maneras.
+ Puede sre apra hacer consideraciones sobre la ejecución o fallo de un paso;
+ o para la descripción de comportamiento alternativos.
+\end_layout
+
+\begin_layout Standard
+Este documento es extencible de forma de agregar nuevos escenarios a la
+ guia o nuevos casos de test si por ejemplo se agregan nuevos requerimientos
+ funcionales.
 \end_layout
 
 \begin_layout Section
@@ -123,10 +262,102 @@ Guia de test.
 \end_layout
 
 \begin_layout Standard
-En esta seccion especificaremeos el cilco, o orden, de los casos de uso.
- Hay que destacar que sibie cada caso de uso es independiete se crearon
- con la finalidad de poder probar tambien la integración de las diversas
- funcionalidades
+A continuación propondremos deiferentes escenarios en los que podremos probar
+ la integración de las funcionalidades requeridas.
+ Cada escenario contiene un cnunto de casos de test en elque le damos un
+ orden de ejecución.
+\end_layout
+
+\begin_layout Standard
+Escenario 1: Creación de usuario y Ejecución de trabajo.
+\end_layout
+
+\begin_layout Standard
+En este escenario se crea un usuario y se ejecuta un trabajo con el usuario
+ creado.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/EscenarioTest1.png
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Escenario 2: Actividad en Maui
+\end_layout
+
+\begin_layout Standard
+En este escenario observamos la actividad del cluster y los trabajso ejecutados
+ a traves de Maui
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/EscenarioTest2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Escenario 3: Actividad en Troque
+\end_layout
+
+\begin_layout Standard
+En este escenario observamos la actividad del cluster y los trabajso ejecutados
+ a traves de Torque
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/EscenarioTest3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Escenario 4: Control de trabajos desde Maui
+\end_layout
+
+\begin_layout Standard
+Verificamos el control de los trabaos ejecutados en el cluster mediante
+ Maui.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/EscenarioTest4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Escenario 5: Control de trabajos desde Troque
+\end_layout
+
+\begin_layout Standard
+Verificamos el control de los trabaos ejecutados en el cluster mediante
+ Torque.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/EscenarioTest5.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -218,8 +449,8 @@ Datos de entrada
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -353,7 +584,7 @@ Condiciones iniciales
 <lyxtabular version="3" rows="3" columns="2">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -388,7 +619,7 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
-El usuario linux debe ser un usuario valido
+El usuario linux debe ser un usuario valido.
 \end_layout
 
 \end_inset
@@ -408,7 +639,7 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
-El cliente no debe eestar en el sistema
+No existe un cliente con el mismo nombre en el sistema.
 \end_layout
 
 \end_inset
@@ -430,8 +661,8 @@ Pasos para el test
 <lyxtabular version="3" rows="4" columns="4">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="100text%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="center" valignment="top" leftline="true" width="20page%">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -486,7 +717,7 @@ Resultado(Pasa/Falla)
 
 \begin_layout Standard
 Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Clientes
- - trabajo.
+ - Trabajo.
 \end_layout
 
 \end_inset
@@ -495,7 +726,7 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Clientes
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega en pantala los la pantalla de clientes trabajso.
+Se despliega la pantalla de clientes trabajos.
  Se pueden observar todos los clietes del sistema.
  
 \end_layout
@@ -535,7 +766,7 @@ Dar click en nuevo cliente.
 \begin_inset Text
 
 \begin_layout Standard
-se despliega formualrio de nuevo cliente
+Se despliega formualrio de nuevo cliente.
 \end_layout
 
 \end_inset
@@ -564,7 +795,7 @@ se despliega formualrio de nuevo cliente
 \begin_inset Text
 
 \begin_layout Standard
-Se ingresan los datos de entrada y se selecciona aceptar.
+Se ingresan los datos de entrada y dar click en boton Aceptar.
 \end_layout
 
 \end_inset
@@ -573,7 +804,8 @@ Se ingresan los datos de entrada y se selecciona aceptar.
 \begin_inset Text
 
 \begin_layout Standard
-El cleitne se ingresa al sistema y se ve en la lista de clientes del sistema.
+El cliente se crea en el sistema y se observa en la lista de clientes del
+ sistema.
 \end_layout
 
 \end_inset
@@ -744,7 +976,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Creación derabajo t
+Creación derabajo.
 \end_layout
 
 \end_inset
@@ -786,8 +1018,8 @@ Datos de entrada
 <lyxtabular version="3" rows="7" columns="3">
 <features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1007,7 +1239,7 @@ Condiciones iniciales
 <lyxtabular version="3" rows="3" columns="2">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1042,7 +1274,7 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
-El clicola existe y ente existe en el sistema
+El cliente existe en el sistema
 \end_layout
 
 \end_inset
@@ -1140,7 +1372,7 @@ Resultado(Pasa/Falla)
 
 \begin_layout Standard
 Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Clientes
- - trabajo.
+ - Trabajos.
 \end_layout
 
 \end_inset
@@ -1149,7 +1381,7 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Clientes
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega en pantala los la pantalla de clientes - trabajos.
+Se despliega la pantalla de clientes - trabajos.
  Se pueden observar todos los clietes del sistema.
 \end_layout
 
@@ -1179,7 +1411,7 @@ Se despliega en pantala los la pantalla de clientes - trabajos.
 \begin_inset Text
 
 \begin_layout Standard
-Selecionamos un cliente y dar click en Nuebo trabajo.
+Selecionamos un cliente y dar click en Nuevo Trabajo.
 \end_layout
 
 \end_inset
@@ -1226,7 +1458,7 @@ Ingresamos los datos y dar click en Aceptar
 \begin_inset Text
 
 \begin_layout Standard
-El trabajo es creado en el sistea y asignado al cliente.
+El trabajo es creado en el sistema y asignado al cliente.
 \end_layout
 
 \end_inset
@@ -1354,7 +1586,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Creacion de un grupo
+Creación de un grupo
 \end_layout
 
 \begin_layout Standard
@@ -1438,8 +1670,8 @@ Datos de entrada
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -1573,7 +1805,7 @@ Condiciones iniciales
 <lyxtabular version="3" rows="3" columns="2">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1715,7 +1947,7 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Usuarios
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega en pantala los la pantalla de grupo usuarios.
+Se despliega la pantalla grupo-usuarios.
  Se pueden observar todos los grupos
 \end_layout
 
@@ -1745,7 +1977,7 @@ Se despliega en pantala los la pantalla de grupo usuarios.
 \begin_inset Text
 
 \begin_layout Standard
-Se ingresan los datos de entrada y se da Nuevo
+Se ingresan los datos de entrada y dar clcken Nuevo
 \end_layout
 
 \end_inset
@@ -1754,7 +1986,7 @@ Se ingresan los datos de entrada y se da Nuevo
 \begin_inset Text
 
 \begin_layout Standard
-el grupo es creado en el sistema
+El grupo es creado en el sistema
 \end_layout
 
 \end_inset
@@ -1966,8 +2198,8 @@ Datos de entrada
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -2301,8 +2533,8 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Usuarios
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega en pantala los la pantalla de grupo usuarios.
- Se pueden observar todos los grupos
+Se despliega Grupo-Usuarios.
+ Se pueden observar todos los grupos.
 \end_layout
 
 \end_inset
@@ -2331,7 +2563,7 @@ Se despliega en pantala los la pantalla de grupo usuarios.
 \begin_inset Text
 
 \begin_layout Standard
-Se selecciona el grupo y dar click en nuevo usuario
+Se selecciona el grupo y dar click en Nuevo Usuario
 \end_layout
 
 \end_inset
@@ -2369,7 +2601,7 @@ Se despliega formulario de neuvo usuario.
 \begin_inset Text
 
 \begin_layout Standard
-Se ingresan daos de entrada y se da en Nuevo.
+Se ingresan datos de entrada y dar clck en Nuevo.
 \end_layout
 
 \end_inset
@@ -2506,7 +2738,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Asosiacion Grupo - Trabajo.
+Asosiaciar Grupo - Trabajo.
 \end_layout
 
 \begin_layout Standard
@@ -2549,7 +2781,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Asociacion grupo traajo
+Asociar grupo - trabajo
 \end_layout
 
 \end_inset
@@ -2590,8 +2822,8 @@ Datos de entrada
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -2916,7 +3148,7 @@ Se despliega la pantalla de Accesos.
 \begin_inset Text
 
 \begin_layout Standard
-se ingresan datos de entrada y se da aceptar.
+Se ingresan datos de entrada y dar click en Aceptar.
 \end_layout
 
 \end_inset
@@ -3138,8 +3370,8 @@ Datos de entrada
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features>
-<column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="0">
 <column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -3406,7 +3638,7 @@ CI03
 \begin_inset Text
 
 \begin_layout Standard
-El usuario pertenece a un grupo que tieen asosciado el trabajo.
+El usuario pertenece a un grupo que tiene asosciado el trabajo.
 \end_layout
 
 \end_inset
@@ -3559,7 +3791,7 @@ Se despiega la pantalla de Administrar Archivos
 \begin_inset Text
 
 \begin_layout Standard
-Ingresamos nombre de carpeta, luego dar click en boton Crea
+Ingresamos nombre de carpeta, luego dar click en boton Crear.
 \end_layout
 
 \end_inset
@@ -3606,7 +3838,7 @@ Ingresamos a la carpeta y seleccionamos Subir archivo.
 \begin_inset Text
 
 \begin_layout Standard
-Se despliga sector en pantalal para ingresar ruta de archivo.
+Se despliga sector en pantalla para ingresar ruta de archivo.
 \end_layout
 
 \end_inset
@@ -3685,7 +3917,8 @@ Seleccionamos Herramientas, seleccionamos mpicc e ingresamos argumentos
 \begin_inset Text
 
 \begin_layout Standard
-Se ejecuta la compilación y se muestran los archivos en panatalla.
+Se ejecuta la compilación y se muestran los archivos resultados de la compilació
+n en panatalla.
 \end_layout
 
 \end_inset
@@ -3723,7 +3956,7 @@ Seleccionamos Ejecutar, del archivo ejecutable resultado de la compilación.
 \begin_inset Text
 
 \begin_layout Standard
-Se depliega sectro en pantalla para ingresar argmentos.
+Se depliega sector en pantalla para ingresar argumentos.
 \end_layout
 
 \end_inset
@@ -3761,7 +3994,7 @@ Ingresamos argumentos para ejecución y dar click en Ejecutar.
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega la pagina Ver Resultados con el log de ejecucion del trabajo.
+Se despliega la página Ver Resultados con el log de ejecución del trabajo.
  Si el trabajo termina se muestra una alerta de finalización.
  
 \end_layout
@@ -3792,7 +4025,7 @@ Se despliega la pagina Ver Resultados con el log de ejecucion del trabajo.
 \begin_inset Text
 
 \begin_layout Standard
-Seleccionamos el menu alertas
+Seleccionamos el menu Alertas
 \end_layout
 
 \end_inset
@@ -3802,7 +4035,7 @@ Seleccionamos el menu alertas
 
 \begin_layout Standard
 El usuario recibe alertas por inicio de trabajo y si el trabajo termina
- recibe alerta de finalizacion.
+ recibe alerta de finalización.
 \end_layout
 
 \end_inset
@@ -3998,7 +4231,7 @@ Descripción
 
 \begin_layout Standard
 Desde el admistrador podemos obserbar la actividad en Maui de los trabajos
- en ejecución en el cluseter
+ en ejecución en el cluster
 \end_layout
 
 \end_inset
@@ -4347,8 +4580,8 @@ Ejecución de Trabajo
 \begin_layout Standard
 
 \lang spanish
-Salir del sistema e ingresar como administrador ir al menu Maui, sub menu
- Trabajos.
+Salir del sistema e ingresar como administrador.
+ Ingresar al menu Maui, sub menu Trabajos.
 \end_layout
 
 \end_inset
@@ -4359,8 +4592,8 @@ Salir del sistema e ingresar como administrador ir al menu Maui, sub menu
 \begin_layout Standard
 
 \lang spanish
-Se despliegan los trabajos en ejecucion en el cluster.
- En porticular observamos el ejecutado en el caso de uso.
+Se despliegan los trabajos en ejecución en el cluster.
+ En porticular observamos el ejecutado en el punto 1.
 \end_layout
 
 \end_inset
@@ -4847,8 +5080,8 @@ Pasos para el test
 <lyxtabular version="3" rows="4" columns="4">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -4947,8 +5180,8 @@ Ejecución de Trabajo
 \begin_layout Standard
 
 \lang spanish
-Salir del sistema e ingresar como administrador ir al menu Torque, sub menu
- Trabajos.
+Salir del sistema e ingresar como administrador.
+ Ingresar al menu Torque, sub menu Trabajos.
 \end_layout
 
 \end_inset
@@ -4959,7 +5192,7 @@ Salir del sistema e ingresar como administrador ir al menu Torque, sub menu
 \begin_layout Standard
 
 \lang spanish
-Se despliegan los trabajos en ejecucion en el cluster.
+Se despliegan los trabajos en ejecucioón en el cluster.
  En porticular observamos el ejecutado en el caso de uso.
 \end_layout
 
@@ -4998,7 +5231,7 @@ Seleccionamos el proceso
 \begin_inset Text
 
 \begin_layout Standard
-Observamos los parametros de ejecucion del trabajo en torque
+Observamos los parametros de ejecucioón del trabajo en torque
 \end_layout
 
 \end_inset
@@ -5201,7 +5434,7 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Desde el admistrador podemos cancelar o detener un trabajo desde Maui.
+Con el admistrador podemos cancelar o detener un trabajo desde Maui.
 \end_layout
 
 \end_inset
@@ -5550,8 +5783,8 @@ Ejecución de Trabajo
 \begin_layout Standard
 
 \lang spanish
-Salir del sistema e ingresar como administrador ir al menu Maui, sub menu
- Trabajos.
+Salir del sistema e ingresar como administrador.
+ Ingresar al menu Maui, sub menu Trabajos.
 \end_layout
 
 \end_inset
@@ -5562,8 +5795,8 @@ Salir del sistema e ingresar como administrador ir al menu Maui, sub menu
 \begin_layout Standard
 
 \lang spanish
-Se despliegan los trabajos en ejecucion en el cluster.
- En porticular observamos el ejecutado en el caso de uso.
+Se despliegan los trabajos en ejecución en el cluster.
+ En porticular observamos el ejecutado en el punto anterior.
 \end_layout
 
 \end_inset
@@ -5601,7 +5834,7 @@ Seleccionamos en el proceso y le damos Detener o Cancelar.
 \begin_inset Text
 
 \begin_layout Standard
-El trabajo se detiene o o se Cancela.
+El trabajo se Detiene o se Cancela.
 \end_layout
 
 \end_inset
@@ -5802,7 +6035,7 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Desde el admistrador podemos cancelar o detener un trabajo desde Torque.
+Con el admistrador podemos cancelar o detener un trabajo desde Torque.
 \end_layout
 
 \end_inset
@@ -6151,8 +6384,8 @@ Ejecución de Trabajo
 \begin_layout Standard
 
 \lang spanish
-Salir del sistema e ingresar como administrador ir al menu Torque, sub menu
- Trabajos.
+Salir del sistema e ingresar como administrador.
+ Ingresar al menu Torque, sub menu Trabajos.
 \end_layout
 
 \end_inset
@@ -6163,8 +6396,8 @@ Salir del sistema e ingresar como administrador ir al menu Torque, sub menu
 \begin_layout Standard
 
 \lang spanish
-Se despliegan los trabajos en ejecucion en el cluster.
- En porticular observamos el ejecutado en el caso de uso.
+Se despliegan los trabajos en ejecución en el cluster.
+ En porticular observamos el ejecutado en el punto anterior.
 \end_layout
 
 \end_inset
