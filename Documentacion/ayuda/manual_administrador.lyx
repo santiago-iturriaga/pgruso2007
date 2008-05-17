@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -767,12 +767,12 @@ Alertas
 \end_layout
 
 \begin_layout Standard
-Los usuarios Adminsitradores al igual que los demas usuarios reciben alertas
- del sistemas las cuales podran visializar en el menu Alertas.
+Los usuarios Adminstradores al igual que los demas usuarios reciben alertas
+ del sistemas las cuales podran visualizar en el menu Alertas.
 \end_layout
 
 \begin_layout Standard
-Pdemos ver el cliente y trabajo al cual hace referencia la alerta; fecha
+Podemos ver el cliente y trabajo al cual hace referencia la alerta; fecha
  y asunto de la alerta.
 \end_layout
 
@@ -800,7 +800,7 @@ Ver
 \end_layout
 
 \begin_layout Standard
-Desde esta página también podemos elimianr la alerta con el boton Eliminar.
+Desde esta página también podemos eliminar la alerta con el boton Eliminar.
 \end_layout
 
 \begin_layout Standard
