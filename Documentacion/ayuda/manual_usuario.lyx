@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -317,7 +317,13 @@ Alertas
 \end_layout
 
 \begin_layout Standard
-PAULO
+En el menu alertas los usarios pueden observar las alertas que le fueron
+ enviadas por el sistema.
+ por ejemplo alertas de inicio y fin de algun trabajo del usuario.
+\end_layout
+
+\begin_layout Standard
+La infromación desplegada para cada alerta es Fecha y Asunto de la alerta.
 \end_layout
 
 \begin_layout Standard
@@ -328,6 +334,31 @@ PAULO
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Si seleccionamos el link 
+\begin_inset Quotes eld
+\end_inset
+
+Ver
+\begin_inset Quotes erd
+\end_inset
+
+ en el costado derecho de la grilla se despliega la información completa
+ de la alerta.
+\end_layout
+
+\begin_layout Standard
+Desde esta página también podemos eliminar la alerta con el boton 
+\begin_inset Quotes eld
+\end_inset
+
+Eliminar
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard

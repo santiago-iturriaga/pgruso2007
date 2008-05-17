@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -421,7 +421,32 @@ Usuarios - Alertas
 \end_layout
 
 \begin_layout Standard
-PAULO
+Existe un grupo 
+\begin_inset Quotes eld
+\end_inset
+
+virtual
+\begin_inset Quotes erd
+\end_inset
+
+ de usuarios a los cuales le seran asignadas alertas , definidas de interes
+ general, del sistemas.
+ Estas alertas avisan a los usuarios del grupo de algun problema o situación
+ importante o critica del sistema, por ejemplo si algun trabajo de un usuario
+ supero su cuota de espacio en disco.
+\end_layout
+
+\begin_layout Standard
+Para agregar un usuario a este grupo debemos seleccionarlo del combo de
+ usuarios y seleccionar 
+\begin_inset Quotes eld
+\end_inset
+
+Agregar
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -742,7 +767,13 @@ Alertas
 \end_layout
 
 \begin_layout Standard
-PAULO
+Los usuarios Adminsitradores al igual que los demas usuarios reciben alertas
+ del sistemas las cuales podran visializar en el menu Alertas.
+\end_layout
+
+\begin_layout Standard
+Pdemos ver el cliente y trabajo al cual hace referencia la alerta; fecha
+ y asunto de la alerta.
 \end_layout
 
 \begin_layout Standard
@@ -753,6 +784,23 @@ PAULO
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Si seleccionamos el link 
+\begin_inset Quotes eld
+\end_inset
+
+Ver
+\begin_inset Quotes erd
+\end_inset
+
+ en el costado derecho de la grilla de alertes se muestra la información
+ completa de la misma.
+\end_layout
+
+\begin_layout Standard
+Desde esta página también podemos elimianr la alerta con el boton Eliminar.
 \end_layout
 
 \begin_layout Standard
