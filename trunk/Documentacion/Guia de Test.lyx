@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \textclass article
-\language english
+\language spanish
 \inputencoding auto
 \font_roman default
 \font_sans default
@@ -15,6 +15,7 @@
 \font_tt_scale 100
 \graphics default
 \paperfontsize default
+\spacing single
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -23,7 +24,7 @@
 \use_bibtopic false
 \paperorientation portrait
 \secnumdepth 3
-\tocdepth 3
+\tocdepth 2
 \paragraph_separation indent
 \defskip medskip
 \quotes_language english
@@ -39,69 +40,133 @@
 \begin_body
 
 \begin_layout Title
-Guia de Test
+
+\lang english
+Guía de Test
 \end_layout
 
 \begin_layout Title
+
+\lang english
 Cluster de Computadores de Alto Desempeño con Acceso Remoto
 \end_layout
 
-\begin_layout Title
-Carrera de Ingeniería en Computación
-\end_layout
-
-\begin_layout Title
-Facultad de Ingeniería
-\end_layout
-
 \begin_layout Author
+
+\lang english
 Santiago Iturriaga, Paulo Maya, Damián Pintos
 \end_layout
 
+\begin_layout Address
+\align center
+
+\lang english
+{santiago.iturriaga,paulo.maya,damian.pintos}@gmail.com
+\end_layout
+
+\begin_layout Right Address
+\paragraph_spacing single
+\noindent
+
+\lang english
+Carrera de Ingeniería en Computación
+\end_layout
+
+\begin_layout Right Address
+\paragraph_spacing single
+\noindent
+
+\lang english
+Facultad de Ingeniería-Universidad de la República
+\end_layout
+
+\begin_layout Right Address
+\paragraph_spacing single
+\noindent
+
+\lang english
+Montevideo- Uruguay
+\end_layout
+
+\begin_layout Date
+
+\end_layout
+
 \begin_layout Standard
+
+\lang english
+
+\newpage
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
 
 \newpage
 
 \end_layout
 
 \begin_layout Section
+
+\lang english
 Objetivos
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 El objetivo de este documento es presentar el proceso de test al cual se
- sometio la solución construida.
- El mismo pretende ser una guia de test para verificar y validar el funcionamien
-to de la solución en procesos de test futuros.
+ sometió la solución construida.
+ El mismo pretende ser una guía de test para verificar y validar el funcionamien
+tode la solución en procesos de test futuros.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 El proceso de test tiene por objetivo la detección de defectos y probar
  la correctitud de las funcionalidades de la solución.
+ 
 \end_layout
 
 \begin_layout Section
-Proceso de test y metodologia de trabajo.
+
+\lang english
+Proceso de test y metodología de trabajo.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Durante el proceso de testing se aplicaron dos tipos de test.
- Se ralizo un test funcional apoyado o cmplemntado con un test exploratorio
+ Se realizó un test funcional apoyado o complementado con un test exploratorio
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 El testing funcional verifica el cumplimiento de los requerimientos funcionales
- contra los casos de test, en un entorno que emula un ambiente de producción
+ contra los casos de test, en un entorno que émula un ambiente de producción
  del sistema.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 El objetivo de este test es verificar si el comportamiento observado del
  software a prueba coincide o no con sus especificaciones.
  
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 El test exploratorio es un proceso simultáneo de exploración y aprendizaje
  del producto, diseño y ejecución de pruebas.
  La estrategia en este caso fue recorre las paginas del sitio Fenton en
@@ -110,175 +175,237 @@ El test exploratorio es un proceso simultáneo de exploración y aprendizaje
 \end_layout
 
 \begin_layout Standard
-Para la ejecución del test funcional se creo un set de casos de test, los
- cuales apuntan a cubrir los requerimientos funcionales principales del
- scheduler implementado para el cluster; y del acceso remoto al mismo.
+
+\lang english
+Para la ejecución del test funcional se creo un conjunto de casos de test,
+ los cuales apuntan a cubrir los requerimientos funcionales principales
+ del scheduler implementado para el cluster; y del acceso remoto al mismo.
  Estos casos de test se crearon en paralelo al test exploratorio.
  
 \end_layout
 
 \begin_layout Standard
-El testing funcional tambien apunto a evalaur la integración de las distintas
- funcionalidadesde Fenton y el scheduler (Torque-Maui).
+
+\lang english
+El testing funcional también apunto a evaluar la integración de las distintas
+ funcionalidades de Fenton y el scheduler (Torque-Maui).
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Cada caso de test es independiente de otro, pero en conjunto y siguiendo
- la guia de test presentada en este documento verifican la integración de
+ la guía de test presentada en este documento verifican la integración de
  cada funcionalidad.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Los dos tipos de testing pueden ejecutarse en paralelo y esa fue la forma
  en que se realizo el testing para esta oportunidad.
 \end_layout
 
 \begin_layout Section
+
+\lang english
 Herramientas utilizadas
 \end_layout
 
 \begin_layout Standard
-En el proceso de test se utilizaron como herramientas la guia de test presentata
-da en este documento asi como el set de casos de test.
+
+\lang english
+En el proceso de test se utilizaron como herramientas la guía de test presentada
+da en este documento así como el conjunto de casos de test.
  Para el registro y de issues se utilizo el grupo de Google creado para
- este proyecto Los grupos de Google tiene la funcionalidad de ingesar y
- mantener issues asi como otras funcionalidades utiles, por ejemplo una
+ este proyecto Los grupos de Google tiene la funcionalidad de ingresar y
+ mantener issues así como otras funcionalidades útiles, por ejemplo una
  wiki.
  
 \end_layout
 
 \begin_layout Section
+
+\lang english
 Como usar este documento
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Este documento incluye dos secciones con las cuales podemos ejecutar el
  proceso de testing.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 La primera es la sección de casos de test que incluye los mismos.
- La segunda seccion es la guia de test la cual da un orden a lso casos de
+ La segunda sección es la guía de test la cual da un orden a los casos de
  test para probar la integración de los requerimientos funcionales.
 \end_layout
 
 \begin_layout Standard
-Los casos de test pueden aplicarse independientemente o siguiendo la guia
+
+\lang english
+Los casos de test pueden aplicarse independientemente o siguiendo la guía
  de test.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Cada caso de test consta de cinco tablas:
 \end_layout
 
 \begin_layout Itemize
+
+\lang english
 Identificación del caso de test
 \end_layout
 
 \begin_layout Itemize
+
+\lang english
 Datos de entrada
 \end_layout
 
 \begin_layout Itemize
+
+\lang english
 Condiciones iniciales
 \end_layout
 
 \begin_layout Itemize
+
+\lang english
 Pasos para el test
 \end_layout
 
 \begin_layout Itemize
+
+\lang english
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align left
 
 \bar under
+\lang english
 Identificación del caso de test
 \end_layout
 
 \begin_layout Standard
-Contiene id, titulo y descripcion del caso de test.
+
+\lang english
+Contiene id, titulo y descripción del caso de test.
 \end_layout
 
 \begin_layout Standard
 \align left
 
 \bar under
-Datos de entra
+\lang english
+Datos de entrada
 \end_layout
 
 \begin_layout Standard
-Aqui se indican los datos de entrada para el caso.
- Se ingres nombre , valor y comentario apra cada campo.
+
+\lang english
+Aquí se indican los datos de entrada para el caso.
+ Se ingresa nombre , valor y comentario para cada campo.
 \end_layout
 
 \begin_layout Standard
 \align left
 
 \bar under
+\lang english
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Se ingresan las condiciones necesarias para que el caso se ejecute satisfactoria
 mente.
- Se asigna un id y la descripcion de la condición.
+ Se asigna un id y la descripción de la condición.
 \end_layout
 
 \begin_layout Standard
 \align left
 
 \bar under
+\lang english
 Paso para el test
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Describe la secuencias de pasos y el resultado esperado para la ejecución
  del test.
  En el momento de ejecución del test se indica si cada paso fallo o no.
 \end_layout
 
 \begin_layout Standard
+\align left
 
 \bar under
+\lang english
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Puede utilizarse de diferente maneras.
- Puede sre apra hacer consideraciones sobre la ejecución o fallo de un paso;
+ Puede ser para hacer consideraciones sobre la ejecución o fallo de un paso;
  o para la descripción de comportamiento alternativos.
 \end_layout
 
 \begin_layout Standard
-Este documento es extencible de forma de agregar nuevos escenarios a la
- guia o nuevos casos de test si por ejemplo se agregan nuevos requerimientos
+
+\lang english
+Este documento es extensible de forma de agregar nuevos escenarios a la
+ guía o nuevos casos de test si por ejemplo se agregan nuevos requerimientos
  funcionales.
 \end_layout
 
 \begin_layout Section
-Guia de test.
+
+\lang english
+Guía de test.
 \end_layout
 
 \begin_layout Standard
-A continuación propondremos deiferentes escenarios en los que podremos probar
+
+\lang english
+A continuación propondremos diferentes escenarios en los que podremos probar
  la integración de las funcionalidades requeridas.
- Cada escenario contiene un cnunto de casos de test en elque le damos un
- orden de ejecución.
+ Cada escenario contiene un conjunto de casos de test en el que le damos
+ un orden de ejecución.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Escenario 1: Creación de usuario y Ejecución de trabajo.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 En este escenario se crea un usuario y se ejecuta un trabajo con el usuario
  creado.
  
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Graphics
 	filename Images/EscenarioTest1.png
 	rotateOrigin center
@@ -289,15 +416,21 @@ En este escenario se crea un usuario y se ejecuta un trabajo con el usuario
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Escenario 2: Actividad en Maui
 \end_layout
 
 \begin_layout Standard
-En este escenario observamos la actividad del cluster y los trabajso ejecutados
- a traves de Maui
+
+\lang english
+En este escenario observamos la actividad del cluster y los trabajos ejecutados
+ a través de Maui
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Graphics
 	filename Images/EscenarioTest2.png
 
@@ -307,15 +440,21 @@ En este escenario observamos la actividad del cluster y los trabajso ejecutados
 \end_layout
 
 \begin_layout Standard
-Escenario 3: Actividad en Troque
+
+\lang english
+Escenario 3: Actividad en Torque
 \end_layout
 
 \begin_layout Standard
-En este escenario observamos la actividad del cluster y los trabajso ejecutados
- a traves de Torque
+
+\lang english
+En este escenario observamos la actividad del cluster y los trabajos ejecutados
+ a través de Torque
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Graphics
 	filename Images/EscenarioTest3.png
 
@@ -325,15 +464,21 @@ En este escenario observamos la actividad del cluster y los trabajso ejecutados
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Escenario 4: Control de trabajos desde Maui
 \end_layout
 
 \begin_layout Standard
-Verificamos el control de los trabaos ejecutados en el cluster mediante
+
+\lang english
+Verificamos el control de los trabajos ejecutados en el cluster mediante
  Maui.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Graphics
 	filename Images/EscenarioTest4.png
 
@@ -343,15 +488,21 @@ Verificamos el control de los trabaos ejecutados en el cluster mediante
 \end_layout
 
 \begin_layout Standard
-Escenario 5: Control de trabajos desde Troque
+
+\lang english
+Escenario 5: Control de trabajos desde Torque
 \end_layout
 
 \begin_layout Standard
-Verificamos el control de los trabaos ejecutados en el cluster mediante
+
+\lang english
+Verificamos el control de los trabajos ejecutados en el cluster mediante
  Torque.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Graphics
 	filename Images/EscenarioTest5.png
 
@@ -361,44 +512,56 @@ Verificamos el control de los trabaos ejecutados en el cluster mediante
 \end_layout
 
 \begin_layout Section
+
+\lang english
 Casos de Test
 \end_layout
 
 \begin_layout Subsection
+
+\lang english
 Nuevo Cliente.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 01
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -408,17 +571,21 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Creación de cliente
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -428,6 +595,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se crea un cliente en el sistema
 \end_layout
 
@@ -442,10 +611,14 @@ Se crea un cliente en el sistema
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -457,6 +630,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -466,6 +641,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -475,6 +652,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -486,6 +665,8 @@ Comentario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre
 \end_layout
 
@@ -495,6 +676,8 @@ Nombre
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 clientePaulo
 \end_layout
 
@@ -515,6 +698,8 @@ clientePaulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Usuario linux
 \end_layout
 
@@ -524,6 +709,8 @@ Usuario linux
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 pgccadar
 \end_layout
 
@@ -576,10 +763,14 @@ pgccadar
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -590,6 +781,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -599,6 +792,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -610,6 +805,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI01
 \end_layout
 
@@ -619,6 +816,8 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El usuario linux debe ser un usuario valido.
 \end_layout
 
@@ -630,6 +829,8 @@ El usuario linux debe ser un usuario valido.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI02
 \end_layout
 
@@ -639,6 +840,8 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 No existe un cliente con el mismo nombre en el sistema.
 \end_layout
 
@@ -653,22 +856,28 @@ No existe un cliente con el mismo nombre en el sistema.
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
 <column alignment="left" valignment="top" leftline="true" width="20page%">
-<column alignment="center" valignment="top" leftline="true" width="20page%">
+<column alignment="left" valignment="top" leftline="true" width="20page%">
 <column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -678,6 +887,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -687,6 +898,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -696,6 +909,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -707,6 +922,8 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 01
 \end_layout
 
@@ -716,7 +933,9 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Clientes
+
+\lang english
+Ingresar al sistema con el usuario Admin, menú Usuarios, sub menú Clientes
  - Trabajo.
 \end_layout
 
@@ -726,8 +945,10 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Clientes
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se despliega la pantalla de clientes trabajos.
- Se pueden observar todos los clietes del sistema.
+ Se pueden observar todos los clientes del sistema.
  
 \end_layout
 
@@ -748,6 +969,8 @@ Se despliega la pantalla de clientes trabajos.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 02
 \end_layout
 
@@ -757,6 +980,8 @@ Se despliega la pantalla de clientes trabajos.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Dar click en nuevo cliente.
 \end_layout
 
@@ -766,7 +991,9 @@ Dar click en nuevo cliente.
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega formualrio de nuevo cliente.
+
+\lang english
+Se despliega formulario de nuevo cliente.
 \end_layout
 
 \end_inset
@@ -786,6 +1013,8 @@ Se despliega formualrio de nuevo cliente.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 03
 \end_layout
 
@@ -795,7 +1024,9 @@ Se despliega formualrio de nuevo cliente.
 \begin_inset Text
 
 \begin_layout Standard
-Se ingresan los datos de entrada y dar click en boton Aceptar.
+
+\lang english
+Se ingresan los datos de entrada y dar click en botón Aceptar.
 \end_layout
 
 \end_inset
@@ -804,6 +1035,8 @@ Se ingresan los datos de entrada y dar click en boton Aceptar.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El cliente se crea en el sistema y se observa en la lista de clientes del
  sistema.
 \end_layout
@@ -828,10 +1061,14 @@ El cliente se crea en el sistema y se observa en la lista de clientes del
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -843,6 +1080,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -852,6 +1091,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -933,20 +1174,26 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
+
+\lang english
 Nuevo trabajo para un cliente.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -956,17 +1203,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 02
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -976,7 +1227,9 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Creación derabajo.
+
+\lang english
+Creación de trabajo.
 \end_layout
 
 \end_inset
@@ -987,6 +1240,8 @@ Creación derabajo.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -996,6 +1251,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se crea un trabajo y se asocia a un cliente
 \end_layout
 
@@ -1010,10 +1267,14 @@ Se crea un trabajo y se asocia a un cliente
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="3">
 <features>
@@ -1025,6 +1286,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -1034,6 +1297,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -1043,6 +1308,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -1054,6 +1321,8 @@ Comentario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Cliente
 \end_layout
 
@@ -1063,6 +1332,8 @@ Cliente
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 clientePaulo
 \end_layout
 
@@ -1083,6 +1354,8 @@ clientePaulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre
 \end_layout
 
@@ -1092,6 +1365,8 @@ Nombre
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 trabajo1
 \end_layout
 
@@ -1112,6 +1387,8 @@ trabajo1
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nodos
 \end_layout
 
@@ -1121,6 +1398,8 @@ Nodos
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 4
 \end_layout
 
@@ -1141,6 +1420,8 @@ Nodos
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Tiempo Max
 \end_layout
 
@@ -1150,6 +1431,8 @@ Tiempo Max
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 12:00:00
 \end_layout
 
@@ -1170,6 +1453,8 @@ Tiempo Max
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Cola
 \end_layout
 
@@ -1179,6 +1464,8 @@ Cola
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 prueba
 \end_layout
 
@@ -1199,6 +1486,8 @@ prueba
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Quota
 \end_layout
 
@@ -1208,6 +1497,8 @@ Quota
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 100
 \end_layout
 
@@ -1217,7 +1508,9 @@ Quota
 \begin_inset Text
 
 \begin_layout Standard
-El tamano es en megabytes.
+
+\lang english
+El tamaño es en megabytes.
 \end_layout
 
 \end_inset
@@ -1231,10 +1524,14 @@ El tamano es en megabytes.
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -1245,6 +1542,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -1254,6 +1553,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -1265,6 +1566,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI01
 \end_layout
 
@@ -1274,6 +1577,8 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El cliente existe en el sistema
 \end_layout
 
@@ -1285,6 +1590,8 @@ El cliente existe en el sistema
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI02
 \end_layout
 
@@ -1294,7 +1601,9 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
-La cola esta configuada en el sistema Torque
+
+\lang english
+La cola esta configurada en el sistema Torque
 \end_layout
 
 \end_inset
@@ -1308,10 +1617,14 @@ La cola esta configuada en el sistema Torque
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features headTopDL="true" headBottomDL="true">
@@ -1324,6 +1637,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -1333,6 +1648,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -1342,6 +1659,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -1351,6 +1670,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -1362,6 +1683,8 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 01
 \end_layout
 
@@ -1371,7 +1694,9 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Clientes
+
+\lang english
+Ingresar al sistema con el usuario Admin, menú Usuarios, sub menú Clientes
  - Trabajos.
 \end_layout
 
@@ -1381,8 +1706,10 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Clientes
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se despliega la pantalla de clientes - trabajos.
- Se pueden observar todos los clietes del sistema.
+ Se pueden observar todos los clientes del sistema.
 \end_layout
 
 \end_inset
@@ -1402,6 +1729,8 @@ Se despliega la pantalla de clientes - trabajos.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 02
 \end_layout
 
@@ -1411,7 +1740,9 @@ Se despliega la pantalla de clientes - trabajos.
 \begin_inset Text
 
 \begin_layout Standard
-Selecionamos un cliente y dar click en Nuevo Trabajo.
+
+\lang english
+Seleccionamos un cliente y dar click en Nuevo Trabajo.
 \end_layout
 
 \end_inset
@@ -1420,6 +1751,8 @@ Selecionamos un cliente y dar click en Nuevo Trabajo.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se despliega formulario de nuevo trabajo
 \end_layout
 
@@ -1440,6 +1773,8 @@ Se despliega formulario de nuevo trabajo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 03
 \end_layout
 
@@ -1449,6 +1784,8 @@ Se despliega formulario de nuevo trabajo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Ingresamos los datos y dar click en Aceptar
 \end_layout
 
@@ -1458,6 +1795,8 @@ Ingresamos los datos y dar click en Aceptar
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El trabajo es creado en el sistema y asignado al cliente.
 \end_layout
 
@@ -1481,10 +1820,14 @@ El trabajo es creado en el sistema y asignado al cliente.
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -1496,6 +1839,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -1505,6 +1850,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -1586,20 +1933,26 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
+
+\lang english
 Creación de un grupo
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -1609,17 +1962,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 03
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -1629,6 +1986,8 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Creación de grupo
 \end_layout
 
@@ -1640,6 +1999,8 @@ Creación de grupo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -1649,6 +2010,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se crea un grupo para agrupar usuarios
 \end_layout
 
@@ -1663,10 +2026,14 @@ Se crea un grupo para agrupar usuarios
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -1678,6 +2045,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -1687,6 +2056,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -1696,6 +2067,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -1707,6 +2080,8 @@ Comentario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre
 \end_layout
 
@@ -1716,6 +2091,8 @@ Nombre
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 grupoPaulo
 \end_layout
 
@@ -1797,10 +2174,14 @@ grupoPaulo
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -1811,6 +2192,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -1820,6 +2203,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -1831,6 +2216,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI01
 \end_layout
 
@@ -1840,6 +2227,8 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El grupo no existe en el sistema
 \end_layout
 
@@ -1874,10 +2263,14 @@ El grupo no existe en el sistema
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="4">
 <features>
@@ -1890,6 +2283,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -1899,6 +2294,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -1908,6 +2305,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -1917,6 +2316,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -1928,6 +2329,8 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 01
 \end_layout
 
@@ -1937,7 +2340,9 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Usuarios
+
+\lang english
+Ingresar al sistema con el usuario Admin, menú Usuarios, sub menú Usuarios
  - Grupos.
 \end_layout
 
@@ -1947,6 +2352,8 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Usuarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se despliega la pantalla grupo-usuarios.
  Se pueden observar todos los grupos
 \end_layout
@@ -1968,6 +2375,8 @@ Se despliega la pantalla grupo-usuarios.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 02
 \end_layout
 
@@ -1977,7 +2386,9 @@ Se despliega la pantalla grupo-usuarios.
 \begin_inset Text
 
 \begin_layout Standard
-Se ingresan los datos de entrada y dar clcken Nuevo
+
+\lang english
+Se ingresan los datos de entrada y dar click en Nuevo
 \end_layout
 
 \end_inset
@@ -1986,6 +2397,8 @@ Se ingresan los datos de entrada y dar clcken Nuevo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El grupo es creado en el sistema
 \end_layout
 
@@ -2009,10 +2422,14 @@ El grupo es creado en el sistema
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -2024,6 +2441,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -2033,6 +2452,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -2114,20 +2535,26 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
+
+\lang english
 Nuevo Usuario.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -2137,17 +2564,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 04
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -2157,6 +2588,8 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Creación de usuario
 \end_layout
 
@@ -2168,6 +2601,8 @@ Creación de usuario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -2177,7 +2612,9 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Se crea un usuario asosiado a un grupo
+
+\lang english
+Se crea un usuario asociado a un grupo
 \end_layout
 
 \end_inset
@@ -2191,10 +2628,14 @@ Se crea un usuario asosiado a un grupo
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features>
@@ -2206,6 +2647,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -2215,6 +2658,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -2224,6 +2669,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -2235,6 +2682,8 @@ Comentario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Grupo
 \end_layout
 
@@ -2244,6 +2693,8 @@ Grupo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 grupoPaulo
 \end_layout
 
@@ -2264,6 +2715,8 @@ grupoPaulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Login
 \end_layout
 
@@ -2273,6 +2726,8 @@ Login
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 paulo
 \end_layout
 
@@ -2293,6 +2748,8 @@ paulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Clave
 \end_layout
 
@@ -2302,6 +2759,8 @@ Clave
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 paulo20
 \end_layout
 
@@ -2322,6 +2781,8 @@ paulo20
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 email
 \end_layout
 
@@ -2331,6 +2792,8 @@ email
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 pmaya@adinet.com.uy
 \end_layout
 
@@ -2351,6 +2814,8 @@ pmaya@adinet.com.uy
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Es Administrador
 \end_layout
 
@@ -2360,6 +2825,8 @@ Es Administrador
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 No
 \end_layout
 
@@ -2383,10 +2850,14 @@ No
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -2397,6 +2868,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -2406,6 +2879,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -2417,6 +2892,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI01
 \end_layout
 
@@ -2426,6 +2903,8 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El grupo existe en el sistema
 \end_layout
 
@@ -2437,6 +2916,8 @@ El grupo existe en el sistema
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI02
 \end_layout
 
@@ -2446,6 +2927,8 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El usuario no existe en el sistema
 \end_layout
 
@@ -2460,10 +2943,14 @@ El usuario no existe en el sistema
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -2476,6 +2963,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -2485,6 +2974,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -2494,6 +2985,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -2503,6 +2996,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -2523,7 +3018,9 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Usuarios
+
+\lang english
+Ingresar al sistema con el usuario Admin, menú Usuarios, sub menú Usuarios
  - Grupos.
 \end_layout
 
@@ -2533,6 +3030,8 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Usuarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se despliega Grupo-Usuarios.
  Se pueden observar todos los grupos.
 \end_layout
@@ -2563,6 +3062,8 @@ Se despliega Grupo-Usuarios.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se selecciona el grupo y dar click en Nuevo Usuario
 \end_layout
 
@@ -2572,7 +3073,9 @@ Se selecciona el grupo y dar click en Nuevo Usuario
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega formulario de neuvo usuario.
+
+\lang english
+Se despliega formulario de nuevo usuario.
 \end_layout
 
 \end_inset
@@ -2601,7 +3104,9 @@ Se despliega formulario de neuvo usuario.
 \begin_inset Text
 
 \begin_layout Standard
-Se ingresan datos de entrada y dar clck en Nuevo.
+
+\lang english
+Se ingresan datos de entrada y dar click en Nuevo.
 \end_layout
 
 \end_inset
@@ -2610,7 +3115,9 @@ Se ingresan datos de entrada y dar clck en Nuevo.
 \begin_inset Text
 
 \begin_layout Standard
-El usauario es creado en el sistema asosiado al grupo.
+
+\lang english
+El usuario es creado en el sistema asociado al grupo.
 \end_layout
 
 \end_inset
@@ -2633,10 +3140,14 @@ El usauario es creado en el sistema asosiado al grupo.
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -2648,6 +3159,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -2657,6 +3170,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -2738,20 +3253,26 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Asosiaciar Grupo - Trabajo.
+
+\lang english
+Asociar Grupo - Trabajo.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -2761,17 +3282,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 05
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -2781,6 +3306,8 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Asociar grupo - trabajo
 \end_layout
 
@@ -2792,6 +3319,8 @@ Asociar grupo - trabajo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -2801,6 +3330,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se asocia un trabajo a un grupo
 \end_layout
 
@@ -2815,10 +3346,14 @@ Se asocia un trabajo a un grupo
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -2830,6 +3365,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -2839,6 +3376,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -2848,6 +3387,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -2859,6 +3400,8 @@ Comentario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Grupo
 \end_layout
 
@@ -2868,6 +3411,8 @@ Grupo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 grupoPaulo
 \end_layout
 
@@ -2888,6 +3433,8 @@ grupoPaulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Cliente
 \end_layout
 
@@ -2897,6 +3444,8 @@ Cliente
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 trabajo1
 \end_layout
 
@@ -2917,6 +3466,8 @@ trabajo1
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Trabajo
 \end_layout
 
@@ -2926,6 +3477,8 @@ Trabajo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 clientePaulo
 \end_layout
 
@@ -2949,10 +3502,14 @@ clientePaulo
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="2">
 <features>
@@ -2963,6 +3520,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -2972,6 +3531,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -2983,6 +3544,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI01
 \end_layout
 
@@ -2992,6 +3555,8 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El grupo existe en el sistema
 \end_layout
 
@@ -3003,6 +3568,8 @@ El grupo existe en el sistema
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI02
 \end_layout
 
@@ -3012,6 +3579,8 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El cliente existe en el sistema
 \end_layout
 
@@ -3023,6 +3592,8 @@ El cliente existe en el sistema
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI03
 \end_layout
 
@@ -3032,7 +3603,9 @@ CI03
 \begin_inset Text
 
 \begin_layout Standard
-El trabajo existe en el sitema y pertenece al cliente
+
+\lang english
+El trabajo existe en el sistema y pertenece al cliente
 \end_layout
 
 \end_inset
@@ -3046,10 +3619,14 @@ El trabajo existe en el sitema y pertenece al cliente
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="4">
 <features>
@@ -3062,6 +3639,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -3071,6 +3650,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -3080,6 +3661,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -3089,6 +3672,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -3100,6 +3685,8 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 01
 \end_layout
 
@@ -3109,7 +3696,9 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Accesos.
+
+\lang english
+Ingresar al sistema con el usuario Admin, menú Usuarios, sub menú Accesos.
 \end_layout
 
 \end_inset
@@ -3118,8 +3707,10 @@ Ingresar al sistema con el usario Admin, menu Usuarios, sub menu Accesos.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se despliega la pantalla de Accesos.
- Se pueden observar todos los grupos y los cleintes con sus trabajo.
+ Se pueden observar todos los grupos y los clientes con sus trabajo.
 \end_layout
 
 \end_inset
@@ -3139,6 +3730,8 @@ Se despliega la pantalla de Accesos.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 02
 \end_layout
 
@@ -3148,6 +3741,8 @@ Se despliega la pantalla de Accesos.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se ingresan datos de entrada y dar click en Aceptar.
 \end_layout
 
@@ -3157,7 +3752,9 @@ Se ingresan datos de entrada y dar click en Aceptar.
 \begin_inset Text
 
 \begin_layout Standard
-El grupo es asosicado al cliente-trabajo
+
+\lang english
+El grupo es asociado al cliente-trabajo
 \end_layout
 
 \end_inset
@@ -3180,10 +3777,14 @@ El grupo es asosicado al cliente-trabajo
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -3195,6 +3796,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -3204,6 +3807,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -3285,20 +3890,26 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
+
+\lang english
 Ejecución de Trabajo.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="20page%">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="20page%">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -3308,17 +3919,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 06
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -3328,6 +3943,8 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Ejecución de trabajo
 \end_layout
 
@@ -3339,6 +3956,8 @@ Ejecución de trabajo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -3348,8 +3967,10 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Para un trabajo se crea una carpeta, se sube un programa, se compila y se
- ejecuta pudiendo ver su resultado.
+ ejecuta pidiendo ver su resultado.
 \end_layout
 
 \end_inset
@@ -3363,10 +3984,14 @@ Para un trabajo se crea una carpeta, se sube un programa, se compila y se
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features>
@@ -3378,6 +4003,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -3387,6 +4014,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -3396,6 +4025,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -3407,6 +4038,8 @@ Comentario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Login
 \end_layout
 
@@ -3416,6 +4049,8 @@ Login
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 sparc
 \end_layout
 
@@ -3425,6 +4060,8 @@ sparc
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre de usuario con el que se ingresa al sistema
 \end_layout
 
@@ -3436,6 +4073,8 @@ Nombre de usuario con el que se ingresa al sistema
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Clave
 \end_layout
 
@@ -3445,6 +4084,8 @@ Clave
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 sparc
 \end_layout
 
@@ -3454,6 +4095,8 @@ sparc
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Password del usuario
 \end_layout
 
@@ -3465,6 +4108,8 @@ Password del usuario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Cliente
 \end_layout
 
@@ -3474,6 +4119,8 @@ Cliente
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 clientePaulo
 \end_layout
 
@@ -3483,6 +4130,8 @@ clientePaulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 cliente a seleccionar
 \end_layout
 
@@ -3494,6 +4143,8 @@ cliente a seleccionar
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Trabajo
 \end_layout
 
@@ -3503,6 +4154,8 @@ Trabajo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 trabajo1
 \end_layout
 
@@ -3512,6 +4165,8 @@ trabajo1
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Trabajo del cliente seleccionado
 \end_layout
 
@@ -3523,6 +4178,8 @@ Trabajo del cliente seleccionado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Carpeta
 \end_layout
 
@@ -3532,6 +4189,8 @@ Carpeta
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 helloMPI
 \end_layout
 
@@ -3541,7 +4200,9 @@ helloMPI
 \begin_inset Text
 
 \begin_layout Standard
-Nombre de carpeta dodnde se subiran los archivos
+
+\lang english
+Nombre de carpeta donde se subirán los archivos
 \end_layout
 
 \end_inset
@@ -3555,10 +4216,14 @@ Nombre de carpeta dodnde se subiran los archivos
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="2">
 <features>
@@ -3569,6 +4234,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -3578,6 +4245,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -3589,6 +4258,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI01
 \end_layout
 
@@ -3598,6 +4269,8 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El usuario existe en el sistema
 \end_layout
 
@@ -3609,6 +4282,8 @@ El usuario existe en el sistema
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI02
 \end_layout
 
@@ -3618,7 +4293,9 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
-El cliente exixste en el sistema y tiene asociado el trabajo especificado
+
+\lang english
+El cliente existe en el sistema y tiene asociado el trabajo especificado
 \end_layout
 
 \end_inset
@@ -3629,6 +4306,8 @@ El cliente exixste en el sistema y tiene asociado el trabajo especificado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 CI03
 \end_layout
 
@@ -3638,7 +4317,9 @@ CI03
 \begin_inset Text
 
 \begin_layout Standard
-El usuario pertenece a un grupo que tiene asosciado el trabajo.
+
+\lang english
+El usuario pertenece a un grupo que tiene asociado el trabajo.
 \end_layout
 
 \end_inset
@@ -3652,10 +4333,14 @@ El usuario pertenece a un grupo que tiene asosciado el trabajo.
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="4">
 <features>
@@ -3668,6 +4353,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -3677,6 +4364,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -3686,6 +4375,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -3695,6 +4386,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -3706,6 +4399,8 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 01
 \end_layout
 
@@ -3715,6 +4410,8 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Ingresamos al sistema con el usuario especificado
 \end_layout
 
@@ -3724,6 +4421,8 @@ Ingresamos al sistema con el usuario especificado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se muestran los trabajos del usuario
 \end_layout
 
@@ -3744,6 +4443,8 @@ Se muestran los trabajos del usuario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 02
 \end_layout
 
@@ -3753,6 +4454,8 @@ Se muestran los trabajos del usuario
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Seleccionamos un trabajo
 \end_layout
 
@@ -3762,7 +4465,9 @@ Seleccionamos un trabajo
 \begin_inset Text
 
 \begin_layout Standard
-Se despiega la pantalla de Administrar Archivos
+
+\lang english
+Se despliega la pantalla de Administrar Archivos
 \end_layout
 
 \end_inset
@@ -3782,6 +4487,8 @@ Se despiega la pantalla de Administrar Archivos
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 03
 \end_layout
 
@@ -3791,7 +4498,9 @@ Se despiega la pantalla de Administrar Archivos
 \begin_inset Text
 
 \begin_layout Standard
-Ingresamos nombre de carpeta, luego dar click en boton Crear.
+
+\lang english
+Ingresamos nombre de carpeta, luego dar click en botón Crear.
 \end_layout
 
 \end_inset
@@ -3800,6 +4509,8 @@ Ingresamos nombre de carpeta, luego dar click en boton Crear.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 La carpeta se crea en el directorio del sistema y se muestra en pantalla.
 \end_layout
 
@@ -3820,6 +4531,8 @@ La carpeta se crea en el directorio del sistema y se muestra en pantalla.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 04
 \end_layout
 
@@ -3829,6 +4542,8 @@ La carpeta se crea en el directorio del sistema y se muestra en pantalla.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Ingresamos a la carpeta y seleccionamos Subir archivo.
 \end_layout
 
@@ -3838,7 +4553,9 @@ Ingresamos a la carpeta y seleccionamos Subir archivo.
 \begin_inset Text
 
 \begin_layout Standard
-Se despliga sector en pantalla para ingresar ruta de archivo.
+
+\lang english
+Se despliega sector en pantalla para ingresar ruta de archivo.
 \end_layout
 
 \end_inset
@@ -3858,6 +4575,8 @@ Se despliga sector en pantalla para ingresar ruta de archivo.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 05
 \end_layout
 
@@ -3867,6 +4586,8 @@ Se despliga sector en pantalla para ingresar ruta de archivo.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Dar click en Examinar y ingresar archivo a subir.
  Luego dar click en Enviar.
 \end_layout
@@ -3877,6 +4598,8 @@ Dar click en Examinar y ingresar archivo a subir.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El archivo seleccionado es subido al sitio y se despliega en pantalla.
 \end_layout
 
@@ -3897,6 +4620,8 @@ El archivo seleccionado es subido al sitio y se despliega en pantalla.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 06
 \end_layout
 
@@ -3906,8 +4631,10 @@ El archivo seleccionado es subido al sitio y se despliega en pantalla.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Seleccionamos Herramientas, seleccionamos mpicc e ingresamos argumentos
- para compilar el archvio recientemente subido.
+ para compilar el archivo recientemente subido.
  Dar click en Ejecutar.
 \end_layout
 
@@ -3917,8 +4644,10 @@ Seleccionamos Herramientas, seleccionamos mpicc e ingresamos argumentos
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se ejecuta la compilación y se muestran los archivos resultados de la compilació
-n en panatalla.
+nn en pantalla.
 \end_layout
 
 \end_inset
@@ -3938,6 +4667,8 @@ n en panatalla.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 07
 \end_layout
 
@@ -3947,6 +4678,8 @@ n en panatalla.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Seleccionamos Ejecutar, del archivo ejecutable resultado de la compilación.
 \end_layout
 
@@ -3956,7 +4689,9 @@ Seleccionamos Ejecutar, del archivo ejecutable resultado de la compilación.
 \begin_inset Text
 
 \begin_layout Standard
-Se depliega sector en pantalla para ingresar argumentos.
+
+\lang english
+Se despliega sector en pantalla para ingresar argumentos.
 \end_layout
 
 \end_inset
@@ -3976,6 +4711,8 @@ Se depliega sector en pantalla para ingresar argumentos.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 08
 \end_layout
 
@@ -3985,6 +4722,8 @@ Se depliega sector en pantalla para ingresar argumentos.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Ingresamos argumentos para ejecución y dar click en Ejecutar.
 \end_layout
 
@@ -3994,6 +4733,8 @@ Ingresamos argumentos para ejecución y dar click en Ejecutar.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se despliega la página Ver Resultados con el log de ejecución del trabajo.
  Si el trabajo termina se muestra una alerta de finalización.
  
@@ -4016,6 +4757,8 @@ Se despliega la página Ver Resultados con el log de ejecución del trabajo.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 09
 \end_layout
 
@@ -4025,7 +4768,9 @@ Se despliega la página Ver Resultados con el log de ejecución del trabajo.
 \begin_inset Text
 
 \begin_layout Standard
-Seleccionamos el menu Alertas
+
+\lang english
+Seleccionamos el menú Alertas
 \end_layout
 
 \end_inset
@@ -4034,6 +4779,8 @@ Seleccionamos el menu Alertas
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El usuario recibe alertas por inicio de trabajo y si el trabajo termina
  recibe alerta de finalización.
 \end_layout
@@ -4058,10 +4805,14 @@ El usuario recibe alertas por inicio de trabajo y si el trabajo termina
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang english
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -4073,6 +4824,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -4082,6 +4835,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -4163,24 +4918,22 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Actividad en Maui.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<features>
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="left" valignment="top" rightline="true" width="20page%">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -4190,17 +4943,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 07
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -4210,6 +4967,8 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Actividad en Maui
 \end_layout
 
@@ -4221,6 +4980,8 @@ Actividad en Maui
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -4230,7 +4991,9 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Desde el admistrador podemos obserbar la actividad en Maui de los trabajos
+
+\lang english
+Desde el administrador podemos observar la actividad en Maui de los trabajos
  en ejecución en el cluster
 \end_layout
 
@@ -4245,14 +5008,10 @@ Desde el admistrador podemos obserbar la actividad en Maui de los trabajos
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -4264,6 +5023,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -4273,6 +5034,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -4282,6 +5045,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -4383,14 +5148,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -4401,6 +5162,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -4410,6 +5173,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -4464,14 +5229,10 @@ Descripción
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -4484,6 +5245,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -4493,6 +5256,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -4502,6 +5267,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -4511,6 +5278,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -4522,8 +5291,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 01
 \end_layout
 
@@ -4533,8 +5300,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Correr el caso 06.
  
 \lang english
@@ -4567,8 +5332,6 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 02
 \end_layout
 
@@ -4578,10 +5341,8 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Salir del sistema e ingresar como administrador.
- Ingresar al menu Maui, sub menu Trabajos.
+ Ingresar al menú Maui, sub menú Trabajos.
 \end_layout
 
 \end_inset
@@ -4590,10 +5351,8 @@ Salir del sistema e ingresar como administrador.
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Se despliegan los trabajos en ejecución en el cluster.
- En porticular observamos el ejecutado en el punto 1.
+ En particular observamos el ejecutado en el punto 1.
 \end_layout
 
 \end_inset
@@ -4613,6 +5372,8 @@ Se despliegan los trabajos en ejecución en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 03
 \end_layout
 
@@ -4622,7 +5383,9 @@ Se despliegan los trabajos en ejecución en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
-Seleccionamos en el proceso el boton diagnostico
+
+\lang english
+Seleccionamos en el proceso el botón diagnostico
 \end_layout
 
 \end_inset
@@ -4631,6 +5394,8 @@ Seleccionamos en el proceso el boton diagnostico
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Se despliega el diagnostico del procesos
 \end_layout
 
@@ -4654,14 +5419,10 @@ Se despliega el diagnostico del procesos
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -4673,6 +5434,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -4682,6 +5445,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -4763,24 +5528,22 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Actividad en Torque.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="20page%">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -4790,17 +5553,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 08
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -4810,6 +5577,8 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Actividad en Torque
 \end_layout
 
@@ -4821,6 +5590,8 @@ Actividad en Torque
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -4830,8 +5601,10 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Desde el admistrador podemos obserbar la actividad en Torque de los trabajos
- en ejecución en el cluseter
+
+\lang english
+Desde el administrador podemos observar la actividad en Torque de los trabajos
+ en ejecución en el cluster
 \end_layout
 
 \end_inset
@@ -4849,14 +5622,10 @@ Desde el admistrador podemos obserbar la actividad en Torque de los trabajos
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -4868,6 +5637,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -4877,6 +5648,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -4886,6 +5659,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -4987,14 +5762,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -5005,6 +5776,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -5014,6 +5787,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -5068,14 +5843,10 @@ Descripción
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -5088,6 +5859,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -5097,6 +5870,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -5106,6 +5881,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -5115,6 +5892,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -5135,8 +5914,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Correr el caso 06.
  
 \lang english
@@ -5178,10 +5955,8 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Salir del sistema e ingresar como administrador.
- Ingresar al menu Torque, sub menu Trabajos.
+ Ingresar al menú Torque, sub menú Trabajos.
 \end_layout
 
 \end_inset
@@ -5190,10 +5965,8 @@ Salir del sistema e ingresar como administrador.
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
-Se despliegan los trabajos en ejecucioón en el cluster.
- En porticular observamos el ejecutado en el caso de uso.
+Se despliegan los trabajos en ejecución en el cluster.
+ En particular observamos el ejecutado en el caso de uso.
 \end_layout
 
 \end_inset
@@ -5222,6 +5995,8 @@ Se despliegan los trabajos en ejecucioón en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Seleccionamos el proceso
 \end_layout
 
@@ -5231,7 +6006,9 @@ Seleccionamos el proceso
 \begin_inset Text
 
 \begin_layout Standard
-Observamos los parametros de ejecucioón del trabajo en torque
+
+\lang english
+Observamos los parámetros de ejecución del trabajo en Torque
 \end_layout
 
 \end_inset
@@ -5254,14 +6031,10 @@ Observamos los parametros de ejecucioón del trabajo en torque
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -5273,6 +6046,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -5282,6 +6057,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -5363,24 +6140,22 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
-Dentención o Cancelación de trabajo en Maui.
+Detención o Cancelación de trabajo en Maui.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -5390,17 +6165,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 09
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -5410,9 +6189,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
-Dentención o Cancelación de trabajo e
+Detención o Cancelación de trabajo e
 \lang english
 n Maui
 \end_layout
@@ -5425,6 +6202,8 @@ n Maui
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -5434,7 +6213,9 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Con el admistrador podemos cancelar o detener un trabajo desde Maui.
+
+\lang english
+Con el administrador podemos cancelar o detener un trabajo desde Maui.
 \end_layout
 
 \end_inset
@@ -5448,14 +6229,10 @@ Con el admistrador podemos cancelar o detener un trabajo desde Maui.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -5467,6 +6244,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -5476,6 +6255,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -5485,6 +6266,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -5586,14 +6369,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -5604,6 +6383,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -5613,6 +6394,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -5667,14 +6450,10 @@ Descripción
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -5687,6 +6466,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -5696,6 +6477,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -5705,6 +6488,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -5714,6 +6499,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -5725,8 +6512,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 01
 \end_layout
 
@@ -5736,8 +6521,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Correr el caso 06.
  
 \lang english
@@ -5770,8 +6553,6 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 02
 \end_layout
 
@@ -5781,10 +6562,8 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Salir del sistema e ingresar como administrador.
- Ingresar al menu Maui, sub menu Trabajos.
+ Ingresar al menú Maui, sub menú Trabajos.
 \end_layout
 
 \end_inset
@@ -5793,10 +6572,8 @@ Salir del sistema e ingresar como administrador.
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Se despliegan los trabajos en ejecución en el cluster.
- En porticular observamos el ejecutado en el punto anterior.
+ En particular observamos el ejecutado en el punto anterior.
 \end_layout
 
 \end_inset
@@ -5816,6 +6593,8 @@ Se despliegan los trabajos en ejecución en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 03
 \end_layout
 
@@ -5825,6 +6604,8 @@ Se despliegan los trabajos en ejecución en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Seleccionamos en el proceso y le damos Detener o Cancelar.
 \end_layout
 
@@ -5834,6 +6615,8 @@ Seleccionamos en el proceso y le damos Detener o Cancelar.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El trabajo se Detiene o se Cancela.
 \end_layout
 
@@ -5857,14 +6640,10 @@ El trabajo se Detiene o se Cancela.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -5876,6 +6655,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -5885,6 +6666,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -5966,24 +6749,22 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
-Dentención o Cancelación de trabajo enTorque.
+Detención o Cancelación de trabajo enTorque.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features booktabs="true">
+<features>
 <column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID Caso Test
 \end_layout
 
@@ -5993,17 +6774,21 @@ ID Caso Test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 10
 \end_layout
 
 \end_inset
 </cell>
 </row>
-<row>
+<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Titulo
 \end_layout
 
@@ -6013,9 +6798,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
-Dentención o Cancelación de trabajo enTorque
+Detención o Cancelación de trabajo enTorque
 \end_layout
 
 \end_inset
@@ -6026,6 +6809,8 @@ Dentención o Cancelación de trabajo enTorque
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -6035,7 +6820,9 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Con el admistrador podemos cancelar o detener un trabajo desde Torque.
+
+\lang english
+Con el administrador podemos cancelar o detener un trabajo desde Torque.
 \end_layout
 
 \end_inset
@@ -6053,14 +6840,10 @@ Con el admistrador podemos cancelar o detener un trabajo desde Torque.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -6072,6 +6855,8 @@ Datos de entrada
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Nombre campo
 \end_layout
 
@@ -6081,6 +6866,8 @@ Nombre campo
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Valor
 \end_layout
 
@@ -6090,6 +6877,8 @@ Valor
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
@@ -6191,14 +6980,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -6209,6 +6994,8 @@ Condiciones iniciales
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -6218,6 +7005,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -6272,14 +7061,10 @@ Descripción
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -6292,6 +7077,8 @@ Pasos para el test
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -6301,6 +7088,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Descripción
 \end_layout
 
@@ -6310,6 +7099,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado Esperado
 \end_layout
 
@@ -6319,6 +7110,8 @@ Resultado Esperado
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Resultado(Pasa/Falla)
 \end_layout
 
@@ -6339,8 +7132,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Correr el caso 06.
  
 \lang english
@@ -6382,10 +7173,8 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Salir del sistema e ingresar como administrador.
- Ingresar al menu Torque, sub menu Trabajos.
+ Ingresar al menú Torque, sub menú Trabajos.
 \end_layout
 
 \end_inset
@@ -6394,10 +7183,8 @@ Salir del sistema e ingresar como administrador.
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Se despliegan los trabajos en ejecución en el cluster.
- En porticular observamos el ejecutado en el punto anterior.
+ En particular observamos el ejecutado en el punto anterior.
 \end_layout
 
 \end_inset
@@ -6426,6 +7213,8 @@ Se despliegan los trabajos en ejecución en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Seleccionamos el proceso y le damos Detener o Cancelar
 \end_layout
 
@@ -6435,6 +7224,8 @@ Seleccionamos el proceso y le damos Detener o Cancelar
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 El trabajo se detiene o se cancela.
 \end_layout
 
@@ -6458,14 +7249,10 @@ El trabajo se detiene o se cancela.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -6477,6 +7264,8 @@ Notas o comentarios
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 ID
 \end_layout
 
@@ -6486,6 +7275,8 @@ ID
 \begin_inset Text
 
 \begin_layout Standard
+
+\lang english
 Comentario
 \end_layout
 
