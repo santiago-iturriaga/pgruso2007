@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -749,7 +749,17 @@ Ejecuciones
 \end_layout
 
 \begin_layout Standard
-DAMIAN
+El administrador del sistema podrá ver las ejecuciones de todos los trabajos,
+ teniendo además la opción de ver la salida de Torque presionando el botón
+ 
+\begin_inset Quotes eld
+\end_inset
+
+ver log
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
