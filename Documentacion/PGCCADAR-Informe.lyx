@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -149,7 +149,7 @@ Middleware (capa de abstracción entre el usuario y los sistemas operativos)
 \end_layout
 
 \begin_layout Itemize
-Protocolos de Comunicación y servicios.
+Protocolos de Comunicación y Servicios.
 \end_layout
 
 \begin_layout Itemize
@@ -182,7 +182,45 @@ El alto poder de procesamiento de varias computadoras trabajando en paralelo
 \end_layout
 
 \begin_layout Subsection
-Computación de alto rendimiento
+Introducción a la computación de alto rendimiento
+\end_layout
+
+\begin_layout Standard
+Cada ves los problemas a resolber mediante la computación see tornan mas
+ complicados con modelos mas complejos, trabjan con grandes volumenes de
+ datos, se requieren tiempos de respuesta mas limitados; así como otro tipo
+ de requerimientos.
+\end_layout
+
+\begin_layout Standard
+La computación de alto rendimiento nacio e intenta satisfacer todos esto
+ requisitos de poder de computo.
+\end_layout
+
+\begin_layout Standard
+HPC (Higth Perfomance Computing) reune un conjunto de tecnoligias, como
+ ser csupercomputadoras o clusters, y se apoya en la programación apralela
+ y distribuida.
+\end_layout
+
+\begin_layout Standard
+La computación distribuida resuleve problemas de computación masiva utilizando
+ un gran número de computadoras conn una infraestructura de telecomunicaciones
+ distribuida.
+\end_layout
+
+\begin_layout Standard
+La programación paralela es una técnica de programación basada en la ejecución
+ simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
+ o en un cluster de ordenadores, en cuyo caso se denomina computación distribuid
+a.
+\end_layout
+
+\begin_layout Standard
+Existe una diversa gama de arquitecturas de computación paralela como puede
+ ser arquitecturas de procesadores paralelos con memoria compartida o no
+ ; o hasta cluster de computadores intercomunicados por uan fastehtrnet.
+ Profundisaremos
 \end_layout
 
 \begin_layout Subsection
@@ -220,6 +258,10 @@ El proyecto intenta resolver estos problemas permitiendo la utilización
 
 \begin_layout Subsection
 Objetivos y alcance del proyecto
+\end_layout
+
+\begin_layout Standard
+Objetivos requerimientos y alcance definido.
 \end_layout
 
 \begin_layout Subsection
@@ -530,6 +572,10 @@ Convenio FING–Ministerio del Interior.
 
 \begin_layout Subsection
 Estructura del documento
+\end_layout
+
+\begin_layout Standard
+En esta sección se describe la estructura del mismo
 \end_layout
 
 \begin_layout Section
@@ -1790,81 +1836,12 @@ La robustez es una caracteristicas importante ya que ante la caída de alguno
  haya ordenadores en funcionamiento, éstos seguirán dando servicio.
 \end_layout
 
-\begin_layout Subsubsection
-Middleware (ver ubicación)
-\end_layout
-
 \begin_layout Standard
-El Middleware es un software de conectividad que ofrece un conjunto de servicios
- que hacen posible el funcionamiento de aplicaciones distribuidas sobre
- plataformas heterogéneas.
- Funciona como una capa de abstracción de software distribuida, que se sitúa
- entre las capas de aplicaciones y las capas inferiores (sistema operativo
- y red).
- El Middleware nos abstrae de la complejidad y heterogeneidad de las redes
- de comunicaciones subyacentes, así como de los sistemas operativos y lenguajes
- de programación, proporcionando una API para la fácil programación y manejo
- de aplicaciones distribuidas, dando a su vez la sensación al usuario de
- que utiliza un único computador muy potente.
- Dependiendo del problema a resolver y de las funciones necesarias, serán
- útiles diferentes tipo de servicios de middleware.
-\end_layout
 
-\begin_layout Standard
-Por lo general el middleware del lado cliente está implementado por el Sistema
- Operativo subyacente, el cual posee las librerías que implementan todas
- las funcionalidades para la comunicación a través de la red.
-\end_layout
-
-\begin_layout Standard
-Además ofrece herramientas para la optimización y mantenimiento del sistema:
- migración de procesos, checkpoint-restart (congelar uno o varios procesos,
- mudarlos de servidor y continuar su funcionamiento en el nuevo host), balanceo
- de carga, tolerancia a fallos, etc.
- Es importante que la solución sea escalable, en este caso debe poder detectar
- automáticamente nuevos servidores conectados al cluster para proceder a
- su utilización.
-\end_layout
-
-\begin_layout Standard
-El middleware recibe los trabajos entrantes al cluster y los redistribuye
- de manera que el proceso se ejecute más rápido y el sistema no sufra sobrecarga
-s en un servidor.
- Esto se realiza mediante políticas definidas en el sistema (automáticamente
- o por un administrador) que le indican dónde y cómo debe distribuir los
- procesos, por un sistema de monitorización, el cual controla la carga de
- cada CPU y la cantidad de procesos en él.
-\end_layout
-
-\begin_layout Standard
-El middleware también debe poder migrar procesos entre servidores con distintas
- finalidades.
- Debe ser capaz de balancear la carga, si un servidor está muy cargado de
- procesos y otro está ocioso, pueden transferirse procesos a este último
- para liberar de carga al primero y optimizar el funcionamiento.
- Además debe permitir al administrador realizar un mantenimiento los servidores,
- si hay procesos corriendo en un servidor que necesita mantenimiento o una
- actualización, deberá ser posible migrar los procesos a otro servidor y
- proceder a desconectar del cluster al primero.
- A su vez es el encargado de priorizar los trabajos.
- En caso de tener varios procesos corriendo en el cluster, pero uno de ellos
- de mayor importancia que los demás, puede migrarse este proceso a los servidore
-s que posean más o mejores recursos para acelerar su procesamiento.
- 
-\end_layout
-
-\begin_layout Standard
-Los Middleware han aparecido de manera relativamente reciente en el mundo
- de la informática.
- Ganaron popularidad en los 1980s ya que eran la solución de como integrar
- las nuevas aplicaciones con los sistemas antiguos (legacy systems), en
- todo caso, el termino ha sido usado desde 1968.
- También facilitaba la computación distribuida, mediante conexión de multiples
- aplicaciones para crear una mucho mayor, sobre una red.
 \end_layout
 
 \begin_layout Subsection
-Herramientas
+Herramientas para la programación paralela
 \end_layout
 
 \begin_layout Standard
@@ -1968,6 +1945,79 @@ Contiene mecanismos de creacion e identificacion de procesos,un modelo de
 \begin_layout Standard
 Brinda soporte para manejar heterogeneidad y aprovecha la arquitecturas
  multiprocesador.
+\end_layout
+
+\begin_layout Subsubsection
+Middleware
+\end_layout
+
+\begin_layout Standard
+El Middleware es un software de conectividad que ofrece un conjunto de servicios
+ que hacen posible el funcionamiento de aplicaciones distribuidas sobre
+ plataformas heterogéneas.
+ Funciona como una capa de abstracción de software distribuida, que se sitúa
+ entre las capas de aplicaciones y las capas inferiores (sistema operativo
+ y red).
+ El Middleware nos abstrae de la complejidad y heterogeneidad de las redes
+ de comunicaciones subyacentes, así como de los sistemas operativos y lenguajes
+ de programación, proporcionando una API para la fácil programación y manejo
+ de aplicaciones distribuidas, dando a su vez la sensación al usuario de
+ que utiliza un único computador muy potente.
+ Dependiendo del problema a resolver y de las funciones necesarias, serán
+ útiles diferentes tipo de servicios de middleware.
+\end_layout
+
+\begin_layout Standard
+Por lo general el middleware del lado cliente está implementado por el Sistema
+ Operativo subyacente, el cual posee las librerías que implementan todas
+ las funcionalidades para la comunicación a través de la red.
+\end_layout
+
+\begin_layout Standard
+Además ofrece herramientas para la optimización y mantenimiento del sistema:
+ migración de procesos, checkpoint-restart (congelar uno o varios procesos,
+ mudarlos de servidor y continuar su funcionamiento en el nuevo host), balanceo
+ de carga, tolerancia a fallos, etc.
+ Es importante que la solución sea escalable, en este caso debe poder detectar
+ automáticamente nuevos servidores conectados al cluster para proceder a
+ su utilización.
+\end_layout
+
+\begin_layout Standard
+El middleware recibe los trabajos entrantes al cluster y los redistribuye
+ de manera que el proceso se ejecute más rápido y el sistema no sufra sobrecarga
+s en un servidor.
+ Esto se realiza mediante políticas definidas en el sistema (automáticamente
+ o por un administrador) que le indican dónde y cómo debe distribuir los
+ procesos, por un sistema de monitorización, el cual controla la carga de
+ cada CPU y la cantidad de procesos en él.
+\end_layout
+
+\begin_layout Standard
+El middleware también debe poder migrar procesos entre servidores con distintas
+ finalidades.
+ Debe ser capaz de balancear la carga, si un servidor está muy cargado de
+ procesos y otro está ocioso, pueden transferirse procesos a este último
+ para liberar de carga al primero y optimizar el funcionamiento.
+ Además debe permitir al administrador realizar un mantenimiento los servidores,
+ si hay procesos corriendo en un servidor que necesita mantenimiento o una
+ actualización, deberá ser posible migrar los procesos a otro servidor y
+ proceder a desconectar del cluster al primero.
+ A su vez es el encargado de priorizar los trabajos.
+ En caso de tener varios procesos corriendo en el cluster, pero uno de ellos
+ de mayor importancia que los demás, puede migrarse este proceso a los servidore
+s que posean más o mejores recursos para acelerar su procesamiento.
+ 
+\end_layout
+
+\begin_layout Standard
+Los Middleware han aparecido de manera relativamente reciente en el mundo
+ de la informática.
+ Ganaron popularidad en los 1980s ya que eran la solución de como integrar
+ las nuevas aplicaciones con los sistemas antiguos (legacy systems), en
+ todo caso, el termino ha sido usado desde 1968.
+ También facilitaba la computación distribuida, mediante conexión de multiples
+ aplicaciones para crear una mucho mayor, sobre una red.
 \end_layout
 
 \begin_layout Section
@@ -2925,6 +2975,10 @@ Proceso de desarrollo de la interfaz web.
 
 \begin_layout Subsection
 Testeo de la solución
+\end_layout
+
+\begin_layout Standard
+Proceso de test utilizado para verificar y validar la solución
 \end_layout
 
 \begin_layout Section
