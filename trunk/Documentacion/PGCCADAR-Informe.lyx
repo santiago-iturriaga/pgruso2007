@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -59,8 +59,8 @@ Universidad de la República
 Santiago Iturriaga, Paulo Maya, Damián Pintos
 \end_layout
 
-\begin_layout Standard
-Tutor, Supervisor
+\begin_layout Author
+Tutor, Supervisor?
 \end_layout
 
 \begin_layout Abstract
@@ -99,9 +99,9 @@ En el principio de la historia de las computadoras se tenía la idea de que
 
 \begin_layout Standard
 Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
- crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamiento
-poniendo a trabajar varias computadoras en paralelo con procesadores
- 16 DX4, interconectadas en una red de 10 Mbit Ethernet.
+ crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
+toponiendo a trabajar varias computadoras en paralelo con procesadores 16
+ DX4, interconectadas en una red de 10 Mbit Ethernet.
 \end_layout
 
 \begin_layout Standard
@@ -167,8 +167,8 @@ Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
 La idea es simplemente reunir el poder de cómputo de una serie de nodos
  para proveer alta escalabilidad, poder de cómputo, o construir redundancia
  y de esta manera proveer alta disponibilidad.
- Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidores
-s, los cluster utilizan múltiples máquinas para proveer un ambiente más
+ Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
+ss, los cluster utilizan múltiples máquinas para proveer un ambiente más
  poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
 nto sea visible al usuario como una sola unidad, aunque se componga de muchas
  computadoras trabajando en paralelo para el mismo fin.
@@ -316,8 +316,8 @@ En un nivel superior de abstracción, las técnicas meta heurísticas proporcion
  esquemas o enfoques genéricos para la resolución de problemas complejos.
  Estos enfoques genéricos pueden ser instanciados para producir algoritmos
  específicos que trabajan bajo un mismo lineamiento general.
- Las técnicas de computación evolutiva constituyen una familia de meta heurística
-s estocásticas utilizadas exitosamente para la resolución de variados problemas
+ Las técnicas de computación evolutiva constituyen una familia de meta heurístic
+as estocásticas utilizadas exitosamente para la resolución de variados problemas
  en las áreas de búsqueda y análisis de información, optimización combinatoria,
  entre otras.
 \end_layout
@@ -1683,8 +1683,8 @@ En estas máquinas cada procesador tiene cierto número de flujos de instruccion
 \begin_layout Standard
 La Tera MTA (multithreaded architecture) es la primera de estas máquinas
  , cada procesador tiene 128 flujos de instrucciones.
- Un acceso a memoria dura aproximadamente 100 ciclos por lo que en la
- próxima ejecución de la hebra se tendrán los datos requeridos.
+ Un acceso a memoria dura aproximadamente 100 ciclos por lo que en la próxima
+ ejecución de la hebra se tendrán los datos requeridos.
  Este mecanismo permite a la MTA tolerar la latencia a memoria y por lo
  tanto no requiere de memorias cache.
 \end_layout
@@ -1880,8 +1880,8 @@ MPI: Message Passing Interface
 \end_layout
 
 \begin_layout Standard
-MPI es una biblioteca que provee funcionalidades para la comunicación de procesos
- mediante el pasaje de mensajes.
+MPI es una biblioteca que provee funcionalidades para la comunicación de
+ procesos mediante el pasaje de mensajes.
  Esta fue creada por científicos desarrolladores de software y aplicaciones
  bajo el objetivo de desarrollar un estándar portable y eficiente para programac
 ion paralela.
@@ -2631,8 +2631,9 @@ Las reservas anticipadas permiten que un sitio disponga ciertos recursos
  tiempo.
  El acceso a una reserva dada es controlado por un Access Control List (ACL)
  que determina quién puede utilizar los recursos reservados.
- Es importante observar que mientras que un ACL permite que trabajos particulares
-s utilicen recursos reservados, no fuerzan al trabajo a utilizar estos recursos.
+ Es importante observar que mientras que un ACL permite que trabajos particulare
+ss utilicen recursos reservados, no fuerzan al trabajo a utilizar estos
+ recursos.
  Maui procurará utilizar la mejor combinación posible de recursos disponibles
  sean éstos reservados o no.
  Maui puede ser configurado para que ciertos trabajos sean restringidos
