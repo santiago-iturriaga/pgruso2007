@@ -20,10 +20,36 @@
 
 *Cliente*
   
-  * Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar. Estamos cubiertos con el fin del trabajo.).
+  
   * cron [damian]
     
-===DOCUMENTAR !!!===
+===DOCUMENTAR=========================================================
+
+- Introduccion (PAULO)
+    1.1 Introducción a la computación de alto rendimiento
+    1.3 Objetivos y alcance del proyecto
+    1.5 Estructura del documento
+
+Capitulo 2 Computación de alto rendimiento: Agrupar y redactar nuevamente (PAULO)
+
+Capitulo 3 Actividades del proyecto
+ Hacer
+
+Capitulo 5 5 Solución desarrollada (Cambiar nombre)
+   5.1 Tecnologías elegidas
+   5.2 Interfaz web desarrollada
+   5.3 Testeo de la solución (PAULO)
+  
+
+Capitulo 6 Caso de estudio
+
+Capitulo  7 Conclusiones
+
+Capitulo  8 Trabajo futuro
+
+Capitulo  9 Anexos
+
+======================================================================
 
 BUGS CONOCIDOS
 * *BUG* Modificar upload de archivos
@@ -38,3 +64,4 @@ BUGS CONOCIDOS
 
 MEJORAS
 Alertas envio de mail, configurar SMTP.
+* Asignacion de alertas en falla de trabajo cuando termina(No sabemos bien como avisar. Estamos cubiertos con el fin del trabajo.).
