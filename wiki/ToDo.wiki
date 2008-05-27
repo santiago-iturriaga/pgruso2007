@@ -36,9 +36,11 @@ Capitulo 3 Actividades del proyecto
  Hacer
 
 Capitulo 5 5 Solución desarrollada (Cambiar nombre)
-   5.1 Tecnologías elegidas
-   5.2 Interfaz web desarrollada
-   5.3 Testeo de la solución (PAULO)
+ 5.1 Tecnologías elegidas 
+
+ 5.2 Interfaz web desarrollada 
+
+ 5.3 Testeo de la solución (PAULO) 
   
 
 Capitulo 6 Caso de estudio
