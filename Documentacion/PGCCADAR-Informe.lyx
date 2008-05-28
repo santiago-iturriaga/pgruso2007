@@ -261,7 +261,67 @@ Objetivos y alcance del proyecto
 \end_layout
 
 \begin_layout Standard
-Objetivos requerimientos y alcance definido.
+La motivación principal de este proyecto es la construcción e implantación
+ de un cluster de alto desempeño con acceso remoto.
+\end_layout
+
+\begin_layout Standard
+Dentro del marco de esta motivación se han definido varios objetivos y el
+ alcance del proyecto.
+\end_layout
+
+\begin_layout Standard
+Esta motivación incluye el estudio del estado del arte sobre la utilización
+ de equipamiento destinado al procesamiento paralelo-distribuido.
+\end_layout
+
+\begin_layout Standard
+En segundo lugar existe el objetivo de evaluación y diseño de herramientas
+ automáticas para la administración y utilización de un cluster de computadores.
+ Para esto se realizara el relevamiento de paquetes de software de base
+ (sistemas operativos, bibliotecas, monitores de desempeño, etc.) que permitan
+ el desarrollo y la ejecución de programas paralelos y distribuidos.
+ En tal relevamiento se debe evaluar características funcionales así como
+ usabilidad de las herramientas.
+\end_layout
+
+\begin_layout Standard
+Como se menciono en la sección anterior se debe tener especial consideración
+ en el grado de abstracción de las herramientas de administración y utilización
+ para el lanzamientos de trabajos al cluster, para que de esta forma la
+ infraestructura sea usada por un conjunto diverso y amplio de usuarios.
+\end_layout
+
+\begin_layout Standard
+A continuación presentamos los objetivos específicos del proyecto:
+\end_layout
+
+\begin_layout Itemize
+El estudio el estado del arte sobre la utilización de equipamiento destinado
+ al procesamiento paralelo-distribuido para la resolución de problemas complejos.
+ 
+\end_layout
+
+\begin_layout Itemize
+La evaluación de paquetes de software de base (sistemas operativos, bibliotecas,
+ monitores de desempeño, etc.) que permitan el desarrollo y la ejecución
+ de programas paralelos y distribuidos, instalando una (o varias) alternativa(s)
+ con tal fin.
+ 
+\end_layout
+
+\begin_layout Itemize
+El desarrollo de software que permita la administración semiautomática del
+ clúster, para garantizar su alta disponibilidad y su funcionamiento a niveles
+ razonables de eficiencia computacional.
+ 
+\end_layout
+
+\begin_layout Itemize
+El desarrollo de una interfaz amigable que permita la utilización de modo
+ simple del cluster como recurso de cómputo integrado, aún para usuarios
+ sin conocimientos exhaustivos de informática y/o de las técnicas de computación
+ de alto desempeño.
 \end_layout
 
 \begin_layout Subsection
