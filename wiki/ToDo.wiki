@@ -13,7 +13,6 @@
   * [HECHO]agregar el usuario nuevo al /etc/passwd de cada nodo (si es necesario)
 
 *Administrador*
-  * Editar cliente 
   * agrandar el nombre del trabajo en la base!!! (esta maximo en 12 ratones!)
   * arreglar grupos de los usuarios en el filesystem (siempre Fenton)
   
