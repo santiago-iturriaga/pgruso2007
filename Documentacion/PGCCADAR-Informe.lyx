@@ -2044,7 +2044,7 @@ Análisis de requerimientos
 \end_layout
 
 \begin_layout Subsubsection
-Diseño de la solución
+Diseño e implementación de la solución
 \end_layout
 
 \begin_layout Standard
@@ -2061,8 +2061,8 @@ El motor de base de datos podía ser mysql o posgresql y la decisión entre
  básicas (abrir la conexión, ejecutar una consulta, obtener el resultado)
  e implementarlo tanto para mysql como para posgresql.
  Este requerimiento redundó en una ventaja para el producto: si fuera necesario
- instalarlo sobre otro motor de condiciones similares, en principio sólo
- sería necesario reimplementar el módulo.
+ instalarlo sobre otro motor de condiciones similares, en principio solo
+ sería necesario reimplementar el módulo y repetir la etapa de testeo.
 \end_layout
 
 \begin_layout Standard
@@ -2070,9 +2070,9 @@ La apariencia del sitio también podía variar durante la implementación,
  por lo tanto además de separar la lógica de la aplicación de la capa de
  presentación, esta última se dividió en archivos .php que reciben los pedidos
  del usuario y actúan en consecuencia, separados de los archivos .html y
- .css orientados a la forma en que estos resultados se muestran, para esto
- utilizamos plantillas que son cargadas en cada php para luego ser desplegadas
- en pantalla.
+ .css orientados a la forma en que estos resultados se muestran.
+ Para esto utilizamos plantillas que son cargadas en cada php para luego
+ ser desplegadas en pantalla.
  En definitiva obtuvimos una version moderada del patrón model view controller.
  Si en algún momento se deseara rediseñar el sitio manteniendo el funcionamiento
  del mismo, la mayor parte se puede cambiar desde estilos.css y el resto
@@ -2087,10 +2087,6 @@ La apariencia del sitio también podía variar durante la implementación,
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsubsection
-Implementación
 \end_layout
 
 \begin_layout Subsubsection
