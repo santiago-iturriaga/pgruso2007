@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -1836,10 +1836,6 @@ La robustez es una características importante ya que ante la caída de alguno
  haya ordenadores en funcionamiento, éstos seguirán dando servicio.
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Subsection
 Herramientas para la programación paralela
 \end_layout
@@ -2029,6 +2025,76 @@ En el marco del proyecto se realizaron un conjunto de actividades específicas,
  abarcando actividades de investigación, estudio, análisis, modelación,
  implementación, etc.
  Se detallarán a continuación...
+\end_layout
+
+\begin_layout Subsection
+Estudio de tecnologías existentes.
+\end_layout
+
+\begin_layout Standard
+ver parte 4
+\end_layout
+
+\begin_layout Subsection
+Implementación de la interfaz web
+\end_layout
+
+\begin_layout Subsubsection
+Análisis de requerimientos
+\end_layout
+
+\begin_layout Subsubsection
+Diseño de la solución
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
+ así como la curva de aprendizaje de las distintas herramientas para realizar
+ aplicaciones web, decidimos utilizar php con eclipse como ide.
+\end_layout
+
+\begin_layout Standard
+El motor de base de datos podía ser mysql o posgresql y la decisión entre
+ uno de los dos no la podíamos tomar hasta tiempo después de iniciada la
+ etapa de implementación, por lo tanto se pensó desde un principio en un
+ módulo de abstracción al motor de base de datos que ejecutara las operaciones
+ básicas (abrir la conexión, ejecutar una consulta, obtener el resultado)
+ e implementarlo tanto para mysql como para posgresql.
+ Este requerimiento redundó en una ventaja para el producto: si fuera necesario
+ instalarlo sobre otro motor de condiciones similares, en principio sólo
+ sería necesario reimplementar el módulo.
+\end_layout
+
+\begin_layout Standard
+La apariencia del sitio también podía variar durante la implementación,
+ por lo tanto además de separar la lógica de la aplicación de la capa de
+ presentación, esta última se dividió en archivos .php que reciben los pedidos
+ del usuario y actúan en consecuencia, separados de los archivos .html y
+ .css orientados a la forma en que estos resultados se muestran, para esto
+ utilizamos plantillas que son cargadas en cada php para luego ser desplegadas
+ en pantalla.
+ En definitiva obtuvimos una version moderada del patrón model view controller.
+ Si en algún momento se deseara rediseñar el sitio manteniendo el funcionamiento
+ del mismo, la mayor parte se puede cambiar desde estilos.css y el resto
+ desde las plantillas en formato .html.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diagrama.gif
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Implementación
+\end_layout
+
+\begin_layout Subsubsection
+Testeo
 \end_layout
 
 \begin_layout Section
