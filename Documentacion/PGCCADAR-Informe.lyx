@@ -186,7 +186,7 @@ Introducción a la computación de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-Cada ves los problemas a resolver mediante la computación see tornan mas
+Cada ves los problemas a resolver mediante la computación se tornan mas
  complicados con modelos mas complejos, trabajan con grandes volúmenes de
  datos, se requieren tiempos de respuesta mas limitados; así como otro tipo
  de requerimientos.
@@ -220,7 +220,6 @@ a.
 Existe una diversa gama de arquitecturas de computación paralela como puede
  ser arquitecturas de procesadores paralelos con memoria compartida o no
  ; o hasta cluster de computadores intercomunicados por una fastehtrnet.
- Profundisaremos
 \end_layout
 
 \begin_layout Subsection
@@ -635,7 +634,8 @@ Estructura del documento
 \end_layout
 
 \begin_layout Standard
-En esta sección se describe la estructura del mismo
+En esta sección se describe la estructura del mismo.
+ Para el final
 \end_layout
 
 \begin_layout Section
@@ -2084,7 +2084,11 @@ Actividades del proyecto
 En el marco del proyecto se realizaron un conjunto de actividades específicas,
  abarcando actividades de investigación, estudio, análisis, modelación,
  implementación, etc.
- Se detallarán a continuación...
+ 
+\end_layout
+
+\begin_layout Subsection
+Estudio del estado del arte.
 \end_layout
 
 \begin_layout Subsection
