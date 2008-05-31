@@ -145,7 +145,7 @@ Proceso de test y metodología de trabajo.
 
 \lang english
 Durante el proceso de testing se aplicaron dos tipos de test.
- Se realizó un test funcional apoyado o complementado con un test exploratorio
+ Se realizó un test funcional apoyado o complementado con un test exploratorio.
 \end_layout
 
 \begin_layout Standard
@@ -218,9 +218,9 @@ Herramientas utilizadas
 En el proceso de test se utilizaron como herramientas la guía de test presentada
 da en este documento así como el conjunto de casos de test.
  Para el registro y de issues se utilizo el grupo de Google creado para
- este proyecto Los grupos de Google tiene la funcionalidad de ingresar y
- mantener issues así como otras funcionalidades útiles, por ejemplo una
- wiki.
+ este proyecto.
+ Los grupos de Google tiene la funcionalidad de ingresar y mantener issues
+ así como otras funcionalidades útiles, por ejemplo una wiki.
  
 \end_layout
 
