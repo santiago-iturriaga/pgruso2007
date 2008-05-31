@@ -660,11 +660,8 @@ En el correr de los últimos años ha crecido la importancia de satisfacer
 El procesamiento paralelo (o computación paralela de alto rendimiento) ha
  ganado terreno y se a vuelto muy importante en la resolución de estos problemas.
  La computación de alto rendimiento se apoya en tecnologías como los clusters,
- supercomputadores y mediante el uso de la computación paralela y distribuida.
-\end_layout
-
-\begin_layout Subsection
-Computación distribuida
+ supercomputadores y mediante el uso de paradigmas de programación paralela
+ y/o distribuida.
 \end_layout
 
 \begin_layout Standard
@@ -706,10 +703,6 @@ Algunas de las ventajas de la computación distribuida son la mejora en el
  los datos no locales.
 \end_layout
 
-\begin_layout Subsection
-Programación paralela
-\end_layout
-
 \begin_layout Standard
 La programación paralela es una técnica de programación basada en la ejecución
  simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
@@ -746,22 +739,15 @@ Esta técnica proporciona ventajas como mayor capacidad de proceso, menor
  de los recursos
 \end_layout
 
-\begin_layout Subsubsection
-Aplicaciones demandantes de recursos
-\end_layout
-
 \begin_layout Standard
 Podemos hacer una división de las aplicaciones que requieren una demanda
  de recursos computacionales importantes de la siguiente manera.
 \end_layout
 
-\begin_layout Paragraph
-Aplicaciones de cálculo intensivas
-\end_layout
-
 \begin_layout Standard
-Son aplicaciones que requieren un alto número de ciclos de máquina, estas
- aplicaciones han impulsado el desarrollo de supercomputadores.
+En primer lugar tenemos las aplicaciones de cálculo intensivas, estas son
+ aplicaciones que requieren un alto número de ciclos de máquina y han impulsado
+ el desarrollo de supercomputadores.
  Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
  en otras áreas como simulación financiera y económica.
  Dependen grandemente de la velocidad y el procesamiento de punto flotantes
@@ -770,156 +756,48 @@ Son aplicaciones que requieren un alto número de ciclos de máquina, estas
 \end_layout
 
 \begin_layout Standard
-Algunos ejemplos son:
-\end_layout
-
-\begin_layout Itemize
-Dinámica de fluidos computacional.
-\end_layout
-
-\begin_layout Itemize
-Simulaciones electromagnéticas.
-\end_layout
-
-\begin_layout Itemize
-Modelado ambiental.
-\end_layout
-
-\begin_layout Itemize
-Dinámica estructural.
-\end_layout
-
-\begin_layout Itemize
-Modelado biológico.
-\end_layout
-
-\begin_layout Itemize
-Dinámica molecular.
-\end_layout
-
-\begin_layout Itemize
-Simulación de redes.
-\end_layout
-
-\begin_layout Itemize
-Modelado financiero y económico.
-\end_layout
-
-\begin_layout Paragraph
-Aplicaciones de almacenamiento masivo
+Algunos ejemplos son aplicaciones apra dinámica de fluidos computacional,
+ simulaciones electromagnéticas, modelado ambiental, dinámica estructural,
+ modelado biológico,dinámica molecular, simulación de redes, modelado financiero
+ y económico.
 \end_layout
 
 \begin_layout Standard
-Dependen de la capacidad para almacenar y procesar grandes cantidades de
- información.
- Requieren de un acceso rápido y seguro a una masa considerable de datos
- almacenados.
+Otro tipo de aplicaciones que con una gran demanda de recursos son las de
+ almacenamiento masivo.
+ Dependen de la capacidad para almacenar y procesar grandes cantidades de
+ información y requieren de un acceso rápido y seguro a una masa considerable
+ de datos almacenados.
  
 \end_layout
 
 \begin_layout Standard
-Algunas de ellas son:
-\end_layout
-
-\begin_layout Itemize
-Análisis de data sísmica.
-\end_layout
-
-\begin_layout Itemize
-Procesamiento de imágenes.
-\end_layout
-
-\begin_layout Itemize
-Minería de datos.
-\end_layout
-
-\begin_layout Itemize
-Análisis estadístico de datos.
-\end_layout
-
-\begin_layout Itemize
-Análisis de mercados.
-\end_layout
-
-\begin_layout Paragraph
-Aplicaciones exigentes comunicacionalmente
+Algunas de ellas son las aplicaciones para análisis de data sísmica, procesamien
+to de imágenes, minería de datos, análisis estadístico de datos, análisis
+ de mercados.
 \end_layout
 
 \begin_layout Standard
-Estas son relativamente nuevas y pueden ser llamadas servicios por demanda.
+Luego seguimos con las aplicaciones exigentes comunicacionalmente.
+ Estas son relativamente nuevas y pueden ser llamadas servicios por demanda.
  Requieren de recursos computacionales conectados por redes con anchos de
  banda considerables.
- 
+ Por ejemplo procesamiento de transacciones en línea, sistemas colaborativos,
+ texto por demanda, video por demanda, imágenes por demanda, simulación
+ por demanda,.Obviamente todas las aplicaciones anteriores dependen en cierto
+ grado de cada uno de los aspectos computacionales mencionados: poder de
+ cómputo, capacidades de almacenamiento y eficientes canales de comunicación,
+ sin embargo las podemos agrupar por su característica dominante.
 \end_layout
 
 \begin_layout Standard
-Ejemplos:
-\end_layout
-
-\begin_layout Itemize
-Procesamiento de transacciones en línea.
-\end_layout
-
-\begin_layout Itemize
-Sistemas colaborativos.
-\end_layout
-
-\begin_layout Itemize
-Texto por demanda.
-\end_layout
-
-\begin_layout Itemize
-Video por demanda.
-\end_layout
-
-\begin_layout Itemize
-Imágenes por demanda.
-\end_layout
-
-\begin_layout Itemize
-Simulación por demanda.
-\end_layout
-
-\begin_layout Standard
-Obviamente todas las aplicaciones anteriores dependen en cierto grado de
- cada uno de los aspectos computacionales mencionados: poder de cómputo,
- capacidades de almacenamiento y eficientes canales de comunicación, sin
- embargo las podemos agrupar por su característica dominante.
-\end_layout
-
-\begin_layout Paragraph
-Sistemas de sistemas
-\end_layout
-
-\begin_layout Standard
-Las aplicaciones en este grupo combinan en forma más compleja las característica
-s anteriores y dependen, en muchos casos, de sistemas computacionales integrados
- diseñados primordialmente para ellas.
- 
-\end_layout
-
-\begin_layout Standard
-Ejemplos:
-\end_layout
-
-\begin_layout Itemize
-Soporte a decisiones corporativas y gubernamentales.
-\end_layout
-
-\begin_layout Itemize
-Control de sistemas a tiempo real.
-\end_layout
-
-\begin_layout Itemize
-Banca electrónica.
-\end_layout
-
-\begin_layout Itemize
-Compras electrónicas.
-\end_layout
-
-\begin_layout Itemize
-Educación.
+Por ultimo tenemos los istemas de sistemas.
+ En este grupo las aplicaciones combinan en forma más compleja las característic
+as anteriores y dependen, en muchos casos, de sistemas computacionales integrado
+s diseñados primordialmente para ellas.
+ En este grupo tenemos las aplicaciones de soporte a decisiones corporativas
+ y gubernamentales, control de sistemas a tiempo real, banca electrónica,
+ compras electrónicas, educación.
 \end_layout
 
 \begin_layout Standard
@@ -971,7 +849,7 @@ n se define cuando se construye la máquina.
 A continuación veremos algunos tipos de diseños de redes de procesadores.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Bus y Ethernet
 \end_layout
 
@@ -998,7 +876,7 @@ Esta arquitectura es fácil y económica de implementar, pero es altamente
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Mallas
 \end_layout
 
@@ -1030,7 +908,7 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Mariposa
 \end_layout
 
@@ -1048,7 +926,7 @@ Estas organizaciones son similares a las mallas pero presentan menor diámetro.
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Árboles binarios
 \end_layout
 
@@ -1059,7 +937,7 @@ Son particularmente útiles en problemas de ordenamiento, multiplicación
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Pirámides
 \end_layout
 
@@ -1077,7 +955,7 @@ Estas redes intentan combinar las ventajas de las mallas y los árboles,
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Hipercubo
 \end_layout
 
@@ -1106,7 +984,7 @@ o los procesadores respectivos de dos hipercubos de dimensión d.
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Omega
 \end_layout
 
@@ -1137,7 +1015,7 @@ La siguiente figura muestra una red omega de 3 etapas que conecta 8 procesadores
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Fibras de interconexión
 \end_layout
 
@@ -1461,12 +1339,9 @@ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
 Dentro de la clasificación de Flynn tenemos la siguientes categorías.
 \end_layout
 
-\begin_layout Subsubsection
-SISD Single instruction stream, single data stream
-\end_layout
-
-\begin_layout Standard
-La mayor parte de computadores seriales son SISD.
+\begin_layout Paragraph
+La primer categoria es SISD Single instruction stream, single data stream.
+ La mayor parte de computadores seriales son SISD.
  Estas tienen un CPU que ejecuta una instrucciones y busca o guarda datos
  en un momento dado.
 \end_layout
@@ -1500,17 +1375,11 @@ FI: Flujo de Instrucciones
 FD: Flujo de Datos
 \end_layout
 
-\begin_layout Subsubsection
-SIMD Single instruction stream, multiple data stream
-\end_layout
-
-\begin_layout Standard
-En esta categoría entraran los arreglos de procesadores.
-\end_layout
-
-\begin_layout Standard
-Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
- operación sobre datos distintos
+\begin_layout Paragraph
+Seguimos con SIMD Single instruction stream, multiple data stream.
+ En esta categoría entraran los arreglos de procesadores.
+ Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
+ operación sobre datos distintos.
 \end_layout
 
 \begin_layout Standard
@@ -1522,17 +1391,11 @@ Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
 
 \end_layout
 
-\begin_layout Subsubsection
-MISD Multiple instruction stream, single data stream
-\end_layout
-
-\begin_layout Standard
-Existen n procesadores, cada uno recibiendo una instrucción diferente y
- operando sobre el mismo flujo de datos.
-\end_layout
-
-\begin_layout Standard
-Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
+\begin_layout Paragraph
+Tambien tenemos la categoria MISD Multiple instruction stream, single data
+ stream donde existen n procesadores, cada uno recibiendo una instrucción
+ diferente y operando sobre el mismo flujo de datos.
+ Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
  de que ciertas MIMD puedan ser usadas de esta forma.
 \end_layout
 
@@ -1545,19 +1408,13 @@ Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
 
 \end_layout
 
-\begin_layout Subsubsection
-MIMD Multiple instruction stream, multiple data stream
-\end_layout
-
-\begin_layout Standard
-La mayoría de los multiprocesadores y multicomputadores pueden ser clasificados
+\begin_layout Paragraph
+La categoria de MIMD Multiple instruction stream, multiple data stream donde
+ la mayoría de los multiprocesadores y multicomputadores pueden ser clasificados
  bajo esta categoría.
  Estos tienen más de un procesador independiente, y cada uno puede ejecutar
  un programa diferente sobre sus propios datos.
-\end_layout
-
-\begin_layout Standard
-Podemos categorizarlos también según como esté organizada su memoria: memoria
+ Podemos categorizarlos también según como esté organizada su memoria: memoria
  compartida o memoria distribuida.
 \end_layout
 
@@ -1570,23 +1427,21 @@ Podemos categorizarlos también según como esté organizada su memoria: memoria
 
 \end_layout
 
-\begin_layout Subsubsection
-SPMD Single program, multiple data
-\end_layout
-
-\begin_layout Standard
-En esta categoría cada procesador ejecuta una copia exacta del mismo programa,
+\begin_layout Paragraph
+Por ultimo la categoria SPMD Single program, multiple data.
+ En esta categoría cada procesador ejecuta una copia exacta del mismo programa,
  pero opera sobre datos diferentes.
- 
-\end_layout
-
-\begin_layout Standard
-Pese a no ser una categoría definida por Flynn es muy usada y puede ser
+ Pese a no ser una categoría definida por Flynn es muy usada y puede ser
  considerada como un caso particular de MIMD.
 \end_layout
 
 \begin_layout Subsection
 Arquitecturas de computación paralela
+\end_layout
+
+\begin_layout Standard
+En esta sección enumeraremos las diferentes arquitecturas que podemos encontrar
+ en cuanto a computaci´n par
 \end_layout
 
 \begin_layout Subsubsection
