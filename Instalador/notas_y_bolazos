@@ -1,0 +1,27 @@
+* hice ssh sin password de marvin a marga para cliente1
+	- eso arreglo el tema del scp, pero sigue sin andar
+* voy a compilar openmpi sin static y con shared en ambos nodos
+	- a ver si lanza la ejecucion en ambos nodos
+	- parece que anda mejor, pero no lanza mas de un nodo
+* con mpich1 anda mejor que con openmpi: graba la salida y el error (que antes dejaba en 0) y ejecuta mas de una vez (aunque siempre con rank 0)
+	- le puse mpiexec en el nodo de computo 
+		(hay que instalar torque tambien)
+	- y mpich le puse?
+* sigue sin andar... voy a probar torque 2.2.1
+-----------------------------
+Finalmente era el openMPI lo que no andaba
+Instale mpiexec en todos los nodos
+Tuve que instalar torque y mpich en los nodos de computo tambien
+
+Cosas para ver:
+- que pasa con mpich2? anda?
+- y si no quiero ejecutar algo mpi? siempre esta mpiexec al principio?
+-----------------------------
+El grupo de un cliente es el grupo primario del usuario linux.
+El usuario fenton podria no tener permisos de borrar un directorio de un cliente. Es necesario que cuando se borra un cliente o un trabajo se haga con el usuario de ese cliente/trabajo en el directorio de repositorio y de sistema.
+-------------------------
+Falta hacer andar la ejecucion con 2 nodos. Primero no me encontraba mpiexec. Ahora no encuentra algo mas... serial? o mpiexec de vuelta? esta compilado estatico asi que no deberia necesitar openmpi en el nodo de computo
+-------------------------
+ssh pg@medusa01 > password
+ssh pg@medusa10 > password
+	password de root? password?
