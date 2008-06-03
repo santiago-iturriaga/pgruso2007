@@ -25,11 +25,11 @@
 ===DOCUMENTAR=========================================================
 
 - Introduccion (PAULO)
-    1.1 Introducción a la computación de alto rendimiento
-    1.3 Objetivos y alcance del proyecto
+    1.1 Introducción a la computación de alto rendimiento (HECHO)
+    1.3 Objetivos y alcance del proyecto (HECHO)
     1.5 Estructura del documento
 
-Capitulo 2 Computación de alto rendimiento: Agrupar y redactar nuevamente (PAULO)
+Capitulo 2 Computación de alto rendimiento: Agrupar y redactar nuevamente (PAULO)(HECHO)
 
 Capitulo 3 Actividades del proyecto
  Hacer
@@ -39,7 +39,7 @@ Capitulo 5 5 Solución desarrollada (Cambiar nombre)
 
  5.2 Interfaz web desarrollada 
 
- 5.3 Testeo de la solución (PAULO) 
+ 5.3 Testeo de la solución (PAULO) (HECHO)
   
 
 Capitulo 6 Caso de estudio
@@ -48,7 +48,7 @@ Capitulo  7 Conclusiones
 
 Capitulo  8 Trabajo futuro
 
-Capitulo  9 Anexos
+Capitulo  9 Anexos (PAULO)(HECHO)
 
 ======================================================================
 
