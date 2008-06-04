@@ -3042,6 +3042,14 @@ a en un ejemplo concreto de problema a resolver.
  (cluster Medusa).
 \end_layout
 
+\begin_layout Standard
+Deployment.
+\end_layout
+
+\begin_layout Standard
+Performance.
+\end_layout
+
 \begin_layout Section
 Conclusiones
 \end_layout
@@ -3063,8 +3071,9 @@ Glosario
 \end_layout
 
 \begin_layout Standard
-Este glosario contiene un conjunto de palabras que apareen en odos los documento
-s resentads y son de caracter importante dentro del contexto del proyecto.
+Este glosario contiene un conjunto de palabras que aparecen en todos los
+ documentos presentados y son de caracter importante dentro del contexto
+ del proyecto.
  El mismo busca aclara el significado de cada palabra contenida.
 \end_layout
 
