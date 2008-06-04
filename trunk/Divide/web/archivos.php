@@ -30,23 +30,23 @@
 	$ppal		= 	$plantilla->load("plantillas/archivos/archivos.html");
 	$body 		=	"";
 	if(isset($_POST["Enviar"])) {
-		if (is_uploaded_file($HTTP_POST_FILES['archivo_']['tmp_name'])) {
+		if (is_uploaded_file($_FILES['archivo_']['tmp_name'])) {
 			//$command = "chown ".USERNAME." ".$HTTP_POST_FILES['archivo_']['tmp_name'];
 			//$rs = ejecutar_servidor($command);
-			$rs = chmod($HTTP_POST_FILES['archivo_']['tmp_name'],0777);
+			$rs = chmod($_FILES['archivo_']['tmp_name'],0777);
 			if(!$rs){
 				error_log($rs);
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
 			}
-			$command = "cp ".$HTTP_POST_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$HTTP_POST_FILES['archivo_']['name'];
+			$command = "cp ".$_FILES['archivo_']['tmp_name']." ".$s->sesion->Directorio->getRuta().'/'.$_FILES['archivo_']['name'];
 			$rs = ejecutar_servidor($command,$usr_linux);
 			if($rs!=""){
 				error_log($rs);
 				$msjerror	= $interfaz->getError(array("codError"=>"D100"));
 			}
 		}
-		if($HTTP_POST_FILES['archivo_']['type'] == 'application/zip'){
-			$res=$s->sesion->Directorio->descomprimir($HTTP_POST_FILES['archivo_']['name'],$usr_linux);
+		if($_FILES['archivo_']['type'] == 'application/zip'){
+			$res=$s->sesion->Directorio->descomprimir($_FILES['archivo_']['name'],$usr_linux);
 			if($res["error"]) $msjerror	= $interfaz->getError($res);
 		}
 
