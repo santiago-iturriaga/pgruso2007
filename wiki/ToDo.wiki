@@ -23,6 +23,9 @@
   * cron [damian]
     
 ===DOCUMENTAR=========================================================
+
+CARATULAS (ITU)
+
 -Resumen
 
 - Introduccion (PAULO)
@@ -55,7 +58,7 @@ Capitulo  8 Trabajo futuro (PAULO)
 
 Capitulo  9 Anexos (PAULO)(HECHO)
 
-Glosario 
+Glosario  (ITU)
 
 Referencias Chequear.
 
