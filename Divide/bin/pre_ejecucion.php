@@ -1,6 +1,5 @@
-#!/usr/bin/php5 -q
+#!/usr/bin/php -q
 <?
-error_log("pre ejecucion");
 	set_include_path(get_include_path().PATH_SEPARATOR.
 					 '../lib');
 	include_once("Conexion.php");

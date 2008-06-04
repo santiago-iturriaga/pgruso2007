@@ -1,4 +1,4 @@
-#!/usr/bin/php5 -q
+#!/usr/bin/php -q
 <?php
 	if(!defined("STDIN")) {
         	define("STDIN", fopen('php://stdin','r'));
