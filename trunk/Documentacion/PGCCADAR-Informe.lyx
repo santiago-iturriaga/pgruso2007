@@ -99,8 +99,8 @@ En el principio de la historia de las computadoras se tenía la idea de que
 
 \begin_layout Standard
 Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
- crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
-toponiendo a trabajar varias computadoras en paralelo con procesadores 16
+ crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamiento
+poniendo a trabajar varias computadoras en paralelo con procesadores 16
  DX4, interconectadas en una red de 10 Mbit Ethernet.
 \end_layout
 
@@ -167,8 +167,8 @@ Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
 La idea es simplemente reunir el poder de cómputo de una serie de nodos
  para proveer alta escalabilidad, poder de cómputo, o construir redundancia
  y de esta manera proveer alta disponibilidad.
- Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
-ss, los cluster utilizan múltiples máquinas para proveer un ambiente más
+ Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidores
+, los cluster utilizan múltiples máquinas para proveer un ambiente más
  poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
 nto sea visible al usuario como una sola unidad, aunque se componga de muchas
  computadoras trabajando en paralelo para el mismo fin.
@@ -223,9 +223,9 @@ Existe una diversa gama de arquitecturas de computación paralela como puede
 \end_layout
 
 \begin_layout Standard
-en el capitulo 2 profundisaremos sobre la computación de alto rendimiento,
- diferenes tipos de arquitecturas y técnicas, y osbre las herramienas y
- paradigmas de programaciónparalela y/o distribuida.
+en el capítulo 2 profundizaremos sobre la computación de alto rendimiento,
+ diferentes tipos de arquitecturas y técnicas, y observaremos las herramientas y
+ paradigmas de programación paralela y/o distribuida.
 \end_layout
 
 \begin_layout Subsection
@@ -756,9 +756,9 @@ En primer lugar tenemos las aplicaciones de cálculo intensivas, estas son
 \end_layout
 
 \begin_layout Standard
-Algunos ejemplos son aplicaciones apra dinámica de fluidos computacional,
+Algunos ejemplos son aplicaciones para dinámica de fluidos computacional,
  simulaciones electromagnéticas, modelado ambiental, dinámica estructural,
- modelado biológico,dinámica molecular, simulación de redes, modelado financiero
+ modelado biológico, dinámica molecular, simulación de redes, modelado financiero
  y económico.
 \end_layout
 
@@ -783,7 +783,7 @@ Luego seguimos con las aplicaciones exigentes comunicacionalmente.
  Requieren de recursos computacionales conectados por redes con anchos de
  banda considerables.
  Por ejemplo procesamiento de transacciones en línea, sistemas colaborativos,
- texto por demanda, video por demanda, imágenes por demanda, simulación
+ texto por demanda, vídeo por demanda, imágenes por demanda, simulación
  por demanda,.Obviamente todas las aplicaciones anteriores dependen en cierto
  grado de cada uno de los aspectos computacionales mencionados: poder de
  cómputo, capacidades de almacenamiento y eficientes canales de comunicación,
@@ -791,7 +791,7 @@ Luego seguimos con las aplicaciones exigentes comunicacionalmente.
 \end_layout
 
 \begin_layout Standard
-Por ultimo tenemos los istemas de sistemas.
+Por ultimo tenemos los sistemas de sistemas.
  En este grupo las aplicaciones combinan en forma más compleja las característic
 as anteriores y dependen, en muchos casos, de sistemas computacionales integrado
 s diseñados primordialmente para ellas.
@@ -1340,7 +1340,7 @@ Dentro de la clasificación de Flynn tenemos la siguientes categorías.
 \end_layout
 
 \begin_layout Paragraph
-La primer categoria es SISD Single instruction stream, single data stream.
+La primer categoría es SISD Single instruction stream, single data stream.
  La mayor parte de computadores seriales son SISD.
  Estas tienen un CPU que ejecuta una instrucciones y busca o guarda datos
  en un momento dado.
@@ -1392,7 +1392,7 @@ Seguimos con SIMD Single instruction stream, multiple data stream.
 \end_layout
 
 \begin_layout Paragraph
-Tambien tenemos la categoria MISD Multiple instruction stream, single data
+Tambien tenemos la categoría MISD Multiple instruction stream, single data
  stream donde existen n procesadores, cada uno recibiendo una instrucción
  diferente y operando sobre el mismo flujo de datos.
  Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
@@ -1409,7 +1409,7 @@ Tambien tenemos la categoria MISD Multiple instruction stream, single data
 \end_layout
 
 \begin_layout Paragraph
-La categoria de MIMD Multiple instruction stream, multiple data stream donde
+La categoría de MIMD Multiple instruction stream, multiple data stream donde
  la mayoría de los multiprocesadores y multicomputadores pueden ser clasificados
  bajo esta categoría.
  Estos tienen más de un procesador independiente, y cada uno puede ejecutar
@@ -1428,7 +1428,7 @@ La categoria de MIMD Multiple instruction stream, multiple data stream donde
 \end_layout
 
 \begin_layout Paragraph
-Por ultimo la categoria SPMD Single program, multiple data.
+Por ultimo la categoría SPMD Single program, multiple data.
  En esta categoría cada procesador ejecuta una copia exacta del mismo programa,
  pero opera sobre datos diferentes.
  Pese a no ser una categoría definida por Flynn es muy usada y puede ser
@@ -1441,7 +1441,7 @@ Arquitecturas de computación paralela
 
 \begin_layout Standard
 En esta sección enumeraremos las diferentes arquitecturas que podemos encontrar
- en cuanto a computaci´n par
+ en cuanto a computación par
 \end_layout
 
 \begin_layout Subsubsection
@@ -1611,7 +1611,7 @@ La Tera MTA (multithreaded architecture) es la primera de estas máquinas
 \end_layout
 
 \begin_layout Standard
-Cada instrucción de 64-bits codifican 3 operaciones(una de memoria y dos
+Cada instrucción de 64-bits codifican 3 operaciones (una de memoria y dos
  que pueden ser aritméticas o de control).
  Cuenta con un sistema operativo de versión distribuida completamente simétrica
  de UNIX.
@@ -1800,7 +1800,7 @@ MPI: Message Passing Interface
 MPI es una biblioteca que provee funcionalidades para la comunicación de
  procesos mediante el pasaje de mensajes.
  Esta fue creada por científicos desarrolladores de software y aplicaciones
- bajo el objetivo de desarrollar un estándar portable y eficiente para programac
+ bajo el objetivo de desarrollar un estándar portable y eficiente para programación
 ion paralela.
 \end_layout
 
@@ -1818,7 +1818,7 @@ El modelo de programación es SPMD el cual provee de 125 funciones de las
 \end_layout
 
 \begin_layout Standard
-El numero de tareas es fijado en tiempo de pre-ejecucion y también permite
+El numero de tareas es fijado en tiempo de pre-ejecución y también permite
  agrupamiento de procesos e incluye contextos de comunicación entre grupos
  de procesos.
 \end_layout
@@ -1998,7 +1998,7 @@ La apariencia del sitio también podía variar durante la implementación,
  .css orientados a la forma en que estos resultados se muestran.
  Para esto utilizamos plantillas que son cargadas en cada php para luego
  ser desplegadas en pantalla.
- En definitiva obtuvimos una version moderada del patrón model view controller.
+ En definitiva obtuvimos una versión moderada del patrón model view controller.
  Si en algún momento se deseara rediseñar el sitio manteniendo el funcionamiento
  del mismo, la mayor parte se puede cambiar desde estilos.css y el resto
  desde las plantillas en formato .html.
