@@ -99,8 +99,8 @@ En el principio de la historia de las computadoras se tenía la idea de que
 
 \begin_layout Standard
 Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
- crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamiento
-poniendo a trabajar varias computadoras en paralelo con procesadores 16
+ crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
+toponiendo a trabajar varias computadoras en paralelo con procesadores 16
  DX4, interconectadas en una red de 10 Mbit Ethernet.
 \end_layout
 
@@ -167,8 +167,8 @@ Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
 La idea es simplemente reunir el poder de cómputo de una serie de nodos
  para proveer alta escalabilidad, poder de cómputo, o construir redundancia
  y de esta manera proveer alta disponibilidad.
- Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidores
-, los cluster utilizan múltiples máquinas para proveer un ambiente más
+ Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
+s, los cluster utilizan múltiples máquinas para proveer un ambiente más
  poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
 nto sea visible al usuario como una sola unidad, aunque se componga de muchas
  computadoras trabajando en paralelo para el mismo fin.
@@ -224,8 +224,8 @@ Existe una diversa gama de arquitecturas de computación paralela como puede
 
 \begin_layout Standard
 en el capítulo 2 profundizaremos sobre la computación de alto rendimiento,
- diferentes tipos de arquitecturas y técnicas, y observaremos las herramientas y
- paradigmas de programación paralela y/o distribuida.
+ diferentes tipos de arquitecturas y técnicas, y observaremos las herramientas
+ y paradigmas de programación paralela y/o distribuida.
 \end_layout
 
 \begin_layout Subsection
@@ -352,7 +352,7 @@ En el CeCal se han llevado a cabo en los últimos años una gran cantidad
 
 \begin_layout Paragraph
 Algoritmos genéticos paralelos y su aplicación al diseño de redes de comunicacio
-nes confiables (2004)
+nes confiables (2004).
 \end_layout
 
 \begin_layout Standard
@@ -460,7 +460,7 @@ Se presenta una estrategia secuencial para el cálculo de la matriz de rigidez
 
 \begin_layout Paragraph
 Algoritmos genéticos paralelos aplicados a la resolución de problemas de
- asignación de frecuencias en redes celulares (2006)
+ asignación de frecuencias en redes celulares (2006)..
 \end_layout
 
 \begin_layout Standard
@@ -493,7 +493,7 @@ En este trabajo se presenta una investigación sobre algoritmos genéticos,
 \begin_layout Paragraph
 Una versión paralela del algoritmo evolutivo para optimización multiobjetivo
  NSGA-II y su aplicación al diseño de redes de comunicaciones confiables
- (2003)
+ (2003).
 \end_layout
 
 \begin_layout Standard
@@ -530,7 +530,7 @@ Por parte de los estudiantes podemos mencionar como ejemplo algunos de los
 \end_layout
 
 \begin_layout Paragraph
-Proyecto MPI.net (2003)
+Proyecto MPI.net (2003).
 \end_layout
 
 \begin_layout Standard
@@ -544,7 +544,7 @@ El proyecto propone la adaptación de la biblioteca MPI para su utilización
 \end_layout
 
 \begin_layout Paragraph
-Proyecto algoritmos genéticos increméntales (2003)
+Proyecto algoritmos genéticos increméntales (2003).
 \end_layout
 
 \begin_layout Standard
@@ -687,8 +687,7 @@ Esta ha sido diseñada para resolver problemas demasiado grandes para cualquier
 
 \begin_layout Standard
 Exiten varios grados de distribución: de hardware y procesamiento, de datos
- y de control.
- (detallar)
+ y de control como veremos mas adelante.
 \end_layout
 
 \begin_layout Standard
@@ -758,8 +757,8 @@ En primer lugar tenemos las aplicaciones de cálculo intensivas, estas son
 \begin_layout Standard
 Algunos ejemplos son aplicaciones para dinámica de fluidos computacional,
  simulaciones electromagnéticas, modelado ambiental, dinámica estructural,
- modelado biológico, dinámica molecular, simulación de redes, modelado financiero
- y económico.
+ modelado biológico, dinámica molecular, simulación de redes, modelado financier
+o y económico.
 \end_layout
 
 \begin_layout Standard
@@ -850,7 +849,7 @@ A continuación veremos algunos tipos de diseños de redes de procesadores.
 \end_layout
 
 \begin_layout Paragraph
-Bus y Ethernet
+Bus y Ethernet.
 \end_layout
 
 \begin_layout Standard
@@ -877,7 +876,7 @@ Esta arquitectura es fácil y económica de implementar, pero es altamente
 \end_layout
 
 \begin_layout Paragraph
-Mallas
+Mallas.
 \end_layout
 
 \begin_layout Standard
@@ -909,7 +908,7 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
 \end_layout
 
 \begin_layout Paragraph
-Mariposa
+Mariposa.
 \end_layout
 
 \begin_layout Standard
@@ -927,7 +926,7 @@ Estas organizaciones son similares a las mallas pero presentan menor diámetro.
 \end_layout
 
 \begin_layout Paragraph
-Árboles binarios
+Árboles binarios.
 \end_layout
 
 \begin_layout Standard
@@ -938,7 +937,7 @@ Son particularmente útiles en problemas de ordenamiento, multiplicación
 \end_layout
 
 \begin_layout Paragraph
-Pirámides
+Pirámides.
 \end_layout
 
 \begin_layout Standard
@@ -956,7 +955,7 @@ Estas redes intentan combinar las ventajas de las mallas y los árboles,
 \end_layout
 
 \begin_layout Paragraph
-Hipercubo
+Hipercubo.
 \end_layout
 
 \begin_layout Standard
@@ -985,7 +984,7 @@ o los procesadores respectivos de dos hipercubos de dimensión d.
 \end_layout
 
 \begin_layout Paragraph
-Omega
+Omega.
 \end_layout
 
 \begin_layout Standard
@@ -1043,32 +1042,35 @@ El diseño de algoritmos paralelos involucra cuatro etapas, las cuales se
 \end_layout
 
 \begin_layout Standard
-Partición: el cómputo y los datos sobre los cuales se opera se descomponen
+Primero comenzamos por la etapa de Partición.
+ En esta etapa el cómputo y los datos sobre los cuales se opera se descomponen
  en tareas.
  Se ignoran aspectos como el número de procesadores de la máquina a usar
  y se concentra la atención en explotar oportunidades de paralelismo.
 \end_layout
 
 \begin_layout Standard
-Comunicación: se determina la comunicación para coordinar las tareas.
- Se definen estructuras y algoritmos de comunicación.
+Seguimos por la etapa de Comunicación donde se determina la comunicación
+ para coordinar las tareas; se definen estructuras y algoritmos de comunicación.
 \end_layout
 
 \begin_layout Standard
-Agrupación: se evalúa en términos de eficiencia y costos de implementación
- a las dos etapas anteriores.
+Luedo la etapa de agrupación.
+ Aqui se evalúa en términos de eficiencia y costos de implementación a las
+ dos etapas anteriores.
  Se agrupan tareas pequeñas en tareas más grandes.
 \end_layout
 
 \begin_layout Standard
-Asignación: cada tarea es asignada a un procesador tratando de maximizar
- la utilización de los procesadores y de reducir el costo de comunicación.
+Por ultimo tenemos la estapa de asignación.
+ Cada tarea es asignada a un procesador tratando de maximizar la utilización
+ de los procesadores y de reducir el costo de comunicación.
  La asignación puede ser estática (se establece antes de la ejecución del
  programa) o en tiempo de ejecución mediante algoritmos de balanceo de carga.
 \end_layout
 
 \begin_layout Subsubsection
-Partición
+Partición.
 \end_layout
 
 \begin_layout Standard
@@ -1339,7 +1341,7 @@ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
 Dentro de la clasificación de Flynn tenemos la siguientes categorías.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La primer categoría es SISD Single instruction stream, single data stream.
  La mayor parte de computadores seriales son SISD.
  Estas tienen un CPU que ejecuta una instrucciones y busca o guarda datos
@@ -1375,7 +1377,7 @@ FI: Flujo de Instrucciones
 FD: Flujo de Datos
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Seguimos con SIMD Single instruction stream, multiple data stream.
  En esta categoría entraran los arreglos de procesadores.
  Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
@@ -1391,7 +1393,7 @@ Seguimos con SIMD Single instruction stream, multiple data stream.
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Tambien tenemos la categoría MISD Multiple instruction stream, single data
  stream donde existen n procesadores, cada uno recibiendo una instrucción
  diferente y operando sobre el mismo flujo de datos.
@@ -1408,7 +1410,7 @@ Tambien tenemos la categoría MISD Multiple instruction stream, single data
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 La categoría de MIMD Multiple instruction stream, multiple data stream donde
  la mayoría de los multiprocesadores y multicomputadores pueden ser clasificados
  bajo esta categoría.
@@ -1427,7 +1429,7 @@ La categoría de MIMD Multiple instruction stream, multiple data stream donde
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Por ultimo la categoría SPMD Single program, multiple data.
  En esta categoría cada procesador ejecuta una copia exacta del mismo programa,
  pero opera sobre datos diferentes.
@@ -1454,7 +1456,7 @@ Una máquina cuyo conjunto de instrucciones permite operaciones tanto sobre
 \end_layout
 
 \begin_layout Paragraph
-Procesador Vectorial Pipelined
+Procesador Vectorial Pipelined.
 \end_layout
 
 \begin_layout Standard
@@ -1481,7 +1483,7 @@ En esta categoría tenemos máquinas como la Cray-1 y la Cyber-205.
 \end_layout
 
 \begin_layout Paragraph
-Arreglos de Procesadores
+Arreglos de Procesadores.
 \end_layout
 
 \begin_layout Standard
@@ -1525,7 +1527,7 @@ ente ya que a partir de cierto número y dependiendo de la aplicación, el
 \end_layout
 
 \begin_layout Paragraph
-UMA: Multiprocesadores de Acceso Uniforme a Memoria
+UMA: Multiprocesadores de Acceso Uniforme a Memoria.
 \end_layout
 
 \begin_layout Standard
@@ -1541,7 +1543,7 @@ Encore Multimax y Sequent Symetry S81 son ejemplos comerciales de este tipo
 \end_layout
 
 \begin_layout Paragraph
-NUMA: Multiprocesadores de Acceso No-Uniforme a Memoria
+NUMA: Multiprocesadores de Acceso No-Uniforme a Memoria.
 \end_layout
 
 \begin_layout Standard
@@ -1683,7 +1685,7 @@ Es necesario proveer un sistema para el manejo del cluster, el cual se encargue
 \end_layout
 
 \begin_layout Paragraph
-Cluster de alto rendimiento
+Cluster de alto rendimiento.
 \end_layout
 
 \begin_layout Standard
@@ -1708,7 +1710,7 @@ ables, ya que el método con el que los clusters agilizan el procesamiento
 \end_layout
 
 \begin_layout Paragraph
-Cluster de alta disponibilidad
+Cluster de alta disponibilidad.
 \end_layout
 
 \begin_layout Standard
@@ -1724,7 +1726,7 @@ Podemos dividirlo en dos clases: de alta disponibilidad de infraestructura
 \end_layout
 
 \begin_layout Paragraph
-Cluster de balanceo de carga
+Cluster de balanceo de carga.
 \end_layout
 
 \begin_layout Standard
@@ -1736,7 +1738,7 @@ Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
 \end_layout
 
 \begin_layout Paragraph
-Escalabilidad
+Escalabilidad.
 \end_layout
 
 \begin_layout Standard
@@ -1800,8 +1802,8 @@ MPI: Message Passing Interface
 MPI es una biblioteca que provee funcionalidades para la comunicación de
  procesos mediante el pasaje de mensajes.
  Esta fue creada por científicos desarrolladores de software y aplicaciones
- bajo el objetivo de desarrollar un estándar portable y eficiente para programación
-ion paralela.
+ bajo el objetivo de desarrollar un estándar portable y eficiente para programac
+iónion paralela.
 \end_layout
 
 \begin_layout Standard
@@ -2817,7 +2819,7 @@ Casos de estudio
 \end_layout
 
 \begin_layout Paragraph
-Oregon State University, Laboratorio de física
+Oregon State University, Laboratorio de física.
 \end_layout
 
 \begin_layout Standard
@@ -2836,7 +2838,7 @@ Estas computadoras cuentan con compiladores Intel para C, C++ y Fortran
 \end_layout
 
 \begin_layout Paragraph
-University of Glasgow
+University of Glasgow.
 \end_layout
 
 \begin_layout Standard
@@ -2849,7 +2851,7 @@ El cluster utiliza Torque y Maui sobre Redhat Enterprise GNU/Linux 3.
 \end_layout
 
 \begin_layout Paragraph
-University of Heidelberg
+University of Heidelberg.
 \end_layout
 
 \begin_layout Standard
@@ -2873,7 +2875,7 @@ Como base del cluster se utiliza un sistema Debian GNU/Linux.
 \end_layout
 
 \begin_layout Paragraph
-Stony Brook University
+Stony Brook University.
 \end_layout
 
 \begin_layout Standard
@@ -2885,7 +2887,7 @@ El cluster tiene 235 nodos de procesamiento dual (470 procesadores individuales)
 \end_layout
 
 \begin_layout Paragraph
-Dansk Center for Scientific Computing
+Dansk Center for Scientific Computing.
 \end_layout
 
 \begin_layout Standard
@@ -2936,7 +2938,7 @@ Si bien existe un buen soporte por parte de la comunidad de usuarios de
 \end_layout
 
 \begin_layout Section
-Solución desarrollada
+Cluster de Computadores de Alto Desempeño con Acceso Remoto.
 \end_layout
 
 \begin_layout Standard
@@ -3011,7 +3013,7 @@ El test exploratorio es un proceso simultáneo de exploración y aprendizaje
 \end_layout
 
 \begin_layout Standard
-Duarante el test exploratotio se generaron un serie de casos de test
+Duarante el test exploratorio se generaron un serie de casos de test
 \lang english
  los cuales apuntan a cubrir los requerimientos funcionales principales
  del cluster.
@@ -3026,7 +3028,7 @@ Duarante el test exploratotio se generaron un serie de casos de test
 
 \lang english
 Las herramientas utilizadas en el testing fueron la guía de test y las funcional
-idades probisas por los Google Groups como son reguistro issues y wikis.
+idades probistas por los Google Groups como son reguistro issues y wikis.
 \end_layout
 
 \begin_layout Section
@@ -3072,7 +3074,7 @@ Manual de instalación
 
 \begin_layout Standard
 El manual de instalación es na guia para instalar las tecnologías propuestas,
- instalación de Fentony creación de ambiente inicial del cluster.
+ instalación de Fenton y creación de ambiente inicial del cluster.
 \end_layout
 
 \begin_layout Subsection*
