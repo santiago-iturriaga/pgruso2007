@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -52,8 +52,10 @@ Universidad de la República
 
 \begin_layout Author
 Santiago Iturriaga, Paulo Maya, Damián Pintos
-\newline
-Tutor, Supervisor?
+\end_layout
+
+\begin_layout Date
+
 \end_layout
 
 \begin_layout Abstract
