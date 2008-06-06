@@ -341,6 +341,12 @@ Al igual que en el directorio anterior, debemos asegurarnos que el grupo del dir
 
 El usuario y el grupo \mbox{\texttt{fenton}} deben existir en todos los nodos del cluster. Y ambos directorios tambi\'{e}n deben ser accesibles desde cualquier nodo del cluster.
 
+Debido a que el repositorio del sistema y la web (como veremos mas adelante) se encuentran en el directorio home del usuario \texttt{fenton}, debemos verificar que cualquier usuario tenga acceso de lectura al directorio \mbox{\texttt{/home/fenton}}. 
+
+\begin{verbatim}
+fenton:$ chmod a+r+x fenton
+\end{verbatim}
+
 \subsection{Acceso SSH con autenticaci\'{o}n RSA}
 
 En el nodo de ejecuci\'{o}n de la aplicaci\'{o}n web, debe ser posible realizar un SSH sin password desde el usuario que ejecuta la aplicaci\'{o}n web (el usuario configurado en el servidor Apache) al usuario del sistema (por defecto \mbox{\texttt{fenton}}) en el nodo maestro. 
@@ -368,7 +374,7 @@ Finalmente debemos agregar a las claves publicas del usuario \mbox{\texttt{fento
 fenton:$ mkdir -p /home/fenton/.ssh
 root:# cd /home/fenton/.ssh
 root:# cat /home/www-data/.ssh/id_dsa.pub > authorized_keys2
-root:# chown fenton.fenton /home/fenton/.ssh/authorized\_keys2
+root:# chown fenton.fenton /home/fenton/.ssh/authorized_keys2
 \end{verbatim}
 
 Es necesario probar al menos una vez el acceso SSH al nodo maestro para agregar el nodo maestro a los hosts conocidos de SSH. Suponiendo que el servidor apache se encuentra en el nodo maestro ejecutamos:
@@ -405,6 +411,12 @@ psql=# alter user fentondb password 'fentondb';
 Para instalar la aplicaci\'{o}n web simplemente debemos copiar el directorio \mbox{\texttt{web/}} a la ubicaci\'{o}n deseada. Por ejemplo \mbox{\texttt{/home/fenton/web}}, y luego crear un alias para la aplicaci\'{o}n. En la mayor\'{i}a de los casos basta con copiar el archivo \mbox{\texttt{apache/fenton.conf}} a \mbox{\texttt{/etc/apache2/conf.d}}.
 
 La aplicaci\'{o}n web debe ser accesible desde cualquier nodo del cluster. Esto es necesario debido a que los scripts de prologo y epilogo (ver siguiente paso) requieren ejecutar scripts PHP de la aplicaci\'{o}n.
+
+Es necesario que el sistema cuente con un interprete de linea de comando de PHP y que este se encuentre en \mbox{\texttt{/usr/bin/php}}. Existen varios scripts PHP que se encuentran en \mbox{\texttt{/home/fenton/web/bin}} y que esperan encontrar el interprete en la hubicaci\'{o}n mencionada. En caso de que el inteprete de PHP no se encuentre en esa hubicaci\'{o}n o tenga otro nombre (p.ej. \mbox{\texttt{/usr/bin/php5}}) puede solucionarse facilmente creando un link al nombre deseado. En nuestro ejemplo ser\'{i}a ejecutando:
+
+\begin{verbatim}
+ln -s /usr/bin/php5 /usr/bin/php
+\end{verbatim}
 
 Por \'{u}ltimo debemos configurar el script de control de cuota para que ejecute periodicamente en el nodo maestro. Para esto podemos utilizar el comando cron de Linux. 
 
