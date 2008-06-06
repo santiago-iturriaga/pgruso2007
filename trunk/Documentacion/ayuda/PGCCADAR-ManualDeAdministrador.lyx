@@ -39,31 +39,29 @@
 \begin_body
 
 \begin_layout Title
-Fenton - Manual de Usuario Administrador
+Manual de usuario administrador
+\newline
+Cluster de Computadores de Alto Desempeño con Acceso Remoto
+ (CCADAR)
+\newline
+Facultad de Ingeniería
+\newline
+Universidad de la República
 \end_layout
 
 \begin_layout Author
-Damián Pintos - Santiago Iturriaga - Paulo Maya
+Santiago Iturriaga, Paulo Maya, Damián Pintos
+\end_layout
+
+\begin_layout Date
+
 \end_layout
 
 \begin_layout Standard
-
 \newpage
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset LatexCommand tableofcontents
-
 \end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
 \newpage
-
 \end_layout
 
 \begin_layout Section
