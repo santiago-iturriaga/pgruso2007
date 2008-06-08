@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -1940,13 +1940,23 @@ Actividades del proyecto
 
 \begin_layout Standard
 En el marco del proyecto se realizaron un conjunto de actividades específicas,
- abarcando actividades de investigación, estudio, análisis, modelación,
- implementación, etc.
+ abarcando actividades de investigación, estudio del arte, análisis, modelación,
+ implementación, ensayo, divulgación de resultados y redacción del presente
+ informe.
+ Las mismas se detallan a continuación.
  
 \end_layout
 
 \begin_layout Subsection
-Estudio del estado del arte.
+Investigacion y estudio del estado del arte.
+\end_layout
+
+\begin_layout Standard
+Unos de los principales objetivos del proyecto es la investigacion y estudio
+ del estdo del arte a lo que refiere a la computacion de alta performance.
+ Esta actividad abarco auto estudio por parte de los integrantes del proyecto
+ y el curco de la amteria High Performance Computing dictada por el grupo
+ Cecal del insituto de computacion de facultad de igenieria.
 \end_layout
 
 \begin_layout Subsection
@@ -1954,28 +1964,71 @@ Estudio de tecnologías existentes.
 \end_layout
 
 \begin_layout Standard
-ver parte 4
+Paralelo a la investigacion y estudio se llevo a cabo un relevamiento de
+ paquetes de software de base (sistemas operativos, bibliotecas, monitores
+ de desempeño, etc.) que permitieran el desarrollo y la ejecución de programas
+ paralelos y distribuidos.
+\end_layout
+
+\begin_layout Standard
+De esta actividad surgio la propuesta de herramientas que permitieran la
+ implantacion y administracion del cluster de alto desempeno con acceso
+ remoto.
+\end_layout
+
+\begin_layout Subsection
+Relevamiento de requerimientos y determinacion del alcance del proyecto.
+\end_layout
+
+\begin_layout Standard
+Durante las primeras etapas del proyecto se realizaron reunuines con los
+ tutores para relevar los principales requerimientos, identificar los posibles
+ problemas y determianr el alcance del proyecto que permitiera cumplir con
+ los objetivos del proyecto.
 \end_layout
 
 \begin_layout Subsection
 Implementación de la interfaz web
 \end_layout
 
-\begin_layout Subsubsection
-Análisis de requerimientos
-\end_layout
-
-\begin_layout Subsubsection
-Diseño e implementación de la solución
+\begin_layout Standard
+Dentro de los alcances del proyecto se encontraba la implementacion de una
+ interfaz web que permitiera el acceso remoto al cluster.
+ Esta interfez deberia contener elementos de suabilidad, funcionalidades
+ de administracion y reportes del cluster para los administradores del mismo.
 \end_layout
 
 \begin_layout Standard
+Esta actividad se dividio en varias etapas.
+ Primero una etapa de relevaminetdo de requerimientos donde semantubieron
+ reuniones con los tutores y especialistas en el area de usabilidad apra
+ interfases web.
+\end_layout
+
+\begin_layout Standard
+Se llevo a cavo una etapa de disno de la interfaz web donde se tubieron
+ en cuenta conocimientos previos por parte de los integrantes del proyecto
+ asi como la curva de aprendisaje de distintas herramientas de dessarrrllo.
+\end_layout
+
+\begin_layout Standard
+Luego de la etapa de diseno se realio la etpa de desarrollo la cual se hizo
+ en forma iterativa e incremental.
+ Se fijaban pequenas iteraciones en las cuales se iban incrementando y/o
+ mejorando las funcionalidades de la interfaz web.
+\end_layout
+
+\begin_layout Paragraph*
+Diseño e implementación de la solución 
+\end_layout
+
+\begin_layout Paragraph*
 Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
  así como la curva de aprendizaje de las distintas herramientas para realizar
  aplicaciones web, decidimos utilizar php con eclipse como ide.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph*
 El motor de base de datos podía ser mysql o posgresql y la decisión entre
  uno de los dos no la podíamos tomar hasta tiempo después de iniciada la
  etapa de implementación, por lo tanto se pensó desde un principio en un
@@ -1987,7 +2040,7 @@ El motor de base de datos podía ser mysql o posgresql y la decisión entre
  sería necesario reimplementar el módulo y repetir la etapa de testeo.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph*
 La apariencia del sitio también podía variar durante la implementación,
  por lo tanto además de separar la lógica de la aplicación de la capa de
  presentación, esta última se dividió en archivos .php que reciben los pedidos
@@ -2001,7 +2054,7 @@ La apariencia del sitio también podía variar durante la implementación,
  desde las plantillas en formato .html.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph*
 \begin_inset Graphics
 	filename diagrama.gif
 	scale 25
@@ -2011,8 +2064,19 @@ La apariencia del sitio también podía variar durante la implementación,
 
 \end_layout
 
-\begin_layout Subsubsection
-Testeo
+\begin_layout Subsection
+Testo de la solucion
+\end_layout
+
+\begin_layout Standard
+Una ves implantado el cluster con las tecnologias selecionadas y terminado
+ el desarrollo de la interfaz web se procedio con la etapa de testing.
+ En esta estapa se probo los principales requerimientos funcionales.
+\end_layout
+
+\begin_layout Standard
+Por ultimo otras actividades realizadas fueron la realizacion de documentacion
+ final como este informe y manuales; y la presentacion final.
 \end_layout
 
 \begin_layout Section
@@ -3049,16 +3113,109 @@ Performance.
 Conclusiones
 \end_layout
 
+\begin_layout Standard
+Este proyecto nos permitió como estudiantes explorar mas a fondo el mundo
+ de la Computación de Alta Performance que hasta el momento no conociamos
+ en su mayoria.
+ Se realizaron etapas de estudio del tema e investigación de tecnologias.
+ Como parte del estudio del tema se curso la materia HPC de la catedra del
+ CeCal del instituto de computación de Facultad de Ingenieria, el que nos
+ sirvio para conocer el tema y todos los concetos relacionados a la computación
+ de alto renedimiento.
+\end_layout
+
+\begin_layout Standard
+Estamos convencidos que la computación de alto renedimiento se a vuelto
+ muy importante en la resolución de estos problemas con un alto grado de
+ complegidad como se menciono anteriormente en capitulos de este informe.
+\end_layout
+
+\begin_layout Standard
+Sobre el dessarrollo del proyecto, la etapa de investigación de tecnologias
+ fue muy importante y positiva para este.
+ No solo nos sirvio para conocer algnas de las mas importantes herramientas
+ open-source del mercado en cuanto a la implementación de clusters sino
+ también para aprender sus caracteristicas, funcionalidades y limitantes
+ para identificar los requerimientos que una alicación de este tipo debe
+ tener.
+ En esta etapa pudimos identificar una herramienta como Torque que potenciada
+ con Maui y Gold nos permitia resolver casi en su totalidad uno de los objetivos
+ mas importantes del proyecto como ser la implementación de un cluster de
+ alto renedimiento cn acceso remoto.
+ Esto nos permitio reducir los tiempos del proyecto ya que si no ubiesemos
+ realizado esta etapa tendriamos que haber tenido que dessarrollar una aplicació
+n con las funcionalidades brindadas por Torque, Maui y Gold.
+ 
+\end_layout
+
+\begin_layout Standard
+Creemos que la investigación realizada en este proyecto fue muy positiva
+ por que pudimos encontrar una solución que nos permite alcazar los obetivos
+ del proyecto y abrir caminos para nuevas investigaciones y trabajos.
+ Nos permitio comprobar que la implantación de un cluster de alto desempeño
+ con n alto nivel de prestaciones, scalable y performante es posible sin
+ necesida de muchos recursos.
+\end_layout
+
+\begin_layout Standard
+FALTAN CONCLUSIONES DE PERFORMANCE
+\end_layout
+
 \begin_layout Section
 Trabajo futuro
 \end_layout
 
-\begin_layout Section
-Anexos
+\begin_layout Standard
+Como mencionamos en el capitulo anterior este proyecto deja plantedo algunos
+ trabajos a futuro como continuación de este proyecto o para proyectos paralelos
+ que seran palnteados en este capitulo.
 \end_layout
 
 \begin_layout Standard
-Aquí se hace referencia a los documentos (no se incluye el contenido).
+Como continuación de este proyecto podriamos realizar y/o investigar mas
+ a fondo alguans funcionalidades que fueron recortadas del alcance dados
+ los tiempos delproyecto que mencionaremos a continuación.
+\end_layout
+
+\begin_layout Itemize
+Integración de Gold con Torque para potenciar el manejo del uso de recursos
+ en clusters de alto desempeño.
+\end_layout
+
+\begin_layout Itemize
+Explorar mas a fndo la utilisación de la biblioteca PVM que no esta integrada
+ con Torque.
+\end_layout
+
+\begin_layout Itemize
+Evaluación de diferentes tunning y confguraciones de Torque y Maui para
+ evaluar y mejorar la performance.
+\end_layout
+
+\begin_layout Itemize
+Mejorar la integracion de la interfaz web con Ganglia para el procesamiento
+ de datos provistos por el mismo.
+\end_layout
+
+\begin_layout Itemize
+Mejorar los reportes para los usuarios administradores para el analisis
+ de datos y uso del sistema que son provistospor Torque.
+\end_layout
+
+\begin_layout Itemize
+Aumentar la caracteristicas y opciones de monitoreo para chequeo preventivo.
+ Hoy en día solo se chequea espacio en disco.
+ En este punto se podría evaluar una integración co Gold.
+\end_layout
+
+\begin_layout Standard
+Se podria ejecutar proyectos a partir de la investigación y relevamiento
+ de tecnologiasx realizad.
+ De esta forma podríamos evaluar y conocer otras alternativas descartadas.
+\end_layout
+
+\begin_layout Section
+Anexos
 \end_layout
 
 \begin_layout Subsection*
