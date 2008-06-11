@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -549,6 +549,105 @@ El proyecto plantea el estudio, diseño e implementación del modelo de algoritm
  genéticos increméntales.
  El modelo fue aplicado a la resolución de un problema de optimización combinado
 ria en el área de diseño de redes de comunicaciones confiables.
+\end_layout
+
+\begin_layout Subsection
+Actividades del proyecto
+\end_layout
+
+\begin_layout Standard
+En el marco del proyecto se realizaron un conjunto de actividades específicas,
+ abarcando actividades de investigación, estudio del arte, análisis, modelación,
+ implementación, ensayo, divulgación de resultados y redacción del presente
+ informe.
+ Las mismas se detallan a continuación.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Investigacion y estudio del estado del arte.
+\end_layout
+
+\begin_layout Standard
+Unos de los principales objetivos del proyecto es la investigacion y estudio
+ del estdo del arte a lo que refiere a la computacion de alta performance.
+ Esta actividad abarco auto estudio por parte de los integrantes del proyecto
+ y el curco de la amteria High Performance Computing dictada por el grupo
+ Cecal del insituto de computacion de facultad de igenieria.
+\end_layout
+
+\begin_layout Paragraph
+Estudio de tecnologías existentes.
+\end_layout
+
+\begin_layout Standard
+Paralelo a la investigacion y estudio se llevo a cabo un relevamiento de
+ paquetes de software de base (sistemas operativos, bibliotecas, monitores
+ de desempeño, etc.) que permitieran el desarrollo y la ejecución de programas
+ paralelos y distribuidos.
+\end_layout
+
+\begin_layout Standard
+De esta actividad surgio la propuesta de herramientas que permitieran la
+ implantacion y administracion del cluster de alto desempeno con acceso
+ remoto.
+\end_layout
+
+\begin_layout Paragraph
+Relevamiento de requerimientos y determinacion del alcance del proyecto.
+\end_layout
+
+\begin_layout Standard
+Durante las primeras etapas del proyecto se realizaron reunuines con los
+ tutores para relevar los principales requerimientos, identificar los posibles
+ problemas y determianr el alcance del proyecto que permitiera cumplir con
+ los objetivos del proyecto.
+\end_layout
+
+\begin_layout Paragraph
+Implementación de la interfaz web.
+\end_layout
+
+\begin_layout Standard
+Dentro de los alcances del proyecto se encontraba la implementacion de una
+ interfaz web que permitiera el acceso remoto al cluster.
+ Esta interfez deberia contener elementos de suabilidad, funcionalidades
+ de administracion y reportes del cluster para los administradores del mismo.
+\end_layout
+
+\begin_layout Standard
+Esta actividad se dividio en varias etapas.
+ Primero una etapa de relevaminetdo de requerimientos donde semantubieron
+ reuniones con los tutores y especialistas en el area de usabilidad apra
+ interfases web.
+\end_layout
+
+\begin_layout Standard
+Se llevo a cavo una etapa de disno de la interfaz web donde se tubieron
+ en cuenta conocimientos previos por parte de los integrantes del proyecto
+ asi como la curva de aprendisaje de distintas herramientas de dessarrrllo.
+\end_layout
+
+\begin_layout Standard
+Luego de la etapa de diseno se realio la etpa de desarrollo la cual se hizo
+ en forma iterativa e incremental.
+ Se fijaban pequenas iteraciones en las cuales se iban incrementando y/o
+ mejorando las funcionalidades de la interfaz web.
+\end_layout
+
+\begin_layout Paragraph
+Testo de la solucion.
+\end_layout
+
+\begin_layout Standard
+Una ves implantado el cluster con las tecnologias selecionadas y terminado
+ el desarrollo de la interfaz web se procedio con la etapa de testing.
+ En esta estapa se probo los principales requerimientos funcionales.
+\end_layout
+
+\begin_layout Standard
+Por ultimo otras actividades realizadas fueron la realizacion de documentacion
+ final como este informe y manuales; y la presentacion final.
 \end_layout
 
 \begin_layout Subsection
@@ -1795,151 +1894,6 @@ Los Middleware han aparecido de manera relativamente reciente en el mundo
 \end_layout
 
 \begin_layout Section
-Actividades del proyecto
-\end_layout
-
-\begin_layout Standard
-En el marco del proyecto se realizaron un conjunto de actividades específicas,
- abarcando actividades de investigación, estudio del arte, análisis, modelación,
- implementación, ensayo, divulgación de resultados y redacción del presente
- informe.
- Las mismas se detallan a continuación.
- 
-\end_layout
-
-\begin_layout Subsection
-Investigacion y estudio del estado del arte.
-\end_layout
-
-\begin_layout Standard
-Unos de los principales objetivos del proyecto es la investigacion y estudio
- del estdo del arte a lo que refiere a la computacion de alta performance.
- Esta actividad abarco auto estudio por parte de los integrantes del proyecto
- y el curco de la amteria High Performance Computing dictada por el grupo
- Cecal del insituto de computacion de facultad de igenieria.
-\end_layout
-
-\begin_layout Subsection
-Estudio de tecnologías existentes.
-\end_layout
-
-\begin_layout Standard
-Paralelo a la investigacion y estudio se llevo a cabo un relevamiento de
- paquetes de software de base (sistemas operativos, bibliotecas, monitores
- de desempeño, etc.) que permitieran el desarrollo y la ejecución de programas
- paralelos y distribuidos.
-\end_layout
-
-\begin_layout Standard
-De esta actividad surgio la propuesta de herramientas que permitieran la
- implantacion y administracion del cluster de alto desempeno con acceso
- remoto.
-\end_layout
-
-\begin_layout Subsection
-Relevamiento de requerimientos y determinacion del alcance del proyecto.
-\end_layout
-
-\begin_layout Standard
-Durante las primeras etapas del proyecto se realizaron reunuines con los
- tutores para relevar los principales requerimientos, identificar los posibles
- problemas y determianr el alcance del proyecto que permitiera cumplir con
- los objetivos del proyecto.
-\end_layout
-
-\begin_layout Subsection
-Implementación de la interfaz web
-\end_layout
-
-\begin_layout Standard
-Dentro de los alcances del proyecto se encontraba la implementacion de una
- interfaz web que permitiera el acceso remoto al cluster.
- Esta interfez deberia contener elementos de suabilidad, funcionalidades
- de administracion y reportes del cluster para los administradores del mismo.
-\end_layout
-
-\begin_layout Standard
-Esta actividad se dividio en varias etapas.
- Primero una etapa de relevaminetdo de requerimientos donde semantubieron
- reuniones con los tutores y especialistas en el area de usabilidad apra
- interfases web.
-\end_layout
-
-\begin_layout Standard
-Se llevo a cavo una etapa de disno de la interfaz web donde se tubieron
- en cuenta conocimientos previos por parte de los integrantes del proyecto
- asi como la curva de aprendisaje de distintas herramientas de dessarrrllo.
-\end_layout
-
-\begin_layout Standard
-Luego de la etapa de diseno se realio la etpa de desarrollo la cual se hizo
- en forma iterativa e incremental.
- Se fijaban pequenas iteraciones en las cuales se iban incrementando y/o
- mejorando las funcionalidades de la interfaz web.
-\end_layout
-
-\begin_layout Paragraph*
-Diseño e implementación de la solución 
-\end_layout
-
-\begin_layout Paragraph*
-Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
- así como la curva de aprendizaje de las distintas herramientas para realizar
- aplicaciones web, decidimos utilizar php con eclipse como ide.
-\end_layout
-
-\begin_layout Paragraph*
-El motor de base de datos podía ser mysql o posgresql y la decisión entre
- uno de los dos no la podíamos tomar hasta tiempo después de iniciada la
- etapa de implementación, por lo tanto se pensó desde un principio en un
- módulo de abstracción al motor de base de datos que ejecutara las operaciones
- básicas (abrir la conexión, ejecutar una consulta, obtener el resultado)
- e implementarlo tanto para mysql como para posgresql.
- Este requerimiento redundó en una ventaja para el producto: si fuera necesario
- instalarlo sobre otro motor de condiciones similares, en principio solo
- sería necesario reimplementar el módulo y repetir la etapa de testeo.
-\end_layout
-
-\begin_layout Paragraph*
-La apariencia del sitio también podía variar durante la implementación,
- por lo tanto además de separar la lógica de la aplicación de la capa de
- presentación, esta última se dividió en archivos .php que reciben los pedidos
- del usuario y actúan en consecuencia, separados de los archivos .html y
- .css orientados a la forma en que estos resultados se muestran.
- Para esto utilizamos plantillas que son cargadas en cada php para luego
- ser desplegadas en pantalla.
- En definitiva obtuvimos una versión moderada del patrón model view controller.
- Si en algún momento se deseara rediseñar el sitio manteniendo el funcionamiento
- del mismo, la mayor parte se puede cambiar desde estilos.css y el resto
- desde las plantillas en formato .html.
-\end_layout
-
-\begin_layout Paragraph*
-\begin_inset Graphics
-	filename diagrama.gif
-	scale 25
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Testo de la solucion
-\end_layout
-
-\begin_layout Standard
-Una ves implantado el cluster con las tecnologias selecionadas y terminado
- el desarrollo de la interfaz web se procedio con la etapa de testing.
- En esta estapa se probo los principales requerimientos funcionales.
-\end_layout
-
-\begin_layout Standard
-Por ultimo otras actividades realizadas fueron la realizacion de documentacion
- final como este informe y manuales; y la presentacion final.
-\end_layout
-
-\begin_layout Section
 Relevamiento de tecnologías
 \end_layout
 
@@ -2741,8 +2695,50 @@ Sobre TORQUE, Maui, Ganglia, etc.
 Interfaz web desarrollada
 \end_layout
 
-\begin_layout Standard
-Proceso de desarrollo de la interfaz web.
+\begin_layout Paragraph*
+Diseño e implementación de la solución 
+\end_layout
+
+\begin_layout Paragraph*
+Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
+ así como la curva de aprendizaje de las distintas herramientas para realizar
+ aplicaciones web, decidimos utilizar php con eclipse como ide.
+\end_layout
+
+\begin_layout Paragraph*
+El motor de base de datos podía ser mysql o posgresql y la decisión entre
+ uno de los dos no la podíamos tomar hasta tiempo después de iniciada la
+ etapa de implementación, por lo tanto se pensó desde un principio en un
+ módulo de abstracción al motor de base de datos que ejecutara las operaciones
+ básicas (abrir la conexión, ejecutar una consulta, obtener el resultado)
+ e implementarlo tanto para mysql como para posgresql.
+ Este requerimiento redundó en una ventaja para el producto: si fuera necesario
+ instalarlo sobre otro motor de condiciones similares, en principio solo
+ sería necesario reimplementar el módulo y repetir la etapa de testeo.
+\end_layout
+
+\begin_layout Paragraph*
+La apariencia del sitio también podía variar durante la implementación,
+ por lo tanto además de separar la lógica de la aplicación de la capa de
+ presentación, esta última se dividió en archivos .php que reciben los pedidos
+ del usuario y actúan en consecuencia, separados de los archivos .html y
+ .css orientados a la forma en que estos resultados se muestran.
+ Para esto utilizamos plantillas que son cargadas en cada php para luego
+ ser desplegadas en pantalla.
+ En definitiva obtuvimos una versión moderada del patrón model view controller.
+ Si en algún momento se deseara rediseñar el sitio manteniendo el funcionamiento
+ del mismo, la mayor parte se puede cambiar desde estilos.css y el resto
+ desde las plantillas en formato .html.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Graphics
+	filename diagrama.gif
+	scale 25
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2917,8 +2913,9 @@ Aumentar la caracteristicas y opciones de monitoreo para chequeo preventivo.
 
 \begin_layout Standard
 Se podria ejecutar proyectos a partir de la investigación y relevamiento
- de tecnologiasx realizad.
- De esta forma podríamos evaluar y conocer otras alternativas descartadas.
+ de tecnologias.
+ De esta forma podríamos evaluar y conocer otras alternativas descartadas
+ en este proyecto.
 \end_layout
 
 \begin_layout Section
