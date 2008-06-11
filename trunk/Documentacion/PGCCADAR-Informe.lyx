@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -81,8 +81,8 @@ Introducción
 
 \begin_layout Standard
 En el principio de la historia de las computadoras se tenía la idea de que
- un servidor tenía que ser necesariamente una máquina, conocida como súper
- computador o mainframe, que contaba con un procesador muy potente que daba
+ un servidor tenía que ser necesariamente una máquina, conocida como super
+ computador o mainframe, que contara con un procesador muy potente que diera
  servicio a varias terminales tontas.
  Según esta doctrina, para asegurar mayor poder de cálculo era necesario
  tener un procesador más poderoso.
@@ -95,8 +95,8 @@ En el principio de la historia de las computadoras se tenía la idea de que
 \begin_layout Standard
 Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
  crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
-toponiendo a trabajar varias computadoras en paralelo con procesadores 16
- DX4, interconectadas en una red de 10 Mbit Ethernet.
+to poniendo a trabajar varias computadoras en paralelo con procesadores
+ 16 DX4, interconectadas en una red de 10 Mbit Ethernet.
 \end_layout
 
 \begin_layout Standard
@@ -181,7 +181,7 @@ Introducción a la computación de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-Cada ves los problemas a resolver mediante la computación se tornan mas
+Cada vez los problemas a resolver mediante la computación se tornan mas
  complicados con modelos mas complejos, trabajan con grandes volúmenes de
  datos, se requieren tiempos de respuesta mas limitados; así como otro tipo
  de requerimientos.
@@ -214,11 +214,11 @@ a.
 \begin_layout Standard
 Existe una diversa gama de arquitecturas de computación paralela como puede
  ser arquitecturas de procesadores paralelos con memoria compartida o no
- ; o hasta cluster de computadores comunicados por una fastehtrnet.
+ ; o hasta cluster de computadores comunicados por una fastethernet.
 \end_layout
 
 \begin_layout Standard
-en el capítulo 2 profundizaremos sobre la computación de alto rendimiento,
+En el capítulo 2 profundizaremos sobre la computación de alto rendimiento,
  diferentes tipos de arquitecturas y técnicas, y observaremos las herramientas
  y paradigmas de programación paralela y/o distribuida.
 \end_layout
@@ -243,9 +243,9 @@ Actualmente existe en el CeCal (Centro de Cálculo) un cluster de computadores
 Se desea mantener un control estricto de las actividades de los usuarios
  de manera de poder garantizar la disponibilidad de recursos en un determinado
  momento.
- Otro objetivo importante es mantener un historial de utilización de recursos
- por parte de los distintos usuarios y procesos; tanto para poder realizar
- un seguimiento de su estado actual y verificar su correcto funcionamiento,
+ Además es importante mantener un historial de utilización de recursos por
+ parte de los distintos usuarios y procesos; tanto para poder realizar un
+ seguimiento de su estado actual y verificar su correcto funcionamiento,
  como para realizar mediciones referidas a la utilización de recursos por
  parte de los usuarios ya que se lo considera un activo.
 \end_layout
@@ -263,11 +263,8 @@ Objetivos y alcance del proyecto
 \begin_layout Standard
 La motivación principal de este proyecto es la construcción e implantación
  de un cluster de alto desempeño con acceso remoto.
-\end_layout
-
-\begin_layout Standard
-Dentro del marco de esta motivación se han definido varios objetivos y el
- alcance del proyecto.
+ Dentro del marco de esta motivación se han definido varios objetivos y
+ el alcance del proyecto.
 \end_layout
 
 \begin_layout Standard
@@ -287,9 +284,10 @@ En segundo lugar existe el objetivo de evaluación y diseño de herramientas
 
 \begin_layout Standard
 Como se menciono en la sección anterior se debe tener especial consideración
- en el grado de abstracción de las herramientas de administración y utilización
- para el lanzamientos de trabajos al cluster, para que de esta forma la
- infraestructura sea usada por un conjunto diverso y amplio de usuarios.
+ en el grado de abstracción de las herramientas de administración y las
+ utilizadas para la ejecución de trabajos en el cluster, para que de esta
+ forma la infraestructura pueda ser usada por un conjunto diverso y amplio
+ de usuarios.
 \end_layout
 
 \begin_layout Standard
@@ -333,9 +331,9 @@ No son pocos los trabajos realizados sobre investigación, desarrollo, construcc
 ón y aplicaciones de clusters.
  Sin embargo es relativamente poca la bibliografía asociada, dado que el
  tema ha ganado auge principalmente en la última década.
- Los estudios se remontan desde 1970, pero puede decirse que IBM fue la
- primera en establecer una teoría formal con respecto a los clusters a través
- de un estudio realizado por Gene Myron Amdahl.
+ Los estudios se remontan desde los años '70, pero puede decirse que IBM
+ fue la primera en establecer una teoría formal con respecto a los clusters
+ a través de un estudio realizado por Gene Myron Amdahl.
  
 \end_layout
 
@@ -398,7 +396,7 @@ istribuido y se presentan algoritmos evolutivos abocados al caso concreto
 \end_layout
 
 \begin_layout Paragraph
-Mejora del desempeño de modelos numéricos del Río de la Plata (2006)
+Mejora del desempeño de modelos numéricos del Río de la Plata (2006).
 \end_layout
 
 \begin_layout Standard
@@ -455,7 +453,7 @@ Se presenta una estrategia secuencial para el cálculo de la matriz de rigidez
 
 \begin_layout Paragraph
 Algoritmos genéticos paralelos aplicados a la resolución de problemas de
- asignación de frecuencias en redes celulares (2006)..
+ asignación de frecuencias en redes celulares (2006).
 \end_layout
 
 \begin_layout Standard
@@ -553,90 +551,13 @@ El proyecto plantea el estudio, diseño e implementación del modelo de algoritm
 ria en el área de diseño de redes de comunicaciones confiables.
 \end_layout
 
-\begin_layout Paragraph
-Metaheurísticas aplicadas a la reconstrucción de árboles filogenéticos (2007,
- en curso).
-\end_layout
-
-\begin_layout Standard
-(faltan datos)
-\end_layout
-
-\begin_layout Paragraph
-Implementación de alto desempeño del algoritmo de radiosidad en tiempo real
- utilizando GPUs.
- (2007, en curso).
- 
-\end_layout
-
-\begin_layout Standard
-(faltan datos)
-\end_layout
-
-\begin_layout Paragraph
-Laboratorio de simulación numérica para flujos de superficie libre (2006,
- en curso).
- 
-\end_layout
-
-\begin_layout Standard
-(faltan datos)
-\end_layout
-
-\begin_layout Paragraph
-Paralelismo aplicado a algoritmos evolutivos para optimización multiobjetivo
- (2006, en curso).
- 
-\end_layout
-
-\begin_layout Standard
-(faltan datos)
-\end_layout
-
-\begin_layout Paragraph
-Diseño, configuración, administración y evaluación de performance de un
- clúster para procesamiento paralelo (2006, en curso).
-\end_layout
-
-\begin_layout Standard
-(faltan datos)
-\end_layout
-
-\begin_layout Paragraph
-Performance de la red 3G (2007, en curso).
-\end_layout
-
-\begin_layout Standard
-Convenio ANTEL-FING.
- (faltan datos)
-\end_layout
-
-\begin_layout Paragraph
-Análisis de performance de la red celular de ANTEL (2006, en curso).
-\end_layout
-
-\begin_layout Standard
-Convenio ANTEL-FING.
- (faltan datos)
-\end_layout
-
-\begin_layout Paragraph
-Asesoramiento para la adquisición de un sistema automático de identificación
- de huellas dactilares (2006, en curso).
-\end_layout
-
-\begin_layout Standard
-Convenio FING–Ministerio del Interior.
- (faltan datos)
-\end_layout
-
 \begin_layout Subsection
 Estructura del documento
 \end_layout
 
 \begin_layout Standard
 En esta sección se describe la estructura del mismo.
- Para el final
+ (PENDIENTE).
 \end_layout
 
 \begin_layout Section
@@ -644,11 +565,11 @@ Computación de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-En el correr de los últimos años ha crecido la importancia de satisfacer
- los requisitos crecientes de poder de cómputo debido a la necesidad de
- resolver problemas mas complicados con modelos más complejos, así como
- trabajar con grandes volúmenes de datos sin perder de vista la capacidad
- de respuesta en un tiempo limitado.
+Como ya mencionamos, en el correr de los últimos años ha crecido la importancia
+ de satisfacer los requisitos crecientes de poder de cómputo debido a la
+ necesidad de resolver problemas mas complicados con modelos más complejos,
+ así como trabajar con grandes volúmenes de datos sin perder de vista la
+ capacidad de respuesta en un tiempo limitado.
 \end_layout
 
 \begin_layout Standard
@@ -746,11 +667,7 @@ En primer lugar tenemos las aplicaciones de cálculo intensivas, estas son
  en otras áreas como simulación financiera y económica.
  Dependen grandemente de la velocidad y el procesamiento de punto flotantes
  de los supercomputadores.
- 
-\end_layout
-
-\begin_layout Standard
-Algunos ejemplos son aplicaciones para dinámica de fluidos computacional,
+ Algunos ejemplos son aplicaciones para dinámica de fluidos computacional,
  simulaciones electromagnéticas, modelado ambiental, dinámica estructural,
  modelado biológico, dinámica molecular, simulación de redes, modelado financier
 o y económico.
@@ -762,12 +679,8 @@ Otro tipo de aplicaciones que con una gran demanda de recursos son las de
  Dependen de la capacidad para almacenar y procesar grandes cantidades de
  información y requieren de un acceso rápido y seguro a una masa considerable
  de datos almacenados.
- 
-\end_layout
-
-\begin_layout Standard
-Algunas de ellas son las aplicaciones para análisis de data sísmica, procesamien
-to de imágenes, minería de datos, análisis estadístico de datos, análisis
+ Algunas de ellas son las aplicaciones para análisis de data sísmica, procesamie
+nto de imágenes, minería de datos, análisis estadístico de datos, análisis
  de mercados.
 \end_layout
 
@@ -1010,7 +923,7 @@ La siguiente figura muestra una red omega de 3 etapas que conecta 8 procesadores
 \end_layout
 
 \begin_layout Paragraph
-Fibras de interconexión
+Fibras de interconexión.
 \end_layout
 
 \begin_layout Standard
@@ -1093,21 +1006,21 @@ En el proceso de partición existen aspectos a tener en cuenta:
 \end_layout
 
 \begin_layout Itemize
-el orden de tareas debe ser por lo menos superior al número de procesadores
+El orden de tareas debe ser por lo menos superior al número de procesadores
  para tener flexibilidad en etapas siguientes.
 \end_layout
 
 \begin_layout Itemize
-evitar cómputos y almacenamientos redundantes.
+Evitar cómputos y almacenamientos redundantes.
 \end_layout
 
 \begin_layout Itemize
-las tareas deben ser de tamaños equivalentes para facilitar el balanceo
+Las tareas deben ser de tamaños equivalentes para facilitar el balanceo
  de la carga de los procesadores.
 \end_layout
 
 \begin_layout Itemize
-el número de tareas debe ser proporcional al tamaño del problema.
+El número de tareas debe ser proporcional al tamaño del problema.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1117,43 +1030,33 @@ Comunicación
 \begin_layout Standard
 El proceso de partición de tareas no es independiente del proceso de comunicació
 n.
- En esta se especifica como los datos serán transferidos o compartidos entre
- tareas.
+ En el proceso de comunicación se especifica como los datos serán transferidos
+ o compartidos entre tareas.
 \end_layout
 
 \begin_layout Standard
 La comunicación puede ser definida en dos fases.
  Primero se definen los canales que conectan las tareas.
- Segundo
-\end_layout
-
-\begin_layout Standard
-se especifica la información o mensajes que deben ser enviados y recibidos
- en estos canales.
+ Luego se especifica la información o mensajes que deben ser enviados y
+ recibidos en estos canales.
 \end_layout
 
 \begin_layout Standard
 Dependiendo de si estamos en el caso de memoria distribuida o memoria compartida
- dependerá la forma de atacar la comunicación entre tareas varía.
-\end_layout
-
-\begin_layout Standard
-En ambientes de memoria distribuida, las tareas tienen una identificación
+ dependerá la forma de atacar la comunicación entre tareas.
+ En ambientes de memoria distribuida, las tareas tienen una identificación
  única e interactúan enviando y recibiendo mensajes hacia y desde tareas
  específicas.
- Las librerías más conocidas para implementar el pasaje de mensajes en ambientes
- de memoria distribuida son: MPI (Message Passing Interface) y PVM (Parallel
- Virtual Machine).
+ Las bibliotecas más conocidas para implementar el pasaje de mensajes en
+ ambientes de memoria distribuida son: MPI (Message Passing Interface) y
+ PVM (Parallel Virtual Machine).
 \end_layout
 
 \begin_layout Standard
 En ambientes de memoria compartida no existe la noción de pertenencia y
  el envío de datos no se da como tal.
  Todas las tareas comparten la misma memoria.
-\end_layout
-
-\begin_layout Standard
-Semáforos, semáforos binarios, barreras y otros mecanismos de sincronización
+ Semáforos, semáforos binarios, barreras y otros mecanismos de sincronización
  son usados para controlar el acceso a la memoria compartida y coordinar
  las tareas.
 \end_layout
@@ -1163,22 +1066,22 @@ En esta etapa hay que tener en cuenta los siguientes aspectos:
 \end_layout
 
 \begin_layout Itemize
-las tareas deben efectuar aproximadamente el mismo número de operaciones
- de comunicación.
+Cada tarea debe efectuar aproximadamente el mismo número de operaciones
+ de comunicación que cada una de las demás tareas.
  De otra forma es muy probable que el algoritmo no sea extensible a problemas
  mayores ya que habrán cuellos de botella.
 \end_layout
 
 \begin_layout Itemize
-la comunicación entre tareas debe ser tan pequeña como sea posible.
+La comunicación entre tareas debe ser tan reducida como sea posible.
 \end_layout
 
 \begin_layout Itemize
-las operaciones de comunicación deben poder proceder concurrentemente.
+Las operaciones de comunicación deben poder proceder concurrentemente.
 \end_layout
 
 \begin_layout Itemize
-los cómputos de diferentes tareas deben poder proceder concurrentemente.
+Los cómputos de diferentes tareas deben poder proceder concurrentemente.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1190,22 +1093,14 @@ En las dos tareas anteriores el algoritmo resultante es aún abstracto en
  el sentido de que no se tomó en cuenta la máquina sobre el cual correrá.
  En este proceso se busca un algoritmo concreto, que corra eficientemente
  sobre cierta clase de computadores.
- 
-\end_layout
-
-\begin_layout Standard
-En particular se considera si es útil agrupar tareas y si vale la pena replicar
- datos y/o cómputos.
+ En particular se considera si es útil agrupar tareas y si vale la pena
+ replicar datos y/o cómputos.
 \end_layout
 
 \begin_layout Standard
 En el proceso de partición se trata de establecer el mayor número posible
  de tareas con la intensión de maximizar el paralelismo.
- 
-\end_layout
-
-\begin_layout Standard
-Esto no necesariamente produce un algoritmo eficiente ya que el costo de
+ Esto no necesariamente produce un algoritmo eficiente ya que el costo de
  comunicación puede ser significativo.
  
 \end_layout
@@ -1213,10 +1108,7 @@ Esto no necesariamente produce un algoritmo eficiente ya que el costo de
 \begin_layout Standard
 Mediante la agrupación de tareas se puede reducir la cantidad de datos a
  enviar y así reducir el número de mensajes y el costo de comunicación.
-\end_layout
-
-\begin_layout Standard
-Se puede intentar replicar cómputos y/o datos para reducir los requerimientos
+ Se puede intentar replicar cómputos y/o datos para reducir los requerimientos
  de comunicación.
  
 \end_layout
@@ -1226,32 +1118,32 @@ Aspectos a considerar en esta etapa:
 \end_layout
 
 \begin_layout Itemize
-chequear si la agrupación redujo los costos de comunicación.
+Chequear si la agrupación redujo los costos de comunicación.
 \end_layout
 
 \begin_layout Itemize
-si se han replicado cómputos y/o datos, se debe verificar que los beneficios
+Si se han replicado cómputos y/o datos, se debe verificar que los beneficios
  son superiores a los costos.
 \end_layout
 
 \begin_layout Itemize
-se debe verificar que las tareas resultantes tengan costos de computo y
+Se debe verificar que las tareas resultantes tengan costos de computo y
  comunicación similares.
 \end_layout
 
 \begin_layout Itemize
-revisar si el número de tareas es extensible con el tamaño del problema.
+Revisar si el número de tareas es extensible con el tamaño del problema.
 \end_layout
 
 \begin_layout Itemize
-si el agrupamiento ha reducido las oportunidades de ejecución concurrente,
+Si el agrupamiento ha reducido las oportunidades de ejecución concurrente,
  se debe verificar que aun hay suficiente concurrencia y posiblemente considerar
  diseños alternativos.
 \end_layout
 
 \begin_layout Itemize
-analizar si es posible reducir aun más el número de tareas sin introducir
- desbalances de cargas o reducir la extensibilidad.
+Analizar si es posible reducir aun más el número de tareas sin desbalancear
+ la carga o reducir la extensibilidad.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1260,11 +1152,7 @@ Asignación
 
 \begin_layout Standard
 En este proceso se determina en que procesador se ejecutará cada tarea.
- 
-\end_layout
-
-\begin_layout Standard
-En máquinas de memoria compartida tipo UMA no se presenta este problema
+ En máquinas de memoria compartida tipo UMA no se presenta este problema
  ya que proveen asignación dinámica de procesos.
  
 \end_layout
@@ -1318,11 +1206,8 @@ Taxonomía de Flynn
 \begin_layout Standard
 Una forma de clasificar las diferentes arquitecturas de computación, tanto
  serial como paralela, es mediante la taxonomía de Flynn.
-\end_layout
-
-\begin_layout Standard
-Es basada en la multiplicidad del flujo de instrucciones y del flujo de
- datos en un computador.
+ Esta está basada en la multiplicidad del flujo de instrucciones y del flujo
+ de datos en un computador.
  
 \end_layout
 
@@ -1333,13 +1218,10 @@ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
 \end_layout
 
 \begin_layout Standard
-Dentro de la clasificación de Flynn tenemos la siguientes categorías.
-\end_layout
-
-\begin_layout Standard
-La primer categoría es SISD Single instruction stream, single data stream.
+Dentro de la clasificación de Flynn varias categorías.
+ La primera de ellas es SISD (Single Instruction stream, Single Data stream).
  La mayor parte de computadores seriales son SISD.
- Estas tienen un CPU que ejecuta una instrucciones y busca o guarda datos
+ Estas tienen un CPU que ejecuta una instruccion y busca o guarda datos
  en un momento dado.
 \end_layout
 
@@ -1373,8 +1255,8 @@ FD: Flujo de Datos
 \end_layout
 
 \begin_layout Standard
-Seguimos con SIMD Single instruction stream, multiple data stream.
- En esta categoría entraran los arreglos de procesadores.
+Seguimos con SIMD (Single Instruction stream, Multiple Data stream).
+ Esta categoría comprende los arreglos de procesadores.
  Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
  operación sobre datos distintos.
 \end_layout
@@ -1389,8 +1271,8 @@ Seguimos con SIMD Single instruction stream, multiple data stream.
 \end_layout
 
 \begin_layout Standard
-Tambien tenemos la categoría MISD Multiple instruction stream, single data
- stream donde existen n procesadores, cada uno recibiendo una instrucción
+Tambien tenemos la categoría MISD (Multiple Instruction stream, Single Data
+ stream) donde existen n procesadores, cada uno recibiendo una instrucción
  diferente y operando sobre el mismo flujo de datos.
  Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
  de que ciertas MIMD puedan ser usadas de esta forma.
@@ -1406,9 +1288,8 @@ Tambien tenemos la categoría MISD Multiple instruction stream, single data
 \end_layout
 
 \begin_layout Standard
-La categoría de MIMD Multiple instruction stream, multiple data stream donde
- la mayoría de los multiprocesadores y multicomputadores pueden ser clasificados
- bajo esta categoría.
+La categoría de MIMD (Multiple Instruction stream, Multiple Data stream)
+ que incluye a la mayoría de los multiprocesadores y multicomputadores.
  Estos tienen más de un procesador independiente, y cada uno puede ejecutar
  un programa diferente sobre sus propios datos.
  Podemos categorizarlos también según como esté organizada su memoria: memoria
@@ -1425,7 +1306,7 @@ La categoría de MIMD Multiple instruction stream, multiple data stream donde
 \end_layout
 
 \begin_layout Standard
-Por ultimo la categoría SPMD Single program, multiple data.
+Por ultimo la categoría SPMD (Single Program, Multiple Data).
  En esta categoría cada procesador ejecuta una copia exacta del mismo programa,
  pero opera sobre datos diferentes.
  Pese a no ser una categoría definida por Flynn es muy usada y puede ser
@@ -1571,11 +1452,7 @@ Máquinas de memoria compartida distribuida
 Actualmente las máquinas paralelas tienden a aprovechar las facilidades
  de programación que ofrecen los ambientes de memoria compartida y la escalabili
 dad de los ambientes de memoria distribuida.
- 
-\end_layout
-
-\begin_layout Standard
-Este modelo conecta entre si módulos de multiprocesadores manteniendo la
+ Este modelo conecta entre si módulos de multiprocesadores manteniendo la
  visión global de la memoria.
  
 \end_layout
@@ -1636,8 +1513,8 @@ Cluster de PC's
 El término cluster se aplica a los conjuntos de computadoras unidos mediante
  una red de alta velocidad que se comportan como si fuesen una sola con
  mayor poder de computo.
- Hoy en día tiene un papel importante en aplicaciones científicas, de ingeniería
-, comerciales, simulaciones, etc.
+ Hoy en día los clusters de PC's tienen un papel importante en aplicaciones
+ científicas, de ingeniería, comerciales, simulaciones, etc.
 \end_layout
 
 \begin_layout Standard
@@ -1696,12 +1573,10 @@ Los motivos para utilizar un cluster de alto rendimiento son el tamaño del
 \begin_layout Standard
 Por medio de un cluster se pueden conseguir capacidades de cálculo superiores
  a las de un ordenador más caro.
-\end_layout
-
-\begin_layout Standard
-Para garantizar esta capacidad de cálculo, los problemas necesitan ser paraleliz
-ables, ya que el método con el que los clusters agilizan el procesamiento
- es dividir el problema en problemas más pequeños y calcularlos en los nodos.
+ Para garantizar esta capacidad de cálculo, los problemas necesitan ser
+ paralelizables, ya que el método con el que los clusters agilizan el procesamie
+nto es dividir el problema en problemas más pequeños y calcularlos en los
+ nodos.
 \end_layout
 
 \begin_layout Paragraph
@@ -1717,7 +1592,7 @@ Un cluster de alta disponibilidad se caracterizan por compartir los discos
 
 \begin_layout Standard
 Podemos dividirlo en dos clases: de alta disponibilidad de infraestructura
- y de alta disponibilidad de aplicación
+ y de alta disponibilidad de aplicación.
 \end_layout
 
 \begin_layout Paragraph
@@ -1726,9 +1601,9 @@ Cluster de balanceo de carga.
 
 \begin_layout Standard
 Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
- por uno o más ordenadores que actúan como frontend del cluster, y que se
- ocupan de repartir las peticiones de servicio que reciba el cluster, a
- otros ordenadores del cluster que forman el back-end de éste.
+ por uno o más ordenadores que actúan como front-end del cluster, y que
+ se ocupan de repartir las peticiones de servicio que reciba el cluster,
+ a otros ordenadores del cluster que forman el back-end de éste.
  
 \end_layout
 
@@ -1739,19 +1614,17 @@ Escalabilidad.
 \begin_layout Standard
 La escalabilidad es la propiedad deseable de un sistema, una red o un proceso,
  que indica su habilidad para, o bien manejar el crecimiento continuo de
- trabajo de manera fluida, o bien para estar preparado para hacerse más
- grande sin perder calidad en los servicios ofrecidos.
-\end_layout
-
-\begin_layout Standard
-En este tipo de cluster se puede ampliar su capacidad fácilmente añadiendo
+ trabajo de manera fluida, o bien para estar preparado para crecer en tamaño
+ sin perder calidad en los servicios ofrecidos.
+ La capacidad de este tipo de clusters se puede ampliar fácilmente añadiendo
  más ordenadores al cluster.
 \end_layout
 
 \begin_layout Standard
-La robustez es una características importante ya que ante la caída de alguno
- de los ordenadores del cluster el servicio se puede ver mermado, pero mientras
- haya ordenadores en funcionamiento, éstos seguirán dando servicio.
+La robustez es una de las características mas importante ya que ante la
+ caída de alguno de los ordenadores del cluster el servicio se puede ver
+ mermado, pero mientras haya ordenadores en funcionamiento, éstos seguirán
+ dando servicio.
 \end_layout
 
 \begin_layout Subsection
@@ -1762,31 +1635,32 @@ Herramientas para la programación paralela
 En programación paralela existen diferentes lenguajes y herramientas de
  programación con características especificas para diferentes clases de
  problema.
+ A continuación veremos algunas de estas herramientas.
 \end_layout
 
 \begin_layout Standard
-C++ Composicional (C++): Es una extensión de C++ que provee al programador
- facilidades para controlar localidad, concurrencia, comunicaciones, y asignació
-n de tareas.
+C++ Composicional es una extensión de C++ que provee al programador facilidades
+ para controlar localidad, concurrencia, comunicaciones, y asignación de
+ tareas.
  Puede ser usado para construir librerías que implementen tareas, canales,
  y otras abstracciones básicas de la programación paralela.
 \end_layout
 
 \begin_layout Standard
-High Performance Fortran (HPF): Es un ejemplo de lenguajes datos-paralelos
+High Performance Fortran (HPF) es un ejemplo de lenguajes datos-paralelos
  y se ha convertido en un estándar para aplicaciones científicas e ingenieriles.
  El paralelismo es expresado en términos de operaciones sobre matrices y
  la comunicación es inferida por el compilador.
 \end_layout
 
 \begin_layout Standard
-Parallel Virtual Machine (PVM): Es una librería de subrutinas para enviar
+Parallel Virtual Machine (PVM) es una biblioteca de subrutinas para enviar
  y recibir mensajes.
 \end_layout
 
 \begin_layout Standard
-Message Passing Interface (MPI): Similar a PVM pero, tal como HPF, MPI se
- ha convertido un estándar.
+Message Passing Interface (MPI) es una biblioteca similar a PVM pero, tal
+ como HPF, MPI se ha convertido un estándar.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1809,26 +1683,15 @@ Esta biblioteca permite trabajar con memoria distribuida, tener paralelismo
 \end_layout
 
 \begin_layout Standard
-El modelo de programación es SPMD el cual provee de 125 funciones de las
- cuales algunas son colectivas, también contiene soporte para Fortan y C.
+El modelo de programación es SPMD,  provee 125 funciones de las cuales algunas
+ son colectivas, y tiene soporte para Fortan y C.
  
 \end_layout
 
 \begin_layout Standard
-El numero de tareas es fijado en tiempo de pre-ejecución y también permite
- agrupamiento de procesos e incluye contextos de comunicación entre grupos
- de procesos.
-\end_layout
-
-\begin_layout Standard
-Permite el manejo del entorno programación con interfases personalizadas.
-\end_layout
-
-\begin_layout Standard
-Algunas de sus desventajas son: no permite comunicación de memoria compartida,
- no tiene soporte de SO para recepciones por interrupción ,no tiene ejecución
- remota de procesos, pocas facilidades de debug, no soporta hilos, no contiene
- soporte de tareas y tiene un pobre manejo de I/O
+El numero de tareas es fijado en tiempo de pre-ejecución (aunque esto ha
+ cambiado en la versión 2 del estándar) y permite agrupamiento de procesos
+ e incluye contextos de comunicación entre grupos de procesos.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1838,26 +1701,23 @@ PVM: Parallel Virtual Machine
 \begin_layout Standard
 Es una biblioteca para el desarrollo de aplicaciones paralelas y distribuidas.
  PVM surge como proyecto de laboratorio universitario y fue adoptado como
- estándar de facto, no es estándar de la industria.
+ estándar de facto, aunque no es estándar de la industria.
 \end_layout
 
 \begin_layout Standard
-Algunas de sus cualidades son: potencia, simplicidad, portabilidad, practicidad.
+Algunas de sus cualidades son potencia, simplicidad, portabilidad, practicidad.
 \end_layout
 
 \begin_layout Standard
 Permite la administración dinámica de un conjunto de equipos que conforman
  la máquina virtual.
-\end_layout
-
-\begin_layout Standard
-Contiene mecanismos de creación e identificación de procesos,un modelo de
- comunicación entre procesos basado en pasaje de mensajes y brinda mecanismos
+ Contiene mecanismos de creación e identificación de procesos, un modelo
+ de comunicación entre procesos basado en pasaje de mensajes y brinda mecanismos
  de sincronización de procesos.
 \end_layout
 
 \begin_layout Standard
-Brinda soporte para manejar heterogeneidad y aprovecha la arquitecturas
+Brinda soporte para manejar heterogeneidad y aprovecha las arquitecturas
  multiprocesador.
 \end_layout
 
@@ -2084,12 +1944,13 @@ Relevamiento de tecnologías
 \end_layout
 
 \begin_layout Subsection
-SSI: OpenMosix*, OpenSSI y Kerrighed
+SSI: OpenMosix, OpenSSI y Kerrighed
 \end_layout
 
 \begin_layout Standard
-A diferencia de un cluster tradicional en SSI todas las computadoras vinculadas
- dependen de un sistema operativo idéntico en común.
+A diferencia de un cluster tradicional en SSI (single-system image) todas
+ las computadoras vinculadas dependen de un sistema operativo idéntico en
+ común.
 \end_layout
 
 \begin_layout Standard
@@ -2115,9 +1976,10 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
 \end_layout
 
 \begin_layout Standard
-(*) Moshe Bar, fundador y director de proyecto de openMosix, anuncio el
- 15 de julio del 2007 el cierre del proyecto y que se congelará tanto su
- desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
+Moshe Bar, fundador y director de proyecto de openMosix (uno de los proyectos
+ SSI mas influyentes al momento del relevamiento de tecnologías), anuncio
+ el 15 de julio del 2007 el cierre del proyecto y que se congelará tanto
+ su desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
 \end_layout
 
 \begin_layout Subsection
@@ -2141,8 +2003,8 @@ Condor es un proyecto open-source de la universidad de Wisconsin específicament
  Como consecuencia en HPC el poder computacional de un cluster normalmente
  es medido en operaciones de punto flotante por segundo (FLOPS), en cambio
  la comunidad HTC se interesa mas en la cantidad de trabajos que posible
- completar en un largo periodo de tiempo, no le interesa que tan rápido
- puede terminarse un trabajo individual.
+ completar en un largo periodo de tiempo, no interesa que tan rápido puede
+ terminarse un trabajo individual.
  Debido a este perfil de tipo HTC, Condor se enfoca principalmente en la
  robustez y la confiabilidad brindando funcionalidades como: CPU harvesting,
  migración de procesos, tolerancia a fallas y process checkpoint.
@@ -2173,8 +2035,8 @@ Interfaz de programación
 \end_layout
 
 \begin_layout Standard
-Condor brinda una interfaz de programación propietaria, pero no soporta
- el estándar DRMAA.
+Condor brinda una interfaz de programación propietaria, y no soporta el
+ estándar DRMAA.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2185,20 +2047,8 @@ Conclusión
 Condor no parece ser el software ideal para el proyecto.
  Si bien puede adaptarse a los requerimientos planteados y brinda funcionalidade
 s interesantes (p.ej.
- migración de procesos, cpu harvesting, etc.) existen áreas en las que se
- encuentra claramente en desventaja con respecto a otros productos.
-\end_layout
-
-\begin_layout Subsection
-Generic NQS
-\end_layout
-
-\begin_layout Itemize
-Codigo legado
-\end_layout
-
-\begin_layout Itemize
-Desarrollo detenido
+ migración de procesos, cpu harvesting, etc.) existen áreas criticas en las
+ que se encuentra claramente en desventaja con respecto a otros productos.
 \end_layout
 
 \begin_layout Subsection
@@ -2213,14 +2063,6 @@ OpenPBS se trata de la versión original de PBS desarrollada para la NASA
  Atair ha apostado a una versión comercial del producto llamada PBS Pro,
  y en lo que a Alatir respecta OpenPBS se trata de una forma de comenzar
  a utilizar PBS con el objetivo de comprar PBS Pro.
-\end_layout
-
-\begin_layout Subsection
-SLURM
-\end_layout
-
-\begin_layout Itemize
-No soporta PVM
 \end_layout
 
 \begin_layout Subsection
@@ -2353,8 +2195,8 @@ TORQUE
 
 \begin_layout Standard
 TORQUE (Terascale Open-source Resource and QUEue manager) se trata de un
- 'fork' open-source de la versión 2.3.12 de OpenPBS mantenido por Cluster
- Resources.
+ 'fork' open-source de la versión 2.3.12 de OpenPBS mantenido y desarrollado
+ por Cluster Resources.
  
 \end_layout
 
@@ -2366,30 +2208,13 @@ ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
 \end_layout
 
 \begin_layout Subsubsection
-Requerimientos
-\end_layout
-
-\begin_layout Standard
-Plataformas soportadas:
-\end_layout
-
-\begin_layout Itemize
-Linux
-\end_layout
-
-\begin_layout Itemize
-UNIX
-\end_layout
-
-\begin_layout Subsubsection
 Características generales
 \end_layout
 
 \begin_layout Standard
-Los trabajos son manejados en el cluster de la misma manera que lo hace
- OpenPBS.
- Cuenta con un conjunto de colas de trabajos que definen propiedades generales
- para los trabajos que contienen (p.ej.
+En TORQUE los trabajos son manejados de la misma manera que lo hace OpenPBS.
+ Se cuenta con un conjunto de colas de trabajos que definen propiedades
+ generales para los trabajos que contienen (p.ej.
  recursos disponibles, etc.) y al ingresar un trabajo al sistema, este debe
  especificar características especificas de si mismo que ayuden al sistema
  a planificar la ejecución del mismo (p.ej.
@@ -2401,27 +2226,32 @@ Los trabajos son manejados en el cluster de la misma manera que lo hace
 \end_layout
 
 \begin_layout Standard
-Existen tres tipos de nodos en el sistema:
+TORQUE cuenta con una interfaz de usuario de línea de comando (CLI) como
+ principal manera de interactuar con el sistema, también cuenta con una
+ interfaz gráfica para X-Windows y una biblioteca para desarrollo en C aunque
+ es posible utilizar bibliotecas desarrolladas por terceros para otros lenguajes
+ (p.ej.
+ Perl o Python).
 \end_layout
 
-\begin_layout Itemize
-Nodo Maestro
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
-Es necesario que exista un nodo maestro en el sistema, en este nodo se debe
- ejecutar pbs_server.
- Dependiendo del sistema este nodo maestro puede encontrarse dedicado únicamente
- a este rol o compartir otros roles.
+Existen tres tipos de nodos en un sistema TORQUE:
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Nodos Interactivos
+\begin_layout Paragraph
+Nodo Maestro.
 \end_layout
 
-\begin_deeper
+\begin_layout Standard
+Es necesario que exista un nodo maestro en el sistema.
+ Aunque dependiendo del sistema este nodo maestro puede encontrarse dedicado
+ únicamente a este rol o compartir otros roles.
+\end_layout
+
+\begin_layout Paragraph
+Nodos Interactivos.
+\end_layout
+
 \begin_layout Standard
 Los nodos interactivos proveen un punto de entrada al sistema para los usuarios.
  Es en estos nodos en que los usuarios puede ingresar tareas al sistema
@@ -2429,27 +2259,15 @@ Los nodos interactivos proveen un punto de entrada al sistema para los usuarios.
  Estos nodos deben tener comandos como qsub, qhold, etc disponibles.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Nodos de computo
+\begin_layout Paragraph
+Nodos de computo.
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 Estos son los responsables de la ejecución de los trabajos encolados en
  el sistema.
- En cada uno de estos nodos debe ejecutarse pbs_mom (Machine Oriented Mini-serve
-r) que es el encargado de iniciar, detener y manejar los trabajos encolados.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Torque cuenta con una interfaz de usuario de línea de comando (CLI) como
- principal manera de interactuar con el sistema, también cuenta con una
- interfaz gráfica para X-Windows y una biblioteca para desarrollo en C.
- Es posible utilizar bibliotecas desarrolladas por 3eros para otros lenguajes
- (p.ej.
- Perl o Python).
+ Son los encargados de iniciar, detener y manejar los procesos de cómputo
+ en el SO del nodo en cuestión.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2457,19 +2275,15 @@ Bibliotecas para programación paralela
 \end_layout
 
 \begin_layout Paragraph
-MPI (Message Passing Interface)
+MPI (Message Passing Interface).
 \end_layout
 
 \begin_layout Standard
-El soporte para bibliotecas tipo MPI se encuentra integrado en TORQUE, el
- sistema puede correr con cualquier implementación de MPI.
- Particularmente para MPICH existe un reemplazo para el script mpirun (mpirun
- se encuentra incluido en el paquete de mpich) llamado mpiexec.
- Mpiexec es usado para inicializar trabajos paralelos dentro de un sistema
- PBS.
+El soporte para bibliotecas tipo MPI se encuentra integrado en TORQUE.
+ El sistema puede ejecutar varias implementaciónes de MPI: MPICH, MPICH2,
+ OpenMPI, etc.
  Los recursos utilizados por procesos paralelos son correctamente registrados
- cuando se utiliza mpiexec y se reporta su uso en el log del PBS, a diferencia
- de lo que sucede cuando se utiliza el script mpirun original.
+ y se reporta su uso en el log del PBS.
 \end_layout
 
 \begin_layout Paragraph
@@ -2481,10 +2295,6 @@ Una de las principales desventajas de TORQUE es la dificultad que plantea
  el uso de la biblioteca PVM.
  A diferencia de MPI, el soporte para PVM no se encuentra integrado al sistema
  por lo que debe manejarse cuidadosamente.
- Para ejecutar una aplicación paralela utilizando PVM se debe iniciar el
- demonio pvmd en el script del trabajo, configurar los nodos esclavos para
- luego iniciar la ejecución del trabajo (todo esto puede realizarse utilizando
- mpiexec).
 \end_layout
 
 \begin_layout Subsubsection
@@ -2518,106 +2328,27 @@ Maui se enfoca en la planificación de trabajos y deja la problemática de
 \end_layout
 
 \begin_layout Paragraph
-Requerimientos
+Requerimientos de hardware.
 \end_layout
 
-\begin_layout Itemize
-Hardware
+\begin_layout Standard
+Maui requiere de muy pocos recursos de hardware para su funcionamiento.
+ En clusters de hasta 10 teraflops basta con entre 20 a 50 MB de RAM.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-20-50 MB de RAM (para clusters de hasta 10 teraflops)
-\end_layout
-
-\begin_layout Itemize
->20 MB de disco duro para los fuentes, binarios, estadísticas y archivos
- de logs
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Plataformas soportadas
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Linux
-\end_layout
-
-\begin_layout Itemize
-AIX
-\end_layout
-
-\begin_layout Itemize
-OSF/Tru-64
-\end_layout
-
-\begin_layout Itemize
-Solaris
-\end_layout
-
-\begin_layout Itemize
-HP-UX
-\end_layout
-
-\begin_layout Itemize
-IRIX
-\end_layout
-
-\begin_layout Itemize
-FreeBSD
-\end_layout
-
-\begin_layout Itemize
-Other UNIX platforms
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-DRM soportados
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-OpenPBS
-\end_layout
-
-\begin_layout Itemize
-'Scalable' Open PBS
-\end_layout
-
-\begin_layout Itemize
-PBSPro
-\end_layout
-
-\begin_layout Itemize
-Sun Grid Engine (SGE)
-\end_layout
-
-\begin_layout Itemize
-SGE Enterprise Edition
-\end_layout
-
-\begin_layout Itemize
-LoadLeveler
-\end_layout
-
-\begin_layout Itemize
-LSF
-\end_layout
-
-\begin_layout Itemize
-BProc/Scyld
-\end_layout
-
-\begin_layout Itemize
-Scalable System Software (SSSRM)
-\end_layout
-
-\end_deeper
 \begin_layout Paragraph
-Características generales
+Plataformas soportadas.
+\end_layout
+
+\begin_layout Standard
+Maui soporta los siguientes sistemas operativos: Linux, AIX, OSF/Tru-64,
+ Solaris, HP-UX, IRIX, FreeBSD, y otras plataformas UNIX.
+ Y los siguientes DRM: TORQUE, OpenPBS, PBSPro, Sun Grid Engine (SGE), LoadLevel
+er, LSF, BProc/Scyld, Scalable System Software (SSSRM) y SLURM.
+\end_layout
+
+\begin_layout Paragraph
+Características generales.
 \end_layout
 
 \begin_layout Standard
@@ -2632,7 +2363,7 @@ El algoritmo de planificación de Maui soporta fairness, preemption, backfill,
 \end_layout
 
 \begin_layout Subparagraph
-Backfill
+Backfill.
 \end_layout
 
 \begin_layout Standard
@@ -2656,7 +2387,7 @@ Backfill es un acercamiento en la planificación que permite ejecutar algunos
 \end_layout
 
 \begin_layout Subparagraph
-Gerenciamiento de asignación
+Gerenciamiento de asignación.
 \end_layout
 
 \begin_layout Standard
@@ -2670,7 +2401,7 @@ Maui posee interfaces para sistemas de gerenciamiento de asignación tales
 \end_layout
 
 \begin_layout Subparagraph
-Reservas anticipadas
+Reservas anticipadas.
 \end_layout
 
 \begin_layout Standard
@@ -2692,7 +2423,7 @@ es a nivel de trabajo o especificando ciertas restricciones especiales de
 \end_layout
 
 \begin_layout Subparagraph
-Quality of Service (QoS)
+Quality of Service (QoS).
 \end_layout
 
 \begin_layout Standard
@@ -2703,7 +2434,7 @@ Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios,
 \end_layout
 
 \begin_layout Subparagraph
-Faireshare
+Faireshare.
 \end_layout
 
 \begin_layout Standard
@@ -2717,15 +2448,19 @@ Este componente permite favorecer trabajos en base al uso histórico a corto
 \end_layout
 
 \begin_layout Paragraph
-Interfaz de programación
+Interfaz de programación.
 \end_layout
 
-\begin_layout Itemize
-Interfaz de extensión (Extension Interface)
+\begin_layout Standard
+Maui brinda dos interfases de programación para extender o personalizar
+ el despacho de trabajos.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Subparagraph
+Interfaz de extensión (Extension Interface).
+\end_layout
+
+\begin_layout Standard
 Esta interfaz permite que bibliotecas externas sean 'linkeadas' al servidor
  de Maui brindando acceso a todos los datos y objetos utilizados por el
  planificador.
@@ -2733,31 +2468,28 @@ Esta interfaz permite que bibliotecas externas sean 'linkeadas' al servidor
  funciones de Maui.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Interfaz local
+\begin_layout Subparagraph
+Interfaz local.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Se trata de una interfaz en C que permite el desarrollo de nuevos algoritmos.
+\begin_layout Standard
+Se trata de una interfaz en C enfocada exlusivamente al desarrollo de nuevos
+ algoritmos de despacho.
 \end_layout
 
-\end_deeper
 \begin_layout Paragraph
-Estadísticas
+Estadísticas.
 \end_layout
 
 \begin_layout Standard
 Maui almacena tres diferentes clases de estadísticas:
 \end_layout
 
-\begin_layout Itemize
-Estadísticas de tiempo real
+\begin_layout Subparagraph
+Estadísticas de tiempo real.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Estas estadísticas son mantenidas en memoria y pueden ser consultadas mediante
  comandos.
  El comando 'showstats' provee información detallada por usuario, por grupo,
@@ -2767,13 +2499,11 @@ Estas estadísticas son mantenidas en memoria y pueden ser consultadas mediante
  
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Histórico
+\begin_layout Subparagraph
+Histórico.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Estas estadísticas pueden ser obtenidas para un lapso de tiempo, un tipo
  de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
  Este comando trabaja con la traza de información detallada de un trabajo,
@@ -2789,13 +2519,11 @@ Estas estadísticas pueden ser obtenidas para un lapso de tiempo, un tipo
  
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Fairshare
+\begin_layout Subparagraph
+Fairshare.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
  habilitado.
  Al igual que las trazas de los trabajos, estas son almacenadas en archivos
@@ -2807,7 +2535,6 @@ Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
  
 \end_layout
 
-\end_deeper
 \begin_layout Subsubsection
 Gold
 \end_layout
@@ -2829,11 +2556,11 @@ Es posible realizar operaciones como depósitos, retiros, transferencias
 \end_layout
 
 \begin_layout Paragraph
-Características generales
+Características generales.
 \end_layout
 
 \begin_layout Subparagraph
-Reservas
+Reservas.
 \end_layout
 
 \begin_layout Standard
@@ -2846,7 +2573,7 @@ Previo al inicio de un trabajo se realiza una estimación del total de recursos
 \end_layout
 
 \begin_layout Subparagraph
-Vencimiento de créditos
+Vencimiento de créditos.
 \end_layout
 
 \begin_layout Standard
@@ -2856,7 +2583,7 @@ o que se implemente una política de use-it-or-lose-it previniendo el uso
 \end_layout
 
 \begin_layout Subparagraph
-Interfaz web
+Interfaz web.
 \end_layout
 
 \begin_layout Standard
@@ -2865,7 +2592,7 @@ Permitiendo acceso remoto a usuarios y administradores.
 \end_layout
 
 \begin_layout Subparagraph
-Interfaz de programación
+Interfaz de programación.
 \end_layout
 
 \begin_layout Standard
@@ -2965,7 +2692,7 @@ Conclusión
 \end_layout
 
 \begin_layout Standard
-Torque junto con Maui y Gold satisfacen los requerimientos planteados para
+TORQUE junto con Maui y Gold satisfacen los requerimientos planteados para
  el proyecto.
  Su consumo de recursos del cluster es relativamente bajo, se adapta muy
  bien al manejo de clusters pequeños y posee un manejo eficiente de trabajos
@@ -2974,26 +2701,21 @@ Torque junto con Maui y Gold satisfacen los requerimientos planteados para
 \end_layout
 
 \begin_layout Standard
-Pero existen ciertos aspectos en los que Torque no se desempeña de la mejor
- manera.
- Si bien se encuentra integrado el soporte para bibliotecas tipo MPI, no
- existe un correcto soporte para PVM.
- Además existen ciertas carencias en sus funcionalidades de Resource Management;
- p.
+Existen ciertos aspectos en los que TORQUE no se desempeña de la mejor manera.
+ Si bien se encuentra integrado el soporte para bibliotecas tipo MPI, debe
+ tenerse mucho cuidado al momento de ejecutar trabajos utilizando PVM.
+ TORQUE presenta carencias tambien en sus funcionalidades de Resource Management
+; p.
  ej.
  no es capaz de realizar CPU Harvesting o migración de procesos.
  
 \end_layout
 
 \begin_layout Standard
-Si bien existe un buen soporte por parte de la comunidad de usuarios de
- Torque y Maui por medio de listas de correo, la documentación disponible
- en el sitio web se encuentra incompleta en algunos aspectos (p.
- ej.
- PVM, interfaces de programación, etc.).
- Como es de esperar esta documentación se encuentra mas completa para Moab
- (la versión comercial de Maui), y si bien son productos diferentes son
- similares en muchos aspectos.
+Se puede encontrar un buen soporte por parte de la comunidad de usuarios
+ de TORQUE y Maui por medio de listas de correo y también se encuentra mucha
+ documentación disponible en el sitio web por medio de una Wiki (aunque
+ aun se encuentra en construcción).
 \end_layout
 
 \begin_layout Section
@@ -3012,6 +2734,7 @@ Tecnologías elegidas
 
 \begin_layout Standard
 Sobre TORQUE, Maui, Ganglia, etc.
+ (SANTIAGO)
 \end_layout
 
 \begin_layout Subsection
@@ -3039,31 +2762,23 @@ os funcionales establecidos en etapas mas tempranas y que fueran objetivos
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Durante el proceso de testing se aplicaron dos tipos de test.
  Se realizó un test funcional apoyado o complementado con un test exploratorio.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 El testing funcional verifica el cumplimiento de los requerimientos funcionales
  contra los casos de test, en un entorno que émula un ambiente de producción
  del sistema.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 El objetivo de este test es verificar si el comportamiento observado del
  software a prueba coincide o no con sus especificaciones.
  
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 El test exploratorio es un proceso simultáneo de exploración y aprendizaje
  del producto, diseño y ejecución de pruebas.
  La estrategia en este caso fue recorre las paginas del sitio Fenton en
@@ -3072,10 +2787,9 @@ El test exploratorio es un proceso simultáneo de exploración y aprendizaje
 \end_layout
 
 \begin_layout Standard
-Duarante el test exploratorio se generaron un serie de casos de test
-\lang english
- los cuales apuntan a cubrir los requerimientos funcionales principales
- del cluster.
+Duarante el test exploratorio se generaron un serie de casos de test los
+ cuales apuntan a cubrir los requerimientos funcionales principales del
+ cluster.
  Estos casos de test se incluyeron en el docmento Guía de Test.
  Esta documento pretende guiar el testeo en posteriores ocasiones.
  El mismo incluye casos de test y escenarios de pruebas que integran los
@@ -3084,8 +2798,6 @@ Duarante el test exploratorio se generaron un serie de casos de test
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Las herramientas utilizadas en el testing fueron la guía de test y las funcional
 idades probistas por los Google Groups como son reguistro issues y wikis.
 \end_layout
@@ -3115,46 +2827,41 @@ Conclusiones
 
 \begin_layout Standard
 Este proyecto nos permitió como estudiantes explorar mas a fondo el mundo
- de la Computación de Alta Performance que hasta el momento no conociamos
- en su mayoria.
- Se realizaron etapas de estudio del tema e investigación de tecnologias.
- Como parte del estudio del tema se curso la materia HPC de la catedra del
- CeCal del instituto de computación de Facultad de Ingenieria, el que nos
- sirvio para conocer el tema y todos los concetos relacionados a la computación
- de alto renedimiento.
+ de la computación de alto rendimiento que hasta el momento en su mayoria
+ no conociamos.
+ Se realizaron etapas de estudio del área e investigación de tecnologías.
+ Como parte del estudio del área se cursó la materia 'Computación de Alta
+ Performance' dictada por el grupo CeCal del Instituto de Computación de
+ la Facultad de Ingeniería, el que nos sirvió para introducirnos al área
+ y todos los conceptos relacionados a la computación de alto rendimiento.
 \end_layout
 
 \begin_layout Standard
-Estamos convencidos que la computación de alto renedimiento se a vuelto
- muy importante en la resolución de estos problemas con un alto grado de
- complegidad como se menciono anteriormente en capitulos de este informe.
+Estamos convencidos que la computación de alto renedimiento a cobrado mucha
+ importancia en la resolución de problemas con un alto grado de complejidad
+ computacional como ya se mencionó anteriormente.
 \end_layout
 
 \begin_layout Standard
-Sobre el dessarrollo del proyecto, la etapa de investigación de tecnologias
- fue muy importante y positiva para este.
- No solo nos sirvio para conocer algnas de las mas importantes herramientas
- open-source del mercado en cuanto a la implementación de clusters sino
- también para aprender sus caracteristicas, funcionalidades y limitantes
- para identificar los requerimientos que una alicación de este tipo debe
+La etapa de investigación de tecnologías fue muy importante y positiva para
+ el desarrollo del proyecto.
+ Nos sirvió para conocer algunas de las mas importantes herramientas open-source
+ del mercado para la implementación de clusters y profundizar en sus caracterist
+icas, funcionalidades y limitaciones que una aplicación de este tipo debe
  tener.
- En esta etapa pudimos identificar una herramienta como Torque que potenciada
- con Maui y Gold nos permitia resolver casi en su totalidad uno de los objetivos
- mas importantes del proyecto como ser la implementación de un cluster de
- alto renedimiento cn acceso remoto.
- Esto nos permitio reducir los tiempos del proyecto ya que si no ubiesemos
- realizado esta etapa tendriamos que haber tenido que dessarrollar una aplicació
-n con las funcionalidades brindadas por Torque, Maui y Gold.
- 
+ En esta etapa pudimos identificar una herramienta como TORQUE que potenciada
+ con Maui y Gold nos permitió resolver casi en su totalidad uno de los objetivos
+ mas importantes del proyecto; la implementación de un cluster de alto rendimien
+to con acceso remoto.
 \end_layout
 
 \begin_layout Standard
 Creemos que la investigación realizada en este proyecto fue muy positiva
- por que pudimos encontrar una solución que nos permite alcazar los obetivos
+ ya que pudimos encontrar? una solución que nos permite alcazar los objetivos
  del proyecto y abrir caminos para nuevas investigaciones y trabajos.
- Nos permitio comprobar que la implantación de un cluster de alto desempeño
- con n alto nivel de prestaciones, scalable y performante es posible sin
- necesida de muchos recursos.
+ (Nos permitió comprobar que la implantación de un cluster de alto desempeño
+ con un alto nivel de prestaciones, escalable y performante es posible sin
+ necesidad de muchos recursos.)?
 \end_layout
 
 \begin_layout Standard
@@ -3178,17 +2885,17 @@ Como continuación de este proyecto podriamos realizar y/o investigar mas
 \end_layout
 
 \begin_layout Itemize
-Integración de Gold con Torque para potenciar el manejo del uso de recursos
+Integración de Gold con TORQUE para potenciar el manejo del uso de recursos
  en clusters de alto desempeño.
 \end_layout
 
 \begin_layout Itemize
 Explorar mas a fndo la utilisación de la biblioteca PVM que no esta integrada
- con Torque.
+ con TORQUE.
 \end_layout
 
 \begin_layout Itemize
-Evaluación de diferentes tunning y confguraciones de Torque y Maui para
+Evaluación de diferentes tunning y confguraciones de TORQUE y Maui para
  evaluar y mejorar la performance.
 \end_layout
 
@@ -3199,7 +2906,7 @@ Mejorar la integracion de la interfaz web con Ganglia para el procesamiento
 
 \begin_layout Itemize
 Mejorar los reportes para los usuarios administradores para el analisis
- de datos y uso del sistema que son provistospor Torque.
+ de datos y uso del sistema que son provistospor TORQUE.
 \end_layout
 
 \begin_layout Itemize
