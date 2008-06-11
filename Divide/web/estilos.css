@@ -751,10 +751,11 @@ span#enejecucion{
 #usuario_logueado{
 	position: absolute;
 	top:10px;
-	left:300px;
+	left:30%;
 	color:#ffffff;
 	font-weight:bold;
 	border: 0px solid #ffffff;
+	
 }
 #usuario_logueado a{
 	color: #ff0000;
