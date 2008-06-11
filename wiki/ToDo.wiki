@@ -31,16 +31,13 @@
 - Introduccion (PAULO)
     1.1 Introducción a la computación de alto rendimiento (HECHO)
     1.3 Objetivos y alcance del proyecto (HECHO)
-    1.5 Estructura del documento
+    1.5 Estructura del documento (PAULO)
     1.4 Trabajos previos (PAULO).
-
+    1.5 Actividades del proyecto (PAULO)
 
 Capitulo 2 Computación de alto rendimiento: Agrupar y redactar nuevamente (PAULO)(HECHO)
 
-Capitulo 3 Actividades del proyecto
- Hacer
-
-Capitulo 4 (DAMIAN - ITU)
+ Capitulo 4 (DAMIAN - ITU) (HECHO)
 
 Capitulo 5 5 Solución desarrollada (Cambiar nombre)
  5.1 Tecnologías elegidas (ITU) 
@@ -52,9 +49,9 @@ Capitulo 5 5 Solución desarrollada (Cambiar nombre)
 Casos de estudio 
 Deploy, performance?
 
-Capitulo  7 Conclusiones (PAULO)
+Capitulo  7 Conclusiones (PAULO)(HECHO)
 
-Capitulo  8 Trabajo futuro (PAULO)
+Capitulo  8 Trabajo futuro (PAULO)(HECHO)
 
 Capitulo  9 Anexos (PAULO)(HECHO)
 
@@ -63,6 +60,16 @@ Capitulo  9 Anexos (PAULO)(HECHO)
 Referencias Chequear.
 
 ======================================================================
+
+===PRESENTACION=========================================================
+
+prog MPI
+   paulo ver dijckstra
+   Itu buscar internet
+   
+
+
+=====================================================================
 
 BUGS CONOCIDOS
 * *BUG* Modificar upload de archivos
