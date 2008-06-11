@@ -2846,18 +2846,18 @@ La etapa de investigación de tecnologías fue muy importante y positiva para
 icas, funcionalidades y limitaciones que una aplicación de este tipo debe
  tener.
  En esta etapa pudimos identificar una herramienta como TORQUE que potenciada
- con Maui y Gold nos permitió resolver casi en su totalidad uno de los objetivos
+ con Maui y Gold nos permite resolver casi en su totalidad uno de los objetivos
  mas importantes del proyecto; la implementación de un cluster de alto rendimien
 to con acceso remoto.
 \end_layout
 
 \begin_layout Standard
 Creemos que la investigación realizada en este proyecto fue muy positiva
- ya que pudimos encontrar? una solución que nos permite alcazar los objetivos
+ ya que pudimos desarrollar una solución que nos permite alcazar los objetivos
  del proyecto y abrir caminos para nuevas investigaciones y trabajos.
- (Nos permitió comprobar que la implantación de un cluster de alto desempeño
- con un alto nivel de prestaciones, escalable y performante es posible sin
- necesidad de muchos recursos.)?
+ Nos permitió comprobar que la implantación de un cluster de alto desempeño
+ con un alto nivel de prestaciones, escalable y performante es posible utilizand
+o computadores de escritorios; sin necesidad de hardware especializado.
 \end_layout
 
 \begin_layout Standard
@@ -2908,7 +2908,7 @@ Mejorar los reportes para los usuarios administradores para el analisis
 \begin_layout Itemize
 Aumentar la caracteristicas y opciones de monitoreo para chequeo preventivo.
  Hoy en día solo se chequea espacio en disco.
- En este punto se podría evaluar una integración co Gold.
+ En este punto se podría evaluar una integración con Gold.
 \end_layout
 
 \begin_layout Standard
@@ -3106,7 +3106,7 @@ iki/DRMAA/
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-1"
+key "key-14"
 
 \end_inset
 
@@ -3119,7 +3119,7 @@ Mg.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-2"
+key "key-15"
 
 \end_inset
 
@@ -3131,7 +3131,7 @@ Ing.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-3"
+key "key-16"
 
 \end_inset
 
@@ -3143,7 +3143,7 @@ Cristian Perfumo, Gerardo Mora, Lucas Rojas: Algoritmos genéticos paralelos
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-4"
+key "key-17"
 
 \end_inset
 
@@ -3157,7 +3157,7 @@ Mg.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-5"
+key "key-18"
 
 \end_inset
 
@@ -3167,7 +3167,7 @@ Sebastián Baña, Gonzalo Ferres y Nicolás Pepe: Proyecto MPI.net, 2003.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-6"
+key "key-19"
 
 \end_inset
 
