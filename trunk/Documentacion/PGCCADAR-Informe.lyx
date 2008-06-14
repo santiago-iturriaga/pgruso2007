@@ -655,8 +655,41 @@ Estructura del documento
 \end_layout
 
 \begin_layout Standard
-En esta sección se describe la estructura del mismo.
- (PENDIENTE).
+Este documento esta organizado en 8 secciones.
+ En la primera es una introduccion a este proyecto en la cual incluimos
+ una breve introduccion a la computación de alto rendimiento, objetivos
+ y motivaciones del proyecto, alcance y actividades desarrolladas en el
+ transcurso del proyecto.
+\end_layout
+
+\begin_layout Standard
+La sección dos profundizamos en el estado del arte de la computación de
+ altro rendimiento donde hablamos sobre la importancia de estas tecnologías,
+ organizacion de computadores, diseño de algoritmos paralelos, arquitecturas
+ de computacion paralela y herramientas disponibles.
+\end_layout
+
+\begin_layout Standard
+En la sección tres presentamos las tecnologias relevadas para la impalntación
+ de un cluster de alto desempeño.
+\end_layout
+
+\begin_layout Standard
+En la cuarta sección presentamos la solución propuesta con las tecnologias
+ elegidas y la interfaza de acceso remoto desarrollada para el cluster de
+ alto desempeño con acceso remoto.
+ Se presenta tambien un caso de estyudio asi como el proceso de test realizado.
+\end_layout
+
+\begin_layout Standard
+Las concluciones son presentadas en la seccion cinco y en la seccion 6 los
+ trabajos a futuro.
+ 
+\end_layout
+
+\begin_layout Standard
+La seccion 7 contiene los anexos.
+ Y por ultimo la sección de referencias.
 \end_layout
 
 \begin_layout Section
@@ -3174,6 +3207,41 @@ key "key-19"
 Federico Dominioni y Pablo Musso: Proyecto algoritmos genéticos incrementales,
  2003.
  http://www.fing.edu.uy/~sergion/agi/.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "20"
+key "key-20"
+
+\end_inset
+
+Baron, R.
+ y Higbie, L.
+ Computer Architecture, Addison Wesley, New York, 1992.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "21"
+key "key-21"
+
+\end_inset
+
+De Balsi, M.
+ Computer Architecture Addison Wesley, New York, 1990.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "23"
+key "key-23"
+
+\end_inset
+
+Foster I.
+ Designing and Building Parallel Programs: Concepts and Tools for Parallel
+ Software Engineering, Addison Wesley, New York, 1995.
 \end_layout
 
 \end_body
