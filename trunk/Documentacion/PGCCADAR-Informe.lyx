@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -1931,7 +1931,20 @@ Relevamiento de tecnologías
 \end_layout
 
 \begin_layout Subsection
-SSI: OpenMosix, OpenSSI y Kerrighed
+SSI: OpenMosix
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+Moshe Bar, fundador y director de proyecto de openMosix (uno de los proyectos
+ SSI mas influyentes al momento del relevamiento de tecnologías), anuncio
+ el 15 de julio del 2007 el cierre del proyecto y que se congelará tanto
+ su desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
+\end_layout
+
+\end_inset
+
+, OpenSSI y Kerrighed
 \end_layout
 
 \begin_layout Standard
@@ -1960,13 +1973,6 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
  paradigma estilo beowulf mas clásico.
  Quizas sea interesante construir un pequeño cluster SSI e investigar mas
  a fondo este tipo de tecnologías de manera de poder compara ambas soluciones.
-\end_layout
-
-\begin_layout Standard
-Moshe Bar, fundador y director de proyecto de openMosix (uno de los proyectos
- SSI mas influyentes al momento del relevamiento de tecnologías), anuncio
- el 15 de julio del 2007 el cierre del proyecto y que se congelará tanto
- su desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
 \end_layout
 
 \begin_layout Subsection
@@ -2027,7 +2033,7 @@ Condor brinda una interfaz de programación propietaria, y no soporta el
 \end_layout
 
 \begin_layout Subsubsection
-Conclusión
+Resumen
 \end_layout
 
 \begin_layout Standard
@@ -2675,7 +2681,7 @@ El cluster consta de 200 nodos Dell PowerEdge 1950 1U con dos procesadores
 \end_layout
 
 \begin_layout Subsubsection
-Conclusión
+Resumen
 \end_layout
 
 \begin_layout Standard
@@ -2695,12 +2701,11 @@ Existen ciertos aspectos en los que TORQUE no se desempeña de la mejor manera.
 ; p.
  ej.
  no es capaz de realizar CPU Harvesting o migración de procesos.
- 
 \end_layout
 
 \begin_layout Standard
-Se puede encontrar un buen soporte por parte de la comunidad de usuarios
- de TORQUE y Maui por medio de listas de correo y también se encuentra mucha
+En cuanto al soporte por parte de la comunidad de usuarios de TORQUE y Maui,
+ es muy bueno por medio de listas de correo y también se encuentra mucha
  documentación disponible en el sitio web por medio de una Wiki (aunque
  aun se encuentra en construcción).
 \end_layout
@@ -2710,7 +2715,7 @@ Cluster con acceso remoto.
 \end_layout
 
 \begin_layout Standard
-Se describen en esta sección los artefactos obtenidos como resultado del
+En esta sección describiremos los artefactos obtenidos como resultado del
  trabajo realizado en el marco del proyecto.
  
 \end_layout
@@ -2720,8 +2725,38 @@ Tecnologías elegidas
 \end_layout
 
 \begin_layout Standard
-Sobre TORQUE, Maui, Ganglia, etc.
- (SANTIAGO)
+Luego de evaluar las diferentes posibilidades decidimos optar por implementar
+ el cluster utilizando TORQUE como DRM y Maui como despachador, dejando
+ abierta la posibilidad de axenar Gold para la contabilización de recursos.
+ El conjunto de TORQUE y Maui requieren muy pocos recursos de hardware para
+ ejecutar, ventaja que resulta muy importante en un cluster de reducidas
+ dimensiones como el que se desea utilizar.
+ 
+\end_layout
+
+\begin_layout Standard
+TORQUE es un derivado de PBS, un DRM de mucha trayectoria inicialmente desarroll
+ado al mediados los años '90 para la NASA, por lo cuenta con un código base
+ muy estable y depurado.
+ Esto ayuda a mitigar los riesgos presentados por tecnologías emergentes
+ con mucho empuje (por ejemplo SGE) que ofrecen funcionalidades innovadoras
+ pero que también resultan un poco inciertas al momento de utilizar en un
+ proyecto de corta duración.
+ Otra ventaja que presenta TORQUE es su pequeño porte, resulta ser un producto
+ relativamente pequeño comparado con SGE cosa que facilita su comprensión
+ y por lo tanto su modificación y experimentación.
+\end_layout
+
+\begin_layout Standard
+Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
+ los requerimientos del proyecto también presenta ciertas carencias con
+ las que hubiera sido interesante contar.
+ TORQUE no brinda soporte para CPU harvesting ni migración de procesos,
+ esto no es un problema serio ya que el cluster que se utilizará es un cluster
+ homogéneo con nodos dedicados, esto significa que los procesadores de los
+ nodos se encontrarán a entera disposición del cluster y no serán compartidos
+ con otras aplicaciones (p.
+ ej.: aplicaciones de escritorio).
 \end_layout
 
 \begin_layout Subsection
@@ -3074,15 +3109,6 @@ M.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-7"
-
-\end_inset
-
-http://es.wikipedia.org/wiki/Single_System_Image
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset LatexCommand bibitem
 key "key-8"
 
 \end_inset
@@ -3133,8 +3159,7 @@ key "key-13"
 
 \end_inset
 
-Distributed Resource Management Application API (DRMAA), http://en.wikipedia.org/w
-iki/DRMAA/
+Distributed Resource Management Application API (DRMAA), http://www.drmaa.net
 \end_layout
 
 \begin_layout Bibliography
