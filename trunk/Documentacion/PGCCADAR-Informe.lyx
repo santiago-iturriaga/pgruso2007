@@ -54,10 +54,6 @@ Universidad de la República
 Santiago Iturriaga, Paulo Maya, Damián Pintos
 \end_layout
 
-\begin_layout Date
-
-\end_layout
-
 \begin_layout Abstract
 Que contiene el documento, en que consiste el proyecto...
 \end_layout
@@ -181,20 +177,15 @@ Introducción a la computación de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-Cada vez los problemas a resolver mediante la computación se tornan mas
- complicados con modelos mas complejos, trabajan con grandes volúmenes de
- datos, se requieren tiempos de respuesta mas limitados; así como otro tipo
- de requerimientos.
+Cada vez los problemas a resolver mediante la computación se tornan más
+ complicados, con modelos más complejos trabajando con grandes volúmenes
+ de datos y tiempos de respuesta limitados.
 \end_layout
 
 \begin_layout Standard
 La computación de alto rendimiento o HPC (siglas en ingles de Higth Performance
- Computing) nació para e intenta satisfacer todos esto requisitos de poder
- de computo.
-\end_layout
-
-\begin_layout Standard
-Esta reúne un conjunto de tecnologías, como ser supercomputadores o clusters,
+ Computing) nació para satisfacer todos estos requisitos de poder de cómputo.
+ Esta reúne un conjunto de tecnologías, como ser supercomputadores o clusters,
  y se apoya en el paradigma de programación paralela y distribuida.
 \end_layout
 
@@ -212,15 +203,15 @@ a.
 \end_layout
 
 \begin_layout Standard
-Existe una diversa gama de arquitecturas de computación paralela como puede
- ser arquitecturas de procesadores paralelos con memoria compartida o no
- ; o hasta cluster de computadores comunicados por una fastethernet.
+Existe una diversa gama de arquitecturas de computación paralela, desde
+ arquitecturas de procesadores paralelos con memoria compartida hasta clusters
+ de computadores comunicados por una fastethernet.
 \end_layout
 
 \begin_layout Standard
-En el capítulo 2 profundizaremos sobre la computación de alto rendimiento,
+En el capítulo dos profundizaremos sobre la computación de alto rendimiento,
  diferentes tipos de arquitecturas y técnicas, y observaremos las herramientas
- y paradigmas de programación paralela y/o distribuida.
+ y paradigmas de programación paralela o distribuida.
 \end_layout
 
 \begin_layout Subsection
@@ -228,7 +219,7 @@ Motivación del proyecto
 \end_layout
 
 \begin_layout Standard
-Actualmente existe en el CeCal (Centro de Cálculo) un cluster de computadores
+Actualmente existe en el Centro de Cálculo (CeCal) un cluster de computadores
  utilizado para investigación en proyectos internos.
  A corto plazo se proyecta alquilar el mismo como servicio a entidades externas.
  El software utilizado permite un nivel de abstracción muy bajo, esto limita
@@ -265,17 +256,14 @@ La motivación principal de este proyecto es la construcción e implantación
  de un cluster de alto desempeño con acceso remoto.
  Dentro del marco de esta motivación se han definido varios objetivos y
  el alcance del proyecto.
+ Esto incluye el estudio del estado del arte sobre la utilización de equipamient
+o destinado al procesamiento paralelo-distribuido.
 \end_layout
 
 \begin_layout Standard
-Esta motivación incluye el estudio del estado del arte sobre la utilización
- de equipamiento destinado al procesamiento paralelo-distribuido.
-\end_layout
-
-\begin_layout Standard
-En segundo lugar existe el objetivo de evaluación y diseño de herramientas
- automáticas para la administración y utilización de un cluster de computadores.
- Para esto se realizara el relevamiento de paquetes de software de base
+Como segundo objetivo tenemos la evaluación y diseño de herramientas automáticas
+ para la administración y utilización de un cluster de computadores.
+ Para esto se realizará el relevamiento de paquetes de software de base
  (sistemas operativos, bibliotecas, monitores de desempeño, etc.) que permitan
  el desarrollo y la ejecución de programas paralelos y distribuidos.
  En tal relevamiento se debe evaluar características funcionales así como
@@ -283,7 +271,7 @@ En segundo lugar existe el objetivo de evaluación y diseño de herramientas
 \end_layout
 
 \begin_layout Standard
-Como se menciono en la sección anterior se debe tener especial consideración
+Como se mencionó en la sección anterior se debe tener especial consideración
  en el grado de abstracción de las herramientas de administración y las
  utilizadas para la ejecución de trabajos en el cluster, para que de esta
  forma la infraestructura pueda ser usada por un conjunto diverso y amplio
@@ -303,7 +291,7 @@ El estudio el estado del arte sobre la utilización de equipamiento destinado
 \begin_layout Itemize
 La evaluación de paquetes de software de base (sistemas operativos, bibliotecas,
  monitores de desempeño, etc.) que permitan el desarrollo y la ejecución
- de programas paralelos y distribuidos, instalando una (o varias) alternativa(s)
+ de programas paralelos y distribuidos, instalando una o varias alternativas
  con tal fin.
  
 \end_layout
@@ -330,10 +318,10 @@ Trabajos previos
 No son pocos los trabajos realizados sobre investigación, desarrollo, construcci
 ón y aplicaciones de clusters.
  Sin embargo es relativamente poca la bibliografía asociada, dado que el
- tema ha ganado auge principalmente en la última década.
- Los estudios se remontan desde los años '70, pero puede decirse que IBM
- fue la primera en establecer una teoría formal con respecto a los clusters
- a través de un estudio realizado por Gene Myron Amdahl.
+ tema ha ganado importancia principalmente en la última década.
+ Los estudios se remontan desde los años '70, y puede decirse que IBM fue
+ la primera en establecer una teoría formal con respecto a los clusters
+ a través de un estudio realizado por Gene Myron Amdahl en 1967.
  
 \end_layout
 
@@ -409,7 +397,7 @@ En las ultimas décadas, la simulación computacional de fluidos ha emergido
  como un área de intenso trabajo.
  A medida que las técnicas computacionales se fueron perfeccionando, el
  interés de modelar con precisión el comportamiento de los flujos de fluidos
- fué en aumento, provocando importantes inversiones en equipamiento informático.
+ fue en aumento, provocando importantes inversiones en equipamiento informático.
 \end_layout
 
 \begin_layout Standard
@@ -570,10 +558,10 @@ Investigacion y estudio del estado del arte.
 
 \begin_layout Standard
 Unos de los principales objetivos del proyecto es la investigacion y estudio
- del estdo del arte a lo que refiere a la computacion de alta performance.
- Esta actividad abarco auto estudio por parte de los integrantes del proyecto
- y el curco de la amteria High Performance Computing dictada por el grupo
- Cecal del insituto de computacion de facultad de igenieria.
+ del estado del arte a lo que refiere a la computación de alta performance.
+ Esta actividad abarcó auto estudio por parte de los integrantes del proyecto
+ y el curso de la materia High Performance Computing dictada por el grupo
+ CeCal del insituto de computación de facultad de igenieria.
 \end_layout
 
 \begin_layout Paragraph
@@ -581,26 +569,26 @@ Estudio de tecnologías existentes.
 \end_layout
 
 \begin_layout Standard
-Paralelo a la investigacion y estudio se llevo a cabo un relevamiento de
+Paralelo a la investigación y estudio se llevó a cabo un relevamiento de
  paquetes de software de base (sistemas operativos, bibliotecas, monitores
  de desempeño, etc.) que permitieran el desarrollo y la ejecución de programas
  paralelos y distribuidos.
 \end_layout
 
 \begin_layout Standard
-De esta actividad surgio la propuesta de herramientas que permitieran la
- implantacion y administracion del cluster de alto desempeno con acceso
+De esta actividad surgió la propuesta de herramientas que permitieran la
+ implantación y administración del cluster de alto desempeño con acceso
  remoto.
 \end_layout
 
 \begin_layout Paragraph
-Relevamiento de requerimientos y determinacion del alcance del proyecto.
+Relevamiento de requerimientos y determinación del alcance del proyecto.
 \end_layout
 
 \begin_layout Standard
-Durante las primeras etapas del proyecto se realizaron reunuines con los
+Durante las primeras etapas del proyecto se realizaron reuniones con los
  tutores para relevar los principales requerimientos, identificar los posibles
- problemas y determianr el alcance del proyecto que permitiera cumplir con
+ problemas y determinar el alcance del proyecto que permitiera cumplir con
  los objetivos del proyecto.
 \end_layout
 
@@ -611,43 +599,43 @@ Implementación de la interfaz web.
 \begin_layout Standard
 Dentro de los alcances del proyecto se encontraba la implementacion de una
  interfaz web que permitiera el acceso remoto al cluster.
- Esta interfez deberia contener elementos de suabilidad, funcionalidades
- de administracion y reportes del cluster para los administradores del mismo.
+ Esta interfez debería contener elementos de usabilidad, funcionalidades
+ de administración y reportes del cluster para los administradores del mismo.
 \end_layout
 
 \begin_layout Standard
-Esta actividad se dividio en varias etapas.
- Primero una etapa de relevaminetdo de requerimientos donde semantubieron
- reuniones con los tutores y especialistas en el area de usabilidad apra
- interfases web.
+Esta actividad se dividió en varias etapas.
+ Primero una etapa de relevamiento de requerimientos donde se mantuvieron
+ reuniones con los tutores y especialistas en el area de usabilidad para
+ interfaces web.
 \end_layout
 
 \begin_layout Standard
-Se llevo a cavo una etapa de disno de la interfaz web donde se tubieron
+Se llevó a cabo una etapa de diseño de la interfaz web donde se tuvieron
  en cuenta conocimientos previos por parte de los integrantes del proyecto
- asi como la curva de aprendisaje de distintas herramientas de dessarrrllo.
+ asi como la curva de aprendizaje de distintas herramientas de desarrollo.
 \end_layout
 
 \begin_layout Standard
-Luego de la etapa de diseno se realio la etpa de desarrollo la cual se hizo
- en forma iterativa e incremental.
- Se fijaban pequenas iteraciones en las cuales se iban incrementando y/o
- mejorando las funcionalidades de la interfaz web.
+Luego de la etapa de diseño se realizó la etapa de desarrollo la cual se
+ hizo en forma iterativa e incremental.
+ Se fijaron pequeñas iteraciones en las cuales se fue incrementando y mejorando
+ las funcionalidades de la interfaz web.
 \end_layout
 
 \begin_layout Paragraph
-Testo de la solucion.
+Testo de la solución.
 \end_layout
 
 \begin_layout Standard
-Una ves implantado el cluster con las tecnologias selecionadas y terminado
- el desarrollo de la interfaz web se procedio con la etapa de testing.
- En esta estapa se probo los principales requerimientos funcionales.
+Una vez implantado el cluster con las tecnologías selecionadas y terminado
+ el desarrollo de la interfaz web se procedió con la etapa de testing.
+ En esta estapa se probaron los principales requerimientos funcionales.
 \end_layout
 
 \begin_layout Standard
-Por ultimo otras actividades realizadas fueron la realizacion de documentacion
- final como este informe y manuales; y la presentacion final.
+Por último otras actividades realizadas fueron la realización de la documentació
+n final como este informe y manuales, y la presentacion final.
 \end_layout
 
 \begin_layout Subsection
@@ -655,41 +643,36 @@ Estructura del documento
 \end_layout
 
 \begin_layout Standard
-Este documento esta organizado en 8 secciones.
- En la primera es una introduccion a este proyecto en la cual incluimos
- una breve introduccion a la computación de alto rendimiento, objetivos
- y motivaciones del proyecto, alcance y actividades desarrolladas en el
- transcurso del proyecto.
+Este documento esta organizado en ocho secciones.
+ La primera es una introducción a este proyecto en la cual incluímos una
+ breve introducción a la computación de alto rendimiento, objetivos y motivacion
+es del proyecto, alcance y actividades desarrolladas en el transcurso del
+ proyecto.
 \end_layout
 
 \begin_layout Standard
-La sección dos profundizamos en el estado del arte de la computación de
- altro rendimiento donde hablamos sobre la importancia de estas tecnologías,
- organizacion de computadores, diseño de algoritmos paralelos, arquitecturas
- de computacion paralela y herramientas disponibles.
+En la sección dos profundizamos en el estado del arte de la computación
+ de alto rendimiento donde hablamos sobre la importancia de estas tecnologías,
+ organización de computadores, diseño de algoritmos paralelos, arquitecturas
+ de computación paralela y herramientas disponibles.
 \end_layout
 
 \begin_layout Standard
-En la sección tres presentamos las tecnologias relevadas para la impalntación
+En la sección tres presentamos las tecnologías relevadas para la implantación
  de un cluster de alto desempeño.
 \end_layout
 
 \begin_layout Standard
 En la cuarta sección presentamos la solución propuesta con las tecnologias
- elegidas y la interfaza de acceso remoto desarrollada para el cluster de
+ elegidas y la interfaz de acceso remoto desarrollada para el cluster de
  alto desempeño con acceso remoto.
- Se presenta tambien un caso de estyudio asi como el proceso de test realizado.
+ Se presenta también un caso de estudio así como el proceso de test realizado.
 \end_layout
 
 \begin_layout Standard
-Las concluciones son presentadas en la seccion cinco y en la seccion 6 los
- trabajos a futuro.
+Las conclusiones son presentadas en la seccion cinco y en la seccion seis
+ los trabajos a futuro.
  
-\end_layout
-
-\begin_layout Standard
-La seccion 7 contiene los anexos.
- Y por ultimo la sección de referencias.
 \end_layout
 
 \begin_layout Section
@@ -699,7 +682,7 @@ Computación de alto rendimiento
 \begin_layout Standard
 Como ya mencionamos, en el correr de los últimos años ha crecido la importancia
  de satisfacer los requisitos crecientes de poder de cómputo debido a la
- necesidad de resolver problemas mas complicados con modelos más complejos,
+ necesidad de resolver problemas más complicados con modelos más complejos,
  así como trabajar con grandes volúmenes de datos sin perder de vista la
  capacidad de respuesta en un tiempo limitado.
 \end_layout
@@ -716,10 +699,7 @@ El procesamiento paralelo (o computación paralela de alto rendimiento) ha
 La computación distribuida es un modelo para resolver problemas de computación
  masiva utilizando un gran número de computadoras en una infraestructura
  de telecomunicaciones distribuida.
-\end_layout
-
-\begin_layout Standard
-Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
+ Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
  arquitecturas de computadores y programas, lenguajes de programación),
  situados en distintos lugares y pertenecientes a diferentes dominios de
  administración sobre una red que utiliza estándares abiertos.
@@ -730,11 +710,7 @@ Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
 Esta ha sido diseñada para resolver problemas demasiado grandes para cualquier
  supercomputadora o mainframe, manteniéndose la flexibilidad de trabajar
  en múltiples problemas más pequeños.
- 
-\end_layout
-
-\begin_layout Standard
-Exiten varios grados de distribución: de hardware y procesamiento, de datos
+ Exiten varios grados de distribución: de hardware y procesamiento, de datos
  y de control como veremos mas adelante.
 \end_layout
 
@@ -760,7 +736,7 @@ a.
 \end_layout
 
 \begin_layout Standard
-El avances en diferentes tecnologías como microporcesadores con mayor poder
+El avance en diferentes tecnologías como microprocesadores con mayor poder
  de procesamiento, comunicación de datos, desarrollo de bibliotecas e interfaces
  para programación de procesos han posibilitado esta técnica.
 \end_layout
@@ -806,8 +782,8 @@ o y económico.
 \end_layout
 
 \begin_layout Standard
-Otro tipo de aplicaciones que con una gran demanda de recursos son las de
- almacenamiento masivo.
+Otro tipo de aplicaciones con una gran demanda de recursos son las de almacenami
+ento masivo.
  Dependen de la capacidad para almacenar y procesar grandes cantidades de
  información y requieren de un acceso rápido y seguro a una masa considerable
  de datos almacenados.
@@ -823,10 +799,11 @@ Luego seguimos con las aplicaciones exigentes comunicacionalmente.
  banda considerables.
  Por ejemplo procesamiento de transacciones en línea, sistemas colaborativos,
  texto por demanda, vídeo por demanda, imágenes por demanda, simulación
- por demanda,.Obviamente todas las aplicaciones anteriores dependen en cierto
- grado de cada uno de los aspectos computacionales mencionados: poder de
- cómputo, capacidades de almacenamiento y eficientes canales de comunicación,
- sin embargo las podemos agrupar por su característica dominante.
+ por demanda.
+ Obviamente todas las aplicaciones anteriores dependen en cierto grado de
+ cada uno de los aspectos computacionales mencionados: poder de cómputo,
+ capacidades de almacenamiento y eficientes canales de comunicación, sin
+ embargo las podemos agrupar por su característica dominante.
 \end_layout
 
 \begin_layout Standard
@@ -899,10 +876,10 @@ En una red donde los procesadores comparten el mismo recurso de comunicación:
 \end_layout
 
 \begin_layout Standard
-Esta arquitectura es fácil y económica de implementar, pero es altamente
- no escalable ya que solo un procesador puede usar el bus en un momento
- dado; a medida que se incrementa el número de procesadores, el bus se convierte
- en un cuello de botella debido a la congestión.
+Esta arquitectura es fácil y económica de implementar, pero no es escalable
+ ya que solo un procesador puede usar el bus en un momento dado; a medida
+ que se incrementa el número de procesadores, el bus se convierte en un
+ cuello de botella debido a la congestión.
  
 \end_layout
 
@@ -1082,7 +1059,7 @@ El diseño de algoritmos paralelos involucra cuatro etapas, las cuales se
 \end_layout
 
 \begin_layout Standard
-Primero comenzamos por la etapa de Partición.
+Primero comenzamos por la etapa de partición.
  En esta etapa el cómputo y los datos sobre los cuales se opera se descomponen
  en tareas.
  Se ignoran aspectos como el número de procesadores de la máquina a usar
@@ -1090,14 +1067,13 @@ Primero comenzamos por la etapa de Partición.
 \end_layout
 
 \begin_layout Standard
-Seguimos por la etapa de Comunicación donde se determina la comunicación
- para coordinar las tareas; se definen estructuras y algoritmos de comunicación.
+Seguimos por la etapa de comunicación donde se determina la comunicación
+ para coordinar las tareas, se definen estructuras y algoritmos de comunicación.
 \end_layout
 
 \begin_layout Standard
-Luedo la etapa de agrupación.
- Aqui se evalúa en términos de eficiencia y costos de implementación a las
- dos etapas anteriores.
+Luedo en la etapa de agrupación se evalúa en términos de eficiencia y costos
+ de implementación a las dos etapas anteriores.
  Se agrupan tareas pequeñas en tareas más grandes.
 \end_layout
 
@@ -1168,9 +1144,8 @@ n.
 
 \begin_layout Standard
 La comunicación puede ser definida en dos fases.
- Primero se definen los canales que conectan las tareas.
- Luego se especifica la información o mensajes que deben ser enviados y
- recibidos en estos canales.
+ Primero se definen los canales que conectan las tareas y luego se especifica
+ la información o mensajes que deben ser enviados y recibidos en estos canales.
 \end_layout
 
 \begin_layout Standard
@@ -1231,7 +1206,7 @@ En las dos tareas anteriores el algoritmo resultante es aún abstracto en
 
 \begin_layout Standard
 En el proceso de partición se trata de establecer el mayor número posible
- de tareas con la intensión de maximizar el paralelismo.
+ de tareas con la intención de maximizar el paralelismo.
  Esto no necesariamente produce un algoritmo eficiente ya que el costo de
  comunicación puede ser significativo.
  
@@ -1350,10 +1325,10 @@ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
 \end_layout
 
 \begin_layout Standard
-Dentro de la clasificación de Flynn varias categorías.
+Dentro de la clasificación de Flynn hay varias categorías.
  La primera de ellas es SISD (Single Instruction stream, Single Data stream).
  La mayor parte de computadores seriales son SISD.
- Estas tienen un CPU que ejecuta una instruccion y busca o guarda datos
+ Estas tienen un CPU que ejecuta una instrucción y busca o guarda datos
  en un momento dado.
 \end_layout
 
@@ -1406,7 +1381,7 @@ Seguimos con SIMD (Single Instruction stream, Multiple Data stream).
 Tambien tenemos la categoría MISD (Multiple Instruction stream, Single Data
  stream) donde existen n procesadores, cada uno recibiendo una instrucción
  diferente y operando sobre el mismo flujo de datos.
- Actualmente no hay máquinas de este tipo por ser poco practicas, a pesar
+ Actualmente no hay máquinas de este tipo por ser poco prácticas, a pesar
  de que ciertas MIMD puedan ser usadas de esta forma.
 \end_layout
 
@@ -1421,7 +1396,7 @@ Tambien tenemos la categoría MISD (Multiple Instruction stream, Single Data
 
 \begin_layout Standard
 La categoría de MIMD (Multiple Instruction stream, Multiple Data stream)
- que incluye a la mayoría de los multiprocesadores y multicomputadores.
+ incluye a la mayoría de los multiprocesadores y multicomputadores.
  Estos tienen más de un procesador independiente, y cada uno puede ejecutar
  un programa diferente sobre sus propios datos.
  Podemos categorizarlos también según como esté organizada su memoria: memoria
@@ -1451,7 +1426,7 @@ Arquitecturas de computación paralela
 
 \begin_layout Standard
 En esta sección enumeraremos las diferentes arquitecturas que podemos encontrar
- en cuanto a computación par
+ en cuanto a computación paralela.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1972,7 +1947,7 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
  debido a que el cluster ya se encuentra en funcionamiento siguiendo un
  paradigma estilo beowulf mas clásico.
  Quizas sea interesante construir un pequeño cluster SSI e investigar mas
- a fondo este tipo de tecnologías de manera de poder compara ambas soluciones.
+ a fondo este tipo de tecnologías de manera de poder comparar ambas soluciones.
 \end_layout
 
 \begin_layout Subsection
@@ -2053,8 +2028,8 @@ OpenPBS se trata de la versión original de PBS desarrollada para la NASA
  a principios de los 90's.
  Actualmente es ofrecida por Altair Grid Technologies, aunque no se encuentra
  en desarrollo y la empresa no brinda ningún tipo de soporte sobre el software.
- Atair ha apostado a una versión comercial del producto llamada PBS Pro,
- y en lo que a Alatir respecta OpenPBS se trata de una forma de comenzar
+ Altair ha apostado a una versión comercial del producto llamada PBS Pro,
+ y en lo que a Altair respecta OpenPBS se trata de una forma de comenzar
  a utilizar PBS con el objetivo de comprar PBS Pro.
 \end_layout
 
@@ -2249,7 +2224,7 @@ Nodos Interactivos.
 Los nodos interactivos proveen un punto de entrada al sistema para los usuarios.
  Es en estos nodos en que los usuarios puede ingresar tareas al sistema
  y monitorear su progreso.
- Estos nodos deben tener comandos como qsub, qhold, etc disponibles.
+ Estos nodos deben tener comandos como qsub y qhold disponibles.
 \end_layout
 
 \begin_layout Paragraph
@@ -2404,12 +2379,11 @@ Las reservas anticipadas permiten que un sitio disponga ciertos recursos
  El acceso a una reserva dada es controlado por un Access Control List (ACL)
  que determina quién puede utilizar los recursos reservados.
  Es importante observar que mientras que un ACL permite que trabajos particulare
-ss utilicen recursos reservados, no fuerzan al trabajo a utilizar estos
- recursos.
+s utilicen recursos reservados, no fuerzan al trabajo a utilizar estos recursos.
  Maui procurará utilizar la mejor combinación posible de recursos disponibles
  sean éstos reservados o no.
  Maui puede ser configurado para que ciertos trabajos sean restringidos
- y que funcionen utilizando solamente recursos reservados, aplicando restricción
+ y que funcionen utilizando solamente recursos reservados, aplicando restriccion
 es a nivel de trabajo o especificando ciertas restricciones especiales de
  QoS.
  
@@ -2707,7 +2681,7 @@ Existen ciertos aspectos en los que TORQUE no se desempeña de la mejor manera.
 En cuanto al soporte por parte de la comunidad de usuarios de TORQUE y Maui,
  es muy bueno por medio de listas de correo y también se encuentra mucha
  documentación disponible en el sitio web por medio de una Wiki (aunque
- aun se encuentra en construcción).
+ aún se encuentra en construcción).
 \end_layout
 
 \begin_layout Section
@@ -2814,7 +2788,7 @@ Testeo de la solución
 \end_layout
 
 \begin_layout Standard
-Unas de las actividades de este proceso fue el testeo de las tecnologias
+Una de las actividades de este proceso fue el testeo de las tecnologias
  propuestas y el test de la interfaz web desarrollada.
  
 \end_layout
@@ -2832,7 +2806,7 @@ Durante el proceso de testing se aplicaron dos tipos de test.
 
 \begin_layout Standard
 El testing funcional verifica el cumplimiento de los requerimientos funcionales
- contra los casos de test, en un entorno que émula un ambiente de producción
+ contra los casos de test, en un entorno que emula un ambiente de producción
  del sistema.
 \end_layout
 
@@ -2845,19 +2819,19 @@ El objetivo de este test es verificar si el comportamiento observado del
 \begin_layout Standard
 El test exploratorio es un proceso simultáneo de exploración y aprendizaje
  del producto, diseño y ejecución de pruebas.
- La estrategia en este caso fue recorre las paginas del sitio Fenton en
- busca de defectos de diseño, de programación, cualquier mal funcionamiento
- , etc.
+ La estrategia en este caso fue recorrer las paginas del sitio Fenton en
+ busca de defectos de diseño, de programación, cualquier mal funcionamiento,
+ etc.
 \end_layout
 
 \begin_layout Standard
-Duarante el test exploratorio se generaron un serie de casos de test los
+Durante el test exploratorio se generaron un serie de casos de test los
  cuales apuntan a cubrir los requerimientos funcionales principales del
  cluster.
- Estos casos de test se incluyeron en el docmento Guía de Test.
- Esta documento pretende guiar el testeo en posteriores ocasiones.
+ Estos casos de test se incluyeron en el docemento Guía de Test, pretendiendo
+ guiar el testeo en posteriores ocasiones.
  El mismo incluye casos de test y escenarios de pruebas que integran los
- casos de test; asi como una descripción del process ejecutado para esta
+ casos de test, así como una descripción del proceso ejecutado para esta
  oportunidad.
 \end_layout
 
