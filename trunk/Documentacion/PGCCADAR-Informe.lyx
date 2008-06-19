@@ -30,7 +30,7 @@
 \quotes_language swedish
 \papercolumns 1
 \papersides 1
-\paperpagestyle default
+\paperpagestyle fancy
 \tracking_changes false
 \output_changes false
 \author "" 
@@ -40,6 +40,57 @@
 \begin_body
 
 \begin_layout Title
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+lhead{Facultad de Ingeniería}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+chead{}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+rhead{Universidad de la República}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+lfoot{Sección 
+\backslash
+thesection}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+cfoot{}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+rfoot{Página 
+\backslash
+thepage} 
+\end_layout
+
+\end_inset
+
 Informe Final
 \newline
 Cluster de Computadores de Alto Desempeño con Acceso Remoto
@@ -2092,7 +2143,7 @@ Solaris o Linux pero no Linux en IA64
 \begin_inset Quotes erd
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Standard
@@ -2473,13 +2524,8 @@ Histórico.
 \begin_layout Standard
 Estas estadísticas pueden ser obtenidas para un lapso de tiempo, un tipo
  de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
- Este comando trabaja con la traza de información detallada de un trabajo,
- que es guardada al dar por finalizado un trabajo.
- Estas trazas son almacenadas en el directorio configurado por el parámetro
- STATDIR (por defecto $(MAUIHOMEDIR)/stats) en archivos utilizando el formato
- WWW_MMM_DD_YYYY (p.
- ej.
- Mon_Jul_16_2001), siendo esta fecha la fecha de finalización del trabajo.
+ Este comando utiliza la traza de información detallada de un trabajo, que
+ es guardada al dar por finalizado un trabajo.
  La traza de un trabajo se almacena en texto plano utilizando espacios como
  separadores, por lo que puede ser analizado directamente con cualquier
  editor de texto.
@@ -2494,11 +2540,7 @@ Fairshare.
 Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
  habilitado.
  Al igual que las trazas de los trabajos, estas son almacenadas en archivos
- utilizando texto plano en el directorio configurado por el parámetro STATDIR
- y utilizando el formato FS.<EPOCHTIME> (p.ej., FS.982713600) por cada ventana
- de fairshare.
- Se puede obtener información de estos archivos utilizando el comando 'diagnose
- -f'.
+ utilizando texto plano por cada ventana de fairshare.
  
 \end_layout
 
@@ -2569,6 +2611,12 @@ Existen diferentes formas de integrar Gold al sistema: Perl API, Java API
 
 \begin_layout Subsubsection
 Casos de estudio
+\begin_inset LatexCommand label
+name "sub:Torque-Casos-de-estudio"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -2702,34 +2750,42 @@ Tecnologías elegidas
 Luego de evaluar las diferentes posibilidades decidimos optar por implementar
  el cluster utilizando TORQUE como DRM y Maui como despachador, dejando
  abierta la posibilidad de axenar Gold para la contabilización de recursos.
- El conjunto de TORQUE y Maui requieren muy pocos recursos de hardware para
- ejecutar, ventaja que resulta muy importante en un cluster de reducidas
- dimensiones como el que se desea utilizar.
+ Luego de evaluar varios casos de estudio (ver sección 
+\begin_inset LatexCommand vref
+reference "sub:Torque-Casos-de-estudio"
+
+\end_inset
+
+) pudimos comprobar que TORQUE resulta muy adecuado para clusters de pequeño
+ a mediano porte.
+ Tanto TORQUE como Maui requieren pocos recursos de hardware para su ejecución,
+ ventaja que resulta muy importante en un cluster de reducidas dimensiones
+ como el que se desea utilizar.
  
 \end_layout
 
 \begin_layout Standard
-TORQUE es un derivado de PBS, un DRM de mucha trayectoria inicialmente desarroll
-ado al mediados los años '90 para la NASA, por lo cuenta con un código base
- muy estable y depurado.
+TORQUE es un derivado de PBS, un DRM inicialmente desarrollado al mediados
+ los años '90 para la NASA, por lo cuenta con un código base muy estable
+ y depurado.
  Esto ayuda a mitigar los riesgos presentados por tecnologías emergentes
- con mucho empuje (por ejemplo SGE) que ofrecen funcionalidades innovadoras
- pero que también resultan un poco inciertas al momento de utilizar en un
- proyecto de corta duración.
- Otra ventaja que presenta TORQUE es su pequeño porte, resulta ser un producto
- relativamente pequeño comparado con SGE cosa que facilita su comprensión
- y por lo tanto su modificación y experimentación.
+ que ofrecen funcionalidades innovadoras pero que también resultan problematicas
+ en un proyecto de corta duración.
+ Otra ventaja que presenta TORQUE es su pequeño porte ya que resulta ser
+ un producto relativamente pequeño cosa que facilita su comprensión y por
+ lo tanto su modificación y experimentación.
 \end_layout
 
 \begin_layout Standard
 Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
  los requerimientos del proyecto también presenta ciertas carencias con
  las que hubiera sido interesante contar.
- TORQUE no brinda soporte para CPU harvesting ni migración de procesos,
- esto no es un problema serio ya que el cluster que se utilizará es un cluster
- homogéneo con nodos dedicados, esto significa que los procesadores de los
- nodos se encontrarán a entera disposición del cluster y no serán compartidos
- con otras aplicaciones (p.
+ Las funcionalidades mas importantes que TORQUE no brinda son CPU harvesting
+ y la migración de procesos.
+ Esto no es un problema serio ya que el cluster que se utilizará cuenta
+ con nodos homogéneos y dedicados, esto significa que los nodos del cluster
+ tendrán capacidades de procesamiento muy similares y no serán compartidos
+ con otras aplicaciones externas al cluster (p.
  ej.: aplicaciones de escritorio).
 \end_layout
 
