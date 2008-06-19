@@ -1,0 +1,199 @@
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Cluster con acceso remoto
+\end_layout
+
+\begin_layout Standard
+En esta sección describiremos los artefactos obtenidos como resultado del
+ trabajo realizado en el marco del proyecto.
+ 
+\end_layout
+
+\begin_layout Subsection
+Tecnologías elegidas
+\end_layout
+
+\begin_layout Standard
+Luego de evaluar las diferentes posibilidades decidimos optar por implementar
+ el cluster utilizando TORQUE como DRM y Maui como despachador, dejando
+ abierta la posibilidad de axenar Gold para la contabilización de recursos.
+ El conjunto de TORQUE y Maui requieren muy pocos recursos de hardware para
+ ejecutar, ventaja que resulta muy importante en un cluster de reducidas
+ dimensiones como el que se desea utilizar.
+ 
+\end_layout
+
+\begin_layout Standard
+TORQUE es un derivado de PBS, un DRM de mucha trayectoria inicialmente desarroll
+ado al mediados los años '90 para la NASA, por lo cuenta con un código base
+ muy estable y depurado.
+ Esto ayuda a mitigar los riesgos presentados por tecnologías emergentes
+ con mucho empuje (por ejemplo SGE) que ofrecen funcionalidades innovadoras
+ pero que también resultan un poco inciertas al momento de utilizar en un
+ proyecto de corta duración.
+ Otra ventaja que presenta TORQUE es su pequeño porte, resulta ser un producto
+ relativamente pequeño comparado con SGE cosa que facilita su comprensión
+ y por lo tanto su modificación y experimentación.
+\end_layout
+
+\begin_layout Standard
+Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
+ los requerimientos del proyecto también presenta ciertas carencias con
+ las que hubiera sido interesante contar.
+ TORQUE no brinda soporte para CPU harvesting ni migración de procesos,
+ esto no es un problema serio ya que el cluster que se utilizará es un cluster
+ homogéneo con nodos dedicados, esto significa que los procesadores de los
+ nodos se encontrarán a entera disposición del cluster y no serán compartidos
+ con otras aplicaciones (p.
+ ej.: aplicaciones de escritorio).
+\end_layout
+
+\begin_layout Subsection
+Interfaz web desarrollada
+\end_layout
+
+\begin_layout Paragraph*
+Diseño e implementación de la solución 
+\end_layout
+
+\begin_layout Paragraph*
+Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
+ así como la curva de aprendizaje de las distintas herramientas para realizar
+ aplicaciones web, decidimos utilizar php con eclipse como ide.
+\end_layout
+
+\begin_layout Paragraph*
+El motor de base de datos podía ser MySql o PostgreSql y la decisión entre
+ uno de los dos no la podíamos tomar hasta tiempo después de iniciada la
+ etapa de implementación, por lo tanto se pensó desde un principio en un
+ módulo de abstracción al motor de base de datos que ejecutara las operaciones
+ básicas (abrir la conexión, ejecutar una consulta, obtener el resultado)
+ e implementarlo tanto para mysql como para posgresql.
+ Este requerimiento redundó en una ventaja para el producto: si fuera necesario
+ instalarlo sobre otro motor de condiciones similares, en principio solo
+ sería necesario reimplementar el módulo y repetir la etapa de testeo.
+\end_layout
+
+\begin_layout Paragraph*
+La apariencia del sitio también podía variar durante la implementación,
+ por lo tanto además de separar la lógica de la aplicación de la capa de
+ presentación, esta última se dividió en archivos .php que reciben los pedidos
+ del usuario y actúan en consecuencia, separados de los archivos .html y
+ .css orientados a la forma en que estos resultados se muestran.
+ Para esto utilizamos plantillas que son cargadas en cada php para luego
+ ser desplegadas en pantalla.
+ En definitiva obtuvimos una versión moderada del patrón model view controller.
+ Si en algún momento se deseara rediseñar el sitio manteniendo el funcionamiento
+ del mismo, la mayor parte se puede cambiar desde estilos.css y el resto
+ desde las plantillas en formato .html.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Graphics
+	filename diagrama.gif
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Testeo de la solución
+\end_layout
+
+\begin_layout Standard
+Una de las actividades de este proceso fue el testeo de las tecnologias
+ propuestas y el test de la interfaz web desarrollada.
+ 
+\end_layout
+
+\begin_layout Standard
+Los objetivos de esta etapa son la verificación y validación de los requerimient
+os funcionales establecidos en etapas mas tempranas y que fueran objetivos
+ del proyecto.
+\end_layout
+
+\begin_layout Standard
+Durante el proceso de testing se aplicaron dos tipos de test.
+ Se realizó un test funcional apoyado o complementado con un test exploratorio.
+\end_layout
+
+\begin_layout Standard
+El testing funcional verifica el cumplimiento de los requerimientos funcionales
+ contra los casos de test, en un entorno que emula un ambiente de producción
+ del sistema.
+\end_layout
+
+\begin_layout Standard
+El objetivo de este test es verificar si el comportamiento observado del
+ software a prueba coincide o no con sus especificaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+El test exploratorio es un proceso simultáneo de exploración y aprendizaje
+ del producto, diseño y ejecución de pruebas.
+ La estrategia en este caso fue recorrer las paginas del sitio Fenton en
+ busca de defectos de diseño, de programación, cualquier mal funcionamiento,
+ etc.
+\end_layout
+
+\begin_layout Standard
+Durante el test exploratorio se generaron un serie de casos de test los
+ cuales apuntan a cubrir los requerimientos funcionales principales del
+ cluster.
+ Estos casos de test se incluyeron en el docemento Guía de Test, pretendiendo
+ guiar el testeo en posteriores ocasiones.
+ El mismo incluye casos de test y escenarios de pruebas que integran los
+ casos de test, así como una descripción del proceso ejecutado para esta
+ oportunidad.
+\end_layout
+
+\begin_layout Standard
+Las herramientas utilizadas en el testing fueron la guía de test y las funcional
+idades probistas por los Google Groups como son reguistro issues y wikis.
+\end_layout
+
+\end_body
+\end_document

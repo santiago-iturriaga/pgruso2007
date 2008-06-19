@@ -1,0 +1,646 @@
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+En el principio de la historia de las computadoras se tenía la idea de que
+ un servidor tenía que ser necesariamente una máquina, conocida como super
+ computador o mainframe, que contara con un procesador muy potente que diera
+ servicio a varias terminales tontas.
+ Según esta doctrina, para asegurar mayor poder de cálculo era necesario
+ tener un procesador más poderoso.
+ De este modo, cuando los requerimientos de procesamiento aumentaban, se
+ hacía necesario en la mayoría de los casos, cambiar la súper computadora
+ actual por una nueva mejor, pasando a subutilizar la súper computadora
+ anterior, con un alto costo asociado.
+\end_layout
+
+\begin_layout Standard
+Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
+ crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
+to poniendo a trabajar varias computadoras en paralelo con procesadores
+ 16 DX4, interconectadas en una red de 10 Mbit Ethernet.
+\end_layout
+
+\begin_layout Standard
+A partir de ese momento, y debido al éxito alcanzado en el proyecto, muchos
+ otros proyectos siguieron la investigación del tema, bajo la premisa de
+ convertir hardware de relativo bajo costo en clusters que logren equiparar
+ o superar la performance alcanzada por las supercomputadores.
+\end_layout
+
+\begin_layout Standard
+La construcción de los ordenadores del cluster es más fácil y económica
+ debido a su flexibilidad: pueden tener todos la misma configuración de
+ hardware y sistema operativo (cluster homogéneo), diferente rendimiento
+ pero con arquitecturas y sistemas operativos similares (cluster semi-homogéneo)
+, o tener diferente hardware y sistema operativo (cluster heterogéneo).
+\end_layout
+
+\begin_layout Standard
+Para que un cluster funcione como tal, no basta solo con conectar entre
+ sí los ordenadores, sino que es necesario proveer un sistema de manejo
+ del cluster, el cual se encargue de interactuar con el usuario y los procesos
+ que corren en él para optimizar el funcionamiento.
+\end_layout
+
+\begin_layout Standard
+En general, un cluster necesita de varios componentes de software y hardware
+ para poder funcionar.
+ A saber:
+\end_layout
+
+\begin_layout Itemize
+Nodos (los ordenadores o servidores)
+\end_layout
+
+\begin_layout Itemize
+Sistemas Operativos
+\end_layout
+
+\begin_layout Itemize
+Conexiones de Red
+\end_layout
+
+\begin_layout Itemize
+Middleware (capa de abstracción entre el usuario y los sistemas operativos)
+\end_layout
+
+\begin_layout Itemize
+Protocolos de Comunicación y Servicios.
+\end_layout
+
+\begin_layout Itemize
+Aplicaciones (pueden ser paralelas o no) 
+\end_layout
+
+\begin_layout Standard
+Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
+ tareas como data mining, servidores de archivos, servidores de base de
+ datos, servidores web, simuladores de vuelo, graphics rendering, modeladores
+ climáticos o incluso para CD ripping alcanzando velocidades realmente altas.
+\end_layout
+
+\begin_layout Standard
+La idea es simplemente reunir el poder de cómputo de una serie de nodos
+ para proveer alta escalabilidad, poder de cómputo, o construir redundancia
+ y de esta manera proveer alta disponibilidad.
+ Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
+s, los cluster utilizan múltiples máquinas para proveer un ambiente más
+ poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
+nto sea visible al usuario como una sola unidad, aunque se componga de muchas
+ computadoras trabajando en paralelo para el mismo fin.
+\end_layout
+
+\begin_layout Standard
+El alto poder de procesamiento de varias computadoras trabajando en paralelo
+ (o cluster de computadoras) se perfila como una solución viable a las empresas,
+ universidades y escuelas a un bajo costo de implementación.
+ 
+\end_layout
+
+\begin_layout Subsection
+Introducción a la computación de alto rendimiento 
+\end_layout
+
+\begin_layout Standard
+Cada vez los problemas a resolver mediante la computación se tornan más
+ complicados, con modelos más complejos trabajando con grandes volúmenes
+ de datos y tiempos de respuesta limitados.
+\end_layout
+
+\begin_layout Standard
+La computación de alto rendimiento o HPC (siglas en ingles de Higth Performance
+ Computing) nació para satisfacer todos estos requisitos de poder de cómputo.
+ Esta reúne un conjunto de tecnologías, como ser supercomputadores o clusters,
+ y se apoya en el paradigma de programación paralela y distribuida.
+\end_layout
+
+\begin_layout Standard
+La computación distribuida resuelve problemas de computación masiva utilizando
+ un gran número de computadoras con una infraestructura de telecomunicaciones
+ distribuida.
+\end_layout
+
+\begin_layout Standard
+La programación paralela es una técnica de programación basada en la ejecución
+ simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
+ o en un cluster de ordenadores, en cuyo caso se denomina computación distribuid
+a.
+\end_layout
+
+\begin_layout Standard
+Existe una diversa gama de arquitecturas de computación paralela, desde
+ arquitecturas de procesadores paralelos con memoria compartida hasta clusters
+ de computadores comunicados por una fastethernet.
+\end_layout
+
+\begin_layout Standard
+En el capítulo dos profundizaremos sobre la computación de alto rendimiento,
+ diferentes tipos de arquitecturas y técnicas, y observaremos las herramientas
+ y paradigmas de programación paralela o distribuida.
+\end_layout
+
+\begin_layout Subsection
+Motivación del proyecto
+\end_layout
+
+\begin_layout Standard
+Actualmente existe en el Centro de Cálculo (CeCal) un cluster de computadores
+ utilizado para investigación en proyectos internos.
+ A corto plazo se proyecta alquilar el mismo como servicio a entidades externas.
+ El software utilizado permite un nivel de abstracción muy bajo, esto limita
+ los perfiles de usuarios capaces de utilizar el sistema.
+ Es importante notar que los usuarios finales serán en la mayoría de los
+ casos profesionales en áreas dispares como por ejemplo las ciencias básicas
+ (matemática, física, química, etc.), no necesariamente relacionadas con
+ la informática.
+\end_layout
+
+\begin_layout Standard
+Se desea mantener un control estricto de las actividades de los usuarios
+ de manera de poder garantizar la disponibilidad de recursos en un determinado
+ momento.
+ Además es importante mantener un historial de utilización de recursos por
+ parte de los distintos usuarios y procesos; tanto para poder realizar un
+ seguimiento de su estado actual y verificar su correcto funcionamiento,
+ como para realizar mediciones referidas a la utilización de recursos por
+ parte de los usuarios ya que se lo considera un activo.
+\end_layout
+
+\begin_layout Standard
+El proyecto intenta resolver estos problemas permitiendo la utilización
+ del sistema por parte de usuarios no especializados, así como también permitir
+ el monitoreo del mismo en tiempo real por parte de los administradores.
+\end_layout
+
+\begin_layout Subsection
+Objetivos y alcance del proyecto
+\end_layout
+
+\begin_layout Standard
+La motivación principal de este proyecto es la construcción e implantación
+ de un cluster de alto desempeño con acceso remoto.
+ Dentro del marco de esta motivación se han definido varios objetivos y
+ el alcance del proyecto.
+ Esto incluye el estudio del estado del arte sobre la utilización de equipamient
+o destinado al procesamiento paralelo-distribuido.
+\end_layout
+
+\begin_layout Standard
+Como segundo objetivo tenemos la evaluación y diseño de herramientas automáticas
+ para la administración y utilización de un cluster de computadores.
+ Para esto se realizará el relevamiento de paquetes de software de base
+ (sistemas operativos, bibliotecas, monitores de desempeño, etc.) que permitan
+ el desarrollo y la ejecución de programas paralelos y distribuidos.
+ En tal relevamiento se debe evaluar características funcionales así como
+ usabilidad de las herramientas.
+\end_layout
+
+\begin_layout Standard
+Como se mencionó en la sección anterior se debe tener especial consideración
+ en el grado de abstracción de las herramientas de administración y las
+ utilizadas para la ejecución de trabajos en el cluster, para que de esta
+ forma la infraestructura pueda ser usada por un conjunto diverso y amplio
+ de usuarios.
+\end_layout
+
+\begin_layout Standard
+A continuación presentamos los objetivos específicos del proyecto:
+\end_layout
+
+\begin_layout Itemize
+El estudio el estado del arte sobre la utilización de equipamiento destinado
+ al procesamiento paralelo-distribuido para la resolución de problemas complejos.
+ 
+\end_layout
+
+\begin_layout Itemize
+La evaluación de paquetes de software de base (sistemas operativos, bibliotecas,
+ monitores de desempeño, etc.) que permitan el desarrollo y la ejecución
+ de programas paralelos y distribuidos, instalando una o varias alternativas
+ con tal fin.
+ 
+\end_layout
+
+\begin_layout Itemize
+El desarrollo de software que permita la administración semiautomática del
+ clúster, para garantizar su alta disponibilidad y su funcionamiento a niveles
+ razonables de eficiencia computacional.
+ 
+\end_layout
+
+\begin_layout Itemize
+El desarrollo de una interfaz amigable que permita la utilización de modo
+ simple del cluster como recurso de cómputo integrado, aún para usuarios
+ sin conocimientos exhaustivos de informática y/o de las técnicas de computación
+ de alto desempeño.
+\end_layout
+
+\begin_layout Subsection
+Trabajos previos
+\end_layout
+
+\begin_layout Standard
+No son pocos los trabajos realizados sobre investigación, desarrollo, construcci
+ón y aplicaciones de clusters.
+ Sin embargo es relativamente poca la bibliografía asociada, dado que el
+ tema ha ganado importancia principalmente en la última década.
+ Los estudios se remontan desde los años '70, y puede decirse que IBM fue
+ la primera en establecer una teoría formal con respecto a los clusters
+ a través de un estudio realizado por Gene Myron Amdahl en 1967.
+ 
+\end_layout
+
+\begin_layout Standard
+En el CeCal se han llevado a cabo en los últimos años una gran cantidad
+ de trabajos de investigación por parte de docentes y de estudiantes.
+ Dentro del ámbito académico-docente podemos destacar los siguientes trabajos:
+\end_layout
+
+\begin_layout Paragraph
+Algoritmos genéticos paralelos y su aplicación al diseño de redes de comunicacio
+nes confiables (2004).
+\end_layout
+
+\begin_layout Standard
+Tésis de maestría realizada por Mg.
+ Ing.
+ Sergio Nesmachnow, finalizada en Julio de 2004.
+\end_layout
+
+\begin_layout Standard
+Al tratar con problemas de optimización combinatoria NP difíciles, para
+ los cuales la complejidad de los algoritmos conocidos aumenta de manera
+ superpolinomial con el tamaño del problema, la aplicabilidad de los métodos
+ exactos de resolución se encuentra limitada por el enorme tiempo y consumo
+ de recursos computacionales que demandan.
+ Es aquí cuando las técnicas heurísticas aparecen como la única alternativa
+ viable para abordar problemas NP difíciles.
+ A diferencia de las técnicas exactas, las técnicas heurísticas no pueden
+ garantizar a priori la obtención de la solución óptima del problema, pero
+ en la práctica, numerosas técnicas heurísticas se comportan satisfactoriamente
+ para la resolución de complejos problemas de optimización.
+ 
+\end_layout
+
+\begin_layout Standard
+En un nivel superior de abstracción, las técnicas meta heurísticas proporcionan
+ esquemas o enfoques genéricos para la resolución de problemas complejos.
+ Estos enfoques genéricos pueden ser instanciados para producir algoritmos
+ específicos que trabajan bajo un mismo lineamiento general.
+ Las técnicas de computación evolutiva constituyen una familia de meta heurístic
+as estocásticas utilizadas exitosamente para la resolución de variados problemas
+ en las áreas de búsqueda y análisis de información, optimización combinatoria,
+ entre otras.
+\end_layout
+
+\begin_layout Standard
+En este trabajo se presenta un estudio de las técnicas de computación evolutiva
+ y la aplicación de técnicas de procesamiento de alta performance para implement
+ar modelos de algoritmos genéticos capaces de ejecutar en un ambiente paralelo-d
+istribuido y se presentan algoritmos evolutivos abocados al caso concreto
+ de diseñar redes de comunicaciones de alta conectividad topológica.
+ Finalmente se evalúan diferentes algoritmos evolutivos puros e híbridos
+ en sus versiones secuenciales y paralelas, presentando un estudio comparativo
+ que reporta resultados satisfactorios tanto desde el punto de vista de
+ la calidad de resultados obtenidos como desde el punto de vista de la mejora
+ de eficiencia computacional alcanzada por las versiones paralelas de los
+ algoritmos con respecto a sus contrapartes secuenciales.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Mejora del desempeño de modelos numéricos del Río de la Plata (2006).
+\end_layout
+
+\begin_layout Standard
+Tésis de maestría del Ing.
+ Pablo Ezzatti, finalizada en Junio de 2006.
+\end_layout
+
+\begin_layout Standard
+En las ultimas décadas, la simulación computacional de fluidos ha emergido
+ como un área de intenso trabajo.
+ A medida que las técnicas computacionales se fueron perfeccionando, el
+ interés de modelar con precisión el comportamiento de los flujos de fluidos
+ fue en aumento, provocando importantes inversiones en equipamiento informático.
+\end_layout
+
+\begin_layout Standard
+En Uruguay, en el Instituto de Mecánica de Fluidos e Ingeniería Ambiental
+ (IMFIA) de la Facultad de Ingeniería de la Universidad de la República,
+ desde hace algunos años, se está trabajando en el modelado numérico del
+ Río de la Plata.
+\end_layout
+
+\begin_layout Standard
+Con el fin de obtener mejoras significativas en diversas características
+ del modelado, se buscó un nuevo modelo.
+ Finalmente se optó por el modelo RMA-10, ampliamente utilizado en el modelado
+ de estuarios.
+\end_layout
+
+\begin_layout Standard
+Las cualidades de este nuevo modelo permiten la obtención de resultados
+ sumamente alentadores en diversas simulaciones realizadas.
+ En contraposición a la mejora del modelado, se incrementan de forma abrupta
+ los costos computacionales (tiempo de procesamiento), lo que implica un
+ gran obstáculo para su utilización y para aplicar mejoras al modelo.
+\end_layout
+
+\begin_layout Standard
+En esta tesis se estudian técnicas de computación de alto desempeño aplicadas
+ al cálculo científico, con el fin de mejorar el desempeño computacional
+ de modelos numéricos que utilizan el paradigma de elementos finitos (MEF).
+ Se aborda la aplicación de estas técnicas al modelo hidrodinámico RMA-10
+ aplicado al Río de la Plata.
+\end_layout
+
+\begin_layout Standard
+Se presenta una estrategia secuencial para el cálculo de la matriz de rigidez
+ del modelo RMA-10 utilizando tablas de dispersión y su posterior resolución
+ empleando métodos multifrontales para sistemas lineales dispersos.
+ También se evalúa la aplicación de distintas estrategias de programación
+ paralela a la modificación propuesta y se presenta un estudio comparativo
+ de las diferentes estrategias.
+\end_layout
+
+\begin_layout Paragraph
+Algoritmos genéticos paralelos aplicados a la resolución de problemas de
+ asignación de frecuencias en redes celulares (2006).
+\end_layout
+
+\begin_layout Standard
+Tesina de licenciatura en informática de la Universidad Nacional de la Patagonia
+ San Juan Bosco (Argentina) realizada por Cristian Perfumo, Gerardo Mora
+ y Lucas Rojas, tutoreada por el Mg.
+ Ing.
+ Sergio Nesmachnow e Ing.
+ José Gallardo.
+\end_layout
+
+\begin_layout Standard
+Con la masificación de las redes inalámbricas, los entes reguladores del
+ espectro de radiofrecuencias se han encontrado con el problema de asignar
+ una frecuencia a cada comunicación sin que esto conlleve a interferencias.
+ Dado que las frecuencias son un recurso finito, el objetivo es maximizar
+ la reutilización de las frecuencias sin disminuir la calidad de la transmisión.
+ En este trabajo se investiga sobre la aplicación de los algoritmos genéticos
+ como herramienta de resolución del problema de asignación de frecuencias
+ en redes inalámbricas.
+\end_layout
+
+\begin_layout Standard
+En este trabajo se presenta una investigación sobre algoritmos genéticos,
+ considerando sus variantes secuenciales y paralelas, y su aplicación a
+ la resolución del problema de la asignación de frecuencias en las redes
+ de telefonía celular.
+\end_layout
+
+\begin_layout Paragraph
+Una versión paralela del algoritmo evolutivo para optimización multiobjetivo
+ NSGA-II y su aplicación al diseño de redes de comunicaciones confiables
+ (2003).
+\end_layout
+
+\begin_layout Standard
+Proyecto realizado por el Mg.
+ Ing.
+ Sergio Nesmachnow realizado como proyecto final del curso "Introducción
+ a la Optimización Multiobjetivo usando Metaheurísticas", dictado por el
+ Prof.
+ Dr.
+ Carlos Coello en el marco de la VII Escuela Internacional de Informática
+ en el CACIC 2003.
+\end_layout
+
+\begin_layout Standard
+Este trabajo presenta una versión Paralela del Algoritmo Evolutivo para
+ Optimización Multiobjetivo NSGA-II.
+ Se introducen los detalles de diseño e implementación de una versión paralela
+ y se analiza la calidad de resultados y la eficiencia computacional, comparando
+ con los resultados y tiempos de ejecución de la versión secuencial del
+ algoritmo NSGA-II sobre un conjunto de problemas de prueba estándar.
+ Adicionalmente, se estudia la aplicación de la versión paralela propuesta
+ a la resolución de un problema de diseño de redes de comunicaciones confiables.
+ 
+\end_layout
+
+\begin_layout Standard
+\SpecialChar \textcompwordmark{}
+
+\end_layout
+
+\begin_layout Standard
+Por parte de los estudiantes podemos mencionar como ejemplo algunos de los
+ proyectos de grado realizados recientemente:
+\end_layout
+
+\begin_layout Paragraph
+Proyecto MPI.net (2003).
+\end_layout
+
+\begin_layout Standard
+Proyecto de grado realizado por Sebastián Baña, Gonzalo Ferres y Nicolás
+ Pepe.
+\end_layout
+
+\begin_layout Standard
+El proyecto propone la adaptación de la biblioteca MPI para su utilización
+ desde lenguajes a través de la plataforma .NET.
+\end_layout
+
+\begin_layout Paragraph
+Proyecto algoritmos genéticos increméntales (2003).
+\end_layout
+
+\begin_layout Standard
+Proyecto de grado realizado por Federico Dominioni y Pablo Musso.
+\end_layout
+
+\begin_layout Standard
+El proyecto plantea el estudio, diseño e implementación del modelo de algoritmos
+ genéticos increméntales.
+ El modelo fue aplicado a la resolución de un problema de optimización combinado
+ria en el área de diseño de redes de comunicaciones confiables.
+\end_layout
+
+\begin_layout Subsection
+Actividades del proyecto
+\end_layout
+
+\begin_layout Standard
+En el marco del proyecto se realizaron un conjunto de actividades específicas,
+ abarcando actividades de investigación, estudio del arte, análisis, modelación,
+ implementación, ensayo, divulgación de resultados y redacción del presente
+ informe.
+ Las mismas se detallan a continuación.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Investigacion y estudio del estado del arte.
+\end_layout
+
+\begin_layout Standard
+Unos de los principales objetivos del proyecto es la investigacion y estudio
+ del estado del arte a lo que refiere a la computación de alta performance.
+ Esta actividad abarcó auto estudio por parte de los integrantes del proyecto
+ y el curso de la materia High Performance Computing dictada por el grupo
+ CeCal del insituto de computación de facultad de igenieria.
+\end_layout
+
+\begin_layout Paragraph
+Estudio de tecnologías existentes.
+\end_layout
+
+\begin_layout Standard
+Paralelo a la investigación y estudio se llevó a cabo un relevamiento de
+ paquetes de software de base (sistemas operativos, bibliotecas, monitores
+ de desempeño, etc.) que permitieran el desarrollo y la ejecución de programas
+ paralelos y distribuidos.
+\end_layout
+
+\begin_layout Standard
+De esta actividad surgió la propuesta de herramientas que permitieran la
+ implantación y administración del cluster de alto desempeño con acceso
+ remoto.
+\end_layout
+
+\begin_layout Paragraph
+Relevamiento de requerimientos y determinación del alcance del proyecto.
+\end_layout
+
+\begin_layout Standard
+Durante las primeras etapas del proyecto se realizaron reuniones con los
+ tutores para relevar los principales requerimientos, identificar los posibles
+ problemas y determinar el alcance del proyecto que permitiera cumplir con
+ los objetivos del proyecto.
+\end_layout
+
+\begin_layout Paragraph
+Implementación de la interfaz web.
+\end_layout
+
+\begin_layout Standard
+Dentro de los alcances del proyecto se encontraba la implementacion de una
+ interfaz web que permitiera el acceso remoto al cluster.
+ Esta interfez debería contener elementos de usabilidad, funcionalidades
+ de administración y reportes del cluster para los administradores del mismo.
+\end_layout
+
+\begin_layout Standard
+Esta actividad se dividió en varias etapas.
+ Primero una etapa de relevamiento de requerimientos donde se mantuvieron
+ reuniones con los tutores y especialistas en el area de usabilidad para
+ interfaces web.
+\end_layout
+
+\begin_layout Standard
+Se llevó a cabo una etapa de diseño de la interfaz web donde se tuvieron
+ en cuenta conocimientos previos por parte de los integrantes del proyecto
+ asi como la curva de aprendizaje de distintas herramientas de desarrollo.
+\end_layout
+
+\begin_layout Standard
+Luego de la etapa de diseño se realizó la etapa de desarrollo la cual se
+ hizo en forma iterativa e incremental.
+ Se fijaron pequeñas iteraciones en las cuales se fue incrementando y mejorando
+ las funcionalidades de la interfaz web.
+\end_layout
+
+\begin_layout Paragraph
+Testo de la solución.
+\end_layout
+
+\begin_layout Standard
+Una vez implantado el cluster con las tecnologías selecionadas y terminado
+ el desarrollo de la interfaz web se procedió con la etapa de testing.
+ En esta estapa se probaron los principales requerimientos funcionales.
+\end_layout
+
+\begin_layout Standard
+Por último otras actividades realizadas fueron la realización de la documentació
+n final como este informe y manuales, y la presentacion final.
+\end_layout
+
+\begin_layout Subsection
+Estructura del documento
+\end_layout
+
+\begin_layout Standard
+Este documento esta organizado en ocho secciones.
+ La primera es una introducción a este proyecto en la cual incluímos una
+ breve introducción a la computación de alto rendimiento, objetivos y motivacion
+es del proyecto, alcance y actividades desarrolladas en el transcurso del
+ proyecto.
+\end_layout
+
+\begin_layout Standard
+En la sección dos profundizamos en el estado del arte de la computación
+ de alto rendimiento donde hablamos sobre la importancia de estas tecnologías,
+ organización de computadores, diseño de algoritmos paralelos, arquitecturas
+ de computación paralela y herramientas disponibles.
+\end_layout
+
+\begin_layout Standard
+En la sección tres presentamos las tecnologías relevadas para la implantación
+ de un cluster de alto desempeño.
+\end_layout
+
+\begin_layout Standard
+En la cuarta sección presentamos la solución propuesta con las tecnologias
+ elegidas y la interfaz de acceso remoto desarrollada para el cluster de
+ alto desempeño con acceso remoto.
+ Se presenta también un caso de estudio así como el proceso de test realizado.
+\end_layout
+
+\begin_layout Standard
+Las conclusiones son presentadas en la seccion cinco y en la seccion seis
+ los trabajos a futuro.
+\end_layout
+
+\end_body
+\end_document

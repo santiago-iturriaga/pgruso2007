@@ -1,0 +1,90 @@
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+Este proyecto nos permitió como estudiantes explorar mas a fondo el mundo
+ de la computación de alto rendimiento que hasta el momento en su mayoria
+ no conociamos.
+ Se realizaron etapas de estudio del área e investigación de tecnologías.
+ Como parte del estudio del área se cursó la materia 'Computación de Alta
+ Performance' dictada por el grupo CeCal del Instituto de Computación de
+ la Facultad de Ingeniería, el que nos sirvió para introducirnos al área
+ y todos los conceptos relacionados a la computación de alto rendimiento.
+\end_layout
+
+\begin_layout Standard
+Estamos convencidos que la computación de alto renedimiento a cobrado mucha
+ importancia en la resolución de problemas con un alto grado de complejidad
+ computacional como ya se mencionó anteriormente.
+\end_layout
+
+\begin_layout Standard
+La etapa de investigación de tecnologías fue muy importante y positiva para
+ el desarrollo del proyecto.
+ Nos sirvió para conocer algunas de las mas importantes herramientas open-source
+ del mercado para la implementación de clusters y profundizar en sus caracterist
+icas, funcionalidades y limitaciones que una aplicación de este tipo debe
+ tener.
+ En esta etapa pudimos identificar una herramienta como TORQUE que potenciada
+ con Maui y Gold nos permite resolver casi en su totalidad uno de los objetivos
+ mas importantes del proyecto; la implementación de un cluster de alto rendimien
+to con acceso remoto.
+\end_layout
+
+\begin_layout Standard
+Creemos que la investigación realizada en este proyecto fue muy positiva
+ ya que pudimos desarrollar una solución que nos permite alcazar los objetivos
+ del proyecto y abrir caminos para nuevas investigaciones y trabajos.
+ Nos permitió comprobar que la implantación de un cluster de alto desempeño
+ con un alto nivel de prestaciones, escalable y performante es posible utilizand
+o computadores de escritorios; sin necesidad de hardware especializado.
+\end_layout
+
+\begin_layout Standard
+FALTAN CONCLUSIONES DE PERFORMANCE
+\end_layout
+
+\end_body
+\end_document

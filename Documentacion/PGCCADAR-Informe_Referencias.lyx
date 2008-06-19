@@ -1,0 +1,282 @@
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\language spanish
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "1"
+key "key-1"
+
+\end_inset
+
+B.
+ Radic, E.
+ Imamagic: Benchmarking the Performance of JMS on Computer Clusters, CARNet
+ Users' Conference, 28.
+ 9.
+ 2004.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "2"
+key "key-2"
+
+\end_inset
+
+E.
+ Imamagic, B.
+ Radic, D.
+ Dobrenic: Job Management Systems Analysis, CARNet Users' Conference, 28.
+ 9.
+ 2004.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "3"
+key "key-3"
+
+\end_inset
+
+Maui Cluster Scheduler, Cluster Resources.
+ http://www.clusterresources.com/products/maui/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "4"
+key "key-4"
+
+\end_inset
+
+Torque Resource Manager, Cluster Resources.
+ http://www.clusterresources.com/products/torque/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "5"
+key "key-5"
+
+\end_inset
+
+William Gropp, Ewing Lusk and Thomas Sterling.
+ Beowulf Cluster Computing with Linux, Second Edition.
+ The MIT press, 2003 ISBN:0262692929 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "6"
+key "key-6"
+
+\end_inset
+
+M.
+ Michels, W.
+ Borremans: Clustering with openMosix, University of Amsterdam, February
+ 2005.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-8"
+
+\end_inset
+
+Dansk Center for Scientific Computing, http://www.dcsc.sdu.dk/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-9"
+
+\end_inset
+
+Stony Brook University, http://www.sunysb.edu/seawulfcluster/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-10"
+
+\end_inset
+
+University of Heidelberg, http://helics.uni-hd.de/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-11"
+
+\end_inset
+
+University of Glasgow, http://www.gla.ac.uk/services/it/whatwedo/computecluster/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-12"
+
+\end_inset
+
+Oregon State University, Laboratorio de fisica, http://physics.oregonstate.edu/~el
+serj/support/cluster_use.php
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-13"
+
+\end_inset
+
+Distributed Resource Management Application API (DRMAA), http://www.drmaa.net
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-14"
+
+\end_inset
+
+Mg.
+ Ing.
+ Sergio Nesmachnow: Algoritmos genéticos paralelos y su aplicación al diseño
+ de redes de comunicaciones confiables, 2004.
+ http://www.fing.edu.uy/~sergion/Tesis.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-15"
+
+\end_inset
+
+Ing.
+ Pablo Ezzatti: Mejora del desempeño de modelos numéricos del Río de la
+ Plata, 2006.
+ http://www.fing.edu.uy/inco/grupos/cecal/hpc/mej_des/tesis.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-16"
+
+\end_inset
+
+Cristian Perfumo, Gerardo Mora, Lucas Rojas: Algoritmos genéticos paralelos
+ aplicados a la resolución de problemas de asinación de frecuencias en redes
+ celulares, 2006.
+ http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf).
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-17"
+
+\end_inset
+
+Mg.
+ Ing.
+ Sergio Nesmachnow: Una versión paralela del algoritmo evolutivo para optimizaci
+ón multiobjetivo NSGA-II y su aplicación al diseño de redes de comunicaciones
+ confiables, 2003.
+ http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-18"
+
+\end_inset
+
+Sebastián Baña, Gonzalo Ferres y Nicolás Pepe: Proyecto MPI.net, 2003.
+ http://www.fing.edu.uy/~sergion/mpinet/.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-19"
+
+\end_inset
+
+Federico Dominioni y Pablo Musso: Proyecto algoritmos genéticos incrementales,
+ 2003.
+ http://www.fing.edu.uy/~sergion/agi/.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "20"
+key "key-20"
+
+\end_inset
+
+Baron, R.
+ y Higbie, L.
+ Computer Architecture, Addison Wesley, New York, 1992.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "21"
+key "key-21"
+
+\end_inset
+
+De Balsi, M.
+ Computer Architecture Addison Wesley, New York, 1990.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+label "23"
+key "key-23"
+
+\end_inset
+
+Foster I.
+ Designing and Building Parallel Programs: Concepts and Tools for Parallel
+ Software Engineering, Addison Wesley, New York, 1995.
+\end_layout
+
+\end_body
+\end_document
