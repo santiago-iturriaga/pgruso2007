@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -33,6 +33,7 @@
 \tracking_changes false
 \output_changes false
 \author "" 
+\author "" 
 \end_header
 
 \begin_body
@@ -40,10 +41,10 @@
 \begin_layout Title
 Glosario
 \newline
-Cluster de Computadores de Alto Desempeño con Acceso Remoto
- (CCADAR)
+Cluster de Computadores de Alto Desempeño con Acceso Remoto (CCADAR)
 \newline
-Facultad de Ingeniería
+Facu
+ltad de Ingeniería
 \newline
 Universidad de la República
 \end_layout
@@ -52,24 +53,189 @@ Universidad de la República
 Santiago Iturriaga, Paulo Maya, Damián Pintos
 \end_layout
 
-\begin_layout Date
-
-\end_layout
-
 \begin_layout Abstract
 Que contiene el documento, en que consiste el proyecto...
 \end_layout
 
 \begin_layout Standard
+
 \newpage
+
 \begin_inset LatexCommand tableofcontents
+
 \end_inset
+
+
 \newpage
+
 \end_layout
 
+\begin_layout Section
+Definiciones
+\end_layout
+
+\begin_layout Paragraph
+CPU Harvesting.
+\end_layout
 
 \begin_layout Standard
+??
+\end_layout
 
+\begin_layout Paragraph
+Migración de procesos.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+Process checkpoint.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+Fork.
+\end_layout
+
+\begin_layout Standard
+(de un proyecto) ??
+\end_layout
+
+\begin_layout Paragraph
+Allocation manager.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+Fairness.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+Preemption.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+PNNL Scalable Systems Software (SSS).
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+Wiki.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Section
+Abreviaciones
+\end_layout
+
+\begin_layout Paragraph
+HTC.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+HPC.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+FLOPS.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+SSI.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+DRM.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+PVM.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+PMI.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+SGE.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+DRMAA.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+PBS.
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+FIFO.
+\end_layout
+
+\begin_layout Standard
+??
 \end_layout
 
 \end_body
