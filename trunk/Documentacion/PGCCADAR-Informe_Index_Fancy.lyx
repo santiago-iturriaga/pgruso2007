@@ -77,7 +77,7 @@ cfoot{}
 
 
 \backslash
-rfoot{Proyecto Fenton - CCADAR} 
+rfoot{Proyecto Fenton (CCADAR)} 
 \end_layout
 
 \begin_layout Standard
@@ -89,35 +89,101 @@ date{}
 
 \end_inset
 
-Informe Final
-\newline
 
-\begin_inset VSpace bigskip
-\end_inset
-
-Proyecto Fenton - Cluster de Computadores de Alto Desempeño con Acceso Remoto
- (CCADAR)
-\newline
-
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\size large
+\size small
 Facultad de Ingeniería
 \newline
 Universidad de la República
+\size large
+
+\newline
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\size larger
+Proyecto Fenton - Cluster de Computadores de Alto Desempeño con Acceso Remoto
+ (CCADAR)
+\size large
+
+\newline
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\size larger
+Informe Final
+\size large
+
+\newline
+
+\begin_inset VSpace bigskip
+\end_inset
+
+Julio 2008
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Author
 
-\family typewriter
 \size normal
+Estudiantes:
+\family typewriter
+ 
+\newline
 Santiago Iturriaga, Paulo Maya, Damián Pintos
+\begin_inset VSpace defskip
+\end_inset
+
+
+\newline
+
+\family default
+Supervisor:
+\family typewriter
+ 
+\newline
+Mg.
+ Ing.
+ Sergio Nesmachnow
 \end_layout
 
 \begin_layout Abstract
-Que contiene el documento, en que consiste el proyecto...
+El informe presenta el trabajo realizado en el marco de la asignatura Proyecto
+ de Grado de la carrera Ingeniería en Computación.
+ Este proyecto fue propuesto por el grupo académico CeCal (Centro de Cálculo)
+ del Instituto de Computación de la Facultad de Ingeniería, Universidad
+ de la República, mas especificamente en el área de computación de alto
+ desempeño.
+ El proyecto consistió en la implementación de un cluster de computadoras
+ de alto desempeño con la capacidad de brindar acceso remoto para que sus
+ usuarios interactuen con el y para que sus administradores lo regulen y
+ monitoreen.
+ Como parte de la implementación del cluster se investigaron los diferentes
+ software middleware y las tecnologías disponibles para resolver el problema
+ planteado en el escenario tecnológico actual.
+ 
+\end_layout
+
+\begin_layout Abstract
+En este informe se resume la investigación realizada, se describe la solución
+ propuesta, se detallan los componentes de la solución y por último se presenta
+ un caso de estudio.
+ 
+\newline
+
+\series bold
+Palabras clave:
+\series default
+ Cluster de computadores, Beowulf, DRM, MPI.
+ 
+\newpage
+
 \end_layout
 
 \begin_layout Standard
