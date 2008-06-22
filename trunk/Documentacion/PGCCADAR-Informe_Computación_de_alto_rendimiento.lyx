@@ -250,6 +250,7 @@ Esta arquitectura es fácil y económica de implementar, pero no es escalable
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/bus.png
+	width 10cm
 
 \end_inset
 
@@ -282,6 +283,7 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/malla1.png
+	width 10cm
 
 \end_inset
 
@@ -299,6 +301,7 @@ Estas organizaciones son similares a las mallas pero presentan menor diámetro.
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/mariposa.png
+	width 10cm
 	rotateOrigin center
 
 \end_inset
@@ -329,6 +332,7 @@ Estas redes intentan combinar las ventajas de las mallas y los árboles,
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/piramide.png
+	width 10cm
 
 \end_inset
 
@@ -358,6 +362,7 @@ o los procesadores respectivos de dos hipercubos de dimensión d.
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/hipercubos.png
+	width 10cm
 
 \end_inset
 
@@ -389,6 +394,7 @@ La siguiente figura muestra una red omega de 3 etapas que conecta 8 procesadores
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/omega3e8p.png
+	width 10cm
 
 \end_inset
 
@@ -407,6 +413,7 @@ Las fibras de interconexión son un conjunto de switches, llamados routers,
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/firasinterconexion.png
+	width 10cm
 
 \end_inset
 
@@ -699,6 +706,7 @@ Dentro de la clasificación de Flynn hay varias categorías.
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/SISD.png
+	width 10cm
 
 \end_inset
 
@@ -735,6 +743,7 @@ Seguimos con SIMD (Single Instruction stream, Multiple Data stream).
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/SIMD.png
+	width 10cm
 
 \end_inset
 
@@ -752,6 +761,7 @@ Tambien tenemos la categoría MISD (Multiple Instruction stream, Single Data
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/MISD.png
+	width 10cm
 
 \end_inset
 
@@ -770,6 +780,7 @@ La categoría de MIMD (Multiple Instruction stream, Multiple Data stream)
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/MIMD.png
+	width 10cm
 
 \end_inset
 
