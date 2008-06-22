@@ -48,8 +48,9 @@ key "key-1"
 
 B.
  Radic, E.
- Imamagic: Benchmarking the Performance of JMS on Computer Clusters, CARNet
- Users' Conference, 28.
+ Imamagic.
+ Benchmarking the Performance of JMS on Computer Clusters.
+ CARNet Users' Conference, 28.
  9.
  2004.
 \end_layout
@@ -64,7 +65,9 @@ key "key-2"
 E.
  Imamagic, B.
  Radic, D.
- Dobrenic: Job Management Systems Analysis, CARNet Users' Conference, 28.
+ Dobrenic.
+ Job Management Systems Analysis.
+ CARNet Users' Conference, 28.
  9.
  2004.
 \end_layout
@@ -77,7 +80,14 @@ key "key-3"
 \end_inset
 
 Maui Cluster Scheduler, Cluster Resources.
- http://www.clusterresources.com/products/maui/
+ 
+\begin_inset LatexCommand url
+target "http://www.clusterresources.com/products/maui/"
+
+\end_inset
+
+.
+ Consultado Julio 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -88,7 +98,14 @@ key "key-4"
 \end_inset
 
 Torque Resource Manager, Cluster Resources.
- http://www.clusterresources.com/products/torque/
+ 
+\begin_inset LatexCommand url
+target "http://www.clusterresources.com/products/torque/"
+
+\end_inset
+
+.
+ Consultado Julio 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -100,7 +117,19 @@ key "key-5"
 
 William Gropp, Ewing Lusk and Thomas Sterling.
  Beowulf Cluster Computing with Linux, Second Edition.
- The MIT press, 2003 ISBN:0262692929 
+ MIT press 2003 ISBN:0262692929.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Joseph D.
+ Sloan.
+ High Performance Linux Clusters with OSCAR, Rocks, OpenMosix, and MPI.
+ O'Reilly 2004 ISBN:0596005709.
 \end_layout
 
 \begin_layout Bibliography
@@ -112,8 +141,9 @@ key "key-6"
 
 M.
  Michels, W.
- Borremans: Clustering with openMosix, University of Amsterdam, February
- 2005.
+ Borremans.
+ Clustering with openMosix.
+ University of Amsterdam, Febrero 2005.
 \end_layout
 
 \begin_layout Bibliography
@@ -122,7 +152,14 @@ key "key-8"
 
 \end_inset
 
-Dansk Center for Scientific Computing, http://www.dcsc.sdu.dk/
+Dansk Center for Scientific Computing, 
+\begin_inset LatexCommand url
+target "http://www.dcsc.sdu.dk/"
+
+\end_inset
+
+.
+ Consultado Febrero 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -131,7 +168,14 @@ key "key-9"
 
 \end_inset
 
-Stony Brook University, http://www.sunysb.edu/seawulfcluster/
+Stony Brook University, 
+\begin_inset LatexCommand url
+target "http://www.sunysb.edu/seawulfcluster/"
+
+\end_inset
+
+.
+ Consultado Febrero 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -140,7 +184,14 @@ key "key-10"
 
 \end_inset
 
-University of Heidelberg, http://helics.uni-hd.de/
+University of Heidelberg, 
+\begin_inset LatexCommand url
+target "http://helics.uni-hd.de/"
+
+\end_inset
+
+.
+ Consultado Febrero 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -149,7 +200,13 @@ key "key-11"
 
 \end_inset
 
-University of Glasgow, http://www.gla.ac.uk/services/it/whatwedo/computecluster/
+University of Glasgow, 
+\begin_inset LatexCommand url
+target "http://www.gla.ac.uk/services/it/whatwedo/computecluster/"
+
+\end_inset
+
+.Consultado Febrero 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -158,8 +215,14 @@ key "key-12"
 
 \end_inset
 
-Oregon State University, Laboratorio de fisica, http://physics.oregonstate.edu/~el
-serj/support/cluster_use.php
+Oregon State University, Laboratorio de fisica, 
+\begin_inset LatexCommand url
+target "http://physics.oregonstate.edu/~elserj/support/cluster_use.php"
+
+\end_inset
+
+.
+ Consultado Febrero 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -168,7 +231,14 @@ key "key-13"
 
 \end_inset
 
-Distributed Resource Management Application API (DRMAA), http://www.drmaa.net
+Distributed Resource Management Application API, 
+\begin_inset LatexCommand url
+target "http://www.drmaa.net"
+
+\end_inset
+
+.
+ Consultado Junio 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -179,9 +249,16 @@ key "key-14"
 
 Mg.
  Ing.
- Sergio Nesmachnow: Algoritmos genéticos paralelos y su aplicación al diseño
- de redes de comunicaciones confiables, 2004.
- http://www.fing.edu.uy/~sergion/Tesis.pdf.
+ Sergio Nesmachnow.
+ Algoritmos genéticos paralelos y su aplicación al diseño de redes de comunicaci
+ones confiables, 2004.
+ 
+\begin_inset LatexCommand url
+target "http://www.fing.edu.uy/~sergion/Tesis.pdf"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -191,9 +268,15 @@ key "key-15"
 \end_inset
 
 Ing.
- Pablo Ezzatti: Mejora del desempeño de modelos numéricos del Río de la
- Plata, 2006.
- http://www.fing.edu.uy/inco/grupos/cecal/hpc/mej_des/tesis.pdf.
+ Pablo Ezzatti.
+ Mejora del desempeño de modelos numéricos del Río de la Plata, 2006.
+ 
+\begin_inset LatexCommand url
+target "http://www.fing.edu.uy/inco/grupos/cecal/hpc/mej_des/tesis.pdf"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -202,10 +285,16 @@ key "key-16"
 
 \end_inset
 
-Cristian Perfumo, Gerardo Mora, Lucas Rojas: Algoritmos genéticos paralelos
- aplicados a la resolución de problemas de asinación de frecuencias en redes
- celulares, 2006.
- http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf).
+Cristian Perfumo, Gerardo Mora, Lucas Rojas.
+ Algoritmos genéticos paralelos aplicados a la resolución de problemas de
+ asinación de frecuencias en redes celulares, 2006.
+ 
+\begin_inset LatexCommand url
+target "http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -216,10 +305,17 @@ key "key-17"
 
 Mg.
  Ing.
- Sergio Nesmachnow: Una versión paralela del algoritmo evolutivo para optimizaci
-ón multiobjetivo NSGA-II y su aplicación al diseño de redes de comunicaciones
- confiables, 2003.
- http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf.
+ Sergio Nesmachnow.
+ Una versión paralela del algoritmo evolutivo para optimización multiobjetivo
+ NSGA-II y su aplicación al diseño de redes de comunicaciones confiables,
+ 2003.
+ 
+\begin_inset LatexCommand url
+target "http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -228,8 +324,15 @@ key "key-18"
 
 \end_inset
 
-Sebastián Baña, Gonzalo Ferres y Nicolás Pepe: Proyecto MPI.net, 2003.
- http://www.fing.edu.uy/~sergion/mpinet/.
+Sebastián Baña, Gonzalo Ferres y Nicolás Pepe.
+ Proyecto MPI.net, 2003.
+ 
+\begin_inset LatexCommand url
+target "http://www.fing.edu.uy/~sergion/mpinet/"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -238,9 +341,15 @@ key "key-19"
 
 \end_inset
 
-Federico Dominioni y Pablo Musso: Proyecto algoritmos genéticos incrementales,
- 2003.
- http://www.fing.edu.uy/~sergion/agi/.
+Federico Dominioni y Pablo Musso.
+ Proyecto algoritmos genéticos incrementales, 2003.
+ 
+\begin_inset LatexCommand url
+target "http://www.fing.edu.uy/~sergion/agi/"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -252,7 +361,8 @@ key "key-20"
 
 Baron, R.
  y Higbie, L.
- Computer Architecture, Addison Wesley, New York, 1992.
+ Computer Architecture.
+ Addison Wesley, 1992.
 \end_layout
 
 \begin_layout Bibliography
@@ -263,7 +373,8 @@ key "key-21"
 \end_inset
 
 De Balsi, M.
- Computer Architecture Addison Wesley, New York, 1990.
+ Computer Architecture.
+ Addison Wesley, 1990.
 \end_layout
 
 \begin_layout Bibliography
@@ -274,8 +385,9 @@ key "key-23"
 \end_inset
 
 Foster I.
- Designing and Building Parallel Programs: Concepts and Tools for Parallel
- Software Engineering, Addison Wesley, New York, 1995.
+ Designing and Building Parallel Programs.
+ Concepts and Tools for Parallel Software Engineering.
+ Addison Wesley, 1995.
 \end_layout
 
 \end_body
