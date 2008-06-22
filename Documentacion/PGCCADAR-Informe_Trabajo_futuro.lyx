@@ -44,53 +44,43 @@ Trabajo futuro
 \end_layout
 
 \begin_layout Standard
-Como mencionamos en el capitulo anterior este proyecto deja plantedo algunos
- trabajos a futuro como continuación de este proyecto o para proyectos paralelos
- que seran palnteados en este capitulo.
-\end_layout
-
-\begin_layout Standard
-Como continuación de este proyecto podriamos realizar y/o investigar mas
- a fondo alguans funcionalidades que fueron recortadas del alcance dados
- los tiempos delproyecto que mencionaremos a continuación.
+Como mencionamos en la sección anterior este proyecto deja planteado algunos
+ trabajos a futuro.
+ En esta sección plantearemos algunos de los trabajos futuros mas relevantes
+ que sería interesante implementar y/o investigar pero que dados los tiempos
+ del proyecto no fueron incorporados a la solución desarrollada.
 \end_layout
 
 \begin_layout Itemize
-Integración de Gold con TORQUE para potenciar el manejo del uso de recursos
- en clusters de alto desempeño.
+Integración de Gold con el sistema para permitir contabilizar los recursos
+ disponibles en el cluster y limitado los resursos utilizados por un usuario
+ determinado.
 \end_layout
 
 \begin_layout Itemize
-Explorar mas a fndo la utilisación de la biblioteca PVM que no esta integrada
- con TORQUE.
+Trabajar en la integración de biblioteca PVM al sistema.
 \end_layout
 
 \begin_layout Itemize
-Evaluación de diferentes tunning y confguraciones de TORQUE y Maui para
- evaluar y mejorar la performance.
+Profundizar en el fine-tunning de TORQUE y Maui para obtener una desempeño
+ optimo.
 \end_layout
 
 \begin_layout Itemize
-Mejorar la integracion de la interfaz web con Ganglia para el procesamiento
- de datos provistos por el mismo.
+Mejorar la integracion del sistema con Ganglia para utilizar todas las funciones
+ provistas por Ganglia.
 \end_layout
 
 \begin_layout Itemize
 Mejorar los reportes para los usuarios administradores para el analisis
- de datos y uso del sistema que son provistospor TORQUE.
+ de la utilizacion del sistema y el analisis de datos historicos que son
+ provistos por TORQUE y Maui.
 \end_layout
 
 \begin_layout Itemize
 Aumentar la caracteristicas y opciones de monitoreo para chequeo preventivo.
  Hoy en día solo se chequea espacio en disco.
  En este punto se podría evaluar una integración con Gold.
-\end_layout
-
-\begin_layout Standard
-Se podria ejecutar proyectos a partir de la investigación y relevamiento
- de tecnologias.
- De esta forma podríamos evaluar y conocer otras alternativas descartadas
- en este proyecto.
 \end_layout
 
 \end_body

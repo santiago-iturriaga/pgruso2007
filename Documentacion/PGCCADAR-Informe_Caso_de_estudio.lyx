@@ -47,14 +47,30 @@ Caso de estudio
 Completada la descripción del trabajo realizado, se presenta en esta sección
  un caso de estudio que permita mostrar la aplicación de la solución desarrollad
 a en un ejemplo concreto de problema a resolver.
- (cluster Medusa).
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph
 Deployment.
+ 
 \end_layout
 
 \begin_layout Standard
+Cluster del CeCal.
+\end_layout
+
+\begin_layout Standard
+Nodos: lennon, joplin, marley, hendrix.
+\end_layout
+
+\begin_layout Standard
+AMD Athlon 64 3000+ 
+\end_layout
+
+\begin_layout Standard
+1Gb RAM
+\end_layout
+
+\begin_layout Paragraph
 Performance.
 \end_layout
 

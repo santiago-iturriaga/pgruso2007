@@ -61,15 +61,11 @@ Moshe Bar, fundador y director de proyecto de openMosix (uno de los proyectos
 \end_layout
 
 \begin_layout Standard
-A diferencia de un cluster tradicional en SSI (single-system image) todas
- las computadoras vinculadas dependen de un sistema operativo idéntico en
- común.
-\end_layout
-
-\begin_layout Standard
-Un SSI oculta la naturaleza heterogénea y distribuida de los recursos, y
- los presenta a los usuarios y a las aplicaciones como un recurso computacional
- unificado y sencillo.
+A diferencia de un cluster tradicional en un cluster SSI todas las computadoras
+ vinculadas dependen de un sistema operativo idéntico en común.
+ Un middleware SSI oculta la naturaleza heterogénea y distribuida de los
+ recursos, y los presenta a los usuarios y a las aplicaciones como un recurso
+ computacional unificado y sencillo.
  Una de las metas que mas diferencia un SSI de un cluster o un grid tradicional
  es su completa transparencia en la gestión de recursos.
  Es debido a esta completa transparencia que es posible migrar procesos

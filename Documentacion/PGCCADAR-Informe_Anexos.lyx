@@ -40,7 +40,8 @@
 \begin_body
 
 \begin_layout Section
-Anexos
+\start_of_appendix
+Documentos anexos
 \end_layout
 
 \begin_layout Subsection*
@@ -48,10 +49,15 @@ Glosario
 \end_layout
 
 \begin_layout Standard
-Este glosario contiene un conjunto de palabras que aparecen en todos los
- documentos presentados y son de caracter importante dentro del contexto
- del proyecto.
- El mismo busca aclara el significado de cada palabra contenida.
+Este documento contiene un conjunto de definiciones y abreviaturas pertinentes
+ a las areas de estudio relacionadas con el proyecto.
+ Con este documento se busca proporcionar el entendimiento adecuado de estas
+ terminologías.
+ Ver documento 
+\family typewriter
+PGCCADAR-Glosario
+\family default
+.
 \end_layout
 
 \begin_layout Subsection*
@@ -59,8 +65,14 @@ Manual de instalación
 \end_layout
 
 \begin_layout Standard
-El manual de instalación es na guia para instalar las tecnologías propuestas,
- instalación de Fenton y creación de ambiente inicial del cluster.
+Este documento sirve como guía de instalación de las tecnologías propuestas
+ en el proyecto, instalación de la interfaz de acceso remoto desarrollada
+ y creación del ambiente de trabajo inicial del sistema.
+ Ver documento 
+\family typewriter
+PGCCADAR-GuiaDeTest
+\family default
+.
 \end_layout
 
 \begin_layout Subsection*
@@ -68,19 +80,42 @@ Manual de usuario y administrador
 \end_layout
 
 \begin_layout Standard
-Estos docmentos presentan y descreben la utilización del sitio web desarrollado.
- Se crearon dos manuales uno difiguido a las actividades de los administradores
- y otro a los usuarios-clientes.
+Estos documentos presentan y describen la utilización del sitio web desarrollado.
+ El primer manual se encuentra dirigido a las actividades de los usuarios-admini
+stradores y se encuentra enfocado a las funcionalidades de monitoreo y control.
+ El segundo manual se encuentra dirigido a los usuarios-clientes y cubre
+ funcionlidades como la ejecución de trabajos en el sistema, la obtención
+ de resultados de una ejecución, etc.
+ Ver documentos 
+\family typewriter
+PGCCADAR-ManualDeUsuario
+\family default
+ y 
+\family typewriter
+PGCCADAR-ManualDeAdministrador
+\family default
+.
 \end_layout
 
 \begin_layout Subsection*
 Guía de testeo
+\begin_inset LatexCommand label
+name "sub:Guía-de-testeo"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Este documento es una guía para el test del cluster.
+Este documento es una guía para el testeo del cluster.
  La misma contiene casos de test, escenarios de integración de los mismos
  y una descripción de como realizar este proceso.
+ Ver documento 
+\family typewriter
+PGCCADAR-ManualDeInstalacion
+\family default
+.
 \end_layout
 
 \end_body

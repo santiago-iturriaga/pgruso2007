@@ -44,30 +44,25 @@ Conclusiones
 \end_layout
 
 \begin_layout Standard
-Este proyecto nos permitió como estudiantes explorar mas a fondo el mundo
- de la computación de alto rendimiento que hasta el momento en su mayoria
- no conociamos.
+Este proyecto nos permitió explorar mas a fondo el mundo de la computación
+ de alto rendimiento que hasta el momento en su mayoria no conociamos.
  Se realizaron etapas de estudio del área e investigación de tecnologías.
  Como parte del estudio del área se cursó la materia 'Computación de Alta
  Performance' dictada por el grupo CeCal del Instituto de Computación de
- la Facultad de Ingeniería, el que nos sirvió para introducirnos al área
- y todos los conceptos relacionados a la computación de alto rendimiento.
-\end_layout
-
-\begin_layout Standard
-Estamos convencidos que la computación de alto renedimiento a cobrado mucha
- importancia en la resolución de problemas con un alto grado de complejidad
- computacional como ya se mencionó anteriormente.
+ la Facultad de Ingeniería.
+ Esta materia nos sirvió para introducirnos al área y todos los conceptos
+ relacionados a la computación de alto rendimiento.
+ La computación de alto renedimiento a cobrado mucha importancia en la resolució
+n de problemas con un alto grado de complejidad computacional.
 \end_layout
 
 \begin_layout Standard
 La etapa de investigación de tecnologías fue muy importante y positiva para
  el desarrollo del proyecto.
- Nos sirvió para conocer algunas de las mas importantes herramientas open-source
- del mercado para la implementación de clusters y profundizar en sus caracterist
-icas, funcionalidades y limitaciones que una aplicación de este tipo debe
- tener.
- En esta etapa pudimos identificar una herramienta como TORQUE que potenciada
+ Nos sirvió para conocer algunas de las mas importantes herramientas OSS
+ del mercado para la implementación de clusters y profundizar en las caracterist
+icas, funcionalidades y limitaciones que estas aplicaciones presentan.
+ En esta etapa pudimos identificar una herramienta como TORQUE que junto
  con Maui y Gold nos permite resolver casi en su totalidad uno de los objetivos
  mas importantes del proyecto; la implementación de un cluster de alto rendimien
 to con acceso remoto.
