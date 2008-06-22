@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -51,7 +51,7 @@ En esta sección daremos una posible implementación para un cluster de alto
 \end_layout
 
 \begin_layout Standard
-Descrebiremos las tecnologías elegidas para la implementación del DRM y
+Describiremos las tecnologías elegidas para la implementación del DRM y
  despachador de trabajos resultado de la etapa de relevamiento de tecnologías,
  así como la interfaz para acceso remoto del cluster.
  
@@ -80,15 +80,15 @@ reference "sub:Torque-Casos-de-estudio"
 \end_layout
 
 \begin_layout Standard
-TORQUE es un derivado de PBS, un DRM inicialmente desarrollado a mediados
- los años '90 para la NASA, por lo que cuenta con un código base muy estable
- y depurado.
+TORQUE es un derivado de PBS (un DRM inicialmente desarrollado a mediados
+ los años '90 para manejar recursos de computo aeroespacial en la NASA)
+ por lo que cuenta con un código base muy estable y solido.
  Esto ayuda a mitigar los riesgos presentados por tecnologías emergentes
  que ofrecen funcionalidades innovadoras pero que también resultan problemáticas
  en un proyecto de corta duración.
- Otra ventaja que presenta TORQUE es su pequeño porte ya que resulta ser
- un producto relativamente pequeño cosa que facilita su comprensión y por
- lo tanto su modificación y experimentación.
+ Otra ventaja que presenta TORQUE es su pequeño porte, resulta ser un producto
+ relativamente pequeño cosa que facilita su comprensión y por lo tanto su
+ modificación y experimentación.
 \end_layout
 
 \begin_layout Standard
@@ -161,30 +161,20 @@ Testeo de la solución
 \end_layout
 
 \begin_layout Standard
-Una de las actividades de este proceso fue el testeo de las tecnologias
- propuestas y el test de la interfaz web desarrollada.
- 
-\end_layout
-
-\begin_layout Standard
-Los objetivos de esta etapa son la verificación y validación de los requerimient
-os funcionales establecidos en etapas mas tempranas y que fueran objetivos
+Una de las actividades de este proceso fue el testeo de las tecnologías
+ propuestas y el testeo de la interfaz web desarrollada.
+ Los objetivos de esta etapa son la verificación y validación de los requerimien
+tos funcionales establecidos en etapas mas tempranas y que fueran objetivos
  del proyecto.
 \end_layout
 
 \begin_layout Standard
 Durante el proceso de testing se aplicaron dos tipos de test.
  Se realizó un test funcional apoyado o complementado con un test exploratorio.
-\end_layout
-
-\begin_layout Standard
-El testing funcional verifica el cumplimiento de los requerimientos funcionales
+ El testing funcional verifica el cumplimiento de los requerimientos funcionales
  contra los casos de test, en un entorno que emula un ambiente de producción
  del sistema.
-\end_layout
-
-\begin_layout Standard
-El objetivo de este test es verificar si el comportamiento observado del
+ El objetivo de este test es verificar si el comportamiento observado del
  software a prueba coincide o no con sus especificaciones.
  
 \end_layout
@@ -192,17 +182,20 @@ El objetivo de este test es verificar si el comportamiento observado del
 \begin_layout Standard
 El test exploratorio es un proceso simultáneo de exploración y aprendizaje
  del producto, diseño y ejecución de pruebas.
- La estrategia en este caso fue recorrer las paginas del sitio Fenton en
- busca de defectos de diseño, de programación, cualquier mal funcionamiento,
- etc.
+ La estrategia en este caso fue recorrer las funcionalidades de la interfaz
+ en busca de defectos de diseño, de programación, de funcionamiento, etc.
 \end_layout
 
 \begin_layout Standard
-Durante el test exploratorio se generaron un serie de casos de test los
- cuales apuntan a cubrir los requerimientos funcionales principales del
- cluster.
- Estos casos de test se incluyeron en el docemento Guía de Test, pretendiendo
- guiar el testeo en posteriores ocasiones.
+Durante el test exploratorio se generaron un serie de casos de test ques
+ apuntan a cubrir los requerimientos funcionales principales del sistema.
+ Estos casos de test se incluyeron en la Guía de Test (ver página 
+\begin_inset LatexCommand pageref
+reference "sub:Guía-de-testeo"
+
+\end_inset
+
+), pretendiendo guiar el testeo en posteriores ocasiones.
  El mismo incluye casos de test y escenarios de pruebas que integran los
  casos de test, así como una descripción del proceso ejecutado para esta
  oportunidad.
@@ -210,7 +203,21 @@ Durante el test exploratorio se generaron un serie de casos de test los
 
 \begin_layout Standard
 Las herramientas utilizadas en el testing fueron la guía de test y las funcional
-idades probistas por los Google Groups como son reguistro issues y wikis.
+idades provistas por el Google Code como son registro Issues y Wikis.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Es la primera vez que se menciona Google Code.
+ Habría que explicar un poco mas que es y para que se usó.
+ Capaz que estaría bueno mencionarlo antes porque se usó también para el
+ desarrollo.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
