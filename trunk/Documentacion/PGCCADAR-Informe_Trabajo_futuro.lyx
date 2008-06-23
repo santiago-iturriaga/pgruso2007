@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -44,17 +44,18 @@ Trabajo futuro
 \end_layout
 
 \begin_layout Standard
-Como mencionamos en la sección anterior este proyecto deja planteado algunos
+Como mencionamos en la sección anterior este proyecto deja planteados algunos
  trabajos a futuro.
- En esta sección plantearemos algunos de los trabajos futuros mas relevantes
- que sería interesante implementar y/o investigar pero que dados los tiempos
- del proyecto no fueron incorporados a la solución desarrollada.
+ Enumeraremos los que consideramos más relevantes a implementar y/o investigar
+ pero que dados los tiempos del proyecto no fueron incorporados a la solución
+ desarrollada.
 \end_layout
 
 \begin_layout Itemize
 Integración de Gold con el sistema para permitir contabilizar los recursos
- disponibles en el cluster y limitado los resursos utilizados por un usuario
- determinado.
+ disponibles en el cluster y limitar los recursos utilizados cada usuario.
+ Aumentar la características y opciones de monitoreo para chequeo preventivo
+ (hoy en día solo se chequea espacio en disco).
 \end_layout
 
 \begin_layout Itemize
@@ -62,25 +63,19 @@ Trabajar en la integración de biblioteca PVM al sistema.
 \end_layout
 
 \begin_layout Itemize
-Profundizar en el fine-tunning de TORQUE y Maui para obtener una desempeño
- optimo.
+Profundizar en el fine-tunning de TORQUE y Maui para obtener un mejor desempeño
+ del cluster.
 \end_layout
 
 \begin_layout Itemize
-Mejorar la integracion del sistema con Ganglia para utilizar todas las funciones
- provistas por Ganglia.
+Mejorar la integración del sistema con Ganglia para utilizar más de las
+ funciones que provee.
 \end_layout
 
 \begin_layout Itemize
-Mejorar los reportes para los usuarios administradores para el analisis
- de la utilizacion del sistema y el analisis de datos historicos que son
- provistos por TORQUE y Maui.
-\end_layout
-
-\begin_layout Itemize
-Aumentar la caracteristicas y opciones de monitoreo para chequeo preventivo.
- Hoy en día solo se chequea espacio en disco.
- En este punto se podría evaluar una integración con Gold.
+Mejorar los reportes para los usuarios administradores para el análisis
+ de la utilizacián del sistema y de los datos históricos que son provistos
+ por TORQUE y Maui.
 \end_layout
 
 \end_body
