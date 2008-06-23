@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -44,8 +44,8 @@ Conclusiones
 \end_layout
 
 \begin_layout Standard
-Este proyecto nos permitió explorar mas a fondo el mundo de la computación
- de alto rendimiento que hasta el momento en su mayoria no conociamos.
+Este proyecto nos permitió explorar más a fondo la problemática de la computació
+n de alto rendimiento que hasta el momento no conociamos en profundidad.
  Se realizaron etapas de estudio del área e investigación de tecnologías.
  Como parte del estudio del área se cursó la materia 'Computación de Alta
  Performance' dictada por el grupo CeCal del Instituto de Computación de
@@ -59,12 +59,12 @@ n de problemas con un alto grado de complejidad computacional.
 \begin_layout Standard
 La etapa de investigación de tecnologías fue muy importante y positiva para
  el desarrollo del proyecto.
- Nos sirvió para conocer algunas de las mas importantes herramientas OSS
+ Nos sirvió para conocer algunas de las más importantes herramientas OSS
  del mercado para la implementación de clusters y profundizar en las caracterist
 icas, funcionalidades y limitaciones que estas aplicaciones presentan.
  En esta etapa pudimos identificar una herramienta como TORQUE que junto
  con Maui y Gold nos permite resolver casi en su totalidad uno de los objetivos
- mas importantes del proyecto; la implementación de un cluster de alto rendimien
+ más importantes del proyecto: la implementación de un cluster de alto rendimien
 to con acceso remoto.
 \end_layout
 
