@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -1020,16 +1020,17 @@ icas: alto rendimiento, alta disponibilidad, equilibrio de carga y escalabilidad
 \end_layout
 
 \begin_layout Standard
-La construcción de los cluster es muy fácil y económica, debido a su flexibilida
-d: pueden tener todos la misma configuración de hardware y sistema operativo
+La construcción de los cluster es muy fácil y económica debido a su flexibilidad
+, pueden tener todos la misma configuración de hardware y sistema operativo
  (cluster homogéneo), diferente rendimiento pero con arquitecturas y sistemas
  operativos similares (cluster semi-homogéneo), o tener diferente hardware
  y sistema operativo (cluster heterogéneo).
 \end_layout
 
 \begin_layout Standard
-Se pueden construir cluster con ordenadores personales desechados por "anticuado
-s" que consiguen competir en capacidad de cálculo con superordenadores carísimos.
+Se pueden construir clusters con ordenadores personales desechados por "anticuad
+os" que consiguen competir en capacidad de cálculo con superordenadores
+ de precios elevados.
 \end_layout
 
 \begin_layout Standard
@@ -1086,7 +1087,6 @@ Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
  por uno o más ordenadores que actúan como front-end del cluster, y que
  se ocupan de repartir las peticiones de servicio que reciba el cluster,
  a otros ordenadores del cluster que forman el back-end de éste.
- 
 \end_layout
 
 \begin_layout Paragraph
@@ -1159,19 +1159,19 @@ iónion paralela.
 
 \begin_layout Standard
 Esta biblioteca permite trabajar con memoria distribuida, tener paralelismo
- explicito y contiene un único mecanismo de comunicación que puede ser punto
+ explícito y contiene un único mecanismo de comunicación que puede ser punto
  a punto.
  
 \end_layout
 
 \begin_layout Standard
-El modelo de programación es SPMD,  provee 125 funciones de las cuales algunas
+El modelo de programación es SPMD, provee 125 funciones de las cuales algunas
  son colectivas, y tiene soporte para Fortan y C.
  
 \end_layout
 
 \begin_layout Standard
-El numero de tareas es fijado en tiempo de pre-ejecución (aunque esto ha
+El número de tareas es fijado en tiempo de pre-ejecución (aunque esto ha
  cambiado en la versión 2 del estándar) y permite agrupamiento de procesos
  e incluye contextos de comunicación entre grupos de procesos.
 \end_layout
@@ -1255,10 +1255,10 @@ El middleware también debe poder migrar procesos entre servidores con distintas
  Debe ser capaz de balancear la carga, si un servidor está muy cargado de
  procesos y otro está ocioso, pueden transferirse procesos a este último
  para liberar de carga al primero y optimizar el funcionamiento.
- Además debe permitir al administrador realizar un mantenimiento los servidores,
- si hay procesos corriendo en un servidor que necesita mantenimiento o una
- actualización, deberá ser posible migrar los procesos a otro servidor y
- proceder a desconectar del cluster al primero.
+ Además debe permitir al administrador realizar un mantenimiento de los
+ servidores, si hay procesos corriendo en un servidor que necesita mantenimiento
+ o una actualización, deberá ser posible migrar los procesos a otro y proceder
+ a desconectar del cluster al primero.
  A su vez es el encargado de priorizar los trabajos.
  En caso de tener varios procesos corriendo en el cluster, pero uno de ellos
  de mayor importancia que los demás, puede migrarse este proceso a los servidore
@@ -1269,7 +1269,7 @@ s que posean más o mejores recursos para acelerar su procesamiento.
 \begin_layout Standard
 Los Middleware han aparecido de manera relativamente reciente en el mundo
  de la informática.
- Ganaron popularidad en los 1980s ya que eran la solución de como integrar
+ Ganaron popularidad en los 1980s ya que eran la solución para integrar
  las nuevas aplicaciones con los sistemas antiguos (legacy systems), en
  todo caso, el termino ha sido usado desde 1968.
  También facilitaba la computación distribuida, mediante conexión de múltiples
