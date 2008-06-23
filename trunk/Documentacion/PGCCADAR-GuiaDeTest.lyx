@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -54,10 +54,6 @@ Universidad de la República
 Santiago Iturriaga, Paulo Maya, Damián Pintos
 \end_layout
 
-\begin_layout Date
-
-\end_layout
-
 \begin_layout Abstract
 Que contiene el documento, en que consiste el proyecto...
 \end_layout
@@ -103,12 +99,9 @@ Durante el proceso de testing se aplicaron dos tipos de test.
 
 \begin_layout Standard
 El testing funcional verifica el cumplimiento de los requerimientos funcionales
- contra los casos de test, en un entorno que émula un ambiente de producción
+ contra los casos de test, en un entorno que emula un ambiente de producción
  del sistema.
-\end_layout
-
-\begin_layout Standard
-El objetivo de este test es verificar si el comportamiento observado del
+ El objetivo de este test es verificar si el comportamiento observado del
  software a prueba coincide o no con sus especificaciones.
  
 \end_layout
@@ -116,33 +109,32 @@ El objetivo de este test es verificar si el comportamiento observado del
 \begin_layout Standard
 El test exploratorio es un proceso simultáneo de exploración y aprendizaje
  del producto, diseño y ejecución de pruebas.
- La estrategia en este caso fue recorre las paginas del sitio Fenton en
- busca de defectos de diseño, de programación, cualquier mal funcionamiento
- , etc.
+ La estrategia en este caso fue recorrer las páginas del sitio Fenton en
+ busca de defectos de diseño, de programación, etc.
 \end_layout
 
 \begin_layout Standard
-Para la ejecución del test funcional se creo un conjunto de casos de test,
+Para la ejecución del test funcional se creó un conjunto de casos de test,
  los cuales apuntan a cubrir los requerimientos funcionales principales
- del scheduler implementado para el cluster; y del acceso remoto al mismo.
+ del scheduler implementado para el cluster y del acceso remoto al mismo.
  Estos casos de test se crearon en paralelo al test exploratorio.
  
 \end_layout
 
 \begin_layout Standard
-El testing funcional también apunto a evaluar la integración de las distintas
+El testing funcional también apunta a evaluar la integración de las distintas
  funcionalidades de Fenton y el scheduler (Torque-Maui).
 \end_layout
 
 \begin_layout Standard
-Cada caso de test es independiente de otro, pero en conjunto y siguiendo
+Cada caso de test es independiente del otro, pero en conjunto y siguiendo
  la guía de test presentada en este documento verifican la integración de
  cada funcionalidad.
 \end_layout
 
 \begin_layout Standard
 Los dos tipos de testing pueden ejecutarse en paralelo y esa fue la forma
- en que se realizo el testing para esta oportunidad.
+ en que se realizó el testing en esta oportunidad.
 \end_layout
 
 \begin_layout Section
@@ -152,8 +144,8 @@ Herramientas utilizadas
 \begin_layout Standard
 En el proceso de test se utilizaron como herramientas la guía de test presentada
 da en este documento así como el conjunto de casos de test.
- Para el registro y de issues se utilizo el grupo de Google creado para
- este proyecto.
+ Para el registro de issues se utilizó el grupo de Google creado para este
+ proyecto.
  Los grupos de Google tiene la funcionalidad de ingresar y mantener issues
  así como otras funcionalidades útiles, por ejemplo una wiki.
  
@@ -212,7 +204,7 @@ Identificación del caso de test
 \end_layout
 
 \begin_layout Standard
-Contiene id, titulo y descripción del caso de test.
+Contiene id, título y descripción del caso de test.
 \end_layout
 
 \begin_layout Standard
@@ -224,7 +216,7 @@ Datos de entrada
 
 \begin_layout Standard
 Aquí se indican los datos de entrada para el caso.
- Se ingresa nombre , valor y comentario para cada campo.
+ Se ingresa nombre, valor y comentario para cada campo.
 \end_layout
 
 \begin_layout Standard
@@ -250,7 +242,7 @@ Paso para el test
 \begin_layout Standard
 Describe la secuencias de pasos y el resultado esperado para la ejecución
  del test.
- En el momento de ejecución del test se indica si cada paso fallo o no.
+ En el momento de ejecución del test se indica si cada paso falló o no.
 \end_layout
 
 \begin_layout Standard
@@ -262,7 +254,7 @@ Notas o comentarios
 
 \begin_layout Standard
 Puede utilizarse de diferente maneras.
- Puede ser para hacer consideraciones sobre la ejecución o fallo de un paso;
+ Puede ser para hacer consideraciones sobre la ejecución o fallo de un paso
  o para la descripción de comportamiento alternativos.
 \end_layout
 
@@ -284,7 +276,7 @@ A continuación propondremos diferentes escenarios en los que podremos probar
 \end_layout
 
 \begin_layout Standard
-Escenario 1: Creación de usuario y Ejecución de trabajo.
+Escenario 1: Creación de usuario y ejecución de trabajo.
 \end_layout
 
 \begin_layout Standard
@@ -4178,14 +4170,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Actividad en Maui.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -4260,14 +4248,10 @@ Desde el administrador podemos observar la actividad en Maui de los trabajos
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -4398,14 +4382,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -4479,14 +4459,10 @@ Descripción
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -4537,8 +4513,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 01
 \end_layout
 
@@ -4548,8 +4522,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Correr el caso 06.
  
 \lang english
@@ -4582,8 +4554,6 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 02
 \end_layout
 
@@ -4593,8 +4563,6 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Salir del sistema e ingresar como administrador.
  Ingresar al menú Maui, sub menú Trabajos.
 \end_layout
@@ -4605,8 +4573,6 @@ Salir del sistema e ingresar como administrador.
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Se despliegan los trabajos en ejecución en el cluster.
  En particular observamos el ejecutado en el punto 1.
 \end_layout
@@ -4669,14 +4635,10 @@ Se despliega el diagnostico del procesos
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -4778,14 +4740,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Actividad en Torque.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -4864,14 +4822,10 @@ Desde el administrador podemos observar la actividad en Torque de los trabajos
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -5002,14 +4956,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -5083,14 +5033,10 @@ Descripción
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -5150,8 +5096,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Correr el caso 06.
  
 \lang english
@@ -5193,8 +5137,6 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Salir del sistema e ingresar como administrador.
  Ingresar al menú Torque, sub menú Trabajos.
 \end_layout
@@ -5205,8 +5147,6 @@ Salir del sistema e ingresar como administrador.
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Se despliegan los trabajos en ejecución en el cluster.
  En particular observamos el ejecutado en el caso de uso.
 \end_layout
@@ -5269,14 +5209,10 @@ Observamos los parámetros de ejecución del trabajo en Torque
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -5378,14 +5314,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Detención o Cancelación de trabajo en Maui.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -5425,8 +5357,6 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Detención o Cancelación de trabajo e
 \lang english
 n Maui
@@ -5463,14 +5393,10 @@ Con el administrador podemos cancelar o detener un trabajo desde Maui.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -5601,14 +5527,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -5682,14 +5604,10 @@ Descripción
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -5740,8 +5658,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 01
 \end_layout
 
@@ -5751,8 +5667,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Correr el caso 06.
  
 \lang english
@@ -5785,8 +5699,6 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 02
 \end_layout
 
@@ -5796,8 +5708,6 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Salir del sistema e ingresar como administrador.
  Ingresar al menú Maui, sub menú Trabajos.
 \end_layout
@@ -5808,8 +5718,6 @@ Salir del sistema e ingresar como administrador.
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Se despliegan los trabajos en ejecución en el cluster.
  En particular observamos el ejecutado en el punto anterior.
 \end_layout
@@ -5872,14 +5780,10 @@ El trabajo se Detiene o se Cancela.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -5981,14 +5885,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-
-\lang spanish
 Detención o Cancelación de trabajo enTorque.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -6028,8 +5928,6 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Detención o Cancelación de trabajo enTorque
 \end_layout
 
@@ -6068,14 +5966,10 @@ Con el administrador podemos cancelar o detener un trabajo desde Torque.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Datos de entrada
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features>
@@ -6206,14 +6100,10 @@ Comentario
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Condiciones iniciales
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features>
@@ -6287,14 +6177,10 @@ Descripción
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Pasos para el test
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features>
@@ -6354,8 +6240,6 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Correr el caso 06.
  
 \lang english
@@ -6397,8 +6281,6 @@ Ejecución de Trabajo
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Salir del sistema e ingresar como administrador.
  Ingresar al menú Torque, sub menú Trabajos.
 \end_layout
@@ -6409,8 +6291,6 @@ Salir del sistema e ingresar como administrador.
 \begin_inset Text
 
 \begin_layout Standard
-
-\lang spanish
 Se despliegan los trabajos en ejecución en el cluster.
  En particular observamos el ejecutado en el punto anterior.
 \end_layout
@@ -6473,14 +6353,10 @@ El trabajo se detiene o se cancela.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang spanish
 Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
