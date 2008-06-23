@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -44,9 +44,8 @@ Cluster con acceso remoto
 \end_layout
 
 \begin_layout Standard
-En esta sección daremos una posible implementación para un cluster de alto
- desempeño con acceso remoto, resultado del trabajo realizado en el marco
- del proyecto.
+En esta sección mostraremos una implementación para un cluster de alto desempeño
+ con acceso remoto, resultado del trabajo realizado en el marco del proyecto.
  
 \end_layout
 
@@ -87,20 +86,20 @@ TORQUE es un derivado de PBS (un DRM inicialmente desarrollado a mediados
  que ofrecen funcionalidades innovadoras pero que también resultan problemáticas
  en un proyecto de corta duración.
  Otra ventaja que presenta TORQUE es su pequeño porte, resulta ser un producto
- relativamente pequeño cosa que facilita su comprensión y por lo tanto su
- modificación y experimentación.
+ relativamente pequeño facilitando su comprensión y por lo tanto su modificación
+ y experimentación.
 \end_layout
 
 \begin_layout Standard
 Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
- los requerimientos del proyecto también presenta ciertas carencias
+ los requerimientos del proyecto, también presenta ciertas carencias
 \emph on
  
 \emph default
-dentro de las cuales las mas importantes son CPU harvesting y la migración
+dentro de las cuales las más importantes son CPU harvesting y la migración
  de procesos.
  Dichas carencias no son un problema serio ya que el cluster que se utilizará
- cuenta con nodos homogéneos y dedicados; esto significa que los nodos del
+ cuenta con nodos homogéneos y dedicados, esto significa que los nodos del
  cluster tendrán capacidades de procesamiento muy similares y no serán compartid
 os con otras aplicaciones externas al cluster (p.
  ej.: aplicaciones de escritorio).
@@ -110,29 +109,29 @@ os con otras aplicaciones externas al cluster (p.
 Interfaz web desarrollada
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 Diseño e implementación de la solución 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
  así como la curva de aprendizaje de las distintas herramientas para realizar
  aplicaciones web, decidimos utilizar php con eclipse como ide.
 \end_layout
 
-\begin_layout Paragraph*
-El motor de base de datos podía ser MySql o PostgreSql y la decisión entre
- uno de los dos no la podíamos tomar hasta tiempo después de iniciada la
- etapa de implementación, por lo tanto se pensó desde un principio en un
- módulo de abstracción al motor de base de datos que ejecutara las operaciones
- básicas (abrir la conexión, ejecutar una consulta, obtener el resultado)
- e implementarlo tanto para mysql como para posgresql.
+\begin_layout Standard
+El motor de base de datos en principio podía ser MySql o PostgreSql y la
+ decisión entre uno de los dos no la podíamos tomar hasta tiempo después
+ de iniciada la etapa de implementación, por lo tanto se pensó desde un
+ principio en un módulo de abstracción al motor de base de datos que ejecutara
+ las operaciones básicas (abrir la conexión, ejecutar una consulta, obtener
+ el resultado) e implementarlo tanto para mysql como para posgresql.
  Este requerimiento redundó en una ventaja para el producto: si fuera necesario
  instalarlo sobre otro motor de condiciones similares, en principio solo
  sería necesario reimplementar el módulo y repetir la etapa de testeo.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 La apariencia del sitio también podía variar durante la implementación,
  por lo tanto además de separar la lógica de la aplicación de la capa de
  presentación, esta última se dividió en archivos .php que reciben los pedidos
