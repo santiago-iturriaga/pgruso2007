@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -544,7 +544,7 @@ Este componente permite favorecer trabajos en base al uso histórico a corto
  Es posible así ajustar la prioridad de un trabajo dependiendo de la utilización
  porcentual del sistema de usuarios, grupos, o QoS.
  Dada una ventana de tiempo determinado sobre la cual se evalúa la utilización
- de recursos del sistema se determina si esta siendo mantenido un cierto
+ de recursos del sistema se determina si está siendo mantenido un cierto
  balanceo o no.
 \end_layout
 
