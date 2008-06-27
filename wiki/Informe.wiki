@@ -1,14 +1,15 @@
 *** General
 - Cambiar toda referencia a 'capitulos' por 'secciones'.
+
 - ver tamanio imagenes (algunas son muy grandes).
+
 
 *** Introduccion
 - Agregar punteo sobre herramientas (sobre todo lyx).
 
-*** Tecnologias y herramientas
-- Agregar PHP, Apache, Eclipse, PostgreSQL, SVN (GoogleCode), 
 
-Tortoise, RapidSVN, lyx.
+*** Tecnologias y herramientas
+- Agregar PHP, Apache, Eclipse, PostgreSQL, SVN (GoogleCode), Tortoise, RapidSVN, lyx.
   (Mover desde Interfaz web desarrollada)
 
 *** Glosario
