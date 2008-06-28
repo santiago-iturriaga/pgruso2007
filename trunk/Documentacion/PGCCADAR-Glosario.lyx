@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -79,7 +79,8 @@ CPU Harvesting.
 \end_layout
 
 \begin_layout Standard
-??
+Es el proceso de explotar los ordenadores no dedicados cuando no se utilizan,
+ por ejemplo ordenadores de escritorio.
 \end_layout
 
 \begin_layout Paragraph
@@ -87,7 +88,7 @@ Migración de procesos.
 \end_layout
 
 \begin_layout Standard
-??
+Es la caracteristica demover un procesos de un nodo a otro.
 \end_layout
 
 \begin_layout Paragraph
@@ -95,7 +96,10 @@ Process checkpoint.
 \end_layout
 
 \begin_layout Standard
-??
+Es el procedimiento de almacenamiento del estado del proceso activo en el
+ disco duro.
+ Los estados almacenados del proceso se utilizan para reiniciar el proceso
+ desde ese punto.
 \end_layout
 
 \begin_layout Paragraph
@@ -111,7 +115,12 @@ Allocation manager.
 \end_layout
 
 \begin_layout Standard
-??
+
+\lang spanish
+Funciona como un banco en el cual la moneda son los recursos del sistema
+ (p.ej.
+ procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
+ de recursos.
 \end_layout
 
 \begin_layout Paragraph
@@ -119,7 +128,8 @@ Fairness.
 \end_layout
 
 \begin_layout Standard
-??
+Caracteristica de maui que implica dar igual acceso a los recursos a todos
+ los usarios.
 \end_layout
 
 \begin_layout Paragraph
@@ -127,7 +137,9 @@ Preemption.
 \end_layout
 
 \begin_layout Standard
-??
+Es el nombre dado por maui a la posibilidad de suspender trabajos en ejecución
+ para poder ejecutar trabajos con mayor prioridad, una ves terminado el
+ trabajo con mayor prioridad el trabajo suspendido es reiniciado.
 \end_layout
 
 \begin_layout Paragraph
@@ -135,7 +147,7 @@ PNNL Scalable Systems Software (SSS).
 \end_layout
 
 \begin_layout Standard
-??
+Proyecto del Pacific Northwest National Laboratory.
 \end_layout
 
 \begin_layout Paragraph
@@ -143,7 +155,12 @@ Wiki.
 \end_layout
 
 \begin_layout Standard
-??
+Un wiki, o una wiki, es un sitio web cuyas páginas web pueden ser editadas
+ por múltiples voluntarios a través del navegador web.
+ Los usuarios pueden crear, modificar o borrar un mismo texto que comparten.
+ Los textos o "páginas wiki" tienen títulos únicos.
+ Si se escribe el título de una "página-wiki" en algún lugar del wiki, esta
+ palabra se convierte en un "enlace web" (o "link") a la página web.
 \end_layout
 
 \begin_layout Section
@@ -154,16 +171,12 @@ Abreviaturas
 OSS
 \end_layout
 
-\begin_layout Standard
-??
-\end_layout
-
 \begin_layout Paragraph
-MPI.
+MPI:
 \end_layout
 
 \begin_layout Standard
-??
+Message Passing Interface.
 \end_layout
 
 \begin_layout Paragraph
@@ -171,7 +184,7 @@ PVM.
 \end_layout
 
 \begin_layout Standard
-??
+Parallel Virtual Machine.
 \end_layout
 
 \begin_layout Paragraph
@@ -179,7 +192,9 @@ HTC.
 \end_layout
 
 \begin_layout Standard
-??
+
+\lang spanish
+High-Throughput Computing.
 \end_layout
 
 \begin_layout Paragraph
@@ -187,7 +202,7 @@ HPC.
 \end_layout
 
 \begin_layout Standard
-??
+High-performance computing .
 \end_layout
 
 \begin_layout Paragraph
@@ -195,7 +210,9 @@ FLOPS.
 \end_layout
 
 \begin_layout Standard
-??
+
+\lang spanish
+Operaciones de punto flotante por segundo.
 \end_layout
 
 \begin_layout Paragraph
@@ -203,7 +220,8 @@ SSI.
 \end_layout
 
 \begin_layout Standard
-??
+Single System Image, sistemas de clustering en los que todo el cluster ofrece
+ al usuario la imagen de un unico sistema.
 \end_layout
 
 \begin_layout Paragraph
@@ -211,15 +229,7 @@ DRM.
 \end_layout
 
 \begin_layout Standard
-??
-\end_layout
-
-\begin_layout Paragraph
-PVM.
-\end_layout
-
-\begin_layout Standard
-??
+Distributed Resource Management.
 \end_layout
 
 \begin_layout Paragraph
@@ -235,7 +245,8 @@ SGE.
 \end_layout
 
 \begin_layout Standard
-??
+Sun Grid Engine.
+ DRM de Sun Microsystems.
 \end_layout
 
 \begin_layout Paragraph
@@ -243,7 +254,7 @@ DRMAA.
 \end_layout
 
 \begin_layout Standard
-??
+Distributed Resource Management Application API.
 \end_layout
 
 \begin_layout Paragraph
