@@ -156,7 +156,7 @@ La apariencia del sitio también podía variar durante la implementación,
 \end_layout
 
 \begin_layout Standard
-El sitio permite un manejo de usuarios con perfiles diferenciados.
+La aplicación permite un manejo de usuarios con perfiles diferenciados.
  Inicialmente podemos separar a los usuarios entre administradores y clientes
  finales, pero es posible ejercer diferencias más sutiles entre ellos.
  Para esto se diseñó un sistema de grupos de usuarios con funcionalidades
@@ -174,7 +174,7 @@ El sitio permite un manejo de usuarios con perfiles diferenciados.
 La interfaz de usuario varía notablemente según el perfil, si bien ambos
  usuarios tienen cierto conocimiento sobre el uso de aplicaciones, el cliente
  final no tiene por que estar interiorizado con el funcionamiento del cluster,
- por lo tanto se le intenta presentar el sistema como un todo.
+ por lo tanto se le presenta el sistema como un todo.
  Por otro lado el administrador podrá desde su propia interfaz conocer el
  estado de los nodos del cluster e interactuar con ellos para solucionar
  posibles problemas o mejorar su performance.
@@ -183,6 +183,9 @@ La interfaz de usuario varía notablemente según el perfil, si bien ambos
 \begin_layout Standard
 El usuario administrador tendrá a su cargo la tarea de mantener los usuarios
  y grupos del sistema así como el acceso de los mismos a los distintos trabajos.
+ Dado que nos encontramos en un ambiente multiusuario, la aplicación permite
+ administrar las reservas del clúster, para organizar la utilización de
+ recursos por varios usuarios, y de forma simultánea.
  Cada trabajo creado tendrá asociado un conjunto de recursos disponibles
  que determinarán el posterior funcionamiento de las ejecuciones de los
  clientes.
@@ -199,8 +202,8 @@ El usuario final tendrá la posibilidad de subir su proyecto al cluster,
  para luego volver en otro momento.
  Si el programa sigue en ejecución puede ver la salida a pantalla (nuevamente
  en tiempo real) junto con las salidas anteriores de la misma ejecución.
- Para los trabajos terminados existe la posibilidad de ver la salida a pantalla
- o descargarla en un archivo.
+ Para los trabajos terminados existe la posibilidad de ver la salida en
+ pantalla o descargarla en un archivo.
 \end_layout
 
 \begin_layout Subsection
