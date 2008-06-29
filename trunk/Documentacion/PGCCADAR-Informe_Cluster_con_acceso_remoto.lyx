@@ -110,10 +110,6 @@ Interfaz web desarrollada
 \end_layout
 
 \begin_layout Standard
-Diseño e implementación de la solución 
-\end_layout
-
-\begin_layout Standard
 Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
  así como la curva de aprendizaje de las distintas herramientas para realizar
  aplicaciones web, decidimos utilizar PHP con Eclipse como IDE.
@@ -125,7 +121,7 @@ El motor de base de datos en principio podía ser MySql o PostgreSql y la
  de iniciada la etapa de implementación, por lo tanto se pensó desde un
  principio en un módulo de abstracción al motor de base de datos que ejecutara
  las operaciones básicas (abrir la conexión, ejecutar una consulta, obtener
- el resultado) e implementarlo tanto para mysql como para posgresql.
+ el resultado) e implementarlo tanto para MySql como para PosgreSql.
  Este requerimiento redundó en una ventaja para el producto: si fuera necesario
  instalarlo sobre otro motor de condiciones similares, en principio solo
  sería necesario reimplementar el módulo y repetir la etapa de testeo.
@@ -141,8 +137,8 @@ La apariencia del sitio también podía variar durante la implementación,
  ser desplegadas en pantalla.
  En definitiva obtuvimos una versión moderada del patrón model view controller.
  Si en algún momento se deseara rediseñar el sitio manteniendo el funcionamiento
- del mismo, la mayor parte se puede cambiar desde estilos.css y el resto
- desde las plantillas en formato .html.
+ del mismo, la mayor parte se puede cambiar desde la hoja de estilos y el
+ resto desde las plantillas en formato .html.
 \end_layout
 
 \begin_layout Paragraph*
@@ -185,7 +181,7 @@ El usuario administrador tendrá a su cargo la tarea de mantener los usuarios
  y grupos del sistema así como el acceso de los mismos a los distintos trabajos.
  Dado que nos encontramos en un ambiente multiusuario, la aplicación permite
  administrar las reservas del clúster, para organizar la utilización de
- recursos por varios usuarios, y de forma simultánea.
+ recursos por varios usuarios de forma simultánea.
  Cada trabajo creado tendrá asociado un conjunto de recursos disponibles
  que determinarán el posterior funcionamiento de las ejecuciones de los
  clientes.
