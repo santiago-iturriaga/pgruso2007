@@ -165,6 +165,8 @@ Distribution) mucho mas flexible y amplia que la licencia utilizada por MySQL.
 
 \begin_layout Standard
 [Control de código y herramientas colaborativas]
+Como 
+Google Code runs a project hosting service[5] that provides revision control using Subversion (the repositories are implemented on top of Google's BigTable, but this is hidden to the user), an issue tracker, a wiki for documentation, and a file download feature.
 SVN (GoogleCode?), RapidSVN
 \end_layout
 
