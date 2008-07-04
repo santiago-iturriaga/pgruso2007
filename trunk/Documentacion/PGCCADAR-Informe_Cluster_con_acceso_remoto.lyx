@@ -128,9 +128,9 @@ Una vez seleccionado TORQUE como software para construir el cluster nos
 \end_layout
 
 \begin_layout Standard
-Para el desarrollo del componente de acceso Web necesitabamos definir varias
- herramientas: un servidor Web para alojar nuestra aplicación, un lenguaje
- server-side para implementar la lógica y una base de datos.
+Para el desarrollo del componente de acceso Web fue necesaria la definicion
+ de varias herramientas: un servidor Web para alojar nuestra aplicación,
+ un lenguaje server-side para implementar la lógica y una base de datos.
  Utilizar TORQUE y Maui para la implementación del cluster nos condiciona
  a trabajar sobre un sistema operativo Linux o Unix-BSD, por esta razón
  decidimos utilizar Apache como servidor Web.
@@ -155,7 +155,8 @@ brinda servicio al 49.12% de los sitios de Internet y además se encuentra
 \begin_layout Standard
 Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
  así como la curva de aprendizaje de los diferentes lenguajes para desarrollar
- aplicaciones web, decidimos utilizar PHP 5 con Eclipse como IDE.
+ aplicaciones web, decidimos utilizar PHP como lenguaje de implenentación
+ y Eclipse como IDE.
  PHP es un lenguaje intepretado de proposito general muy popular debido
  a la rapidez y facilidad con la que permite desarrollar aplicaciones, cuenta
  con una comunidad de usuarios muy amplia y se encuentra disponible para
@@ -168,7 +169,7 @@ Para el almacenamiento de datos se consideraron dos motores de base de datos
  Finalmente elegimos trabajar con PostgreSQL, pero igualmente ambos cumplen
  con creces los requerimientos del proyecto.
  PostgreSQL es un motor de base de datos relacional de tipo empresarial,
- madura, con buena integración con PHP y un muy buen soporte por parte de
+ maduro, con buena integración con PHP y un muy buen soporte por parte de
  la comunidad.
  Si bien no es tan amigable ni tan popular como MySQL cuenta con una licencia
  de tipo BSD (Berkeley Software Distribution) mucho mas flexible y permisiva
@@ -178,7 +179,7 @@ Para el almacenamiento de datos se consideraron dos motores de base de datos
 \begin_layout Standard
 También fué necesario contar con una herramienta colaborativa que nos permitiera
   compartir y versionar tanto el código como los documentos.
- Para esto decidimos utilizar Google Code, un servicio de Google provee
+ Para esto decidimos utilizar Google Code, un servicio de Google que provee
  un servicio de alojamiento de proyectos.
  Algunas de las funcionalidades que ofrece Google Code son: control de versiones
  utilizando  Subversion
@@ -186,8 +187,8 @@ También fué necesario contar con una herramienta colaborativa que nos permitie
 status open
 
 \begin_layout Standard
-Subversion es un software de sistema de control de versiones diseñado  específic
-amente para reemplazar al popular CVS.
+Subversion es un software de control de versiones diseñado específicamente
+ para reemplazar al popular CVS.
 \end_layout
 
 \end_inset
