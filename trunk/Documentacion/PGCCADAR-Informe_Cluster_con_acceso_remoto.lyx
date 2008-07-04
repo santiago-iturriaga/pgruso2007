@@ -107,10 +107,7 @@ TORQUE es un derivado de PBS (un DRM inicialmente desarrollado a mediados
 \begin_layout Standard
 Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
  los requerimientos del proyecto, también presenta ciertas carencias
-\emph on
- 
-\emph default
-dentro de las cuales las más importantes son CPU harvesting y la migración
+ dentro de las cuales las más importantes son CPU harvesting y la migración
  de procesos.
  Dichas carencias no son un problema serio ya que el cluster que se utilizará
  cuenta con nodos homogéneos y dedicados, esto significa que los nodos del
@@ -131,16 +128,16 @@ Una vez seleccionado TORQUE como software para construir el cluster nos
 
 \begin_layout Standard
 Para el desarrollo del componente de acceso Web necesitabamos definir 
-varias herramientas: un servidor Web para alojar nuestra aplicación, un 
-lenguaje server-side para implementar la lógica y una base de datos.
-Utilizar TORQUE y Maui para la implementación del cluster nos condiciona a
-trabajar sobre un sistema operativo Linux o Unix-BSD, por esta razón decidimos
-utilizar Apache como servidor Web. Apache es el servidor Web mas popular desde
-1996, actualmente (Encuesta realizada en Junio del 2008 por Netcraft.com. 
-Netcraft fue fundada en 1995 y se encuentra especializada en el analisis de mercado 
-de servidores y alojamiento web incluyendo detección de servidor web y sistema operativo) 
-brinda servicio al 49.12% de los sitios de Internet y además se encuentra 
-disponible para su instalación en cualquier sistema operativo de tipo Unix (*nix).
+ varias herramientas: un servidor Web para alojar nuestra aplicación, un 
+ lenguaje server-side para implementar la lógica y una base de datos.
+ Utilizar TORQUE y Maui para la implementación del cluster nos condiciona a
+ trabajar sobre un sistema operativo Linux o Unix-BSD, por esta razón decidimos
+ utilizar Apache como servidor Web. Apache es el servidor Web mas popular desde
+ 1996, actualmente [Encuesta realizada en Junio del 2008 por Netcraft.com. 
+ Netcraft fue fundada en 1995 y se especializa en el analisis de mercado 
+ de servidores y alojamiento web incluyendo detección de servidor web y sistema operativo.]
+ brinda servicio al 49.12% de los sitios de Internet y además se encuentra 
+ disponible para su instalación en cualquier sistema operativo de tipo Unix (*nix).
 \end_layout
 
 \begin_layout Standard
@@ -155,24 +152,28 @@ Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
 
 \begin_layout Standard
 Para el almacenamiento de datos se consideraron dos motores de base de datos
-relacional: PostgreSQL y MySQL. Ambos cumplen con creces los requerimientos 
-del proyecto y finalmente nos inclinamos por PostgreSQL. PostgreSQL es un 
-motor de base de datos relacional de tipo empresarial madura, con buena integración 
-con PHP y un muy buen soporte por parte de la comunidad. Si bien no es tan amigable 
-ni tan popular como MySQL cuenta con una licencia de tipo BSD (Berkeley Software 
-Distribution) mucho mas flexible y amplia que la licencia utilizada por MySQL.
+ relacional: PostgreSQL y MySQL. Ambos cumplen con creces los requerimientos 
+ del proyecto y finalmente nos inclinamos por PostgreSQL. PostgreSQL es un 
+ motor de base de datos relacional de tipo empresarial madura, con buena integración 
+ con PHP y un muy buen soporte por parte de la comunidad. Si bien no es tan amigable 
+ ni tan popular como MySQL cuenta con una licencia de tipo BSD (Berkeley Software 
+ Distribution) mucho mas flexible y amplia que la licencia utilizada por MySQL.
 \end_layout
 
 \begin_layout Standard
-[Control de código y herramientas colaborativas]
-Como 
-Google Code runs a project hosting service[5] that provides revision control using Subversion (the repositories are implemented on top of Google's BigTable, but this is hidden to the user), an issue tracker, a wiki for documentation, and a file download feature.
-SVN (GoogleCode?), RapidSVN
+También fué necesario contar con una herramienta colaborativa que nos permitiera 
+ compartir y versionar tanto el código como los documentos. Para esto decidimos utilizar
+ Google Code, un servicio de Google provee un servicio de alojamiento de proyectos.
+ Algunas de las funcionalidades que ofrece Google Code son: control de versiones utilizando 
+ Subversion [Subversion es un software de sistema de control de versiones diseñado 
+ específicamente para reemplazar al popular CVS.], un manejador de incidencias, una wiki, etcétera.
 \end_layout
 
 \begin_layout Standard
-[Documentacion]
-lyx
+Finalmente, para la documentación del proyecto utilizamos LyX. LyX es un programa gráfico 
+ que permite la edición de texto usando LaTeX, por lo que hereda todas las capacidades de
+ LaTeX (notación científica, edición de ecuaciones, creación de índices, etcétera) y por
+ supuesto mantiene el enfoque WYSIWYM de LaTeX.
 \end_layout
 
 \begin_layout Standard
@@ -180,6 +181,8 @@ Mencionar OpenSource como requerimiento!!!
 sistema operativo tipo unix (http://en.wikipedia.org/wiki/Unix-like) (*nix)
 lenguaje server-side (http://en.wikipedia.org/wiki/Server-side_scripting)
 BSD (Berkeley Software Distribution)
+Subversion http://subversion.tigris.org/
+WYSIWYM
 \end_layout
 
 \begin_layout Subsection
