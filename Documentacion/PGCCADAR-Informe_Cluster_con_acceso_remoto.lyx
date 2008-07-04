@@ -66,8 +66,9 @@ Tecnologías y herramientas elegidas
 \begin_layout Standard
 En esta sección se presentan y justifican las tecnologías seleccionadas
  para la implementación y documentación de los distintos componentes del
- sistema Fenton. Durante todo el proceso de desarrollo del sistema se 
- utilizaron exclusivamente herramientas de código libre (OSS).
+ sistema Fenton.
+ Durante todo el proceso de desarrollo del sistema se  utilizaron exclusivamente
+ herramientas de código libre (OSS).
 \end_layout
 
 \begin_layout Standard
@@ -106,9 +107,9 @@ TORQUE es un derivado de PBS (un DRM inicialmente desarrollado a mediados
 
 \begin_layout Standard
 Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
- los requerimientos del proyecto, también presenta ciertas carencias
- dentro de las cuales las más importantes son CPU harvesting y la migración
- de procesos.
+ los requerimientos del proyecto, también presenta ciertas carencias dentro
+ de las cuales las más importantes son CPU harvesting y la migración de
+ procesos.
  Dichas carencias no son un problema serio ya que el cluster que se utilizará
  cuenta con nodos homogéneos y dedicados, esto significa que los nodos del
  cluster tendrán capacidades de procesamiento muy similares y no serán compartid
@@ -127,62 +128,112 @@ Una vez seleccionado TORQUE como software para construir el cluster nos
 \end_layout
 
 \begin_layout Standard
-Para el desarrollo del componente de acceso Web necesitabamos definir 
- varias herramientas: un servidor Web para alojar nuestra aplicación, un 
- lenguaje server-side para implementar la lógica y una base de datos.
- Utilizar TORQUE y Maui para la implementación del cluster nos condiciona a
- trabajar sobre un sistema operativo Linux o Unix-BSD, por esta razón decidimos
- utilizar Apache como servidor Web. Apache es el servidor Web mas popular desde
- 1996, actualmente [Encuesta realizada en Junio del 2008 por Netcraft.com. 
- Netcraft fue fundada en 1995 y se especializa en el analisis de mercado 
- de servidores y alojamiento web incluyendo detección de servidor web y sistema operativo.]
- brinda servicio al 49.12% de los sitios de Internet y además se encuentra 
- disponible para su instalación en cualquier sistema operativo de tipo Unix (*nix).
+Para el desarrollo del componente de acceso Web necesitabamos definir varias
+ herramientas: un servidor Web para alojar nuestra aplicación, un lenguaje
+ server-side para implementar la lógica y una base de datos.
+ Utilizar TORQUE y Maui para la implementación del cluster nos condiciona
+ a trabajar sobre un sistema operativo Linux o Unix-BSD, por esta razón
+ decidimos utilizar Apache como servidor Web.
+ Apache es el servidor Web mas popular desde 1996, actualmente
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+Encuesta realizada en Junio del 2008 por Netcraft.com.
+ Netcraft fue fundada en 1995 y se especializa en el analisis de mercado
+ de servidores y alojamiento web incluyendo detección de servidor web y
+ sistema operativo
+\end_layout
+
+\end_inset
+
+brinda servicio al 49.12% de los sitios de Internet y además se encuentra
+ disponible para su instalación en cualquier sistema operativo de tipo Unix
+ (*nix).
 \end_layout
 
 \begin_layout Standard
 Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
- así como la curva de aprendizaje de las distintas herramientas para realizar
- aplicaciones web, decidimos utilizar PHP 5 con Eclipse como IDE. PHP es un 
- lenguaje intepretado de proposito general muy popular debido a la rapidez
- y facilidad con la que permite desarrollar aplicaciones, cuenta con una
- comunidad de usuarios muy amplia y se encuentra disponible para su instalación
- en la mayoría de los servidores web en casi cualquier plataforma.
+ así como la curva de aprendizaje de los diferentes lenguajes para desarrollar
+ aplicaciones web, decidimos utilizar PHP 5 con Eclipse como IDE.
+ PHP es un lenguaje intepretado de proposito general muy popular debido
+ a la rapidez y facilidad con la que permite desarrollar aplicaciones, cuenta
+ con una comunidad de usuarios muy amplia y se encuentra disponible para
+ su instalación en la mayoría de los servidores web en casi cualquier plataforma.
 \end_layout
 
 \begin_layout Standard
 Para el almacenamiento de datos se consideraron dos motores de base de datos
- relacional: PostgreSQL y MySQL. Ambos cumplen con creces los requerimientos 
- del proyecto y finalmente nos inclinamos por PostgreSQL. PostgreSQL es un 
- motor de base de datos relacional de tipo empresarial madura, con buena integración 
- con PHP y un muy buen soporte por parte de la comunidad. Si bien no es tan amigable 
- ni tan popular como MySQL cuenta con una licencia de tipo BSD (Berkeley Software 
- Distribution) mucho mas flexible y amplia que la licencia utilizada por MySQL.
+ relacional: PostgreSQL y MySQL.
+ Finalmente elegimos trabajar con PostgreSQL, pero igualmente ambos cumplen
+ con creces los requerimientos del proyecto.
+ PostgreSQL es un motor de base de datos relacional de tipo empresarial,
+ madura, con buena integración con PHP y un muy buen soporte por parte de
+ la comunidad.
+ Si bien no es tan amigable ni tan popular como MySQL cuenta con una licencia
+ de tipo BSD (Berkeley Software Distribution) mucho mas flexible y permisiva
+ que la licencia utilizada por MySQL.
 \end_layout
 
 \begin_layout Standard
-También fué necesario contar con una herramienta colaborativa que nos permitiera 
- compartir y versionar tanto el código como los documentos. Para esto decidimos utilizar
- Google Code, un servicio de Google provee un servicio de alojamiento de proyectos.
- Algunas de las funcionalidades que ofrece Google Code son: control de versiones utilizando 
- Subversion [Subversion es un software de sistema de control de versiones diseñado 
- específicamente para reemplazar al popular CVS.], un manejador de incidencias, una wiki, etcétera.
+También fué necesario contar con una herramienta colaborativa que nos permitiera
+  compartir y versionar tanto el código como los documentos.
+ Para esto decidimos utilizar Google Code, un servicio de Google provee
+ un servicio de alojamiento de proyectos.
+ Algunas de las funcionalidades que ofrece Google Code son: control de versiones
+ utilizando  Subversion
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+Subversion es un software de sistema de control de versiones diseñado  específic
+amente para reemplazar al popular CVS.
+\end_layout
+
+\end_inset
+
+, un manejador de incidencias, una wiki, etcétera.
 \end_layout
 
 \begin_layout Standard
-Finalmente, para la documentación del proyecto utilizamos LyX. LyX es un programa gráfico 
- que permite la edición de texto usando LaTeX, por lo que hereda todas las capacidades de
- LaTeX (notación científica, edición de ecuaciones, creación de índices, etcétera) y por
- supuesto mantiene el enfoque WYSIWYM de LaTeX.
+Finalmente, para la documentación del proyecto utilizamos LyX.
+ LyX es un programa gráfico  que permite la edición de texto usando LaTeX,
+ por lo que hereda todas las capacidades de LaTeX (notación científica,
+ edición de ecuaciones, creación de índices, etcétera) y por supuesto mantiene
+ el enfoque WYSIWYM de LaTeX.
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
 Mencionar OpenSource como requerimiento!!!
+\end_layout
+
+\begin_layout Standard
 sistema operativo tipo unix (http://en.wikipedia.org/wiki/Unix-like) (*nix)
+\end_layout
+
+\begin_layout Standard
 lenguaje server-side (http://en.wikipedia.org/wiki/Server-side_scripting)
-BSD (Berkeley Software Distribution)
-Subversion http://subversion.tigris.org/
+\end_layout
+
+\begin_layout Standard
+BSD (Berkeley Software Distribution)Subversion http://subversion.tigris.org/
+\end_layout
+
+\begin_layout Standard
 WYSIWYM
+\end_layout
+
+\begin_layout Standard
+LaTeX
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -192,21 +243,25 @@ Interfaz web desarrollada
 \begin_layout Standard
 \begin_inset Note Note
 status open
+
 \begin_layout Standard
 Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
  así como la curva de aprendizaje de las distintas herramientas para realizar
  aplicaciones web, decidimos utilizar PHP con Eclipse como IDE.
 \end_layout
+
 \end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-El motor de base de datos en principio podía ser MySql o PostgreSql y la
+El motor de base de datos en principio podía ser MySQL o PostgreSQL y la
  decisión entre uno de los dos no la podíamos tomar hasta tiempo después
  de iniciada la etapa de implementación, por lo tanto se pensó desde un
  principio en un módulo de abstracción al motor de base de datos que ejecutara
  las operaciones básicas (abrir la conexión, ejecutar una consulta, obtener
- el resultado) e implementarlo tanto para MySql como para PosgreSql.
+ el resultado) e implementarlo tanto para MySQL como para PostgreSQL.
  Este requerimiento redundó en una ventaja para el producto: si fuera necesario
  instalarlo sobre otro motor de condiciones similares, en principio solo
  sería necesario reimplementar el módulo y repetir la etapa de testeo.
