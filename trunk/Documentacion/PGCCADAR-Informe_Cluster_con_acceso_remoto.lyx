@@ -44,11 +44,11 @@ Cluster con acceso remoto
 \end_layout
 
 \begin_layout Standard
-El sistema Fenton fué desarrollado para satisfacer los objetivos y requerimiento
-s de un cluster de alto desempeño con acceso remoto en el marco del proyecto.
- A continuación describiremos las tecnologías elegidas para la implementación
- del cluster de alto desempeño resultado de la etapa de relevamiento de
- tecnologías (en la sección 
+Para satisfacer los objetivos y requerimientos de un cluster de alto desempeño
+ con acceso remoto planteados en el marco del proyecto se desarrolló el
+ sistema Fenton.
+ A continuación describiremos las tecnologías elegidas resultado de la etapa
+ de relevamiento de tecnologías (en la sección 
 \begin_inset LatexCommand vref
 reference "sec:Relevamiento-de-tecnologías"
 
