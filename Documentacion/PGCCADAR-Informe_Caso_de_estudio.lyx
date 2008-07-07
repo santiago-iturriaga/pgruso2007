@@ -49,6 +49,10 @@ Completada la descripción del trabajo realizado, se presenta en esta sección
 a en un ejemplo concreto de problema a resolver.
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Paragraph
 Deployment.
  
@@ -63,11 +67,11 @@ Nodos: lennon, joplin, marley, hendrix.
 \end_layout
 
 \begin_layout Standard
-AMD Athlon 64 3000+ 
+OS: openSUSE 10.1
 \end_layout
 
 \begin_layout Standard
-1Gb RAM
+Hardware: AMD Athlon 64 3000+, 1Gb RAM.
 \end_layout
 
 \begin_layout Paragraph
