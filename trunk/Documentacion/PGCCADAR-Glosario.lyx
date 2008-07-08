@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -163,6 +163,14 @@ Un wiki, o una wiki, es un sitio web cuyas páginas web pueden ser editadas
  palabra se convierte en un "enlace web" (o "link") a la página web.
 \end_layout
 
+\begin_layout Paragraph
+Milestone
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
 \begin_layout Section
 Abreviaturas
 \end_layout
@@ -271,6 +279,22 @@ FIFO.
 
 \begin_layout Standard
 ??
+\end_layout
+
+\begin_layout Paragraph
+CeCal
+\end_layout
+
+\begin_layout Paragraph
+IMFIA
+\end_layout
+
+\begin_layout Paragraph
+InCo
+\end_layout
+
+\begin_layout Paragraph
+
 \end_layout
 
 \end_body
