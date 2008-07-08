@@ -41,6 +41,16 @@
 
 \begin_layout Section
 Caso de estudio
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Instalaciones (deployment?) del sistema
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -49,33 +59,180 @@ Completada la descripción del trabajo realizado, se presenta en esta sección
 a en un ejemplo concreto de problema a resolver.
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Paragraph
-Deployment.
- 
+\begin_layout Subsection
+Cluster del CeCal
 \end_layout
 
 \begin_layout Standard
-Cluster del CeCal.
+Como primer caso de estudio presentaremos el cluster de alto desempeño con
+ el que cuenta el CeCal dentro del InCo.
+ Este cluster es utilizado internamente por lo integrantes del grupo de
+ Computación de Alta Performance del CeCal como ambiente de investigación
+ y desarrollo.
 \end_layout
 
 \begin_layout Standard
-Nodos: lennon, joplin, marley, hendrix.
+Se trata de un cluster homogeneo que cuenta con cuatro nodos: 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{lennon.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+\backslash
+mbox{
+\backslash
+texttt{
+joplin.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+\backslash
+mbox{
+\backslash
+texttt{
+marley.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+\backslash
+mbox{
+\backslash
+texttt{
+hendrix.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+.
+ Cada nodo cuenta con un procesador AMD Athlon 64 3000+, 1 Gb de memoria
+ RAM, una red Ethernet y sistema operativo openSUSE 10.1.
 \end_layout
 
 \begin_layout Standard
-OS: openSUSE 10.1
+En el marco del proyecto como piloto inicial se realizó una primera instalación
+ del sistema en el cluster.
+ Inicialmente solo se instalaron TORQUE y Maui ya que el cluster contaba
+ previamente con algunas bibliotecas para el desarrollo de aplicaciones
+ paralelas como MPICH y PVM.
+ A medida que el sistema fué desarrollandose se fueron instalando mas aplicacion
+es, para cuando el sistema llego al siguiente milestone se actualizó el
+ sistema en el cluster y se instalaron PHP y PostgreSQL.
+ Durante la iteración final de desarrollo se volvió a actualizar el sistema
+ con la última version y se instaló Ganglia.
 \end_layout
 
 \begin_layout Standard
-Hardware: AMD Athlon 64 3000+, 1Gb RAM.
+Finalmente, para brindar mayor flexibilidad a la hora del desarrollo de
+ aplicaciones paralelas, se instaló la biblioteca OpenMPI.
 \end_layout
 
-\begin_layout Paragraph
-Performance.
+\begin_layout Subsubsection
+Pruebas de desempeño
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Pendiente...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cluster Medusa
+\end_layout
+
+\begin_layout Standard
+El cluster de alto desempeño Medusa es la motivación inicial del proyecto.
+ Este cluster es mantenido en conjunto por el IMFIA y el CeCal, con el apoyo
+ financiero del Programa de Desarrollo Tecnológico.
+ El cluster fué construido en el año 2006 y está constituido por seis nodos
+ idénticos, cada nodo cuenta con con procesador Opteron Dual Core y tecnología
+ de interconexión Ethernet.
+\end_layout
+
+\begin_layout Standard
+Modelo Sun Fire X2100 x64 
+\end_layout
+
+\begin_layout Standard
+Server Procesador AMD Opteron Model 175 procesador dual core(2.2Ghz/1MB por
+ core) 
+\end_layout
+
+\begin_layout Standard
+Memoria 2x 1GB unbuffered ECC PC3200 DDR-400 
+\end_layout
+
+\begin_layout Standard
+Disco 1x 80 GB 7.200-RPM Serial ATA 
+\end_layout
+
+\begin_layout Standard
+(Nodo Maestro : Disco secundario de 250 Gb SATA 2) 
+\end_layout
+
+\begin_layout Standard
+Red 2x10/100/1000 Puertos Ethernet 
+\end_layout
+
+\begin_layout Standard
+Puertos 6xUSB 2.0 , 1 x PCI-Express x8 
+\end_layout
+
+\begin_layout Standard
+Nro.
+ Nodos 6 Nodos 
+\end_layout
+
+\begin_layout Standard
+Sistema Operativo Linux distribución Fedora Core 5 x86 SMP 
+\end_layout
+
+\begin_layout Standard
+Areas de aplicación 
+\end_layout
+
+\begin_layout Standard
+Medusa es un cluster de alto desempeño implementado en el marco del proyecto
+ "Laboratorio de simulación numérica de flujos a superficie libre".
+ La aplicación primaria del cluster ha involucrado la ejecución de simulaciones
+ para el desarollo de puentes, barcazas, prevención de efectos ambientales
+ no deseables por buques de gran calado, etc.
 \end_layout
 
 \end_body
