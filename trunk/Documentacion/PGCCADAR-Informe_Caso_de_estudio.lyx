@@ -72,68 +72,8 @@ Como primer caso de estudio presentaremos el cluster de alto desempeño con
 \end_layout
 
 \begin_layout Standard
-Se trata de un cluster homogeneo que cuenta con cuatro nodos: 
-\begin_inset ERT
-status open
-
-\begin_layout Standard
-
-
-\backslash
-mbox{
-\backslash
-texttt{lennon.fing.edu.uy}}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Standard
-
-
-\backslash
-mbox{
-\backslash
-texttt{joplin.fing.edu.uy}}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Standard
-
-
-\backslash
-mbox{
-\backslash
-texttt{marley.fing.edu.uy}}
-\end_layout
-
-\end_inset
-
- y 
-\begin_inset ERT
-status open
-
-\begin_layout Standard
-
-
-\backslash
-mbox{
-\backslash
-texttt{hendrix.fing.edu.uy}}
-\end_layout
-
-\end_inset
-
-.
- Cada nodo cuenta con un procesador AMD Athlon 64 3000+, 1 Gb de memoria
+Se trata de un cluster homogeneo que cuenta con cuatro nodos.
+ Cada nodo cuenta con un procesador AMD Athlon 64 3000+, 1 GB de memoria
  RAM, una red Ethernet y sistema operativo openSUSE 10.1.
 \end_layout
 
@@ -156,16 +96,12 @@ Finalmente, para brindar mayor flexibilidad a la hora del desarrollo de
  aplicaciones paralelas, se instaló la biblioteca OpenMPI.
 \end_layout
 
-\begin_layout Subsubsection
-Pruebas de desempeño
-\end_layout
-
 \begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Standard
-Pendiente...
+Pruebas de desempeño...Pendiente...
 \end_layout
 
 \end_inset
@@ -181,20 +117,19 @@ Cluster Medusa
 El cluster de alto desempeño Medusa es la motivación inicial del proyecto.
  Este cluster es mantenido en conjunto por el IMFIA y el CeCal, con el apoyo
  financiero del Programa de Desarrollo Tecnológico.
- El cluster fué construido en el año 2006 y está constituido por seis nodos,
- cada nodo cuenta con un servidor modelo Sun Fire X2100 x64 y se encuentran
- conectados por una red Ethernet.
+ El cluster fué construido en el año 2006 y está constituido por seis servidores
+ modelo Sun Fire X2100 x64 interconectados entre si mediante una red Ethernet.
 \end_layout
 
 \begin_layout Standard
 Cada nodo Sun Fire X2100 x64 posee un procesador AMD Opteron doble nucleo
- modelo 175, cada uno de estos nucleos trabaja a 2.2Ghz y tiene 1MB de cache
- nivel 2.
- Además cada nodo cuenta con una memoria de 2 Gb ECC PC3200 DDR-400, un
- disco de 80 GB de capacidad y 7.200-RPM Serial ATA y dos interfaces de red
- Ethernet 10/100/1000.
+ modelo 175, cada uno de estos nucleos trabaja a 2.2 Ghz y tiene 1 MB de
+ cache nivel 2.
+ Además cada nodo cuenta con una memoria de 2 GB ECC PC3200 DDR-400, un
+ disco de 80 GB de capacidad y 7.200 RPM SATA y dos interfaces de red Ethernet
+ 10/100/1000.
  El nodo utilizado como maestro cuenta además con un disco duro SATA 2 adicional
- de 250 Gb de capacidad.
+ de 250 GB de capacidad.
  Todos los nodos utilizan GNU/Linux Fedora Core 5 x86 SMP como sistema operativo.
 \end_layout
 
@@ -207,8 +142,8 @@ Medusa fue implementado en el marco del proyecto "Laboratorio de simulación
 \end_layout
 
 \begin_layout Standard
-Actualmente se esta realizando una instalación piloto del sistema en el
- cluster Medusa.
+Actualmente se esta realizando una instalación piloto del sistema Fenton
+ en el cluster Medusa.
  Para esto se incorporó un nuevo nodo al cluster que se desepeñará como
  nuevo nodo maestro.
  En este nuevo nodo se instaló el sistema Fenton en su totalidad, pero aún

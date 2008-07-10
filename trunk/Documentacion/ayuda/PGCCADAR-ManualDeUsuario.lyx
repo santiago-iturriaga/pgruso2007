@@ -1,9 +1,9 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
 \textclass article
-\language english
+\language spanish
 \inputencoding auto
 \font_roman default
 \font_sans default
@@ -15,10 +15,11 @@
 \font_tt_scale 100
 \graphics default
 \paperfontsize default
+\spacing single
 \papersize default
 \use_geometry false
 \use_amsmath 1
-\use_esint 1
+\use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
@@ -26,10 +27,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language english
+\quotes_language swedish
 \papercolumns 1
 \papersides 1
-\paperpagestyle default
+\paperpagestyle fancy
 \tracking_changes false
 \output_changes false
 \author "" 
@@ -39,22 +40,117 @@
 \begin_body
 
 \begin_layout Title
-Manual de usuario
-\newline
-Cluster de Computadores de Alto Desempeño con Acceso Remoto
- (CCADAR)
-\newline
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+chead{}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+rhead{Página 
+\backslash
+thepage}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+lfoot{Manual de usuario}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+cfoot{}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+rfoot{Proyecto Fenton (CCADAR)} 
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+date{}
+\end_layout
+
+\end_inset
+
+
+\size small
 Facultad de Ingeniería
 \newline
 Universidad de la República
+\size large
+
+\newline
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\size larger
+Proyecto Fenton - Cluster de Computadores de Alto Desempeño con Acceso Remoto
+ (CCADAR)
+\size large
+
+\newline
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\size larger
+Manual de usuario
+\size large
+
+\newline
+
+\begin_inset VSpace bigskip
+\end_inset
+
+Julio 2008
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Author
+
+\size normal
+Estudiantes:
+\family typewriter
+ 
+\newline
 Santiago Iturriaga, Paulo Maya, Damián Pintos
-\end_layout
+\begin_inset VSpace defskip
+\end_inset
 
-\begin_layout Date
 
+\newline
+
+\family default
+Supervisor:
+\family typewriter
+ 
+\newline
+Mg.
+ Ing.
+ Sergio Nesmachnow
 \end_layout
 
 \begin_layout Standard
