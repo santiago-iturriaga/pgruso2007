@@ -93,11 +93,11 @@ status open
 
 \begin_layout Standard
 
+
 \backslash
 mbox{
 \backslash
-texttt{
-joplin.fing.edu.uy}}
+texttt{joplin.fing.edu.uy}}
 \end_layout
 
 \end_inset
@@ -108,11 +108,11 @@ status open
 
 \begin_layout Standard
 
+
 \backslash
 mbox{
 \backslash
-texttt{
-marley.fing.edu.uy}}
+texttt{marley.fing.edu.uy}}
 \end_layout
 
 \end_inset
@@ -123,11 +123,11 @@ status open
 
 \begin_layout Standard
 
+
 \backslash
 mbox{
 \backslash
-texttt{
-hendrix.fing.edu.uy}}
+texttt{hendrix.fing.edu.uy}}
 \end_layout
 
 \end_inset
@@ -138,16 +138,17 @@ hendrix.fing.edu.uy}}
 \end_layout
 
 \begin_layout Standard
-En el marco del proyecto como piloto inicial se realizó una primera instalación
- del sistema en el cluster.
+En el marco del proyecto se realizó una primera instalación del sistema
+ en este cluster para realizar un testeo en un ambiente real de las tecnologías
+ elegidas.
  Inicialmente solo se instalaron TORQUE y Maui ya que el cluster contaba
  previamente con algunas bibliotecas para el desarrollo de aplicaciones
  paralelas como MPICH y PVM.
- A medida que el sistema fué desarrollandose se fueron instalando mas aplicacion
-es, para cuando el sistema llego al siguiente milestone se actualizó el
- sistema en el cluster y se instalaron PHP y PostgreSQL.
- Durante la iteración final de desarrollo se volvió a actualizar el sistema
- con la última version y se instaló Ganglia.
+ A medida que el sistema fue evolucionando se instalaron mas aplicaciones
+ y para cuando el sistema llego al siguiente milestone se realizó una actualizac
+ión del cluster y se instalaron PHP y PostgreSQL.
+ Durante la iteración final de desarrollo se volvió a actualizar el cluster
+ con la última versión del sistema y se instaló además Ganglia.
 \end_layout
 
 \begin_layout Standard
@@ -180,59 +181,39 @@ Cluster Medusa
 El cluster de alto desempeño Medusa es la motivación inicial del proyecto.
  Este cluster es mantenido en conjunto por el IMFIA y el CeCal, con el apoyo
  financiero del Programa de Desarrollo Tecnológico.
- El cluster fué construido en el año 2006 y está constituido por seis nodos
- idénticos, cada nodo cuenta con con procesador Opteron Dual Core y tecnología
- de interconexión Ethernet.
+ El cluster fué construido en el año 2006 y está constituido por seis nodos,
+ cada nodo cuenta con un servidor modelo Sun Fire X2100 x64 y se encuentran
+ conectados por una red Ethernet.
 \end_layout
 
 \begin_layout Standard
-Modelo Sun Fire X2100 x64 
+Cada nodo Sun Fire X2100 x64 posee un procesador AMD Opteron doble nucleo
+ modelo 175, cada uno de estos nucleos trabaja a 2.2Ghz y tiene 1MB de cache
+ nivel 2.
+ Además cada nodo cuenta con una memoria de 2 Gb ECC PC3200 DDR-400, un
+ disco de 80 GB de capacidad y 7.200-RPM Serial ATA y dos interfaces de red
+ Ethernet 10/100/1000.
+ El nodo utilizado como maestro cuenta además con un disco duro SATA 2 adicional
+ de 250 Gb de capacidad.
+ Todos los nodos utilizan GNU/Linux Fedora Core 5 x86 SMP como sistema operativo.
 \end_layout
 
 \begin_layout Standard
-Server Procesador AMD Opteron Model 175 procesador dual core(2.2Ghz/1MB por
- core) 
-\end_layout
-
-\begin_layout Standard
-Memoria 2x 1GB unbuffered ECC PC3200 DDR-400 
-\end_layout
-
-\begin_layout Standard
-Disco 1x 80 GB 7.200-RPM Serial ATA 
-\end_layout
-
-\begin_layout Standard
-(Nodo Maestro : Disco secundario de 250 Gb SATA 2) 
-\end_layout
-
-\begin_layout Standard
-Red 2x10/100/1000 Puertos Ethernet 
-\end_layout
-
-\begin_layout Standard
-Puertos 6xUSB 2.0 , 1 x PCI-Express x8 
-\end_layout
-
-\begin_layout Standard
-Nro.
- Nodos 6 Nodos 
-\end_layout
-
-\begin_layout Standard
-Sistema Operativo Linux distribución Fedora Core 5 x86 SMP 
-\end_layout
-
-\begin_layout Standard
-Areas de aplicación 
-\end_layout
-
-\begin_layout Standard
-Medusa es un cluster de alto desempeño implementado en el marco del proyecto
- "Laboratorio de simulación numérica de flujos a superficie libre".
- La aplicación primaria del cluster ha involucrado la ejecución de simulaciones
+Medusa fue implementado en el marco del proyecto "Laboratorio de simulación
+ numérica de flujos a superficie libre" y algunas de las aplicaciónes para
+ las cuales se ha utilizado el cluster son: la ejecución de simulaciones
  para el desarollo de puentes, barcazas, prevención de efectos ambientales
  no deseables por buques de gran calado, etc.
+\end_layout
+
+\begin_layout Standard
+Actualmente se esta realizando una instalación piloto del sistema en el
+ cluster Medusa.
+ Para esto se incorporó un nuevo nodo al cluster que se desepeñará como
+ nuevo nodo maestro.
+ En este nuevo nodo se instaló el sistema Fenton en su totalidad, pero aún
+ se encuentra pendiente la instalación del sistema en los restantes nodos
+ del cluster.
 \end_layout
 
 \end_body
