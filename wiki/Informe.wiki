@@ -2,7 +2,7 @@
   * DAMIAN: *IMAGEN AYUDA!!!*, 
   * SANTIAGO: PGCCADAR-Informe_Caso_de_estudio.lyx
 
----
+----
 
   * General
   - ver tamanio imagenes (algunas son muy grandes). *HECHO*
