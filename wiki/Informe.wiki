@@ -1,5 +1,11 @@
+  * PAULO: PGCCADAR-Informe_Cluster_con_acceso_remoto.lyx
+  * DAMIAN: *IMAGEN AYUDA!!!*, 
+  * SANTIAGO: PGCCADAR-Informe_Caso_de_estudio.lyx
+
+---
+
   * General
-  - ver tamanio imagenes (algunas son muy grandes).
+  - ver tamanio imagenes (algunas son muy grandes). *HECHO*
 
   * Introduccion
   - Agregar punteo sobre herramientas (sobre todo lyx).
@@ -14,5 +20,5 @@
   - Docs: punteo_web.lyx, relevamiento_web.lyx
   - Donde va? Entre 4.1 y 4.2? dentro de 4.2?
 
-  * PERFORMANCE
+  * Performance
   - Programa MPI
