@@ -1,23 +1,14 @@
 *** General
-- Cambiar toda referencia a 'capitulos' por 'secciones'.
-
-
 - ver tamanio imagenes (algunas son muy grandes).
-
-
 
 *** Introduccion
 - Agregar punteo sobre herramientas (sobre todo lyx).
 
-
-
 *** Tecnologias y herramientas
 - Agregar PHP, Apache, Eclipse, PostgreSQL, SVN (GoogleCode), Tortoise, RapidSVN, lyx. (Mover desde Interfaz web desarrollada)
 
-
 *** Glosario
 - Hacer :)
-
 
 *** Requerimientos de la interfaz
 - Docs: punteo_web.lyx, relevamiento_web.lyx
