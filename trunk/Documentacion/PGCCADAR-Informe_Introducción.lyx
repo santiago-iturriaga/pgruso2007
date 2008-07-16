@@ -177,7 +177,7 @@ Existe una diversa gama de arquitecturas de computación paralela, desde
 \end_layout
 
 \begin_layout Standard
-En el capítulo dos profundizaremos sobre la computación de alto rendimiento,
+En la sección dos profundizaremos sobre la computación de alto rendimiento,
  diferentes tipos de arquitecturas y técnicas, y observaremos las herramientas
  y paradigmas de programación paralela o distribuida.
 \end_layout
