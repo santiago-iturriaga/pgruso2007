@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -96,7 +96,7 @@ reference "sub:Torque-Casos-de-estudio"
 \begin_layout Standard
 TORQUE es un derivado de PBS (un DRM inicialmente desarrollado a mediados
  los años '90 para manejar recursos de computo aeroespacial en la NASA)
- por lo que cuenta con un código base muy estable y solido.
+ por lo que cuenta con un código base muy estable y sólido.
  Esto ayuda a mitigar los riesgos presentados por tecnologías emergentes
  que ofrecen funcionalidades innovadoras pero que también resultan problemáticas
  en un proyecto de corta duración.
@@ -302,7 +302,7 @@ La aplicación permite un manejo de usuarios con perfiles diferenciados.
  los usuarios.
  En definitiva, cada usuario puede pertenecer a uno o más grupos, y estos
  a su vez pueden tener funcionalidades y trabajos asociados.
- Un usuario determinado puede hacer uso de una funcionaldiad dada si pertenece
+ Un usuario determinado puede hacer uso de una funcionalidad dada si pertenece
  a algún grupo que se lo permita, mientras que puede acceder a un trabajo
  determinado si pertenece a algún grupo con acceso al mismo.
 \end_layout
@@ -391,20 +391,6 @@ reference "sub:Guía-de-testeo"
 \begin_layout Standard
 Las herramientas utilizadas en el testing fueron la guía de test y las funcional
 idades provistas por el Google Code como son registro Issues y Wikis.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Es la primera vez que se menciona Google Code.
- Habría que explicar un poco mas que es y para que se usó.
- Capaz que estaría bueno mencionarlo antes porque se usó también para el
- desarrollo.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body
