@@ -242,21 +242,6 @@ Interfaz web desarrollada
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
- así como la curva de aprendizaje de las distintas herramientas para realizar
- aplicaciones web, decidimos utilizar PHP con Eclipse como IDE.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 El motor de base de datos en principio podía ser MySQL o PostgreSQL y la
  decisión entre uno de los dos no la podíamos tomar hasta tiempo después
  de iniciada la etapa de implementación, por lo tanto se pensó desde un
