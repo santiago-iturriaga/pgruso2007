@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -202,39 +202,6 @@ Finalmente, para la documentación del proyecto utilizamos LyX.
  por lo que hereda todas las capacidades de LaTeX (notación científica,
  edición de ecuaciones, creación de índices, etcétera) y por supuesto mantiene
  el enfoque WYSIWYM de LaTeX.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Mencionar OpenSource como requerimiento!!!
-\end_layout
-
-\begin_layout Standard
-sistema operativo tipo unix (http://en.wikipedia.org/wiki/Unix-like) (*nix)
-\end_layout
-
-\begin_layout Standard
-lenguaje server-side (http://en.wikipedia.org/wiki/Server-side_scripting)
-\end_layout
-
-\begin_layout Standard
-BSD (Berkeley Software Distribution)Subversion http://subversion.tigris.org/
-\end_layout
-
-\begin_layout Standard
-WYSIWYM
-\end_layout
-
-\begin_layout Standard
-LaTeX
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
