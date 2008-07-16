@@ -1,5 +1,5 @@
   * PAULO: PGCCADAR-Informe_Cluster_con_acceso_remoto.lyx
-  * DAMIAN: PGCCADAR-Glosario.lyx
+  * DAMIAN: PGCCADAR-Glosario.lyx, Corrección ortográfica y de cualquier tipo del informe
   * SANTIAGO: PGCCADAR-Informe_Caso_de_estudio.lyx, *IMAGEN AYUDA!!!*
 
 ----
