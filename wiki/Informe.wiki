@@ -1,6 +1,6 @@
   * PAULO: PGCCADAR-Informe_Cluster_con_acceso_remoto.lyx
-  * DAMIAN: *IMAGEN AYUDA!!!*, 
-  * SANTIAGO: PGCCADAR-Informe_Caso_de_estudio.lyx
+  * DAMIAN: PGCCADAR-Glosario.lyx
+  * SANTIAGO: PGCCADAR-Informe_Caso_de_estudio.lyx, *IMAGEN AYUDA!!!*
 
 ----
 
