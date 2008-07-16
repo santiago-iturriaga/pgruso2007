@@ -1,18 +1,18 @@
-* General
-- ver tamanio imagenes (algunas son muy grandes).
+  * General
+  - ver tamanio imagenes (algunas son muy grandes).
 
-* Introduccion
-- Agregar punteo sobre herramientas (sobre todo lyx).
+  * Introduccion
+  - Agregar punteo sobre herramientas (sobre todo lyx).
 
-* Tecnologias y herramientas
-- Agregar PHP, Apache, Eclipse, PostgreSQL, SVN (GoogleCode), Tortoise, RapidSVN, lyx. (Mover desde Interfaz web desarrollada) *HECHO*
+  * Tecnologias y herramientas
+  - Agregar PHP, Apache, Eclipse, PostgreSQL, SVN (GoogleCode), Tortoise, RapidSVN, lyx. (Mover desde Interfaz web desarrollada) *HECHO*
 
-* Glosario
-- Hacer :)
+  * Glosario
+  - Hacer :)
 
-* Requerimientos de la interfaz
-- Docs: punteo_web.lyx, relevamiento_web.lyx
-- Donde va? Entre 4.1 y 4.2? dentro de 4.2?
+  * Requerimientos de la interfaz
+  - Docs: punteo_web.lyx, relevamiento_web.lyx
+  - Donde va? Entre 4.1 y 4.2? dentro de 4.2?
 
-* PERFORMANCE
-- Programa MPI
+  * PERFORMANCE
+  - Programa MPI
