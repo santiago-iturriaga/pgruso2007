@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -41,35 +41,13 @@
 
 \begin_layout Section
 Puesta en producción
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Instalaciones (deployment?) del sistema
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-Completada la descripción del trabajo realizado, se presenta en esta sección
- un caso de estudio que permita mostrar la aplicación de la solución desarrollad
-a en un ejemplo concreto de problema a resolver.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Cambiar un poco esta redacción
-\end_layout
-
-\end_inset
-
-
+Completada la descripción del trabajo realizado, en esta sección presentaremos
+ las instalaciones que se han realizado el sistema.
+ Describiremos las carácteristicas de hardware y software de los clusters
+ y proceso que se suguió durante la instalación del sistema.
 \end_layout
 
 \begin_layout Subsection
@@ -77,36 +55,236 @@ Cluster del CeCal
 \end_layout
 
 \begin_layout Standard
-Como primer caso de estudio presentaremos el cluster de alto desempeño con
- el que cuenta el CeCal dentro del InCo.
+Como primer caso presentaremos el cluster de alto desempeño con el que cuenta
+ el CeCal dentro del InCo.
  Este cluster es utilizado internamente por lo integrantes del grupo de
  Computación de Alta Performance del CeCal como ambiente de investigación
  y desarrollo.
 \end_layout
 
 \begin_layout Standard
-Se trata de un cluster homogeneo que cuenta con cuatro nodos.
+Se trata de un cluster homogeneo que cuenta con cuatro nodos:
+\newline
+
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{lennon.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{marley.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{hendrix.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+ y
+\newline
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{joplin.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+.
  Cada nodo cuenta con un procesador AMD Athlon 64 3000+, 1 GB de memoria
- RAM, una red Ethernet y sistema operativo openSUSE 10.1.
+ RAM y sistema operativo openSUSE 10.1.
+ Los nodos se encuentran conectados entre si mediante una red, una red Ethernet
+ de 100 Mbps.
+ 
 \end_layout
 
 \begin_layout Standard
-En el marco del proyecto se realizó una primera instalación del sistema
- en este cluster para realizar un testeo en un ambiente real de las tecnologías
- elegidas.
- Inicialmente solo se instalaron TORQUE y Maui ya que el cluster contaba
+En el marco del proyecto se realizó una primera instalación de Fenton en
+ este cluster.
+ Inicialmente se utilizó para realizar un testeo de las  tecnologías elegidas
+ en un ambiente controlado.
+ A medida que el proyecto  fué madurando y se fueron cumpliendo etapas de
+ su desarrollo se realizaron actualizaciones del software instalado en el
+ cluster.
+ Actualmente el cluster cuenta con la versión final de Fenton y se encuentra
+ disponible para utilizar en producción.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Primer milestone.
+ 
+\end_layout
+
+\begin_layout Standard
+Inicialmente solamente se instalaron TORQUE y Maui ya que el cluster contaba
  previamente con algunas bibliotecas para el desarrollo de aplicaciones
  paralelas como MPICH y PVM.
- A medida que el sistema fue evolucionando se instalaron mas aplicaciones
+ Como nodo maestro se utilizó a 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{lennon.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+, en ese nodo se instaló Maui y se  instalaron  el servidor y el demonio
+ de ejecución de TORQUE.
+ De esta manera  el nodo lennon.fing.edu.uy será utilizado como nodo maestro
+ y como nodo de cómputo.
+ En el resto de los nodos se instaló solamente el demonio de ejecución de
+ TORQUE ya que solo se utilizaran como nodo de cómputo.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Segundo milestone.
+\end_layout
+
+\begin_layout Standard
+A medida que el sistema fue evolucionando se instalaron mas aplicaciones
  y para cuando el sistema llego al siguiente milestone se realizó una actualizac
 ión del cluster y se instalaron PHP y PostgreSQL.
- Durante la iteración final de desarrollo se volvió a actualizar el cluster
+ Nuevamente PostgreSQL se instaló solamente en 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{lennon.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+.
+ Si bien fué necesario instalar PHP en todos los nodos del cluster el nodo
+ lennon.fing.edu.uy es quien brinda el servicio de interfaz Web.
+ El resto de los nodos requieren PHP para ejecutar scripts de notificación
+ de inicio y finalización de trabajos  que son manejados internamente por
+ el sistema.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Tercer milestone.
+ 
+\end_layout
+
+\begin_layout Standard
+Durante la iteración final de desarrollo se volvió a actualizar el cluster
  con la última versión del sistema y se instaló además Ganglia.
+ Ganglia cuenta con dos componentes.
+ Un demonio encargado de recolectar la información del cluster y un demonio
+ encargado de monitorear un nodo y enviar información al demonio de recolección.
+ Además Ganglia cuenta con una interfaz Web en donde se puede consultar
+ la información recolectada por el servicio de recolección.
+ En nodo 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{lennon.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+ del cluster se instalaron: la interfaz Web, el servicio de recolección
+ y el servicio de monitoreo.
+  En el resto de los nodos se instalaron solamente demonios de monitoreo.
+ 
 \end_layout
 
 \begin_layout Standard
 Finalmente, para brindar mayor flexibilidad a la hora del desarrollo de
  aplicaciones paralelas, se instaló la biblioteca OpenMPI.
+\end_layout
+
+\begin_layout Standard
+Con esta distribución de los servicios el nodo maestro (
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{lennon.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+) actua como front-end del cluster permitiendo queel resto de los nodos
+ puedan ser privados.
+ Además debido a los reducidos requerimientos de software de los nodos de
+ cómputo esrelativamente simple agregar o quitar nodos del cluster.La interfáz
+ web del sistema se encuentra disponible desde dentro del InCo en 
+\begin_inset LatexCommand url
+target "http://lennon.fing.edu.uy/pgccadar"
+
+\end_inset
+
+ (o era 
+\begin_inset LatexCommand url
+target "http://lennon.fing.edu.uy/fenton"
+
+\end_inset
+
+ ?).
 \end_layout
 
 \begin_layout Standard
@@ -118,20 +296,8 @@ Consulta al ruso sobre esto? o sea si lo dejamo asi.
 \end_layout
 
 \begin_layout Standard
-Mas información de los nodos: por ejemplo nombres.
- Algo mas sobre el deploy : que esta instalado en cada nodo.
- Servidor torque y maui, demonios.
- Cada maquina tiene pvm y mpi.
- Ganglia.
-\end_layout
-
-\begin_layout Standard
-Acceso al sitio Fenton: direccion-
-\end_layout
-
-\begin_layout Standard
 Apuntar la redacción como esta instalada.
- incluir una seccion de utilización.
+ incluir una seccion de utilización ?.
 \end_layout
 
 \end_inset
