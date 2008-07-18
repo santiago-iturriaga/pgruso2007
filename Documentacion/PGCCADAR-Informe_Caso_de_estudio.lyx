@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -44,26 +44,27 @@ Puesta en producción
 \end_layout
 
 \begin_layout Standard
-Completada la descripción del trabajo realizado, en esta sección presentaremos
+Finalizada la descripción del trabajo realizado, en esta sección presentaremos
  las instalaciones que se han realizado el sistema.
- Describiremos las carácteristicas de hardware y software de los clusters
- y proceso que se suguió durante la instalación del sistema.
+ Describiremos las características de hardware y software de los clusters
+ de computadores de alto desempeño en que fue instalado el sistema Fenton.
+ Además presentaremos el proceso que se siguió durante su instalación.
 \end_layout
 
 \begin_layout Subsection
-Cluster del CeCal
+Cluster de computadores del CeCal
 \end_layout
 
 \begin_layout Standard
-Como primer caso presentaremos el cluster de alto desempeño con el que cuenta
- el CeCal dentro del InCo.
- Este cluster es utilizado internamente por lo integrantes del grupo de
+Como primer caso presentaremos el cluster de computadores de alto desempeño
+ con el que cuenta el CeCal dentro del InCo.
+ Este cluster es utilizado internamente por los integrantes del grupo de
  Computación de Alta Performance del CeCal como ambiente de investigación
  y desarrollo.
 \end_layout
 
 \begin_layout Standard
-Se trata de un cluster homogeneo que cuenta con cuatro nodos:
+Se trata de un cluster homogéneo que cuenta con cuatro nodos:
 \newline
 
 \begin_inset ERT
@@ -139,13 +140,13 @@ texttt{joplin.fing.edu.uy}}
 En el marco del proyecto se realizó una primera instalación de Fenton en
  este cluster.
  Inicialmente se utilizó para realizar un testeo de las  tecnologías elegidas
- en un ambiente controlado.
- A medida que el proyecto  fué madurando y se fueron cumpliendo etapas de
- su desarrollo se realizaron actualizaciones del software instalado en el
- cluster.
+ en un ambiente controlado pero a medida que el proyecto fue madurando y
+ se fueron cumpliendo etapas de su desarrollo se realizaron actualizaciones
+ del software instalado en el cluster.
  Actualmente el cluster cuenta con la versión final de Fenton y se encuentra
- disponible para utilizar en producción.
- 
+ disponible para su utilización en producción.
+ A continuación describiremos con mayor detalle la evolución del cluster
+ en cuestion.
 \end_layout
 
 \begin_layout Paragraph
@@ -154,9 +155,9 @@ Primer milestone.
 \end_layout
 
 \begin_layout Standard
-Inicialmente solamente se instalaron TORQUE y Maui ya que el cluster contaba
- previamente con algunas bibliotecas para el desarrollo de aplicaciones
- paralelas como MPICH y PVM.
+En esta la primer etapa se instalaron solamente TORQUE y Maui ya que el
+ cluster contaba previamente con algunas bibliotecas para el desarrollo
+ de aplicaciones paralelas como MPICH y PVM.
  Como nodo maestro se utilizó a 
 \begin_inset ERT
 status open
@@ -172,9 +173,9 @@ texttt{lennon.fing.edu.uy}}
 
 \end_inset
 
-, en ese nodo se instaló Maui y se  instalaron  el servidor y el demonio
+, en este nodo se instaló Maui y se  instalaron  el servidor y el demonio
  de ejecución de TORQUE.
- De esta manera  el nodo lennon.fing.edu.uy será utilizado como nodo maestro
+ De esta manera  el nodo lennon.fing.edu.uy podrá ser utilizado como nodo maestro
  y como nodo de cómputo.
  En el resto de los nodos se instaló solamente el demonio de ejecución de
  TORQUE ya que solo se utilizaran como nodo de cómputo.
@@ -186,9 +187,10 @@ Segundo milestone.
 \end_layout
 
 \begin_layout Standard
-A medida que el sistema fue evolucionando se instalaron mas aplicaciones
+A medida que el sistema fue evolucionando se instalaron más aplicaciones
  y para cuando el sistema llego al siguiente milestone se realizó una actualizac
-ión del cluster y se instalaron PHP y PostgreSQL.
+ión del cluster.
+ En esta actualización se instalaron PHP y PostgreSQL.
  Nuevamente PostgreSQL se instaló solamente en 
 \begin_inset ERT
 status open
@@ -204,12 +206,11 @@ texttt{lennon.fing.edu.uy}}
 
 \end_inset
 
-.
- Si bien fué necesario instalar PHP en todos los nodos del cluster el nodo
- lennon.fing.edu.uy es quien brinda el servicio de interfaz Web.
- El resto de los nodos requieren PHP para ejecutar scripts de notificación
- de inicio y finalización de trabajos  que son manejados internamente por
- el sistema.
+ y si bien fue necesario instalar PHP en todos los nodos del cluster el
+ nodo lennon.fing.edu.uy es quien brinda el servicio de interfaz Web.
+ El resto de los nodos solamente requieren PHP para ejecutar scripts de
+ notificación de inicio y finalización de trabajos  que son manejados internamen
+te por el sistema.
  
 \end_layout
 
@@ -222,11 +223,12 @@ Tercer milestone.
 Durante la iteración final de desarrollo se volvió a actualizar el cluster
  con la última versión del sistema y se instaló además Ganglia.
  Ganglia cuenta con dos componentes.
- Un demonio encargado de recolectar la información del cluster y un demonio
- encargado de monitorear un nodo y enviar información al demonio de recolección.
+ Un demonio encargado de recolectar información del estado de los nodos
+ del cluster y un demonio encargado de monitorear un nodo individual y enviar
+ información al demonio de recolección.
  Además Ganglia cuenta con una interfaz Web en donde se puede consultar
- la información recolectada por el servicio de recolección.
- En nodo 
+ la información recogida por el servicio de recolección.
+ En el nodo 
 \begin_inset ERT
 status open
 
@@ -244,16 +246,13 @@ texttt{lennon.fing.edu.uy}}
  del cluster se instalaron: la interfaz Web, el servicio de recolección
  y el servicio de monitoreo.
   En el resto de los nodos se instalaron solamente demonios de monitoreo.
- 
+ Finalmente, como último paso del tercer milestone, se instaló la biblioteca
+ OpenMPI para brindar mayor flexibilidad a la hora del desarrollo de aplicacione
+s paralelas.
 \end_layout
 
 \begin_layout Standard
-Finalmente, para brindar mayor flexibilidad a la hora del desarrollo de
- aplicaciones paralelas, se instaló la biblioteca OpenMPI.
-\end_layout
-
-\begin_layout Standard
-Con esta distribución de los servicios el nodo maestro (
+Con esta distribución de los servicios en el cluster el nodo maestro (
 \begin_inset ERT
 status open
 
@@ -268,23 +267,22 @@ texttt{lennon.fing.edu.uy}}
 
 \end_inset
 
-) actua como front-end del cluster permitiendo queel resto de los nodos
- puedan ser privados.
+) actúa como front-end del cluster permitiendo que el resto de los nodos
+ puedan ser privados e invisibles al usuario del cluster.
  Además debido a los reducidos requerimientos de software de los nodos de
- cómputo esrelativamente simple agregar o quitar nodos del cluster.La interfáz
- web del sistema se encuentra disponible desde dentro del InCo en 
+ cómputo resulta relativamente simple agregar o quitar nodos del cluster.
+ 
+\end_layout
+
+\begin_layout Standard
+La interfáz web del sistema Fenton se encuentra disponible desde dentro
+ del InCo en 
 \begin_inset LatexCommand url
 target "http://lennon.fing.edu.uy/pgccadar"
 
 \end_inset
 
- (o era 
-\begin_inset LatexCommand url
-target "http://lennon.fing.edu.uy/fenton"
-
-\end_inset
-
- ?).
+.
 \end_layout
 
 \begin_layout Standard
@@ -306,45 +304,46 @@ Apuntar la redacción como esta instalada.
 \end_layout
 
 \begin_layout Subsection
-Cluster Medusa
+Cluster de computadores Medusa
 \end_layout
 
 \begin_layout Standard
-El cluster de alto desempeño Medusa es la motivación inicial del proyecto.
+El cluster de computadores de alto desempeño Medusa es la motivación inicial
+ del proyecto.
  Este cluster es mantenido en conjunto por el IMFIA y el CeCal, con el apoyo
  financiero del Programa de Desarrollo Tecnológico.
- El cluster fué construido en el año 2006 y está constituido por seis servidores
+ El cluster fue construido en el año 2006 y está constituido por seis servidores
  modelo Sun Fire X2100 x64 interconectados entre si mediante una red Ethernet.
 \end_layout
 
 \begin_layout Standard
-Cada nodo Sun Fire X2100 x64 posee un procesador AMD Opteron doble nucleo
- modelo 175, cada uno de estos nucleos trabaja a 2.2 Ghz y tiene 1 MB de
+Cada nodo Sun Fire X2100 x64 posee un procesador AMD Opteron doble núcleo
+ modelo 175, cada uno de estos núcleos trabaja a 2.2 Ghz y tiene 1 MB de
  cache nivel 2.
  Además cada nodo cuenta con una memoria de 2 GB ECC PC3200 DDR-400, un
  disco de 80 GB de capacidad y 7.200 RPM SATA y dos interfaces de red Ethernet
  10/100/1000.
  El nodo utilizado como maestro cuenta además con un disco duro SATA 2 adicional
- de 250 GB de capacidad.
+ con una capacidad de 250 GB.
  Todos los nodos utilizan GNU/Linux Fedora Core 5 x86 SMP como sistema operativo.
 \end_layout
 
 \begin_layout Standard
 Medusa fue implementado en el marco del proyecto "Laboratorio de simulación
- numérica de flujos a superficie libre" y algunas de las aplicaciónes para
+ numérica de flujos a superficie libre" y algunas de las aplicaciones para
  las cuales se ha utilizado el cluster son: la ejecución de simulaciones
- para el desarollo de puentes, barcazas, prevención de efectos ambientales
+ para el desarrollo de puentes, barcazas, prevención de efectos ambientales
  no deseables por buques de gran calado, etc.
 \end_layout
 
 \begin_layout Standard
-Actualmente se esta realizando una instalación piloto del sistema Fenton
- en el cluster Medusa.
- Para esto se incorporó un nuevo nodo al cluster que se desepeñará como
- nuevo nodo maestro.
- En este nuevo nodo se instaló el sistema Fenton en su totalidad, pero aún
- se encuentra pendiente la instalación del sistema en los restantes nodos
- del cluster.
+Actualmente se esta realizando una instalación del sistema Fenton en el
+ cluster Medusa.
+ Para esto se incorporó un nuevo nodo (medusa10) al cluster que se desempeñará
+ como nodo maestro.
+ En este nodo se instaló el sistema Fenton en su totalidad, pero aún se
+ encuentra pendiente la instalación del sistema en los restantes nodos del
+ cluster.
 \end_layout
 
 \end_body
