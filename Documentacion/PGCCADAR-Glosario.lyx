@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -208,6 +208,17 @@ Definiciones
 \end_layout
 
 \begin_layout Paragraph
+Allocation manager.
+\end_layout
+
+\begin_layout Standard
+Funciona como un banco en el cual la moneda son los recursos del sistema
+ (p.ej.
+ procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
+ de recursos.
+\end_layout
+
+\begin_layout Paragraph
 CPU Harvesting.
 \end_layout
 
@@ -217,11 +228,56 @@ Es el proceso de explotar los ordenadores no dedicados cuando no se utilizan,
 \end_layout
 
 \begin_layout Paragraph
+Fairness.
+\end_layout
+
+\begin_layout Standard
+Caracteristica de maui que implica dar igual acceso a los recursos a todos
+ los usarios.
+\end_layout
+
+\begin_layout Paragraph
+Fork.
+\end_layout
+
+\begin_layout Standard
+(de un proyecto) ??
+\end_layout
+
+\begin_layout Paragraph
 Migración de procesos.
 \end_layout
 
 \begin_layout Standard
-Es la caracteristica demover un procesos de un nodo a otro.
+Para un conjunto de servidores integrados, la migración de procesos es la
+ posibilidad de tomar un proceso que se estaba ejecutando en un servidor
+ y continuar su ejecución en otro.
+\end_layout
+
+\begin_layout Paragraph
+Milestone
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+PNNL Scalable Systems Software (SSS).
+\end_layout
+
+\begin_layout Standard
+Proyecto del Pacific Northwest National Laboratory.
+\end_layout
+
+\begin_layout Paragraph
+Preemption.
+\end_layout
+
+\begin_layout Standard
+Es el nombre dado por maui a la posibilidad de suspender trabajos en ejecución
+ para poder ejecutar trabajos con mayor prioridad, una vez terminado el
+ trabajo con mayor prioridad el trabajo suspendido es reiniciado.
 \end_layout
 
 \begin_layout Paragraph
@@ -236,70 +292,16 @@ Es el procedimiento de almacenamiento del estado del proceso activo en el
 \end_layout
 
 \begin_layout Paragraph
-Fork.
+Wiki
 \end_layout
 
 \begin_layout Standard
-(de un proyecto) ??
-\end_layout
-
-\begin_layout Paragraph
-Allocation manager.
-\end_layout
-
-\begin_layout Standard
-Funciona como un banco en el cual la moneda son los recursos del sistema
- (p.ej.
- procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
- de recursos.
-\end_layout
-
-\begin_layout Paragraph
-Fairness.
-\end_layout
-
-\begin_layout Standard
-Caracteristica de maui que implica dar igual acceso a los recursos a todos
- los usarios.
-\end_layout
-
-\begin_layout Paragraph
-Preemption.
-\end_layout
-
-\begin_layout Standard
-Es el nombre dado por maui a la posibilidad de suspender trabajos en ejecución
- para poder ejecutar trabajos con mayor prioridad, una ves terminado el
- trabajo con mayor prioridad el trabajo suspendido es reiniciado.
-\end_layout
-
-\begin_layout Paragraph
-PNNL Scalable Systems Software (SSS).
-\end_layout
-
-\begin_layout Standard
-Proyecto del Pacific Northwest National Laboratory.
-\end_layout
-
-\begin_layout Paragraph
-Wiki.
-\end_layout
-
-\begin_layout Standard
-Un wiki, o una wiki, es un sitio web cuyas páginas web pueden ser editadas
- por múltiples voluntarios a través del navegador web.
+Un wiki, o una wiki, es un sitio web cuyo contenido puede ser editadp por
+ múltiples usuarios a través del navegador web.
  Los usuarios pueden crear, modificar o borrar un mismo texto que comparten.
  Los textos o "páginas wiki" tienen títulos únicos.
  Si se escribe el título de una "página-wiki" en algún lugar del wiki, esta
  palabra se convierte en un "enlace web" (o "link") a la página web.
-\end_layout
-
-\begin_layout Paragraph
-Milestone
-\end_layout
-
-\begin_layout Standard
-??
 \end_layout
 
 \begin_layout Section
@@ -307,60 +309,11 @@ Abreviaturas
 \end_layout
 
 \begin_layout Paragraph
-OSS
+CeCal
 \end_layout
 
 \begin_layout Paragraph
-MPI:
-\end_layout
-
-\begin_layout Standard
-Message Passing Interface.
-\end_layout
-
-\begin_layout Paragraph
-PVM.
-\end_layout
-
-\begin_layout Standard
-Parallel Virtual Machine.
-\end_layout
-
-\begin_layout Paragraph
-HTC.
-\end_layout
-
-\begin_layout Standard
-High-Throughput Computing.
-\end_layout
-
-\begin_layout Paragraph
-HPC.
-\end_layout
-
-\begin_layout Standard
-High-performance computing .
-\end_layout
-
-\begin_layout Paragraph
-FLOPS.
-\end_layout
-
-\begin_layout Standard
-Operaciones de punto flotante por segundo.
-\end_layout
-
-\begin_layout Paragraph
-SSI.
-\end_layout
-
-\begin_layout Standard
-Single System Image, sistemas de clustering en los que todo el cluster ofrece
- al usuario la imagen de un unico sistema.
-\end_layout
-
-\begin_layout Paragraph
-DRM.
+DRM
 \end_layout
 
 \begin_layout Standard
@@ -368,24 +321,7 @@ Distributed Resource Management.
 \end_layout
 
 \begin_layout Paragraph
-PMI.
-\end_layout
-
-\begin_layout Standard
-??
-\end_layout
-
-\begin_layout Paragraph
-SGE.
-\end_layout
-
-\begin_layout Standard
-Sun Grid Engine.
- DRM de Sun Microsystems.
-\end_layout
-
-\begin_layout Paragraph
-DRMAA.
+DRMAA
 \end_layout
 
 \begin_layout Standard
@@ -393,23 +329,43 @@ Distributed Resource Management Application API.
 \end_layout
 
 \begin_layout Paragraph
-PBS.
+FIFO
 \end_layout
 
 \begin_layout Standard
-??
+First in first out.
 \end_layout
 
 \begin_layout Paragraph
-FIFO.
+FLOPS
 \end_layout
 
 \begin_layout Standard
-??
+Operaciones de punto flotante por segundo.
 \end_layout
 
 \begin_layout Paragraph
-CeCal
+HPC
+\end_layout
+
+\begin_layout Standard
+High-performance computing .
+\end_layout
+
+\begin_layout Paragraph
+HTC
+\end_layout
+
+\begin_layout Standard
+High-Throughput Computing.
+\end_layout
+
+\begin_layout Paragraph
+IDE
+\end_layout
+
+\begin_layout Standard
+Integrated Development Environment (entorno de desarrollo integrado).
 \end_layout
 
 \begin_layout Paragraph
@@ -418,6 +374,68 @@ IMFIA
 
 \begin_layout Paragraph
 InCo
+\end_layout
+
+\begin_layout Standard
+Instituto de computación, facultad de ingeniería.
+\end_layout
+
+\begin_layout Paragraph
+MPI
+\end_layout
+
+\begin_layout Standard
+Message Passing Interface.
+\end_layout
+
+\begin_layout Paragraph
+OSS
+\end_layout
+
+\begin_layout Paragraph
+PBS
+\end_layout
+
+\begin_layout Paragraph
+PMI
+\end_layout
+
+\begin_layout Standard
+??
+\end_layout
+
+\begin_layout Paragraph
+PVM
+\end_layout
+
+\begin_layout Standard
+Parallel Virtual Machine.
+\end_layout
+
+\begin_layout Paragraph
+SGE
+\end_layout
+
+\begin_layout Standard
+Sun Grid Engine.
+ DRM de Sun Microsystems.
+\end_layout
+
+\begin_layout Paragraph
+SSI
+\end_layout
+
+\begin_layout Standard
+Single System Image, sistemas de clustering en los que todo el cluster ofrece
+ al usuario la imagen de un unico sistema.
+\end_layout
+
+\begin_layout Paragraph
+WYSIWYM
+\end_layout
+
+\begin_layout Standard
+What You See Is What You Mean (lo que ves es lo que quieres decir).
 \end_layout
 
 \end_body
