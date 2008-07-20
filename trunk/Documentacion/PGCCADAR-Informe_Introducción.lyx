@@ -118,7 +118,7 @@ Aplicaciones (pueden ser paralelas o no)
 \begin_layout Standard
 Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
  tareas como data mining, servidores de archivos, servidores de base de
- datos, servidores web, simuladores de vuelo, graphics rendering, modeladores
+ datos, servidores Web, simuladores de vuelo, graphics rendering, modeladores
  climáticos o incluso para CD ripping alcanzando velocidades realmente altas.
 \end_layout
 
@@ -151,7 +151,7 @@ Cada vez los problemas a resolver mediante la computación se tornan más
 \end_layout
 
 \begin_layout Standard
-La computación de alto rendimiento o HPC (siglas en ingles de Higth Performance
+La computación de alto rendimiento o HPC (siglas en inglés de High Performance
  Computing) nació para satisfacer todos estos requisitos de poder de cómputo.
  Esta reúne un conjunto de tecnologías, como ser supercomputadores o clusters,
  y se apoya en el paradigma de programación paralela y distribuida.
@@ -173,7 +173,7 @@ a.
 \begin_layout Standard
 Existe una diversa gama de arquitecturas de computación paralela, desde
  arquitecturas de procesadores paralelos con memoria compartida hasta clusters
- de computadores comunicados por una fastethernet.
+ de computadores comunicados por una Fast Ethernet.
 \end_layout
 
 \begin_layout Standard
@@ -305,7 +305,7 @@ nes confiables (2004).
 \end_layout
 
 \begin_layout Standard
-Tésis de maestría realizada por Mg.
+Tesis de maestría realizada por Mg.
  Ing.
  Sergio Nesmachnow, finalizada en Julio de 2004.
 \end_layout
@@ -356,12 +356,12 @@ Mejora del desempeño de modelos numéricos del Río de la Plata (2006).
 \end_layout
 
 \begin_layout Standard
-Tésis de maestría del Ing.
+Tesis de maestría del Ing.
  Pablo Ezzatti, finalizada en Junio de 2006.
 \end_layout
 
 \begin_layout Standard
-En las ultimas décadas, la simulación computacional de fluidos ha emergido
+En las últimas décadas, la simulación computacional de fluidos ha emergido
  como un área de intenso trabajo.
  A medida que las técnicas computacionales se fueron perfeccionando, el
  interés de modelar con precisión el comportamiento de los flujos de fluidos
@@ -503,7 +503,7 @@ Proyecto de grado realizado por Federico Dominioni y Pablo Musso.
 \begin_layout Standard
 El proyecto plantea el estudio, diseño e implementación del modelo de algoritmos
  genéticos increméntales.
- El modelo fue aplicado a la resolución de un problema de optimización combinado
+ El modelo fue aplicado a la resolución de un problema de optimización combinato
 ria en el área de diseño de redes de comunicaciones confiables.
 \end_layout
 
@@ -521,15 +521,15 @@ En el marco del proyecto se realizaron un conjunto de actividades específicas,
 \end_layout
 
 \begin_layout Paragraph
-Investigacion y estudio del estado del arte.
+Investigación y estudio del estado del arte.
 \end_layout
 
 \begin_layout Standard
-Unos de los principales objetivos del proyecto es la investigacion y estudio
+Unos de los principales objetivos del proyecto es la investigación y estudio
  del estado del arte a lo que refiere a la computación de alta performance.
  Esta actividad abarcó auto estudio por parte de los integrantes del proyecto
  y el curso de la materia High Performance Computing dictada por el grupo
- CeCal del insituto de computación de facultad de igenieria.
+ CeCal del Instituto de Computación de la Facultad de Ingeniería.
 \end_layout
 
 \begin_layout Paragraph
@@ -561,34 +561,34 @@ Durante las primeras etapas del proyecto se realizaron reuniones con los
 \end_layout
 
 \begin_layout Paragraph
-Implementación de la interfaz web.
+Implementación de la interfaz Web.
 \end_layout
 
 \begin_layout Standard
-Dentro de los alcances del proyecto se encontraba la implementacion de una
- interfaz web que permitiera el acceso remoto al cluster.
- Esta interfez debería contener elementos de usabilidad, funcionalidades
+Dentro de los alcances del proyecto se encontraba la implementación de una
+ interfaz Web que permitiera el acceso remoto al cluster.
+ Esta interfaz debería contener elementos de usabilidad, funcionalidades
  de administración y reportes del cluster para los administradores del mismo.
 \end_layout
 
 \begin_layout Standard
 Esta actividad se dividió en varias etapas.
  Primero una etapa de relevamiento de requerimientos donde se mantuvieron
- reuniones con los tutores y especialistas en el area de usabilidad para
- interfaces web.
+ reuniones con los tutores y especialistas en el área de usabilidad para
+ interfaces Web.
 \end_layout
 
 \begin_layout Standard
-Se llevó a cabo una etapa de diseño de la interfaz web donde se tuvieron
+Se llevó a cabo una etapa de diseño de la interfaz Web donde se tuvieron
  en cuenta conocimientos previos por parte de los integrantes del proyecto
- asi como la curva de aprendizaje de distintas herramientas de desarrollo.
+ así como la curva de aprendizaje de distintas herramientas de desarrollo.
 \end_layout
 
 \begin_layout Standard
 Luego de la etapa de diseño se realizó la etapa de desarrollo la cual se
  hizo en forma iterativa e incremental.
  Se fijaron pequeñas iteraciones en las cuales se fue incrementando y mejorando
- las funcionalidades de la interfaz web.
+ las funcionalidades de la interfaz Web.
 \end_layout
 
 \begin_layout Paragraph
@@ -596,14 +596,14 @@ Testo de la solución.
 \end_layout
 
 \begin_layout Standard
-Una vez implantado el cluster con las tecnologías selecionadas y terminado
- el desarrollo de la interfaz web se procedió con la etapa de testing.
- En esta estapa se probaron los principales requerimientos funcionales.
+Una vez implantado el cluster con las tecnologías seleccionadas y terminado
+ el desarrollo de la interfaz Web se procedió con la etapa de testing.
+ En esta etapa se probaron los principales requerimientos funcionales.
 \end_layout
 
 \begin_layout Standard
 Por último otras actividades realizadas fueron la realización de la documentació
-n final como este informe y manuales, y la presentacion final.
+n final como este informe y manuales, y la presentación final.
 \end_layout
 
 \begin_layout Subsection
@@ -611,22 +611,22 @@ Estructura del documento
 \end_layout
 
 \begin_layout Standard
-Este documento esta organizado en ocho secciones.
- La primera es una introducción a este proyecto en la cual incluímos una
- breve introducción a la computación de alto rendimiento, objetivos y motivacion
-es del proyecto, alcance y actividades desarrolladas en el transcurso del
- proyecto.
+Este documento esta organizado en siete secciones.
+ La primer sección es una introducción a este proyecto en la cual incluimos
+ una breve introducción a la computación de alto rendimiento, objetivos
+ y motivaciones del proyecto, alcance y actividades desarrolladas en el
+ transcurso del proyecto.
 \end_layout
 
 \begin_layout Standard
-En la sección dos profundizamos en el estado del arte de la computación
+En la segunda sección profundizamos en el estado del arte de la computación
  de alto rendimiento donde hablamos sobre la importancia de estas tecnologías,
  organización de computadores, diseño de algoritmos paralelos, arquitecturas
  de computación paralela y herramientas disponibles.
 \end_layout
 
 \begin_layout Standard
-En la sección tres presentamos las tecnologías relevadas para la implantación
+En la tercer sección presentamos las tecnologías relevadas para la implantación
  de un cluster de alto desempeño.
 \end_layout
 
@@ -634,12 +634,16 @@ En la sección tres presentamos las tecnologías relevadas para la implantación
 En la cuarta sección presentamos la solución propuesta con las tecnologias
  elegidas y la interfaz de acceso remoto desarrollada para el cluster de
  alto desempeño con acceso remoto.
- Se presenta también un caso de estudio así como el proceso de test realizado.
+ También presentamos el proceso de testing realizado durante el desarrollo.
 \end_layout
 
 \begin_layout Standard
-Las conclusiones son presentadas en la seccion cinco y en la seccion seis
- los trabajos a futuro.
+En la quinta sección presentamos las puestas en producción del sistema.
+\end_layout
+
+\begin_layout Standard
+Y finalmente en la sexta y septima sección presentamos las conclusiones
+ y los trabajos a futuro.
 \end_layout
 
 \end_body
