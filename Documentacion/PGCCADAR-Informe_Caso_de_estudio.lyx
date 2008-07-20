@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -146,7 +146,7 @@ En el marco del proyecto se realizó una primera instalación de Fenton en
  Actualmente el cluster cuenta con la versión final de Fenton y se encuentra
  disponible para su utilización en producción.
  A continuación describiremos con mayor detalle la evolución del cluster
- en cuestion.
+ en cuestión.
 \end_layout
 
 \begin_layout Paragraph
@@ -155,9 +155,9 @@ Primer milestone.
 \end_layout
 
 \begin_layout Standard
-En esta la primer etapa se instalaron solamente TORQUE y Maui ya que el
- cluster contaba previamente con algunas bibliotecas para el desarrollo
- de aplicaciones paralelas como MPICH y PVM.
+En esta primera etapa se instalaron solamente TORQUE y Maui ya que el cluster
+ contaba previamente con algunas bibliotecas para el desarrollo de aplicaciones
+ paralelas como MPICH y PVM.
  Como nodo maestro se utilizó a 
 \begin_inset ERT
 status open
@@ -275,7 +275,7 @@ texttt{lennon.fing.edu.uy}}
 \end_layout
 
 \begin_layout Standard
-La interfáz web del sistema Fenton se encuentra disponible desde dentro
+La interfaz Web del sistema Fenton se encuentra disponible desde dentro
  del InCo en 
 \begin_inset LatexCommand url
 target "http://lennon.fing.edu.uy/pgccadar"
@@ -318,7 +318,7 @@ El cluster de computadores de alto desempeño Medusa es la motivación inicial
 
 \begin_layout Standard
 Cada nodo Sun Fire X2100 x64 posee un procesador AMD Opteron doble núcleo
- modelo 175, cada uno de estos núcleos trabaja a 2.2 Ghz y tiene 1 MB de
+ modelo 175, cada uno de estos núcleos trabaja a 2.2 GHz y tiene 1 MB de
  cache nivel 2.
  Además cada nodo cuenta con una memoria de 2 GB ECC PC3200 DDR-400, un
  disco de 80 GB de capacidad y 7.200 RPM SATA y dos interfaces de red Ethernet
