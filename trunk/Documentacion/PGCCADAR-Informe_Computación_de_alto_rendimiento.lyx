@@ -53,7 +53,8 @@ Como ya mencionamos, en el correr de los últimos años ha crecido la importanci
 
 \begin_layout Standard
 El procesamiento paralelo (o computación paralela de alto rendimiento) ha
- ganado terreno y se a vuelto muy importante en la resolución de estos problemas.
+ ganado terreno y se ha vuelto muy importante en la resolución de estos
+ problemas.
  La computación de alto rendimiento se apoya en tecnologías como los clusters,
  supercomputadores y mediante el uso de paradigmas de programación paralela
  y/o distribuida.
@@ -74,8 +75,8 @@ La computación distribuida es un modelo para resolver problemas de computación
 Esta ha sido diseñada para resolver problemas demasiado grandes para cualquier
  supercomputadora o mainframe, manteniéndose la flexibilidad de trabajar
  en múltiples problemas más pequeños.
- Exiten varios grados de distribución: de hardware y procesamiento, de datos
- y de control como veremos mas adelante.
+ Existen varios grados de distribución: de hardware y procesamiento, de
+ datos y de control como veremos más adelante.
 \end_layout
 
 \begin_layout Standard
@@ -106,8 +107,8 @@ El avance en diferentes tecnologías como microprocesadores con mayor poder
 \end_layout
 
 \begin_layout Standard
-Los sistemas con multiprocesador y multicomputadores consiguen un aumento
- del rendimiento si se utilizan estas técnicas.
+Los multicomputadores y los sistemas con múltiples procesadores consiguen
+ un aumento en el rendimiento si se utilizan estas técnicas.
  En los sistemas monoprocesador el beneficio en rendimiento no es tan evidente,
  ya que la CPU es compartida por múltiples procesos en el tiempo, lo que
  se denomina multiplexación o multiprogramación.
@@ -184,7 +185,7 @@ s diseñados primordialmente para ellas.
 Existe una alta correspondencia entre la evolución de tecnologías informáticas
  y el desarrollo de aplicaciones; en particular el hardware tiene gran influenci
 a en el éxito de ciertas áreas.
- La aplicaciones intensivas en cálculo fueron estimuladas principalmente
+ Las aplicaciones intensivas en cálculo fueron estimuladas principalmente
  por máquinas vectoriales y procesadores masivamente paralelos.
  Las aplicaciones de almacenamiento masivo han sido guiadas por dispositivos
  de almacenamiento como RAID y robots de cintas.
@@ -469,13 +470,13 @@ Seguimos por la etapa de comunicación donde se determina la comunicación
 \end_layout
 
 \begin_layout Standard
-Luedo en la etapa de agrupación se evalúa en términos de eficiencia y costos
+Luego en la etapa de agrupación se evalúa en términos de eficiencia y costos
  de implementación a las dos etapas anteriores.
  Se agrupan tareas pequeñas en tareas más grandes.
 \end_layout
 
 \begin_layout Standard
-Por ultimo tenemos la estapa de asignación.
+Por ultimo tenemos la etapa de asignación.
  Cada tarea es asignada a un procesador tratando de maximizar la utilización
  de los procesadores y de reducir el costo de comunicación.
  La asignación puede ser estática (se establece antes de la ejecución del
@@ -631,7 +632,7 @@ Si se han replicado cómputos y/o datos, se debe verificar que los beneficios
 \end_layout
 
 \begin_layout Itemize
-Se debe verificar que las tareas resultantes tengan costos de computo y
+Se debe verificar que las tareas resultantes tengan costos de cómputo y
  comunicación similares.
 \end_layout
 
@@ -779,7 +780,7 @@ Seguimos con SIMD (Single Instruction stream, Multiple Data stream).
 \end_layout
 
 \begin_layout Standard
-Tambien tenemos la categoría MISD (Multiple Instruction stream, Single Data
+También tenemos la categoría MISD (Multiple Instruction stream, Single Data
  stream) donde existen n procesadores, cada uno recibiendo una instrucción
  diferente y operando sobre el mismo flujo de datos.
  Actualmente no hay máquinas de este tipo por ser poco prácticas, a pesar
@@ -859,7 +860,7 @@ Las unidades consisten de una cascada de etapas de procesamiento compuestas
 \end_layout
 
 \begin_layout Standard
-La etapas están separadas por registros de alta velocidad usados para guardar
+Las etapas están separadas por registros de alta velocidad usados para guardar
  resultados intermedios.
  La información que fluye entre las etapas adyacentes esta bajo el control
  de un reloj R que se aplica a todos los registros simultáneamente.
@@ -883,7 +884,7 @@ Son máquinas que constan de un computador secuencial conectado a un arreglo
  de ejecutar la porción del programa que es secuencial.
  Los elementos de procesamiento se asemejan a CPUs pero no tienen unidades
  de control propias; el computador secuencial genera todas las señales de
- control para la unidades de procesamiento en el computador.
+ control para las unidades de procesamiento en el computador.
 \end_layout
 
 \begin_layout Standard
@@ -910,7 +911,7 @@ Son equipos formados por un número de procesadores completamente programables
 La principal debilidad que presentan los multiprocesadores (máquinas de
  memoria compartida) radica en que no se pueden agregar procesadores indefinidam
 ente ya que a partir de cierto número y dependiendo de la aplicación, el
- mecanismo de switches o enrutamiento se satura , en otras palabras, tienen
+ mecanismo de switches o enrutamiento se satura, en otras palabras, tienen
  poca extensibilidad.
 \end_layout
 
@@ -982,14 +983,14 @@ Multiprocesadores multi-hebrados
 En estas máquinas cada procesador tiene cierto número de flujos de instrucciones
  implementados en hardware, incluyendo el contador de programa y registros,
  cada uno destinado a ejecutar una hebra.
- En cada ciclo el procesador ejecuta instrucciones de una de la hebras.
+ En cada ciclo el procesador ejecuta instrucciones de una de las hebras.
  En el ciclo siguiente, el procesador hace un cambio de contexto y ejecuta
  instrucciones de otra hebra.
 \end_layout
 
 \begin_layout Standard
-La Tera MTA (multithreaded architecture) es la primera de estas máquinas
- , cada procesador tiene 128 flujos de instrucciones.
+La Tera MTA (multithreaded architecture) es la primera de estas máquinas,
+ cada procesador tiene 128 flujos de instrucciones.
  Un acceso a memoria dura aproximadamente 100 ciclos por lo que en la próxima
  ejecución de la hebra se tendrán los datos requeridos.
  Este mecanismo permite a la MTA tolerar la latencia a memoria y por lo
@@ -1004,8 +1005,9 @@ Cada instrucción de 64-bits codifican 3 operaciones (una de memoria y dos
 \end_layout
 
 \begin_layout Standard
-El sistema cuenta con 1 a 256 procesadores que comparten una enorme memoria.
- A su vez cada procesador tiene 1 o 2 Gb de memoria, un mapeo aleatorio
+El sistema cuenta con entre 1 y 256 procesadores que comparten una enorme
+ memoria.
+ A su vez cada procesador tiene 1 o 2 GB de memoria, un mapeo aleatorio
  de la memoria y una red altamente interconectada proveen acceso casi uniforme
  de cualquier procesador a cualquier memoria.
 \end_layout
@@ -1024,7 +1026,7 @@ Cluster de PC's
 \begin_layout Standard
 El término cluster se aplica a los conjuntos de computadoras unidos mediante
  una red de alta velocidad que se comportan como si fuesen una sola con
- mayor poder de computo.
+ mayor poder de cómputo.
  Hoy en día los clusters de PC's tienen un papel importante en aplicaciones
  científicas, de ingeniería, comerciales, simulaciones, etc.
 \end_layout
@@ -1044,7 +1046,7 @@ El uso de clusters surge gracias a la convergencia de varias tendencias
 \end_layout
 
 \begin_layout Standard
-Se espera de un cluster que presente combinaciones de los siguientes característ
+Se espera de un cluster que presente combinaciones de las siguientes característ
 icas: alto rendimiento, alta disponibilidad, equilibrio de carga y escalabilidad.
  
 \end_layout
@@ -1097,7 +1099,7 @@ Cluster de alta disponibilidad.
 \end_layout
 
 \begin_layout Standard
-Un cluster de alta disponibilidad se caracterizan por compartir los discos
+Un cluster de alta disponibilidad se caracteriza por compartir los discos
  de almacenamiento de datos y por estar constantemente monitorizándose entre
  sí.
  
@@ -1133,7 +1135,7 @@ La escalabilidad es la propiedad deseable de un sistema, una red o un proceso,
 \end_layout
 
 \begin_layout Standard
-La robustez es una de las características mas importante ya que ante la
+La robustez es una de las características más importantes ya que ante la
  caída de alguno de los ordenadores del cluster el servicio se puede ver
  mermado, pero mientras haya ordenadores en funcionamiento, éstos seguirán
  dando servicio.
@@ -1145,7 +1147,7 @@ Herramientas para la programación paralela
 
 \begin_layout Standard
 En programación paralela existen diferentes lenguajes y herramientas de
- programación con características especificas para diferentes clases de
+ programación con características específicas para diferentes clases de
  problema.
  A continuación veremos algunas de estas herramientas.
 \end_layout
@@ -1184,7 +1186,7 @@ MPI es una biblioteca que provee funcionalidades para la comunicación de
  procesos mediante el pasaje de mensajes.
  Esta fue creada por científicos desarrolladores de software y aplicaciones
  bajo el objetivo de desarrollar un estándar portable y eficiente para programac
-iónion paralela.
+ión paralela.
 \end_layout
 
 \begin_layout Standard
@@ -1301,9 +1303,10 @@ Los Middleware han aparecido de manera relativamente reciente en el mundo
  de la informática.
  Ganaron popularidad en los 1980s ya que eran la solución para integrar
  las nuevas aplicaciones con los sistemas antiguos (legacy systems), en
- todo caso, el termino ha sido usado desde 1968.
- También facilitaba la computación distribuida, mediante conexión de múltiples
- aplicaciones para crear una mucho mayor, sobre una red.
+ todo caso, el término ha sido usado desde 1968.
+ También facilitaba la computación distribuida, mediante la conexión de
+ múltiples aplicaciones para crear una aplicación mucho mayor sobre una
+ red.
 \end_layout
 
 \end_body
