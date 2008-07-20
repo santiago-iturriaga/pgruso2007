@@ -68,7 +68,7 @@ Que contiene el documento, en que consiste el proyecto...
 
 \section{Sistema operativo}
 
-Se recomienda utilizar Linux 2.6 (o superior), con una arquitectura de 32-bits (x86) o 64-bits (x64). Si bien el sistema fue probado en SuSE, Ubuntu y Fedora, esto no quita que pueda realizarse una instalaci\'{o}n en otras distribuciones (Debian, Slackware, etc.) o hasta otro sistema operativo de la familia POSIX (FreeBSD, Solaris, etc).
+Se recomienda utilizar Linux 2.6 (o superior), con una arquitectura de 32-bits (x86) o 64-bits (x64). Si bien el sistema fue probado en SUSE, Ubuntu y Fedora, esto no quita que pueda realizarse una instalaci\'{o}n en otras distribuciones (Debian, Slackware, etc.) o hasta otro sistema operativo de la familia POSIX (FreeBSD, Solaris, etc.).
 
 Durante le resto del documento se asumir\'{a} que se utiliza Linux.
 
@@ -90,7 +90,7 @@ root:# adduser fenton fenton
 
 A continuaci\'{o}n detallaremos el software requerido por el sistema. Por simplicidad es recomendable realizar la instalaci\'{o}n del software utilizando los paquetes de la distribuci\'{o}n de Linux sobre la que se est\'{e} trabajando (apt-get, yast2, etc.).
 
-A continuaci\'{o}n veremos un breve instructivo de como realizar la instalaci\'{o}n compilando e instalando manualmente utilizando los fuentes.
+A continuaci\'{o}n veremos un breve instructivo de como realizar la instalaci\'{o}n compilando e instalando manualmente utilizando el c\'{o}digo fuente.
 
 \subsection{PostgreSQL 8.2.5 o superior \small{[requerido]}}
 
@@ -129,13 +129,13 @@ El sistema requiere que la base de datos debe sea accesible desde todos los nodo
 
 \subsection{Apache 2.0 o superior \small{[requerido]}}
 
-El servidor HTTP Apache\cite{apache} es un servidor HTTP de c\'{o}digo abierto. Fenton utiliza un interfaz de usuario web para la ejecuci\'{o}n de trabajos y la administraci\'{o}n del cluster por lo que es necesario contar con un servidor HTTP.
+El servidor HTTP Apache\cite{apache} es un servidor HTTP de c\'{o}digo abierto. Fenton utiliza un interfaz de usuario Web para la ejecuci\'{o}n de trabajos y la administraci\'{o}n del cluster por lo que es necesario contar con un servidor HTTP.
 
 En la actualidad todas las distribuciones de Linux disponen de un paquete de Apache 2.0 o superior. Recomendamos utilizar este paquete para la instalaci\'{o}n.
 
 \subsection{PHP 5.2.5 o superior \small{[requerido]}}
 
-PHP\cite{php} es un lenguaje de programaci\'{o}n interpretado, dise\~{n}ado originalmente para la creaci\'{o}n de p\'{a}ginas web din\'{a}micas. Fenton se encuentra casi completamente implementando en PHP y requiere que este se encuentre instalado en todos los nodos del cluster. En el nodo maestro es utilizado para la ejecuci\'{o}n de la interfaz web y la l\'{o}gica del sistema. En los nodos de computo es utilizado para ejecutar scripts de pre-ejecuci\'{o}n y post-ejecuci\'{o}n de trabajos en el cluster.
+PHP\cite{php} es un lenguaje de programaci\'{o}n interpretado, dise\~{n}ado originalmente para la creaci\'{o}n de p\'{a}ginas Web din\'{a}micas. Fenton se encuentra casi completamente implementando en PHP y requiere que este se encuentre instalado en todos los nodos del cluster. En el nodo maestro es utilizado para la ejecuci\'{o}n de la interfaz Web y la l\'{o}gica del sistema. En los nodos de c\'{o}mputo es utilizado para ejecutar scripts de pre-ejecuci\'{o}n y post-ejecuci\'{o}n de trabajos en el cluster.
 
 Para compilar e instalar PHP en el directorio \mbox{\texttt{/usr/local/php-5.2.5}}:
 
@@ -192,11 +192,11 @@ Dentro del directorio \mbox{\texttt{ganglia-3.0.7-src/gmetad}} podremos encontra
 
 Finalmente debemos asignar espacio en disco en donde gmetad guardar\'{a} la informaci\'{o}n que recopile. La ubicaci\'{o}n por defecto es \mbox{\texttt{/var/lib/ganglia/rrds}} y su owner debe ser el usuario que fue configurado en \texttt{gmetad.conf} como usuario de ejecuci\'{o}n.
 
-\subsubsection{Interfaz web}
+\subsubsection{Interfaz Web}
 
-Ganglia cuenta con una interfaz web implementada en PHP donde se presenta visualmente la informaci\'{o}n del cluster. La interfaz web de Ganglia debe estar alojada en el mismo nodo que ejecuta el demonio gmetad.
+Ganglia cuenta con una interfaz Web implementada en PHP donde se presenta visualmente la informaci\'{o}n del cluster. La interfaz Web de Ganglia debe estar alojada en el mismo nodo que ejecuta el demonio gmetad.
 
-Para realizar la instalaci\'{o}n de la interfaz web es necesario copiar el directorio \mbox{\texttt{ganglia-3.0.7-src/web}} al directorio \texttt{DocumentRoot} de su instalaci\'{o}n del servidor Apache, por ejemplo: \mbox{\texttt{/var/www/ganglia}}.
+Para realizar la instalaci\'{o}n de la interfaz Web es necesario copiar el directorio \mbox{\texttt{ganglia-3.0.7-src/web}} al directorio \texttt{DocumentRoot} de su instalaci\'{o}n del servidor Apache, por ejemplo: \mbox{\texttt{/var/www/ganglia}}.
 
 \subsection{TORQUE 2.3.0 o superior \small{[requerido]}}
 
@@ -220,7 +220,7 @@ root:# export PATH=$PATH:/usr/local/torque-2.3.0/sbin
 root:# torque.setup fenton
 \end{verbatim}
 
-Donde \mbox{\texttt{fenton}} es el usuario que se desempe\~{n}ar\'{a} como administrador de TORQUE. Este script se encarga de crear un entorno b\'{a}sico de trabajo con una configuraci\'{o}n por defecto para poder iniciar el servidor. Finalmente se deben configurar los nodos de computo editando \mbox{\texttt{/var/spool/torque/server\_priv/nodes}}, p. ej.:
+Donde \mbox{\texttt{fenton}} es el usuario que se desempe\~{n}ar\'{a} como administrador de TORQUE. Este script se encarga de crear un entorno b\'{a}sico de trabajo con una configuraci\'{o}n por defecto para poder iniciar el servidor. Finalmente se deben configurar los nodos de c\'{o}mputo editando \mbox{\texttt{/var/spool/torque/server\_priv/nodes}}, p. ej.:
 
 \begin{verbatim}
 nodo001.fing.edu.uy
@@ -237,20 +237,20 @@ qmgr: create node nodo001.fing.edu.uy
 
 \subsubsection{Nodo de c\'{o}mputo: qnoded}
 
-Una vez compilado torque es posible crear paquetes de instalaci\'{o}n distribuibles para instalar en los nodos de c\'{o}mputo. Esto simplifica la instalaci\'{o}n de los nodos de computo si se trata de un cluster homog\'{e}neo, en cambio si los nodos del cluster cuentan con sistemas operativos diferentes o arquitecturas diferentes ser\'{a} necesario compilar torque para cada nodo. Asumiremos que se trata de un cluster homog\'{e}neo, para crear los paquetes de instalaci\'{o}n distribuibles se debe ejecutar:
+Una vez compilado torque es posible crear paquetes de instalaci\'{o}n distribuibles para instalar en los nodos de c\'{o}mputo. Esto simplifica la instalaci\'{o}n de los nodos de c\'{o}mputo si se trata de un cluster homog\'{e}neo, en cambio si los nodos del cluster cuentan con sistemas operativos diferentes o arquitecturas diferentes ser\'{a} necesario compilar torque para cada nodo. Asumiremos que se trata de un cluster homog\'{e}neo, para crear los paquetes de instalaci\'{o}n distribuibles se debe ejecutar:
 
 \begin{verbatim}
 $ make packages
 \end{verbatim}
 
-Y luego en cada nodo de computo:
+Y luego en cada nodo de c\'{o}mputo:
 
 \begin{verbatim}
 root:# ./torque-package-clients-linux-i686.sh --install
 root:# ./torque-package-mom-linux-i686.sh --install
 \end{verbatim}
 
-El servidor MOM para cada nodo de computo debe ser configurado para confiar en el servidor maestro de TORQUE editando el archivo:
+El servidor MOM para cada nodo de c\'{o}mputo debe ser configurado para confiar en el servidor maestro de TORQUE editando el archivo:
 
 \begin{verbatim}
 /var/spool/torque/mom_priv/config
@@ -296,7 +296,7 @@ Luego de esto damos por finalizada la instalaci\'{o}n. Ahora es necesario config
 RMCFG[SERVIDOR.FING.EDU.UY] TYPE=PBS
 \end{verbatim}
 
-Para clusters peque\~{n}os quiz\'{a}s sea recomendable disminuir el tiempo de polling para tener una respuesta mas r\'{a}pida por parte del scheduler modificando el par\'{a}metro \texttt{RMPOLLINTERVAL}, p.ej.:
+Para clusters peque\~{n}os quiz\'{a}s sea recomendable disminuir el tiempo de polling para tener una respuesta m\'{a}s r\'{a}pida por parte del scheduler modificando el par\'{a}metro \texttt{RMPOLLINTERVAL}, p.ej.:
 
 \begin{verbatim}
 RMPOLLINTERVAL 00:00:05
@@ -383,7 +383,7 @@ Al igual que en el directorio anterior, debemos asegurarnos que el grupo del dir
 
 El usuario y el grupo \mbox{\texttt{fenton}} deben existir en todos los nodos del cluster. Y ambos directorios tambi\'{e}n deben ser accesibles desde cualquier nodo del cluster.
 
-Debido a que el repositorio del sistema y la web (como veremos mas adelante) se encuentran en el directorio home del usuario \texttt{fenton}, debemos verificar que cualquier usuario tenga acceso de lectura al directorio \mbox{\texttt{/home/fenton}}. 
+Debido a que el repositorio del sistema y la Web (como veremos mas adelante) se encuentran en el directorio home del usuario \texttt{fenton}, debemos verificar que cualquier usuario tenga acceso de lectura al directorio \mbox{\texttt{/home/fenton}}. 
 
 \begin{verbatim}
 fenton:$ chmod a+r+x fenton
@@ -391,7 +391,7 @@ fenton:$ chmod a+r+x fenton
 
 \subsection{Acceso SSH con autenticaci\'{o}n RSA}
 
-En el nodo de ejecuci\'{o}n de la aplicaci\'{o}n web, debe ser posible realizar un SSH sin password desde el usuario que ejecuta la aplicaci\'{o}n web (el usuario configurado en el servidor Apache) al usuario del sistema (por defecto \mbox{\texttt{fenton}}) en el nodo maestro. 
+En el nodo de ejecuci\'{o}n de la aplicaci\'{o}n Web, debe ser posible realizar un SSH sin password desde el usuario que ejecuta la aplicaci\'{o}n Web (el usuario configurado en el servidor Apache) al usuario del sistema (por defecto \mbox{\texttt{fenton}}) en el nodo maestro. 
 
 El primer paso para configurar este acceso es averiguar el usuario de ejecuci\'{o}n de los scripts en Apache. Este usuario var\'{i}a de distribuci\'{o}n en distribuci\'{o}n. En nuestro sistema es \mbox{\texttt{www-data}}.
 
@@ -403,7 +403,7 @@ www-data:x:33:33:www-data:/home/www-data:/bin/sh
 
 De esta manera asignamos el directorio \mbox{\texttt{/home/www-data}} como home del usuario. Seguramente este directorio no exista, por lo que deberemos crearlo y asignarle \mbox{\texttt{www-data}} como owner.
 
-A continuaci\'{o}n creamos la clave publica y la privada, estas claves son necesarias para la autenticaci\'{o}n:
+A continuaci\'{o}n creamos la clave p\'{u}blica y la privada, estas claves son necesarias para la autenticaci\'{o}n:
 
 \begin{verbatim}
 root:# su - www-data
@@ -427,7 +427,7 @@ www-data:$ ssh fenton@localhost
 
 \subsection{Base de datos}
 
-Es necesario crear un usuario para el sistema en la base de datos, asignarle una contrase\~{n}a y crear las tablas de datos. A continuaci\'{o}n detallaremos como crear todo esto desde la linea de comando. Como primer paso debemos crear el usuario de la base de datos:
+Es necesario crear un usuario para el sistema en la base de datos, asignarle una contrase\~{n}a y crear las tablas de datos. A continuaci\'{o}n detallaremos como crear todo esto desde la l\'{i}nea de comando. Como primer paso debemos crear el usuario de la base de datos:
 
 \begin{verbatim}
 root:# su - postgres 
@@ -448,27 +448,27 @@ Finalmente asignamos una contrase\~{n}a al nuevo usuario:
 psql=# alter user fentondb password 'fentondb';
 \end{verbatim}
 
-\subsection{Aplicaci\'{o}n web}
+\subsection{Aplicaci\'{o}n Web}
 
-Para instalar la aplicaci\'{o}n web simplemente debemos copiar el directorio \mbox{\texttt{web/}} a la ubicaci\'{o}n deseada. Por ejemplo \mbox{\texttt{/home/fenton/web}}, y luego crear un alias para la aplicaci\'{o}n. En la mayor\'{i}a de los casos basta con copiar el archivo \mbox{\texttt{apache/fenton.conf}} a \mbox{\texttt{/etc/apache2/conf.d}}.
+Para instalar la aplicaci\'{o}n Web simplemente debemos copiar el directorio \mbox{\texttt{web/}} a la ubicaci\'{o}n deseada. Por ejemplo \mbox{\texttt{/home/fenton/web}}, y luego crear un alias para la aplicaci\'{o}n. En la mayor\'{i}a de los casos basta con copiar el archivo \mbox{\texttt{apache/fenton.conf}} a \mbox{\texttt{/etc/apache2/conf.d}}.
 
-La aplicaci\'{o}n web debe ser accesible desde cualquier nodo del cluster. Esto es necesario debido a que los scripts de prologo y epilogo (ver siguiente paso) requieren ejecutar scripts PHP de la aplicaci\'{o}n.
+La aplicaci\'{o}n Web debe ser accesible desde cualquier nodo del cluster. Esto es necesario debido a que los scripts de prologo y epilogo (ver siguiente paso) requieren ejecutar scripts PHP de la aplicaci\'{o}n.
 
-Es necesario que el sistema cuente con un interprete de linea de comando de PHP y que este se encuentre en \mbox{\texttt{/usr/bin/php}}. Existen varios scripts PHP que se encuentran en \mbox{\texttt{/home/fenton/web/bin}} y que esperan encontrar el interprete en la hubicaci\'{o}n mencionada. En caso de que el inteprete de PHP no se encuentre en esa hubicaci\'{o}n o tenga otro nombre (p.ej. \mbox{\texttt{/usr/bin/php5}}) puede solucionarse facilmente creando un link al nombre deseado. En nuestro ejemplo ser\'{i}a ejecutando:
+Es necesario que el sistema cuente con un interprete de l\'{i}nea de comando de PHP y que este se encuentre en \mbox{\texttt{/usr/bin/php}}. Existen varios scripts PHP que se encuentran en \mbox{\texttt{/home/fenton/web/bin}} y que esperan encontrar el interprete en la ubicaci\'{o}n mencionada. En caso de que el interprete de PHP no se encuentre en esa ubicaci\'{o}n o tenga otro nombre (p.ej. \mbox{\texttt{/usr/bin/php5}}) puede solucionarse f\'{a}cilmente creando un link al nombre deseado. En nuestro ejemplo ser\'{i}a ejecutando:
 
 \begin{verbatim}
 ln -s /usr/bin/php5 /usr/bin/php
 \end{verbatim}
 
-Por \'{u}ltimo debemos configurar el script de control de cuota para que ejecute periodicamente en el nodo maestro. Para esto podemos utilizar el comando cron de Linux. 
+Por \'{u}ltimo debemos configurar el script de control de cuota para que ejecute peri\'{o}dicamente en el nodo maestro. Para esto podemos utilizar el comando cron de Linux. 
 
-El script de control se encuentra en \mbox{\texttt{/home/fenton/web/lib/Vigilante.php}} y para ejecutarlo peri\'{o}dicamente debemos editar la confguraci\'{o}n del cron ejecutando:
+El script de control se encuentra en \mbox{\texttt{/home/fenton/web/lib/Vigilante.php}} y para ejecutarlo peri\'{o}dicamente debemos editar la configuraci\'{o}n del cron ejecutando:
 
 \begin{verbatim}
 root:# crontab -e
 \end{verbatim}
 
-Este comando nos abrir\'{a} para edici\'{o}n el archivo de configuraci\'{o}n del cron del usuario. Supongamos que se quiere ejecutar el script de control una vez cada hora, para esto editamos la configuraci\'{o}n agregando la siguiente linea:
+Este comando nos abrir\'{a} para edici\'{o}n el archivo de configuraci\'{o}n del cron del usuario. Supongamos que se quiere ejecutar el script de control una vez cada hora, para esto editamos la configuraci\'{o}n agregando la siguiente l\'{i}nea:
 
 \begin{verbatim}
 01  * * * * php /home/fenton/web/lib/Vigilante.php
@@ -482,7 +482,7 @@ Los scripts se encuentran en \mbox{\texttt{torque/prologue}} y \mbox{\texttt{tor
 
 \subsection{Configuraci\'{o}n final del sistema}
 
-Como \'{u}ltimo paso, debemos realizar los ajustes finales y configurar la aplicaci\'{o}n web con la ubicaci\'{o}n de los diferentes componentes del sistema. Para esto debemos editar el archivo de configuraci\'{o}n \mbox{\texttt{/home/fenton/web/lib/Constantes.php}}.
+Como \'{u}ltimo paso, debemos realizar los ajustes finales y configurar la aplicaci\'{o}n Web con la ubicaci\'{o}n de los diferentes componentes del sistema. Para esto debemos editar el archivo de configuraci\'{o}n \mbox{\texttt{/home/fenton/web/lib/Constantes.php}}.
 
 Si toda la instalaci\'{o}n fue realizada utilizando las ubicaciones sugeridas las modificaciones al archivo de configuraci\'{o}n deber\'{i}an ser m\'{i}nimas. A continuaci\'{o}n veremos algunos de los par\'{a}metros de configuraci\'{o}n:
 
