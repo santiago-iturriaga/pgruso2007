@@ -174,7 +174,7 @@ Objetivos
 El objetivo de este documento es presentar el proceso de test al cual se
  sometió la solución construida.
  El mismo pretende ser una guía de test para verificar y validar el funcionamien
-tode la solución en procesos de test futuros.
+to de la solución en procesos de test futuros.
 \end_layout
 
 \begin_layout Standard
@@ -218,7 +218,7 @@ Para la ejecución del test funcional se creó un conjunto de casos de test,
 
 \begin_layout Standard
 El testing funcional también apunta a evaluar la integración de las distintas
- funcionalidades de Fenton y el scheduler (Torque-Maui).
+ funcionalidades de Fenton y el scheduler (TORQUE-Maui).
 \end_layout
 
 \begin_layout Standard
@@ -239,10 +239,11 @@ Herramientas utilizadas
 \begin_layout Standard
 En el proceso de test se utilizaron como herramientas la guía de test presentada
 da en este documento así como el conjunto de casos de test.
- Para el registro de issues se utilizó el grupo de Google creado para este
- proyecto.
- Los grupos de Google tiene la funcionalidad de ingresar y mantener issues
- así como otras funcionalidades útiles, por ejemplo una wiki.
+ Para el registro de incidentes (issues) se utilizó el hosting de Google
+ para proyectos (Google Code).
+ El hosting de Google para proyectos tiene la funcionalidad de ingresar
+ y mantener issues así como otras funcionalidades útiles, por ejemplo una
+ Wiki.
  
 \end_layout
 
@@ -335,7 +336,7 @@ Paso para el test
 \end_layout
 
 \begin_layout Standard
-Describe la secuencias de pasos y el resultado esperado para la ejecución
+Describe la secuencia de pasos y el resultado esperado para la ejecución
  del test.
  En el momento de ejecución del test se indica si cada paso falló o no.
 \end_layout
@@ -348,7 +349,7 @@ Notas o comentarios
 \end_layout
 
 \begin_layout Standard
-Puede utilizarse de diferente maneras.
+Puede utilizarse de diferentes maneras.
  Puede ser para hacer consideraciones sobre la ejecución o fallo de un paso
  o para la descripción de comportamiento alternativos.
 \end_layout
@@ -391,12 +392,12 @@ En este escenario se crea un usuario y se ejecuta un trabajo con el usuario
 \end_layout
 
 \begin_layout Standard
-Escenario 2: Actividad en Maui
+Escenario 2: Actividad en Maui.
 \end_layout
 
 \begin_layout Standard
 En este escenario observamos la actividad del cluster y los trabajos ejecutados
- a través de Maui
+ a través de Maui.
 \end_layout
 
 \begin_layout Standard
@@ -409,12 +410,12 @@ En este escenario observamos la actividad del cluster y los trabajos ejecutados
 \end_layout
 
 \begin_layout Standard
-Escenario 3: Actividad en Torque
+Escenario 3: Actividad en TORQUE.
 \end_layout
 
 \begin_layout Standard
 En este escenario observamos la actividad del cluster y los trabajos ejecutados
- a través de Torque
+ a través de TORQUE.
 \end_layout
 
 \begin_layout Standard
@@ -427,7 +428,7 @@ En este escenario observamos la actividad del cluster y los trabajos ejecutados
 \end_layout
 
 \begin_layout Standard
-Escenario 4: Control de trabajos desde Maui
+Escenario 4: Control de trabajos desde Maui.
 \end_layout
 
 \begin_layout Standard
@@ -445,12 +446,12 @@ Verificamos el control de los trabajos ejecutados en el cluster mediante
 \end_layout
 
 \begin_layout Standard
-Escenario 5: Control de trabajos desde Torque
+Escenario 5: Control de trabajos desde TORQUE.
 \end_layout
 
 \begin_layout Standard
 Verificamos el control de los trabajos ejecutados en el cluster mediante
- Torque.
+ TORQUE.
 \end_layout
 
 \begin_layout Standard
@@ -510,7 +511,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Creación de cliente
+Creación de cliente.
 \end_layout
 
 \end_inset
@@ -530,7 +531,7 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Se crea un cliente en el sistema
+Se crea un cliente en el sistema.
 \end_layout
 
 \end_inset
@@ -1098,7 +1099,7 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Se crea un trabajo y se asocia a un cliente
+Se crea un trabajo y se asocia a un cliente.
 \end_layout
 
 \end_inset
@@ -1376,7 +1377,7 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
-El cliente existe en el sistema
+El cliente existe en el sistema.
 \end_layout
 
 \end_inset
@@ -1396,7 +1397,7 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
-La cola esta configurada en el sistema Torque
+La cola esta configurada en el sistema TORQUE.
 \end_layout
 
 \end_inset
@@ -1522,7 +1523,7 @@ Seleccionamos un cliente y dar click en Nuevo Trabajo.
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega formulario de nuevo trabajo
+Se despliega formulario de nuevo trabajo.
 \end_layout
 
 \end_inset
@@ -1551,7 +1552,7 @@ Se despliega formulario de nuevo trabajo
 \begin_inset Text
 
 \begin_layout Standard
-Ingresamos los datos y dar click en Aceptar
+Ingresamos los datos y dar click en Aceptar.
 \end_layout
 
 \end_inset
@@ -1731,7 +1732,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Creación de grupo
+Creación de grupo.
 \end_layout
 
 \end_inset
@@ -1751,7 +1752,7 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Se crea un grupo para agrupar usuarios
+Se crea un grupo para agrupar usuarios.
 \end_layout
 
 \end_inset
@@ -1942,7 +1943,7 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
-El grupo no existe en el sistema
+El grupo no existe en el sistema.
 \end_layout
 
 \end_inset
@@ -2050,7 +2051,7 @@ Ingresar al sistema con el usuario Admin, menú Usuarios, sub menú Usuarios
 
 \begin_layout Standard
 Se despliega la pantalla grupo-usuarios.
- Se pueden observar todos los grupos
+ Se pueden observar todos los grupos.
 \end_layout
 
 \end_inset
@@ -2079,7 +2080,7 @@ Se despliega la pantalla grupo-usuarios.
 \begin_inset Text
 
 \begin_layout Standard
-Se ingresan los datos de entrada y dar click en Nuevo
+Se ingresan los datos de entrada y dar click en Nuevo.
 \end_layout
 
 \end_inset
@@ -2088,7 +2089,7 @@ Se ingresan los datos de entrada y dar click en Nuevo
 \begin_inset Text
 
 \begin_layout Standard
-El grupo es creado en el sistema
+El grupo es creado en el sistema.
 \end_layout
 
 \end_inset
@@ -2259,7 +2260,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Creación de usuario
+Creación de usuario.
 \end_layout
 
 \end_inset
@@ -2279,7 +2280,7 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Se crea un usuario asociado a un grupo
+Se crea un usuario asociado a un grupo.
 \end_layout
 
 \end_inset
@@ -2528,7 +2529,7 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
-El grupo existe en el sistema
+El grupo existe en el sistema.
 \end_layout
 
 \end_inset
@@ -2548,7 +2549,7 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
-El usuario no existe en el sistema
+El usuario no existe en el sistema.
 \end_layout
 
 \end_inset
@@ -2665,7 +2666,7 @@ Se despliega Grupo-Usuarios.
 \begin_inset Text
 
 \begin_layout Standard
-Se selecciona el grupo y dar click en Nuevo Usuario
+Se selecciona el grupo y dar click en Nuevo Usuario.
 \end_layout
 
 \end_inset
@@ -2883,7 +2884,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Asociar grupo - trabajo
+Asociar grupo - trabajo.
 \end_layout
 
 \end_inset
@@ -2903,7 +2904,7 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Se asocia un trabajo a un grupo
+Se asocia un trabajo a un grupo.
 \end_layout
 
 \end_inset
@@ -3094,7 +3095,7 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
-El grupo existe en el sistema
+El grupo existe en el sistema.
 \end_layout
 
 \end_inset
@@ -3114,7 +3115,7 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
-El cliente existe en el sistema
+El cliente existe en el sistema.
 \end_layout
 
 \end_inset
@@ -3134,7 +3135,7 @@ CI03
 \begin_inset Text
 
 \begin_layout Standard
-El trabajo existe en el sistema y pertenece al cliente
+El trabajo existe en el sistema y pertenece al cliente.
 \end_layout
 
 \end_inset
@@ -3221,7 +3222,7 @@ Ingresar al sistema con el usuario Admin, menú Usuarios, sub menú Accesos.
 
 \begin_layout Standard
 Se despliega la pantalla de Accesos.
- Se pueden observar todos los grupos y los clientes con sus trabajo.
+ Se pueden observar todos los grupos y los clientes con sus trabajos.
 \end_layout
 
 \end_inset
@@ -3259,7 +3260,7 @@ Se ingresan datos de entrada y dar click en Aceptar.
 \begin_inset Text
 
 \begin_layout Standard
-El grupo es asociado al cliente-trabajo
+El grupo es asociado al cliente-trabajo.
 \end_layout
 
 \end_inset
@@ -3430,7 +3431,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Ejecución de trabajo
+Ejecución de trabajo.
 \end_layout
 
 \end_inset
@@ -3527,7 +3528,7 @@ sparc
 \begin_inset Text
 
 \begin_layout Standard
-Nombre de usuario con el que se ingresa al sistema
+Nombre de usuario con el que se ingresa al sistema.
 \end_layout
 
 \end_inset
@@ -3556,7 +3557,7 @@ sparc
 \begin_inset Text
 
 \begin_layout Standard
-Password del usuario
+Password del usuario.
 \end_layout
 
 \end_inset
@@ -3585,7 +3586,7 @@ clientePaulo
 \begin_inset Text
 
 \begin_layout Standard
-cliente a seleccionar
+cliente a seleccionar.
 \end_layout
 
 \end_inset
@@ -3614,7 +3615,7 @@ trabajo1
 \begin_inset Text
 
 \begin_layout Standard
-Trabajo del cliente seleccionado
+Trabajo del cliente seleccionado.
 \end_layout
 
 \end_inset
@@ -3643,7 +3644,7 @@ helloMPI
 \begin_inset Text
 
 \begin_layout Standard
-Nombre de carpeta donde se subirán los archivos
+Nombre de carpeta donde se subirán los archivos.
 \end_layout
 
 \end_inset
@@ -3700,7 +3701,7 @@ CI01
 \begin_inset Text
 
 \begin_layout Standard
-El usuario existe en el sistema
+El usuario existe en el sistema.
 \end_layout
 
 \end_inset
@@ -3720,7 +3721,7 @@ CI02
 \begin_inset Text
 
 \begin_layout Standard
-El cliente existe en el sistema y tiene asociado el trabajo especificado
+El cliente existe en el sistema y tiene asociado el trabajo especificado.
 \end_layout
 
 \end_inset
@@ -3817,7 +3818,7 @@ Resultado(Pasa/Falla)
 \begin_inset Text
 
 \begin_layout Standard
-Ingresamos al sistema con el usuario especificado
+Ingresamos al sistema con el usuario especificado.
 \end_layout
 
 \end_inset
@@ -3826,7 +3827,7 @@ Ingresamos al sistema con el usuario especificado
 \begin_inset Text
 
 \begin_layout Standard
-Se muestran los trabajos del usuario
+Se muestran los trabajos del usuario.
 \end_layout
 
 \end_inset
@@ -3855,7 +3856,7 @@ Se muestran los trabajos del usuario
 \begin_inset Text
 
 \begin_layout Standard
-Seleccionamos un trabajo
+Seleccionamos un trabajo.
 \end_layout
 
 \end_inset
@@ -3864,7 +3865,7 @@ Seleccionamos un trabajo
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega la pantalla de Administrar Archivos
+Se despliega la pantalla de Administrar Archivos.
 \end_layout
 
 \end_inset
@@ -3969,7 +3970,7 @@ Se despliega sector en pantalla para ingresar ruta de archivo.
 \begin_inset Text
 
 \begin_layout Standard
-Dar click en Examinar y ingresar archivo a subir.
+Dar click en Examinar e ingresar archivo a subir.
  Luego dar click en Enviar.
 \end_layout
 
@@ -4020,7 +4021,7 @@ Seleccionamos Herramientas, seleccionamos mpicc e ingresamos argumentos
 
 \begin_layout Standard
 Se ejecuta la compilación y se muestran los archivos resultados de la compilació
-nn en pantalla.
+n en pantalla.
 \end_layout
 
 \end_inset
@@ -4127,7 +4128,7 @@ Se despliega la página Ver Resultados con el log de ejecución del trabajo.
 \begin_inset Text
 
 \begin_layout Standard
-Seleccionamos el menú Alertas
+Seleccionamos el menú Alertas.
 \end_layout
 
 \end_inset
@@ -4308,7 +4309,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Actividad en Maui
+Actividad en Maui.
 \end_layout
 
 \end_inset
@@ -4329,7 +4330,7 @@ Descripción
 
 \begin_layout Standard
 Desde el administrador podemos observar la actividad en Maui de los trabajos
- en ejecución en el cluster
+ en ejecución en el cluster.
 \end_layout
 
 \end_inset
@@ -4620,7 +4621,7 @@ Resultado(Pasa/Falla)
 Correr el caso 06.
  
 \lang english
-Ejecución de Trabajo
+Ejecución de Trabajo.
 \end_layout
 
 \end_inset
@@ -4698,7 +4699,7 @@ Se despliegan los trabajos en ejecución en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
-Seleccionamos en el proceso el botón diagnostico
+Seleccionamos en el proceso el botón diagnostico.
 \end_layout
 
 \end_inset
@@ -4707,7 +4708,7 @@ Seleccionamos en el proceso el botón diagnostico
 \begin_inset Text
 
 \begin_layout Standard
-Se despliega el diagnostico del procesos
+Se despliega el diagnostico del procesos.
 \end_layout
 
 \end_inset
@@ -4835,7 +4836,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Actividad en Torque.
+Actividad en TORQUE.
 \end_layout
 
 \begin_layout Standard
@@ -4878,7 +4879,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Actividad en Torque
+Actividad en TORQUE.
 \end_layout
 
 \end_inset
@@ -4898,8 +4899,8 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Desde el administrador podemos observar la actividad en Torque de los trabajos
- en ejecución en el cluster
+Desde el administrador podemos observar la actividad en TORQUE de los trabajos
+ en ejecución en el cluster.
 \end_layout
 
 \end_inset
@@ -5194,7 +5195,7 @@ Resultado(Pasa/Falla)
 Correr el caso 06.
  
 \lang english
-Ejecución de Trabajo
+Ejecución de Trabajo.
 \end_layout
 
 \end_inset
@@ -5233,7 +5234,7 @@ Ejecución de Trabajo
 
 \begin_layout Standard
 Salir del sistema e ingresar como administrador.
- Ingresar al menú Torque, sub menú Trabajos.
+ Ingresar al menú TORQUE, sub menú Trabajos.
 \end_layout
 
 \end_inset
@@ -5272,7 +5273,7 @@ Se despliegan los trabajos en ejecución en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
-Seleccionamos el proceso
+Seleccionamos el proceso.
 \end_layout
 
 \end_inset
@@ -5281,7 +5282,7 @@ Seleccionamos el proceso
 \begin_inset Text
 
 \begin_layout Standard
-Observamos los parámetros de ejecución del trabajo en Torque
+Observamos los parámetros de ejecución del trabajo en TORQUE.
 \end_layout
 
 \end_inset
@@ -5454,7 +5455,7 @@ Titulo
 \begin_layout Standard
 Detención o Cancelación de trabajo e
 \lang english
-n Maui
+n Maui.
 \end_layout
 
 \end_inset
@@ -5765,7 +5766,7 @@ Resultado(Pasa/Falla)
 Correr el caso 06.
  
 \lang english
-Ejecución de Trabajo
+Ejecución de Trabajo.
 \end_layout
 
 \end_inset
@@ -5980,7 +5981,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Detención o Cancelación de trabajo enTorque.
+Detención o Cancelación de trabajo en TORQUE.
 \end_layout
 
 \begin_layout Standard
@@ -6023,7 +6024,7 @@ Titulo
 \begin_inset Text
 
 \begin_layout Standard
-Detención o Cancelación de trabajo enTorque
+Detención o Cancelación de trabajo en TORQUE.
 \end_layout
 
 \end_inset
@@ -6043,7 +6044,7 @@ Descripción
 \begin_inset Text
 
 \begin_layout Standard
-Con el administrador podemos cancelar o detener un trabajo desde Torque.
+Con el administrador podemos cancelar o detener un trabajo desde TORQUE.
 \end_layout
 
 \end_inset
@@ -6338,7 +6339,7 @@ Resultado(Pasa/Falla)
 Correr el caso 06.
  
 \lang english
-Ejecución de Trabajo
+Ejecución de Trabajo.
 \end_layout
 
 \end_inset
@@ -6377,7 +6378,7 @@ Ejecución de Trabajo
 
 \begin_layout Standard
 Salir del sistema e ingresar como administrador.
- Ingresar al menú Torque, sub menú Trabajos.
+ Ingresar al menú TORQUE, sub menú Trabajos.
 \end_layout
 
 \end_inset
@@ -6416,7 +6417,7 @@ Se despliegan los trabajos en ejecución en el cluster.
 \begin_inset Text
 
 \begin_layout Standard
-Seleccionamos el proceso y le damos Detener o Cancelar
+Seleccionamos el proceso y le damos Detener o Cancelar.
 \end_layout
 
 \end_inset
