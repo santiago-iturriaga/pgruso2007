@@ -86,7 +86,7 @@ A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
  no creemos que se ajusten a los requerimientos planteados principalmente
  debido a que el cluster ya se encuentra en funcionamiento siguiendo un
  paradigma estilo beowulf mas clásico.
- Quizas sea interesante construir un pequeño cluster SSI e investigar mas
+ Quizás sea interesante construir un pequeño cluster SSI e investigar más
  a fondo este tipo de tecnologías de manera de poder comparar ambas soluciones.
 \end_layout
 
@@ -95,7 +95,7 @@ Condor
 \end_layout
 
 \begin_layout Subsubsection
-Caracteristicas generales
+Características generales
 \end_layout
 
 \begin_layout Standard
@@ -119,9 +119,9 @@ Condor es un proyecto open-source de la universidad de Wisconsin específicament
 \end_layout
 
 \begin_layout Standard
-Paradojicamente si bien se trata de un proyecto open-source su código fuente
+Paradójicamente si bien se trata de un proyecto open-source su código fuente
  no se distribuye libremente.
- Para obtener el código fuente de Condor es necesario enviar un correo electroni
+ Para obtener el código fuente de Condor es necesario enviar un correo electróni
 co explicando la razón por la que se quiere obtener el código fuente y cada
  petición es analizada puntualmente.
 \end_layout
@@ -135,7 +135,7 @@ Condor se encuentra diseñado principalmente para la ejecución de trabajos
  seriales.
  Si bien provee soporte limitado para las bibliotecas PVM y MPI para procesamien
 to paralelo su desempeño en esta área se encuentra por debajo de otros DRM's
- como Torque o SGE.
+ como TORQUE o SGE.
 \end_layout
 
 \begin_layout Subsubsection
@@ -157,6 +157,9 @@ Condor no parece ser el software ideal para el proyecto.
 s interesantes (p.ej.
  migración de procesos, cpu harvesting, etc.) existen áreas criticas en las
  que se encuentra claramente en desventaja con respecto a otros productos.
+ El limitado soporte que brinda Condor a las bibliotecas PVM y MPI resulta
+ ser un problema crítico y determinante para que fuera descartado en el
+ sistema planteado en el proyecto.
 \end_layout
 
 \begin_layout Subsection
@@ -194,14 +197,14 @@ Sun Grid Engine actúa como el sistema nervioso central de un cluster de
 
 \begin_layout Standard
 Sun Grid Engine fue desarrollado como realce de Codine de Genias GmbH y
- Grisdware inc, de acuerdo a requerimientos de varios clientes tales como
+ Grisdware Inc., de acuerdo a requerimientos de varios clientes tales como
  el laboratorio de investigación del ejército de Aberdeen y BMW.
  Con Sun Grid Engine, el uso medio de los recursos aumentó de menos del
  50% a más del 90% en ambos ambientes.
 \end_layout
 
 \begin_layout Standard
-Sun grid Engine reúne el poder de cálculo disponible en granjas de computadoras
+Sun Grid Engine reúne el poder de cálculo disponible en granjas de computadoras
  dedicadas, servidores conectados y computadoras de escritorio, y las presenta
  desde un único punto de acceso para el usuario que necesita ciclos de cómputo.
  Esto se logra distribuyendo la carga de trabajo entre los sistemas disponibles,
@@ -274,7 +277,7 @@ Resumen
 \end_layout
 
 \begin_layout Standard
-Sun grid engine 6.1 provee la mayoría de las funcionalidades requeridas para
+Sun Grid Engine 6.1 provee la mayoría de las funcionalidades requeridas para
  el proyecto.
  Por otro lado, tiene como desventaja el ser un único gran paquete indivisible,
  lo cual hace muy difícil cualquier adaptación o modificación de su funcionamien
@@ -287,7 +290,7 @@ Si nos basamos en la historia reciente del producto, en una versión anterior
  se encontró un problema de seguridad (un salto en las restricciones) y
  quienes lo estaban utilizando en ese momento descartaron la idea de buscar
  el problema y solucionarlo, limitándose solamente a esperar que los creadores
- de la herramienta lo corrigiera.
+ de la herramienta lo corrigieran.
  
 \end_layout
 
@@ -362,20 +365,20 @@ Nodos Interactivos.
 
 \begin_layout Standard
 Los nodos interactivos proveen un punto de entrada al sistema para los usuarios.
- Es en estos nodos en que los usuarios puede ingresar tareas al sistema
+ Es en estos nodos en que los usuarios pueden ingresar tareas al sistema
  y monitorear su progreso.
  Estos nodos deben tener comandos como qsub y qhold disponibles.
 \end_layout
 
 \begin_layout Paragraph
-Nodos de computo.
+Nodos de cómputo.
 \end_layout
 
 \begin_layout Standard
 Estos son los responsables de la ejecución de los trabajos encolados en
  el sistema.
  Son los encargados de iniciar, detener y manejar los procesos de cómputo
- en el SO del nodo en cuestión.
+ en el sistema operativo del nodo en cuestión.
 \end_layout
 
 \begin_layout Subsubsection
@@ -388,7 +391,7 @@ MPI (Message Passing Interface).
 
 \begin_layout Standard
 El soporte para bibliotecas tipo MPI se encuentra integrado en TORQUE.
- El sistema puede ejecutar varias implementaciónes de MPI: MPICH, MPICH2,
+ El sistema puede ejecutar varias implementaciones de MPI: MPICH, MPICH2,
  OpenMPI, etc.
  Los recursos utilizados por procesos paralelos son correctamente registrados
  y se reporta su uso en el log del PBS.
@@ -410,7 +413,7 @@ Interfaz de programación
 \end_layout
 
 \begin_layout Standard
-Torque soporta el estándar Distributed Resource Management Application API
+TORQUE soporta el estándar Distributed Resource Management Application API
  (DRMAA) al igual que la mayoría de los manejadores de recursos.
 \end_layout
 
@@ -431,8 +434,7 @@ ción de trabajos.
 \begin_layout Standard
 Maui se enfoca en la planificación de trabajos y deja la problemática de
  iniciar los trabajos y la interacción con los usuarios a los manejadores
- de recursos (distributed resource managers, DRM) como OpenPBS, TORQUE,
- SGE, etc.
+ de recursos (DRM por sus siglas en inglés) como OpenPBS, TORQUE, SGE, etc.
 \end_layout
 
 \begin_layout Paragraph
@@ -537,7 +539,7 @@ Quality of Service (QoS).
 Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios,
  estos beneficios pueden incluir acceso a recursos adicionales, exclusiones
  de determinadas políticas, acceso a capacidades especiales, y mejoras en
- la priorisación de trabajos.
+ la priorización de trabajos.
 \end_layout
 
 \begin_layout Subparagraph
@@ -580,7 +582,7 @@ Interfaz local.
 \end_layout
 
 \begin_layout Standard
-Se trata de una interfaz en C enfocada exlusivamente al desarrollo de nuevos
+Se trata de una interfaz en C enfocada exclusivamente al desarrollo de nuevos
  algoritmos de despacho.
 \end_layout
 
@@ -676,7 +678,7 @@ o que se implemente una política de use-it-or-lose-it previniendo el uso
 \end_layout
 
 \begin_layout Subparagraph
-Interfaz web.
+Interfaz Web.
 \end_layout
 
 \begin_layout Standard
@@ -709,15 +711,15 @@ Oregon State University, Laboratorio de física.
 
 \begin_layout Standard
 Actualmente cuenta con 34 computadoras Dell Optiplex GX620's con procesadores
- Intel Pentium D 830 (3.0 GHz) y 1 GB of RAM con sistema operativo Suse GNU/Linux
+ Intel Pentium D 830 (3.0 GHz) y 1 GB of RAM con sistema operativo SUSE GNU/Linux
  10.1 64-bit.
 \end_layout
 
 \begin_layout Standard
-Estas computadoras cuentan con compiladores Intel para C, C++ y Fortran
- compilers, la biblioteca Math Kernel Library (cluster edition).
+Estas computadoras cuentan con compiladores Intel para C, C++ y Fortran,
+ la biblioteca Math Kernel Library (cluster edition).
  Para el procesamiento paralelo se utilizan las bibliotecas MPI.
- El cluster utiliza Torque como manejador de recursos, y desde el 4 de febrero
+ El cluster utiliza TORQUE como manejador de recursos, y desde el 4 de febrero
  del 2007 se utiliza Maui para la planificación de tareas.
  
 \end_layout
@@ -727,11 +729,11 @@ University of Glasgow.
 \end_layout
 
 \begin_layout Standard
-El cluster utiliza Torque y Maui sobre Redhat Enterprise GNU/Linux 3.
+El cluster utiliza TORQUE y Maui sobre Redhat Enterprise GNU/Linux 3.
  Actualmente cuenta con 60 nodos de procesamiento disponibles, cada uno
- con procesadores dual opteron 248 y 2GB RAM.
- Ademas de los componentes estándares de incluidos en la distribución (p.ej.
- compilador gcc, g++, g77, etc.) se han instalado las bibliotecas mpich 1.2.6
+ con procesadores duales Opteron 248 y 2GB RAM.
+ Además de los componentes estándares de incluidos en la distribución (p.ej.
+ compilador gcc, g++, g77, etc.) se han instalado las bibliotecas MPICH 1.2.6
  (MPI) para procesamiento paralelo.
 \end_layout
 
@@ -747,15 +749,15 @@ El cluster fue instalado a principios de 2002 y consisten de 512 procesadores
  de 2.4 billones de operaciones de punto flotante por segundo (Gflops).
  El sistema total indica un máximo teórico de desempeño de mas de 1.4 Teraflops.
  Las primeras mediciones de desempeño utilizando Linpack Benchmark mostraron
- una rendimiento de 825 Gflops, ubicando el cluster en la posición 35va
- del top 500 de supercomputadoras del mundo en Junio del 2002.
+ un rendimiento de 825 Gflops, ubicando el cluster en la posición 35va del
+ top 500 de supercomputadoras del mundo en Junio del 2002.
 \end_layout
 
 \begin_layout Standard
 Como base del cluster se utiliza un sistema Debian GNU/Linux.
  Para procesamiento paralelo se utiliza la biblioteca mpich (MPI) y como
- manejador de recursos se utiliza Torque.
- Por sobre Torque se encuentra instalado Moab, el sucesor de Maui.
+ manejador de recursos se utiliza TORQUE.
+ Por sobre TORQUE se encuentra instalado Moab, el sucesor de Maui.
  
 \end_layout
 
@@ -765,9 +767,9 @@ Stony Brook University.
 
 \begin_layout Standard
 El cluster tiene 235 nodos de procesamiento dual (470 procesadores individuales).
- Cada procesador es un Dell Pentium IV Xeon de 3.4Ghz con 2GB de memoria
- RAM y 40GB de disco duro.
- Las computadores operan con Debian GNU/Linux, utilizan Torque y Maui para
+ Cada procesador es un Dell Pentium IV Xeon de 3.4GHz con 2GB de memoria
+ RAM y 40 GB de disco duro.
+ Los computadores operan con Debian GNU/Linux, utilizan TORQUE y Maui para
  manejar los trabajos y la versión 1.4 de MPI para el procesamiento paralelo.
 \end_layout
 
@@ -777,11 +779,11 @@ Dansk Center for Scientific Computing.
 
 \begin_layout Standard
 El cluster consta de 200 nodos Dell PowerEdge 1950 1U con dos procesadores
- Intel Woodcrest de 2,66Ghz.
- De estos 200 nodos 160 cuentan con 4 GB de RAM y 40 cuentan con 8GB de
+ Intel Woodcrest de 2,66 GHz.
+ De estos 200 nodos 160 cuentan con 4 GB de RAM y 40 cuentan con 8 GB de
  RAM.
- Como sistema se utiliza OpenSuSE GNU/Linux 10.1 con kernel 2.6 y para la
- planificación y manejo de trabajos de utiliza Torque 2.1.2 y MAUI 3.2.6.
+ Como sistema se utiliza openSUSE GNU/Linux 10.1 con kernel 2.6 y para la
+ planificación y manejo de trabajos de utiliza TORQUE 2.1.2 y MAUI 3.2.6.
  Para el procesamiento paralelo se disponen de bibliotecas tanto de tipo
  MPI como de tipo PVM.
 \end_layout
@@ -803,7 +805,7 @@ TORQUE junto con Maui y Gold satisfacen los requerimientos planteados para
 Existen ciertos aspectos en los que TORQUE no se desempeña de la mejor manera.
  Si bien se encuentra integrado el soporte para bibliotecas tipo MPI, debe
  tenerse mucho cuidado al momento de ejecutar trabajos utilizando PVM.
- TORQUE presenta carencias tambien en sus funcionalidades de Resource Management
+ TORQUE presenta carencias también en sus funcionalidades de Resource Management
 ; p.
  ej.
  no es capaz de realizar CPU Harvesting o migración de procesos.
@@ -812,7 +814,7 @@ Existen ciertos aspectos en los que TORQUE no se desempeña de la mejor manera.
 \begin_layout Standard
 En cuanto al soporte por parte de la comunidad de usuarios de TORQUE y Maui,
  es muy bueno por medio de listas de correo y también se encuentra mucha
- documentación disponible en el sitio web por medio de una Wiki (aunque
+ documentación disponible en el sitio Web por medio de una Wiki (aunque
  aún se encuentra en construcción).
 \end_layout
 
