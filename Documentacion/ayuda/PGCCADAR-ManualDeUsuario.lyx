@@ -154,10 +154,16 @@ Mg.
 \end_layout
 
 \begin_layout Standard
+
 \newpage
+
 \begin_inset LatexCommand tableofcontents
+
 \end_inset
+
+
 \newpage
+
 \end_layout
 
 \begin_layout Section
@@ -244,7 +250,7 @@ nuevo
  (segundo botón en la barra).
  A continuación se mostrará un espacio para seleccionar el archivo y un
  botón de aceptar.
- Si en lugar de un archivo corriente se seleciona un archivo zip, el mismo
+ Si en lugar de un archivo corriente se selecciona un archivo zip, el mismo
  será automáticamente descomprimido en la carpeta en que se encuentre el
  usuario.
 \end_layout
@@ -285,7 +291,7 @@ El tercer botón en la barra da la opción de ejecutar un makefile o el comando
 \end_layout
 
 \begin_layout Standard
-Los archivos ejecutables tendrán una tercera opción (ademas de descargar
+Los archivos ejecutables tendrán una tercera opción (además de descargar
  y eliminar) que será la de ejecución.
  Presionando este botón, se desplegará un campo a rellenar con los argumentos
  de ejecución (opcional) y la opción de ejecutar.
@@ -352,7 +358,7 @@ Resultados
 En cualquier momento será posible consultar por el histórico de ejecuciones.
  Es importante notar que las salidas de cada ejecutable son dos: por un
  lado se guarda la salida habitual (salida más salida de error) y por otro
- se guarda la salida de Torque (el administrador de recursos del cluster).
+ se guarda la salida de TORQUE (el administrador de recursos del cluster).
 \end_layout
 
 \begin_layout Standard
@@ -373,7 +379,7 @@ Log
 \begin_inset Quotes erd
 \end_inset
 
- se mostrará la salida de Torque en la parte inferior de la página.
+ se mostrará la salida de TORQUE en la parte inferior de la página.
 \end_layout
 
 \begin_layout Standard
@@ -411,13 +417,13 @@ Alertas
 \end_layout
 
 \begin_layout Standard
-En el menu alertas los usarios pueden observar las alertas que le fueron
+En el menú alertas los usuarios pueden observar las alertas que le fueron
  enviadas por el sistema.
- por ejemplo alertas de inicio y fin de algun trabajo del usuario.
+ Por ejemplo alertas de inicio y fin de algún trabajo del usuario.
 \end_layout
 
 \begin_layout Standard
-La infromación desplegada para cada alerta es Fecha y Asunto de la alerta.
+La información desplegada para cada alerta es Fecha y Asunto de la alerta.
 \end_layout
 
 \begin_layout Standard
@@ -444,7 +450,7 @@ Ver
 \end_layout
 
 \begin_layout Standard
-Desde esta página también podemos eliminar la alerta con el boton 
+Desde esta página también podemos eliminar la alerta con el botón 
 \begin_inset Quotes eld
 \end_inset
 

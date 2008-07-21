@@ -1,27 +1,40 @@
-%% LyX 1.5.3 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 1.5.5 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[english]{article}
+\documentclass[spanish]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \usepackage{graphicx}
-
-\makeatletter
 \usepackage{babel}
-\makeatother
+\deactivatetilden
 
 \begin{document}
-\title{Manual de usuario\\
-Cluster de Computadores de Alto Desempe\~{n}o con Acceso Remoto (CCADAR)\\
-Facultad de Ingenier\'{i}a\\
-Universidad de la Rep\'{u}blica}
 
-\author{Santiago Iturriaga, Paulo Maya, Dami\'{a}n Pintos}
-\date{}
+\title{\chead{}
+\rhead{Página \thepage}
+\lfoot{Manual de usuario}
+\cfoot{}
+\rfoot{Proyecto Fenton (CCADAR)} 
+\date{}{\small Facultad de Ingeniería}\\
+{\small Universidad de la República}{\large }\\
+{\large \bigskip{}
+}{\Large Proyecto Fenton - Cluster de Computadores de Alto Desempeño
+con Acceso Remoto (CCADAR)}{\large }\\
+{\large \bigskip{}
+}{\Large Manual de usuario}{\large }\\
+{\large \bigskip{}
+Julio 2008\bigskip{}
+}}
+
+
+\author{{\normalsize Estudiantes:}\texttt{\normalsize{} }~\\
+\texttt{\normalsize Santiago Iturriaga, Paulo Maya, Damián Pintos\medskip{}
+}~\\
+{\normalsize Supervisor:}\texttt{\normalsize{} }~\\
+\texttt{\normalsize Mg. Ing. Sergio Nesmachnow}}
 
 \maketitle
-\begin{abstract}
-Que contiene el documento, en que consiste el proyecto...
-\end{abstract}
 \newpage{}\tableofcontents{}\newpage{}
 
 
@@ -66,7 +79,7 @@ más usuales para el usuario final.
 En primer lugar podrá subir archivos individualmente mediante el botón
 de {}``nuevo'' (segundo botón en la barra). A continuación se mostrará
 un espacio para seleccionar el archivo y un botón de aceptar. Si en
-lugar de un archivo corriente se seleciona un archivo zip, el mismo
+lugar de un archivo corriente se selecciona un archivo zip, el mismo
 será automáticamente descomprimido en la carpeta en que se encuentre
 el usuario.
 
@@ -83,7 +96,7 @@ el comando mpicc, permitiendo además el pasaje de argumentos.
 
 \includegraphics[scale=0.35]{25CArchivos}
 
-Los archivos ejecutables tendrán una tercera opción (ademas de descargar
+Los archivos ejecutables tendrán una tercera opción (además de descargar
 y eliminar) que será la de ejecución. Presionando este botón, se desplegará
 un campo a rellenar con los argumentos de ejecución (opcional) y la
 opción de ejecutar. Luego de aceptar, se mostrará la página de resultados
@@ -115,12 +128,12 @@ momento.
 En cualquier momento será posible consultar por el histórico de ejecuciones.
 Es importante notar que las salidas de cada ejecutable son dos: por
 un lado se guarda la salida habitual (salida más salida de error)
-y por otro se guarda la salida de Torque (el administrador de recursos
+y por otro se guarda la salida de TORQUE (el administrador de recursos
 del cluster).
 
 Presionando el botón {}``Ver'' se mostrará la página de salida del
 ejecutable, mientras que si se presiona el botón {}``Log'' se mostrará
-la salida de Torque en la parte inferior de la página.
+la salida de TORQUE en la parte inferior de la página.
 
 \includegraphics[scale=0.35]{27CRes}
 
@@ -136,11 +149,11 @@ dos veces su nueva clave.
 
 \section{Alertas}
 
-En el menu alertas los usarios pueden observar las alertas que le
-fueron enviadas por el sistema. por ejemplo alertas de inicio y fin
-de algun trabajo del usuario.
+En el menú alertas los usuarios pueden observar las alertas que le
+fueron enviadas por el sistema. Por ejemplo alertas de inicio y fin
+de algún trabajo del usuario.
 
-La infromación desplegada para cada alerta es Fecha y Asunto de la
+La información desplegada para cada alerta es Fecha y Asunto de la
 alerta.
 
 \includegraphics[scale=0.35]{29CAlertas}
@@ -148,7 +161,7 @@ alerta.
 Si seleccionamos el link {}``Ver'' en el costado derecho de la grilla
 se despliega la información completa de la alerta.
 
-Desde esta página también podemos eliminar la alerta con el boton
+Desde esta página también podemos eliminar la alerta con el botón
 {}``Eliminar''.
 
 \includegraphics[scale=0.35]{30CAlertas}
