@@ -1,28 +1,41 @@
-%% LyX 1.5.3 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 1.5.5 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[english]{article}
+\documentclass[spanish]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \usepackage{url}
 \usepackage{graphicx}
-
-\makeatletter
 \usepackage{babel}
-\makeatother
+\deactivatetilden
 
 \begin{document}
-\title{Manual de usuario administrador\\
-Cluster de Computadores de Alto Desempe\~{n}o con Acceso Remoto (CCADAR)\\
-Facultad de Ingenier\'{i}a\\
-Universidad de la Rep\'{u}blica}
 
-\author{Santiago Iturriaga, Paulo Maya, Dami\'{a}n Pintos}
-\date{}
+\title{\chead{}
+\rhead{Página \thepage}
+\lfoot{Manual de usuario administrador}
+\cfoot{}
+\rfoot{Proyecto Fenton (CCADAR)} 
+\date{}{\small Facultad de Ingeniería}\\
+{\small Universidad de la República}{\large }\\
+{\large \bigskip{}
+}{\Large Proyecto Fenton - Cluster de Computadores de Alto Desempeño
+con Acceso Remoto (CCADAR)}{\large }\\
+{\large \bigskip{}
+}{\Large Manual de usuario administrador}{\large }\\
+{\large \bigskip{}
+Julio 2008\bigskip{}
+}}
+
+
+\author{{\normalsize Estudiantes:}\texttt{\normalsize{} }~\\
+\texttt{\normalsize Santiago Iturriaga, Paulo Maya, Damián Pintos\medskip{}
+}~\\
+{\normalsize Supervisor:}\texttt{\normalsize{} }~\\
+\texttt{\normalsize Mg. Ing. Sergio Nesmachnow}}
 
 \maketitle
-\begin{abstract}
-Que contiene el documento, en que consiste el proyecto...
-\end{abstract}
 \newpage{}\tableofcontents{}\newpage{}
 
 
@@ -30,7 +43,7 @@ Que contiene el documento, en que consiste el proyecto...
 
 Fenton presenta una interfaz gráfica amigable para que un usuario
 pueda utilizar un cluster previamente configurado para este fin, sin
-necesidad de conocer los pormenores de su funcionamiento. Para ésto
+necesidad de conocer los pormenores de su funcionamiento. Para esto
 el sistema cuenta con dos niveles de usuarios: clientes y administradores.
 Los clientes mantendrán sus archivos en el cluster, ejecutarán procesos
 y obtendrán los resultados de los mismos. Por otro lado los administradores
@@ -79,10 +92,10 @@ la disponibilidad de recursos (memoria, procesador, etc.)
 del sistema evaluando diferentes propiedades (prioridad del trabajo,
 recursos necesarios para la ejecución, etc.). 
 \end{itemize}
-\item Torque: interfaz con Torque.
+\item TORQUE: interfaz con TORQUE.
 
 \begin{itemize}
-\item Torque es quien administra los recursos disponibles del sistema y
+\item TORQUE es quien administra los recursos disponibles del sistema y
 es el encargado de iniciar la ejecución de un trabajo cuando Maui
 se lo ordena.
 \end{itemize}
@@ -123,7 +136,7 @@ tendrán el mismo usuario linux.
 
 Cada usuario del sistema tendrá un nombre de usuario, una dirección
 de correo electrónico y una contraseña. Cada uno es creado bajo un
-grupo, seleccionándolo y presionando el boton {}``Nuevo'' en la
+grupo, seleccionándolo y presionando el botón {}``Nuevo'' en la
 tabla que lista los usuarios. Es posible también eliminar usuarios
 del sistema.
 
@@ -139,9 +152,9 @@ pertinentes.
 
 Para administrar los accesos a los trabajos del sistema, se deberá
 seleccionar un grupo. A continuación se mostrarán todos los pares
-cliente - trabajo dados de alta en el sistema. Simplemente seleccionando
-cada casilla se le estará dando acceso a todos los integrantes del
-grupo a los respectivos trabajos.
+de las asociación cliente-trabajo dados de alta en el sistema. Simplemente
+seleccionando cada casilla se le estará dando acceso a todos los integrantes
+del grupo a los respectivos trabajos.
 
 
 \subsection{Clientes - Trabajos}
@@ -154,8 +167,8 @@ derecha de la lista de clientes). A continuación se mostrarán los
 campos a llenar:
 
 \begin{itemize}
-\item nombre: nombre descriptivo del cliente.
-\item usuario linux: usuario con el que se correrán los trabajos del cliente.
+\item Nombre: nombre descriptivo del cliente.
+\item Usuario linux: usuario con el que se correrán los trabajos del cliente.
 \end{itemize}
 Luego de haber creado el cliente, se presentará la opción de crear
 un nuevo trabajo para el mismo presionando el botón {}``Nuevo''
@@ -163,12 +176,12 @@ mostrado en la tabla de trabajos. A continuación se mostrarán los
 campos a llenar:
 
 \begin{itemize}
-\item nombre: nombre descriptivo del trabajo.
-\item nodos: cantidad de nodos sobre los que se correrá cada ejecución.
-\item tiempo máximo: tiempo máximo que se le dará a cada ejecución dentro
+\item Nombre: nombre descriptivo del trabajo.
+\item Nodos: cantidad de nodos sobre los que se correrá cada ejecución.
+\item Tiempo máximo: tiempo máximo que se le dará a cada ejecución dentro
 del trabajo.
-\item cola: cola en la que se colocará cada ejecución del trabajo.
-\item quota: espacio disponible en disco para el trabajo (en MB).
+\item Cola: cola en la que se colocará cada ejecución del trabajo.
+\item Quota: espacio disponible en disco para el trabajo (en MB).
 \end{itemize}
 \includegraphics[scale=0.35]{06AACT2}
 
@@ -191,11 +204,11 @@ los usuarios podrán nuevamente tener acceso a los mismos.
 
 \subsection{Usuarios - Alertas}
 
-Existe un grupo {}``virtual'' de usuarios a los cuales le seran
-asignadas alertas , definidas de interes general, del sistemas. Estas
-alertas avisan a los usuarios del grupo de algun problema o situación
-importante o critica del sistema, por ejemplo si algun trabajo de
-un usuario supero su cuota de espacio en disco.
+Existe un grupo {}``virtual'' de usuarios a los cuales le serán
+asignadas alertas del sistema, definidas alertas de interés general.
+Estas alertas avisan a los usuarios del grupo de algún problema o
+situación importante o crítica del sistema, por ejemplo si algún trabajo
+de un usuario supero su cuota de espacio en disco.
 
 Para agregar un usuario a este grupo debemos seleccionarlo del combo
 de usuarios y seleccionar {}``Agregar''.
@@ -228,8 +241,8 @@ Los trabajos se encuentran agrupados según su estado:
 
 \begin{itemize}
 \item En ejecución. Los trabajos en ejecución, tal como su nombre lo dice,
-son los trabajos que estan siendo ejecutados actualmente en el sistema.
-Por esta razón estos trabajos estan consumiendo recursos del sistema.
+son los trabajos que están siendo ejecutados actualmente en el sistema.
+Por esta razón estos trabajos están consumiendo recursos del sistema.
 En el listado de trabajos se muestran estadísticas de cada trabajo
 en ejecución: cantidad de procesadores, tiempo de ejecución actual,
 etc.
@@ -263,25 +276,25 @@ operativo, etc.
 \subsection{Configuración}
 
 La configuración de Maui define varios parámetros. Desde la frecuencia
-con la que se realiza el procesamiento de los trabajos en Torque a
+con la que se realiza el procesamiento de los trabajos en TORQUE a
 la política de despacho que se va a utilizar.
 
-\includegraphics[scale=0.35,bb = 0 0 200 100, draft, type=eps]{31AConf.png}
+\includegraphics[scale=0.35]{31AConf}
 
 Maui realiza una despachamiento de trabajos utilizando una política
 de despacho predeterminada, pero esta política puede ajustarse para
-lograr un máximo despempeño del cluster. Estas configuraciones avanzadas
+lograr un máximo desempeño del cluster. Estas configuraciones avanzadas
 se encuentran detalladas en \url{http://www.clusterresources.com/products/maui/docs/}.
 
 
-\section{Torque}
+\section{TORQUE}
 
-La pantalla principal de Torque, al igual que Maui, nos informa del
-estado de los servicios de Torque en el cluster.
+La pantalla principal de TORQUE, al igual que Maui, nos informa del
+estado de los servicios de TORQUE en el cluster.
 
 \includegraphics[scale=0.35]{13ATorque}
 
-Torque cuenta con dos demonios:
+TORQUE cuenta con dos demonios:
 
 \begin{itemize}
 \item qserverd: este demonio debe contar solamente con una instancia en
@@ -289,20 +302,20 @@ ejecución y debe ejecutar en el nodo maestro del cluster. Es necesario
 que este servicio se encuentre en ejecución para el funcionamiento
 del cluster.
 \item qnoded: este demonio debe estar en ejecución en cada nodo de cómputo
-del cluster. En la pantalla de información de Torque solamente se
+del cluster. En la pantalla de información de TORQUE solamente se
 muestra el estado del demonio en el nodo maestro. No es necesario
 que este servicio se encuentre en ejecución para el funcionamiento
 del sistema, si no se encuentra en ejecución simplemente el nodo maestro
 no será utilizado como nodo de cómputo.
 \end{itemize}
-Ambos servicios de Torque deben ejecutar con el usuario root.
+Ambos servicios de TORQUE deben ejecutar con el usuario root.
 
 
 \subsection{Trabajos}
 
 \includegraphics[scale=0.35]{14ATorqueT}
 
-En el submenú de trabajos de Torque podemos ver todos los trabajos
+En el submenú de trabajos de TORQUE podemos ver todos los trabajos
 del sistema; los que se encuentran en ejecución, los que se encuentran
 en espera para iniciar su ejecución, los recientemente finalizados
 y los detenidos.
@@ -316,19 +329,19 @@ ellos (detener, iniciar, etc.).
 
 \includegraphics[scale=0.35]{15ATorqueC}
 
-Torque maneja un conjunto de colas de ejecución en donde son ingresados
+TORQUE maneja un conjunto de colas de ejecución en donde son ingresados
 los trabajos para ser ejecutados y de donde Maui evalúa cual será
 el siguiente trabajo a ejecutar. Estas colas tienen ciertas propiedades
 que agrupan a los trabajos, p.ej.: prioridad de ejecución, tiempo
 máximo de ejecución, etc.
 
-Una cola pueden ser detenida. Cuando una cola es detenida son detenidos
+Una cola puede ser detenida. Cuando una cola es detenida son detenidos
 todos los trabajos de la misma.
 
 
 \subsection{Nodos}
 
-Torque mantiene información de todos los nodos del cluster. En la
+TORQUE mantiene información de todos los nodos del cluster. En la
 interfaz de nodos de Torque se muestran todos los nodos del cluster
 junto con su estado, la cantidad de procesadores con la que cuentan,
 si estan ejecutando un trabajo, etc. Además nos ofrece la posibilidad
@@ -341,21 +354,21 @@ al momento de la ejecución de trabajos.
 \subsection{Estado}
 
 El submenú de estado muestra información del servicio del nodo maestro
-de Torque (qserverd).
+de TORQUE (qserverd).
 
 \includegraphics[scale=0.35]{17ATorqueE}
 
 Se presenta información sobre la cantidad de trabajos en ejecución,
 el estados de los trabajos (cuantos encolados, cuantos detenidos,
 cuantos ejecutando, etc.), quienes son los usuarios administradores
-y operadores de Torque, la versión de Torque que se está ejecutando,
+y operadores de TORQUE, la versión de TORQUE que se está ejecutando,
 etc.
 
 
 \subsection{Ejecuciones}
 
 El administrador del sistema podrá ver las ejecuciones de todos los
-trabajos, teniendo además la opción de ver la salida de Torque presionando
+trabajos, teniendo además la opción de ver la salida de TORQUE presionando
 el botón {}``ver log''.
 
 \includegraphics[scale=0.35]{18ATorqueEj}
@@ -363,8 +376,8 @@ el botón {}``ver log''.
 
 \section{Alertas}
 
-Los usuarios Adminstradores al igual que los demas usuarios reciben
-alertas del sistemas las cuales podran visualizar en el menu Alertas.
+Los usuarios Administradores al igual que los demás usuarios reciben
+alertas del sistemas las cuales podrán visualizar en el menú Alertas.
 
 Podemos ver el cliente y trabajo al cual hace referencia la alerta;
 fecha y asunto de la alerta.
@@ -374,7 +387,7 @@ fecha y asunto de la alerta.
 Si seleccionamos el link {}``Ver'' en el costado derecho de la grilla
 de alertes se muestra la información completa de la misma.
 
-Desde esta página también podemos eliminar la alerta con el boton
+Desde esta página también podemos eliminar la alerta con el botón
 Eliminar.
 
 \includegraphics[scale=0.35]{20AAlertas2}
