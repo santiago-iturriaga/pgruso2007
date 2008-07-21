@@ -154,10 +154,16 @@ Mg.
 \end_layout
 
 \begin_layout Standard
+
 \newpage
+
 \begin_inset LatexCommand tableofcontents
+
 \end_inset
+
+
 \newpage
+
 \end_layout
 
 \begin_layout Section
@@ -168,7 +174,7 @@ Introducción
 Fenton presenta una interfaz gráfica amigable para que un usuario pueda
  utilizar un cluster previamente configurado para este fin, sin necesidad
  de conocer los pormenores de su funcionamiento.
- Para ésto el sistema cuenta con dos niveles de usuarios: clientes y administrad
+ Para esto el sistema cuenta con dos niveles de usuarios: clientes y administrad
 ores.
  Los clientes mantendrán sus archivos en el cluster, ejecutarán procesos
  y obtendrán los resultados de los mismos.
@@ -260,12 +266,12 @@ Maui se encarga de despachar los trabajos en la cola de ejecución del sistema
 
 \end_deeper
 \begin_layout Itemize
-Torque: interfaz con Torque.
+TORQUE: interfaz con TORQUE.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Torque es quien administra los recursos disponibles del sistema y es el
+TORQUE es quien administra los recursos disponibles del sistema y es el
  encargado de iniciar la ejecución de un trabajo cuando Maui se lo ordena.
 \end_layout
 
@@ -348,7 +354,7 @@ Usuarios - Grupos
 \begin_layout Standard
 Cada usuario del sistema tendrá un nombre de usuario, una dirección de correo
  electrónico y una contraseña.
- Cada uno es creado bajo un grupo, seleccionándolo y presionando el boton
+ Cada uno es creado bajo un grupo, seleccionándolo y presionando el botón
  
 \begin_inset Quotes eld
 \end_inset
@@ -392,8 +398,8 @@ Accesos
 \begin_layout Standard
 Para administrar los accesos a los trabajos del sistema, se deberá seleccionar
  un grupo.
- A continuación se mostrarán todos los pares cliente - trabajo dados de
- alta en el sistema.
+ A continuación se mostrarán todos los pares de las asociación cliente-trabajo
+ dados de alta en el sistema.
  Simplemente seleccionando cada casilla se le estará dando acceso a todos
  los integrantes del grupo a los respectivos trabajos.
 \end_layout
@@ -427,11 +433,11 @@ Nuevo
 \end_layout
 
 \begin_layout Itemize
-nombre: nombre descriptivo del cliente.
+Nombre: nombre descriptivo del cliente.
 \end_layout
 
 \begin_layout Itemize
-usuario linux: usuario con el que se correrán los trabajos del cliente.
+Usuario linux: usuario con el que se correrán los trabajos del cliente.
 \end_layout
 
 \begin_layout Standard
@@ -449,24 +455,24 @@ Nuevo
 \end_layout
 
 \begin_layout Itemize
-nombre: nombre descriptivo del trabajo.
+Nombre: nombre descriptivo del trabajo.
 \end_layout
 
 \begin_layout Itemize
-nodos: cantidad de nodos sobre los que se correrá cada ejecución.
+Nodos: cantidad de nodos sobre los que se correrá cada ejecución.
 \end_layout
 
 \begin_layout Itemize
-tiempo máximo: tiempo máximo que se le dará a cada ejecución dentro del
+Tiempo máximo: tiempo máximo que se le dará a cada ejecución dentro del
  trabajo.
 \end_layout
 
 \begin_layout Itemize
-cola: cola en la que se colocará cada ejecución del trabajo.
+Cola: cola en la que se colocará cada ejecución del trabajo.
 \end_layout
 
 \begin_layout Itemize
-quota: espacio disponible en disco para el trabajo (en MB).
+Quota: espacio disponible en disco para el trabajo (en MB).
 \end_layout
 
 \begin_layout Standard
@@ -523,10 +529,10 @@ virtual
 \begin_inset Quotes erd
 \end_inset
 
- de usuarios a los cuales le seran asignadas alertas , definidas de interes
- general, del sistemas.
- Estas alertas avisan a los usuarios del grupo de algun problema o situación
- importante o critica del sistema, por ejemplo si algun trabajo de un usuario
+ de usuarios a los cuales le serán asignadas alertas del sistema, definidas
+ alertas de interés general.
+ Estas alertas avisan a los usuarios del grupo de algún problema o situación
+ importante o crítica del sistema, por ejemplo si algún trabajo de un usuario
  supero su cuota de espacio en disco.
 \end_layout
 
@@ -606,8 +612,8 @@ Los trabajos se encuentran agrupados según su estado:
 \begin_layout Itemize
 En ejecución.
  Los trabajos en ejecución, tal como su nombre lo dice, son los trabajos
- que estan siendo ejecutados actualmente en el sistema.
- Por esta razón estos trabajos estan consumiendo recursos del sistema.
+ que están siendo ejecutados actualmente en el sistema.
+ Por esta razón estos trabajos están consumiendo recursos del sistema.
  En el listado de trabajos se muestran estadísticas de cada trabajo en ejecución
 : cantidad de procesadores, tiempo de ejecución actual, etc.
 \end_layout
@@ -666,7 +672,7 @@ Configuración
 \begin_layout Standard
 La configuración de Maui define varios parámetros.
  Desde la frecuencia con la que se realiza el procesamiento de los trabajos
- en Torque a la política de despacho que se va a utilizar.
+ en TORQUE a la política de despacho que se va a utilizar.
 \end_layout
 
 \begin_layout Standard
@@ -682,7 +688,7 @@ La configuración de Maui define varios parámetros.
 \begin_layout Standard
 Maui realiza una despachamiento de trabajos utilizando una política de despacho
  predeterminada, pero esta política puede ajustarse para lograr un máximo
- despempeño del cluster.
+ desempeño del cluster.
  Estas configuraciones avanzadas se encuentran detalladas en 
 \begin_inset LatexCommand url
 target "http://www.clusterresources.com/products/maui/docs/"
@@ -693,12 +699,12 @@ target "http://www.clusterresources.com/products/maui/docs/"
 \end_layout
 
 \begin_layout Section
-Torque
+TORQUE
 \end_layout
 
 \begin_layout Standard
-La pantalla principal de Torque, al igual que Maui, nos informa del estado
- de los servicios de Torque en el cluster.
+La pantalla principal de TORQUE, al igual que Maui, nos informa del estado
+ de los servicios de TORQUE en el cluster.
 \end_layout
 
 \begin_layout Standard
@@ -712,7 +718,7 @@ La pantalla principal de Torque, al igual que Maui, nos informa del estado
 \end_layout
 
 \begin_layout Standard
-Torque cuenta con dos demonios:
+TORQUE cuenta con dos demonios:
 \end_layout
 
 \begin_layout Itemize
@@ -725,7 +731,7 @@ qserverd: este demonio debe contar solamente con una instancia en ejecución
 \begin_layout Itemize
 qnoded: este demonio debe estar en ejecución en cada nodo de cómputo del
  cluster.
- En la pantalla de información de Torque solamente se muestra el estado
+ En la pantalla de información de TORQUE solamente se muestra el estado
  del demonio en el nodo maestro.
  No es necesario que este servicio se encuentre en ejecución para el funcionamie
 nto del sistema, si no se encuentra en ejecución simplemente el nodo maestro
@@ -733,7 +739,7 @@ nto del sistema, si no se encuentra en ejecución simplemente el nodo maestro
 \end_layout
 
 \begin_layout Standard
-Ambos servicios de Torque deben ejecutar con el usuario root.
+Ambos servicios de TORQUE deben ejecutar con el usuario root.
 \end_layout
 
 \begin_layout Subsection
@@ -751,7 +757,7 @@ Trabajos
 \end_layout
 
 \begin_layout Standard
-En el submenú de trabajos de Torque podemos ver todos los trabajos del sistema;
+En el submenú de trabajos de TORQUE podemos ver todos los trabajos del sistema;
  los que se encuentran en ejecución, los que se encuentran en espera para
  iniciar su ejecución, los recientemente finalizados y los detenidos.
 \end_layout
@@ -777,7 +783,7 @@ Colas
 \end_layout
 
 \begin_layout Standard
-Torque maneja un conjunto de colas de ejecución en donde son ingresados
+TORQUE maneja un conjunto de colas de ejecución en donde son ingresados
  los trabajos para ser ejecutados y de donde Maui evalúa cual será el siguiente
  trabajo a ejecutar.
  Estas colas tienen ciertas propiedades que agrupan a los trabajos, p.ej.:
@@ -785,7 +791,7 @@ Torque maneja un conjunto de colas de ejecución en donde son ingresados
 \end_layout
 
 \begin_layout Standard
-Una cola pueden ser detenida.
+Una cola puede ser detenida.
  Cuando una cola es detenida son detenidos todos los trabajos de la misma.
 \end_layout
 
@@ -794,7 +800,7 @@ Nodos
 \end_layout
 
 \begin_layout Standard
-Torque mantiene información de todos los nodos del cluster.
+TORQUE mantiene información de todos los nodos del cluster.
  En la interfaz de nodos de Torque se muestran todos los nodos del cluster
  junto con su estado, la cantidad de procesadores con la que cuentan, si
  estan ejecutando un trabajo, etc.
@@ -818,7 +824,7 @@ Estado
 
 \begin_layout Standard
 El submenú de estado muestra información del servicio del nodo maestro de
- Torque (qserverd).
+ TORQUE (qserverd).
 \end_layout
 
 \begin_layout Standard
@@ -834,8 +840,8 @@ El submenú de estado muestra información del servicio del nodo maestro de
 \begin_layout Standard
 Se presenta información sobre la cantidad de trabajos en ejecución, el estados
  de los trabajos (cuantos encolados, cuantos detenidos, cuantos ejecutando,
- etc.), quienes son los usuarios administradores y operadores de Torque,
- la versión de Torque que se está ejecutando, etc.
+ etc.), quienes son los usuarios administradores y operadores de TORQUE,
+ la versión de TORQUE que se está ejecutando, etc.
 \end_layout
 
 \begin_layout Subsection
@@ -844,7 +850,7 @@ Ejecuciones
 
 \begin_layout Standard
 El administrador del sistema podrá ver las ejecuciones de todos los trabajos,
- teniendo además la opción de ver la salida de Torque presionando el botón
+ teniendo además la opción de ver la salida de TORQUE presionando el botón
  
 \begin_inset Quotes eld
 \end_inset
@@ -871,8 +877,8 @@ Alertas
 \end_layout
 
 \begin_layout Standard
-Los usuarios Adminstradores al igual que los demas usuarios reciben alertas
- del sistemas las cuales podran visualizar en el menu Alertas.
+Los usuarios Administradores al igual que los demás usuarios reciben alertas
+ del sistemas las cuales podrán visualizar en el menú Alertas.
 \end_layout
 
 \begin_layout Standard
@@ -904,7 +910,7 @@ Ver
 \end_layout
 
 \begin_layout Standard
-Desde esta página también podemos eliminar la alerta con el boton Eliminar.
+Desde esta página también podemos eliminar la alerta con el botón Eliminar.
 \end_layout
 
 \begin_layout Standard
