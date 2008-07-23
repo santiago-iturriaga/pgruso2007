@@ -44,8 +44,8 @@ Cluster con acceso remoto
 \end_layout
 
 \begin_layout Standard
-La construcción de un cluster con acceso remoto es uno de los objetivos
- principales del proyecto.
+La construcción de un cluster con acceso remoto es el principal objetivo
+ del proyecto.
  En esta sección describiremos la solución propuesta por el equipo para
  cumplir con tal objetivo.
  Se describiran las tecnologías elegidas para la implementación del DRM
@@ -58,8 +58,8 @@ reference "sec:Relevamiento-de-tecnologías"
 
 ).
  Detallaremos la construcción de la interfaz para acceso remoto al cluster.
- Y se mencionaran las herramientas utilizadas para el desarrollo y documentación
- a lo largo del proyecto.
+ Ademas se mencionaran las herramientas utilizadas para el desarrollo y
+ documentación a lo largo del proyecto.
  Algo relevante de mencionar es que durante todo el proceso de desarrollo
  del sistema se  utilizaron exclusivamente herramientas de código libre
  (OSS).
@@ -80,10 +80,10 @@ DRM y despachador de trabajos
 
 \begin_layout Standard
 En esta sección se presentan y justifican las tecnologías seleccionadas
- para la implementación del DRM y despachador de de trabajso del cluster
- Fenton.
+ para la implementación del DRM y despachador de trabajos del cluster Fenton.
  Creemos que en la implementación de estos radica el mayor riesgo para el
- proyecto.
+ proyecto por lo que la etapa de relavamientos de tecnologías fue una de
+ las mas importantes del proyecto.
 \end_layout
 
 \begin_layout Standard
@@ -127,17 +127,17 @@ Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
  los requerimientos del proyecto, también presenta ciertas carencias dentro
  de las cuales las más importantes son CPU harvesting y la migración de
  procesos.
- Dichas carencias no son un problema serio ya que el cluster que se utilizará
- cuenta con nodos homogéneos y dedicados, esto significa que los nodos del
- cluster tendrán capacidades de procesamiento muy similares y no serán compartid
-os con otras aplicaciones externas al cluster (p.
+ Dichas carencias no son un problema serio ya que el cluster cuenta con
+ nodos homogéneos y dedicados, esto significa que los nodos del cluster
+ tendrán capacidades de procesamiento muy similares y no serán compartidos
+ con otras aplicaciones externas al cluster (p.
  ej.: aplicaciones de escritorio).
 \end_layout
 
 \begin_layout Standard
 Como se menciona en la sección de relevamiento de tecnologías TORQUE contiene
  la lógica necesaria para llevar a cabo la planificación de trabajos.
- como esta logica es muy basica y algo importante a que se tenia que tener
+ Dado que esta logica es muy basica y algo importante que se debia tener
  en cuenta era la posibilidad de seleccionar diferentes y mas complejos
  algoritmos de despacho se decidio utilizar Maui.
  Maui presenta un algoritmo de planificacion con diversas caracteristicas
@@ -149,27 +149,22 @@ Como se menciona en la sección de relevamiento de tecnologías TORQUE contiene
 Inicialmente estaba la intención de utilizar la herramienta Gold para llevar
  registro y manejar el uso de recursos en clusters y así potenciar TORQUE
  en este sentido.
- por motivos de tiempos del proyecto esto se descarto pero mantenemos y
- recomendamos Gold para trabajos previos sobre el cluster.
+ Por motivos de tiempos del proyecto esto se descarto del alcance del proyecto
+ pero mantenemos y recomendamos la utilización de Gold para trabajos previos
+ sobre el cluster.
 \end_layout
 
 \begin_layout Standard
-En lo que tiene que ver con la monitorización del sistema se decidio mantener
- la utilización de Ganglia.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Me falta algo mas
-\end_layout
-
-\end_inset
-
-
+En lo que tiene que ver con la monitorización del sistema se decidio utilizar
+ la herramienta Ganglia.
+ Ganglia era utilizada ya como herramienta de monitorización por el CeCal
+ en el cluster y luego una evaluación de sus funcionalidades se opto por
+ utilizar las mismas para las funcionalidades de reportes y estadisticas
+ del acceso remoto.
 \end_layout
 
 \begin_layout Standard
-Todas las caracteristicas de estas herramientas las podemos ver en la seccion
+Todas las caracteristicas de estas herramientas las podemos ver en la sección
  de relevamiento de tecnologías de este documento.
 \begin_inset Note Note
 status open
@@ -189,7 +184,7 @@ Dessarrollo de la interfaz de acceso remoto
 
 \begin_layout Standard
 Hasta aqui las herramientas para construir la base del cluster, ahora nos
- enfocamos en el componente de acceso remoto al sistema.
+ enfocaremos en el componente de acceso remoto al sistema Fenton.
  Un requerimiento importante es brindar una interfaz de usuario simple y
  de facil acceso para usuarios no especializados, por esta razón y para
  evitar problemas con la posible heterogeneidad de los sistemas de los clientes
@@ -335,7 +330,7 @@ El usuario final tendrá la posibilidad de subir su proyecto al cluster,
  compilarlo, ejecutarlo y ver la salida a pantalla en tiempo real.
  Dados los extensos tiempos de ejecución de los programas que se corren
  en clusters de estas características, el usuario puede abandonar el sitio
- para luego volver en otro momento.
+ para luego volver en otro momento y verificar el estado de la ejecución.
  Si el programa sigue en ejecución puede ver la salida a pantalla (nuevamente
  en tiempo real) junto con las salidas anteriores de la misma ejecución.
  Para los trabajos terminados existe la posibilidad de ver la salida en
@@ -344,16 +339,29 @@ El usuario final tendrá la posibilidad de subir su proyecto al cluster,
 
 \begin_layout Standard
 Los usuarios adminsitradores cuentan con un conjunto de reportes estadisticos
- sobre los recursos del cluster para la administracion del mismo como ser
- el porcentaje total de carga de CPU y memoria, se podrá se podra verificar
- los tiempos de procesamiento de usuario y por proceso.
- Tambien se puede detallar esta informacion por nodo del cluster, usuario
- y proceso.
+ sobre los recursos del cluster como ser el porcentaje total de carga de
+ CPU y memoria, se podra verificar los tiempos de procesamiento de usuario
+ y por proceso.
+ Estos reportes brindan una gran ayuda en las tareas de administración de
+ cluster.
+ 
 \end_layout
 
 \begin_layout Standard
-Estas estadisticas y reportes son obtenidos a partir de infromación brindada
- por Torque, Maui y Ganglia.
+La generación de los reportes estadistco se realiza con información brindada
+ por Torque, Maui y Ganglia; y es posible detallar la la información por
+ nodo del cluster, usuario y proceso.
+\end_layout
+
+\begin_layout Standard
+Por ultimo se definio un mecanismo de alertas a los usuarios.
+ Este permite enviar alertas a los diferentes usarios del sistema, como
+ ser inicio y finalización de trabajos, exesos de recursos del cluster,etc.
+ Este mecanisnmo es totalmente extensible en cuanto a las definiciones de
+ alertas y es soportado por funcionalidades de TORQUE y la base de datos.
+ Los usuarios pueden observar las alertas en la interfaz web que le fueron
+ enviadas por Fenton y esta habierta la posibilidad de enviarselas por mail
+ si se define un servidor SMTP.
 \end_layout
 
 \begin_layout Subsection
@@ -395,7 +403,7 @@ Testeo de la solución
 \end_layout
 
 \begin_layout Standard
-Una de las actividades de este proceso fue el testeo de las tecnologías
+Una de las actividades de este proyecto fue el testeo de las tecnologías
  propuestas y el testeo de la interfaz web desarrollada.
  Los objetivos de esta etapa son la verificación y validación de los requerimien
 tos funcionales establecidos en etapas mas tempranas y que fueran objetivos
