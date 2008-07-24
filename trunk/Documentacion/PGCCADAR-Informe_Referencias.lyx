@@ -41,7 +41,6 @@
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-1"
 
 \end_inset
@@ -57,7 +56,6 @@ B.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-2"
 
 \end_inset
@@ -74,7 +72,6 @@ E.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-3"
 
 \end_inset
@@ -92,7 +89,6 @@ target "http://www.clusterresources.com/products/maui/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-4"
 
 \end_inset
@@ -110,7 +106,6 @@ target "http://www.clusterresources.com/products/torque/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-5"
 
 \end_inset
@@ -122,7 +117,6 @@ William Gropp, Ewing Lusk and Thomas Sterling.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-1"
 
 \end_inset
@@ -135,7 +129,6 @@ Joseph D.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-6"
 
 \end_inset
@@ -149,7 +142,6 @@ M.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-8"
 
 \end_inset
@@ -166,7 +158,6 @@ target "http://www.dcsc.sdu.dk/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-9"
 
 \end_inset
@@ -183,7 +174,6 @@ target "http://www.sunysb.edu/seawulfcluster/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-10"
 
 \end_inset
@@ -200,7 +190,6 @@ target "http://helics.uni-hd.de/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-11"
 
 \end_inset
@@ -216,7 +205,6 @@ target "http://www.gla.ac.uk/services/it/whatwedo/computecluster/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-12"
 
 \end_inset
@@ -233,7 +221,6 @@ target "http://physics.oregonstate.edu/~elserj/support/cluster_use.php"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-13"
 
 \end_inset
@@ -250,7 +237,6 @@ target "http://www.drmaa.net"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-14"
 
 \end_inset
@@ -271,7 +257,6 @@ target "http://www.fing.edu.uy/~sergion/Tesis.pdf"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-15"
 
 \end_inset
@@ -290,7 +275,6 @@ target "http://www.fing.edu.uy/inco/grupos/cecal/hpc/mej_des/tesis.pdf"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-16"
 
 \end_inset
@@ -309,7 +293,6 @@ target "http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-17"
 
 \end_inset
@@ -331,7 +314,6 @@ target "http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-18"
 
 \end_inset
@@ -349,7 +331,6 @@ target "http://www.fing.edu.uy/~sergion/mpinet/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-19"
 
 \end_inset
@@ -367,7 +348,6 @@ target "http://www.fing.edu.uy/~sergion/agi/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-20"
 
 \end_inset
@@ -380,7 +360,6 @@ Baron, R.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-21"
 
 \end_inset
@@ -392,7 +371,6 @@ De Balsi, M.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-label ""
 key "key-23"
 
 \end_inset
@@ -401,6 +379,45 @@ Foster I.
  Designing and Building Parallel Programs.
  Concepts and Tools for Parallel Software Engineering.
  Addison Wesley, 1995.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Referencias 
+\end_layout
+
+\begin_layout Standard
+http://httpd.apache.org/ 
+\end_layout
+
+\begin_layout Standard
+http://ganglia.info/
+\end_layout
+
+\begin_layout Standard
+http://www.postgresql.org/
+\end_layout
+
+\begin_layout Standard
+http://www.mysql.com/
+\end_layout
+
+\begin_layout Standard
+http://www.php.net/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
