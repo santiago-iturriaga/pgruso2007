@@ -78,5 +78,52 @@ Mejorar los reportes para los usuarios administradores para el análisis
  y Maui.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Paragraph
+pbs_python
+\end_layout
+
+\begin_layout Standard
+The pbs_python package is a wrapper class for the Torque C library.
+ With this package you now can write utilities/extensions in Python instead
+ of C.
+ 
+\end_layout
+
+\begin_layout Standard
+https://subtrac.sara.nl/oss/pbs_python
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Paragraph
+Job Monarch! (https://subtrac.sara.nl/oss/jobmonarch/)
+\end_layout
+
+\begin_layout Standard
+Job Monarch is an addon to the Ganglia Monitoring System that provides (batch)
+ job monitoring and graphical overview of clusters and assorted batch systems.
+ Monarch is an abbreviation for Monitoring and Archiving, as Monarch also
+ provides the ability to archive these job (monitoring) statistics so that
+ your (batch) cluster users may lookup job information of old (and possibly
+ failed) jobs to analyze possible problems.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
