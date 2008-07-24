@@ -818,76 +818,80 @@ En cuanto al soporte por parte de la comunidad de usuarios de TORQUE y Maui,
  aún se encuentra en construcción).
 \end_layout
 
-\begin_layout Paragraph
-Trabajos a futuro! (pbs_python)
-\end_layout
-
-\begin_layout Standard
-The pbs_python package is a wrapper class for the Torque C library.
- With this package you now can write utilities/extensions in Python instead
- of C.
- 
-\end_layout
-
-\begin_layout Standard
-https://subtrac.sara.nl/oss/pbs_python
-\end_layout
-
 \begin_layout Subsection
 Ganglia
 \end_layout
 
 \begin_layout Standard
-Ganglia is a scalable distributed monitoring system for high-performance
- computing systems such as clusters and Grids.
- It is based on a hierarchical design targeted at federations of clusters.
- It leverages widely used technologies such as XML for data representation,
- XDR for compact, portable data transport, and RRDtool for data storage
- and visualization.
- It uses carefully engineered data structures and algorithms to achieve
- very low per-node overheads and high concurrency.
- The implementation is robust, has been ported to an extensive set of operating
- systems and processor architectures, and is currently in use on thousands
- of clusters around the world.
- It has been used to link clusters across university campuses and around
- the world and can scale to handle clusters with 2000 nodes.
+Ganglia es un sistema de monitoreo, escalable y distribuido, para sistemas
+ de alto desempeño como clusters de computadores o grids.
+ Es un proyecto de código abierto y se encuentra disponible para una amplia
+ cantidad de sistemas: Linux, BSD, Solaris, Windows, Darwin, etc.
+ 
 \end_layout
 
 \begin_layout Standard
-Job Monarch! (https://subtrac.sara.nl/oss/jobmonarch/)
+Utiliza tecnologías apliamente utilizadas: XML para la representación de
+ datos, XDR para la comunicación y RRDtool para el almacenamiento y visualizació
+n de datos.
+ El proyecto posee un amplio enfasis en consumir el mínimo overhead posible
+ por nodo y en brindar un máximo de concurrencia.
+ Posee una implementación robusta y puede manejar hasta clusters con 2000
+ nodos.
 \end_layout
 
 \begin_layout Standard
-Job Monarch is an addon to the Ganglia Monitoring System that provides (batch)
- job monitoring and graphical overview of clusters and assorted batch systems.
- Monarch is an abbreviation for Monitoring and Archiving, as Monarch also
- provides the ability to archive these job (monitoring) statistics so that
- your (batch) cluster users may lookup job information of old (and possibly
- failed) jobs to analyze possible problems.
+Ganglia se encuentra compuesto por tres partes:
+\end_layout
+
+\begin_layout Paragraph
+GMonD
+\end_layout
+
+\begin_layout Standard
+GMonD (Ganglia Monitoring Daemon) es un demonio encargado del monitoreo
+ de un nodo en particular.
+ Debe estar instalado en cada una de las máquinas que se desee monitorear.
+ Este demonio recolecta metricas del sistema en base a CPU, memoria, disco
+ duro, tráfico de red y utiliza un potocolo simple via XDR para compartir
+ esta información mediante XML sobre TCP.
+\end_layout
+
+\begin_layout Paragraph
+GMetaD
+\end_layout
+
+\begin_layout Standard
+El meta demonio de ganglia (Ganglia Meta Daemon) es un servicio que recolecta
+ y almacena información de otros servicions (ya sea servicios GMonD u otros
+ GMetaD).
+ GMetaD provee un mecanismo de consultas muy simple para obtener información
+ historica acerca de grupos de máquinas.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Web
+\end_layout
+
+\begin_layout Standard
+Ganglia brinda además un front-end Web implementado en PHP para la presentación
+ de información almacenada por el sevicion GMetaD al usuario final.
  
 \end_layout
 
 \begin_layout Subsection
-Apache (http://httpd.apache.org/ABOUT_APACHE.html)
+Apache
 \end_layout
 
 \begin_layout Standard
-El servidor HTTP Apache es un software (libre) servidor HTTP de código abierto
- para plataformas Unix (BSD, GNU/Linux, etc.), Windows, etc.
-\end_layout
-
-\begin_layout Standard
-Apache tiene amplia aceptación en la red: desde 1996, Apache, es el servidor
- HTTP más usado.
- Alcanzó su máxima cuota de mercado en 2005 siendo el servidor empleado
- en el 70% de los sitios web en el mundo, sin embargo ha sufrido un descenso
- en su cuota de mercado en los últimos años.
- (Estadísticas históricas y de uso diario proporcionadas por Netcraft[2]
- ).
-\end_layout
-
-\begin_layout Standard
-Apache es el servidor Web mas popular desde 1996, actualmente
+Apache es un servidor HTTP de código abierto para plataformas Unix (BSD,
+ GNU/Linux, etc.), Windows, etc.
+ Desde 1996, Apache es el servidor HTTP más utilizado.
+ Alcanzó su máxima cuota de mercado en 2005 cuando llegó a ser utilizado
+ por el 70% de los sitios web en el mundo.
+ Sin embargo ha sufrido un descenso en su cuota de mercado en los últimos
+ años y hoy en día brinda servicio al 49% de los sitios de internet
 \begin_inset Foot
 status open
 
@@ -900,33 +904,14 @@ Encuesta realizada en Junio del 2008 por Netcraft.com.
 
 \end_inset
 
-brinda servicio al 49.12% de los sitios de Internet y además se encuentra
- disponible para su instalación en cualquier sistema operativo de tipo Unix
- (*nix).
+.
 \end_layout
 
 \begin_layout Standard
-* Modular
-\end_layout
-
-\begin_layout Standard
-* Open source
-\end_layout
-
-\begin_layout Standard
-* Multi-plataforma
-\end_layout
-
-\begin_layout Standard
-* Extensible
-\end_layout
-
-\begin_layout Standard
-* Popular (fácil conseguir ayuda/soporte)
-\end_layout
-
-\begin_layout Standard
-* Gratuito 
+Entre las ventajas que brinda Apache podemos destacar: su enfoque altamente
+ modular, y un excelente soporte gracias a la gran cantidad de usuarios.
+ Gracias a su enfoque altamente modular Apache soporta una gran cantidad
+ de lenguajes server-side como: PHP, Python, Ruby, Perl, etc., etc.
 \end_layout
 
 \begin_layout Subsection
@@ -934,95 +919,46 @@ PHP
 \end_layout
 
 \begin_layout Standard
-PHP es un acrónimo recursivo que significa PHP Hypertext Pre-processor (inicialm
-ente PHP Tools, o, Personal Home Page Tools).
- Fue creado originalmente por Rasmus Lerdof en 1994; sin embargo la implementaci
-ón principal de PHP es producida ahora por The PHP Group y sirve como el
- estándar de facto para PHP al no haber una especificación formal.
- Publicado bajo la PHP License, la Free Software Foundation considera esta
- licencia como software libre.
+PHP es un acrónimo recursivo que significa PHP Hypertext Pre-processor (aunque
+ inicialmente significó Personal Home Page).
+ Fue creado por Rasmus Lerdof en 1994; sin embargo la implementación principal
+ de PHP es producida ahora por The PHP Group y sirve como el estándar de
+ facto para PHP al no haber una especificación formal.
+ Publicado bajo la PHP License, la FSF considera esta licencia como software
+ libre.
 \end_layout
 
 \begin_layout Standard
 PHP es un lenguaje intepretado de proposito general muy popular debido a
  la rapidez y facilidad con la que permite desarrollar aplicaciones.
+ Fué diseñado originalmente para la creación de páginas Web dinámicas pero
+ actualmente puede ser utilizado desde una interfaz de línea de comandos
+ o desde una interfaz gráfica usando las bibliotecas Qt o GTK+.
  Cuenta con una comunidad de usuarios muy amplia y se encuentra disponible
- para su instalación en la mayoría de los servidores web en casi cualquier
+ para su instalación en la mayoría de los servidores Web en casi cualquier
  plataforma.
- 
-\end_layout
-
-\begin_layout Standard
-PHP es un lenguaje de programación interpretado, diseñado originalmente
- para la creación de páginas web dinámicas.
- Es usado principalmente en interpretación del lado del servidor (server-side
- scripting) pero actualmente puede ser utilizado desde una interfaz de línea
- de comandos o en la creación de otros tipos de programas incluyendo aplicacione
-s con interfaz gráfica usando las bibliotecas Qt o GTK+.
-\end_layout
-
-\begin_layout Standard
-PHP se encuentra instalado en más de 20 millones de sitios web y en un millón
+ Se encuentra instalado en más de 20 millones de sitios Web y en un millón
  de servidores, aunque el número de sitios en PHP ha declinado desde agosto
  de 2005.
 \end_layout
 
 \begin_layout Standard
-* Es un lenguaje multiplataforma.
- 
+Algunos de los puntos a destacar de PHP son: su facilidad de uso, su amplia
+ documentación que incluye muchos ejemplos prácticos, soporta el paradigma
+ de programación de orientación a objetos y posee manejo de excepciones
+ (aunque muchas de estas ventajas han aparecido recientemente en las últimas
+ versiónes de PHP).
 \end_layout
 
 \begin_layout Standard
-* Capacidad de conexión con la mayoría de los manejadores de base de datos
- que se utilizan en la actualidad, destaca su conectividad con MySQL 
-\end_layout
-
-\begin_layout Standard
-* Capacidad de expandir su potencial utilizando la enorme cantidad de módulos
- (llamados ext's o extensiones).
- 
-\end_layout
-
-\begin_layout Standard
-* Posee una amplia documentación en su página oficial ([2]), entre la cual
- se destaca que todas las funciones del sistema están explicadas y ejemplificada
-s en un único archivo de ayuda.
- 
-\end_layout
-
-\begin_layout Standard
-* Es libre, por lo que se presenta como una alternativa de fácil acceso
- para todos.
- 
-\end_layout
-
-\begin_layout Standard
-* Permite las técnicas de Programación Orientada a Objetos.
- 
-\end_layout
-
-\begin_layout Standard
-* Biblioteca nativa de funciones sumamente amplia e incluida.
- 
-\end_layout
-
-\begin_layout Standard
-* No requiere definición de tipos de variables.
- 
-\end_layout
-
-\begin_layout Standard
-* Tiene manejo de excepciones (desde php5).
- 
-\end_layout
-
-\begin_layout Standard
-Desventajas
-\end_layout
-
-\begin_layout Standard
-Por sus características favorece la creación de código desordenado y complejo
- de mantener.
+Como mayor desventaja se presenta generalmente su caracteríastica de favorecer
+ la creación de código desordenado y complejo de mantener.
+ Esto tiene dos fundamentaciones, por un lado se debe a que PHP brinda tantas
+ facilidades en su uso que es muy popular entre usuarios programadores con
+ poca formación técnica.
+ Por otro lado la falta de una especificación formal, resulta en algunos
+ casos en una definición un poco dispar de las bibliotecas proporcionadas
+ por el lenguaje.
 \end_layout
 
 \begin_layout Subsection
@@ -1030,24 +966,26 @@ PostgreSQL
 \end_layout
 
 \begin_layout Standard
-PostgreSQL es un servidor de base de datos relacional orientada a objetos
- de software libre, liberado bajo la licencia BSD.
- Como muchos otros proyectos open source, el desarrollo de PostgreSQL no
- es manejado por una sola compañía sino que es dirigido por una comunidad
- de desarrolladores y organizaciones comerciales las cuales trabajan en
- su desarrollo.
- Dicha comunidad es denominada el PGDG (PostgreSQL Global Development Group).
+PostgreSQL es un servidor de base de datos relacional.
+ Se trata de un proyecto open source liberado bajo la licencia BSD y como
+ muchos proyectos open source, el desarrollo de PostgreSQL no es manejado
+ por una sola compañía sino que es dirigido por una comunidad de desarrolladores
+ y organizaciones comerciales.
+ Dicha comunidad es denominada PGDG (PostgreSQL Global Development Group).
 \end_layout
 
 \begin_layout Standard
-PostgreSQL ha tenido una larga evolución, comenzando con el proyecto Ingres
- en la Universidad de Berkeley.
+PostgreSQL comenzó con el proyecto Ingres en la Universidad de Berkeley.
  Este proyecto, liderado por Michael Stonebraker, fue uno de los primeros
- intentos en implementar un motor de base de datos relacional.
+ intentos de implementar un motor de base de datos relacional.
  Después de haber trabajado un largo tiempo en Ingres y de haber tenido
  una experiencia comercial con el mismo, Michael decidió volver a la Universidad
  para trabajar en un nuevo proyecto sobre la experiencia de Ingres, dicho
- proyecto fue llamado post-ingres o simplemente POSTGRES.
+ proyecto fue llamado Post-Ingres o simplemente Postgres.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
@@ -1106,6 +1044,27 @@ La licencia GNU GPL de MySQL obliga a que la distribución de cualquier producto
  Si un desarrollador desea incorporar MySQL en su producto pero desea distribuir
 lo bajo otra licencia que no sea la GNU GPL, puede adquirir una licencia
  comercial de MySQL que le permite hacer justamente eso.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Referencias 
+\end_layout
+
+\begin_layout Standard
+http://httpd.apache.org/ 
+\end_layout
+
+\begin_layout Standard
+http://ganglia.info/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
