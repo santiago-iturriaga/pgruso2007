@@ -129,11 +129,8 @@ Esta técnica proporciona ventajas como mayor capacidad de proceso, menor
 
 \begin_layout Standard
 Podemos hacer una división de las aplicaciones que requieren una demanda
- de recursos computacionales importantes de la siguiente manera.
-\end_layout
-
-\begin_layout Standard
-En primer lugar tenemos las aplicaciones de cálculo intensivas, estas son
+ de recursos computacionales importantes.
+ En primer lugar tenemos las aplicaciones de cálculo intensivas, estas son
  aplicaciones que requieren un alto número de ciclos de máquina y han impulsado
  el desarrollo de supercomputadores.
  Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
@@ -153,7 +150,7 @@ ento masivo.
  información y requieren de un acceso rápido y seguro a una masa considerable
  de datos almacenados.
  Algunas de ellas son las aplicaciones para análisis de data sísmica, procesamie
-nto de imágenes, minería de datos, análisis estadístico de datos, análisis
+nto de imágenes, minería de datos, análisis estadístico de datos y análisis
  de mercados.
 \end_layout
 
@@ -214,14 +211,13 @@ Diámetro: viene dado por la mayor distancia entre dos nodos.
 Ancho de bisección de la red: es el menor número de enlaces que deben ser
  removidos para dividir la red por la mitad.
  Un ancho de bisección alto puede reducir el tiempo de comunicación cuando
- el movimiento de datos es sustancial, y un ancho de bisección alto hace
- el sistema más tolerante a fallas debido a que defectos en un nodo no hacen
- inoperable a todo el sistema.
+ el movimiento de datos es sustancial, y hace al sistema más tolerante a
+ fallas debido a que defectos en un nodo no hacen inoperable a todo el sistema.
 \end_layout
 
 \begin_layout Standard
 Redes estáticas y dinámicas: en las redes estáticas la topología de interconexió
-n se define cuando se construye la máquina.
+n se define cuando se construye.
  Si la red es dinámica, la interconexión puede variar durante la ejecución
  de un programa o entre la ejecución de programas.
 \end_layout
@@ -952,7 +948,7 @@ Multicomputadores
 \begin_layout Standard
 En esta categoría, los procesadores no comparten memoria.
  Cada procesador tiene su propia memoria privada (máquinas de memoria distribuid
-a) y la interacción entre ellos es a través de pase de mensajes.
+a) y la interacción entre ellos es a través de pasaje de mensajes.
  Ejemplos son: Intel ParagonXP/S, Meikos Computing Surface, nCUBE 2, Parsytec
  SuperCluster, Thinking Machine CM-5 y la IBM SP2.
 \end_layout
@@ -998,7 +994,7 @@ La Tera MTA (multithreaded architecture) es la primera de estas máquinas,
 \end_layout
 
 \begin_layout Standard
-Cada instrucción de 64-bits codifican 3 operaciones (una de memoria y dos
+Cada instrucción de 64-bits codifica 3 operaciones (una de memoria y dos
  que pueden ser aritméticas o de control).
  Cuenta con un sistema operativo de versión distribuida completamente simétrica
  de UNIX.
