@@ -164,18 +164,14 @@ En lo que tiene que ver con la monitorización del sistema se decidio utilizar
 \end_layout
 
 \begin_layout Standard
-Todas las caracteristicas de estas herramientas las podemos ver en la sección
- de relevamiento de tecnologías de este documento.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Poner referencia a Torque en la seccion de tecnologias
-\end_layout
+Todas las caracteristicas de estas herramientas las podemos ver con más
+ detalle en la sección 
+\begin_inset LatexCommand vref
+reference "sec:Relevamiento-de-tecnologías"
 
 \end_inset
 
-
+ de este documento.
 \end_layout
 
 \begin_layout Subsection
@@ -270,10 +266,28 @@ La apariencia del sitio también podía variar durante la implementación,
  resto desde las plantillas en formato .html.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
 \begin_inset Graphics
 	filename diagrama.gif
 	scale 25
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
