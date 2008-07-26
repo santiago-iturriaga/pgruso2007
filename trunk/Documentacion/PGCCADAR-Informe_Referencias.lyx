@@ -41,7 +41,7 @@
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-1"
+key "RAIM04"
 
 \end_inset
 
@@ -56,7 +56,7 @@ B.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-2"
+key "IMRADO04"
 
 \end_inset
 
@@ -72,7 +72,7 @@ E.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-3"
+key "MAUI"
 
 \end_inset
 
@@ -89,11 +89,11 @@ target "http://www.clusterresources.com/products/maui/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-4"
+key "TORQUE"
 
 \end_inset
 
-Torque Resource Manager, Cluster Resources.
+TORQUE Resource Manager, Cluster Resources.
  
 \begin_inset LatexCommand url
 target "http://www.clusterresources.com/products/torque/"
@@ -106,7 +106,7 @@ target "http://www.clusterresources.com/products/torque/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-5"
+key "GRLUST03"
 
 \end_inset
 
@@ -117,7 +117,7 @@ William Gropp, Ewing Lusk and Thomas Sterling.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-1"
+key "SLOAN04"
 
 \end_inset
 
@@ -129,7 +129,7 @@ Joseph D.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-6"
+key "MIBO05"
 
 \end_inset
 
@@ -142,7 +142,7 @@ M.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-8"
+key "DCSC"
 
 \end_inset
 
@@ -158,7 +158,7 @@ target "http://www.dcsc.sdu.dk/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-9"
+key "SUBYSB"
 
 \end_inset
 
@@ -174,7 +174,7 @@ target "http://www.sunysb.edu/seawulfcluster/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-10"
+key "HELICS"
 
 \end_inset
 
@@ -190,7 +190,7 @@ target "http://helics.uni-hd.de/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-11"
+key "GLA"
 
 \end_inset
 
@@ -206,7 +206,7 @@ target "http://www.gla.ac.uk/services/it/whatwedo/computecluster/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-12"
+key "OREGON"
 
 \end_inset
 
@@ -222,7 +222,7 @@ target "http://physics.oregonstate.edu/~elserj/support/cluster_use.php"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-13"
+key "DRMAA"
 
 \end_inset
 
@@ -233,12 +233,12 @@ target "http://www.drmaa.net"
 \end_inset
 
 .
- Consultado Junio 2008.
+ Consultado Junio 2007.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-14"
+key "NES04"
 
 \end_inset
 
@@ -258,7 +258,7 @@ target "http://www.fing.edu.uy/~sergion/Tesis.pdf"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-15"
+key "EZZ06"
 
 \end_inset
 
@@ -276,7 +276,7 @@ target "http://www.fing.edu.uy/inco/grupos/cecal/hpc/mej_des/tesis.pdf"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-16"
+key "PEMORO06"
 
 \end_inset
 
@@ -294,7 +294,7 @@ target "http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-17"
+key "NES03"
 
 \end_inset
 
@@ -315,7 +315,7 @@ target "http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-18"
+key "BAFEPE03"
 
 \end_inset
 
@@ -332,7 +332,7 @@ target "http://www.fing.edu.uy/~sergion/mpinet/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-19"
+key "DOMU03"
 
 \end_inset
 
@@ -349,7 +349,7 @@ target "http://www.fing.edu.uy/~sergion/agi/"
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-20"
+key "BAHI92"
 
 \end_inset
 
@@ -361,7 +361,7 @@ Baron, R.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-21"
+key "BALSI90"
 
 \end_inset
 
@@ -372,7 +372,7 @@ De Balsi, M.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-23"
+key "FOSTER95"
 
 \end_inset
 
@@ -384,7 +384,7 @@ Foster I.
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-3"
+key "APACHE"
 
 \end_inset
 
@@ -395,12 +395,12 @@ target "http://httpd.apache.org/"
 \end_inset
 
 .
- Consultado Junio 2008.
+ Consultado Junio 2007.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-1"
+key "GANGLIA"
 
 \end_inset
 
@@ -411,32 +411,44 @@ target "http://ganglia.info/"
 \end_inset
 
 .
- Consultado Junio 2008.
+ Consultado Junio 2007.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-2"
+key "POSTGRES"
 
 \end_inset
 
-http://www.postgresql.org/.
- Consultado Junio 2008.
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset LatexCommand bibitem
-key "key-3"
+PostgreSQL, 
+\begin_inset LatexCommand url
+target "http://www.postgresql.org/"
 
 \end_inset
 
-http://www.mysql.com/.
- Consultado Junio 2008.
+.
+ Consultado Julio 2007.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-4"
+key "MYSQL"
+
+\end_inset
+
+MySQL, 
+\begin_inset LatexCommand url
+target "http://www.mysql.com/"
+
+\end_inset
+
+.
+ Consultado Julio 2007.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "PHP"
 
 \end_inset
 
@@ -447,12 +459,12 @@ target "http://www.php.net/"
 \end_inset
 
 .
- Consultado Junio 2008.
+ Consultado Julio 2007.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-5"
+key "JOBMONARCH"
 
 \end_inset
 
@@ -463,12 +475,12 @@ target "https://subtrac.sara.nl/oss/jobmonarch/"
 \end_inset
 
 .
- Consultado Setiembre 2008.
+ Consultado Setiembre 2007.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
-key "key-6"
+key "PBS_PYTHON"
 
 \end_inset
 
@@ -479,7 +491,7 @@ target "https://subtrac.sara.nl/oss/pbs_python/"
 \end_inset
 
 .
- Consultado Setiembre 2008.
+ Consultado Setiembre 2007.
 \end_layout
 
 \end_body
