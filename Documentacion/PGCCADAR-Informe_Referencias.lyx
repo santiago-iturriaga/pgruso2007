@@ -200,7 +200,8 @@ target "http://www.gla.ac.uk/services/it/whatwedo/computecluster/"
 
 \end_inset
 
-.Consultado Febrero 2008.
+.
+ Consultado Febrero 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -387,37 +388,98 @@ key "key-3"
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Referencias 
-\end_layout
-
-\begin_layout Standard
-http://httpd.apache.org/ 
-\end_layout
-
-\begin_layout Standard
-http://ganglia.info/
-\end_layout
-
-\begin_layout Standard
-http://www.postgresql.org/
-\end_layout
-
-\begin_layout Standard
-http://www.mysql.com/
-\end_layout
-
-\begin_layout Standard
-http://www.php.net/
-\end_layout
+Servidor HTTP Apache, 
+\begin_inset LatexCommand url
+target "http://httpd.apache.org/"
 
 \end_inset
 
+.
+ Consultado Junio 2008.
+\end_layout
 
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Sistema de monitoreo Ganglia, 
+\begin_inset LatexCommand url
+target "http://ganglia.info/"
+
+\end_inset
+
+.
+ Consultado Junio 2008.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+http://www.postgresql.org/.
+ Consultado Junio 2008.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+http://www.mysql.com/.
+ Consultado Junio 2008.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+Lenguaje PHP, 
+\begin_inset LatexCommand url
+target "http://www.php.net/"
+
+\end_inset
+
+.
+ Consultado Junio 2008.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+Job Monarch, 
+\begin_inset LatexCommand url
+target "https://subtrac.sara.nl/oss/jobmonarch/"
+
+\end_inset
+
+.
+ Consultado Setiembre 2008.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+Biblioteca pbs_python, 
+\begin_inset LatexCommand url
+target "https://subtrac.sara.nl/oss/pbs_python/"
+
+\end_inset
+
+.
+ Consultado Setiembre 2008.
 \end_layout
 
 \end_body

@@ -78,51 +78,23 @@ Mejorar los reportes para los usuarios administradores para el análisis
  y Maui.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Paragraph
-pbs_python
+\begin_layout Itemize
+Incorporar el uso de un addon de Ganglia llamado Job Monach.
+ Este addon permite a Ganglia comunicarse con TORQUE y recopilar información
+ sobre nodos, trabajos y colas de ejecución disponibles.
+ Ganglia genera gráficas y mantiene un historial con la información recopilada
+ de TORQUE al igual que con el resto de las métricas que maneja.
 \end_layout
 
-\begin_layout Standard
-The pbs_python package is a wrapper class for the Torque C library.
- With this package you now can write utilities/extensions in Python instead
- of C.
- 
-\end_layout
-
-\begin_layout Standard
-https://subtrac.sara.nl/oss/pbs_python
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Paragraph
-Job Monarch! (https://subtrac.sara.nl/oss/jobmonarch/)
-\end_layout
-
-\begin_layout Standard
-Job Monarch is an addon to the Ganglia Monitoring System that provides (batch)
- job monitoring and graphical overview of clusters and assorted batch systems.
- Monarch is an abbreviation for Monitoring and Archiving, as Monarch also
- provides the ability to archive these job (monitoring) statistics so that
- your (batch) cluster users may lookup job information of old (and possibly
- failed) jobs to analyze possible problems.
- 
-\end_layout
-
-\end_inset
-
-
+\begin_layout Itemize
+Modificar la comunicación entre el sistema Fenton y TORQUE para utilizar
+ la API DRMAA.
+ TORQUE brinda una implementación en lenguaje C del estándar DRMAA disponible
+ para el usuario programador.
+ Si bien esta es una posibilidad, otra opción más accesible podría ser la
+ utilización de la biblioteca pbs_python.
+ Esta biblioteca encapsula la biblioteca implementada en C de TORQUE y permite
+ una comunicación más simple con TORQUE utilizando Python.
 \end_layout
 
 \end_body
