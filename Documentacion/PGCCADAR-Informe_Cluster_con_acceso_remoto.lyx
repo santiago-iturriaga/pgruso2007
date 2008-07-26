@@ -48,7 +48,7 @@ La construcción de un cluster con acceso remoto es el principal objetivo
  del proyecto.
  En esta sección describiremos la solución propuesta por el equipo para
  cumplir con tal objetivo.
- Se describiran las tecnologías elegidas para la implementación del DRM
+ Se describirán las tecnologías elegidas para la implementación del DRM
  y para el despacho de trabajos, resultado de la etapa de relevamiento de
  tecnologías (en la sección 
 \begin_inset LatexCommand vref
@@ -58,7 +58,7 @@ reference "sec:Relevamiento-de-tecnologías"
 
 ).
  Detallaremos la construcción de la interfaz para acceso remoto al cluster.
- Ademas se mencionaran las herramientas utilizadas para el desarrollo y
+ Además se mencionaran las herramientas utilizadas para el desarrollo y
  documentación a lo largo del proyecto.
  Algo relevante de mencionar es que durante todo el proceso de desarrollo
  del sistema se  utilizaron exclusivamente herramientas de código libre
@@ -67,9 +67,9 @@ reference "sec:Relevamiento-de-tecnologías"
 \end_layout
 
 \begin_layout Standard
-Una ves terminada la etapa de relevamiento de tecnologías y comensada la
- etapa de puesta en dessarrollo y prueba de estas nos encontramos con la
- pregutna de como denominar al sistema que ibamos a construir, por tal motivo
+Una vez terminada la etapa de relevamiento de tecnologías y comenzada la
+ etapa de puesta en desarrollo y prueba de estas nos encontramos con la
+ pregunta de cómo denominar al sistema que íbamos a construir, por tal motivo
  llamamos a todo el sistema Fenton.
  
 \end_layout
@@ -82,8 +82,8 @@ DRM y despachador de trabajos
 En esta sección se presentan y justifican las tecnologías seleccionadas
  para la implementación del DRM y despachador de trabajos del cluster Fenton.
  Creemos que en la implementación de estos radica el mayor riesgo para el
- proyecto por lo que la etapa de relavamientos de tecnologías fue una de
- las mas importantes del proyecto.
+ proyecto por lo que la etapa de relevamientos de tecnologías fue una de
+ las más importantes del proyecto.
 \end_layout
 
 \begin_layout Standard
@@ -95,8 +95,9 @@ r herramientas con un buen rendimiento y estabilidad que nos brindarán una
 
 \begin_layout Standard
 Luego de evaluar diversas tecnologías actuales para la implementación de
- cluster optamos por utilizar TORQUE como DRM y Maui como despachador, dejando
- abierta la posibilidad de anexar Gold para la contabilización de recursos.
+ clusters optamos por utilizar TORQUE como DRM y Maui como despachador,
+ dejando abierta la posibilidad de anexar Gold para la contabilización de
+ recursos.
  Existen varios casos de estudio (en la sección 
 \begin_inset LatexCommand vref
 reference "sub:Torque-Casos-de-estudio"
@@ -137,12 +138,12 @@ Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
 \begin_layout Standard
 Como se menciona en la sección de relevamiento de tecnologías TORQUE contiene
  la lógica necesaria para llevar a cabo la planificación de trabajos.
- Dado que esta logica es muy basica y algo importante que se debia tener
- en cuenta era la posibilidad de seleccionar diferentes y mas complejos
- algoritmos de despacho se decidio utilizar Maui.
- Maui presenta un algoritmo de planificacion con diversas caracteristicas
+ Dado que esta lógica es muy básica, y algo importante que se debía tener
+ en cuenta era la posibilidad de seleccionar diferentes y más complejos
+ algoritmos de despacho se decidió utilizar Maui.
+ Maui presenta un algoritmo de planificación con diversas características
  y configuraciones que nos permiten mejorar la performance del cluster,
- asi como la posibilidad de seleccionar algún otro algoritmo de planificacón.
+ así como la posibilidad de seleccionar algún otro algoritmo de planificación.
 \end_layout
 
 \begin_layout Standard
@@ -150,21 +151,21 @@ Inicialmente estaba la intención de utilizar la herramienta Gold para llevar
  registro y manejar el uso de recursos en clusters y así potenciar TORQUE
  en este sentido.
  Por motivos de tiempos del proyecto esto se descarto del alcance del proyecto
- pero mantenemos y recomendamos la utilización de Gold para trabajos previos
+ pero mantenemos y recomendamos la utilización de Gold para trabajos a futuro
  sobre el cluster.
 \end_layout
 
 \begin_layout Standard
-En lo que tiene que ver con la monitorización del sistema se decidio utilizar
+En lo que tiene que ver con la monitorización del sistema se decidió utilizar
  la herramienta Ganglia.
  Ganglia era utilizada ya como herramienta de monitorización por el CeCal
- en el cluster y luego una evaluación de sus funcionalidades se opto por
- utilizar las mismas para las funcionalidades de reportes y estadisticas
- del acceso remoto.
+ en el cluster y luego de una evaluación de sus funcionalidades se opto
+ por utilizar las mismas para las funcionalidades de reportes y estadísticas
+ del acceso remoto al cluster.
 \end_layout
 
 \begin_layout Standard
-Todas las caracteristicas de estas herramientas las podemos ver con más
+Todas las características de estas herramientas las podemos ver con más
  detalle en la sección 
 \begin_inset LatexCommand vref
 reference "sec:Relevamiento-de-tecnologías"
@@ -175,14 +176,14 @@ reference "sec:Relevamiento-de-tecnologías"
 \end_layout
 
 \begin_layout Subsection
-Dessarrollo de la interfaz de acceso remoto
+Desarrollo de la interfaz de acceso remoto
 \end_layout
 
 \begin_layout Standard
-Hasta aqui las herramientas para construir la base del cluster, ahora nos
+Hasta aquí las herramientas para construir la base del cluster, ahora nos
  enfocaremos en el componente de acceso remoto al sistema Fenton.
  Un requerimiento importante es brindar una interfaz de usuario simple y
- de facil acceso para usuarios no especializados, por esta razón y para
+ de fácil acceso para usuarios no especializados, por esta razón y para
  evitar problemas con la posible heterogeneidad de los sistemas de los clientes
  decidimos brindar una interfaz de usuario Web para el acceso remoto al
  cluster.
@@ -193,44 +194,25 @@ Para el desarrollo del componente de acceso Web fue necesaria la definición
  de varias herramientas: un servidor Web para alojar nuestra aplicación,
  un lenguaje server-side para implementar la lógica y una base de datos.
  Utilizar TORQUE y Maui para la implementación del cluster nos condiciona
- a trabajar sobre un sistema operativo Linux o Unix-BSD, por esta razón
- decidimos utilizar Apache como servidor Web.
- 
-\end_layout
-
-\begin_layout Standard
-Apache es el servidor Web mas popular desde 1996, actualmente
-\begin_inset Foot
-status open
-
-\begin_layout Standard
-Encuesta realizada en Junio del 2008 por Netcraft.com.
- Netcraft fue fundada en 1995 y se especializa en el analisis de mercado
- de servidores y alojamiento web incluyendo detección de servidor web y
- sistema operativo
-\end_layout
-
-\end_inset
-
-brinda servicio al 49.12% de los sitios de Internet y además se encuentra
- disponible para su instalación en cualquier sistema operativo de tipo Unix
- (*nix).
+ a trabajar sobre un sistema operativo Linux o Unix-BSD.
+ Por esta razón y por las características del mismo se decidió utilizar
+ Apache como servidor Web de la interfaz.
+ Apache es un excelente servidor web con muy buen soporte para una gran
+ variedad de lenguajes.
 \end_layout
 
 \begin_layout Standard
 Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
  así como la curva de aprendizaje de los diferentes lenguajes para desarrollar
- aplicaciones web, decidimos utilizar PHP como lenguaje de implenentación
- y Eclipse como IDE.
+ aplicaciones web, decidimos utilizar PHP como lenguaje de implementación.
+ Además Apache tiene un buen soporte para PHP.
  
 \end_layout
 
 \begin_layout Standard
-PHP es un lenguaje intepretado de proposito general muy popular debido a
- la rapidez y facilidad con la que permite desarrollar aplicaciones.
- Cuenta con una comunidad de usuarios muy amplia y se encuentra disponible
- para su instalación en la mayoría de los servidores web en casi cualquier
- plataforma.
+Algo extra a mencionar es que se utilizó en el desarrollo de la interfaz
+ al IDE Eclipse.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -242,7 +224,7 @@ Para el almacenamiento de datos se consideraron dos motores de base de datos
  maduro, con buena integración con PHP y un muy buen soporte por parte de
  la comunidad.
  Si bien no es tan amigable ni tan popular como MySQL cuenta con una licencia
- de tipo BSD (Berkeley Software Distribution) mucho mas flexible y permisiva
+ de tipo BSD (Berkeley Software Distribution) mucho más flexible y permisiva
  que la licencia utilizada por MySQL.
 \end_layout
 
@@ -312,13 +294,13 @@ La aplicación permite un manejo de usuarios con perfiles diferenciados.
 \begin_layout Standard
 La interfaz de usuario varía notablemente según el perfil, si bien ambos
  usuarios tienen cierto conocimiento sobre el uso de aplicaciones, el cliente
- final no tiene por que estar interiorizado con el funcionamiento del cluster,
+ final no tiene por qué estar interiorizado con el funcionamiento del cluster,
  por lo tanto se le presenta el sistema como un todo.
  
 \end_layout
 
 \begin_layout Standard
-Por otro lado el usuario administrador podrá desde su propia interfaz adminsitra
+Por otro lado el usuario administrador podrá desde su propia interfaz administra
 r los recursos del cluster, conocer el estado de los nodos del cluster e
  interactuar con ellos para solucionar posibles problemas o mejorar su performan
 ce.
@@ -352,9 +334,9 @@ El usuario final tendrá la posibilidad de subir su proyecto al cluster,
 \end_layout
 
 \begin_layout Standard
-Los usuarios adminsitradores cuentan con un conjunto de reportes estadisticos
+Los usuarios administradores cuentan con un conjunto de reportes estadísticos
  sobre los recursos del cluster como ser el porcentaje total de carga de
- CPU y memoria, se podra verificar los tiempos de procesamiento de usuario
+ CPU y memoria, se podrá verificar los tiempos de procesamiento de usuario
  y por proceso.
  Estos reportes brindan una gran ayuda en las tareas de administración de
  cluster.
@@ -362,30 +344,30 @@ Los usuarios adminsitradores cuentan con un conjunto de reportes estadisticos
 \end_layout
 
 \begin_layout Standard
-La generación de los reportes estadistco se realiza con información brindada
+La generación de los reportes estadísticos se realiza con información brindada
  por Torque, Maui y Ganglia; y es posible detallar la la información por
  nodo del cluster, usuario y proceso.
 \end_layout
 
 \begin_layout Standard
-Por ultimo se definio un mecanismo de alertas a los usuarios.
- Este permite enviar alertas a los diferentes usarios del sistema, como
- ser inicio y finalización de trabajos, exesos de recursos del cluster,etc.
- Este mecanisnmo es totalmente extensible en cuanto a las definiciones de
+Por último se definió un mecanismo de alertas a los usuarios.
+ Este permite enviar alertas a los diferentes usuarios del sistema, como
+ ser inicio y finalización de trabajos, excesos de recursos del cluster,etc.
+ Este mecanismo es totalmente extensible en cuanto a las definiciones de
  alertas y es soportado por funcionalidades de TORQUE y la base de datos.
  Los usuarios pueden observar las alertas en la interfaz web que le fueron
- enviadas por Fenton y esta habierta la posibilidad de enviarselas por mail
+ enviadas por Fenton y esta abierta la posibilidad de enviárselas por mail
  si se define un servidor SMTP.
 \end_layout
 
 \begin_layout Subsection
-Otras heramientas
+Otras herramientas
 \end_layout
 
 \begin_layout Standard
-En el transcurso del proyecto se necesito de otras hermainetas para algunos
+En el transcurso del proyecto se necesito de otras herramientas para algunos
  tipos de tareas.
- Fué necesario contar con una herramienta colaborativa que nos permitiera
+ Fue necesario contar con una herramienta colaborativa que nos permitiera
  compartir y versionar tanto el código como los documentos.
  Para esto decidimos utilizar Google Code, un servicio de Google que provee
  un servicio de alojamiento de proyectos.
@@ -420,7 +402,7 @@ Testeo de la solución
 Una de las actividades de este proyecto fue el testeo de las tecnologías
  propuestas y el testeo de la interfaz web desarrollada.
  Los objetivos de esta etapa son la verificación y validación de los requerimien
-tos funcionales establecidos en etapas mas tempranas y que fueran objetivos
+tos funcionales establecidos en etapas más tempranas y que fueran objetivos
  del proyecto.
 \end_layout
 
@@ -443,7 +425,7 @@ El test exploratorio es un proceso simultáneo de exploración y aprendizaje
 \end_layout
 
 \begin_layout Standard
-Durante el test exploratorio se generaron un serie de casos de test ques
+Durante el test exploratorio se generaron una serie de casos de test que
  apuntan a cubrir los requerimientos funcionales principales del sistema.
  Estos casos de test se incluyeron en la Guía de Test (ver página 
 \begin_inset LatexCommand pageref
