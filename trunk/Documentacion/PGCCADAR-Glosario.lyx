@@ -183,19 +183,7 @@ sistema operativo tipo unix (http://en.wikipedia.org/wiki/Unix-like) (*nix)
 \end_layout
 
 \begin_layout Standard
-lenguaje server-side (http://en.wikipedia.org/wiki/Server-side_scripting)
-\end_layout
 
-\begin_layout Standard
-BSD (Berkeley Software Distribution)Subversion http://subversion.tigris.org/
-\end_layout
-
-\begin_layout Standard
-WYSIWYM
-\end_layout
-
-\begin_layout Standard
-LaTeX
 \end_layout
 
 \end_inset
@@ -237,14 +225,6 @@ Caracteristica de maui que implica dar igual acceso a los recursos a todos
 \end_layout
 
 \begin_layout Paragraph
-Fork.
-\end_layout
-
-\begin_layout Standard
-(de un proyecto) ??
-\end_layout
-
-\begin_layout Paragraph
 Migración de procesos.
 \end_layout
 
@@ -252,14 +232,6 @@ Migración de procesos.
 Para un conjunto de servidores integrados, la migración de procesos es la
  posibilidad de tomar un proceso que se estaba ejecutando en un servidor
  y continuar su ejecución en otro.
-\end_layout
-
-\begin_layout Paragraph
-Milestone
-\end_layout
-
-\begin_layout Standard
-??
 \end_layout
 
 \begin_layout Paragraph
@@ -309,7 +281,9 @@ Cluster de computadores
 \end_layout
 
 \begin_layout Standard
-??
+El término cluster se aplica a los conjuntos de computadoras unidos mediante
+ una red de alta velocidad que se comportan como si fuesen una sola con
+ mayor poder de cómputo.
 \end_layout
 
 \begin_layout Paragraph
@@ -317,7 +291,7 @@ Grid
 \end_layout
 
 \begin_layout Standard
-??
+Se refiere a una arquitectura de clusters.
 \end_layout
 
 \begin_layout Paragraph
@@ -325,7 +299,7 @@ Overhead
 \end_layout
 
 \begin_layout Standard
-??
+Demanda extra de recursos que afectan la performance.
 \end_layout
 
 \begin_layout Paragraph
@@ -333,7 +307,9 @@ Demonio
 \end_layout
 
 \begin_layout Standard
-??
+Servicio que ejecuta aplicaciones con el fin de trabajar en determinadas
+ tareas.
+ Usado especialmente en UNIX.
 \end_layout
 
 \begin_layout Paragraph
@@ -341,7 +317,8 @@ XDR
 \end_layout
 
 \begin_layout Standard
-??
+(eXternal Data Representation) es un protocolo de presentación de datos,
+ según el Modelo OSI.
 \end_layout
 
 \begin_layout Paragraph
@@ -349,7 +326,9 @@ XML
 \end_layout
 
 \begin_layout Standard
-??
+Extensible Markup Language.
+ Es un metalenguaje extensible de etiquetas desarrollado por el World Wide
+ Web Consortium (W3C).
 \end_layout
 
 \begin_layout Paragraph
@@ -357,15 +336,38 @@ FSF
 \end_layout
 
 \begin_layout Standard
-??
+Free Software Foundation.
+ Entidad cuya finalidad es eliminar las restricciones de uso, programación
+ o copia del software.
 \end_layout
 
 \begin_layout Paragraph
-Server-side
+LaTeX
 \end_layout
 
 \begin_layout Standard
-??
+es un lenguaje de marcado para documentos, y un sistema de preparación de
+ documentos, formado por un gran conjunto de macros de TeX.
+\end_layout
+
+\begin_layout Paragraph
+TeX
+\end_layout
+
+\begin_layout Standard
+Es un sistema de tipografía escrito por Donald E.
+ Knuth, muy popular en el ambiente académico, especialmente entre las comunidade
+s de matemáticos, físicos e informáticos.
+\end_layout
+
+\begin_layout Paragraph
+Lenguaje server-side
+\end_layout
+
+\begin_layout Standard
+Es una tecnología de servidor web en la que un usuario hace una solicitud
+ que ejecuta un script directamente en el servidor web para generar páginas
+ HTML dinámico.
 \end_layout
 
 \begin_layout Section
@@ -373,7 +375,19 @@ Abreviaturas
 \end_layout
 
 \begin_layout Paragraph
+BSD
+\end_layout
+
+\begin_layout Standard
+Berkeley Software Distribution.
+\end_layout
+
+\begin_layout Paragraph
 CeCal
+\end_layout
+
+\begin_layout Standard
+Grupo CeCal - Instituto de Computación - Facultad de ingeniería - UDELAR.
 \end_layout
 
 \begin_layout Paragraph
@@ -436,6 +450,11 @@ Integrated Development Environment (entorno de desarrollo integrado).
 IMFIA
 \end_layout
 
+\begin_layout Standard
+Instituto de Mecánica de los Fluidos e Ingeniería Ambiental - Facultad de
+ ingeniería - UDELAR.
+\end_layout
+
 \begin_layout Paragraph
 InCo
 \end_layout
@@ -464,12 +483,10 @@ Open source software (software de código abierto).
 PBS
 \end_layout
 
-\begin_layout Paragraph
-PMI
-\end_layout
-
 \begin_layout Standard
-??
+Portable Batch System.
+ Es el nombre de programas de computadora que realizan la programación de
+ trabajos.
 \end_layout
 
 \begin_layout Paragraph
