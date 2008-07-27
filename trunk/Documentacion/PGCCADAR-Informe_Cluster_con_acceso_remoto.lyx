@@ -284,6 +284,10 @@ A su vez separamos en módulos distintos las interfaces con Torque, Maui
  La interfaz con el sistema operativo se utiliza para guardar los proyectos
  del usuario final, ejecutar los procesos y realizar chequeos de espacio
  en disco, etc.
+ A su vez el sistema operativo deberá interactuar con algunos scripts .php
+ que se encargan del envío de alertas cuando alguno de los usuarios se excedió
+ en el uso del disco.
+ La manera más fácil de hacer esto es agregar la tarea al cron.
 \end_layout
 
 \begin_layout Standard
