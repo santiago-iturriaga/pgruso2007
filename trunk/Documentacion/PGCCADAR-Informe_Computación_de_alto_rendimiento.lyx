@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -44,51 +44,39 @@ Computación de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-Como ya mencionamos, en el correr de los últimos años ha crecido la importancia
- de satisfacer los requisitos crecientes de poder de cómputo debido a la
- necesidad de resolver problemas más complicados con modelos más complejos,
- así como trabajar con grandes volúmenes de datos sin perder de vista la
+Como se mencionó anteriormente, en el correr de los últimos años ha crecido
+ la importancia de satisfacer los requisitos crecientes de poder de cómputo
+ debido a la necesidad de resolver problemas realistas con modelos más complejos
+, así como trabajar con grandes volúmenes de datos sin perder de vista la
  capacidad de respuesta en un tiempo limitado.
-\end_layout
-
-\begin_layout Standard
-El procesamiento paralelo (o computación paralela de alto rendimiento) ha
- ganado terreno y se ha vuelto muy importante en la resolución de estos
- problemas.
- La computación de alto rendimiento se apoya en tecnologías como los clusters,
- supercomputadores y mediante el uso de paradigmas de programación paralela
- y/o distribuida.
+ El procesamiento paralelo (o computación paralela de alto rendimiento)
+ ha ganado terreno y se ha vuelto muy importante en la resolución de problemas,
+ apoyándose en tecnologías como los clusters, supercomputadores y mediante
+ el uso de paradigmas de programación paralela y/o distribuida.
 \end_layout
 
 \begin_layout Standard
 La computación distribuida es un modelo para resolver problemas de computación
  masiva utilizando un gran número de computadoras en una infraestructura
- de telecomunicaciones distribuida.
- Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
- arquitecturas de computadores y programas, lenguajes de programación),
- situados en distintos lugares y pertenecientes a diferentes dominios de
- administración sobre una red que utiliza estándares abiertos.
- 
-\end_layout
-
-\begin_layout Standard
-Esta ha sido diseñada para resolver problemas demasiado grandes para cualquier
+ de telecomunicaciones distribuida, consiste en compartir recursos heterogéneos
+ (basados en distintas plataformas, arquitecturas de computadores y programas,
+ lenguajes de programación), situados en distintos lugares y pertenecientes
+ a diferentes dominios de administración sobre una red que utiliza estándares
+ abiertos.
+ Ha sido diseñada para resolver problemas que superan la capacidad de cualquier
  supercomputadora o mainframe, manteniéndose la flexibilidad de trabajar
  en múltiples problemas más pequeños.
  Existen varios grados de distribución: de hardware y procesamiento, de
- datos y de control como veremos más adelante.
+ datos y de control.
+ Algunas de las ventajas de la computación distribuida son la mejora en
+ el desempeño, robustez, seguridad no centralizada y acceso transparente
+ a los datos no locales.
 \end_layout
 
 \begin_layout Standard
 Las técnicas de autorización segura son esenciales antes de permitir que
  los recursos informáticos sean controlados por usuarios remotos dado que
- estamos naturalmente en un entorno multiusuario.
-\end_layout
-
-\begin_layout Standard
-Algunas de las ventajas de la computación distribuida son la mejora en el
- desempeño, robustez, seguridad no centralizada y acceso transparente a
- los datos no locales.
+ estamos el entorno es generalmente multiusuario.
 \end_layout
 
 \begin_layout Standard
@@ -98,45 +86,31 @@ La programación paralela es una técnica de programación basada en la ejecuci�
 a.
  Al contrario que en la programación concurrente, esta técnica enfatiza
  la verdadera simultaneidad en el tiempo de la ejecución de las tareas.
-\end_layout
-
-\begin_layout Standard
-El avance en diferentes tecnologías como microprocesadores con mayor poder
+ El avance en diferentes tecnologías como microprocesadores con mayor poder
  de procesamiento, comunicación de datos, desarrollo de bibliotecas e interfaces
  para programación de procesos han posibilitado esta técnica.
-\end_layout
-
-\begin_layout Standard
-Los multicomputadores y los sistemas con múltiples procesadores consiguen
- un aumento en el rendimiento si se utilizan estas técnicas.
- En los sistemas monoprocesador el beneficio en rendimiento no es tan evidente,
- ya que la CPU es compartida por múltiples procesos en el tiempo, lo que
- se denomina multiplexación o multiprogramación.
-\end_layout
-
-\begin_layout Standard
-El mayor problema de la computación paralela radica en la complejidad de
+ Los multicomputadores y los sistemas con múltiples procesadores consiguen
+ un aumento en el rendimiento, mientras que en los sistemas monoprocesador
+ el beneficio en rendimiento no es tan evidente, ya que la CPU es compartida
+ por múltiples procesos en el tiempo, lo que se denomina multiplexación
+ o multiprogramación.
+ El mayor problema de la computación paralela radica en la complejidad de
  sincronizar unas tareas con otras, ya sea mediante secciones críticas,
  semáforos o paso de mensajes, para garantizar la exclusión mutua en las
  zonas del código en las que sea necesario.
 \end_layout
 
 \begin_layout Standard
-Esta técnica proporciona ventajas como mayor capacidad de proceso, menor
- tiempo de procesamiento y aprovechamiento de la escalabilidad potencial
- de los recursos
-\end_layout
-
-\begin_layout Standard
-Podemos hacer una división de las aplicaciones que requieren una demanda
+La programación paralela proporciona ventajas como mayor capacidad de proceso,
+ menor tiempo de procesamiento y aprovechamiento de la escalabilidad potencial
+ de los recursos.
+ Es posible hacer una división de las aplicaciones que requieren una demanda
  de recursos computacionales importantes.
- En primer lugar tenemos las aplicaciones de cálculo intensivas, estas son
- aplicaciones que requieren un alto número de ciclos de máquina y han impulsado
- el desarrollo de supercomputadores.
+ En primer lugar están las aplicaciones de cálculo intensivas, que requieren
+ un alto número de ciclos de máquina y han impulsado el desarrollo de supercompu
+tadores.
  Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
  en otras áreas como simulación financiera y económica.
- Dependen grandemente de la velocidad y el procesamiento de punto flotantes
- de los supercomputadores.
  Algunos ejemplos son aplicaciones para dinámica de fluidos computacional,
  simulaciones electromagnéticas, modelado ambiental, dinámica estructural,
  modelado biológico, dinámica molecular, simulación de redes, modelado financier
@@ -145,18 +119,17 @@ o y económico.
 
 \begin_layout Standard
 Otro tipo de aplicaciones con una gran demanda de recursos son las de almacenami
-ento masivo.
- Dependen de la capacidad para almacenar y procesar grandes cantidades de
- información y requieren de un acceso rápido y seguro a una masa considerable
- de datos almacenados.
+ento masivo, dependen de la capacidad para almacenar y procesar grandes
+ cantidades de información y requieren de un acceso rápido y seguro a una
+ masa considerable de datos almacenados.
  Algunas de ellas son las aplicaciones para análisis de data sísmica, procesamie
 nto de imágenes, minería de datos, análisis estadístico de datos y análisis
  de mercados.
 \end_layout
 
 \begin_layout Standard
-Luego seguimos con las aplicaciones exigentes comunicacionalmente.
- Estas son relativamente nuevas y pueden ser llamadas servicios por demanda.
+Las aplicaciones exigentes comunicacionalmente son relativamente nuevas
+ y pueden ser llamadas servicios por demanda.
  Requieren de recursos computacionales conectados por redes con anchos de
  banda considerables.
  Por ejemplo procesamiento de transacciones en línea, sistemas colaborativos,
@@ -169,13 +142,12 @@ Luego seguimos con las aplicaciones exigentes comunicacionalmente.
 \end_layout
 
 \begin_layout Standard
-Por ultimo tenemos los sistemas de sistemas.
- En este grupo las aplicaciones combinan en forma más compleja las característic
-as anteriores y dependen, en muchos casos, de sistemas computacionales integrado
-s diseñados primordialmente para ellas.
- En este grupo tenemos las aplicaciones de soporte a decisiones corporativas
- y gubernamentales, control de sistemas a tiempo real, banca electrónica,
- compras electrónicas, educación.
+Los sistemas de sistemas combinan en forma más compleja las características
+ anteriores y dependen, en muchos casos, de sistemas computacionales integrados
+ diseñados primordialmente para ellas.
+ Ejemplos de sistemas de sistemas son las aplicaciones de soporte a decisiones
+ corporativas y gubernamentales, control de sistemas a tiempo real, banca
+ electrónica, compras electrónicas, educación.
 \end_layout
 
 \begin_layout Standard
@@ -196,53 +168,53 @@ Organización de computadores
 \end_layout
 
 \begin_layout Standard
-La organización de los procesadores o red se refiere a como se conectan
- o enlazan los procesadores o nodos en un computador paralelo.
+La organización de los procesadores se refiere a como se conectan o enlazan
+ los procesadores o nodos en un computador paralelo.
  Existen varios criterios para evaluar los distintos diseños de organización.
-\end_layout
-
-\begin_layout Standard
-Diámetro: viene dado por la mayor distancia entre dos nodos.
+ Se puede tener en cuenta el diámetro, el cual viene dado por la mayor distancia
+ entre dos nodos.
  Mientras menor sea el diámetro menor será el tiempo de comunicación entre
  nodos.
-\end_layout
-
-\begin_layout Standard
-Ancho de bisección de la red: es el menor número de enlaces que deben ser
- removidos para dividir la red por la mitad.
+ Otro factor a tener en cuenta es el ancho de bisección de la red, siendo
+ este el menor número de enlaces que deben ser removidos para dividir la
+ red por la mitad.
  Un ancho de bisección alto puede reducir el tiempo de comunicación cuando
  el movimiento de datos es sustancial, y hace al sistema más tolerante a
  fallas debido a que defectos en un nodo no hacen inoperable a todo el sistema.
 \end_layout
 
 \begin_layout Standard
-Redes estáticas y dinámicas: en las redes estáticas la topología de interconexió
-n se define cuando se construye.
+Las redes se pueden separar en redes estáticas y dinámicas, en las redes
+ estáticas la topología de interconexión se define cuando se construye.
  Si la red es dinámica, la interconexión puede variar durante la ejecución
  de un programa o entre la ejecución de programas.
 \end_layout
 
-\begin_layout Standard
-A continuación veremos algunos tipos de diseños de redes de procesadores.
-\end_layout
-
 \begin_layout Paragraph
 Bus y Ethernet.
+\begin_inset LatexCommand ref
+reference "fig:Bus-y-Ethernet"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-En una red donde los procesadores comparten el mismo recurso de comunicación:
- el bus.
- 
-\end_layout
-
-\begin_layout Standard
-Esta arquitectura es fácil y económica de implementar, pero no es escalable
+En las redes de tipo bus o ethernet los procesadores comparten un único
+ bus como recurso de comunicación.
+ La arquitectura es fácil y económica de implementar, pero no es escalable
  ya que solo un procesador puede usar el bus en un momento dado; a medida
  que se incrementa el número de procesadores, el bus se convierte en un
  cuello de botella debido a la congestión.
  
 \end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Standard
 \align center
@@ -255,20 +227,47 @@ Esta arquitectura es fácil y económica de implementar, pero no es escalable
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Bus-y-Ethernet"
+
+\end_inset
+
+Bus y Ethernet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Mallas.
+\begin_inset LatexCommand ref
+reference "fig:Mallas"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Al igual que el bus (o ethernet), las mallas son fáciles y económicas de
- implementar, sin embargo el diámetro se incrementa al añadir nodos.
+Al igual que la interconexión mediante bus (o ethernet), las mallas son
+ fáciles y económicas de implementar, sin embargo el diámetro se incrementa
+ al añadir nodos.
  En las mallas de dimensión 1, si los dos nodos extremos también son conectados,
  entonces se tiene un anillo.
-\end_layout
-
-\begin_layout Standard
-Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
- y tiene la ventaja de que pueden ser construidas sin conexiones largas.
+ Las mallas de 2 dimensiones y de 3 dimensiones son comunes en computación
+ paralela y tiene la ventaja de que pueden ser construidas sin conexiones
+ largas.
  El diámetro de las mallas puede ser reducido a la mitad si se extiende
  la malla con conexiones toroidales de forma que los procesadores en los
  bordes también estén conectados con vecinos.
@@ -280,16 +279,9 @@ Mallas de 2 dimensiones y de 3 dimensiones son comunes en computación paralela
 
 \begin_layout Standard
 \align center
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Standard
@@ -301,18 +293,54 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Paragraph
-Mariposa.
-\end_layout
+\begin_inset Caption
 
 \begin_layout Standard
-Estas organizaciones son similares a las mallas pero presentan menor diámetro.
+\begin_inset LatexCommand label
+name "fig:Mallas"
+
+\end_inset
+
+Mallas
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Mariposa.
+\begin_inset LatexCommand ref
+reference "fig:Mariposa"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las reder de tipo mariposa son similares a las mallas pero presentan menor
+ diámetro.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
 
 \end_layout
 
@@ -326,6 +354,29 @@ Estas organizaciones son similares a las mallas pero presentan menor diámetro.
 \end_inset
 
 
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Mariposa"
+
+\end_inset
+
+Mariposa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -333,19 +384,37 @@ Estas organizaciones son similares a las mallas pero presentan menor diámetro.
 \end_layout
 
 \begin_layout Standard
-Son particularmente útiles en problemas de ordenamiento, multiplicación
- de matrices, y algunos problemas en los que los tiempos de solución crecen
- exponencialmente con el tamaño del problema (NP-complejos).
+Los árboles binarios son particularmente útiles en problemas de ordenamiento,
+ multiplicación de matrices, y algunos problemas en los que los tiempos
+ de solución crecen exponencialmente con el tamaño del problema (NP-difíciles).
  
 \end_layout
 
 \begin_layout Paragraph
 Pirámides.
+\begin_inset LatexCommand ref
+reference "fig:Pirámides"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Estas redes intentan combinar las ventajas de las mallas y los árboles,
- se incrementa la tolerancia a fallas y el número de vías de comunicación.
+Las redes de tipo pirámide intentan combinar las ventajas de las mallas
+ y los árboles, se incrementa la tolerancia a fallas y el número de vías
+ de comunicación.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
@@ -357,10 +426,39 @@ Estas redes intentan combinar las ventajas de las mallas y los árboles,
 \end_inset
 
 
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Pirámides"
+
+\end_inset
+
+Pirámides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
 Hipercubo.
+\begin_inset LatexCommand ref
+reference "fig:Hipercubo"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -381,9 +479,42 @@ o los procesadores respectivos de dos hipercubos de dimensión d.
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/hipercubos.png
 	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Hipercubo"
+
+\end_inset
+
+Hipercubo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
 
 \end_inset
 
@@ -409,7 +540,24 @@ Estas redes reducen considerablemente la competencia por ancho de banda,
 \end_layout
 
 \begin_layout Standard
-La siguiente figura muestra una red omega de 3 etapas que conecta 8 procesadores.
+La figura 
+\begin_inset LatexCommand ref
+reference "fig:Omega"
+
+\end_inset
+
+ muestra una red omega de 3 etapas que conecta 8 procesadores.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
@@ -421,10 +569,39 @@ La siguiente figura muestra una red omega de 3 etapas que conecta 8 procesadores
 \end_inset
 
 
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Omega"
+
+\end_inset
+
+Omega
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
 Fibras de interconexión.
+\begin_inset LatexCommand ref
+reference "fig:Fibras-de-interconexión"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -434,9 +611,43 @@ Las fibras de interconexión son un conjunto de switches, llamados routers,
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/firasinterconexion.png
 	width 8cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:Fibras-de-interconexión"
+
+\end_inset
+
+Fibras de interconexión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
 
 \end_inset
 
@@ -453,16 +664,17 @@ El diseño de algoritmos paralelos involucra cuatro etapas, las cuales se
 \end_layout
 
 \begin_layout Standard
-Primero comenzamos por la etapa de partición.
- En esta etapa el cómputo y los datos sobre los cuales se opera se descomponen
- en tareas.
- Se ignoran aspectos como el número de procesadores de la máquina a usar
- y se concentra la atención en explotar oportunidades de paralelismo.
+La primer etapa es la de partición, en esta etapa el cómputo y los datos
+ sobre los cuales se opera se descomponen en tareas.
+ En este punto del diseño se ignoran aspectos como el número de procesadores
+ de la máquina a usar y se concentra la atención en explotar oportunidades
+ de paralelismo.
 \end_layout
 
 \begin_layout Standard
-Seguimos por la etapa de comunicación donde se determina la comunicación
- para coordinar las tareas, se definen estructuras y algoritmos de comunicación.
+Finalizada la primer etapa, se inicia la etapa de comunicación donde se
+ determina la comunicación para coordinar las tareas, se definen estructuras
+ y algoritmos de comunicación.
 \end_layout
 
 \begin_layout Standard
@@ -472,9 +684,8 @@ Luego en la etapa de agrupación se evalúa en términos de eficiencia y costos
 \end_layout
 
 \begin_layout Standard
-Por ultimo tenemos la etapa de asignación.
- Cada tarea es asignada a un procesador tratando de maximizar la utilización
- de los procesadores y de reducir el costo de comunicación.
+En la última etapa cada tarea es asignada a un procesador tratando de maximizar
+ la utilización de los procesadores y de reducir el costo de comunicación.
  La asignación puede ser estática (se establece antes de la ejecución del
  programa) o en tiempo de ejecución mediante algoritmos de balanceo de carga.
 \end_layout
@@ -485,44 +696,31 @@ Partición.
 
 \begin_layout Standard
 En la etapa de partición se buscan oportunidades de paralelismo y se trata
- de subdividir el problema lo más finamente posible.
- Se dividen tanto los cómputos como los datos.
+ de subdividir el problema lo más finamente posible, dividiendo tanto los
+ cómputos como los datos.
  
 \end_layout
 
 \begin_layout Standard
-Existen dos formas de descomposición.
- Descomposición del dominio que se centra en los datos.
- Se determina la partición apropiada de los datos y luego se trabaja en
- los cómputos asociados con los datos.
-\end_layout
-
-\begin_layout Standard
-Descomposición funcional que es el contrario al enfoque anterior, primero
+Existen dos formas de descomposición, descomposición del dominio y descomposició
+n funcional.
+ La descomposición del dominio se centra en los datos, se determina la partición
+ apropiada de los datos y luego se trabaja en los cómputos asociados con
+ los datos.
+ La descomposición funcional es el contrario al enfoque anterior, primero
  se descomponen los cómputos y luego se ocupa de los datos.
  
 \end_layout
 
 \begin_layout Standard
-En el proceso de partición existen aspectos a tener en cuenta: 
-\end_layout
-
-\begin_layout Itemize
-El orden de tareas debe ser por lo menos superior al número de procesadores
- para tener flexibilidad en etapas siguientes.
-\end_layout
-
-\begin_layout Itemize
-Evitar cómputos y almacenamientos redundantes.
-\end_layout
-
-\begin_layout Itemize
-Las tareas deben ser de tamaños equivalentes para facilitar el balanceo
- de la carga de los procesadores.
-\end_layout
-
-\begin_layout Itemize
-El número de tareas debe ser proporcional al tamaño del problema.
+En el proceso de partición existen variops aspectos a tener en cuenta, en
+ particular el orden de tareas debe ser por lo menos superior al número
+ de procesadores para tener flexibilidad en etapas siguientes.
+ Es importante evitar cómputos y almacenamientos redundantes, y las tareas
+ deben ser de tamaños equivalentes para facilitar el balanceo de la carga
+ de los procesadores.
+ Para permitir cierta escalabilidad el número de tareas debe ser proporcional
+ al tamaño del problema.
 \end_layout
 
 \begin_layout Subsubsection
@@ -702,6 +900,12 @@ Balanceo semi-distribuido: divide los procesadores en regiones, cada una
 
 \begin_layout Subsection
 Taxonomía de Flynn
+\begin_inset LatexCommand ref
+reference "fig:Taxonomía-de-Flynn"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -720,7 +924,14 @@ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
 
 \begin_layout Standard
 Dentro de la clasificación de Flynn hay varias categorías.
- La primera de ellas es SISD (Single Instruction stream, Single Data stream).
+ La primera de ellas es SISD, Single Instruction stream, Single Data stream
+ (ver figura 
+\begin_inset LatexCommand ref
+reference "SISD"
+
+\end_inset
+
+).
  La mayor parte de computadores seriales son SISD.
  Estas tienen un CPU que ejecuta una instrucción y busca o guarda datos
  en un momento dado.
@@ -728,9 +939,43 @@ Dentro de la clasificación de Flynn hay varias categorías.
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/SISD.png
 	width 5cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "SISD"
+
+\end_inset
+
+Single Instruction stream, Single Data stream
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
 
 \end_inset
 
@@ -758,10 +1003,28 @@ FD: Flujo de Datos
 \end_layout
 
 \begin_layout Standard
-Seguimos con SIMD (Single Instruction stream, Multiple Data stream).
+Seguimos con SIMD, Single Instruction stream, Multiple Data stream (ver
+ figura 
+\begin_inset LatexCommand ref
+reference "SIMD"
+
+\end_inset
+
+).
  Esta categoría comprende los arreglos de procesadores.
  Tiene un conjunto de unidades de procesamiento cada una ejecutando la misma
  operación sobre datos distintos.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
@@ -776,12 +1039,51 @@ Seguimos con SIMD (Single Instruction stream, Multiple Data stream).
 \end_layout
 
 \begin_layout Standard
-También tenemos la categoría MISD (Multiple Instruction stream, Single Data
- stream) donde existen n procesadores, cada uno recibiendo una instrucción
- diferente y operando sobre el mismo flujo de datos.
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "SIMD"
+
+\end_inset
+
+Single Instruction stream, Multiple Data stream
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+También tenemos la categoría MISD, Multiple Instruction stream, Single Data
+ stream (ver figura 
+\begin_inset LatexCommand ref
+reference "MISD"
+
+\end_inset
+
+) donde existen n procesadores, cada uno recibiendo una instrucción diferente
+ y operando sobre el mismo flujo de datos.
  Actualmente no hay máquinas de este tipo por ser poco prácticas, a pesar
  de que ciertas MIMD puedan ser usadas de esta forma.
 \end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Standard
 \align center
@@ -795,8 +1097,36 @@ También tenemos la categoría MISD (Multiple Instruction stream, Single Data
 \end_layout
 
 \begin_layout Standard
-La categoría de MIMD (Multiple Instruction stream, Multiple Data stream)
- incluye a la mayoría de los multiprocesadores y multicomputadores.
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "MISD"
+
+\end_inset
+
+Multiple Instruction stream, Single Data stream
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La categoría de MIMD, Multiple Instruction stream, Multiple Data stream
+ (ver figura 
+\begin_inset LatexCommand ref
+reference "MIMD"
+
+\end_inset
+
+) incluye a la mayoría de los multiprocesadores y multicomputadores.
  Estos tienen más de un procesador independiente, y cada uno puede ejecutar
  un programa diferente sobre sus propios datos.
  Podemos categorizarlos también según como esté organizada su memoria: memoria
@@ -805,9 +1135,42 @@ La categoría de MIMD (Multiple Instruction stream, Multiple Data stream)
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/MIMD.png
 	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "MIMD"
+
+\end_inset
+
+Multiple Instruction stream, Multiple Data stream
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
 
 \end_inset
 
