@@ -22,8 +22,6 @@
 		exit;
 	}
 
-//echo '<pre>';print_r($s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"]);echo '</pre>';exit;
-//echo '<pre>';print_r($s->sesion);echo '</pre>';exit;
 	$usr_linux = $s->sesion->Usuario->clientes[$s->sesion->ClienteActual]["usr_linux"];
 
 	$base		=	$plantilla->load("plantillas/base.html");
@@ -31,8 +29,6 @@
 	$body 		=	"";
 	if(isset($_POST["Enviar"])) {
 		if (is_uploaded_file($_FILES['archivo_']['tmp_name'])) {
-			//$command = "chown ".USERNAME." ".$HTTP_POST_FILES['archivo_']['tmp_name'];
-			//$rs = ejecutar_servidor($command);
 			$rs = chmod($_FILES['archivo_']['tmp_name'],0777);
 			if(!$rs){
 				error_log($rs);
@@ -158,8 +154,8 @@
 	}
 	$archivos	=	$res["archivos"];
 	$directorios=	$res["directorios"];
-	asort($archivos);
-	asort($directorios);
+	ksort($archivos);
+	ksort($directorios);
 	$p_archivos	=	"";
 	foreach($directorios as $d=>$valores){
 		if($valores["entrar"]) {
@@ -180,7 +176,7 @@
 			$p_archivos	.= $directorio_nuevo;
 		}
 	}
-
+	
 	foreach($archivos as $archivo=>$valores){
 		$archivo_nuevo = $plantilla->replace($p_archivo,array("NOMBRE"=>$archivo,"TAMANIO"=>$valores["size"],"FECHA"=>$valores["ultima_modificacion"]));
 		if($valores["ejecutar"])  $archivo_nuevo= 	$plantilla->uncomment($archivo_nuevo,array("EJECUTAR"));
@@ -189,7 +185,6 @@
 	}
 
 	$camino		=	$s->sesion->Directorio->camino;
-	//$camino[0]	=	"home";
 	$camino[0] = "<img src='imagenes/house.png' title='Home' alt='Home' />";
 	$ruta	= "";
 
