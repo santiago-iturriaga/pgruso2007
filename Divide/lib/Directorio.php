@@ -91,7 +91,10 @@ class Directorio{
 	}
 
 	function getContenido($archivo,$usr_linux){
-		return file_get_contents ($this->getRuta().SEPARADOR_RUTA.$archivo);
+		$aux = rand(0,1024);
+		$salida = ejecutar_servidor("cp ".$this->getRuta().SEPARADOR_RUTA.$archivo." ".TMP.SEPARADOR_RUTA.$archivo.$aux.
+					    ";chmod +r ".TMP.SEPARADOR_RUTA.$archivo.$aux);
+		return file_get_contents (TMP.SEPARADOR_RUTA.$archivo.$aux);
 	}
 	function eliminar($archivo,$usr_linux){
 		$salida = ejecutar_servidor("rm ".$this->getRuta().SEPARADOR_RUTA.$archivo,$usr_linux);
@@ -155,19 +158,9 @@ class Directorio{
 		$nombre = 'pgccadar_zip_'.$id_cliente.'.zip';
 		$nombre_archivo = TMP.'/'.$nombre;
 		@unlink($nombre_archivo);
-error_log("unlink:".$nombre_archivo);
 		@rmdir($nombre_archivo);
-error_log("rmdir:".$nombre_archivo);
 		$comando = "cd ".RAIZ.'/'.$id_cliente.'/'.$id_trabajo.";zip -qr ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo."/$nombre "."*";
 		$res = ejecutar_servidor($comando,$usr_linux);
-//    	$comando = "chmod 666 ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre;
-//		$res = ejecutar_servidor($comando,$usr_linux);
-//		if($res != ""){
-//			$comando = "rm ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre;
-//			$res = ejecutar_servidor($comando,$usr_linux);
-//			return array("error"=>1,
-//					 	 "codError"=>"D201");
-//		}
 
 		$comando = "mv ".RAIZ_SISTEMA.'/'.$id_cliente.'/'.$id_trabajo.'/'.$nombre." ".$nombre_archivo;
 		$res = ejecutar_servidor($comando,$usr_linux);
