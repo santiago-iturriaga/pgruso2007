@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -60,7 +60,7 @@ En el principio de la historia de las computadoras se tenía la idea de que
 Esta idea encontró oposición en 1994, cuando Donald Becker y Thomas Sterling
  crearon el proyecto Beowulf, en el que lograron un elevado nivel de procesamien
 to poniendo a trabajar varias computadoras en paralelo con procesadores
- 16 DX4, interconectadas en una red de 10 Mbit Ethernet.
+ 16 DX4, interconectadas en una red Ethernet de 10 Mbit.
 \end_layout
 
 \begin_layout Standard
@@ -116,28 +116,35 @@ Aplicaciones (pueden ser paralelas o no)
 \end_layout
 
 \begin_layout Standard
-Actualmente, el cluster de computadoras se ha utilizado para varias y diferentes
- tareas como data mining, servidores de archivos, servidores de base de
- datos, servidores Web, simuladores de vuelo, graphics rendering, modeladores
- climáticos o incluso para CD ripping alcanzando velocidades realmente altas.
+Actualmente, el cluster de computadoras se ha utilizado para en diferentes
+ tareas, como data mining, servidores de archivos, servidores de base de
+ datos, servidores Web, simuladores de vuelo, renderización de gráficos,
+ modeladores climáticos o incluso para ripear CDs.
+ 
 \end_layout
 
 \begin_layout Standard
-La idea es simplemente reunir el poder de cómputo de una serie de nodos
- para proveer alta escalabilidad, poder de cómputo, o construir redundancia
- y de esta manera proveer alta disponibilidad.
+El objetivo de un cluster de computadoras es simplemente reunir el poder
+ de cómputo de una serie de nodos para proveer alta escalabilidad, poder
+ de cómputo, o construir redundancia y de esta manera proveer alta disponibilida
+d.
  Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
 s, los cluster utilizan múltiples máquinas para proveer un ambiente más
  poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
 nto sea visible al usuario como una sola unidad, aunque se componga de muchas
- computadoras trabajando en paralelo para el mismo fin.
+ computadoras trabajando en paralelo para lograr el mismo fin.
 \end_layout
 
 \begin_layout Standard
 El alto poder de procesamiento de varias computadoras trabajando en paralelo
- (o cluster de computadoras) se perfila como una solución viable a las empresas,
- universidades y escuelas a un bajo costo de implementación.
- 
+ (o cluster de computadoras) se perfila como una solución viable a varias
+ problematicas, que requieren gran poder de computo, a un bajo costo de
+ implementación.
+ Algunas de estas problematicas muy importantes en la actualidad estan relaciona
+das con la ciencia e ingeniería, dinámica de fluidos computacional, simulaciones
+ electromagnéticas, modelado ambiental, dinámica estructural, modelado biológico
+, dinámica molecular, simulación de redes, modelado financiero y económico,
+ etc.
 \end_layout
 
 \begin_layout Subsection
@@ -145,40 +152,42 @@ Introducción a la computación de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-Cada vez los problemas a resolver mediante la computación se tornan más
- complicados, con modelos más complejos trabajando con grandes volúmenes
- de datos y tiempos de respuesta limitados.
+A medida que los problemas a resolver mediante la computación se tornan
+ cada vez más complicados, con modelos más complejos trabajando con grandes
+ volúmenes de datos y tiempos de respuesta limitados.
 \end_layout
 
 \begin_layout Standard
 La computación de alto rendimiento o HPC (siglas en inglés de High Performance
- Computing) nació para satisfacer todos estos requisitos de poder de cómputo.
- Esta reúne un conjunto de tecnologías, como ser supercomputadores o clusters,
+ Computing) nació para satisfacer todos estos requisitos de poder de cómputo;
+ y reúne un conjunto de tecnologías, como ser supercomputadores o clusters,
  y se apoya en el paradigma de programación paralela y distribuida.
 \end_layout
 
 \begin_layout Standard
 La computación distribuida resuelve problemas de computación masiva utilizando
  un gran número de computadoras con una infraestructura de telecomunicaciones
- distribuida.
+ distribuida y mediante la compartisión de recursos situados en distintos
+ lugares y pertenecientes a diferentes dominios de administración sobre
+ una red que utiliza estándares abiertos.
 \end_layout
 
 \begin_layout Standard
 La programación paralela es una técnica de programación basada en la ejecución
- simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
- o en un cluster de ordenadores, en cuyo caso se denomina computación distribuid
-a.
+ simultánea de procesos o trabajos, bien sea en un mismo ordenador (con
+ uno o varios procesadores) o en un cluster de ordenadores, en cuyo caso
+ comienzan a aparecer conceptos de la computación distribuida.
 \end_layout
 
 \begin_layout Standard
 Existe una diversa gama de arquitecturas de computación paralela, desde
  arquitecturas de procesadores paralelos con memoria compartida hasta clusters
- de computadores comunicados por una Fast Ethernet.
+ de computadores comunicados por una red como Fast Ethernet.
 \end_layout
 
 \begin_layout Standard
-En la sección dos profundizaremos sobre la computación de alto rendimiento,
- diferentes tipos de arquitecturas y técnicas, y observaremos las herramientas
+En la sección 2 se profundizará sobre la computación de alto rendimiento,
+ diferentes tipos de arquitecturas y técnicas, y se analizarán las herramientas
  y paradigmas de programación paralela o distribuida.
 \end_layout
 
@@ -189,8 +198,9 @@ Motivación del proyecto
 \begin_layout Standard
 Actualmente existe en el Centro de Cálculo (CeCal) un cluster de computadores
  utilizado para investigación en proyectos internos.
- A corto plazo se proyecta alquilar el mismo como servicio a entidades externas.
- El software utilizado permite un nivel de abstracción muy bajo, esto limita
+ A corto plazo se proyecta alquilar el cluster como servicio a entidades
+ externas.
+ El software utilizado permite un nivel de abstracción muy bajo, que limita
  los perfiles de usuarios capaces de utilizar el sistema.
  Es importante notar que los usuarios finales serán en la mayoría de los
  casos profesionales en áreas dispares como por ejemplo las ciencias básicas
@@ -202,17 +212,18 @@ Actualmente existe en el Centro de Cálculo (CeCal) un cluster de computadores
 Se desea mantener un control estricto de las actividades de los usuarios
  de manera de poder garantizar la disponibilidad de recursos en un determinado
  momento.
- Además es importante mantener un historial de utilización de recursos por
- parte de los distintos usuarios y procesos; tanto para poder realizar un
- seguimiento de su estado actual y verificar su correcto funcionamiento,
- como para realizar mediciones referidas a la utilización de recursos por
- parte de los usuarios ya que se lo considera un activo.
+ El grupo responsable del cluster tiene interés en mantener un historial
+ de utilización de recursos por parte de los distintos usuarios y procesos;
+ tanto para poder realizar un seguimiento de su estado actual y verificar
+ su correcto funcionamiento, como para realizar mediciones referidas a la
+ utilización de recursos por parte de los usuarios ya que se lo considera
+ un activo.
 \end_layout
 
 \begin_layout Standard
-El proyecto intenta resolver estos problemas permitiendo la utilización
+El proyecto Fenton intenta resolver estos problemas permitiendo la utilización
  del sistema por parte de usuarios no especializados, así como también permitir
- el monitoreo del mismo en tiempo real por parte de los administradores.
+ el monitoreo del cluster en tiempo real por parte de los administradores.
 \end_layout
 
 \begin_layout Subsection
@@ -220,21 +231,25 @@ Objetivos y alcance del proyecto
 \end_layout
 
 \begin_layout Standard
-La motivación principal de este proyecto es la construcción e implantación
- de un cluster de alto desempeño con acceso remoto.
- Dentro del marco de esta motivación se han definido varios objetivos y
- el alcance del proyecto.
- Esto incluye el estudio del estado del arte sobre la utilización de equipamient
-o destinado al procesamiento paralelo-distribuido.
+La motivación principal del proyecto Fenton es la construcción e implantación
+ del sistema de acceso de un cluster de alto desempeño con acceso remoto.
+ Dentro del marco de esta motivación se han definido varios objetivos, actividad
+es, y el alcance del proyecto.
+ 
 \end_layout
 
 \begin_layout Standard
-Como segundo objetivo tenemos la evaluación y diseño de herramientas automáticas
- para la administración y utilización de un cluster de computadores.
- Para esto se realizará el relevamiento de paquetes de software de base
- (sistemas operativos, bibliotecas, monitores de desempeño, etc.) que permitan
- el desarrollo y la ejecución de programas paralelos y distribuidos.
- En tal relevamiento se debe evaluar características funcionales así como
+Una de las actividades principales es el estudio del estado del arte sobre
+ la utilización de equipamiento destinado al procesamiento paralelo-distribuido.
+\end_layout
+
+\begin_layout Standard
+Otro objetivo es la evaluación y diseño de herramientas automáticas para
+ la administración y utilización de un cluster de computadores.
+ Para esto se planificó realizar el relevamiento de paquetes de software
+ de base (sistemas operativos, bibliotecas, monitores de desempeño, etc.)
+ que permitan el desarrollo y la ejecución de programas paralelos y distribuidos.
+ En el relevamiento se debe evaluar características funcionales así como
  usabilidad de las herramientas.
 \end_layout
 
@@ -247,7 +262,7 @@ Como se mencionó en la sección anterior se debe tener especial consideración
 \end_layout
 
 \begin_layout Standard
-A continuación presentamos los objetivos específicos del proyecto:
+A continuación se presentan los objetivos específicos del proyecto:
 \end_layout
 
 \begin_layout Itemize
@@ -516,7 +531,7 @@ En el marco del proyecto se realizaron un conjunto de actividades específicas,
  abarcando actividades de investigación, estudio del arte, análisis, modelación,
  implementación, ensayo, divulgación de resultados y redacción del presente
  informe.
- Las mismas se detallan a continuación.
+ Las actividades se detallan a continuación.
  
 \end_layout
 
@@ -528,8 +543,8 @@ Investigación y estudio del estado del arte.
 Unos de los principales objetivos del proyecto es la investigación y estudio
  del estado del arte a lo que refiere a la computación de alta performance.
  Esta actividad abarcó auto estudio por parte de los integrantes del proyecto
- y el curso de la materia High Performance Computing dictada por el grupo
- CeCal del Instituto de Computación de la Facultad de Ingeniería.
+ y el curso de la materia Computación de Alta Performance dictada por el
+ grupo CeCal del Instituto de Computación de la Facultad de Ingeniería.
 \end_layout
 
 \begin_layout Paragraph
@@ -537,10 +552,10 @@ Estudio de tecnologías existentes.
 \end_layout
 
 \begin_layout Standard
-Paralelo a la investigación y estudio se llevó a cabo un relevamiento de
- paquetes de software de base (sistemas operativos, bibliotecas, monitores
- de desempeño, etc.) que permitieran el desarrollo y la ejecución de programas
- paralelos y distribuidos.
+En paralelo a la investigación y estudio del estado del arte se llevó a
+ cabo un relevamiento de paquetes de software de base (sistemas operativos,
+ bibliotecas, monitores de desempeño, etc.) que permitieran el desarrollo
+ y la ejecución de programas paralelos y distribuidos.
 \end_layout
 
 \begin_layout Standard
@@ -573,37 +588,37 @@ Dentro de los alcances del proyecto se encontraba la implementación de una
 
 \begin_layout Standard
 Esta actividad se dividió en varias etapas.
- Primero una etapa de relevamiento de requerimientos donde se mantuvieron
- reuniones con los tutores y especialistas en el área de usabilidad para
- interfaces Web.
-\end_layout
-
-\begin_layout Standard
-Se llevó a cabo una etapa de diseño de la interfaz Web donde se tuvieron
- en cuenta conocimientos previos por parte de los integrantes del proyecto
- así como la curva de aprendizaje de distintas herramientas de desarrollo.
-\end_layout
-
-\begin_layout Standard
-Luego de la etapa de diseño se realizó la etapa de desarrollo la cual se
+ La primera fase involucró una etapa de relevamiento de requerimientos donde
+ se mantuvieron reuniones con los tutores y especialistas en el área de
+ usabilidad para interfaces Web.
+ A continuación se llevó a cabo una etapa de diseño de la interfaz Web donde
+ se tuvieron en cuenta conocimientos previos por parte de los integrantes
+ del proyecto así como la curva de aprendizaje de distintas herramientas
+ de desarrollo.
+ Luego de la etapa de diseño se realizó la etapa de desarrollo la cual se
  hizo en forma iterativa e incremental.
  Se fijaron pequeñas iteraciones en las cuales se fue incrementando y mejorando
  las funcionalidades de la interfaz Web.
 \end_layout
 
 \begin_layout Paragraph
-Testeo de la solución.
+Verificación de la solución.
 \end_layout
 
 \begin_layout Standard
 Una vez implantado el cluster con las tecnologías seleccionadas y terminado
  el desarrollo de la interfaz Web se procedió con la etapa de testing.
- En esta etapa se probaron los principales requerimientos funcionales.
+ 
 \end_layout
 
 \begin_layout Standard
-Por último otras actividades realizadas fueron la realización de la documentació
-n final como este informe y manuales, y la presentación final.
+En esta etapa se probaron los principales requerimientos funcionales del
+ sistema de acceso al cluster.
+\end_layout
+
+\begin_layout Standard
+Por último, otras actividades realizadas fueron la realización de la documentaci
+ón final como este informe y manuales, y la presentación final.
 \end_layout
 
 \begin_layout Subsection
@@ -619,30 +634,28 @@ Este documento esta organizado en siete secciones.
 \end_layout
 
 \begin_layout Standard
-En la segunda sección profundizamos en el estado del arte de la computación
+En la segunda sección se profundiza en el estado del arte de la computación
  de alto rendimiento donde hablamos sobre la importancia de estas tecnologías,
  organización de computadores, diseño de algoritmos paralelos, arquitecturas
  de computación paralela y herramientas disponibles.
 \end_layout
 
 \begin_layout Standard
-En la tercer sección presentamos las tecnologías relevadas para la implantación
+En la tercer sección se presentan las tecnologías relevadas para la implantación
  de un cluster de alto desempeño.
 \end_layout
 
 \begin_layout Standard
-En la cuarta sección presentamos la solución propuesta con las tecnologias
- elegidas y la interfaz de acceso remoto desarrollada para el cluster de
- alto desempeño con acceso remoto.
- También presentamos el proceso de testing realizado durante el desarrollo.
+La cuarta sección presenta la solución propuesta con las tecnologias elegidas
+ y la interfaz de acceso remoto desarrollada para el cluster de alto desempeño
+ con acceso remoto.
+ También se detalla y especifica el proceso de verificación realizado durante
+ el desarrollo.
 \end_layout
 
 \begin_layout Standard
-En la quinta sección presentamos las puestas en producción del sistema.
-\end_layout
-
-\begin_layout Standard
-Y finalmente en la sexta y septima sección presentamos las conclusiones
+En la quinta sección se presenta las puestas en producción del sistema.
+ Y finalmente en la sexta y septima sección se presentan las conclusiones
  y los trabajos a futuro.
 \end_layout
 
