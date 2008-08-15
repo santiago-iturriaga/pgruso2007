@@ -857,13 +857,7 @@ Como posible punto intermedio entre ambos tipos de algoritmo está el balanceo
 \end_layout
 
 \begin_layout Subsection
-Taxonomía de Flynn (figura 
-\begin_inset LatexCommand ref
-reference "fig:Taxonomía-de-Flynn"
-
-\end_inset
-
-).
+Taxonomía de Flynn.
 \end_layout
 
 \begin_layout Standard
@@ -915,6 +909,36 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+\align left
+UP: Unidad de Procesamiento
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+UC: Unidad de Control 
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+M: Memoria 
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+FI: Flujo de Instrucciones 
+\end_layout
+
+\begin_layout List
+\labelwidthstring 00.00.0000
+FD: Flujo de Datos
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Caption
 
 \begin_layout Standard
@@ -931,33 +955,9 @@ Single Instruction stream, Single Data stream
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-UP: Unidad de Procesamiento
-\end_layout
-
-\begin_layout Standard
-UC: Unidad de Control 
-\end_layout
-
-\begin_layout Standard
-M: Memoria 
-\end_layout
-
-\begin_layout Standard
-FI: Flujo de Instrucciones 
-\end_layout
-
-\begin_layout Standard
-FD: Flujo de Datos
 \end_layout
 
 \begin_layout Standard
