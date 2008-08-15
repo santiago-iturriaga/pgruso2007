@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -56,7 +56,7 @@ Como se mencionó anteriormente, en el correr de los últimos años ha crecido
 \end_layout
 
 \begin_layout Standard
-La computación distribuida es un modelo para resolver problemas de computación
+La computación distribuida como modelo para resolver problemas de computación
  masiva utilizando un gran número de computadoras en una infraestructura
  de telecomunicaciones distribuida, consiste en compartir recursos heterogéneos
  (basados en distintas plataformas, arquitecturas de computadores y programas,
@@ -71,10 +71,7 @@ La computación distribuida es un modelo para resolver problemas de computación
  Algunas de las ventajas de la computación distribuida son la mejora en
  el desempeño, robustez, seguridad no centralizada y acceso transparente
  a los datos no locales.
-\end_layout
-
-\begin_layout Standard
-Las técnicas de autorización segura son esenciales antes de permitir que
+ Las técnicas de autorización segura son esenciales antes de permitir que
  los recursos informáticos sean controlados por usuarios remotos dado que
  estamos el entorno es generalmente multiusuario.
 \end_layout
@@ -96,7 +93,7 @@ a.
  o multiprogramación.
  El mayor problema de la computación paralela radica en la complejidad de
  sincronizar unas tareas con otras, ya sea mediante secciones críticas,
- semáforos o paso de mensajes, para garantizar la exclusión mutua en las
+ semáforos o pasaje de mensajes, para garantizar la exclusión mutua en las
  zonas del código en las que sea necesario.
 \end_layout
 
@@ -130,8 +127,8 @@ nto de imágenes, minería de datos, análisis estadístico de datos y análisis
 \begin_layout Standard
 Las aplicaciones exigentes comunicacionalmente son relativamente nuevas
  y pueden ser llamadas servicios por demanda.
- Requieren de recursos computacionales conectados por redes con anchos de
- banda considerables.
+ Requieren de recursos computacionales conectados por redes con un ancho
+ de banda considerable.
  Por ejemplo procesamiento de transacciones en línea, sistemas colaborativos,
  texto por demanda, vídeo por demanda, imágenes por demanda, simulación
  por demanda.
@@ -172,9 +169,8 @@ La organización de los procesadores se refiere a como se conectan o enlazan
  los procesadores o nodos en un computador paralelo.
  Existen varios criterios para evaluar los distintos diseños de organización.
  Se puede tener en cuenta el diámetro, el cual viene dado por la mayor distancia
- entre dos nodos.
- Mientras menor sea el diámetro menor será el tiempo de comunicación entre
- nodos.
+ entre dos nodos, mientras menor sea el diámetro menor será el tiempo de
+ comunicación entre nodos.
  Otro factor a tener en cuenta es el ancho de bisección de la red, siendo
  este el menor número de enlaces que deben ser removidos para dividir la
  red por la mitad.
@@ -191,20 +187,20 @@ Las redes se pueden separar en redes estáticas y dinámicas, en las redes
 \end_layout
 
 \begin_layout Paragraph
-Bus y Ethernet.
+Bus y Ethernet (figura 
 \begin_inset LatexCommand ref
 reference "fig:Bus-y-Ethernet"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
 En las redes de tipo bus o ethernet los procesadores comparten un único
  bus como recurso de comunicación.
  La arquitectura es fácil y económica de implementar, pero no es escalable
- ya que solo un procesador puede usar el bus en un momento dado; a medida
+ ya que solo un procesador puede usar el bus en un momento dado, a medida
  que se incrementa el número de procesadores, el bus se convierte en un
  cuello de botella debido a la congestión.
  
@@ -250,13 +246,13 @@ Bus y Ethernet
 \end_layout
 
 \begin_layout Paragraph
-Mallas.
+Mallas (figura 
 \begin_inset LatexCommand ref
 reference "fig:Mallas"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
@@ -309,23 +305,19 @@ Mallas
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Paragraph
-Mariposa.
+Mariposa (figura 
 \begin_inset LatexCommand ref
 reference "fig:Mariposa"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
@@ -339,10 +331,6 @@ Las reder de tipo mariposa son similares a las mallas pero presentan menor
 wide false
 sideways false
 status open
-
-\begin_layout Standard
-
-\end_layout
 
 \begin_layout Standard
 \align center
@@ -370,10 +358,6 @@ Mariposa
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \end_inset
 
 
@@ -391,13 +375,13 @@ Los árboles binarios son particularmente útiles en problemas de ordenamiento,
 \end_layout
 
 \begin_layout Paragraph
-Pirámides.
+Pirámides (figura 
 \begin_inset LatexCommand ref
 reference "fig:Pirámides"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
@@ -412,10 +396,6 @@ Las redes de tipo pirámide intentan combinar las ventajas de las mallas
 wide false
 sideways false
 status open
-
-\begin_layout Standard
-
-\end_layout
 
 \begin_layout Standard
 \align center
@@ -452,13 +432,13 @@ Pirámides
 \end_layout
 
 \begin_layout Paragraph
-Hipercubo.
+Hipercubo (figura 
 \begin_inset LatexCommand ref
 reference "fig:Hipercubo"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
@@ -557,10 +537,6 @@ sideways false
 status open
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename Images/omega3e8p.png
@@ -595,13 +571,13 @@ Omega
 \end_layout
 
 \begin_layout Paragraph
-Fibras de interconexión.
+Fibras de interconexión (figura 
 \begin_inset LatexCommand ref
 reference "fig:Fibras-de-interconexión"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
@@ -615,10 +591,6 @@ Las fibras de interconexión son un conjunto de switches, llamados routers,
 wide false
 sideways false
 status open
-
-\begin_layout Standard
-
-\end_layout
 
 \begin_layout Standard
 \align center
@@ -899,13 +871,13 @@ Balanceo semi-distribuido: divide los procesadores en regiones, cada una
 \end_layout
 
 \begin_layout Subsection
-Taxonomía de Flynn
+Taxonomía de Flynn (figura 
 \begin_inset LatexCommand ref
 reference "fig:Taxonomía-de-Flynn"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
