@@ -7,7 +7,7 @@
 \inputencoding auto
 \font_roman default
 \font_sans default
-\font_typewriter default
+\font_typewriter cmtt
 \font_default_family default
 \font_sc false
 \font_osf false
@@ -164,18 +164,35 @@ El informe presenta el trabajo realizado en el marco de la asignatura Proyecto
  de alto desempeño con la capacidad de brindar acceso remoto para que sus
  usuarios interactuen con el y para que sus administradores lo regulen y
  monitoreen.
- Como parte de la implementación del cluster se investigaron los diferentes
- software middleware y las tecnologías disponibles para resolver el problema
- planteado en el escenario tecnológico actual.
  
 \end_layout
 
 \begin_layout Abstract
-En este informe se resume la investigación realizada, se describe la solución
- propuesta, se detallan los componentes de la solución y por último se presenta
- un caso de estudio.
- 
-\newline
+Este documento esta organizado en siete secciones.
+ La primer sección es una introducción a este proyecto en la cual incluimos
+ una breve introducción a la computación de alto rendimiento, objetivos
+ y motivaciones del proyecto, alcance y actividades desarrolladas en el
+ transcurso del proyecto.
+\end_layout
+
+\begin_layout Abstract
+En la segunda sección se profundiza en el estado del arte de la computación
+ de alto rendimiento donde hablamos sobre la importancia de estas tecnologías,
+ organización de computadores, diseño de algoritmos paralelos, arquitecturas
+ de computación paralela y herramientas disponibles.
+ En la tercer sección se presentan las tecnologías relevadas para la implantació
+n de un cluster de alto desempeño.
+ La cuarta sección se especifica la solución propuesta con las tecnologias
+ elegidas y la interfaz de acceso remoto desarrollada para el cluster de
+ alto desempeño con acceso remoto.
+ También se detalla el proceso de verificación realizado durante el desarrollo.
+ En la quinta sección se describen los ambientes donde el sitema es puesto
+ en producción.
+ Y finalmente en la sexta y septima sección se presentan las conclusiones
+ y los trabajos a futuro.
+\end_layout
+
+\begin_layout Abstract
 
 \series bold
 Palabras clave:
