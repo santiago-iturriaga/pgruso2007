@@ -321,7 +321,7 @@ reference "fig:Mariposa"
 \end_layout
 
 \begin_layout Standard
-Las reder de tipo mariposa son similares a las mallas pero presentan menor
+Las redes de tipo mariposa son similares a las mallas pero presentan menor
  diámetro.
 \end_layout
 
@@ -685,7 +685,7 @@ n funcional.
 \end_layout
 
 \begin_layout Standard
-En el proceso de partición existen variops aspectos a tener en cuenta, en
+En el proceso de partición existen varios aspectos a tener en cuenta, en
  particular el orden de tareas debe ser por lo menos superior al número
  de procesadores para tener flexibilidad en etapas siguientes.
  Es importante evitar cómputos y almacenamientos redundantes, y las tareas
@@ -733,26 +733,22 @@ En ambientes de memoria compartida no existe la noción de pertenencia y
 \end_layout
 
 \begin_layout Standard
-En esta etapa hay que tener en cuenta los siguientes aspectos:
-\end_layout
-
-\begin_layout Itemize
-Cada tarea debe efectuar aproximadamente el mismo número de operaciones
+En esta etapa hay que tener en cuenta varios aspectos.
+ Cada tarea debe efectuar aproximadamente el mismo número de operaciones
  de comunicación que cada una de las demás tareas.
  De otra forma es muy probable que el algoritmo no sea extensible a problemas
  mayores ya que habrán cuellos de botella.
 \end_layout
 
-\begin_layout Itemize
-La comunicación entre tareas debe ser tan reducida como sea posible.
+\begin_layout Standard
+La comunicación entre tareas debe ser tan reducida como sea posible, de
+ esta forma los procesos no se trancan entre sí en la espera de mensajes
+ y se evita que el canal de comunicación sea un cuello de botella.
 \end_layout
 
-\begin_layout Itemize
-Las operaciones de comunicación deben poder proceder concurrentemente.
-\end_layout
-
-\begin_layout Itemize
-Los cómputos de diferentes tareas deben poder proceder concurrentemente.
+\begin_layout Standard
+Las operaciones de comunicación y los cómputos de diferentes tareas deben
+ poder proceder concurrentemente.
 \end_layout
 
 \begin_layout Subsubsection
@@ -761,7 +757,7 @@ Agrupación
 
 \begin_layout Standard
 En las dos tareas anteriores el algoritmo resultante es aún abstracto en
- el sentido de que no se tomó en cuenta la máquina sobre el cual correrá.
+ el sentido de que no se tomó en cuenta la arquitectura sobre la que correrá.
  En este proceso se busca un algoritmo concreto, que corra eficientemente
  sobre cierta clase de computadores.
  En particular se considera si es útil agrupar tareas y si vale la pena
@@ -785,36 +781,26 @@ Mediante la agrupación de tareas se puede reducir la cantidad de datos a
 \end_layout
 
 \begin_layout Standard
-Aspectos a considerar en esta etapa:
-\end_layout
-
-\begin_layout Itemize
-Chequear si la agrupación redujo los costos de comunicación.
-\end_layout
-
-\begin_layout Itemize
-Si se han replicado cómputos y/o datos, se debe verificar que los beneficios
- son superiores a los costos.
-\end_layout
-
-\begin_layout Itemize
-Se debe verificar que las tareas resultantes tengan costos de cómputo y
+En esta etapa es importante chequear si la agrupación redujo los costos
+ de comunicación.
+ A su vez si se han replicado cómputos y/o datos, se debe verificar que
+ los beneficios son superiores a los costos.
+ Se debe verificar que las tareas resultantes tengan costos de cómputo y
  comunicación similares.
+ 
 \end_layout
 
-\begin_layout Itemize
-Revisar si el número de tareas es extensible con el tamaño del problema.
-\end_layout
-
-\begin_layout Itemize
-Si el agrupamiento ha reducido las oportunidades de ejecución concurrente,
+\begin_layout Standard
+Al igual que en las otras etapas se debe revisar si el número de tareas
+ es extensible con el tamaño del problema.
+ Si el agrupamiento ha reducido las oportunidades de ejecución concurrente,
  se debe verificar que aun hay suficiente concurrencia y posiblemente considerar
  diseños alternativos.
 \end_layout
 
-\begin_layout Itemize
-Analizar si es posible reducir aun más el número de tareas sin desbalancear
- la carga o reducir la extensibilidad.
+\begin_layout Standard
+Finalmente se deberá analizar si es posible reducir aun más el número de
+ tareas sin desbalancear la carga o reducir la extensibilidad.
 \end_layout
 
 \begin_layout Subsubsection
@@ -850,24 +836,24 @@ En la asignación dinámica se hacen cambios en la distribución de las tareas
  de ejecución.
  Sin embargo, el costo de balanceo puede ser significativo y por ende incrementa
 r el tiempo de ejecución.
- Entre los algoritmos de balanceo de carga están los siguientes:
+ 
 \end_layout
 
-\begin_layout Itemize
-Balanceo centralizado: un nodo ejecuta el algoritmo y mantiene el estado
- global del sistema.
+\begin_layout Standard
+Los algoritmos de balanceo de carga se pueden clasificar como balanceo centraliz
+ado, balanceo completamente distribuido y balanceo semi-distribuido.
+ Cuando el balanceo es centralizado un nodo ejecuta el algoritmo y mantiene
+ el estado global del sistema.
+ Como contrapartida cuando el balanceo es completamente distribuido cada
+ procesador mantiene su propia visión del sistema intercambiando información
+ con sus vecinos y así hacer cambios locales.
 \end_layout
 
-\begin_layout Itemize
-Balanceo completamente distribuido: cada procesador mantiene su propia visión
- del sistema intercambiando información con sus vecinos y así hacer cambios
- locales.
-\end_layout
-
-\begin_layout Itemize
-Balanceo semi-distribuido: divide los procesadores en regiones, cada una
- con un algoritmo centralizado local.
- Otro algoritmo balancea la carga entre las regiones.
+\begin_layout Standard
+Como posible punto intermedio entre ambos tipos de algoritmo está el balanceo
+ semi-distribuido, donde los procesadores se dividen en regiones, cada una
+ con un algoritmo centralizado local mientras que otro algoritmo balancea
+ la carga entre las regiones.
 \end_layout
 
 \begin_layout Subsection
