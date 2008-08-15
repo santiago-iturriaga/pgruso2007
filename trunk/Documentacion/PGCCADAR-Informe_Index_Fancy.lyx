@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\usepackage[none]{hyphenat}
+\end_preamble
 \language spanish
 \inputencoding auto
 \font_roman default
