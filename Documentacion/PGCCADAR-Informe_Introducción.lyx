@@ -315,6 +315,74 @@ En el CeCal se han llevado a cabo en los últimos años una gran cantidad
 \end_layout
 
 \begin_layout Paragraph
+Una versión paralela del algoritmo evolutivo para optimización multiobjetivo
+ NSGA-II y su aplicación al diseño de redes de comunicaciones confiables
+ (2003).
+\end_layout
+
+\begin_layout Standard
+Proyecto realizado por el Mg.
+ Ing.
+ Sergio Nesmachnow realizado como proyecto final del curso "Introducción
+ a la Optimización Multiobjetivo usando Metaheurísticas", dictado por el
+ Prof.
+ Dr.
+ Carlos Coello en el marco de la VII Escuela Internacional de Informática
+ en el CACIC 2003.
+\end_layout
+
+\begin_layout Standard
+Este trabajo se desarrollo una versión paralela del Algoritmo Evolutivo
+ para Optimización Multiobjetivo NSGA-II.
+ Se introducen los detalles de diseño e implementación de una versión paralela
+ y se analiza la calidad de resultados y la eficiencia computacional, comparando
+ con los resultados y tiempos de ejecución de la versión secuencial del
+ algoritmo NSGA-II sobre un conjunto de problemas de prueba estándar.
+ Adicionalmente, se estudio la aplicación de la versión paralela propuesta
+ a la resolución de un problema de diseño de redes de comunicaciones confiables.
+ 
+\end_layout
+
+\begin_layout Standard
+\SpecialChar \textcompwordmark{}
+
+\end_layout
+
+\begin_layout Standard
+Por parte de los estudiantes podemos mencionar como ejemplo algunos de los
+ proyectos de grado realizados recientemente:
+\end_layout
+
+\begin_layout Paragraph
+Proyecto MPI.net (2003).
+\end_layout
+
+\begin_layout Standard
+Proyecto de grado realizado por Sebastián Baña, Gonzalo Ferres y Nicolás
+ Pepe.
+\end_layout
+
+\begin_layout Standard
+El proyecto propuso la adaptación de la biblioteca MPI para su utilización
+ desde lenguajes a través de la plataforma .NET.
+\end_layout
+
+\begin_layout Paragraph
+Proyecto algoritmos genéticos increméntales (2003).
+\end_layout
+
+\begin_layout Standard
+Proyecto de grado realizado por Federico Dominioni y Pablo Musso.
+\end_layout
+
+\begin_layout Standard
+El proyecto planteo el estudio, diseño e implementación del modelo de algoritmos
+ genéticos increméntales.
+ El modelo fue aplicado a la resolución de un problema de optimización combinato
+ria en el área de diseño de redes de comunicaciones confiables.
+\end_layout
+
+\begin_layout Paragraph
 Algoritmos genéticos paralelos y su aplicación al diseño de redes de comunicacio
 nes confiables (2004).
 \end_layout
@@ -333,37 +401,33 @@ Al tratar con problemas de optimización combinatoria NP difíciles, para
  de recursos computacionales que demandan.
  Es aquí cuando las técnicas heurísticas aparecen como la única alternativa
  viable para abordar problemas NP difíciles.
- A diferencia de las técnicas exactas, las técnicas heurísticas no pueden
- garantizar a priori la obtención de la solución óptima del problema, pero
- en la práctica, numerosas técnicas heurísticas se comportan satisfactoriamente
- para la resolución de complejos problemas de optimización.
  
 \end_layout
 
 \begin_layout Standard
-En un nivel superior de abstracción, las técnicas meta heurísticas proporcionan
- esquemas o enfoques genéricos para la resolución de problemas complejos.
- Estos enfoques genéricos pueden ser instanciados para producir algoritmos
- específicos que trabajan bajo un mismo lineamiento general.
- Las técnicas de computación evolutiva constituyen una familia de meta heurístic
-as estocásticas utilizadas exitosamente para la resolución de variados problemas
- en las áreas de búsqueda y análisis de información, optimización combinatoria,
- entre otras.
-\end_layout
-
-\begin_layout Standard
-En este trabajo se presenta un estudio de las técnicas de computación evolutiva
+En este trabajo se realizo un estudio de las técnicas de computación evolutiva
  y la aplicación de técnicas de procesamiento de alta performance para implement
 ar modelos de algoritmos genéticos capaces de ejecutar en un ambiente paralelo-d
-istribuido y se presentan algoritmos evolutivos abocados al caso concreto
+istribuido y se presentaron algoritmos evolutivos abocados al caso concreto
  de diseñar redes de comunicaciones de alta conectividad topológica.
- Finalmente se evalúan diferentes algoritmos evolutivos puros e híbridos
- en sus versiones secuenciales y paralelas, presentando un estudio comparativo
- que reporta resultados satisfactorios tanto desde el punto de vista de
- la calidad de resultados obtenidos como desde el punto de vista de la mejora
- de eficiencia computacional alcanzada por las versiones paralelas de los
- algoritmos con respecto a sus contrapartes secuenciales.
+ También se evalúaron diferentes algoritmos evolutivos puros e híbridos
+ en sus versiones secuenciales y paralelas.
  
+\end_layout
+
+\begin_layout Standard
+El estudio comparativo realizado en este proyecto reporto resultados satisfactor
+ios tanto desde el punto de vista de la calidad de resultados obtenidos
+ como desde el punto de vista de la mejora de eficiencia computacional alcanzada
+ por las versiones paralelas de los algoritmos con respecto a sus contrapartes
+ secuenciales.
+ 
+\end_layout
+
+\begin_layout Standard
+El proyecto Fenton es una muy buena posibilidad para mejorar la eficiencia
+ computacional obtenida con las versiones paralelas desarrolladas en el
+ proyecto de algoritmos paralelos geneticos.
 \end_layout
 
 \begin_layout Paragraph
@@ -406,20 +470,27 @@ Las cualidades de este nuevo modelo permiten la obtención de resultados
 \end_layout
 
 \begin_layout Standard
-En esta tesis se estudian técnicas de computación de alto desempeño aplicadas
+En esta tesis se estudiaron técnicas de computación de alto desempeño aplicadas
  al cálculo científico, con el fin de mejorar el desempeño computacional
  de modelos numéricos que utilizan el paradigma de elementos finitos (MEF).
- Se aborda la aplicación de estas técnicas al modelo hidrodinámico RMA-10
- aplicado al Río de la Plata.
+ Se abordo la aplicación de las técnicas estudiadas al modelo hidrodinámico
+ RMA-10 aplicado al Río de la Plata.
 \end_layout
 
 \begin_layout Standard
-Se presenta una estrategia secuencial para el cálculo de la matriz de rigidez
+Se presento una estrategia secuencial para el cálculo de la matriz de rigidez
  del modelo RMA-10 utilizando tablas de dispersión y su posterior resolución
  empleando métodos multifrontales para sistemas lineales dispersos.
- También se evalúa la aplicación de distintas estrategias de programación
- paralela a la modificación propuesta y se presenta un estudio comparativo
+ También se evalúo la aplicación de distintas estrategias de programación
+ paralela a la modificación propuesta y se realizo un estudio comparativo
  de las diferentes estrategias.
+\end_layout
+
+\begin_layout Standard
+Como en el proyecto anterior de algoritmos geneticos, el proyecto Fenton
+ probee un ambiente que facilitaria las pruebas de las estrategias de programaci
+ón paralela estudiadas así como mejoraria la eficiencia computacional de
+ estas.
 \end_layout
 
 \begin_layout Paragraph
@@ -428,7 +499,7 @@ Algoritmos genéticos paralelos aplicados a la resolución de problemas de
 \end_layout
 
 \begin_layout Standard
-Tesina de licenciatura en informática de la Universidad Nacional de la Patagonia
+Tesis de licenciatura en informática de la Universidad Nacional de la Patagonia
  San Juan Bosco (Argentina) realizada por Cristian Perfumo, Gerardo Mora
  y Lucas Rojas, tutoreada por el Mg.
  Ing.
@@ -448,78 +519,10 @@ Con la masificación de las redes inalámbricas, los entes reguladores del
 \end_layout
 
 \begin_layout Standard
-En este trabajo se presenta una investigación sobre algoritmos genéticos,
+En este trabajo se llevo a cabo una investigación sobre algoritmos genéticos,
  considerando sus variantes secuenciales y paralelas, y su aplicación a
  la resolución del problema de la asignación de frecuencias en las redes
  de telefonía celular.
-\end_layout
-
-\begin_layout Paragraph
-Una versión paralela del algoritmo evolutivo para optimización multiobjetivo
- NSGA-II y su aplicación al diseño de redes de comunicaciones confiables
- (2003).
-\end_layout
-
-\begin_layout Standard
-Proyecto realizado por el Mg.
- Ing.
- Sergio Nesmachnow realizado como proyecto final del curso "Introducción
- a la Optimización Multiobjetivo usando Metaheurísticas", dictado por el
- Prof.
- Dr.
- Carlos Coello en el marco de la VII Escuela Internacional de Informática
- en el CACIC 2003.
-\end_layout
-
-\begin_layout Standard
-Este trabajo presenta una versión Paralela del Algoritmo Evolutivo para
- Optimización Multiobjetivo NSGA-II.
- Se introducen los detalles de diseño e implementación de una versión paralela
- y se analiza la calidad de resultados y la eficiencia computacional, comparando
- con los resultados y tiempos de ejecución de la versión secuencial del
- algoritmo NSGA-II sobre un conjunto de problemas de prueba estándar.
- Adicionalmente, se estudia la aplicación de la versión paralela propuesta
- a la resolución de un problema de diseño de redes de comunicaciones confiables.
- 
-\end_layout
-
-\begin_layout Standard
-\SpecialChar \textcompwordmark{}
-
-\end_layout
-
-\begin_layout Standard
-Por parte de los estudiantes podemos mencionar como ejemplo algunos de los
- proyectos de grado realizados recientemente:
-\end_layout
-
-\begin_layout Paragraph
-Proyecto MPI.net (2003).
-\end_layout
-
-\begin_layout Standard
-Proyecto de grado realizado por Sebastián Baña, Gonzalo Ferres y Nicolás
- Pepe.
-\end_layout
-
-\begin_layout Standard
-El proyecto propone la adaptación de la biblioteca MPI para su utilización
- desde lenguajes a través de la plataforma .NET.
-\end_layout
-
-\begin_layout Paragraph
-Proyecto algoritmos genéticos increméntales (2003).
-\end_layout
-
-\begin_layout Standard
-Proyecto de grado realizado por Federico Dominioni y Pablo Musso.
-\end_layout
-
-\begin_layout Standard
-El proyecto plantea el estudio, diseño e implementación del modelo de algoritmos
- genéticos increméntales.
- El modelo fue aplicado a la resolución de un problema de optimización combinato
-ria en el área de diseño de redes de comunicaciones confiables.
 \end_layout
 
 \begin_layout Subsection
