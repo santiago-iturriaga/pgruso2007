@@ -344,11 +344,6 @@ Este trabajo se desarrollo una versión paralela del Algoritmo Evolutivo
 \end_layout
 
 \begin_layout Standard
-\SpecialChar \textcompwordmark{}
-
-\end_layout
-
-\begin_layout Standard
 Por parte de los estudiantes podemos mencionar como ejemplo algunos de los
  proyectos de grado realizados recientemente:
 \end_layout
@@ -365,6 +360,27 @@ Proyecto de grado realizado por Sebastián Baña, Gonzalo Ferres y Nicolás
 \begin_layout Standard
 El proyecto propuso la adaptación de la biblioteca MPI para su utilización
  desde lenguajes a través de la plataforma .NET.
+ Este proyecto formo parte del proceso de desarrollo del área de procesamiento
+ de alta performance en aplicaciones comerciales e industriales utilizando
+ computadoras de bajo costo en curso en el UAS.
+\end_layout
+
+\begin_layout Standard
+Utilizando mecanismos de exportación de clases a través de el ambiente .NET,
+ este proyecto propuso la utilización de MPI desde lenguajes soportados
+ por .NET de modo que las técnicas de procesamiento paralelo puedan utilizarse
+ desde programas desarrollados en esos lenguajes.
+ Para realizar esto ultimo debieron encapsular en clases las primitivas
+ básicas de comunicación de la biblioteca MPI ( envío de mensajes, recepción
+ de mensajes bloqueante y no bloqueante, primitivas de comunicación colectivas
+ ) y las primitivas de sincronización de procesos y reducción de resultados
+ de modo que posibilitara su uso desde programas remotos.
+\end_layout
+
+\begin_layout Standard
+Complementariamente, se debió instrumentar un mecanismo que posibilitara
+ la distribución del código paralelo a ejecutar en los diferentes nodos
+ de la máquina virtual, que podían estar en diferentes redes.
 \end_layout
 
 \begin_layout Paragraph
@@ -376,10 +392,38 @@ Proyecto de grado realizado por Federico Dominioni y Pablo Musso.
 \end_layout
 
 \begin_layout Standard
-El proyecto planteo el estudio, diseño e implementación del modelo de algoritmos
- genéticos increméntales.
- El modelo fue aplicado a la resolución de un problema de optimización combinato
-ria en el área de diseño de redes de comunicaciones confiables.
+Los Algoritmos Genéticos constituyen uno de los paradigmas de Computación
+ Evolutiva más difundidos, basando su funcionamiento en la simulación del
+ principio de evolución natural en donde a partir de un población (de soluciones
+ potenciales) se establece una especie de ley de la selva virtual en donde
+ los individuos mas aptos (mejores soluciones) sobreviven.
+ La evolución de dicha población es a través de interacciones (cruzamiento)
+ y transformaciones únicas (mutaciones), luego de determinadas generaciones
+ la población converge hacia una solución optima o cercana a la misma.
+ 
+\end_layout
+
+\begin_layout Standard
+El auge de la computación paralela y distribuida ha renovado el interés
+ práctico por los algoritmos basados en analogías de procesos naturales
+ para la resolución de problemas de optimización sobre complejos espacios
+ de búsqueda y funciones objetivo.
+ 
+\end_layout
+
+\begin_layout Standard
+El proyecto consistio en el estudio, diseño e implementación del modelo
+ de algoritmos genéticos incrementales, un modelo distribuido original de
+ Alba y Troya, dicho modelo deberá ser adaptado para ser ejecutado en un
+ cluster de PC's no dedicadas y por lo tanto para su ejecución se debio
+ tener en cuenta las cargas de dichas PC.
+ Los modelos diseñados fueron aplicados a problemas de optimización combinatoria
+, en particular en el área de diseño de redes de comunicaciones confiables.
+ 
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Paragraph
