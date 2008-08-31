@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -58,11 +58,11 @@ Como se mencionó anteriormente, en el correr de los últimos años ha crecido
 \begin_layout Standard
 La computación distribuida como modelo para resolver problemas de computación
  masiva utilizando un gran número de computadoras en una infraestructura
- de telecomunicaciones distribuida, consiste en compartir recursos heterogéneos
- (basados en distintas plataformas, arquitecturas de computadores y programas,
- lenguajes de programación), situados en distintos lugares y pertenecientes
- a diferentes dominios de administración sobre una red que utiliza estándares
- abiertos.
+ de telecomunicaciones distribuida.
+ Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
+ arquitecturas de computadores y programas, lenguajes de programación),
+ situados en distintos lugares y pertenecientes a diferentes dominios de
+ administración sobre una red que utiliza estándares abiertos.
  Ha sido diseñada para resolver problemas que superan la capacidad de cualquier
  supercomputadora o mainframe, manteniéndose la flexibilidad de trabajar
  en múltiples problemas más pequeños.
@@ -865,13 +865,9 @@ Una forma de clasificar las diferentes arquitecturas de computación, tanto
  serial como paralela, es mediante la taxonomía de Flynn.
  Esta está basada en la multiplicidad del flujo de instrucciones y del flujo
  de datos en un computador.
- 
-\end_layout
-
-\begin_layout Standard
-Un flujo de instrucciones es una secuencia de instrucciones ejecutadas por
- el computador y un flujo de datos es la secuencia de datos sobre los cuales
- operan las instrucciones.
+ Un flujo de instrucciones es una secuencia de instrucciones ejecutadas
+ por el computador y un flujo de datos es la secuencia de datos sobre los
+ cuales operan las instrucciones.
 \end_layout
 
 \begin_layout Standard
@@ -895,10 +891,6 @@ reference "SISD"
 wide false
 sideways false
 status open
-
-\begin_layout Standard
-
-\end_layout
 
 \begin_layout Standard
 \align center
@@ -961,8 +953,8 @@ Single Instruction stream, Single Data stream
 \end_layout
 
 \begin_layout Standard
-Seguimos con SIMD, Single Instruction stream, Multiple Data stream (ver
- figura 
+La segunda categoría es SIMD, Single Instruction stream, Multiple Data stream
+ (ver figura 
 \begin_inset LatexCommand ref
 reference "SIMD"
 
@@ -980,10 +972,6 @@ reference "SIMD"
 wide false
 sideways false
 status open
-
-\begin_layout Standard
-
-\end_layout
 
 \begin_layout Standard
 \align center
@@ -1023,14 +1011,14 @@ Single Instruction stream, Multiple Data stream
 \end_layout
 
 \begin_layout Standard
-También tenemos la categoría MISD, Multiple Instruction stream, Single Data
- stream (ver figura 
+En la categoría MISD, Multiple Instruction stream, Single Data stream (ver
+ figura 
 \begin_inset LatexCommand ref
 reference "MISD"
 
 \end_inset
 
-) donde existen n procesadores, cada uno recibiendo una instrucción diferente
+) existen n procesadores, cada uno recibiendo una instrucción diferente
  y operando sobre el mismo flujo de datos.
  Actualmente no hay máquinas de este tipo por ser poco prácticas, a pesar
  de que ciertas MIMD puedan ser usadas de esta forma.
@@ -1136,9 +1124,9 @@ Multiple Instruction stream, Multiple Data stream
 \end_layout
 
 \begin_layout Standard
-Por ultimo la categoría SPMD (Single Program, Multiple Data).
- En esta categoría cada procesador ejecuta una copia exacta del mismo programa,
- pero opera sobre datos diferentes.
+Por último la categoría SPMD (Single Program, Multiple Data), donde cada
+ procesador ejecuta una copia exacta del mismo programa, pero opera sobre
+ datos diferentes.
  Pese a no ser una categoría definida por Flynn es muy usada y puede ser
  considerada como un caso particular de MIMD.
 \end_layout
@@ -1157,8 +1145,9 @@ Arreglos de procesadores
 \end_layout
 
 \begin_layout Standard
-Una máquina cuyo conjunto de instrucciones permite operaciones tanto sobre
- vectores como escalares lo denominamos computador vectorial.
+En un arreglo de procesadores tenemos una máquina cuyo conjunto de instrucciones
+ permite operaciones tanto sobre vectores como escalares lo denominamos
+ computador vectorial.
 \end_layout
 
 \begin_layout Paragraph
@@ -1168,10 +1157,7 @@ Procesador Vectorial Pipelined.
 \begin_layout Standard
 En estas máquinas los vectores fluyen a través de las unidades aritméticas
  pipelined.
-\end_layout
-
-\begin_layout Standard
-Las unidades consisten de una cascada de etapas de procesamiento compuestas
+ Las unidades consisten de una cascada de etapas de procesamiento compuestas
  de circuitos que efectúan operaciones aritméticas o lógicas sobre el flujo
  de datos que pasan a través de ellas.
 \end_layout
@@ -1181,11 +1167,7 @@ Las etapas están separadas por registros de alta velocidad usados para guardar
  resultados intermedios.
  La información que fluye entre las etapas adyacentes esta bajo el control
  de un reloj R que se aplica a todos los registros simultáneamente.
- 
-\end_layout
-
-\begin_layout Standard
-En esta categoría tenemos máquinas como la Cray-1 y la Cyber-205.
+ En esta categoría tenemos máquinas como la Cray-1 y la Cyber-205.
 \end_layout
 
 \begin_layout Paragraph
@@ -1207,11 +1189,7 @@ Son máquinas que constan de un computador secuencial conectado a un arreglo
 \begin_layout Standard
 Los arreglos de procesamiento difieren fundamentalmente en la complejidad
  y la topología de interconexión de sus elementos de procesamiento.
- 
-\end_layout
-
-\begin_layout Standard
-Ejemplos de estas máquinas son: IILIAC IV, Goodyear MPP y Connection Machine
+ Ejemplos de estas máquinas son: IILIAC IV, Goodyear MPP y Connection Machine
  CM-200.
 \end_layout
 
