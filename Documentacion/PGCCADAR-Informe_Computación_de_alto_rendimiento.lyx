@@ -713,13 +713,13 @@ La comunicación puede ser definida en dos fases.
 \end_layout
 
 \begin_layout Standard
-Dependiendo de si estamos en el caso de memoria distribuida o memoria compartida
- dependerá la forma de atacar la comunicación entre tareas.
+La forma de organización de la memoria (distribuida o compartida) determinará
+ la forma de atacar la comunicación entre tareas.
  En ambientes de memoria distribuida, las tareas tienen una identificación
  única e interactúan enviando y recibiendo mensajes hacia y desde tareas
  específicas.
  Las bibliotecas más conocidas para implementar el pasaje de mensajes en
- ambientes de memoria distribuida son: MPI (Message Passing Interface) y
+ ambientes de memoria distribuida son MPI (Message Passing Interface) y
  PVM (Parallel Virtual Machine).
 \end_layout
 
@@ -733,21 +733,16 @@ En ambientes de memoria compartida no existe la noción de pertenencia y
 \end_layout
 
 \begin_layout Standard
-En esta etapa hay que tener en cuenta varios aspectos.
+Para poder dar esta etapa por terminada es necesario tener en cuenta varios
+ aspectos.
  Cada tarea debe efectuar aproximadamente el mismo número de operaciones
  de comunicación que cada una de las demás tareas.
  De otra forma es muy probable que el algoritmo no sea extensible a problemas
  mayores ya que habrán cuellos de botella.
-\end_layout
-
-\begin_layout Standard
-La comunicación entre tareas debe ser tan reducida como sea posible, de
+ La comunicación entre tareas debe ser tan reducida como sea posible, de
  esta forma los procesos no se trancan entre sí en la espera de mensajes
  y se evita que el canal de comunicación sea un cuello de botella.
-\end_layout
-
-\begin_layout Standard
-Las operaciones de comunicación y los cómputos de diferentes tareas deben
+ Las operaciones de comunicación y los cómputos de diferentes tareas deben
  poder proceder concurrentemente.
 \end_layout
 
@@ -756,19 +751,20 @@ Agrupación
 \end_layout
 
 \begin_layout Standard
-En las dos tareas anteriores el algoritmo resultante es aún abstracto en
- el sentido de que no se tomó en cuenta la arquitectura sobre la que correrá.
- En este proceso se busca un algoritmo concreto, que corra eficientemente
+Durante las tareas de participación y comunicación el algoritmo resultante
+ es aún abstracto en el sentido de que no se tomó en cuenta la arquitectura
+ sobre la que se ejecutará.
+ En este proceso se busca un algoritmo concreto, que se ejecute eficientemente
  sobre cierta clase de computadores.
- En particular se considera si es útil agrupar tareas y si vale la pena
- replicar datos y/o cómputos.
+ En particular, se considera la utilidad de agrupar tareas y de replicar
+ datos y/o cómputos.
 \end_layout
 
 \begin_layout Standard
 En el proceso de partición se trata de establecer el mayor número posible
  de tareas con la intención de maximizar el paralelismo.
- Esto no necesariamente produce un algoritmo eficiente ya que el costo de
- comunicación puede ser significativo.
+ La maximización de tareas no necesariamente produce un algoritmo eficiente,
+ ya que el costo de comunicación puede ser significativo.
  
 \end_layout
 
@@ -831,11 +827,10 @@ La asignación de tareas puede ser estática o dinámica.
 
 \begin_layout Standard
 En la asignación dinámica se hacen cambios en la distribución de las tareas
- entre los procesadores en tiempo de ejecución.
- Esto es con el fin de balancear la carga del sistema y reducir el tiempo
- de ejecución.
- Sin embargo, el costo de balanceo puede ser significativo y por ende incrementa
-r el tiempo de ejecución.
+ entre los procesadores en tiempo de ejecución, con el fin de balancear
+ la carga del sistema y reducir el tiempo de ejecución.
+ Sin embargo, el costo de realizar el balance puede ser significativo y
+ por ende incrementar el tiempo de ejecución.
  
 \end_layout
 
@@ -861,10 +856,9 @@ Taxonomía de Flynn.
 \end_layout
 
 \begin_layout Standard
-Una forma de clasificar las diferentes arquitecturas de computación, tanto
- serial como paralela, es mediante la taxonomía de Flynn.
- Esta está basada en la multiplicidad del flujo de instrucciones y del flujo
- de datos en un computador.
+Una forma de clasificar las diferentes arquitecturas de computación secuenciales
+ y paralelas, es mediante la taxonomía de Flynn, que está basada en la multiplic
+idad del flujo de instrucciones y del flujo de datos en un computador.
  Un flujo de instrucciones es una secuencia de instrucciones ejecutadas
  por el computador y un flujo de datos es la secuencia de datos sobre los
  cuales operan las instrucciones.
@@ -880,9 +874,8 @@ reference "SISD"
 \end_inset
 
 ).
- La mayor parte de computadores seriales son SISD.
- Estas tienen un CPU que ejecuta una instrucción y busca o guarda datos
- en un momento dado.
+ La mayor parte de computadores seriales son SISD, teniendo en general un
+ CPU que ejecuta una instrucción y busca o guarda datos en un momento dado.
 \end_layout
 
 \begin_layout Standard
@@ -1072,11 +1065,11 @@ reference "MIMD"
 
 \end_inset
 
-) incluye a la mayoría de los multiprocesadores y multicomputadores.
- Estos tienen más de un procesador independiente, y cada uno puede ejecutar
- un programa diferente sobre sus propios datos.
- Podemos categorizarlos también según como esté organizada su memoria: memoria
- compartida o memoria distribuida.
+) incluye a la mayoría de los multiprocesadores y multicomputadores, que
+ en general tienen más de un procesador independiente, y cada uno puede
+ ejecutar un programa diferente sobre sus propios datos.
+ Es posible hacer una segunda categorización según su forma de organización
+ de memoria, ya sea memoria compartida o memoria distribuida.
 \end_layout
 
 \begin_layout Standard
@@ -1136,8 +1129,8 @@ Arquitecturas de computación paralela
 \end_layout
 
 \begin_layout Standard
-En esta sección enumeraremos las diferentes arquitecturas que podemos encontrar
- en cuanto a computación paralela.
+En esta sección se enumeran las diferentes arquitecturas que se peuden encontrar
+ relacionadas a la computación paralela.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1145,8 +1138,8 @@ Arreglos de procesadores
 \end_layout
 
 \begin_layout Standard
-En un arreglo de procesadores tenemos una máquina cuyo conjunto de instrucciones
- permite operaciones tanto sobre vectores como escalares lo denominamos
+En un arreglo de procesadores tenemos un computador cuyo conjunto de instruccion
+es permite operaciones tanto sobre vectores como escalares al que se denomina
  computador vectorial.
 \end_layout
 
@@ -1206,8 +1199,8 @@ Son equipos formados por un número de procesadores completamente programables
 La principal debilidad que presentan los multiprocesadores (máquinas de
  memoria compartida) radica en que no se pueden agregar procesadores indefinidam
 ente ya que a partir de cierto número y dependiendo de la aplicación, el
- mecanismo de switches o enrutamiento se satura, en otras palabras, tienen
- poca extensibilidad.
+ mecanismo de switches o enrutamiento se satura, generando un problema important
+e a la hora de escalar la solución.
 \end_layout
 
 \begin_layout Paragraph
@@ -1245,9 +1238,10 @@ Multicomputadores
 \end_layout
 
 \begin_layout Standard
-En esta categoría, los procesadores no comparten memoria.
- Cada procesador tiene su propia memoria privada (máquinas de memoria distribuid
-a) y la interacción entre ellos es a través de pasaje de mensajes.
+Una de las principales características de los multicomputadores es que los
+ procesadores que los conforman no comparten memoria, cada procesador tiene
+ su propia memoria privada (máquinas de memoria distribuida) y la interacción
+ entre ellos es a través de pasaje de mensajes.
  Ejemplos son: Intel ParagonXP/S, Meikos Computing Surface, nCUBE 2, Parsytec
  SuperCluster, Thinking Machine CM-5 y la IBM SP2.
 \end_layout
@@ -1260,14 +1254,14 @@ Máquinas de memoria compartida distribuida
 Actualmente las máquinas paralelas tienden a aprovechar las facilidades
  de programación que ofrecen los ambientes de memoria compartida y la escalabili
 dad de los ambientes de memoria distribuida.
- Este modelo conecta entre si módulos de multiprocesadores manteniendo la
+ Este modelo conecta entre sí módulos de multiprocesadores manteniendo la
  visión global de la memoria.
  
 \end_layout
 
 \begin_layout Standard
-Este tipo de máquinas entra dentro de la categoría de NUMA y un ejemplo
- es la SGI Origin 2000.
+Las máquinas de memoria compartida distribuida entra dentro de la categoría
+ de NUMA y un ejemplo es la SGI Origin 2000.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1275,17 +1269,17 @@ Multiprocesadores multi-hebrados
 \end_layout
 
 \begin_layout Standard
-En estas máquinas cada procesador tiene cierto número de flujos de instrucciones
- implementados en hardware, incluyendo el contador de programa y registros,
- cada uno destinado a ejecutar una hebra.
+En los multiprocesadores multi-hebrados, cada procesador tiene cierto número
+ de flujos de instrucciones implementados en hardware, incluyendo el contador
+ de programa y registros, cada uno destinado a ejecutar una hebra.
  En cada ciclo el procesador ejecuta instrucciones de una de las hebras.
  En el ciclo siguiente, el procesador hace un cambio de contexto y ejecuta
  instrucciones de otra hebra.
 \end_layout
 
 \begin_layout Standard
-La Tera MTA (multithreaded architecture) es la primera de estas máquinas,
- cada procesador tiene 128 flujos de instrucciones.
+La Tera MTA (multithreaded architecture) es el primer ejemplo con esta arquitect
+ura, donde cada procesador tiene 128 flujos de instrucciones.
  Un acceso a memoria dura aproximadamente 100 ciclos por lo que en la próxima
  ejecución de la hebra se tendrán los datos requeridos.
  Este mecanismo permite a la MTA tolerar la latencia a memoria y por lo
@@ -1320,8 +1314,8 @@ Cluster de PC's
 
 \begin_layout Standard
 El término cluster se aplica a los conjuntos de computadoras unidos mediante
- una red de alta velocidad que se comportan como si fuesen una sola con
- mayor poder de cómputo.
+ una red de alta velocidad que se comportan como si fuesen un único recurso
+ computacional con mayor poder de cómputo.
  Hoy en día los clusters de PC's tienen un papel importante en aplicaciones
  científicas, de ingeniería, comerciales, simulaciones, etc.
 \end_layout
@@ -1347,23 +1341,17 @@ icas: alto rendimiento, alta disponibilidad, equilibrio de carga y escalabilidad
 \end_layout
 
 \begin_layout Standard
-La construcción de los cluster es muy fácil y económica debido a su flexibilidad
-, pueden tener todos la misma configuración de hardware y sistema operativo
- (cluster homogéneo), diferente rendimiento pero con arquitecturas y sistemas
- operativos similares (cluster semi-homogéneo), o tener diferente hardware
- y sistema operativo (cluster heterogéneo).
+La construcción de los cluster es económica debido a su flexibilidad, permitiend
+o tener varios computadores con la misma configuración de hardware y sistema
+ operativo (cluster homogéneo), diferente rendimiento pero con arquitecturas
+ y sistemas operativos similares (cluster semi-homogéneo), o tener diferente
+ hardware y sistema operativo (cluster heterogéneo).
 \end_layout
 
 \begin_layout Standard
-Se pueden construir clusters con ordenadores personales desechados por "anticuad
-os" que consiguen competir en capacidad de cálculo con superordenadores
- de precios elevados.
-\end_layout
-
-\begin_layout Standard
-Es necesario proveer un sistema para el manejo del cluster, el cual se encargue
- de interactuar con el usuario y los procesos que corren en él para optimizar
- el funcionamiento.
+Se pueden construir clusters con ordenadores personales desechados por anticuado
+s que consiguen competir en capacidad de cálculo con superordenadores de
+ precios elevados.
 \end_layout
 
 \begin_layout Paragraph
