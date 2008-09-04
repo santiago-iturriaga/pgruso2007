@@ -1360,12 +1360,7 @@ Cluster de alto rendimiento.
 
 \begin_layout Standard
 Un cluster de alto rendimiento está diseñado para dar altas prestaciones
- en cuanto a capacidad de cálculo.
-\end_layout
-
-\begin_layout Standard
-Los motivos para utilizar un cluster de alto rendimiento son el tamaño del
- problema por resolver y el precio de la máquina necesaria para resolverlo.
+ de capacidad de cálculo.
 \end_layout
 
 \begin_layout Standard
@@ -1373,8 +1368,8 @@ Por medio de un cluster se pueden conseguir capacidades de cálculo superiores
  a las de un ordenador más caro.
  Para garantizar esta capacidad de cálculo, los problemas necesitan ser
  paralelizables, ya que el método con el que los clusters agilizan el procesamie
-nto es dividir el problema en problemas más pequeños y calcularlos en los
- nodos.
+nto es dividir el problema en subproblemas más pequeños y resolverlos en
+ los nodos.
 \end_layout
 
 \begin_layout Paragraph
@@ -1383,14 +1378,16 @@ Cluster de alta disponibilidad.
 
 \begin_layout Standard
 Un cluster de alta disponibilidad se caracteriza por compartir los discos
- de almacenamiento de datos y por estar constantemente monitorizándose entre
- sí.
+ de almacenamiento de datos, los distintos computadores se monitorean constantem
+ente entre sí para responder en forma instantánea frente a la caída de uno
+ de ellos..
  
 \end_layout
 
 \begin_layout Standard
-Podemos dividirlo en dos clases: de alta disponibilidad de infraestructura
- y de alta disponibilidad de aplicación.
+Los clusters de alta disponibilidad pueden dividirse entre clusters de alta
+ disponibilidad de infraestructura y clusters de alta disponibilidad de
+ aplicación.
 \end_layout
 
 \begin_layout Paragraph
@@ -1400,8 +1397,8 @@ Cluster de balanceo de carga.
 \begin_layout Standard
 Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
  por uno o más ordenadores que actúan como front-end del cluster, y que
- se ocupan de repartir las peticiones de servicio que reciba el cluster,
- a otros ordenadores del cluster que forman el back-end de éste.
+ se ocupan de repartir las peticiones de servicio que reciba el cluster
+  a otros ordenadores del cluster que forman el back-end de éste.
 \end_layout
 
 \begin_layout Paragraph
