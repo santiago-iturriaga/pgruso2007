@@ -49,8 +49,34 @@ name "sec:Relevamiento-de-tecnologías"
 
 \end_layout
 
+\begin_layout Standard
+El relevamiento de paquetes de sowtware base que permitan el desarrollo
+ y la ejecución de programas paralelos y distrbuidos fue una actividad muy
+ importante dentro del proyecto pues esta nos definiria la siguientes actividade
+s a realizar.
+ El relevamioento se enfocó en sistemas de administración de cluster, sistemas
+ de despacho de trabajos y sistemas de monitoreo de clusters.
+ Algunas caracteristicas que se tubieron en cuenta en el relevamiento del
+ software base fueron la performance, interfaz amigable para usuarios del
+ cluster, interfaz de administración del cluster e infromación del cluster
+ y ejecución de trabajos brindada por la misma y que fueran de código abierto,
+ en.
+ 
+\end_layout
+
+\begin_layout Standard
+Previamente al relevamiento se establecieron el sistema operativo que sería
+ alguna distribución de Linux, por ejemplo Fedora, y las bibliotecas PVM
+ y MPI para el desarrollo para programas paralelos y distribuidos .
+\end_layout
+
+\begin_layout Standard
+A continuación se detallaran las aplicaciones que fueran relevadas y sus
+ caracteristicas.
+\end_layout
+
 \begin_layout Subsection
-SSI: OpenMosix
+SSI:OpenMosix
 \begin_inset Foot
 status open
 
@@ -167,13 +193,37 @@ OpenPBS
 \end_layout
 
 \begin_layout Standard
-OpenPBS se trata de la versión original de PBS desarrollada para la NASA
- a principios de los 90's.
+OpenPBS se trata de la versión original y de código abierto de PBS (Portable
+ Batch System) desarrollada para la NASA a principios de los 90's.
  Actualmente es ofrecida por Altair Grid Technologies, aunque no se encuentra
  en desarrollo y la empresa no brinda ningún tipo de soporte sobre el software.
  Altair ha apostado a una versión comercial del producto llamada PBS Pro,
  y en lo que a Altair respecta OpenPBS se trata de una forma de comenzar
  a utilizar PBS con el objetivo de comprar PBS Pro.
+\end_layout
+
+\begin_layout Subsubsection
+Características generales
+\end_layout
+
+\begin_layout Standard
+PBS ofrece apoyo para programar y ejecutar trabajos que requieren el acceso
+ interactivo de los usuarios a la entrada y salida del trabajo durante el
+ tiempo de ejecución.
+ Esto es a menudo necesario para ejecutar debuggers u otros programas que
+ requieren información como parte de un trabajo que debe tener previsto
+ el acceso a hardware.
+\end_layout
+
+\begin_layout Standard
+PBS se prové la ejecución de dos scripts administrativos suministrados con
+ cada trabajo llamados prologo y epilogo.
+ El prólogo se ejecuta inmediatamente antes de que se ejecute el trabajo,
+ el epílogo se ejecuta de inmediatamente después.
+ Ambos scrpts se ejecutan con privilegios de root y pueden utilizarse para
+ colocaruan bandera o establecer parte de la entorno para el trabajo, como
+ la creación de directorios temporales o realizar una limpieza de los puestos
+ de trabajo.
 \end_layout
 
 \begin_layout Subsection
