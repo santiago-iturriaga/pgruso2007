@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -58,14 +58,14 @@ Como se mencionó anteriormente, en el correr de los últimos años ha crecido
 \begin_layout Standard
 La computación distribuida como modelo para resolver problemas de computación
  masiva utilizando un gran número de computadoras en una infraestructura
- de telecomunicaciones distribuida.
- Consiste en compartir recursos heterogéneos (basados en distintas plataformas,
- arquitecturas de computadores y programas, lenguajes de programación),
- situados en distintos lugares y pertenecientes a diferentes dominios de
- administración sobre una red que utiliza estándares abiertos.
- Ha sido diseñada para resolver problemas que superan la capacidad de cualquier
- supercomputadora o mainframe, manteniéndose la flexibilidad de trabajar
- en múltiples problemas más pequeños.
+ de telecomunicaciones distribuida consiste en compartir recursos heterogéneos
+ (basados en distintas plataformas, arquitecturas de computadores y programas,
+ lenguajes de programación), situados en distintos lugares y pertenecientes
+ a diferentes dominios de administración sobre una red que utiliza estándares
+ abiertos.
+ La computación distribuida ha sido diseñada para resolver problemas que
+ superan la capacidad de cualquier supercomputadora o mainframe, manteniéndose
+ la flexibilidad de trabajar en múltiples problemas más pequeños.
  Existen varios grados de distribución: de hardware y procesamiento, de
  datos y de control.
  Algunas de las ventajas de la computación distribuida son la mejora en
@@ -81,11 +81,12 @@ La programación paralela es una técnica de programación basada en la ejecuci�
  simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
  o en un cluster de ordenadores, en cuyo caso se denomina computación distribuid
 a.
- Al contrario que en la programación concurrente, esta técnica enfatiza
- la verdadera simultaneidad en el tiempo de la ejecución de las tareas.
+ Al contrario que en la programación concurrente, la técnica de paralelización
+ enfatiza la verdadera simultaneidad en el tiempo de la ejecución de las
+ tareas.
  El avance en diferentes tecnologías como microprocesadores con mayor poder
  de procesamiento, comunicación de datos, desarrollo de bibliotecas e interfaces
- para programación de procesos han posibilitado esta técnica.
+ para programación de procesos han posibilitado esta la programación paralela.
  Los multicomputadores y los sistemas con múltiples procesadores consiguen
  un aumento en el rendimiento, mientras que en los sistemas monoprocesador
  el beneficio en rendimiento no es tan evidente, ya que la CPU es compartida
