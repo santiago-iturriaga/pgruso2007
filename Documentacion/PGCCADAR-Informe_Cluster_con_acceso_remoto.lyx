@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -195,49 +195,53 @@ Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
  Como entorno de desarrollo para la implementación de la logica en código
  PHP necesaria se utilizó Eclipse con el plugin PHPEclipse.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 Para el almacenamiento de datos se consideraron dos motores de base de datos
  relacional: PostgreSQL y MySQL.
- Finalmente elegimos trabajar con PostgreSQL, pero igualmente ambos cumplen
- con creces los requerimientos del proyecto.
+ Finalmente se seleccionó trabajar con PostgreSQL, pero igualmente ambos
+ cumplen con creces los requerimientos del proyecto.
  PostgreSQL es un motor de base de datos relacional de tipo empresarial,
  maduro, con buena integración con PHP y un muy buen soporte por parte de
  la comunidad.
  Si bien no es tan amigable ni tan popular como MySQL cuenta con una licencia
  de tipo BSD (Berkeley Software Distribution) mucho más flexible y permisiva
  que la licencia utilizada por MySQL.
+ 
 \end_layout
 
 \begin_layout Standard
-Este requerimiento redundó en una ventaja para el producto: si fuera necesario
- instalarlo sobre otro motor de condiciones similares, en principio solo
- sería necesario reimplementar el módulo y repetir la etapa de testeo.
-\end_layout
-
-\begin_layout Standard
-La apariencia del sitio también podía variar durante la implementación,
+A la hora de la implementación se realizó una clara separación entre la
+ capa de presentación y la capa con la lógica de negocios, desacoplando
+ asi la presentación de la información con el comportamiento de la aplicación.
+ El acceso a datos se encapsuló en un módulo especifico, esto redundó en
+ una ventaja para el producto: si fuera necesario instalarlo sobre otro
+ manejador de base de datos relacional de condiciones similares solamente
+ es necesario reimplementar el módulo y repetir la etapa de testeo.
+ La apariencia del sitio también podía variar durante la implementación,
  por lo tanto además de separar la lógica de la aplicación de la capa de
- presentación, esta última se dividió en archivos .php que reciben los pedidos
- del usuario y actúan en consecuencia, separados de los archivos .html y
- .css orientados a la forma en que estos resultados se muestran.
- Para esto utilizamos plantillas que son cargadas en cada php para luego
- ser desplegadas en pantalla.
- En definitiva obtuvimos una versión moderada del patrón model view controller.
- Si en algún momento se deseara rediseñar el sitio manteniendo el funcionamiento
- del mismo, la mayor parte se puede cambiar desde la hoja de estilos y el
- resto desde las plantillas en formato .html.
+ presentación, esta última se dividió en scripts PHP que reciben los pedidos
+ del usuario y actúan en consecuencia, separados de los archivos HTML y
+ CSS orientados a la forma en que estos resultados se muestran.
+ Para esto utilizamos plantillas que son cargadas en cada script PHP para
+ luego ser desplegadas en pantalla.
+ En definitiva obtuvimos una versión moderada del patrón model-view-controller
+ (MVC).
+ Si en algún momento se desea rediseñar el sitio manteniendo el mismo funcionami
+ento solamente es necesario modificar las hojas de estilos (CSS) y las plantilla
+s en formato HTML
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+En realidad estas plantillas no son HTML puro ya que cuentan con etiquetas
+ especiales que determinan la posición del contenido dinámico en la página.
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -269,17 +273,15 @@ status open
 \end_layout
 
 \begin_layout Standard
-A su vez separamos en módulos distintos las interfaces con Torque, Maui
+A su vez se separó en módulos distintos las interfaces con: TORQUE, Maui
  y el sistema operativo.
- Las interfaces de torque y Maui se utilizan para que el usuario administrador
- pueda sacar conclusiones sobre el estado del sistema y actuar en consecuencia.
- La interfaz con el sistema operativo se utiliza para guardar los proyectos
- del usuario final, ejecutar los procesos y realizar chequeos de espacio
- en disco, etc.
- A su vez el sistema operativo deberá interactuar con algunos scripts .php
- que se encargan del envío de alertas cuando alguno de los usuarios se excedió
- en el uso del disco.
- La manera más fácil de hacer esto es agregar la tarea al cron.
+ Las interfaces con TORQUE y Maui brindan al usurio administrador información
+ sobre el estado del sistema y permiten que este realice acciones sobre
+ los trabajos como por ejemplo: iniciar, detener, etc.
+ La interfaz con el sistema operativo es utilizada para almacenar los trabajos
+ con el código fuente, archivos binarios, ejecutables y los archivos conteniendo
+ los resultados de los trabajos ejecutados por los usuarios.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -293,12 +295,11 @@ A su vez separamos en módulos distintos las interfaces con Torque, Maui
 
 \begin_layout Standard
 La aplicación permite un manejo de usuarios con perfiles diferenciados.
- Inicialmente podemos separar a los usuarios entre administradores y clientes
- finales, pero es posible ejercer diferencias más sutiles entre ellos.
+ Inicialmente se realiza una clara separación entre usuarios administradores
+ y usuarios normales, pero es posible ejercer diferencias más sutiles entre
+ ellos.
  Para esto se diseñó un sistema de grupos de usuarios con funcionalidades
- asociadas, y así de esta manera podemos permitir a algunos usuarios acceder
- a algunas partes de la administración sin permitirles (por ejemplo) administrar
- los usuarios.
+ asociadas.
  Cada usuario puede pertenecer a uno o más grupos, y estos a su vez pueden
  tener funcionalidades y trabajos asociados.
  Un usuario determinado puede hacer uso de una funcionalidad dada si pertenece
@@ -307,18 +308,15 @@ La aplicación permite un manejo de usuarios con perfiles diferenciados.
 \end_layout
 
 \begin_layout Standard
-La interfaz de usuario varía notablemente según el perfil, si bien ambos
- usuarios tienen cierto conocimiento sobre el uso de aplicaciones, el cliente
- final no tiene por qué estar interiorizado con el funcionamiento del cluster,
- por lo tanto se le presenta el sistema como un todo.
- 
-\end_layout
-
-\begin_layout Standard
-Por otro lado el usuario administrador podrá desde su propia interfaz administra
-r los recursos del cluster, conocer el estado de los nodos del cluster e
- interactuar con ellos para solucionar posibles problemas o mejorar su performan
-ce.
+La interfaz de usuario varía notablemente dependiendo si el usuario es un
+ usuario administrador o un usuario normal.
+ Si bien ambos usuarios tienen cierto conocimiento sobre el uso de aplicaciones,
+ el usuario normal no tiene por qué estar interiorizado con el funcionamiento
+ del cluster, por lo tanto se le presenta el sistema como un todo.
+ Por otro lado el usuario administrador podrá desde su propia interfaz administr
+ar los recursos del cluster, conocer el estado de los nodos del cluster
+ e interactuar con ellos para solucionar posibles problemas o mejorar su
+ performance.
  El usuario administrador tendrá a su cargo la tarea de mantener los usuarios
  y grupos del sistema así como el acceso de los mismos a los distintos trabajos.
  
@@ -330,19 +328,20 @@ Dado que nos encontramos en un ambiente multiusuario, la aplicación permite
  recursos por varios usuarios de forma simultánea.
  Cada trabajo creado tendrá asociado un conjunto de recursos disponibles
  que determinarán el posterior funcionamiento de las ejecuciones de los
- clientes.
- Para esta implementación nos restringimos al uso de disco, tiempo máximo
- de ejecución y cantidad de nodos disponibles a la vez, pero es posible
- agregar recursos a restringir (memoria, ciclos de procesador, etc.).
+ trabajos por parte de los usuarios.
+ Para esta implementación se restringió el uso de espacio de almacenamiento
+ en el disco duro, tiempo máximo de ejecución y cantidad de nodos disponibles
+ simultaneamente, pero es posible agregar otros recursos a restringir (por
+ ejemplo: memoria, ciclos de procesador, etc.).
 \end_layout
 
 \begin_layout Standard
-El usuario final tendrá la posibilidad de subir su proyecto al cluster,
- compilarlo, ejecutarlo y ver la salida a pantalla en tiempo real.
+El usuario tendrá la posibilidad de subir un proyecto al cluster, compilarlo,
+ ejecutarlo y consultar la salida a pantalla en tiempo real.
  Dados los extensos tiempos de ejecución de los programas que se corren
  en clusters de estas características, el usuario puede abandonar el sitio
  para luego volver en otro momento y verificar el estado de la ejecución.
- Si el programa sigue en ejecución puede ver la salida a pantalla (nuevamente
+ Si el programa continúa en ejecución podrá ver la salida a pantalla (nuevamente
  en tiempo real) junto con las salidas anteriores de la misma ejecución.
  Para los trabajos terminados existe la posibilidad de ver la salida en
  pantalla o descargarla en un archivo.
@@ -355,24 +354,23 @@ Los usuarios administradores cuentan con un conjunto de reportes estadísticos
  y por proceso.
  Estos reportes brindan una gran ayuda en las tareas de administración de
  cluster.
- 
-\end_layout
-
-\begin_layout Standard
-La generación de los reportes estadísticos se realiza con información brindada
- por Torque, Maui y Ganglia; y es posible detallar la la información por
- nodo del cluster, usuario y proceso.
+ La generación de los reportes estadísticos se realiza con información brindada
+ por TORQUE, Maui y Ganglia; y es posible detallar la información por nodo
+ del cluster, usuario o proceso.
 \end_layout
 
 \begin_layout Standard
 Por último se definió un mecanismo de alertas a los usuarios.
  Este permite enviar alertas a los diferentes usuarios del sistema, como
- ser inicio y finalización de trabajos, excesos de recursos del cluster,etc.
+ ser inicio y finalización de trabajos, excesos de recursos del cluster,
+ etc.
  Este mecanismo es totalmente extensible en cuanto a las definiciones de
  alertas y es soportado por funcionalidades de TORQUE y la base de datos.
  Los usuarios pueden observar las alertas en la interfaz web que le fueron
- enviadas por Fenton y esta abierta la posibilidad de enviárselas por mail
- si se define un servidor SMTP.
+ enviadas por Fenton y esta abierta la posibilidad de enviárselas por correo
+ electrónico mediante un servidor SMTP.
+ Este sistema de alertas debe ser disparado periódicamente por el sistema
+ operativo (por ejemplo en Linux mediante el cron o anacron).
 \end_layout
 
 \begin_layout Subsection
@@ -380,12 +378,12 @@ Otras herramientas
 \end_layout
 
 \begin_layout Standard
-En el transcurso del proyecto se necesito de otras herramientas para algunos
+En el transcurso del proyecto se necesitó de otras herramientas para algunos
  tipos de tareas.
- Fue necesario contar con una herramienta colaborativa que nos permitiera
- compartir y versionar tanto el código como los documentos.
- Para esto decidimos utilizar Google Code, un servicio de Google que provee
- un servicio de alojamiento de proyectos.
+ Fue necesario contar con una herramienta colaborativa permitiera compartir
+ y versionar tanto el código como los documentos.
+ Para esto se utilizó Google Code, un servicio de Google que brinda alojamiento
+ a proyectos de software.
  Algunas de las funcionalidades que ofrece Google Code son: control de versiones
  utilizando  Subversion
 \begin_inset Foot
@@ -398,12 +396,12 @@ Subversion es un software de control de versiones diseñado específicamente
 
 \end_inset
 
-, un manejador de incidencias, una wiki, etcétera.
+, un manejador de incidencias (Issues), una Wiki, etcétera.
 \end_layout
 
 \begin_layout Standard
 En lo que corresponde a la documentación del proyecto utilizamos LyX.
- Este es un programa gráfico  que permite la edición de texto usando LaTeX,
+ LyX es un programa gráfico que permite la edición de texto usando LaTeX,
  por lo que hereda todas las capacidades de LaTeX (notación científica,
  edición de ecuaciones, creación de índices, etcétera) y por supuesto mantiene
  el enfoque WYSIWYM de LaTeX.
@@ -417,13 +415,13 @@ Testeo de la solución
 Una de las actividades de este proyecto fue el testeo de las tecnologías
  propuestas y el testeo de la interfaz web desarrollada.
  Los objetivos de esta etapa son la verificación y validación de los requerimien
-tos funcionales establecidos en etapas más tempranas y que fueran objetivos
- del proyecto.
+tos funcionales establecidos en etapas más tempranas y que forman parte
+ de los objetivos del proyecto.
 \end_layout
 
 \begin_layout Standard
 Durante el proceso de testing se aplicaron dos tipos de test.
- Se realizó un test funcional apoyado o complementado con un test exploratorio.
+ Se realizó un test funcional complementado por un test exploratorio.
  El testing funcional verifica el cumplimiento de los requerimientos funcionales
  contra los casos de test, en un entorno que emula un ambiente de producción
  del sistema.
@@ -437,10 +435,7 @@ El test exploratorio es un proceso simultáneo de exploración y aprendizaje
  del producto, diseño y ejecución de pruebas.
  La estrategia en este caso fue recorrer las funcionalidades de la interfaz
  en busca de defectos de diseño, de programación, de funcionamiento, etc.
-\end_layout
-
-\begin_layout Standard
-Durante el test exploratorio se generaron una serie de casos de test que
+ Durante el test exploratorio se generaron una serie de casos de test que
  apuntan a cubrir los requerimientos funcionales principales del sistema.
  Estos casos de test se incluyeron en la Guía de Test (ver página 
 \begin_inset LatexCommand pageref
@@ -450,13 +445,12 @@ reference "sub:Guía-de-testeo"
 
 ), pretendiendo guiar el testeo en posteriores ocasiones.
  El mismo incluye casos de test y escenarios de pruebas que integran los
- casos de test, así como una descripción del proceso ejecutado para esta
- oportunidad.
+ casos de test, así como una descripción del proceso ejecutado en cada caso.
 \end_layout
 
 \begin_layout Standard
 Las herramientas utilizadas en el testing fueron la guía de test y las funcional
-idades provistas por el Google Code como son registro Issues y Wikis.
+idades provistas por el Google Code como son registro Issues y Wiki.
 \end_layout
 
 \end_body
