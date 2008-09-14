@@ -44,16 +44,21 @@ Conclusiones
 \end_layout
 
 \begin_layout Standard
-Este proyecto nos permitió explorar más a fondo la problemática de la computació
-n de alto rendimiento que hasta el momento no conocíamos en profundidad.
- Se realizaron etapas de estudio del área e investigación de tecnologías.
- Como parte del estudio del área se cursó la materia 'Computación de Alta
+La computación de alto rendimiento ha cobrado mucha importancia en la resolución
+ de problemas con un alto grado de complejidad computacional.
+ Este proyecto nos permitió explorar más a fondo la problemática de la computaci
+ón de alto rendimiento que hasta el momento no conocíamos en profundidad
+ mediante etapas de estudio del área e investigación de tecnologías.
+ 
+\end_layout
+
+\begin_layout Standard
+Como parte del estudio del área se cursó la materia 'Computación de Alta
  Performance' dictada por el grupo CeCal del Instituto de Computación de
  la Facultad de Ingeniería.
  Esta materia nos sirvió para introducirnos al área y todos los conceptos
  relacionados a la computación de alto rendimiento.
- La computación de alto rendimiento ha cobrado mucha importancia en la resolució
-n de problemas con un alto grado de complejidad computacional.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -62,32 +67,18 @@ La etapa de investigación de tecnologías fue muy importante y positiva para
  Nos sirvió para conocer algunas de las más importantes herramientas OSS
  del mercado para la implementación de clusters y profundizar en las característ
 icas, funcionalidades y limitaciones que estas aplicaciones presentan.
- En esta etapa pudimos identificar una herramienta como TORQUE que junto
- con Maui y Gold nos permite resolver casi en su totalidad uno de los objetivos
- más importantes del proyecto: la implementación de un cluster de alto rendimien
-to con acceso remoto.
+ En esta etapa pudimos identificar herramientas como TORQUE, Maui y Gold
+ que nos permitieron construir una sólida plataforma de ejecución de trabajos
+ en el cluster.
 \end_layout
 
 \begin_layout Standard
 Creemos que la investigación realizada en este proyecto fue muy positiva
  ya que pudimos desarrollar una solución que nos permite alcanzar los objetivos
  del proyecto y abrir caminos para nuevas investigaciones y trabajos.
- Nos permitió comprobar que la implantación de un cluster de alto desempeño
+ Nos permitió comprobar que la implementación de un cluster de alto desempeño
  con un alto nivel de prestaciones, escalable y performante es posible utilizand
 o computadores de escritorios; sin necesidad de hardware especializado.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-FALTAN CONCLUSIONES DE PERFORMANCE
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body

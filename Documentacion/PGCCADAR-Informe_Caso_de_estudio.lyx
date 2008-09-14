@@ -44,11 +44,11 @@ Puesta en producción
 \end_layout
 
 \begin_layout Standard
-Finalizada la descripción del trabajo realizado, en esta sección presentaremos
- las instalaciones que se han realizado el sistema.
- Describiremos las características de hardware y software de los clusters
- de computadores de alto desempeño en que fue instalado el sistema Fenton.
- Además presentaremos el proceso que se siguió durante su instalación.
+Finalizada la descripción del trabajo realizado, en esta sección presentarán
+ las instalaciones del sistema y como fueron realizadas.
+ Se describirán las características de hardware y software de los clusters
+ de computadores de alto desempeño en que fue instalado el sistema Fenton
+ y se presentará el proceso que se siguió durante su instalación.
 \end_layout
 
 \begin_layout Subsection
@@ -56,7 +56,7 @@ Cluster de computadores del CeCal
 \end_layout
 
 \begin_layout Standard
-Como primer caso presentaremos el cluster de computadores de alto desempeño
+Como primer caso se presentará el cluster de computadores de alto desempeño
  con el que cuenta el CeCal dentro del InCo.
  Este cluster es utilizado internamente por los integrantes del grupo de
  Computación de Alta Performance del CeCal como ambiente de investigación
@@ -130,9 +130,8 @@ texttt{joplin.fing.edu.uy}}
 
 .
  Cada nodo cuenta con un procesador AMD Athlon 64 3000+, 1 GB de memoria
- RAM y sistema operativo openSUSE 10.1.
- Los nodos se encuentran conectados entre si mediante una red Ethernet de
- 100 Mbps.
+ RAM, sistema operativo openSUSE 10.1 y se se encuentran conectados entre
+ si mediante una red Ethernet de 100 Mbps.
  
 \end_layout
 
@@ -175,9 +174,23 @@ texttt{lennon.fing.edu.uy}}
 
 , en este nodo se instaló Maui y se  instalaron  el servidor y el demonio
  de ejecución de TORQUE.
- De esta manera  el nodo lennon.fing.edu.uy podrá ser utilizado como nodo maestro
- y como nodo de cómputo.
- En el resto de los nodos se instaló solamente el demonio de ejecución de
+ De esta manera  el nodo 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{lennon.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+ podrá ser utilizado como nodo maestro y como nodo de cómputo, en cambio
+ en el resto de los nodos se instaló solamente el demonio de ejecución de
  TORQUE ya que solo se utilizarán como nodo de cómputo.
  
 \end_layout
@@ -189,8 +202,7 @@ Segundo milestone.
 \begin_layout Standard
 A medida que el sistema fue evolucionando se instalaron más aplicaciones
  y para cuando el sistema llegó al siguiente milestone se realizó una actualizac
-ión del cluster.
- En esta actualización se instalaron PHP y PostgreSQL.
+ión del cluster y se instalaron PHP y PostgreSQL.
  Nuevamente PostgreSQL se instaló solamente en 
 \begin_inset ERT
 status open
@@ -207,7 +219,22 @@ texttt{lennon.fing.edu.uy}}
 \end_inset
 
  y si bien fue necesario instalar PHP en todos los nodos del cluster, el
- nodo lennon.fing.edu.uy es quien brinda el servicio de interfaz Web.
+ nodo 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+mbox{
+\backslash
+texttt{lennon.fing.edu.uy}}
+\end_layout
+
+\end_inset
+
+ es quien brinda el servicio de interfaz Web.
  El resto de los nodos solamente requieren PHP para ejecutar scripts de
  notificación de inicio y finalización de trabajos  que son manejados internamen
 te por el sistema.
@@ -220,12 +247,11 @@ Tercer milestone.
 \end_layout
 
 \begin_layout Standard
-Durante la iteración final de desarrollo se volvió a actualizar el cluster
+Durante la iteración final de desarrollo se actualizó una vez más el cluster
  con la última versión del sistema y se instaló además Ganglia.
- Ganglia cuenta con dos componentes.
- Un demonio encargado de recolectar información del estado de los nodos
- del cluster y un demonio encargado de monitorear un nodo individual y enviar
- información al demonio de recolección.
+ Ganglia cuenta con dos componentes: un demonio encargado de recolectar
+ información del estado de los nodos del cluster y un demonio encargado
+ de monitorear un nodo individual y enviar información al demonio de recolección.
  Además Ganglia cuenta con una interfaz Web en donde se puede consultar
  la información recogida por el servicio de recolección.
  En el nodo 
@@ -245,8 +271,8 @@ texttt{lennon.fing.edu.uy}}
 
  del cluster se instalaron: la interfaz Web, el servicio de recolección
  y el servicio de monitoreo.
-  En el resto de los nodos se instalaron solamente demonios de monitoreo.
- Finalmente, como último paso del tercer milestone, se instaló la biblioteca
+ En el resto de los nodos se instalaron solamente demonios de monitoreo.
+ Finalmente como último paso del tercer milestone, se instaló la biblioteca
  OpenMPI para brindar mayor flexibilidad a la hora del desarrollo de aplicacione
 s paralelas.
 \end_layout
@@ -285,30 +311,18 @@ target "http://lennon.fing.edu.uy/pgccadar"
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Consulta al ruso sobre esto? o sea si lo dejamo asi.
-\end_layout
-
-\begin_layout Standard
-Apuntar la redacción como esta instalada.
- incluir una seccion de utilización ?.
-\end_layout
+\begin_layout Subsection
+Cluster de computadores Medusa
+\begin_inset LatexCommand label
+name "sub:Cluster-de-computadores-Medusa"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsection
-Cluster de computadores Medusa
-\end_layout
-
 \begin_layout Standard
-El cluster de computadores de alto desempeño Medusa es la motivación inicial
+El cluster de computadores de alto desempeño Medusa fue la motivación inicial
  del proyecto.
  Este cluster es mantenido en conjunto por el IMFIA y el CeCal, con el apoyo
  financiero del Programa de Desarrollo Tecnológico.
@@ -339,8 +353,8 @@ Medusa fue implementado en el marco del proyecto "Laboratorio de simulación
 \begin_layout Standard
 Actualmente se esta realizando una instalación del sistema Fenton en el
  cluster Medusa.
- Para esto se incorporó un nuevo nodo (medusa10) al cluster que se desempeñará
- como nodo maestro.
+ Para esto se incorporó un nuevo nodo (medusa10) al cluster que desempeñará
+ el papel de nodo maestro.
  En este nodo se instaló el sistema Fenton en su totalidad, pero aún se
  encuentra pendiente la instalación del sistema en los restantes nodos del
  cluster.

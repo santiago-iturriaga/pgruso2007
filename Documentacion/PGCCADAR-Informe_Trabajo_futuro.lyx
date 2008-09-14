@@ -44,17 +44,21 @@ Trabajo futuro
 \end_layout
 
 \begin_layout Standard
-Como mencionamos en la sección anterior este proyecto deja planteados algunos
+Como se mencionó en la sección anterior este proyecto deja planteados algunos
  trabajos a futuro.
- Enumeraremos los que consideramos más relevantes a implementar y/o investigar
- pero que dados los tiempos del proyecto no fueron incorporados a la solución
- desarrollada.
+ A continuación se enumerarán los trabajos más relevantes a implementar
+ y/o investigar pero que dados los tiempos del proyecto no fueron incorporados
+ a la solución desarrollada.
 \end_layout
 
 \begin_layout Itemize
 Integración de Gold con el sistema para permitir contabilizar los recursos
  disponibles en el cluster y limitar los recursos utilizados cada usuario.
- Aumentar la características y opciones de monitoreo para chequeo preventivo
+ 
+\end_layout
+
+\begin_layout Itemize
+Aumentar la características y opciones de monitoreo para chequeo preventivo
  (hoy en día solo se chequea espacio en disco).
 \end_layout
 
@@ -63,8 +67,8 @@ Trabajar en la integración de biblioteca PVM al sistema.
 \end_layout
 
 \begin_layout Itemize
-Profundizar en el fine-tunning de TORQUE y Maui para obtener un mejor desempeño
- del cluster.
+Profundizar en el fine-tunning de TORQUE y Maui para obtener un desempeño
+ óptimo del cluster.
 \end_layout
 
 \begin_layout Itemize
@@ -73,9 +77,20 @@ Mejorar la integración del sistema con Ganglia para utilizar más de las
 \end_layout
 
 \begin_layout Itemize
-Mejorar los reportes para los usuarios administradores para el análisis
- del uso del sistema y de los datos históricos que son provistos por TORQUE
+Mejorar los reportes de los usuarios administradores para el análisis del
+ uso del sistema y de los datos históricos que son provistos por TORQUE
  y Maui.
+\end_layout
+
+\begin_layout Itemize
+Continuar con al instalación del sistema Fenton en el cluster Medusa (ver
+ página 
+\begin_inset LatexCommand pageref
+reference "sub:Cluster-de-computadores-Medusa"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
