@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -50,28 +50,36 @@ name "sec:Relevamiento-de-tecnologías"
 \end_layout
 
 \begin_layout Standard
-El relevamiento de paquetes de software que permitan el desarrollo y la
- ejecución de programas paralelos y distribuidos fue una actividad muy important
-e dentro del proyecto pues esta nos definiria la siguientes actividades
- a realizar.
+La etapa de relevamiento de paquetes de software que permitan el desarrollo
+ y la ejecución de programas paralelos y distribuidos fue una actividad
+ muy importante dentro del proyecto pues encontrar una aplicación que cumpliera
+ con los objetivos del proyecto era vital el alcance del mismo.
+ Cabe mencionar que en caso de no encontar una aplicación adecuada se debería
+ desarrollar la misma.
  El relevamiento se enfocó en sistemas de administración de cluster, sistemas
  de despacho de trabajos y sistemas de monitoreo de clusters.
- Algunas caracteristicas que se tuvieron en cuenta en el relevamiento del
- software base fueron la performance, interfaz amigable para usuarios del
- cluster, interfaz de administración del cluster e infromación del cluster
- y ejecución de trabajos brindada por la misma y que fueran de código abierto.
  
 \end_layout
 
 \begin_layout Standard
-Previamente al relevamiento se establecieron el sistema operativo que sería
+Las caracteristicas en que la cuales se centro el relevamiento de aplicaciones
+ fueron la performance, interfaz amigable para usuarios del cluster, interfaz
+ de administración del cluster, infromación del cluster y sus nodos, mecanismos
+ de despacho e inicialización de trabajos y que fueran de código abierto.
+ 
+\end_layout
+
+\begin_layout Standard
+Previamente al relevamiento se establecio el sistema operativo que sería
  alguna distribución de Linux, por ejemplo Fedora, y las bibliotecas PVM
  y MPI para el desarrollo para programas paralelos y distribuidos .
 \end_layout
 
 \begin_layout Standard
-A continuación se detallaran las aplicaciones que fueran relevadas y sus
- caracteristicas.
+En esta sección se presentarán las aplicacions que fueran relevadas para
+ el despacho de trabajos y administración del cluster, aplicaciones de monitoreo
+ del cluste, lenguajes de desarrollo, manejdaores de base de datos asi como
+ otras aplicaciones que fueran necesarias para la implementación del proyecto.
 \end_layout
 
 \begin_layout Subsection
@@ -312,12 +320,34 @@ Esto se debe a que la herramienta cuenta con un código muy complejo y difícil
 \end_layout
 
 \begin_layout Subsection
-OpenPBS
+TORQUE y PBS
+\begin_inset LatexCommand label
+name "sub:TORQUE"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-OpenPBS se trata de la versión original y de código abierto de PBS (Portable
- Batch System) desarrollada para la NASA a principios de los 90's.
+El sistema PBS (Portable Batch System), el cual fue desarrollado por la
+ Numerical Aerospace Simulation (NAS) Systems Division of NASA Ames Research
+ Center en conjunto con la National Energy Research Supercomputer Center
+ (NERSC) of Lawrence Livermore National Laboratory, es un software que provee
+ controles adicionales sobre la iniciación y despacho de trabajos batch.
+ PBS permite la administración y asignación de recursos a los diferentes
+ trabajos permitiendo asgurar a los usuarios que los trabajos obtendran
+ los recursos necesarios para terminar su ejecución .
+\end_layout
+
+\begin_layout Standard
+Del sistema PBS surgen dos aplicaciones, OpenPBS y TORQUE las cuales fueron
+ relevadas en el proyecto FENTON.
+\end_layout
+
+\begin_layout Standard
+OpenPBS se trata de la versión original de código abierto de PBS desarrollada
+ para la NASA a principios de los 90's.
  Actualmente es ofrecida por Altair Grid Technologies, aunque no se encuentra
  en desarrollo y la empresa no brinda ningún tipo de soporte sobre el software.
  Altair ha apostado a una versión comercial del producto llamada PBS Pro,
@@ -326,13 +356,24 @@ OpenPBS se trata de la versión original y de código abierto de PBS (Portable
 \end_layout
 
 \begin_layout Standard
-TORQUE (ver página 
-\begin_inset LatexCommand pageref
-reference "sub:TORQUE"
+TORQUE (Terascale Open-source Resource and QUEue manager) se trata de un
+ 'fork' open-source de la versión 2.3.12 de OpenPBS mantenido y desarrollado
+ por Cluster Resources.
+ 
+\end_layout
 
-\end_inset
+\begin_layout Standard
+Incorpora muchas mejoras con respecto al proyecto PBS original provistas
+ por NCSA (National Center of Supercomputing Applications), OSC (Ohio Supercompu
+ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
+ centros HPC junto con las mejoras desarrolladas por Cluster Resources.
+\end_layout
 
-) es un sucesor de OpenPBS
+\begin_layout Standard
+A continuación se veran las caracteristicas generales de PBS y TORQUE.
+ OpenPBS no fue investigado a fondo pues como se menciono anteriormente
+ no esta en desarrollo actualmente y no existe soporte del mismo.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -357,34 +398,6 @@ PBS se prové la ejecución de dos scripts administrativos suministrados con
  colocaruan bandera o establecer parte de la entorno para el trabajo, como
  la creación de directorios temporales o realizar una limpieza de los puestos
  de trabajo.
-\end_layout
-
-\begin_layout Subsection
-TORQUE
-\begin_inset LatexCommand label
-name "sub:TORQUE"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-TORQUE (Terascale Open-source Resource and QUEue manager) se trata de un
- 'fork' open-source de la versión 2.3.12 de OpenPBS mantenido y desarrollado
- por Cluster Resources.
- 
-\end_layout
-
-\begin_layout Standard
-Incorpora muchas mejoras con respecto al proyecto PBS original provistas
- por NCSA (National Center of Supercomputing Applications), OSC (Ohio Supercompu
-ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
- centros HPC junto con las mejoras desarrolladas por Cluster Resources.
-\end_layout
-
-\begin_layout Subsubsection
-Características generales
 \end_layout
 
 \begin_layout Standard
