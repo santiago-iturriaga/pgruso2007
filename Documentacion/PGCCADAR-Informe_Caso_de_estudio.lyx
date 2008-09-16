@@ -44,11 +44,21 @@ Puesta en producción
 \end_layout
 
 \begin_layout Standard
+<<<<<<< .mine
+Finalizada la descripción del trabajo realizado, en esta sección se presentarán
+ las instalaciones y puestas en producción que se han realizado del sitema
+ FENTON.
+ Se describirán las las características de hardware y software de los clusters
+ de computadores de alto desempeño en los que fue instalado Fenton.
+ Por ultimo se especificará el proceso que se siguió durante la instalación
+ del sistema.
+=======
 Finalizada la descripción del trabajo realizado, en esta sección presentarán
  las instalaciones del sistema y como fueron realizadas.
  Se describirán las características de hardware y software de los clusters
  de computadores de alto desempeño en que fue instalado el sistema Fenton
  y se presentará el proceso que se siguió durante su instalación.
+>>>>>>> .r831
 \end_layout
 
 \begin_layout Subsection
@@ -56,8 +66,13 @@ Cluster de computadores del CeCal
 \end_layout
 
 \begin_layout Standard
+<<<<<<< .mine
+Como primer caso esta el cluster de computadores de alto desempeño con el
+ que cuenta el CeCal dentro del InCo.
+=======
 Como primer caso se presentará el cluster de computadores de alto desempeño
  con el que cuenta el CeCal dentro del InCo.
+>>>>>>> .r831
  Este cluster es utilizado internamente por los integrantes del grupo de
  Computación de Alta Performance del CeCal como ambiente de investigación
  y desarrollo.
@@ -144,8 +159,12 @@ En el marco del proyecto se realizó una primera instalación de Fenton en
  del software instalado en el cluster.
  Actualmente el cluster cuenta con la versión final de Fenton y se encuentra
  disponible para su utilización en producción.
- A continuación describiremos con mayor detalle la evolución del cluster
- en cuestión.
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación describiremos con mayor detalle la evolución del cluster
+ del CeCal.
 \end_layout
 
 \begin_layout Paragraph
@@ -200,7 +219,7 @@ Segundo milestone.
 \end_layout
 
 \begin_layout Standard
-A medida que el sistema fue evolucionando se instalaron más aplicaciones
+A medida que el sistema fue evolucionando se instalaron otras aplicaciones
  y para cuando el sistema llegó al siguiente milestone se realizó una actualizac
 ión del cluster y se instalaron PHP y PostgreSQL.
  Nuevamente PostgreSQL se instaló solamente en 
@@ -351,8 +370,7 @@ Medusa fue implementado en el marco del proyecto "Laboratorio de simulación
 \end_layout
 
 \begin_layout Standard
-Actualmente se esta realizando una instalación del sistema Fenton en el
- cluster Medusa.
+Se realizo la instalación del sistema Fenton en el cluster Medusa.
  Para esto se incorporó un nuevo nodo (medusa10) al cluster que desempeñará
  el papel de nodo maestro.
  En este nodo se instaló el sistema Fenton en su totalidad, pero aún se
