@@ -90,7 +90,7 @@ status open
 \begin_layout Standard
 Moshe Bar, fundador y director de proyecto de openMosix (uno de los proyectos
  SSI mas influyentes al momento del relevamiento de tecnologías), anuncio
- el 15 de julio del 2007 el cierre del proyecto y que se congelará tanto
+ el 15 de julio del 2007 el cierre del proyecto y que se congelaría tanto
  su desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
 \end_layout
 
@@ -109,16 +109,16 @@ A diferencia de un cluster tradicional en un cluster SSI todas las computadoras
  es su completa transparencia en la gestión de recursos.
  Es debido a esta completa transparencia que es posible migrar procesos
  de un nodo a otro.
- Tampoco es necesario programación adicional para beneficiarse del paralelismo,
+ Ni es necesario programación adicional para beneficiarse del paralelismo,
  de esta manera no es necesario re-escribir programas utilizando bibliotecas
  como PVM (Parallel Virtual Machine) o MPI (Message Passing Interface).
 \end_layout
 
 \begin_layout Standard
-A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos,
- no creemos que se ajusten a los requerimientos planteados principalmente
- debido a que el cluster ya se encuentra en funcionamiento siguiendo un
- paradigma estilo beowulf mas clásico.
+A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos
+ no se cree que se ajusten a los requerimientos planteados en este proyecto
+ principalmente debido a que el cluster ya se encuentra en funcionamiento
+ siguiendo un paradigma estilo beowulf mas clásico.
  Quizás sea interesante construir un pequeño cluster SSI e investigar más
  a fondo este tipo de tecnologías de manera de poder comparar ambas soluciones.
 \end_layout
@@ -138,17 +138,18 @@ Condor es un proyecto open-source de la universidad de Wisconsin específicament
  (HPC) existen importantes diferencias entre HPC y HTC.
  Fundamentalmente los trabajos ejecutados en un entorno HPC se caracterizan
  por necesitar resolver un problema en el menor tiempo posible, en cambio
- en un entorno HTC ya es sabido que no es posible resolver los problemas
- en tiempos pequeños, estamos hablando de meses o años en lugar de horas
- o días.
+ en un entorno HTC se asume que no es posible resolver los problemas en
+ tiempos pequeños, estamos hablando de meses o años en lugar de horas o
+ días.
  Como consecuencia en HPC el poder computacional de un cluster normalmente
  es medido en operaciones de punto flotante por segundo (FLOPS), en cambio
  la comunidad HTC se interesa mas en la cantidad de trabajos que posible
- completar en un largo periodo de tiempo, no interesa que tan rápido puede
- terminarse un trabajo individual.
+ completar en un largo periodo de tiempo, sin interesarse especialmente
+ en que tan rápido puede terminarse un trabajo individual.
  Debido a este perfil de tipo HTC, Condor se enfoca principalmente en la
- robustez y la confiabilidad brindando funcionalidades como: CPU harvesting,
- migración de procesos, tolerancia a fallas y process checkpoint.
+ robustez y la confiabilidad brindando funcionalidades como CPU harvesting
+ para la utilización de ordenadores no dedicados en momentos de ocio de
+ estos, migración de procesos, tolerancia a fallas y process checkpoint.
 \end_layout
 
 \begin_layout Standard
@@ -167,8 +168,8 @@ Bibliotecas para programación paralela
 Condor se encuentra diseñado principalmente para la ejecución de trabajos
  seriales.
  Si bien provee soporte limitado para las bibliotecas PVM y MPI para procesamien
-to paralelo su desempeño en esta área se encuentra por debajo de otros DRM's
- como TORQUE o SGE.
+to paralelo su desempeño, en esta área se encuentra por debajo de otros
+ DRM's como TORQUE o SGE.
 \end_layout
 
 \begin_layout Subsubsection
@@ -177,7 +178,7 @@ Interfaz de programación
 
 \begin_layout Standard
 Condor brinda una interfaz de programación propietaria, y no soporta el
- estándar DRMAA.
+ estándar Distributed Resource Management Application API (DRMAA).
 \end_layout
 
 \begin_layout Subsubsection
@@ -188,15 +189,15 @@ Resumen
 Condor no parece ser el software ideal para el proyecto.
  Si bien puede adaptarse a los requerimientos planteados y brinda funcionalidade
 s interesantes (p.ej.
- migración de procesos, cpu harvesting, etc.) existen áreas criticas en las
- que se encuentra claramente en desventaja con respecto a otros productos.
+ migración de procesos, cpu harvesting, etc.), existen áreas criticas en
+ las que se encuentra claramente en desventaja con respecto a otros productos.
  El limitado soporte que brinda Condor a las bibliotecas PVM y MPI resulta
  ser un problema crítico y determinante para que fuera descartado en el
  sistema planteado en el proyecto.
 \end_layout
 
 \begin_layout Subsection
-Sun grid engine 6.1
+Sun Grid Engine 6.1
 \end_layout
 
 \begin_layout Standard
@@ -208,18 +209,18 @@ Sun Grid Engine es un software para administración de recursos distribuidos
 
 \begin_layout Standard
 Sun Grid Engine actúa como el sistema nervioso central de un cluster de
- computadoras conectadas.
- A partir de algunos demonios, el Sun Grid Master supervisa todos los recursos
- de la red para permitir control completo y alcanzar la utilización óptima
- de los mismos.
+ computadoras conectadas por medio de una red.
+ A partir de algunos procesos en ejecución constante (demonios), el Sun
+ Grid Master supervisa todos los recursos de la red para permitir control
+ completo y alcanzar la utilización óptima de los mismos.
 \end_layout
 
 \begin_layout Standard
 Sun Grid Engine fue desarrollado como realce de Codine de Genias GmbH y
  Grisdware Inc., de acuerdo a requerimientos de varios clientes tales como
  el laboratorio de investigación del ejército de Aberdeen y BMW.
- Con Sun Grid Engine, el uso medio de los recursos aumentó de menos del
- 50% a más del 90% en ambos ambientes.
+ Con Sun Grid Engine el uso medio de los recursos aumentó de menos del 50%
+ a más del 90% en ambos ambientes.
 \end_layout
 
 \begin_layout Standard
@@ -232,9 +233,10 @@ Sun Grid Engine reúne el poder de cálculo disponible en granjas de computadora
 \end_layout
 
 \begin_layout Standard
-Los requerimientos de hardware son mínimos (100 MB de memoria disponible
- y 500MB de disco) y soporta la mayoría de los sistemas operativos populares.
- Soporta las plataformas SPARC Ultra III, SPARC Ultra IV, AMD64, x86 y Mac.
+Los requerimientos de hardware para SGE son mínimos (100 MB de memoria disponibl
+e y 500MB de disco) y soporta la mayoría de los sistemas operativos populares.
+ SGE también soporta las plataformas SPARC Ultra III, SPARC Ultra IV, AMD64,
+ x86 y Mac.
 \end_layout
 
 \begin_layout Standard
@@ -258,9 +260,8 @@ Solaris o Linux pero no Linux en IA64
 \end_layout
 
 \begin_layout Standard
-Distributed Resource Management Application API (DRMAA) es un conjunto de
- APIs estándar desarrollado por Global Grid Forum para application builders,
- portal builders e ISV's.
+La DRMAA es un conjunto de APIs estándar desarrollado por Global Grid Forum
+ para application builders, portal builders e ISV's.
  La versión 6.1 soporta los últimos C y Java bindings de DRMAA 1.0.
  Adicionalmente, es provisto de compatibilidad hacia atrás para: DRMAA 0.5
  Java binding y DRMAA 0.95 C binding.
@@ -305,7 +306,7 @@ to.
 \end_layout
 
 \begin_layout Standard
-Si nos basamos en la historia reciente del producto, en una versión anterior
+observando en la historia reciente del producto, en una versión anterior
  se encontró un problema de seguridad (un salto en las restricciones) y
  quienes lo estaban utilizando en ese momento descartaron la idea de buscar
  el problema y solucionarlo, limitándose solamente a esperar que los creadores
@@ -314,9 +315,9 @@ Si nos basamos en la historia reciente del producto, en una versión anterior
 \end_layout
 
 \begin_layout Standard
-Esto se debe a que la herramienta cuenta con un código muy complejo y difícil
- de modificar, lo que lo coloca como una opción poco viable para ser utilizada
- dentro del proyecto propuesto.
+La desición de obiar el problema se debe a que la herramienta cuenta con
+ un código muy complejo y difícil de modificar, lo que lo coloca como una
+ opción poco viable para ser utilizada dentro de este proeycto.
 \end_layout
 
 \begin_layout Subsection
@@ -356,14 +357,10 @@ OpenPBS se trata de la versión original de código abierto de PBS desarrollada
 \end_layout
 
 \begin_layout Standard
-TORQUE (Terascale Open-source Resource and QUEue manager) se trata de un
- 'fork' open-source de la versión 2.3.12 de OpenPBS mantenido y desarrollado
- por Cluster Resources.
- 
-\end_layout
-
-\begin_layout Standard
-Incorpora muchas mejoras con respecto al proyecto PBS original provistas
+TORQUE (Terascale Open-source Resource and QUEue manager) es una bifuracación
+ open-source de la versión 2.3.12 de OpenPBS mantenido y desarrollado por
+ Cluster Resources.
+ Incorpora numerosas mejoras con respecto al proyecto PBS original provistas
  por NCSA (National Center of Supercomputing Applications), OSC (Ohio Supercompu
 ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
  centros HPC junto con las mejoras desarrolladas por Cluster Resources.
@@ -401,12 +398,13 @@ PBS se prové la ejecución de dos scripts administrativos suministrados con
 \end_layout
 
 \begin_layout Standard
-En TORQUE los trabajos son manejados de la misma manera que lo hace OpenPBS.
+En TORQUE los trabajos son manejados de la misma manera que lo hace PBS.
  Se cuenta con un conjunto de colas de trabajos que definen propiedades
- generales para los trabajos que contienen (p.ej.
- recursos disponibles, etc.) y al ingresar un trabajo al sistema, este debe
- especificar características especificas de si mismo que ayuden al sistema
- a planificar la ejecución del mismo (p.ej.
+ generales para los trabajos que contienen (ej.
+ recursos disponibles, etc.).
+ Al ingresar un trabajo al sistema, éste debe especificar características
+ especificas de sí mismo que ayuden al sistema a planificar su ejecución
+ (ej.
  nodos a utilizar, memoria máxima a utilizar, etc.).
  Con esta información (los datos de la cola a la que pertenece el trabajo
  y los datos específicos del trabajo en cuestión) el scheduler decide el
@@ -416,10 +414,10 @@ En TORQUE los trabajos son manejados de la misma manera que lo hace OpenPBS.
 
 \begin_layout Standard
 TORQUE cuenta con una interfaz de usuario de línea de comando (CLI) como
- principal manera de interactuar con el sistema, también cuenta con una
- interfaz gráfica para X-Windows y una biblioteca para desarrollo en C aunque
- es posible utilizar bibliotecas desarrolladas por terceros para otros lenguajes
- (p.ej.
+ principal manera de interactuar con el sistema.
+ También cuenta con una interfaz gráfica para X-Windows y una biblioteca
+ para desarrollo en C aunque es posible utilizar bibliotecas desarrolladas
+ por terceros para otros lenguajes (ej.
  Perl o Python).
 \end_layout
 
@@ -433,8 +431,8 @@ Nodo Maestro.
 
 \begin_layout Standard
 Es necesario que exista un nodo maestro en el sistema.
- Aunque dependiendo del sistema este nodo maestro puede encontrarse dedicado
- únicamente a este rol o compartir otros roles.
+ Dependiendo del sistema este nodo maestro puede encontrarse dedicado únicamente
+ a este rol o compartir otros roles.
 \end_layout
 
 \begin_layout Paragraph
@@ -443,8 +441,8 @@ Nodos Interactivos.
 
 \begin_layout Standard
 Los nodos interactivos proveen un punto de entrada al sistema para los usuarios.
- Es en estos nodos en que los usuarios pueden ingresar tareas al sistema
- y monitorear su progreso.
+ En estos nodos los usuarios pueden ingresar tareas al sistema y monitorear
+ su progreso.
  Estos nodos deben tener comandos como qsub y qhold disponibles.
 \end_layout
 
@@ -453,8 +451,8 @@ Nodos de cómputo.
 \end_layout
 
 \begin_layout Standard
-Estos son los responsables de la ejecución de los trabajos encolados en
- el sistema.
+Los nodos de cómputo son los responsables de la ejecución de los trabajos
+ encolados en el sistema.
  Son los encargados de iniciar, detener y manejar los procesos de cómputo
  en el sistema operativo del nodo en cuestión.
 \end_layout
@@ -481,7 +479,7 @@ PVM (Parallel Virtual Machine)
 
 \begin_layout Standard
 Una de las principales desventajas de TORQUE es la dificultad que plantea
- el uso de la biblioteca PVM.
+ en el uso de la biblioteca PVM.
  A diferencia de MPI, el soporte para PVM no se encuentra integrado al sistema
  por lo que debe manejarse cuidadosamente.
 \end_layout
@@ -505,14 +503,14 @@ TORQUE contiene la lógica necesaria para llevar a cabo la planificación
  para un ambiente de producción.
  Básicamente el planificador que se encuentra incorporado a TORQUE maneja
  los trabajos como una cola FIFO (First-In First-Out).
- Para mejorar esto se utiliza Maui, una aplicación especializada en la planifica
-ción de trabajos.
+ Para mejorar el despacho de trabajos se utiliza Maui.
 \end_layout
 
 \begin_layout Standard
 Maui se enfoca en la planificación de trabajos y deja la problemática de
  iniciar los trabajos y la interacción con los usuarios a los manejadores
- de recursos (DRM por sus siglas en inglés) como OpenPBS, TORQUE, SGE, etc.
+ de recursos (Distributed Resource Management, DRM por sus siglas en inglés)
+ como OpenPBS, TORQUE, SGE, etc.
 \end_layout
 
 \begin_layout Paragraph
@@ -520,8 +518,8 @@ Requerimientos de hardware.
 \end_layout
 
 \begin_layout Standard
-Maui requiere de muy pocos recursos de hardware para su funcionamiento.
- En clusters de hasta 10 teraflops basta con entre 20 a 50 MB de RAM.
+Maui requiere de muy pocos recursos de hardware para su funcionamiento:
+ en clusters de hasta 10 teraflops basta con entre 20 a 50 MB de RAM.
 \end_layout
 
 \begin_layout Paragraph
@@ -529,10 +527,16 @@ Plataformas soportadas.
 \end_layout
 
 \begin_layout Standard
-Maui soporta los siguientes sistemas operativos: Linux, AIX, OSF/Tru-64,
+Maui soporta los siguientes sistemas operativos: cualquie Linux, el sistema
+ UNIX propiedad de IBM AIX (Advanced Interactive eXecutive), OSF/Tru-64,
  Solaris, HP-UX, IRIX, FreeBSD, y otras plataformas UNIX.
- Y los siguientes DRM: TORQUE, OpenPBS, PBSPro, Sun Grid Engine (SGE), LoadLevel
-er, LSF, BProc/Scyld, Scalable System Software (SSSRM) y SLURM.
+ 
+\end_layout
+
+\begin_layout Standard
+tambien es posible integrar Maui con los siguientes DRM: TORQUE, OpenPBS,
+ PBSPro, Sun Grid Engine (SGE), LoadLeveler, LSF, BProc/Scyld, Scalable
+ System Software (SSSRM) y SLURM.
 \end_layout
 
 \begin_layout Paragraph
@@ -540,8 +544,12 @@ Características generales.
 \end_layout
 
 \begin_layout Standard
-El algoritmo de planificación de Maui soporta fairness, preemption, backfill,
- etc.
+El algoritmo de planificación de Maui garantiza igual condiciones de acceso
+ a los recursos para los usuarios, esta caracteristica se conoce como fairness.
+ Otra caracteristica de el algoritmo de planificación es que permite preemption
+ lo cual brinda la posibilidad de suspender trabajos en ejecución para poder
+ ejecutar trabajos con mayor prioridad.
+ backfill, etc.
  y tiene una interfaz para la interacción con un allocation management externo.
  Un allocation manager (también conocido como allocation bank o cpu bank)
  funciona como un banco en el cual la moneda son los recursos del sistema
