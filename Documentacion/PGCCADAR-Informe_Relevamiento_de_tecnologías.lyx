@@ -544,16 +544,40 @@ Características generales.
 \end_layout
 
 \begin_layout Standard
-El algoritmo de planificación de Maui garantiza igual condiciones de acceso
- a los recursos para los usuarios, esta caracteristica se conoce como fairness.
- Otra caracteristica de el algoritmo de planificación es que permite preemption
+El algoritmo de planificación de Maui presenta caracteristicas muy interesantes
+ algunas de las cuales se presentarán a continuación.
+\end_layout
+
+\begin_layout Subparagraph
+Fairness.
+\end_layout
+
+\begin_layout Standard
+Fairness implica dar igual acceso a los recursos a todos los usarios del
+ cluster.
+\end_layout
+
+\begin_layout Subparagraph
+Preemption.
+\end_layout
+
+\begin_layout Standard
+Otra caracteristica de el algoritmo de planificación es que permite preemption
  lo cual brinda la posibilidad de suspender trabajos en ejecución para poder
  ejecutar trabajos con mayor prioridad.
- backfill, etc.
- y tiene una interfaz para la interacción con un allocation management externo.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Allocation manager.
+\end_layout
+
+\begin_layout Standard
+Maui tiene una interfaz para la interacción con un allocation management
+ externo.
  Un allocation manager (también conocido como allocation bank o cpu bank)
  funciona como un banco en el cual la moneda son los recursos del sistema
- (p.ej.
+ (ej.
  procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
  de recursos.
 \end_layout
@@ -563,16 +587,17 @@ Backfill.
 \end_layout
 
 \begin_layout Standard
-Backfill es un acercamiento en la planificación que permite ejecutar algunos
- trabajos 'desordenadamente' siempre y cuando estos no retrasen los trabajos
- de prioridad superior de la cola.
+Backfill es una optimización en el algoritmo de planificacion que nos permite
+ asignar de mejor forma los recursos permitiendo ejecutar algunos trabajos
+ fuera de orden siempre y cuando éstos no retrasen los trabajos de prioridad
+ superior de la cola.
  Para determinar si un trabajo será retrasado, cada trabajo debe proveer
  una estimación de cuánto tiempo necesitará para su ejecución.
  Esta estimación, conocida como límite wallclock, es una valoración del
  tiempo desde el comienzo del trabajo hasta su final.
- Es a menudo sabio sobrestimar levemente este límite porque el planificador
- se puede configurar para matar a los trabajos que exceden sus límites del
- wallclock.
+ Es util sobrestimar levemente el límite de wallclock porque el planificador
+ se puede configurar para eliminar a los trabajos que exceden sus límites
+ del wallclock.
  Sin embargo, la sobrestimación demasiado grande del tiempo del wallclock
  de un trabajo evitará que el planificador pueda optimizar correctamente
  la cola de trabajo.
@@ -587,7 +612,7 @@ Gerenciamiento de asignación.
 \end_layout
 
 \begin_layout Standard
-Maui posee interfaces para sistemas de gerenciamiento de asignación tales
+Maui posee interfaces para sistemas de gerenciamiento de asignación tal
  como Gold de PNNL.
  Estos sistemas permiten que a cada usuario le sea asignada una porción
  de los recursos totales de cálculo disponibles en el sistema.
@@ -602,13 +627,12 @@ Reservas anticipadas.
 
 \begin_layout Standard
 Las reservas anticipadas permiten que un sitio disponga ciertos recursos
- a un lado para el uso específico de ciertas aplicaciones durante cierto
- tiempo.
+ para el uso específico de ciertas aplicaciones durante cierto tiempo.
  El acceso a una reserva dada es controlado por un Access Control List (ACL)
  que determina quién puede utilizar los recursos reservados.
- Es importante observar que mientras que un ACL permite que trabajos particulare
+ Es importante observar que mientras que un ACL permite qué trabajos particulare
 s utilicen recursos reservados, no fuerzan al trabajo a utilizar estos recursos.
- Maui procurará utilizar la mejor combinación posible de recursos disponibles
+ Maui procurará utilizar la mejor combinación posible de recursos disponibles,
  sean éstos reservados o no.
  Maui puede ser configurado para que ciertos trabajos sean restringidos
  y que funcionen utilizando solamente recursos reservados, aplicando restriccion
@@ -622,9 +646,9 @@ Quality of Service (QoS).
 \end_layout
 
 \begin_layout Standard
-Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios,
- estos beneficios pueden incluir acceso a recursos adicionales, exclusiones
- de determinadas políticas, acceso a capacidades especiales, y mejoras en
+Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios.
+ Estos beneficios pueden incluir acceso a recursos adicionales, exclusiones
+ de determinadas políticas, acceso a capacidades especiales y mejoras en
  la priorización de trabajos.
 \end_layout
 
@@ -637,7 +661,7 @@ Este componente permite favorecer trabajos en base al uso histórico a corto
  plazo.
  Es posible así ajustar la prioridad de un trabajo dependiendo de la utilización
  porcentual del sistema de usuarios, grupos, o QoS.
- Dada una ventana de tiempo determinado sobre la cual se evalúa la utilización
+ Dada una determinada ventana de tiempo sobre la cual se evalúa la utilización
  de recursos del sistema se determina si está siendo mantenido un cierto
  balanceo o no.
 \end_layout
@@ -648,15 +672,19 @@ Interfaz de programación.
 
 \begin_layout Standard
 Maui brinda dos interfases de programación para extender o personalizar
- el despacho de trabajos.
+ el despacho de trabajos:
 \end_layout
 
 \begin_layout Subparagraph
-Interfaz de extensión (Extension Interface).
+
+\emph on
+Interfaz de extensión
+\emph default
+ (Extension Interface).
 \end_layout
 
 \begin_layout Standard
-Esta interfaz permite que bibliotecas externas sean 'linkeadas' al servidor
+Esta interfaz permite que bibliotecas externas sean conectadas con el servidor
  de Maui brindando acceso a todos los datos y objetos utilizados por el
  planificador.
  Además, permite que estas bibliotecas realicen override de las principales
@@ -664,6 +692,8 @@ Esta interfaz permite que bibliotecas externas sean 'linkeadas' al servidor
 \end_layout
 
 \begin_layout Subparagraph
+
+\emph on
 Interfaz local.
 \end_layout
 
@@ -681,39 +711,45 @@ Maui almacena tres diferentes clases de estadísticas:
 \end_layout
 
 \begin_layout Subparagraph
+
+\emph on
 Estadísticas de tiempo real.
 \end_layout
 
 \begin_layout Standard
-Estas estadísticas son mantenidas en memoria y pueden ser consultadas mediante
- comandos.
+Las estadisticas de tiempo real son mantenidas en memoria y pueden ser consultad
+as mediante comandos.
  El comando 'showstats' provee información detallada por usuario, por grupo,
  por cuenta o por nodo.
- Además en cualquier momento estas estadísticas pueden resetearse utilizando
- el comando 'resetstats'.
+ Además en cualquier momento estas estadísticas pueden reinicializarce utilizand
+o el comando 'resetstats'.
  
 \end_layout
 
 \begin_layout Subparagraph
+
+\emph on
 Histórico.
 \end_layout
 
 \begin_layout Standard
-Estas estadísticas pueden ser obtenidas para un lapso de tiempo, un tipo
- de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
+Las estadisticas de hostorico pueden ser obtenidas para un lapso de tiempo,
+ un tipo de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
  Este comando utiliza la traza de información detallada de un trabajo, que
  es guardada al dar por finalizado un trabajo.
 \end_layout
 
 \begin_layout Subparagraph
+
+\emph on
 Fairshare.
 \end_layout
 
 \begin_layout Standard
 Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
  habilitado.
- Al igual que las trazas de los trabajos, estas son almacenadas en archivos
- utilizando texto plano por cada ventana de fairshare.
+ Al igual que las trazas de los trabajos, las estadisticas son almacenadas
+ en archivos utilizando texto plano por cada ventana de fairshare.
 \end_layout
 
 \begin_layout Subsubsection
@@ -722,16 +758,16 @@ Gold
 
 \begin_layout Standard
 Gold es un sistema de contaduría open-source desarrollado en PNNL bajo el
- proyecto Scalable Systems Software (SSS) que lleva registro y maneja el
+ proyecto Scalable Systems Software (SSS), que lleva registro y maneja el
  uso de recursos en clusters de alto desempeño.
  Actúa de la misma forma que un banco en el que son depositados créditos
- en cuentas, estos créditos representan recursos en el sistema.
- A medida que se finalizan trabajos o que son consumidos recursos en el
- sistema se debitan créditos de sus respectivas cuentas.
+ en cuentas, que representan recursos en el sistema.
+ A medida que se finalizan trabajos o que se consumen recursos en el sistema
+ se debitan créditos de sus respectivas cuentas.
 \end_layout
 
 \begin_layout Standard
-Es posible realizar operaciones como depósitos, retiros, transferencias
+Con Gold es posible realizar operaciones como depósitos, retiros, transferencias
  o reembolsos sobre las cuentas del sistema, además, provee listados de
  balances a usuarios y administradores.
 \end_layout
@@ -746,11 +782,10 @@ Reservas.
 
 \begin_layout Standard
 Previo al inicio de un trabajo se realiza una estimación del total de recursos
- que este consumirá, en base a esta estimación se reservan créditos en la
- cuenta correspondiente.
- Estos créditos 'reservados' se debitan una vez que el trabajo es terminado,
- de esta manera se evita que un proyecto consuma mas recursos de los que
- tiene asignados.
+ que consumirá.
+ En base a la estimación se reservan créditos en la cuenta correspondiente.
+ Los créditos 'reservados' se debitan una vez que el trabajo es terminado,
+ evitando que un proyecto consuma mas recursos de los que tiene asignados.
 \end_layout
 
 \begin_layout Subparagraph
@@ -759,7 +794,7 @@ Vencimiento de créditos.
 
 \begin_layout Standard
 Puede especificarse un lapso de validez a los créditos en el sistema, permitiend
-o que se implemente una política de use-it-or-lose-it previniendo el uso
+o que se implemente una política de usalo-o-pierdelo previniendo el uso
  exhaustivo de créditos acumulados y estableciendo ciclos a un proyecto.
 \end_layout
 
@@ -815,9 +850,10 @@ University of Glasgow.
 \end_layout
 
 \begin_layout Standard
-El cluster utiliza TORQUE y Maui sobre Redhat Enterprise GNU/Linux 3.
- Actualmente cuenta con 60 nodos de procesamiento disponibles, cada uno
- con procesadores duales Opteron 248 y 2GB RAM.
+La universidad de Glasgow dispone de un cluster que utiliza TORQUE y Maui
+ sobre Redhat Enterprise GNU/Linux 3.
+ Hoy en día cuenta con 60 nodos de procesamiento disponibles, cada uno con
+ procesadores duales Opteron 248 y 2GB RAM.
  Además de los componentes estándares de incluidos en la distribución (p.ej.
  compilador gcc, g++, g77, etc.) se han instalado las bibliotecas MPICH 1.2.6
  (MPI) para procesamiento paralelo.
@@ -828,9 +864,9 @@ University of Heidelberg.
 \end_layout
 
 \begin_layout Standard
-El cluster fue instalado a principios de 2002 y consisten de 512 procesadores
- AMD Athlon MP, instalados en 256 nodos de procesamiento SMP con 2 GB de
- memoria RAM cada uno.
+Dispone de un cluster instalado a principios de 2002 y que consta de 512
+ procesadores AMD Athlon MP, instalados en 256 nodos de procesamiento SMP
+ con 2 GB de memoria RAM cada uno.
  Los procesadores funcionan cada uno a 1.4GHz y alcanzan un máximo teórico
  de 2.4 billones de operaciones de punto flotante por segundo (Gflops).
  El sistema total indica un máximo teórico de desempeño de mas de 1.4 Teraflops.
@@ -869,7 +905,7 @@ El cluster consta de 200 nodos Dell PowerEdge 1950 1U con dos procesadores
  De estos 200 nodos 160 cuentan con 4 GB de RAM y 40 cuentan con 8 GB de
  RAM.
  Como sistema se utiliza openSUSE GNU/Linux 10.1 con kernel 2.6 y para la
- planificación y manejo de trabajos de utiliza TORQUE 2.1.2 y MAUI 3.2.6.
+ planificación y manejo de trabajos de utiliza TORQUE 2.1.2 y Maui 3.2.6.
  Para el procesamiento paralelo se disponen de bibliotecas tanto de tipo
  MPI como de tipo PVM.
 \end_layout
