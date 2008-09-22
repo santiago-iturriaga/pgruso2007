@@ -1527,26 +1527,53 @@ PVM: Parallel Virtual Machine
 \end_layout
 
 \begin_layout Standard
-Es una biblioteca para el desarrollo de aplicaciones paralelas y distribuidas.
- PVM surge como proyecto de laboratorio universitario y fue adoptado como
- estándar de facto, aunque no es estándar de la industria.
+PVM permite utilizar una colección de computadores heterogéneos como una
+ única máquina virtual paralela.
+ El sistema administra en forma transparente el enrutamiento de mensajes,
+ la conversión de datos y la planificación de tareas en la máquina virtual.
+ Los programas están compuestos por una serie de tareas que cooperan entre
+ sí.
+ Estas tareas acceden a recursos de PVM a través de una biblioteca estándar,
+ que contiene funciones para iniciación y finalización de tareas asá como
+ para comunicación y sincronización entre tareas.
+ 
 \end_layout
 
 \begin_layout Standard
-Algunas de sus cualidades son potencia, simplicidad, portabilidad, practicidad.
+El sistema PVM se compone de dos partes.
+ La primera parte es un daemon, llamado pvmd3, el cual reside en todas las
+ máquinas que forman la máquina virtual.
+ Cuando un usuario desea ejecutar una aplicación, lo primero que debe hacer
+ es crear la máquina virtual, iniciando PVM.
+ Luego, la aplicación se puede ejecutar desde cualquiera de los computadores
+ en el sistema.
+ Múltiples usuarios pueden configurar máquinas virtuales y cada uno de ellos
+ puede ejecutar múltiples aplicaciones simultáneamente en su configuración.
 \end_layout
 
 \begin_layout Standard
-Permite la administración dinámica de un conjunto de equipos que conforman
+La segunda parte de PVM es una biblioteca de funciones que ofrece un completo
+ repertorio de primitivas.
+ Existen funciones para enviar y recibir mensajes, iniciar procesos, coordinar
+ tareas y modificar la máquina virtual.
+ El modelo de computación de PVM se basa en la noción de que una aplicación
+ consiste de múltiples tareas y cada tarea es responsable de una parte de
+ la carga de trabajo computacional de la aplicación.
+ Las tareas se identifican mediante un entero llamado el identificador de
+ tarea y abreviado TID.
+ Los mensajes se envían y reciben utilizando estos tids, los cuales son
+ asignados por PVM.
+\end_layout
+
+\begin_layout Standard
+Algunas de sus cualidades de PVM son potencia, simplicidad, portabilidad,
+ practicidad.
+ Permite la administración dinámica de un conjunto de equipos que conforman
  la máquina virtual.
  Contiene mecanismos de creación e identificación de procesos, un modelo
  de comunicación entre procesos basado en pasaje de mensajes y brinda mecanismos
- de sincronización de procesos.
-\end_layout
-
-\begin_layout Standard
-Brinda soporte para manejar heterogeneidad y aprovecha las arquitecturas
- multiprocesador.
+ de sincronización de procesos.PVM brinda soporte para manejar heterogeneidad
+ y aprovecha las arquitecturas multiprocesador.
 \end_layout
 
 \begin_layout Subsubsection
