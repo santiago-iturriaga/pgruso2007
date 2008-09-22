@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -1399,7 +1399,7 @@ Cluster de balanceo de carga.
 Un cluster de equilibrio de carga o de cómputo adaptativo está compuesto
  por uno o más ordenadores que actúan como front-end del cluster, y que
  se ocupan de repartir las peticiones de servicio que reciba el cluster
-  a otros ordenadores del cluster que forman el back-end de éste.
+ a otros ordenadores del cluster que forman el back-end de éste.
 \end_layout
 
 \begin_layout Paragraph
@@ -1463,23 +1463,15 @@ MPI: Message Passing Interface
 \end_layout
 
 \begin_layout Standard
-MPI es una biblioteca que provee funcionalidades para la comunicación de
- procesos mediante el pasaje de mensajes.
- Esta fue creada por científicos desarrolladores de software y aplicaciones
- bajo el objetivo de desarrollar un estándar portable y eficiente para programac
-ión paralela.
-\end_layout
-
-\begin_layout Standard
-Esta biblioteca permite trabajar con memoria distribuida, tener paralelismo
- explícito y contiene un único mecanismo de comunicación que puede ser punto
- a punto.
- 
-\end_layout
-
-\begin_layout Standard
-El modelo de programación es SPMD, provee 125 funciones de las cuales algunas
- son colectivas, y tiene soporte para Fortan y C.
+MPI es un estándar que define la sintaxis y la semántica de las funciones
+ contenidas en una librería de paso de mensajes diseñada para ser usada
+ en programas que exploten la existencia de múltiples procesadores.
+ Fue creado por científicos desarrolladores de software y aplicaciones bajo
+ el objetivo de desarrollar un estándar portable y eficiente para programación
+ paralela.
+ Implementaciones del estandar en forma de biblioteca permiten trabajar
+ con memoria distribuida, tener paralelismo explícito y contener un único
+ mecanismo de comunicación que puede ser punto a punto.
  
 \end_layout
 
@@ -1487,6 +1479,47 @@ El modelo de programación es SPMD, provee 125 funciones de las cuales algunas
 El número de tareas es fijado en tiempo de pre-ejecución (aunque esto ha
  cambiado en la versión 2 del estándar) y permite agrupamiento de procesos
  e incluye contextos de comunicación entre grupos de procesos.
+\end_layout
+
+\begin_layout Standard
+La característica que hace que las implementaciones de este estandar sea
+ de especial interes para sistemas distribuidos es que no utiliza memorai
+ compartida.
+\end_layout
+
+\begin_layout Standard
+Los elementos principales que intervienen en el paso de mensajes son el
+ proceso que envía, el que recibe y el mensaje.
+ Dependiendo de si el proceso que envía el mensaje espera a que el mensaje
+ sea recibido, se puede hablar de paso de mensajes síncrono o asíncrono.
+ En el paso de mensajes asíncrono, el proceso que envía, no espera a que
+ el mensaje sea recibido, y continúa su ejecución, siendo posible que vuelva
+ a generar un nuevo mensaje y a enviarlo antes de que se haya recibido el
+ anterior.
+ Por este motivo se suelen emplear buzones, en los que se almacenan los
+ mensajes a espera de que un proceso los reciba.
+ Generalmente empleando este sistema, el proceso que envía mensajes solo
+ se bloquea o para, cuando finaliza su ejecución, o si el buzón está lleno.
+ En el paso de mensajes síncrono, el proceso que envía el mensaje espera
+ a que un proceso lo reciba para continuar su ejecución.
+ Por esto se suele llamar a esta técnica encuentro, o rendezvous.
+ Dentro del paso de mensajes síncrono se engloba a la llamada a procedimiento
+ remoto, muy popular en las arquitecturas cliente/servidor.
+ La Interfaz de Paso de Mensajes es un protocolo de comunicación entre computado
+ras, es el estándar para la comunicación entre los nodos que ejecutan un
+ programa en un sistema de memoria distribuida.
+ 
+\end_layout
+
+\begin_layout Standard
+Las implementaciones en MPI consisten en un conjunto de bibliotecas de rutinas
+ que pueden ser utilizadas en programas escritos en los lenguajes de programació
+n C, C++, Fortran y Ada.
+ La ventaja de MPI sobre otras bibliotecas de paso de mensajes, es que los
+ programas que utilizan la biblioteca son portables (dado que MPI ha sido
+ implementado para casi toda arquitectura de memoria distribuida), y rápidos,
+ (porque cada implementación de la librería ha sido optimizada para el hardware
+ en la cual se ejecuta).
 \end_layout
 
 \begin_layout Subsubsection
