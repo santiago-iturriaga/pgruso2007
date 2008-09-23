@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -137,10 +137,9 @@ Condor es un proyecto open-source de la universidad de Wisconsin específicament
  Si bien Condor puede utilizarse con fines de High-Performance Computing
  (HPC) existen importantes diferencias entre HPC y HTC.
  Fundamentalmente los trabajos ejecutados en un entorno HPC se caracterizan
- por necesitar resolver un problema en el menor tiempo posible, en cambio
- en un entorno HTC se asume que no es posible resolver los problemas en
- tiempos pequeños, estamos hablando de meses o años en lugar de horas o
- días.
+ por necesitar resolver un problema en el menor tiempo posible; en cambio
+ en un entorno HTC los problemas se caracterizan en general por requerir
+ de meses o años de procesamiento en lugar de horas o días.
  Como consecuencia en HPC el poder computacional de un cluster normalmente
  es medido en operaciones de punto flotante por segundo (FLOPS), en cambio
  la comunidad HTC se interesa mas en la cantidad de trabajos que posible
@@ -149,15 +148,16 @@ Condor es un proyecto open-source de la universidad de Wisconsin específicament
  Debido a este perfil de tipo HTC, Condor se enfoca principalmente en la
  robustez y la confiabilidad brindando funcionalidades como CPU harvesting
  para la utilización de ordenadores no dedicados en momentos de ocio de
- estos, migración de procesos, tolerancia a fallas y process checkpoint.
+ los procesadores, migración de procesos, tolerancia a fallas y puntos de
+ recuperación.
 \end_layout
 
 \begin_layout Standard
 Paradójicamente si bien se trata de un proyecto open-source su código fuente
  no se distribuye libremente.
  Para obtener el código fuente de Condor es necesario enviar un correo electróni
-co explicando la razón por la que se quiere obtener el código fuente y cada
- petición es analizada puntualmente.
+co explicando la razón por la que se quiere obtener y cada petición es analizada
+ puntualmente.
 \end_layout
 
 \begin_layout Subsubsection
@@ -169,7 +169,7 @@ Condor se encuentra diseñado principalmente para la ejecución de trabajos
  seriales.
  Si bien provee soporte limitado para las bibliotecas PVM y MPI para procesamien
 to paralelo su desempeño, en esta área se encuentra por debajo de otros
- DRM's como TORQUE o SGE.
+ manejadores de recursos distribuidos como TORQUE o SGE.
 \end_layout
 
 \begin_layout Subsubsection
@@ -197,7 +197,7 @@ s interesantes (p.ej.
 \end_layout
 
 \begin_layout Subsection
-Sun Grid Engine 6.1
+Sun Grid Engine
 \end_layout
 
 \begin_layout Standard
@@ -233,20 +233,18 @@ Sun Grid Engine reúne el poder de cálculo disponible en granjas de computadora
 \end_layout
 
 \begin_layout Standard
-Los requerimientos de hardware para SGE son mínimos (100 MB de memoria disponibl
-e y 500MB de disco) y soporta la mayoría de los sistemas operativos populares.
- SGE también soporta las plataformas SPARC Ultra III, SPARC Ultra IV, AMD64,
- x86 y Mac.
+Los requerimientos de hardware para Sun Grid Engine son mínimos (100 MB
+ de memoria disponible y 500MB de disco) y soporta la mayoría de los sistemas
+ operativos populares.
+ Sun Grid Engine también soporta las plataformas SPARC Ultra III, SPARC
+ Ultra IV, AMD64, x86 y Mac.
 \end_layout
 
 \begin_layout Standard
-Permite control de usuarios, limitando tanto el número máximo de trabajos
- por usuario, grupo y proyecto, como recursos tales como colas, hosts, memoria
- y licencias de software.
-\end_layout
-
-\begin_layout Standard
-Los recursos requeridos por cada trabajo se pueden indicar mediante expresiones
+Sun Grid Engine permite control de usuarios, limitando tanto el número máximo
+ de trabajos por usuario, grupo y proyecto, como recursos tales como colas,
+ hosts, memoria y licencias de software.
+ Los recursos requeridos por cada trabajo se pueden indicar mediante expresiones
  lógicas (por ejemplo, un usuario puede requerir que un trabajo corra en
  un host que cumpla la condición 
 \begin_inset Quotes eld
@@ -268,19 +266,11 @@ La DRMAA es un conjunto de APIs estándar desarrollado por Global Grid Forum
 \end_layout
 
 \begin_layout Standard
-Guarda la información referida a la cuenta de cada trabajo en una base de
- datos relacional (soportando Oracle, MySQL y PostgreSQL).
-\end_layout
-
-\begin_layout Standard
-Maneja aplicaciones paralelas (MPI o PVM habilitados) a través de una interfase
- dedicada.
- 
-\end_layout
-
-\begin_layout Standard
-Permite la distribución de recursos a equipos o departamentos, por ejemplo
- proporcionalmente a su contribución económica.
+Sun Grid Engine guarda la información referida a la cuenta de cada trabajo
+ en una base de datos relacional (soportando Oracle, MySQL y PostgreSQL).
+ Maneja aplicaciones paralelas (MPI o PVM habilitados) a través de una interfase
+ dedicada y permite la distribución de recursos a equipos o departamentos,
+ por ejemplo proporcionalmente a su contribución económica.
  
 \end_layout
 
@@ -297,7 +287,7 @@ Resumen
 \end_layout
 
 \begin_layout Standard
-Sun Grid Engine 6.1 provee la mayoría de las funcionalidades requeridas para
+Sun Grid Engine provee la mayoría de las funcionalidades requeridas para
  el proyecto.
  Por otro lado, tiene como desventaja el ser un único gran paquete indivisible,
  lo cual hace muy difícil cualquier adaptación o modificación de su funcionamien
@@ -306,11 +296,11 @@ to.
 \end_layout
 
 \begin_layout Standard
-observando en la historia reciente del producto, en una versión anterior
- se encontró un problema de seguridad (un salto en las restricciones) y
- quienes lo estaban utilizando en ese momento descartaron la idea de buscar
- el problema y solucionarlo, limitándose solamente a esperar que los creadores
- de la herramienta lo corrigieran.
+Observando la historia reciente del producto, en una versión anterior se
+ encontró un problema de seguridad (un salto en las restricciones) y quienes
+ lo estaban utilizando en ese momento descartaron la idea de buscar el problema
+ y solucionarlo, limitándose solamente a esperar que los creadores de la
+ herramienta lo corrigieran.
  
 \end_layout
 
@@ -321,7 +311,7 @@ La desición de obiar el problema se debe a que la herramienta cuenta con
 \end_layout
 
 \begin_layout Subsection
-TORQUE y PBS
+TORQUE
 \begin_inset LatexCommand label
 name "sub:TORQUE"
 
@@ -343,7 +333,7 @@ El sistema PBS (Portable Batch System), el cual fue desarrollado por la
 
 \begin_layout Standard
 Del sistema PBS surgen dos aplicaciones, OpenPBS y TORQUE las cuales fueron
- relevadas en el proyecto FENTON.
+ relevadas en el proyecto Fenton.
 \end_layout
 
 \begin_layout Standard
@@ -367,9 +357,9 @@ ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
 \end_layout
 
 \begin_layout Standard
-A continuación se veran las caracteristicas generales de PBS y TORQUE.
- OpenPBS no fue investigado a fondo pues como se menciono anteriormente
- no esta en desarrollo actualmente y no existe soporte del mismo.
+A continuación se verán las caracteristicas generales de TORQUE.
+ OpenPBS no fue investigado a fondo pues como se mencionó anteriormente
+ no está en desarrollo actualmente y no existe soporte del mismo.
  
 \end_layout
 
@@ -378,17 +368,17 @@ Características generales
 \end_layout
 
 \begin_layout Standard
-PBS ofrece apoyo para programar y ejecutar trabajos que requieren el acceso
- interactivo de los usuarios a la entrada y salida del trabajo durante el
- tiempo de ejecución.
+TORQUE ofrece apoyo para programar y ejecutar trabajos que requieren el
+ acceso interactivo de los usuarios a la entrada y salida del trabajo durante
+ el tiempo de ejecución.
  Esto es a menudo necesario para ejecutar debuggers u otros programas que
  requieren información como parte de un trabajo que debe tener previsto
  el acceso a hardware.
 \end_layout
 
 \begin_layout Standard
-PBS se prové la ejecución de dos scripts administrativos suministrados con
- cada trabajo llamados prologo y epilogo.
+TORQUE se prové la ejecución de dos scripts administrativos suministrados
+ con cada trabajo llamados prologo y epilogo.
  El prólogo se ejecuta inmediatamente antes de que se ejecute el trabajo,
  el epílogo se ejecuta de inmediatamente después.
  Ambos scrpts se ejecutan con privilegios de root y pueden utilizarse para
@@ -398,7 +388,7 @@ PBS se prové la ejecución de dos scripts administrativos suministrados con
 \end_layout
 
 \begin_layout Standard
-En TORQUE los trabajos son manejados de la misma manera que lo hace PBS.
+En TORQUE los trabajos son manejados de la misma manera que lo hace TORQUE.
  Se cuenta con un conjunto de colas de trabajos que definen propiedades
  generales para los trabajos que contienen (ej.
  recursos disponibles, etc.).
@@ -431,6 +421,8 @@ Nodo Maestro.
 
 \begin_layout Standard
 Es necesario que exista un nodo maestro en el sistema.
+ El nodo maestro es quien ejecuta el servidor de TORQUE que a su vez administra
+ los nodos de cómputo del cluster.
  Dependiendo del sistema este nodo maestro puede encontrarse dedicado únicamente
  a este rol o compartir otros roles.
 \end_layout
@@ -443,7 +435,8 @@ Nodos Interactivos.
 Los nodos interactivos proveen un punto de entrada al sistema para los usuarios.
  En estos nodos los usuarios pueden ingresar tareas al sistema y monitorear
  su progreso.
- Estos nodos deben tener comandos como qsub y qhold disponibles.
+ Los nodos interactivos deben tener comandos disponibles para ingresar trabajos
+ al sistema.
 \end_layout
 
 \begin_layout Paragraph
@@ -480,8 +473,10 @@ PVM (Parallel Virtual Machine)
 \begin_layout Standard
 Una de las principales desventajas de TORQUE es la dificultad que plantea
  en el uso de la biblioteca PVM.
- A diferencia de MPI, el soporte para PVM no se encuentra integrado al sistema
- por lo que debe manejarse cuidadosamente.
+ El soporte para PVM no se encuentra integrado al sistema por lo que debe
+ manejarse cuidadosamente, de lo contrario es posible que la máquina virtual
+ de PVM no libere adecuadamente los recursos asignados a un trabajo luego
+ de finalizada su ejecución.
 \end_layout
 
 \begin_layout Subsubsection
@@ -513,6 +508,13 @@ Maui se enfoca en la planificación de trabajos y deja la problemática de
  como OpenPBS, TORQUE, SGE, etc.
 \end_layout
 
+\begin_layout Standard
+Actualmente Cluster Resources ofrece el producto Moab, el cual fue desarrollado
+ a partir de Maui.
+ Moab brinda mejoras en las funcionalidades con respecto a Maui pero se
+ trata de un producto pago y no es de código abierto.
+\end_layout
+
 \begin_layout Paragraph
 Requerimientos de hardware.
 \end_layout
@@ -527,16 +529,16 @@ Plataformas soportadas.
 \end_layout
 
 \begin_layout Standard
-Maui soporta los siguientes sistemas operativos: cualquie Linux, el sistema
- UNIX propiedad de IBM AIX (Advanced Interactive eXecutive), OSF/Tru-64,
- Solaris, HP-UX, IRIX, FreeBSD, y otras plataformas UNIX.
+Maui soporta los sistemas operativos Solaris de SUN, cualquier distribucuión
+ Linux, AIX (Advanced Interactive eXecutive) el sistema UNIX propiedad de
+ IBM, OSF/Tru-64, HP-UX, IRIX, FreeBSD, y otras plataformas de tipo UNIX.
  
 \end_layout
 
 \begin_layout Standard
-tambien es posible integrar Maui con los siguientes DRM: TORQUE, OpenPBS,
- PBSPro, Sun Grid Engine (SGE), LoadLeveler, LSF, BProc/Scyld, Scalable
- System Software (SSSRM) y SLURM.
+También es posible integrar Maui con los manejadores de recursos distribuidos
+ TORQUE, OpenPBS, PBSPro, Sun Grid Engine (SGE), LoadLeveler, LSF, BProc/Scyld,
+ Scalable System Software (SSSRM) y SLURM.
 \end_layout
 
 \begin_layout Paragraph
@@ -562,7 +564,7 @@ Preemption.
 \end_layout
 
 \begin_layout Standard
-Otra caracteristica de el algoritmo de planificación es que permite preemption
+Otra característica del algoritmo de planificación es que permite preemption
  lo cual brinda la posibilidad de suspender trabajos en ejecución para poder
  ejecutar trabajos con mayor prioridad.
  
@@ -616,9 +618,10 @@ Maui posee interfaces para sistemas de gerenciamiento de asignación tal
  como Gold de PNNL.
  Estos sistemas permiten que a cada usuario le sea asignada una porción
  de los recursos totales de cálculo disponibles en el sistema.
- Estos sistemas trabajan asociando a cada usuario a unas o más cuentas.
- Cuando se envía un trabajo, el usuario especifica a que cuenta se debe
- cargar los recursos consumidos por el trabajo.
+ Estos sistemas trabajan asociando a cada usuario a unas o más cuentas de
+ recursos.
+ Cuando se envía un trabajo, el usuario especifica a que cuenta se le debe
+ debitar los recursos consumidos por la ejecución del trabajo.
 \end_layout
 
 \begin_layout Subparagraph
@@ -642,7 +645,7 @@ es a nivel de trabajo o especificando ciertas restricciones especiales de
 \end_layout
 
 \begin_layout Subparagraph
-Quality of Service (QoS).
+Calidad de servicio (QoS).
 \end_layout
 
 \begin_layout Standard
@@ -653,7 +656,7 @@ Las funciones de QoS permiten otorgar ciertos privilegios especiales a usuarios.
 \end_layout
 
 \begin_layout Subparagraph
-Faireshare.
+Fairshare.
 \end_layout
 
 \begin_layout Standard
@@ -663,7 +666,7 @@ Este componente permite favorecer trabajos en base al uso histórico a corto
  porcentual del sistema de usuarios, grupos, o QoS.
  Dada una determinada ventana de tiempo sobre la cual se evalúa la utilización
  de recursos del sistema se determina si está siendo mantenido un cierto
- balanceo o no.
+ balanceo de la asignación de recursos en el cluster.
 \end_layout
 
 \begin_layout Paragraph
@@ -767,7 +770,7 @@ Gold es un sistema de contaduría open-source desarrollado en PNNL bajo el
 \end_layout
 
 \begin_layout Standard
-Con Gold es posible realizar operaciones como depósitos, retiros, transferencias
+En Gold es posible realizar operaciones como depósitos, retiros, transferencias
  o reembolsos sobre las cuentas del sistema, además, provee listados de
  balances a usuarios y administradores.
 \end_layout
@@ -795,7 +798,9 @@ Vencimiento de créditos.
 \begin_layout Standard
 Puede especificarse un lapso de validez a los créditos en el sistema, permitiend
 o que se implemente una política de usalo-o-pierdelo previniendo el uso
- exhaustivo de créditos acumulados y estableciendo ciclos a un proyecto.
+ exhaustivo de créditos acumulados.
+ De esta manera se establecen ciclos de utilización de recursos evitando
+ el uso de recursos excedentes de un ciclo a otro.
 \end_layout
 
 \begin_layout Subparagraph
@@ -826,19 +831,25 @@ name "sub:Torque-Casos-de-estudio"
 
 \end_layout
 
+\begin_layout Standard
+Varias universidades utilizan con éxito TORQUE y Maui para manejar los recursos
+ de sus clusters.
+ Se presentarán algunos casos.
+\end_layout
+
 \begin_layout Paragraph
 Oregon State University, Laboratorio de física.
 \end_layout
 
 \begin_layout Standard
-Actualmente cuenta con 34 computadoras Dell Optiplex GX620's con procesadores
- Intel Pentium D 830 (3.0 GHz) y 1 GB of RAM con sistema operativo SUSE GNU/Linux
- 10.1 64-bit.
+La universidad Oregon State University cuenta actualmente con un cluster
+ de 34 computadoras Dell Optiplex GX620's con procesadores Intel Pentium
+ D 830 (3.0 GHz) y 1 GB of RAM con sistema operativo SUSE GNU/Linux 10.1 64-bit.
 \end_layout
 
 \begin_layout Standard
-Estas computadoras cuentan con compiladores Intel para C, C++ y Fortran,
- la biblioteca Math Kernel Library (cluster edition).
+Las computadoras del cluster cuentan con compiladores Intel para C, C++
+ y Fortran, la biblioteca Math Kernel Library (cluster edition).
  Para el procesamiento paralelo se utilizan las bibliotecas MPI.
  El cluster utiliza TORQUE como manejador de recursos, y desde el 4 de febrero
  del 2007 se utiliza Maui para la planificación de tareas.
@@ -850,11 +861,11 @@ University of Glasgow.
 \end_layout
 
 \begin_layout Standard
-La universidad de Glasgow dispone de un cluster que utiliza TORQUE y Maui
- sobre Redhat Enterprise GNU/Linux 3.
- Hoy en día cuenta con 60 nodos de procesamiento disponibles, cada uno con
- procesadores duales Opteron 248 y 2GB RAM.
- Además de los componentes estándares de incluidos en la distribución (p.ej.
+La universidad de Glasgow dispone de un cluster que hoy en día cuenta con
+ 60 nodos de procesamiento disponibles, cada uno con procesadores duales
+ Opteron 248 y 2GB RAM.
+ El cluster utiliza TORQUE y Maui sobre Redhat Enterprise GNU/Linux 3.
+ Además de los componentes estándares incluídos en la distribución (p.ej.
  compilador gcc, g++, g77, etc.) se han instalado las bibliotecas MPICH 1.2.6
  (MPI) para procesamiento paralelo.
 \end_layout
