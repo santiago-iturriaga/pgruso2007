@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -44,21 +44,13 @@ Puesta en producción
 \end_layout
 
 \begin_layout Standard
-<<<<<<< .mine
 Finalizada la descripción del trabajo realizado, en esta sección se presentarán
  las instalaciones y puestas en producción que se han realizado del sitema
- FENTON.
+ Fenton.
  Se describirán las las características de hardware y software de los clusters
  de computadores de alto desempeño en los que fue instalado Fenton.
  Por ultimo se especificará el proceso que se siguió durante la instalación
  del sistema.
-=======
-Finalizada la descripción del trabajo realizado, en esta sección presentarán
- las instalaciones del sistema y como fueron realizadas.
- Se describirán las características de hardware y software de los clusters
- de computadores de alto desempeño en que fue instalado el sistema Fenton
- y se presentará el proceso que se siguió durante su instalación.
->>>>>>> .r831
 \end_layout
 
 \begin_layout Subsection
@@ -66,13 +58,8 @@ Cluster de computadores del CeCal
 \end_layout
 
 \begin_layout Standard
-<<<<<<< .mine
-Como primer caso esta el cluster de computadores de alto desempeño con el
- que cuenta el CeCal dentro del InCo.
-=======
 Como primer caso se presentará el cluster de computadores de alto desempeño
  con el que cuenta el CeCal dentro del InCo.
->>>>>>> .r831
  Este cluster es utilizado internamente por los integrantes del grupo de
  Computación de Alta Performance del CeCal como ambiente de investigación
  y desarrollo.
