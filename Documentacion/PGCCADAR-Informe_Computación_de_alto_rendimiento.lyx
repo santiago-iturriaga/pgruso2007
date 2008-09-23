@@ -1483,7 +1483,7 @@ El número de tareas es fijado en tiempo de pre-ejecución (aunque esto ha
 
 \begin_layout Standard
 La característica que hace que las implementaciones de este estandar sea
- de especial interes para sistemas distribuidos es que no utiliza memorai
+ de especial interes para sistemas distribuidos es que no utiliza memoria
  compartida.
 \end_layout
 
@@ -1499,7 +1499,7 @@ Los elementos principales que intervienen en el paso de mensajes son el
  Por este motivo se suelen emplear buzones, en los que se almacenan los
  mensajes a espera de que un proceso los reciba.
  Generalmente empleando este sistema, el proceso que envía mensajes solo
- se bloquea o para, cuando finaliza su ejecución, o si el buzón está lleno.
+ se bloquea cuando finaliza su ejecución, o cuando el buzón está lleno.
  En el paso de mensajes síncrono, el proceso que envía el mensaje espera
  a que un proceso lo reciba para continuar su ejecución.
  Por esto se suele llamar a esta técnica encuentro, o rendezvous.
