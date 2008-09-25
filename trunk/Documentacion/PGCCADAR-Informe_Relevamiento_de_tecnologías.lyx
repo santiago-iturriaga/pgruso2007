@@ -1155,23 +1155,24 @@ Desde enero de 2008 una subsidiaria de Sun Microsystems.
 \end_inset
 
  desarrolla MySQL como software libre en un esquema de licenciamiento dual.
- Por un lado se ofrece bajo la GNU GPL para cualquier uso compatible con
- esta licencia, pero las empresas que quieran incorporarlo a productos que
- no poseen código abierto deben comprar a la empresa una licencia específica
- que les permita este uso.
+ Por un lado se ofrece bajo la licencia publica GNU para software de código
+ abierto, pero las empresas que quieran incorporarlo a productos que no
+ poseen código abierto deben comprar a la empresa una licencia específica
+ para uso comercial.
 \end_layout
 
 \begin_layout Standard
-Se ha convertido en el sistema de gestión de base de datos relacional más
- popular, principalmente debido a su gran difusión en Internet en el desarrollo
- de sitios Web dinámicos.
+El manejador de base de datos MySQL Se ha convertido en el sistema de gestión
+ de base de datos relacional más popular, principalmente debido a su gran
+ difusión en internet y en el desarrollo de sitios web dinámicos.
 \end_layout
 
 \begin_layout Standard
-MySQL no posee el enfoque purista de PostgreSQL al momento de la implementación
- de un SQL que respete los estándares ANSI/ISO SQL.
- Si bien conforman en su mayoría los estándares '92 y '99 no es una meta
- principal del producto.
+MySQL no posee el enfoque purista en su implementación como lo hace PostgreSQL,
+ pues este ultimo se apega mas a los estándares ANSI/ISO SQL segun sus especific
+aciones.
+ Y Si bien MySQL respeta en su mayoría los estándares '92 y '99 no es una
+ meta principal del producto.
 \end_layout
 
 \end_body
