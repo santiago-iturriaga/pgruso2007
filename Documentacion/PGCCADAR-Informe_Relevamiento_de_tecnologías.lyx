@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -926,8 +926,8 @@ Resumen
 \end_layout
 
 \begin_layout Standard
-TORQUE junto con Maui y Gold satisfacen los requerimientos planteados para
- el proyecto.
+TORQUE, junto con Maui y Gold, satisfacen los requerimientos planteados
+ para el proyecto.
  Su consumo de recursos del cluster es relativamente bajo, se adapta muy
  bien al manejo de clusters pequeños y posee un manejo eficiente de trabajos
  paralelos (sobre todo si estos son homogéneos).
@@ -938,17 +938,17 @@ TORQUE junto con Maui y Gold satisfacen los requerimientos planteados para
 Existen ciertos aspectos en los que TORQUE no se desempeña de la mejor manera.
  Si bien se encuentra integrado el soporte para bibliotecas tipo MPI, debe
  tenerse mucho cuidado al momento de ejecutar trabajos utilizando PVM.
- TORQUE presenta carencias también en sus funcionalidades de Resource Management
-; p.
+ TORQUE presenta carencias también en sus funcionalidades de gerenciamiento
+ de recursos; p.
  ej.
  no es capaz de realizar CPU Harvesting o migración de procesos.
 \end_layout
 
 \begin_layout Standard
-En cuanto al soporte por parte de la comunidad de usuarios de TORQUE y Maui,
- es muy bueno por medio de listas de correo y también se encuentra mucha
- documentación disponible en el sitio Web por medio de una Wiki (aunque
- aún se encuentra en construcción).
+E soporte por parte de la comunidad de usuarios de TORQUE y Maui es muy
+ bueno por medio de listas de correo y también se encuentra mucha documentación
+ disponible en el sitio Web por medio de una Wiki (aunque aún se encuentra
+ en construcción).
 \end_layout
 
 \begin_layout Subsection
@@ -965,17 +965,17 @@ Ganglia es un sistema de monitoreo, escalable y distribuido, para sistemas
 \end_layout
 
 \begin_layout Standard
-Ganglia utiliza tecnologías ampliamente difundidas como: XML para la representac
-ión de datos, XDR para la comunicación y RRDtool para el almacenamiento
- y visualización de datos.
- El proyecto posee un amplio énfasis en consumir el mínimo overhead posible
+Ganglia utiliza tecnologías ampliamente difundidas como XML para la representaci
+ón de datos, XDR para la comunicación y RRDtool para el almacenamiento y
+ visualización de datos.
+ El proyecto posee un amplio énfasis en consumir el mínimo esfuerzo posible
  por nodo y brindar un máximo de concurrencia.
  Posee una implementación robusta y puede manejar clusters con hasta 2000
  nodos.
 \end_layout
 
 \begin_layout Standard
-Ganglia se encuentra compuesto por tres partes:
+Ganglia se encuentra integrado por tres componentes:
 \end_layout
 
 \begin_layout Paragraph
@@ -996,9 +996,9 @@ GMetaD
 \end_layout
 
 \begin_layout Standard
-El meta servicio de ganglia (Ganglia Meta Daemon) es un servicio que se
- encarga de recolectar y almacenar información de otros servicios (ya sean
- servicios GMonD u otros servicios GMetaD).
+El metaservicio de ganglia (Ganglia Meta Daemon) es un servicio que se encarga
+ de recolectar y almacenar información de otros servicios (ya sean servicios
+ GMonD u otros servicios GMetaD).
  GMetaD provee un mecanismo de consultas muy simple para obtener información
  histórica acerca de grupos de máquinas.
  
@@ -1009,7 +1009,7 @@ Interfaz Web
 \end_layout
 
 \begin_layout Standard
-Ganglia brinda además un front-end Web implementado en PHP para la presentación
+Ganglia brinda además un front-end web implementado en PHP para la presentación
  al usuario final de la información almacenada por el sevicio GMetaD.
  
 \end_layout
@@ -1030,7 +1030,7 @@ Apache es un servidor HTTP de código abierto para plataformas Unix (BSD,
 status open
 
 \begin_layout Standard
-Encuesta realizada en Junio del 2008 por Netcraft.com.
+Según los datos de la encuesta realizada en Junio del 2008 por Netcraft.com.
  Netcraft fue fundada en 1995 y se especializa en el análisis de mercado
  de servidores y alojamiento web incluyendo detección de servidor Web y
  sistema operativo.
@@ -1042,7 +1042,7 @@ Encuesta realizada en Junio del 2008 por Netcraft.com.
 \end_layout
 
 \begin_layout Standard
-Entre las ventajas que brinda Apache podemos destacar: su enfoque altamente
+Entre las ventajas que brinda Apache se puede destacar su enfoque altamente
  modular y un excelente soporte gracias a su gran cantidad de usuarios.
  Además, gracias a su enfoque altamente modular, Apache soporta una gran
  cantidad de lenguajes server-side como: PHP, Python, Ruby, Perl, etc.
@@ -1063,7 +1063,7 @@ PHP es un acrónimo recursivo que significa PHP Hypertext Pre-processor (aunque
 \end_layout
 
 \begin_layout Standard
-PHP es un lenguaje interpretado de propósito general muy popular debido
+PHP es un lenguaje de propósito general e interpretado, muy popular debido
  a la rapidez y facilidad con la que permite desarrollar aplicaciones.
  Fue diseñado originalmente para la creación de páginas Web dinámicas pero
  actualmente puede ser utilizado desde una interfaz de línea de comandos
@@ -1080,18 +1080,18 @@ PHP es un lenguaje interpretado de propósito general muy popular debido
 Algunos de los puntos a destacar de PHP son: su facilidad de uso, su amplia
  documentación que incluye muchos ejemplos prácticos, que brinda soporte
  al paradigma de programación de orientación a objetos y que posee manejo
- de excepciones (aunque muchas de estas ventajas han aparecido recientemente
+ de excepciones (aunque algunas de estas ventajas han aparecido recientemente
  en las últimas versiones de PHP).
 \end_layout
 
 \begin_layout Standard
 Como mayor desventaja se presenta generalmente su característica de favorecer
  la creación de código desordenado y complejo de mantener.
- Esto tiene dos orígenes, por un lado se debe a que PHP brinda tantas facilidade
-s en su uso que es muy popular entre usuarios programadores con poca formación
- técnica, y por otro lado la falta de una especificación formal resulta
- en algunos casos en una definición poco homogénea de las bibliotecas proporcion
-adas por el lenguaje.
+ Esta desventaja tiene dos orígenes, por un lado se debe a que PHP brinda
+ tantas facilidades en su uso que es muy popular entre usuarios programadores
+ con poca formación técnica, y por otro lado la falta de una especificación
+ formal resulta en algunos casos en una definición poco homogénea de las
+ bibliotecas proporcionadas por el lenguaje.
 \end_layout
 
 \begin_layout Subsection
@@ -1107,12 +1107,12 @@ s denominada PGDG (PostgreSQL Global Development Group).
 \end_layout
 
 \begin_layout Standard
-Comenzó con el proyecto Ingres en la Universidad de Berkeley.
+PostgreSQL comenzó con el proyecto Ingres en la Universidad de Berkeley.
  Este proyecto, liderado por Michael Stonebraker, fue uno de los primeros
  intentos de implementar un motor de base de datos relacional.
  Después de haber trabajado un largo tiempo en Ingres y de haber tenido
- una experiencia comercial con el mismo, Michael decidió volver a la Universidad
- para trabajar en un nuevo proyecto sobre la experiencia de Ingres.
+ amplia experiencia comercial, Michael decidió volver a la Universidad para
+ trabajar en un nuevo proyecto sobre la experiencia de Ingres.
  Dicho proyecto fue llamado Post-Ingres o simplemente Postgres.
 \end_layout
 
@@ -1125,8 +1125,8 @@ PostgreSQL se encuentra disponible para una gran cantidad de sistemas operativos
 rsion Concurrency Control).
  Mediante MVCC PostgreSQL permite el acceso de lectura a una tabla mientras
  que otro proceso realiza una operación de escritura sobre esa misma tabla.
- Esto se debe a que cada usuario obtiene una visión consistente de lo último
- a lo que se le hizo commit.
+ Este comportamiento se debe a que cada usuario obtiene una visión consistente
+ de la ultima versión actualizada.
  Esta estrategia es superior al uso de bloqueos por tabla o por filas común
  en otras bases y elimina la necesidad del uso de bloqueos explícitos.
  
@@ -1163,8 +1163,8 @@ Desde enero de 2008 una subsidiaria de Sun Microsystems.
 
 \begin_layout Standard
 Se ha convertido en el sistema de gestión de base de datos relacional más
- popular, principalmente debido a su gran popularidad en Internet en el
- desarrollo de sitios Web dinámicos.
+ popular, principalmente debido a su gran difusión en Internet en el desarrollo
+ de sitios Web dinámicos.
 \end_layout
 
 \begin_layout Standard
