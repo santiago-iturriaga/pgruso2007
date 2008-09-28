@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -47,16 +47,16 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-En el principio de la historia de las computadoras se tenía la idea de que
- un servidor tenía que ser necesariamente una máquina, conocida como super
- computador o mainframe, que contara con un procesador muy potente que diera
- servicio a varias terminales tontas.
- Según esta doctrina, para asegurar mayor poder de cálculo era necesario
- tener un procesador más poderoso.
- De este modo, cuando los requerimientos de procesamiento aumentaban, se
- hacía necesario en la mayoría de los casos, cambiar la súper computadora
- actual por una nueva mejor, pasando a subutilizar la súper computadora
- anterior, con un alto costo asociado.
+Durante los primeros años de la historia de las computadoras modernas se
+ consideró que un servidor tenía que ser necesariamente una única máquina
+ con un procesador muy potente para dar servicio a varias terminales tontas,
+ este servidor es conocido como super computador o mainframe.
+ Según esta doctrina, para aumentar el poder de cálculo del sistema es necesario
+ contar con un procesador más potente en la computadora servidor.
+ De este modo, al aumentar los requerimientos de procesamiento se hace necesario
+ en la mayoría de los casos, cambiar la súper computadora actual por una
+ nueva mejor, pasando a subutilizar o simplemente desechando la súper computador
+a anterior con un alto costo asociado.
 \end_layout
 
 \begin_layout Standard
@@ -70,7 +70,7 @@ to poniendo a trabajar varias computadoras en paralelo con procesadores
 A partir de ese momento, y debido al éxito alcanzado en el proyecto, muchos
  otros proyectos siguieron la investigación del tema, bajo la premisa de
  convertir hardware de relativo bajo costo en clusters que logren equiparar
- o superar la performance alcanzada por las supercomputadores.
+ o superar el desempeño alcanzado por las supercomputadores.
 \end_layout
 
 \begin_layout Standard
@@ -82,7 +82,7 @@ La construcción de los ordenadores del cluster es más fácil y económica
 \end_layout
 
 \begin_layout Standard
-Para que un cluster funcione como tal, no basta solo con conectar entre
+Para que un cluster funcione como tal, no basta solamente con conectar entre
  sí los ordenadores, sino que es necesario proveer un sistema de manejo
  del cluster, el cual se encargue de interactuar con el usuario y los procesos
  que corren en él para optimizar el funcionamiento.
@@ -119,11 +119,10 @@ Aplicaciones (pueden ser paralelas o no)
 \end_layout
 
 \begin_layout Standard
-Actualmente, el cluster de computadoras se ha utilizado para en diferentes
- tareas, como data mining, servidores de archivos, servidores de base de
- datos, servidores Web, simuladores de vuelo, renderización de gráficos,
- modeladores climáticos o incluso para ripear CDs.
- 
+Actualmente, el cluster de computadoras se utiliza en diferentes tareas,
+ como data mining, servidores de archivos, servidores de base de datos,
+ servidores web, simuladores de vuelo, renderización de gráficos, modeladores
+ climáticos, entre otros.
 \end_layout
 
 \begin_layout Standard
@@ -131,20 +130,21 @@ El objetivo de un cluster de computadoras es simplemente reunir el poder
  de cómputo de una serie de nodos para proveer alta escalabilidad, poder
  de cómputo, o construir redundancia y de esta manera proveer alta disponibilida
 d.
- Entonces, en vez de un simple cliente haciendo peticiones a uno o más servidore
-s, los cluster utilizan múltiples máquinas para proveer un ambiente más
- poderoso de cómputo a través de una sola imagen de sistema, donde el procesamie
-nto sea visible al usuario como una sola unidad, aunque se componga de muchas
- computadoras trabajando en paralelo para lograr el mismo fin.
+ De esta manera en lugar de un simple cliente realizando peticiones a uno
+ o más servidores, los cluster utilizan múltiples máquinas para proveer
+ un ambiente más poderoso de cómputo a través de una sola imagen de sistema.
+ El procesamiento es visible al usuario como una sola unidad, aunque se
+ encuentre compuesto de muchas computadoras trabajando en paralelo para
+ lograr el mismo fin.
 \end_layout
 
 \begin_layout Standard
 El alto poder de procesamiento de varias computadoras trabajando en paralelo
  (o cluster de computadoras) se perfila como una solución viable a varias
- problematicas, que requieren gran poder de computo, a un bajo costo de
- implementación.
- Algunas de estas problematicas muy importantes en la actualidad estan relaciona
-das con la ciencia e ingeniería, dinámica de fluidos computacional, simulaciones
+ problematicas, que requieren gran poder de computo a un bajo costo de implement
+ación.
+ Algunas de las problematicas actuales más importantes estan relacionadas
+ con la ciencia e ingeniería, dinámica de fluidos computacional, simulaciones
  electromagnéticas, modelado ambiental, dinámica estructural, modelado biológico
 , dinámica molecular, simulación de redes, modelado financiero y económico,
  etc.
@@ -155,22 +155,22 @@ Introducción a la computación de alto rendimiento
 \end_layout
 
 \begin_layout Standard
-A medida que los problemas a resolver mediante la computación se tornan
- cada vez más complicados, con modelos más complejos trabajando con grandes
- volúmenes de datos y tiempos de respuesta limitados.
+A medida que la computación avanza los problemas a resolver se tornan cada
+ vez más complicados, con modelos más complejos, con mayores volúmenes de
+ datos y tiempos de respuesta más limitados.
 \end_layout
 
 \begin_layout Standard
 La computación de alto rendimiento o HPC (siglas en inglés de High Performance
  Computing) nació para satisfacer todos estos requisitos de poder de cómputo;
- y reúne un conjunto de tecnologías, como ser supercomputadores o clusters,
+ reúne un conjunto de tecnologías, como ser supercomputadores o clusters,
  y se apoya en el paradigma de programación paralela y distribuida.
 \end_layout
 
 \begin_layout Standard
 La computación distribuida resuelve problemas de computación masiva utilizando
  un gran número de computadoras con una infraestructura de telecomunicaciones
- distribuida; y mediante la compartisión de recursos situados en distintos
+ distribuida; y mediante el uso compartido de recursos situados en distintos
  lugares y pertenecientes a diferentes dominios de administración sobre
  una red que utiliza estándares abiertos.
 \end_layout
@@ -187,7 +187,7 @@ La programación paralela es una técnica de programación basada en la ejecuci�
 \begin_layout Standard
 En la sección 2 se profundizará sobre la computación de alto rendimiento,
  diferentes tipos de arquitecturas y técnicas, y se analizarán las herramientas
- y paradigmas de programación paralela o distribuida.
+ y paradigmas de programación paralela y distribuida.
 \end_layout
 
 \begin_layout Subsection
@@ -199,6 +199,15 @@ Actualmente existe en el Centro de Cálculo (CeCal) un cluster de computadores
  utilizado para investigación en proyectos internos.
  A corto plazo se proyecta alquilar el cluster como servicio a entidades
  externas.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+No es Medusa el cluster que se quiere alquilar?
+\end_layout
+
+\end_inset
+
  El software utilizado permite un nivel de abstracción muy bajo, que limita
  los perfiles de usuarios capaces de utilizar el sistema.
  Es importante notar que los usuarios finales serán en la mayoría de los
@@ -231,9 +240,9 @@ Objetivos y alcance del proyecto
 
 \begin_layout Standard
 La motivación principal del proyecto Fenton es la construcción e implantación
- del sistema de acceso de un cluster de alto desempeño con acceso remoto.
- Dentro del marco de esta motivación se han definido varios objetivos, actividad
-es, y el alcance del proyecto.
+ de un sistema de acceso remoto a un cluster de alto desempeño.
+ Dentro del marco de esta motivación se ha definido el alcance del proyecto
+ y varios objetivos y actividades.
  
 \end_layout
 
@@ -249,16 +258,16 @@ Otro actividad importante es la evaluación y diseño de herramientas automátic
  Para esto se planificó realizar el relevamiento de paquetes de software
  de base (sistemas operativos, bibliotecas, monitores de desempeño, etc.)
  que permitan el desarrollo y la ejecución de programas paralelos y distribuidos.
- En el relevamiento se debe evaluar características funcionales así como
- usabilidad de las herramientas.
+ Durante el relevamiento de las herramientas se deben evaluar tanto característi
+cas funcionales así como características de usabilidad.
 \end_layout
 
 \begin_layout Standard
 Como se mencionó en la sección anterior se debe tener especial consideración
  en el grado de abstracción de las herramientas de administración y las
  utilizadas para la ejecución de trabajos en el cluster, para que de esta
- forma la infraestructura pueda ser usada por un conjunto diverso y amplio
- de usuarios.
+ forma la infraestructura pueda ser utilizada por un conjunto diverso y
+ amplio de usuarios.
 \end_layout
 
 \begin_layout Standard
@@ -287,10 +296,9 @@ El desarrollo de software que permita la administración semiautomática del
 \end_layout
 
 \begin_layout Itemize
-El desarrollo de una interfaz amigable que permita la utilización de modo
- simple del cluster como recurso de cómputo integrado, aún para usuarios
- sin conocimientos exhaustivos de informática y/o de las técnicas de computación
- de alto desempeño.
+El desarrollo de una interfaz amigable que permita la utilización del cluster
+ de forma simple, aún para usuarios sin conocimientos exhaustivos de informática
+ y/o de las técnicas de computación de alto desempeño.
 \end_layout
 
 \begin_layout Subsection
@@ -420,10 +428,6 @@ El proyecto consistio en el estudio, diseño e implementación del modelo
  Los modelos diseñados fueron aplicados a problemas de optimización combinatoria
 , en particular en el área de diseño de redes de comunicaciones confiables.
  
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Paragraph
@@ -627,8 +631,8 @@ Implementación de la interfaz Web.
 \end_layout
 
 \begin_layout Standard
-Dentro de los alcances del proyecto se encontraba la implementación de una
- interfaz Web que permitiera el acceso remoto al cluster.
+Dentro de los alcances del proyecto se encuentra la implementación de una
+ interfaz web que permita el acceso remoto al cluster.
  Esta interfaz debería contener elementos de usabilidad, funcionalidades
  de administración y reportes del cluster para los administradores del mismo.
 \end_layout
@@ -637,15 +641,15 @@ Dentro de los alcances del proyecto se encontraba la implementación de una
 Esta actividad se dividió en varias etapas.
  La primera fase involucró una etapa de relevamiento de requerimientos donde
  se mantuvieron reuniones con los tutores y especialistas en el área de
- usabilidad para interfaces Web.
- A continuación se llevó a cabo una etapa de diseño de la interfaz Web donde
+ usabilidad de interfaces web.
+ A continuación se llevó a cabo una etapa de diseño de la interfaz web donde
  se tuvieron en cuenta conocimientos previos por parte de los integrantes
  del proyecto así como la curva de aprendizaje de distintas herramientas
  de desarrollo.
  Luego de la etapa de diseño se realizó la etapa de desarrollo la cual se
  hizo en forma iterativa e incremental.
- Se fijaron pequeñas iteraciones en las cuales se fue incrementando y mejorando
- las funcionalidades de la interfaz Web.
+ Se fijaron pequeñas iteraciones en las cuales se fueron incrementando y
+ mejorando las funcionalidades de la interfaz web.
 \end_layout
 
 \begin_layout Paragraph
@@ -653,19 +657,16 @@ Verificación de la solución.
 \end_layout
 
 \begin_layout Standard
-Una vez implantado el cluster con las tecnologías seleccionadas y terminado
- el desarrollo de la interfaz Web se procedió con la etapa de testing.
- 
+Una vez implantado el cluster con las tecnologías seleccionadas y luego
+ de terminado el desarrollo de la interfaz web se procedió con la etapa
+ de verificación.
+ En esta etapa se probaron los principales requerimientos funcionales del
+ sistema.
 \end_layout
 
 \begin_layout Standard
-En esta etapa se probaron los principales requerimientos funcionales del
- sistema de acceso al cluster.
-\end_layout
-
-\begin_layout Standard
-Por último, otras actividades realizadas fueron la realización de la documentaci
-ón final como este informe y manuales, y la presentación final.
+Por último, otras actividades llevadas a cabo fueron la realización de la
+ documentación final como este informe, manuales, y la presentación final.
 \end_layout
 
 \end_body

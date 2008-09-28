@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -51,87 +51,93 @@ Como se mencionó anteriormente, en el correr de los últimos años ha crecido
  capacidad de respuesta en un tiempo limitado.
  El procesamiento paralelo (o computación paralela de alto rendimiento)
  ha ganado terreno y se ha vuelto muy importante en la resolución de problemas,
- apoyándose en tecnologías como los clusters, supercomputadores y mediante
- el uso de paradigmas de programación paralela y/o distribuida.
+ apoyándose en tecnologías como los clusters y mediante el uso de paradigmas
+ de programación paralela y/o distribuida.
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+La siguiente frase esta muy entreverada.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 La computación distribuida como modelo para resolver problemas de computación
- masiva utilizando un gran número de computadoras en una infraestructura
- de telecomunicaciones distribuida consiste en compartir recursos heterogéneos
- (basados en distintas plataformas, arquitecturas de computadores y programas,
- lenguajes de programación), situados en distintos lugares y pertenecientes
- a diferentes dominios de administración sobre una red que utiliza estándares
- abiertos.
+ utilizando un gran número de computadoras en una infraestructura de telecomunic
+aciones distribuida consiste en compartir recursos heterogéneos (basados
+ en distintas plataformas, arquitecturas de computadores y programas, lenguajes
+ de programación), situados en distintos lugares y pertenecientes a diferentes
+ dominios de administración sobre una red que utiliza estándares abiertos.
  La computación distribuida ha sido diseñada para resolver problemas que
- superan la capacidad de cualquier supercomputadora o mainframe, manteniéndose
+ superan la capacidad de cualquier supercomputadora o mainframe manteniendo
  la flexibilidad de trabajar en múltiples problemas más pequeños.
  Existen varios grados de distribución: de hardware y procesamiento, de
  datos y de control.
  Algunas de las ventajas de la computación distribuida son la mejora en
- el desempeño, robustez, seguridad no centralizada y acceso transparente
- a los datos no locales.
+ el desempeño, la robustez, la seguridad no centralizada y el acceso transparent
+e a los datos remotos.
  Las técnicas de autorización segura son esenciales antes de permitir que
  los recursos informáticos sean controlados por usuarios remotos dado que
- estamos el entorno es generalmente multiusuario.
+ el entorno es generalmente multiusuario.
 \end_layout
 
 \begin_layout Standard
 La programación paralela es una técnica de programación basada en la ejecución
  simultánea, bien sea en un mismo ordenador (con uno o varios procesadores)
- o en un cluster de ordenadores, en cuyo caso se denomina computación distribuid
-a.
- Al contrario que en la programación concurrente, la técnica de paralelización
- enfatiza la verdadera simultaneidad en el tiempo de la ejecución de las
- tareas.
+ o en un cluster de ordenadores, en cuyo caso se denomina computación paralela-d
+istribuida.
+ Al contrario que en la programación concurrente, las técnicas de paralelización
+ enfatizan la verdadera simultaneidad de la ejecución de las tareas.
  El avance en diferentes tecnologías como microprocesadores con mayor poder
- de procesamiento, comunicación de datos, desarrollo de bibliotecas e interfaces
- para programación de procesos han posibilitado esta la programación paralela.
- Los multicomputadores y los sistemas con múltiples procesadores consiguen
- un aumento en el rendimiento, mientras que en los sistemas monoprocesador
- el beneficio en rendimiento no es tan evidente, ya que la CPU es compartida
- por múltiples procesos en el tiempo, lo que se denomina multiplexación
- o multiprogramación.
- El mayor problema de la computación paralela radica en la complejidad de
- sincronizar unas tareas con otras, ya sea mediante secciones críticas,
- semáforos o pasaje de mensajes, para garantizar la exclusión mutua en las
- zonas del código en las que sea necesario.
+ de procesamiento, comunicación de datos de alta velocidad y el desarrollo
+ de bibliotecas para la comunicación entre precesos han facilitado la utilizació
+n de la programación paralela en aplicaciónes.
+ Mediante la programación paralela los multicomputadores y los sistemas
+ con múltiples procesadores consiguen un aumento en el rendimiento, en cambio
+ en los sistemas monoprocesador el beneficio en el rendimiento no es tan
+ evidente ya que la CPU es compartida por múltiples procesos en el tiempo.
+ El mayor problema de la computación paralela radica en la complejidad en
+ la sincronización entre tareas, ya sea mediante secciones críticas, semáforos
+ o pasaje de mensajes, para garantizar la exclusión mutua en las zonas del
+ código en las que sea necesario.
 \end_layout
 
 \begin_layout Standard
 La programación paralela proporciona ventajas como mayor capacidad de proceso,
  menor tiempo de procesamiento y aprovechamiento de la escalabilidad potencial
  de los recursos.
- Es posible hacer una división de las aplicaciones que requieren una demanda
- de recursos computacionales importantes.
- En primer lugar están las aplicaciones de cálculo intensivas, que requieren
- un alto número de ciclos de máquina y han impulsado el desarrollo de supercompu
-tadores.
- Son típicas en ciencias e ingeniería, aunque recientemente han aparecido
- en otras áreas como simulación financiera y económica.
+ Existen diversos tipos de aplicaciones que pueden verse beneficiadas por
+ la programación paralela.
+ Por un lado están las aplicaciones de cálculo intensivas, que requieren
+ un alto número de ciclos de máquina y han impulsado el desarrollo de los
+ supercomputadores.
  Algunos ejemplos son aplicaciones para dinámica de fluidos computacional,
  simulaciones electromagnéticas, modelado ambiental, dinámica estructural,
- modelado biológico, dinámica molecular, simulación de redes, modelado financier
-o y económico.
+ modelado biológico, dinámica molecular, simulación de redes y modelado
+ financiero y económico.
 \end_layout
 
 \begin_layout Standard
 Otro tipo de aplicaciones con una gran demanda de recursos son las de almacenami
 ento masivo, dependen de la capacidad para almacenar y procesar grandes
  cantidades de información y requieren de un acceso rápido y seguro a una
- masa considerable de datos almacenados.
+ cantidad considerable de datos almacenados.
  Algunas de ellas son las aplicaciones para análisis de data sísmica, procesamie
 nto de imágenes, minería de datos, análisis estadístico de datos y análisis
  de mercados.
 \end_layout
 
 \begin_layout Standard
-Las aplicaciones exigentes comunicacionalmente son relativamente nuevas
- y pueden ser llamadas servicios por demanda.
+Finalmente las aplicaciones exigentes comunicacionalmente son relativamente
+ nuevas y pueden ser llamadas servicios por demanda.
  Requieren de recursos computacionales conectados por redes con un ancho
  de banda considerable.
  Por ejemplo procesamiento de transacciones en línea, sistemas colaborativos,
- texto por demanda, vídeo por demanda, imágenes por demanda, simulación
+ texto por demanda, vídeo por demanda, imágenes por demanda o simulación
  por demanda.
  Obviamente todas las aplicaciones anteriores dependen en cierto grado de
  cada uno de los aspectos computacionales mencionados: poder de cómputo,
@@ -145,7 +151,7 @@ Los sistemas de sistemas combinan en forma más compleja las características
  diseñados primordialmente para ellas.
  Ejemplos de sistemas de sistemas son las aplicaciones de soporte a decisiones
  corporativas y gubernamentales, control de sistemas a tiempo real, banca
- electrónica, compras electrónicas, educación.
+ electrónica o compras electrónicas.
 \end_layout
 
 \begin_layout Standard
