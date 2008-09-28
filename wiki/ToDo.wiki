@@ -4,10 +4,10 @@
 
 ===DOCUMENTAR=========================================================
 
-- Arreglar hyphenation.
-- Pasar corrector ortografico.
-- Faltan correciones del ruso de los capitulos 5 en adelante.
-- Referencias Chequear.
+  * Arreglar hyphenation.
+  * Pasar corrector ortografico.
+  * Faltan correciones del ruso de los capitulos 5 en adelante.
+  * Referencias Chequear.
 
 ===PRESENTACION=========================================================
 
