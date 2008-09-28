@@ -2,6 +2,19 @@
 
 = ToDo =
 
+===DOCUMENTAR=========================================================
+
+- Arreglar hyphenation.
+- Pasar corrector ortografico.
+- Faltan correciones del ruso de los capitulos 5 en adelante.
+- Referencias Chequear.
+
+===PRESENTACION=========================================================
+
+HACER :)
+   
+======================================================================
+
 ===Paginas: Ayudas y titulos (a lo wiki)===
 
 *Sistema*
@@ -21,53 +34,6 @@
   
   
   * cron [damian]
-    
-===DOCUMENTAR=========================================================
-
-(HECHO - quedaron medias feas pero quedaron) CARATULAS (ITU)
-
--Resumen
-
-- Introduccion (PAULO)
-    1.1 Introducción a la computación de alto rendimiento (HECHO)
-    1.3 Objetivos y alcance del proyecto (HECHO)
-    1.5 Estructura del documento (PAULO)
-    1.4 Trabajos previos (PAULO).
-    1.5 Actividades del proyecto (PAULO)
-
-Capitulo 2 Computación de alto rendimiento: Agrupar y redactar nuevamente (PAULO)(HECHO)
-
- Capitulo 4 (DAMIAN - ITU) (HECHO)
-
-Capitulo 5 5 Solución desarrollada (Cambiar nombre)
- 5.1 Tecnologías elegidas (ITU) 
-
- 5.2 Interfaz web desarrollada (DAMIAN)
-
- 5.3 Testeo de la solución (PAULO) (HECHO)
-
-Casos de estudio 
-Deploy, performance?
-
-Capitulo  7 Conclusiones (PAULO)(HECHO)
-
-Capitulo  8 Trabajo futuro (PAULO)(HECHO)
-
-Capitulo  9 Anexos (PAULO)(HECHO)
-
-(HECHO - quedo agregado) Glosario  (ITU)
-
-Referencias Chequear.
-
-======================================================================
-
-===PRESENTACION=========================================================
-
-prog MPI
-   paulo ver dijckstra
-   Itu buscar internet
-   
-
 
 =====================================================================
 
