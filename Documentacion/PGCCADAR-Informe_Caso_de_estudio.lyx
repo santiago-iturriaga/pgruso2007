@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -45,7 +45,7 @@ Puesta en producción
 
 \begin_layout Standard
 Finalizada la descripción del trabajo realizado, en esta sección se presentarán
- las instalaciones y puestas en producción que se han realizado del sitema
+ las instalaciones y puestas en producción que se han realizado del sistema
  Fenton.
  Se describirán las las características de hardware y software de los clusters
  de computadores de alto desempeño en los que fue instalado Fenton.
@@ -155,7 +155,7 @@ A continuación describiremos con mayor detalle la evolución del cluster
 \end_layout
 
 \begin_layout Paragraph
-Primer milestone.
+Primer hito.
  
 \end_layout
 
@@ -202,13 +202,13 @@ texttt{lennon.fing.edu.uy}}
 \end_layout
 
 \begin_layout Paragraph
-Segundo milestone.
+Segundo hito.
 \end_layout
 
 \begin_layout Standard
 A medida que el sistema fue evolucionando se instalaron otras aplicaciones
- y para cuando el sistema llegó al siguiente milestone se realizó una actualizac
-ión del cluster y se instalaron PHP y PostgreSQL.
+ y para cuando el sistema llegó al siguiente hito se realizó una actualización
+ del cluster y se instalaron PHP y PostgreSQL.
  Nuevamente PostgreSQL se instaló solamente en 
 \begin_inset ERT
 status open
@@ -240,7 +240,7 @@ texttt{lennon.fing.edu.uy}}
 
 \end_inset
 
- es quien brinda el servicio de interfaz Web.
+ es quien brinda el servicio de interfaz web.
  El resto de los nodos solamente requieren PHP para ejecutar scripts de
  notificación de inicio y finalización de trabajos  que son manejados internamen
 te por el sistema.
@@ -248,7 +248,7 @@ te por el sistema.
 \end_layout
 
 \begin_layout Paragraph
-Tercer milestone.
+Tercer hito.
  
 \end_layout
 
@@ -258,7 +258,7 @@ Durante la iteración final de desarrollo se actualizó una vez más el cluster
  Ganglia cuenta con dos componentes: un demonio encargado de recolectar
  información del estado de los nodos del cluster y un demonio encargado
  de monitorear un nodo individual y enviar información al demonio de recolección.
- Además Ganglia cuenta con una interfaz Web en donde se puede consultar
+ Además Ganglia cuenta con una interfaz web en donde se puede consultar
  la información recogida por el servicio de recolección.
  En el nodo 
 \begin_inset ERT
@@ -275,12 +275,12 @@ texttt{lennon.fing.edu.uy}}
 
 \end_inset
 
- del cluster se instalaron: la interfaz Web, el servicio de recolección
+ del cluster se instalaron: la interfaz web, el servicio de recolección
  y el servicio de monitoreo.
  En el resto de los nodos se instalaron solamente demonios de monitoreo.
- Finalmente como último paso del tercer milestone, se instaló la biblioteca
- OpenMPI para brindar mayor flexibilidad a la hora del desarrollo de aplicacione
-s paralelas.
+ Finalmente como último paso del tercer hito, se instaló la biblioteca OpenMPI
+ para brindar mayor flexibilidad a la hora del desarrollo de aplicaciones
+ paralelas.
 \end_layout
 
 \begin_layout Standard
@@ -307,7 +307,7 @@ texttt{lennon.fing.edu.uy}}
 \end_layout
 
 \begin_layout Standard
-La interfaz Web del sistema Fenton se encuentra disponible desde dentro
+La interfaz web del sistema Fenton se encuentra disponible desde dentro
  del InCo en 
 \begin_inset LatexCommand url
 target "http://lennon.fing.edu.uy/pgccadar"

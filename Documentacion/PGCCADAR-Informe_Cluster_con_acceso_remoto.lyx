@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -104,18 +104,18 @@ Arquitectura
 \end_layout
 
 \begin_layout Subsection
-DRM y despachador de trabajos
+Gerenciador de recursos y despachador de trabajos
 \end_layout
 
 \begin_layout Standard
 A continuación se presentán y justificarán las tecnologías seleccionadas
- para la implementación del DRM y despachador de trabajos del sistema Fenton.
- La etapa de relavamiento de tecnologías fue una de las más importantes
- del proyecto, y creemos que en la implementación del gestionador de recursos
- y el planificador de trabajos radica uno de los mayores riesgo para el
- proyecto.
+ para la implementación del gerenciador de recursos (DRM) y despachador
+ de trabajos del sistema Fenton.
+ La etapa de relevamiento de tecnologías fue una de las más importantes
+ del proyecto, y en la implementación del gestionador de recursos y el planifica
+dor de trabajos radica uno de los mayores riesgos para el proyecto.
  Por esta razón para la construcción del sistema se seleccionaron herramientas
- con un buen rendimiento y estabilidad que brindarán una solida base sobre
+ con un buen rendimiento y estabilidad que brindan una solida base sobre
  la cual construir el sistema.
  
 \end_layout
@@ -167,8 +167,7 @@ Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
  Dichas carencias no son un problema importante ya que el cluster cuenta
  con nodos homogéneos y dedicados, esto significa que los nodos del cluster
  tendrán capacidades de procesamiento muy similares y no serán compartidos
- con otras aplicaciones externas al cluster (p.
- ej.: aplicaciones de escritorio).
+ con otras aplicaciones externas al cluster (e.g.: aplicaciones de escritorio).
 \end_layout
 
 \begin_layout Standard
@@ -177,9 +176,9 @@ Como se mencionó en la sección de relevamiento de tecnologías, si bien TORQUE
  se trata de una lógica muy básica.
  Por esta razón se optó por incorporar a Maui para este proposito.
  Maui presenta un algoritmo de planificación con diversas características
- y configuraciones que nos permiten mejorar la performance del cluster y
- además brinda la posibilidad de implementar otro algoritmo de planificación
- desarrollado a medida.
+ y configuraciones que permiten mejorar la performance del cluster y además
+ brinda la posibilidad de implementar un algoritmo de planificación desarrollado
+ a medida.
 \end_layout
 
 \begin_layout Standard
@@ -190,11 +189,11 @@ Inicialmente se evaluó la herramienta Gold para llevar registro y contabilizar
 \end_layout
 
 \begin_layout Standard
-Para la monitorización del sistema se decidió utilizar la herramienta Ganglia.
- Ganglia ya era utilizado como herramienta de monitorización por el grupo
- CeCal y luego de evaluar sus funcionalidades se optó por continuar con
- su utilización debido su excelente desepeño, su bajo consumo de recursos
- y sus reportes en tiempo real e históricos del uso del cluster.
+Para el monitoreo del sistema se decidió utilizar la herramienta Ganglia.
+ Ganglia ya era utilizado como herramienta de monitoreo por el grupo CeCal
+ y luego de evaluar sus funcionalidades se optó por continuar con su utilización
+ debido su excelente desempeño, su bajo consumo de recursos y sus reportes
+ en tiempo real e históricos del uso del cluster.
 \end_layout
 
 \begin_layout Subsection
@@ -203,31 +202,32 @@ Desarrollo de la interfaz de acceso remoto
 
 \begin_layout Standard
 Hasta aquí las herramientas para construir la infraestructura del cluster,
- a continuación detallaremos el componente de acceso remoto al sistema Fenton.
+ a continuación detallaremos el componente de acceso remoto del sistema
+ Fenton.
  Un requerimiento importante es brindar una interfaz de usuario simple y
  de fácil acceso para usuarios no especializados, por esta razón y para
- evitar problemas con la posible heterogeneidad de los sistemas de los clientes
- se decidió brindar una interfaz de usuario Web para el acceso remoto al
+ evitar problemas con la posible heterogeneidad de los sistemas clientes
+ se decidió brindar una interfaz de usuario web para el acceso remoto al
  cluster.
 \end_layout
 
 \begin_layout Standard
-El desarrollo del componente de acceso Web requirió la definición de varias
- herramientas: un servidor Web para alojar nuestra aplicación, un lenguaje
+El desarrollo del componente de acceso web requirió la definición de varias
+ herramientas: un servidor web para alojar nuestra aplicación, un lenguaje
  server-side para implementar la lógica y un manejador de bases de datos
  relacionales para almacenar usuarios, trabajos y resultados de ejecuciones.
  La utilización de TORQUE y Maui para el manejo de recursos y la planificación
  de trabajos del cluster nos condiciona a trabajar sobre un sistema operativo
- Linux o Unix-BSD.
- Por esta razón se decidió utilizar Apache como servidor Web de la interfaz
+ GNU/Linux o Unix-BSD.
+ Por esta razón se decidió utilizar Apache como servidor web de la interfaz
  de usuario.
 \end_layout
 
 \begin_layout Standard
 Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
  así como la curva de aprendizaje de los diferentes lenguajes para desarrollar
- aplicaciones Web, se decidió utilizar PHP como lenguaje de implementación.
- El servidor Web Apache brinda un excelente soporte para la ejecución de
+ aplicaciones web, se decidió utilizar PHP como lenguaje de implementación.
+ El servidor web Apache brinda un excelente soporte para la ejecución de
  código PHP por lo que resulta una pareja ideal.
  Como entorno de desarrollo para la implementación de la logica en código
  PHP necesaria se utilizó Eclipse con el plugin PHPEclipse.
@@ -242,9 +242,9 @@ Para el almacenamiento de datos se consideraron dos motores de base de datos
  PostgreSQL es un motor de base de datos relacional de tipo empresarial,
  maduro, con buena integración con PHP y un muy buen soporte por parte de
  la comunidad.
- Si bien no es tan amigable ni tan popular como MySQL cuenta con una licencia
- de tipo BSD (Berkeley Software Distribution) mucho más flexible y permisiva
- que la licencia utilizada por MySQL.
+ Si bien PostgreSQL no es tan amigable ni tan popular como MySQL, cuenta
+ con una licencia de tipo BSD (Berkeley Software Distribution) mucho más
+ flexible y permisiva que la licencia utilizada por MySQL.
  
 \end_layout
 
@@ -253,17 +253,17 @@ A la hora de la implementación se realizó una clara separación entre la
  capa de presentación y la capa con la lógica de negocios, desacoplando
  asi la presentación de la información con el comportamiento de la aplicación.
  El acceso a datos se encapsuló en un módulo especifico, esto redundó en
- una ventaja para el producto: si fuera necesario instalarlo sobre otro
- manejador de base de datos relacional de condiciones similares solamente
- es necesario reimplementar el módulo y repetir la etapa de testeo.
+ una ventaja para el producto: para utilizar otro manejador de base de datos
+ relacional de condiciones similares solamente es necesario reimplementar
+ el módulo y repetir la etapa de testeo.
  La apariencia del sitio también podía variar durante la implementación,
  por lo tanto además de separar la lógica de la aplicación de la capa de
- presentación, esta última se dividió en scripts PHP que reciben los pedidos
- del usuario y actúan en consecuencia, separados de los archivos HTML y
- CSS orientados a la forma en que estos resultados se muestran.
- Para esto utilizamos plantillas que son cargadas en cada script PHP para
- luego ser desplegadas en pantalla.
- En definitiva obtuvimos una versión moderada del patrón model-view-controller
+ presentación, esta última se dividió por un lado en scripts PHP que reciben
+ los pedidos del usuario y actúan en consecuencia, y por otro lado en archivos
+ HTML y CSS orientados a la forma en que estos resultados se muestran.
+ Para esto se utilizaron plantillas que son cargadas en cada script PHP
+ para luego ser desplegadas en pantalla.
+ En definitiva se obtuvo una versión moderada del patrón Model-View-Controller
  (MVC).
  Si en algún momento se desea rediseñar el sitio manteniendo el mismo funcionami
 ento solamente es necesario modificar las hojas de estilos (CSS) y las plantilla
@@ -323,7 +323,7 @@ A su vez se separó en módulos distintos las interfaces con: TORQUE, Maui
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename C:/Documents and Settings/damian.cuarto/Escritorio/facultad/proyecto/cvs/Documentacion/esquema.gif
+	filename esquema.gif
 
 \end_inset
 
@@ -404,10 +404,10 @@ Por último se definió un mecanismo de alertas a los usuarios.
  Este mecanismo es totalmente extensible en cuanto a las definiciones de
  alertas y es soportado por funcionalidades de TORQUE y la base de datos.
  Los usuarios pueden observar las alertas en la interfaz web que le fueron
- enviadas por Fenton y esta abierta la posibilidad de enviárselas por correo
- electrónico mediante un servidor SMTP.
+ enviadas por Fenton y se encuentra disponible la posibilidad de enviarlas
+ por correo electrónico mediante un servidor SMTP.
  Este sistema de alertas debe ser disparado periódicamente por el sistema
- operativo (por ejemplo en Linux mediante el cron o anacron).
+ operativo (por ejemplo en GNU/Linux mediante el utilitario cron o anacron).
 \end_layout
 
 \begin_layout Subsection
@@ -415,8 +415,8 @@ Otras herramientas
 \end_layout
 
 \begin_layout Standard
-En el transcurso del proyecto se necesitó de otras herramientas para algunos
- tipos de tareas.
+En el transcurso del proyecto fueron necesarias otras herramientas para
+ algunos tipos de tareas.
  Fue necesario contar con una herramienta colaborativa permitiera compartir
  y versionar tanto el código como los documentos.
  Para esto se utilizó Google Code, un servicio de Google que brinda alojamiento
@@ -433,7 +433,7 @@ Subversion es un software de control de versiones diseñado específicamente
 
 \end_inset
 
-, un manejador de incidencias (Issues), una Wiki, etcétera.
+, un manejador de incidencias, una Wiki, etcétera.
 \end_layout
 
 \begin_layout Standard
@@ -449,31 +449,31 @@ Testeo de la solución
 \end_layout
 
 \begin_layout Standard
-Una de las actividades de este proyecto fue el testeo de las tecnologías
- propuestas y el testeo de la interfaz web desarrollada.
+Una de las actividades del proyecto fue el testeo de las tecnologías propuestas
+ y el testeo de la interfaz web desarrollada.
  Los objetivos de esta etapa son la verificación y validación de los requerimien
 tos funcionales establecidos en etapas más tempranas y que forman parte
  de los objetivos del proyecto.
 \end_layout
 
 \begin_layout Standard
-Durante el proceso de testing se aplicaron dos tipos de test.
- Se realizó un test funcional complementado por un test exploratorio.
+Durante el proceso de testing se aplicaron dos tipos de test, se realizó
+ un testeo funcional complementado por un testeo exploratorio.
  El testing funcional verifica el cumplimiento de los requerimientos funcionales
  contra los casos de test, en un entorno que emula un ambiente de producción
  del sistema.
- El objetivo de este test es verificar si el comportamiento observado del
- software a prueba coincide o no con sus especificaciones.
+ El objetivo de este testeo es verificar si el comportamiento observado
+ del software a prueba coincide o no con sus especificaciones.
  
 \end_layout
 
 \begin_layout Standard
-El test exploratorio es un proceso simultáneo de exploración y aprendizaje
+El testeo exploratorio es un proceso simultáneo de exploración y aprendizaje
  del producto, diseño y ejecución de pruebas.
  La estrategia en este caso fue recorrer las funcionalidades de la interfaz
  en busca de defectos de diseño, de programación, de funcionamiento, etc.
- Durante el test exploratorio se generaron una serie de casos de test que
- apuntan a cubrir los requerimientos funcionales principales del sistema.
+ Durante el testeo exploratorio se generaron una serie de casos de test
+ que apuntan a cubrir los requerimientos funcionales principales del sistema.
  Estos casos de test se incluyeron en la Guía de Test (ver página 
 \begin_inset LatexCommand pageref
 reference "sub:Guía-de-testeo"
@@ -487,7 +487,7 @@ reference "sub:Guía-de-testeo"
 
 \begin_layout Standard
 Las herramientas utilizadas en el testing fueron la guía de test y las funcional
-idades provistas por el Google Code como son registro Issues y Wiki.
+idades provistas por el Google Code como son registro incidencias y Wiki.
 \end_layout
 
 \end_body

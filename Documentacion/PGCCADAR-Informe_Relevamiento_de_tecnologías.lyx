@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -50,36 +50,39 @@ name "sec:Relevamiento-de-tecnologías"
 \end_layout
 
 \begin_layout Standard
-La etapa de relevamiento de paquetes de software que permitan el desarrollo
- y la ejecución de programas paralelos y distribuidos fue una actividad
- muy importante dentro del proyecto pues encontrar una aplicación que cumpliera
- con los objetivos del proyecto era vital el alcance del mismo.
- Cabe mencionar que en caso de no encontar una aplicación adecuada se debería
- desarrollar la misma.
+El relevamiento de paquetes de software que permitan el desarrollo y la
+ ejecución de programas paralelos y distribuidos fue una actividad muy important
+e dentro del proyecto, encontrar un conjunto de aplicaciones que permitan
+ cumplir con los objetivos del proyecto fue vital para el alcance del mismo.
+ Cabe mencionar que en caso de no haber encontrado una aplicación adecuada
+ se debería desarrollar la misma.
  El relevamiento se enfocó en sistemas de administración de cluster, sistemas
  de despacho de trabajos y sistemas de monitoreo de clusters.
  
 \end_layout
 
 \begin_layout Standard
-Las caracteristicas en que la cuales se centro el relevamiento de aplicaciones
- fueron la performance, interfaz amigable para usuarios del cluster, interfaz
- de administración del cluster, infromación del cluster y sus nodos, mecanismos
- de despacho e inicialización de trabajos y que fueran de código abierto.
+Las caracteristicas en las cuales se centró el relevamiento de aplicaciones
+ del cluster fueron su desempeño, la interfaz disponible para el usuario,
+ la interfaz de administración del cluster, la información disponible del
+ cluster y sus nodos individuales, los mecanismos de despacho e inicialización
+ de trabajos y finalmente que se trate de una herramienta de código abierto.
  
 \end_layout
 
 \begin_layout Standard
-Previamente al relevamiento se establecio el sistema operativo que sería
- alguna distribución de Linux, por ejemplo Fedora, y las bibliotecas PVM
- y MPI para el desarrollo para programas paralelos y distribuidos .
+Previamente al relevamiento se estableció GNU/Linux como sistema operativo
+ del cluster, pudiendo tratarse de una distribución como Fedora u openSUSE,
+ y la biblioteca MPI como principal herramienta para el desarrollo de
+ programas paralelos y distribuidos.
 \end_layout
 
 \begin_layout Standard
 En esta sección se presentarán las aplicacions que fueran relevadas para
- el despacho de trabajos y administración del cluster, aplicaciones de monitoreo
- del cluste, lenguajes de desarrollo, manejdaores de base de datos asi como
- otras aplicaciones que fueran necesarias para la implementación del proyecto.
+ el despacho de trabajos y administración del cluster, las aplicaciones
+ de monitoreo del cluster, los lenguajes de desarrollo, los manejadores
+ de base de datos relacionales y otras aplicaciones que fueran necesarias
+ para la implementación del proyecto.
 \end_layout
 
 \begin_layout Subsection
@@ -109,8 +112,8 @@ A diferencia de un cluster tradicional en un cluster SSI todas las computadoras
  es su completa transparencia en la gestión de recursos.
  Es debido a esta completa transparencia que es posible migrar procesos
  de un nodo a otro.
- Ni es necesario programación adicional para beneficiarse del paralelismo,
- de esta manera no es necesario re-escribir programas utilizando bibliotecas
+ Ni siquiera es necesario programación adicional para beneficiarse del paralelis
+mo, de esta manera no es necesario re-escribir programas utilizando bibliotecas
  como PVM (Parallel Virtual Machine) o MPI (Message Passing Interface).
 \end_layout
 
@@ -118,7 +121,7 @@ A diferencia de un cluster tradicional en un cluster SSI todas las computadoras
 A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos
  no se cree que se ajusten a los requerimientos planteados en este proyecto
  principalmente debido a que el cluster ya se encuentra en funcionamiento
- siguiendo un paradigma estilo beowulf mas clásico.
+ siguiendo un paradigma estilo Beowulf mas clásico.
  Quizás sea interesante construir un pequeño cluster SSI e investigar más
  a fondo este tipo de tecnologías de manera de poder comparar ambas soluciones.
 \end_layout
@@ -142,7 +145,7 @@ Condor es un proyecto open-source de la universidad de Wisconsin específicament
  de meses o años de procesamiento en lugar de horas o días.
  Como consecuencia en HPC el poder computacional de un cluster normalmente
  es medido en operaciones de punto flotante por segundo (FLOPS), en cambio
- la comunidad HTC se interesa mas en la cantidad de trabajos que posible
+ la comunidad HTC se interesa más en la cantidad de trabajos que es posible
  completar en un largo periodo de tiempo, sin interesarse especialmente
  en que tan rápido puede terminarse un trabajo individual.
  Debido a este perfil de tipo HTC, Condor se enfoca principalmente en la
@@ -168,8 +171,8 @@ Bibliotecas para programación paralela
 Condor se encuentra diseñado principalmente para la ejecución de trabajos
  seriales.
  Si bien provee soporte limitado para las bibliotecas PVM y MPI para procesamien
-to paralelo su desempeño, en esta área se encuentra por debajo de otros
- manejadores de recursos distribuidos como TORQUE o SGE.
+to paralelo su desempeño en esta área se encuentra por debajo de otros manejador
+es de recursos distribuidos como TORQUE o SGE.
 \end_layout
 
 \begin_layout Subsubsection
@@ -188,7 +191,7 @@ Resumen
 \begin_layout Standard
 Condor no parece ser el software ideal para el proyecto.
  Si bien puede adaptarse a los requerimientos planteados y brinda funcionalidade
-s interesantes (p.ej.
+s interesantes (e.g.
  migración de procesos, cpu harvesting, etc.), existen áreas criticas en
  las que se encuentra claramente en desventaja con respecto a otros productos.
  El limitado soporte que brinda Condor a las bibliotecas PVM y MPI resulta
@@ -321,24 +324,19 @@ name "sub:TORQUE"
 \end_layout
 
 \begin_layout Standard
-El sistema PBS (Portable Batch System), el cual fue desarrollado por la
- Numerical Aerospace Simulation (NAS) Systems Division of NASA Ames Research
- Center en conjunto con la National Energy Research Supercomputer Center
- (NERSC) of Lawrence Livermore National Laboratory, es un software que provee
- controles adicionales sobre la iniciación y despacho de trabajos batch.
- PBS permite la administración y asignación de recursos a los diferentes
- trabajos permitiendo asgurar a los usuarios que los trabajos obtendran
- los recursos necesarios para terminar su ejecución .
-\end_layout
-
-\begin_layout Standard
-Del sistema PBS surgen dos aplicaciones, OpenPBS y TORQUE las cuales fueron
+El sistema PBS (Portable Batch System) fue desarrollado a principios de
+ los '90 por MRJ para la National Aeronautics and Space Administration (NASA).
+ PBS es un software que provee controles sobre la iniciación y despacho
+ de trabajos batch; permite la administración y asignación de recursos a
+ los diferentes trabajos permitiendo asgurar a los usuarios que los trabajos
+ obtendran los recursos necesarios para terminar su ejecución.
+ Del sistema PBS surgen dos aplicaciones: OpenPBS y TORQUE. Ambas fueron
  relevadas en el proyecto Fenton.
 \end_layout
 
 \begin_layout Standard
-OpenPBS se trata de la versión original de código abierto de PBS desarrollada
- para la NASA a principios de los 90's.
+OpenPBS es la versión de código abierto de la versión original de PBS desarrolla
+da para la NASA.
  Actualmente es ofrecida por Altair Grid Technologies, aunque no se encuentra
  en desarrollo y la empresa no brinda ningún tipo de soporte sobre el software.
  Altair ha apostado a una versión comercial del producto llamada PBS Pro,
@@ -377,18 +375,18 @@ TORQUE ofrece apoyo para programar y ejecutar trabajos que requieren el
 \end_layout
 
 \begin_layout Standard
-TORQUE se prové la ejecución de dos scripts administrativos suministrados
- con cada trabajo llamados prologo y epilogo.
- El prólogo se ejecuta inmediatamente antes de que se ejecute el trabajo,
- el epílogo se ejecuta de inmediatamente después.
- Ambos scrpts se ejecutan con privilegios de root y pueden utilizarse para
- colocaruan bandera o establecer parte de la entorno para el trabajo, como
- la creación de directorios temporales o realizar una limpieza de los puestos
- de trabajo.
+TORQUE ejecuta dos scripts administrativos con la ejecución de cada trabajo
+ llamados prologo y epilogo.
+ El prólogo se ejecuta inmediatamente antes de que se ejecute el trabajo
+ y el epílogo se ejecuta de inmediatamente después.
+ Ambos scripts se ejecutan con privilegios de root y pueden utilizarse para
+ colocar una bandera o establecer parte del entorno de trabajo como la creación
+ de directorios temporales, realizar una limpieza de datos temporales o
+ ejecuciones previas.
 \end_layout
 
 \begin_layout Standard
-En TORQUE los trabajos son manejados de la misma manera que lo hace TORQUE.
+En TORQUE los trabajos son manejados de la misma manera que lo hace PBS.
  Se cuenta con un conjunto de colas de trabajos que definen propiedades
  generales para los trabajos que contienen (ej.
  recursos disponibles, etc.).
@@ -396,10 +394,9 @@ En TORQUE los trabajos son manejados de la misma manera que lo hace TORQUE.
  especificas de sí mismo que ayuden al sistema a planificar su ejecución
  (ej.
  nodos a utilizar, memoria máxima a utilizar, etc.).
- Con esta información (los datos de la cola a la que pertenece el trabajo
- y los datos específicos del trabajo en cuestión) el scheduler decide el
- momento en que un trabajo comienza a ejecutarse y con que recursos cuenta
- en cada instante.
+ Con la información de la cola a la que pertenece el trabajo y los datos
+ específicos del trabajo en cuestión el scheduler decide el momento en que
+ un trabajo comienza a ejecutarse y con que recursos cuenta en cada instante.
 \end_layout
 
 \begin_layout Standard
@@ -509,10 +506,10 @@ Maui se enfoca en la planificación de trabajos y deja la problemática de
 \end_layout
 
 \begin_layout Standard
-Actualmente Cluster Resources ofrece el producto Moab, el cual fue desarrollado
+Actualmente Cluster Resources ofrece el producto Moab que fue desarrollado
  a partir de Maui.
  Moab brinda mejoras en las funcionalidades con respecto a Maui pero se
- trata de un producto pago y no es de código abierto.
+ trata de un producto comercial y no es de código abierto.
 \end_layout
 
 \begin_layout Paragraph
@@ -529,9 +526,9 @@ Plataformas soportadas.
 \end_layout
 
 \begin_layout Standard
-Maui soporta los sistemas operativos Solaris de SUN, cualquier distribucuión
- Linux, AIX (Advanced Interactive eXecutive) el sistema UNIX propiedad de
- IBM, OSF/Tru-64, HP-UX, IRIX, FreeBSD, y otras plataformas de tipo UNIX.
+Maui soporta los sistemas operativos Solaris de SUN, cualquier distribución
+ de GNU/Linux, AIX (Advanced Interactive eXecutive) el sistema UNIX propiedad
+ de IBM, OSF/Tru-64, HP-UX, IRIX, FreeBSD, y otras plataformas de tipo UNIX.
  
 \end_layout
 
@@ -564,9 +561,8 @@ Preemption.
 \end_layout
 
 \begin_layout Standard
-Otra característica del algoritmo de planificación es que permite preemption
- lo cual brinda la posibilidad de suspender trabajos en ejecución para poder
- ejecutar trabajos con mayor prioridad.
+Otra característica del algoritmo de planificación es que permite suspender
+ trabajos en ejecución para poder ejecutar trabajos con mayor prioridad.
  
 \end_layout
 
@@ -589,7 +585,7 @@ Backfill.
 \end_layout
 
 \begin_layout Standard
-Backfill es una optimización en el algoritmo de planificacion que nos permite
+Backfill es una optimización en el algoritmo de planificacion que permite
  asignar de mejor forma los recursos permitiendo ejecutar algunos trabajos
  fuera de orden siempre y cuando éstos no retrasen los trabajos de prioridad
  superior de la cola.
@@ -607,21 +603,6 @@ Backfill es una optimización en el algoritmo de planificacion que nos permite
  que Maui encuentre agujeros en la planificación para comenzar a ejecutar
  su trabajo con mayor anticipación.
  
-\end_layout
-
-\begin_layout Subparagraph
-Gerenciamiento de asignación.
-\end_layout
-
-\begin_layout Standard
-Maui posee interfaces para sistemas de gerenciamiento de asignación tal
- como Gold de PNNL.
- Estos sistemas permiten que a cada usuario le sea asignada una porción
- de los recursos totales de cálculo disponibles en el sistema.
- Estos sistemas trabajan asociando a cada usuario a unas o más cuentas de
- recursos.
- Cuando se envía un trabajo, el usuario especifica a que cuenta se le debe
- debitar los recursos consumidos por la ejecución del trabajo.
 \end_layout
 
 \begin_layout Subparagraph
@@ -690,8 +671,8 @@ Interfaz de extensión
 Esta interfaz permite que bibliotecas externas sean conectadas con el servidor
  de Maui brindando acceso a todos los datos y objetos utilizados por el
  planificador.
- Además, permite que estas bibliotecas realicen override de las principales
- funciones de Maui.
+ Además, permite que estas bibliotecas sobreescriban las principales funciones
+ de Maui.
 \end_layout
 
 \begin_layout Subparagraph
@@ -736,7 +717,7 @@ Histórico.
 \end_layout
 
 \begin_layout Standard
-Las estadisticas de hostorico pueden ser obtenidas para un lapso de tiempo,
+Las estadisticas de historico pueden ser obtenidas para un lapso de tiempo,
  un tipo de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
  Este comando utiliza la traza de información detallada de un trabajo, que
  es guardada al dar por finalizado un trabajo.
@@ -750,7 +731,7 @@ Fairshare.
 
 \begin_layout Standard
 Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
- habilitado.
+ habilitado o no.
  Al igual que las trazas de los trabajos, las estadisticas son almacenadas
  en archivos utilizando texto plano por cada ventana de fairshare.
 \end_layout
@@ -760,13 +741,13 @@ Gold
 \end_layout
 
 \begin_layout Standard
-Gold es un sistema de contaduría open-source desarrollado en PNNL bajo el
- proyecto Scalable Systems Software (SSS), que lleva registro y maneja el
- uso de recursos en clusters de alto desempeño.
+Gold es un sistema de contaduría open-source desarrollado en Pacific Northwest
+ National Laboratory (PNNL) bajo el proyecto Scalable Systems Software (SSS),
+ que lleva registro y maneja el uso de recursos en clusters de alto desempeño.
  Actúa de la misma forma que un banco en el que son depositados créditos
- en cuentas, que representan recursos en el sistema.
- A medida que se finalizan trabajos o que se consumen recursos en el sistema
- se debitan créditos de sus respectivas cuentas.
+ en cuentas, estos créditos representan recursos en el sistema.
+ A medida que los usuarios consumen recursos en el sistema con la ejecución
+ de trabajos se debitan créditos de sus respectivas cuentas.
 \end_layout
 
 \begin_layout Standard
@@ -804,11 +785,11 @@ o que se implemente una política de usalo-o-pierdelo previniendo el uso
 \end_layout
 
 \begin_layout Subparagraph
-Interfaz Web.
+Interfaz web.
 \end_layout
 
 \begin_layout Standard
-Permitiendo acceso remoto a usuarios y administradores.
+La interfaz web permite el acceso remoto a usuarios y administradores.
  
 \end_layout
 
@@ -849,7 +830,7 @@ La universidad Oregon State University cuenta actualmente con un cluster
 
 \begin_layout Standard
 Las computadoras del cluster cuentan con compiladores Intel para C, C++
- y Fortran, la biblioteca Math Kernel Library (cluster edition).
+ y Fortran y la biblioteca Math Kernel Library (cluster edition).
  Para el procesamiento paralelo se utilizan las bibliotecas MPI.
  El cluster utiliza TORQUE como manejador de recursos, y desde el 4 de febrero
  del 2007 se utiliza Maui para la planificación de tareas.
@@ -863,9 +844,9 @@ University of Glasgow.
 \begin_layout Standard
 La universidad de Glasgow dispone de un cluster que hoy en día cuenta con
  60 nodos de procesamiento disponibles, cada uno con procesadores duales
- Opteron 248 y 2GB RAM.
+ Opteron 248 y 2 GB RAM.
  El cluster utiliza TORQUE y Maui sobre Redhat Enterprise GNU/Linux 3.
- Además de los componentes estándares incluídos en la distribución (p.ej.
+ Además de los componentes estándares incluídos en la distribución (e.g.
  compilador gcc, g++, g77, etc.) se han instalado las bibliotecas MPICH 1.2.6
  (MPI) para procesamiento paralelo.
 \end_layout
@@ -875,9 +856,9 @@ University of Heidelberg.
 \end_layout
 
 \begin_layout Standard
-Dispone de un cluster instalado a principios de 2002 y que consta de 512
- procesadores AMD Athlon MP, instalados en 256 nodos de procesamiento SMP
- con 2 GB de memoria RAM cada uno.
+Dispone de un cluster instalado a principios de 2002 que consta de 512 procesado
+res AMD Athlon MP, instalados en 256 nodos de procesamiento SMP con 2 GB
+ de memoria RAM cada uno.
  Los procesadores funcionan cada uno a 1.4GHz y alcanzan un máximo teórico
  de 2.4 billones de operaciones de punto flotante por segundo (Gflops).
  El sistema total indica un máximo teórico de desempeño de mas de 1.4 Teraflops.
@@ -888,9 +869,9 @@ Dispone de un cluster instalado a principios de 2002 y que consta de 512
 
 \begin_layout Standard
 Como base del cluster se utiliza un sistema Debian GNU/Linux.
- Para procesamiento paralelo se utiliza la biblioteca mpich (MPI) y como
+ Para procesamiento paralelo se utiliza la biblioteca MPICH (MPI) y como
  manejador de recursos se utiliza TORQUE.
- Por sobre TORQUE se encuentra instalado Moab, el sucesor de Maui.
+ Por sobre TORQUE se encuentra instalado Moab, el sucesor comercial de Maui.
  
 \end_layout
 
@@ -900,7 +881,7 @@ Stony Brook University.
 
 \begin_layout Standard
 El cluster tiene 235 nodos de procesamiento dual (470 procesadores individuales).
- Cada procesador es un Dell Pentium IV Xeon de 3.4GHz con 2GB de memoria
+ Cada procesador es un Dell Pentium IV Xeon de 3.4GHz con 2 GB de memoria
  RAM y 40 GB de disco duro.
  Los computadores operan con Debian GNU/Linux, utilizan TORQUE y Maui para
  manejar los trabajos y la versión 1.4 de MPI para el procesamiento paralelo.
@@ -916,7 +897,7 @@ El cluster consta de 200 nodos Dell PowerEdge 1950 1U con dos procesadores
  De estos 200 nodos 160 cuentan con 4 GB de RAM y 40 cuentan con 8 GB de
  RAM.
  Como sistema se utiliza openSUSE GNU/Linux 10.1 con kernel 2.6 y para la
- planificación y manejo de trabajos de utiliza TORQUE 2.1.2 y Maui 3.2.6.
+ planificación y manejo de trabajos se utiliza TORQUE 2.1.2 y Maui 3.2.6.
  Para el procesamiento paralelo se disponen de bibliotecas tanto de tipo
  MPI como de tipo PVM.
 \end_layout
@@ -939,15 +920,14 @@ Existen ciertos aspectos en los que TORQUE no se desempeña de la mejor manera.
  Si bien se encuentra integrado el soporte para bibliotecas tipo MPI, debe
  tenerse mucho cuidado al momento de ejecutar trabajos utilizando PVM.
  TORQUE presenta carencias también en sus funcionalidades de gerenciamiento
- de recursos; p.
- ej.
+ de recursos; e.g.
  no es capaz de realizar CPU Harvesting o migración de procesos.
 \end_layout
 
 \begin_layout Standard
-E soporte por parte de la comunidad de usuarios de TORQUE y Maui es muy
- bueno por medio de listas de correo y también se encuentra mucha documentación
- disponible en el sitio Web por medio de una Wiki (aunque aún se encuentra
+El soporte por parte de la comunidad de usuarios de TORQUE y Maui por medio
+ de listas de correo es muy bueno y también se encuentra mucha documentación
+ disponible en el sitio web por medio de una Wiki (aunque aún se encuentra
  en construcción).
 \end_layout
 
@@ -968,7 +948,7 @@ Ganglia es un sistema de monitoreo, escalable y distribuido, para sistemas
 Ganglia utiliza tecnologías ampliamente difundidas como XML para la representaci
 ón de datos, XDR para la comunicación y RRDtool para el almacenamiento y
  visualización de datos.
- El proyecto posee un amplio énfasis en consumir el mínimo esfuerzo posible
+ El proyecto posee un amplio énfasis en consumir el mínimo de recursos posibles
  por nodo y brindar un máximo de concurrencia.
  Posee una implementación robusta y puede manejar clusters con hasta 2000
  nodos.
@@ -1005,7 +985,7 @@ El metaservicio de ganglia (Ganglia Meta Daemon) es un servicio que se encarga
 \end_layout
 
 \begin_layout Paragraph
-Interfaz Web
+Interfaz web
 \end_layout
 
 \begin_layout Standard
@@ -1021,9 +1001,9 @@ Apache
 \begin_layout Standard
 Apache es un servidor HTTP de código abierto para plataformas Unix (BSD,
  GNU/Linux, etc.), Windows, etc.
- Desde 1996, Apache es el servidor HTTP más utilizado.
+ Desde 1996, Apache es el servidor HTTP más utilizado en la Internet.
  Alcanzó su máxima cuota de mercado en 2005 cuando llegó a ser utilizado
- por el 70% de los sitios Web en el mundo.
+ por el 70% de los sitios web en el mundo.
  Sin embargo ha sufrido un descenso en su cuota de mercado en los últimos
  años y hoy en día brinda servicio al 49% de los sitios de Internet
 \begin_inset Foot
@@ -1032,7 +1012,7 @@ status open
 \begin_layout Standard
 Según los datos de la encuesta realizada en Junio del 2008 por Netcraft.com.
  Netcraft fue fundada en 1995 y se especializa en el análisis de mercado
- de servidores y alojamiento web incluyendo detección de servidor Web y
+ de servidores y alojamiento web incluyendo detección de servidor web y
  sistema operativo.
 \end_layout
 
@@ -1056,22 +1036,22 @@ PHP
 PHP es un acrónimo recursivo que significa PHP Hypertext Pre-processor (aunque
  inicialmente significaba Personal Home Page).
  Fue creado por Rasmus Lerdof en 1994; sin embargo la implementación principal
- de PHP es producida ahora por The PHP Group y sirve como el estándar de
- facto para PHP al no haber una especificación formal.
- PHP es publicado bajo la licencia PHP, la cual es considerada por la FSF
- como software libre.
+ de PHP es producida actualmente por The PHP Group y sirve como el estándar
+ de facto para PHP al no existir una especificación formal del lenguaje.
+ PHP es publicado bajo la licencia PHP, la cual es considerada por la Free
+ Software Fundation (FSF) como software libre.
 \end_layout
 
 \begin_layout Standard
 PHP es un lenguaje de propósito general e interpretado, muy popular debido
  a la rapidez y facilidad con la que permite desarrollar aplicaciones.
- Fue diseñado originalmente para la creación de páginas Web dinámicas pero
+ Fue diseñado originalmente para la creación de páginas web dinámicas pero
  actualmente puede ser utilizado desde una interfaz de línea de comandos
  o desde una interfaz gráfica usando las bibliotecas Qt o GTK+.
  Cuenta con una comunidad de usuarios muy amplia y se encuentra disponible
- para su instalación en la mayoría de los servidores Web en casi cualquier
+ para su instalación en la mayoría de los servidores web en casi cualquier
  plataforma.
- Se encuentra instalado en más de 20 millones de sitios Web y en un millón
+ Se encuentra instalado en más de 20 millones de sitios web y en un millón
  de servidores, aunque el número de sitios implementados en PHP ha declinado
  desde agosto de 2005.
 \end_layout
@@ -1118,8 +1098,8 @@ PostgreSQL comenzó con el proyecto Ingres en la Universidad de Berkeley.
 
 \begin_layout Standard
 PostgreSQL se encuentra disponible para una gran cantidad de sistemas operativos
- incluyendo Linux, UNIX (AIX, BSD, HP-UX, SGI IRIX, Mac OS X, Solaris, Tru64),
- y Windows.
+ incluyendo GNU/Linux, UNIX (AIX, BSD, HP-UX, SGI IRIX, Mac OS X, Solaris,
+ Tru64), y Windows.
  Una característica interesante que presenta PostgreSQL es su capacidad
  de acceso concurrente a la información, MVCC por sus siglas en inglés (Multi-Ve
 rsion Concurrency Control).
@@ -1162,16 +1142,14 @@ Desde enero de 2008 una subsidiaria de Sun Microsystems.
 \end_layout
 
 \begin_layout Standard
-El manejador de base de datos MySQL Se ha convertido en el sistema de gestión
+El manejador de base de datos MySQL se ha convertido en el sistema de gestión
  de base de datos relacional más popular, principalmente debido a su gran
- difusión en internet y en el desarrollo de sitios web dinámicos.
+ difusión en Internet en el desarrollo de sitios web dinámicos.
 \end_layout
 
 \begin_layout Standard
-MySQL no posee el enfoque purista en su implementación como lo hace PostgreSQL,
- pues este ultimo se apega mas a los estándares ANSI/ISO SQL segun sus especific
-aciones.
- Y Si bien MySQL respeta en su mayoría los estándares '92 y '99 no es una
+MySQL no posee un enfoque purista en su implementación como lo hace PostgreSQL,
+ si bien MySQL respeta en su mayoría los estándares '92 y '99 no es una
  meta principal del producto.
 \end_layout
 
