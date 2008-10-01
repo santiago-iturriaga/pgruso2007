@@ -195,19 +195,10 @@ Motivación del proyecto
 \end_layout
 
 \begin_layout Standard
-Actualmente existe en el Centro de Cálculo (CeCal) un cluster de computadores
+Actualmente existe en Facultad de Ingeniería un cluster de computadores
  utilizado para investigación en proyectos internos.
  A corto plazo se proyecta alquilar el cluster como servicio a entidades
  externas.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-No es Medusa el cluster que se quiere alquilar?
-\end_layout
-
-\end_inset
-
  El software utilizado permite un nivel de abstracción muy bajo, que limita
  los perfiles de usuarios capaces de utilizar el sistema.
  Es importante notar que los usuarios finales serán en la mayoría de los
