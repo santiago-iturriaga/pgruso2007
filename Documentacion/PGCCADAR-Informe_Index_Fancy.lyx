@@ -4,7 +4,9 @@
 \begin_header
 \textclass article
 \begin_preamble
-
+\usepackage[spanish]{babel}
+\usepackage{hyphenat}
+\hyphenation{pro-yec-to in-tro-duc-cion pro-ce-sa-dor}
 \end_preamble
 \language spanish
 \inputencoding auto
@@ -30,7 +32,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
