@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -27,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language swedish
+\quotes_language spanish
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -53,25 +53,14 @@ Como se mencionó anteriormente, en el correr de los últimos años ha crecido
  ha ganado terreno y se ha vuelto muy importante en la resolución de problemas,
  apoyándose en tecnologías como los clusters y mediante el uso de paradigmas
  de programación paralela y/o distribuida.
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-La siguiente frase esta muy entreverada.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 La computación distribuida como modelo para resolver problemas de computación
- utilizando un gran número de computadoras en una infraestructura de telecomunic
-aciones distribuida consiste en compartir recursos heterogéneos (basados
- en distintas plataformas, arquitecturas de computadores y programas, lenguajes
- de programación), situados en distintos lugares y pertenecientes a diferentes
- dominios de administración sobre una red que utiliza estándares abiertos.
+ consiste en compartir recursos heterogéneos (basados en distintas plataformas,
+ arquitecturas de computadores y programas, lenguajes de programación),
+ situados en distintos lugares y pertenecientes a diferentes dominios de
+ administración sobre una red que utiliza estándares abiertos.
  La computación distribuida ha sido diseñada para resolver problemas que
  superan la capacidad de cualquier supercomputadora o mainframe manteniendo
  la flexibilidad de trabajar en múltiples problemas más pequeños.
