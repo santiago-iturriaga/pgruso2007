@@ -63,7 +63,7 @@ thepage}
 
 
 \backslash
-lfoot{Manual de usuario}
+lfoot{}
 \end_layout
 
 \begin_layout Standard
@@ -77,7 +77,7 @@ cfoot{}
 
 
 \backslash
-rfoot{Proyecto Fenton (CCADAR)} 
+rfoot{} 
 \end_layout
 
 \begin_layout Standard
@@ -148,9 +148,7 @@ Supervisor:
 \family typewriter
  
 \newline
-Mg.
- Ing.
- Sergio Nesmachnow
+Sergio Nesmachnow
 \end_layout
 
 \begin_layout Standard

@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -27,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -63,7 +63,7 @@ thepage}
 
 
 \backslash
-lfoot{Glosario}
+lfoot{}
 \end_layout
 
 \begin_layout Standard
@@ -77,7 +77,7 @@ cfoot{}
 
 
 \backslash
-rfoot{Proyecto Fenton (CCADAR)} 
+rfoot{} 
 \end_layout
 
 \begin_layout Standard
@@ -148,13 +148,17 @@ Supervisor:
 \family typewriter
  
 \newline
-Mg.
- Ing.
- Sergio Nesmachnow
+Sergio Nesmachnow
 \end_layout
 
 \begin_layout Abstract
-Que contiene el documento, en que consiste el proyecto...
+El propósito de este documento es proporcionar el entendimiento adecuado
+ de la terminología propia de las áreas de estudio en las que se enmarca
+ el proyecto.
+ Se incluyen los términos utilizados en la documentación generada durante
+ el desarrollo del proyecto para los cuales se considera relevante la especifica
+ción del significado en el contexto del proyecto.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -170,27 +174,6 @@ Que contiene el documento, en que consiste el proyecto...
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Mencionar OpenSource como requerimiento!!!
-\end_layout
-
-\begin_layout Standard
-sistema operativo tipo unix (http://en.wikipedia.org/wiki/Unix-like) (*nix)
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Definiciones
 \end_layout
@@ -200,10 +183,60 @@ Allocation manager.
 \end_layout
 
 \begin_layout Standard
-Funciona como un banco en el cual la moneda son los recursos del sistema
- (p.ej.
- procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
- de recursos.
+Un allocation manager funciona como un banco en el cual la moneda son los
+ recursos del sistema (e.g.
+ procesadores, memoria, etc.).
+ Permite asignar a un trabajo una cantidad máxima de recursos a utilizar.
+\end_layout
+
+\begin_layout Paragraph
+Beowulf Cluster de computadores.
+\end_layout
+
+\begin_layout Standard
+Los clusters de tipo Beowulf son computadores de escritorio (e.g., Intel Pentium
+ 4) integradas por redes de area local (e.g., Fast Ethernet) o redes de area
+ de sistemas (e.g., Myrinet) que ejecutan software disponible a muy bajo costo
+ o sin costo para gerenciar los recursos del sistema o coordinar la ejecución
+ paralela de tareas.
+ Estos sistemas ofrecen una relación precio/desepeño realmente excepcional
+ para muchas aplicaciones.
+ 
+\begin_inset LatexCommand cite
+key "GRLUST03"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+BSD.
+\end_layout
+
+\begin_layout Standard
+BSD son las iniciales de Berkeley Software Distribution (en español, Distribució
+n de Software Berkeley) y se utiliza para identificar un sistema operativo
+ derivado del sistema Unix nacido a partir de los aportes realizados a ese
+ sistema por la Universidad de California en Berkeley.
+\end_layout
+
+\begin_layout Paragraph
+Cluster de computadores.
+\end_layout
+
+\begin_layout Standard
+Los clusters de computadores son ensamblados de computadores operacionales
+ independientes integrados por una red de interconección mantenida por software
+ accesible a los usuarios para organizar y controlar tareas de cómputo concurren
+tes que pueden cooperar entre si para un fin comun.
+ 
+\begin_inset LatexCommand cite
+key "GRLUST03"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -211,8 +244,18 @@ CPU Harvesting.
 \end_layout
 
 \begin_layout Standard
-Es el proceso de explotar los ordenadores no dedicados cuando no se utilizan,
- por ejemplo ordenadores de escritorio.
+CPU Harvesting es el proceso de explotar los ordenadores no dedicados cuando
+ no se utilizan, por ejemplo ordenadores de escritorio.
+\end_layout
+
+\begin_layout Paragraph
+Demonio.
+\end_layout
+
+\begin_layout Standard
+Servicio que ejecuta aplicaciones con el fin de trabajar en determinadas
+ tareas.
+ Usado especialmente en UNIX.
 \end_layout
 
 \begin_layout Paragraph
@@ -220,8 +263,54 @@ Fairness.
 \end_layout
 
 \begin_layout Standard
-Caracteristica de maui que implica dar igual acceso a los recursos a todos
+Caracteristica de Maui que implica dar igual acceso a los recursos a todos
  los usarios.
+\end_layout
+
+\begin_layout Paragraph
+FSF.
+\end_layout
+
+\begin_layout Standard
+La Fundación para el Software Libre (FSF) está dedicada a eliminar las restricci
+ones sobre la copia, redistribución, entendimiento, y modificación de programas
+ de computadoras.
+ Con este objeto, promociona el desarrollo y uso del software libre en todas
+ las áreas de la computación, pero muy particularmente, ayudando a desarrollar
+ el sistema operativo GNU.
+\end_layout
+
+\begin_layout Paragraph
+Grid de computadores.
+\end_layout
+
+\begin_layout Standard
+Los clusters de computadores se encuentran generalmente restringidos a una
+ misma subred o a una LAN.
+ El termino grid se utiliza frecuentemente para describir computadores trabajand
+o a través de una WAN o de Internet.
+ Las diferencias más significativas entre cluster y grid es que los grids
+ tipicamente trabajan a mayor escala, los trabajos en los grids tienden
+ a ser más asíncronos y los grids tienen mayores preocupaciones sobre autorizaci
+ón, seguridad, contabilidad de recursos, etc.
+ Los grids de computadores tienen el potencial de proveer un poder de cómputo
+ considerablemente mayor que el de clusters individuales porque un grid
+ puede combinar un gran número de clusters.
+\begin_inset LatexCommand cite
+key "SLOAN04"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+LaTeX.
+\end_layout
+
+\begin_layout Standard
+Es un lenguaje de marcado para documentos, y un sistema de preparación de
+ documentos, formado por un gran conjunto de macros de TeX.
 \end_layout
 
 \begin_layout Paragraph
@@ -230,16 +319,8 @@ Migración de procesos.
 
 \begin_layout Standard
 Para un conjunto de servidores integrados, la migración de procesos es la
- posibilidad de tomar un proceso que se estaba ejecutando en un servidor
+ posibilidad de tomar un proceso que se encuentra ejecutando en un servidor
  y continuar su ejecución en otro.
-\end_layout
-
-\begin_layout Paragraph
-PNNL Scalable Systems Software (SSS).
-\end_layout
-
-\begin_layout Standard
-Proyecto del Pacific Northwest National Laboratory.
 \end_layout
 
 \begin_layout Paragraph
@@ -247,7 +328,7 @@ Preemption.
 \end_layout
 
 \begin_layout Standard
-Es el nombre dado por maui a la posibilidad de suspender trabajos en ejecución
+Es el nombre dado por Maui a la posibilidad de suspender trabajos en ejecución
  para poder ejecutar trabajos con mayor prioridad, una vez terminado el
  trabajo con mayor prioridad el trabajo suspendido es reiniciado.
 \end_layout
@@ -264,94 +345,7 @@ Es el procedimiento de almacenamiento del estado del proceso activo en el
 \end_layout
 
 \begin_layout Paragraph
-Wiki
-\end_layout
-
-\begin_layout Standard
-Un wiki, o una wiki, es un sitio web cuyo contenido puede ser editadp por
- múltiples usuarios a través del navegador web.
- Los usuarios pueden crear, modificar o borrar un mismo texto que comparten.
- Los textos o "páginas wiki" tienen títulos únicos.
- Si se escribe el título de una "página-wiki" en algún lugar del wiki, esta
- palabra se convierte en un "enlace web" (o "link") a la página web.
-\end_layout
-
-\begin_layout Paragraph
-Cluster de computadores
-\end_layout
-
-\begin_layout Standard
-El término cluster se aplica a los conjuntos de computadoras unidos mediante
- una red de alta velocidad que se comportan como si fuesen una sola con
- mayor poder de cómputo.
-\end_layout
-
-\begin_layout Paragraph
-Grid
-\end_layout
-
-\begin_layout Standard
-Se refiere a una arquitectura de clusters.
-\end_layout
-
-\begin_layout Paragraph
-Overhead
-\end_layout
-
-\begin_layout Standard
-Demanda extra de recursos que afectan la performance.
-\end_layout
-
-\begin_layout Paragraph
-Demonio
-\end_layout
-
-\begin_layout Standard
-Servicio que ejecuta aplicaciones con el fin de trabajar en determinadas
- tareas.
- Usado especialmente en UNIX.
-\end_layout
-
-\begin_layout Paragraph
-XDR
-\end_layout
-
-\begin_layout Standard
-(eXternal Data Representation) es un protocolo de presentación de datos,
- según el Modelo OSI.
-\end_layout
-
-\begin_layout Paragraph
-XML
-\end_layout
-
-\begin_layout Standard
-Extensible Markup Language.
- Es un metalenguaje extensible de etiquetas desarrollado por el World Wide
- Web Consortium (W3C).
-\end_layout
-
-\begin_layout Paragraph
-FSF
-\end_layout
-
-\begin_layout Standard
-Free Software Foundation.
- Entidad cuya finalidad es eliminar las restricciones de uso, programación
- o copia del software.
-\end_layout
-
-\begin_layout Paragraph
-LaTeX
-\end_layout
-
-\begin_layout Standard
-es un lenguaje de marcado para documentos, y un sistema de preparación de
- documentos, formado por un gran conjunto de macros de TeX.
-\end_layout
-
-\begin_layout Paragraph
-TeX
+TeX.
 \end_layout
 
 \begin_layout Standard
@@ -361,13 +355,32 @@ s de matemáticos, físicos e informáticos.
 \end_layout
 
 \begin_layout Paragraph
-Lenguaje server-side
+Wiki.
 \end_layout
 
 \begin_layout Standard
-Es una tecnología de servidor web en la que un usuario hace una solicitud
- que ejecuta un script directamente en el servidor web para generar páginas
- HTML dinámico.
+Un wiki, o una wiki, es un sitio web cuyo contenido puede ser editado por
+ múltiples usuarios a través del navegador web.
+ Los usuarios pueden crear, modificar o borrar un mismo texto que comparten.
+ 
+\end_layout
+
+\begin_layout Paragraph
+XDR.
+\end_layout
+
+\begin_layout Standard
+Según el modelo OSI, XDR (eXternal Data Representation) es un protocolo
+ de presentación de datos.
+\end_layout
+
+\begin_layout Paragraph
+XML.
+\end_layout
+
+\begin_layout Standard
+XML (eXtensible Markup Language) es un metalenguaje extensible de etiquetas
+ desarrollado por el World Wide Web Consortium (W3C).
 \end_layout
 
 \begin_layout Section
@@ -375,23 +388,15 @@ Abreviaturas
 \end_layout
 
 \begin_layout Paragraph
-BSD
+CeCal.
 \end_layout
 
 \begin_layout Standard
-Berkeley Software Distribution.
+Centro de Cálculo, Facultad de Ingeniería, Universidad de la República.
 \end_layout
 
 \begin_layout Paragraph
-CeCal
-\end_layout
-
-\begin_layout Standard
-Grupo CeCal - Instituto de Computación - Facultad de ingeniería - UDELAR.
-\end_layout
-
-\begin_layout Paragraph
-DRM
+DRM.
 \end_layout
 
 \begin_layout Standard
@@ -399,7 +404,7 @@ Distributed Resource Management.
 \end_layout
 
 \begin_layout Paragraph
-DRMAA
+DRMAA.
 \end_layout
 
 \begin_layout Standard
@@ -407,23 +412,23 @@ Distributed Resource Management Application API.
 \end_layout
 
 \begin_layout Paragraph
-FIFO
+FIFO.
 \end_layout
 
 \begin_layout Standard
-First in first out.
+First In First Out.
 \end_layout
 
 \begin_layout Paragraph
-FLOPS
+FLOPS.
 \end_layout
 
 \begin_layout Standard
-Operaciones de punto flotante por segundo.
+FLoating point Operations Per Second.
 \end_layout
 
 \begin_layout Paragraph
-HPC
+HPC.
 \end_layout
 
 \begin_layout Standard
@@ -431,7 +436,7 @@ High-performance computing .
 \end_layout
 
 \begin_layout Paragraph
-HTC
+HTC.
 \end_layout
 
 \begin_layout Standard
@@ -439,32 +444,32 @@ High-Throughput Computing.
 \end_layout
 
 \begin_layout Paragraph
-IDE
+IDE.
 \end_layout
 
 \begin_layout Standard
-Integrated Development Environment (entorno de desarrollo integrado).
+Integrated Development Environment.
 \end_layout
 
 \begin_layout Paragraph
-IMFIA
+IMFIA.
 \end_layout
 
 \begin_layout Standard
-Instituto de Mecánica de los Fluidos e Ingeniería Ambiental - Facultad de
- ingeniería - UDELAR.
+Instituto de Mecánica de los Fluidos e Ingeniería Ambiental, Facultad de
+ Ingeniería, Universidad de la República.
 \end_layout
 
 \begin_layout Paragraph
-InCo
+InCo.
 \end_layout
 
 \begin_layout Standard
-Instituto de computación, facultad de ingeniería.
+Instituto de Computación, Facultad de Ingeniería, Universidad de la República.
 \end_layout
 
 \begin_layout Paragraph
-MPI
+MPI.
 \end_layout
 
 \begin_layout Standard
@@ -472,25 +477,31 @@ Message Passing Interface.
 \end_layout
 
 \begin_layout Paragraph
-OSS
+OSS.
 \end_layout
 
 \begin_layout Standard
-Open source software (software de código abierto).
+Open Source Software.
 \end_layout
 
 \begin_layout Paragraph
-PBS
+PBS.
 \end_layout
 
 \begin_layout Standard
 Portable Batch System.
- Es el nombre de programas de computadora que realizan la programación de
- trabajos.
 \end_layout
 
 \begin_layout Paragraph
-PVM
+PNNL Scalable Systems Software (SSS).
+\end_layout
+
+\begin_layout Standard
+Proyecto del Pacific Northwest National Laboratory.
+\end_layout
+
+\begin_layout Paragraph
+PVM.
 \end_layout
 
 \begin_layout Standard
@@ -498,29 +509,36 @@ Parallel Virtual Machine.
 \end_layout
 
 \begin_layout Paragraph
-SGE
+SGE.
 \end_layout
 
 \begin_layout Standard
 Sun Grid Engine.
- DRM de Sun Microsystems.
 \end_layout
 
 \begin_layout Paragraph
-SSI
+SSI.
 \end_layout
 
 \begin_layout Standard
-Single System Image, sistemas de clustering en los que todo el cluster ofrece
- al usuario la imagen de un unico sistema.
+Single System Image.
 \end_layout
 
 \begin_layout Paragraph
-WYSIWYM
+WYSIWYM.
 \end_layout
 
 \begin_layout Standard
-What You See Is What You Mean (lo que ves es lo que quieres decir).
+What You See Is What You Mean.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Include \include{PGCCADAR-Informe_Referencias.lyx}
+preview false
+
+\end_inset
+
+
 \end_layout
 
 \end_body
