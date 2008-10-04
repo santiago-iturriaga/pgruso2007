@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -172,7 +172,7 @@ Introducción
 
 \begin_layout Standard
 Fenton presenta una interfaz gráfica amigable para que un usuario pueda
- utilizar un cluster previamente configurado para este fin, sin necesidad
+ utilizar un cluster previamente configurado para este fin sin necesidad
  de conocer los pormenores de su funcionamiento.
  Para ésto el sistema cuenta con dos niveles de usuarios: clientes y administrad
 ores.
@@ -213,9 +213,9 @@ Ingreso al sitio
 El usuario deberá ingresar su nombre de usuario y su clave.
  Por seguridad, en caso de que alguno de los valores sea incorrecto no se
  indicará de cuál de los dos se trata.
- Inicialmente existe un usuario administrador con nombre GROSO y clave del
- FENTON O ALGO, pero luego de haber ingresado al sitio, el administrador
- podrá modificar la clave o agregar un nuevo administrador y borrar el usuario
+ Inicialmente existe un usuario administrador con nombre 'admin' y clave
+ del 'admin', pero luego de haber ingresado al sitio, el administrador podrá
+ modificar la clave o agregar un nuevo administrador y borrar el usuario
  inicial.
 \end_layout
 
@@ -632,8 +632,8 @@ En espera.
 Bloqueados.
  Finalmente, los trabajos bloqueados son trabajos que no serán ejecutados
  por alguna razón.
- Puede tratarse de trabajos que requieran mas recursos de los que se dispone
- en la totalidad del cluster, trabajos que consumieron mas recursos de los
+ Puede tratarse de trabajos que requieran más recursos de los que se dispone
+ en la totalidad del cluster, trabajos que consumieron más recursos de los
  asignados (p.ej.
  han estado ejecutando por demasiado tiempo), trabajos que fueron detenidos
  manualmente por parte de un administrador, etc.
@@ -642,7 +642,7 @@ Bloqueados.
 \begin_layout Standard
 Cualquiera sea el estado del trabajo puede consultarse información adicional
  del mismo haciendo click sobre el identificador del trabajo y sobre el
- botón de información (botón de mas a la izquierda).
+ botón de información (botón de más a la izquierda).
 \end_layout
 
 \begin_layout Subsection
@@ -804,7 +804,7 @@ TORQUE mantiene información de todos los nodos del cluster.
  En la interfaz de nodos de Torque se muestran todos los nodos del cluster
  junto con su estado, la cantidad de procesadores con la que cuentan, si
  estan ejecutando un trabajo, etc.
- Además nos ofrece la posibilidad de dar de baja un nodo temporalmente para
+ Además ofrece la posibilidad de dar de baja un nodo temporalmente para
  que no sea tenido en cuenta al momento de la ejecución de trabajos.
 \end_layout
 
