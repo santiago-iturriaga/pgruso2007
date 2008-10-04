@@ -1635,14 +1635,14 @@ s que posean más o mejores recursos para acelerar su procesamiento.
 \end_layout
 
 \begin_layout Standard
-Los Middleware han aparecido de manera relativamente reciente en el mundo
- de la informática.
- Ganaron popularidad en los 1980s ya que eran la solución para integrar
- las nuevas aplicaciones con los sistemas antiguos (legacy systems), en
- todo caso, el término ha sido usado desde 1968.
- También facilitaba la computación distribuida, mediante la conexión de
- múltiples aplicaciones para crear una aplicación mucho mayor sobre una
- red.
+Las aplicaciones middleware han aparecido de manera relativamente reciente
+ en el mundo de la informática ganando popularidad en la decada de los 80
+ ya que eran la solución innovadora para integrar las nuevas aplicaciones
+ con los sistemas antiguos (legacy systems), en todo caso, el término ha
+ sido usado desde 1968.
+ El uso de middleware también facilita la computación distribuida mediante
+ la conexión de múltiples aplicaciones para crear una aplicación mucho mayor
+ sobre una red.
 \end_layout
 
 \end_body
