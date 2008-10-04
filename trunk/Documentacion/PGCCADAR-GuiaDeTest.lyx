@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -27,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -63,7 +63,7 @@ thepage}
 
 
 \backslash
-lfoot{Guía de test}
+lfoot{}
 \end_layout
 
 \begin_layout Standard
@@ -77,7 +77,7 @@ cfoot{}
 
 
 \backslash
-rfoot{Proyecto Fenton (CCADAR)} 
+rfoot{} 
 \end_layout
 
 \begin_layout Standard
@@ -148,9 +148,7 @@ Supervisor:
 \family typewriter
  
 \newline
-Mg.
- Ing.
- Sergio Nesmachnow
+Sergio Nesmachnow
 \end_layout
 
 \begin_layout Standard
@@ -184,7 +182,7 @@ El proceso de test tiene por objetivo la detección de defectos y probar
 \end_layout
 
 \begin_layout Section
-Proceso de test y metodología de trabajo.
+Proceso de test y metodología de trabajo
 \end_layout
 
 \begin_layout Standard
@@ -239,11 +237,11 @@ Herramientas utilizadas
 \begin_layout Standard
 En el proceso de test se utilizaron como herramientas la guía de test presentada
 da en este documento así como el conjunto de casos de test.
- Para el registro de incidentes (issues) se utilizó el hosting de Google
- para proyectos (Google Code).
+ Para el registro de incidentes se utilizó el hosting de Google para proyectos
+ (Google Code).
  El hosting de Google para proyectos tiene la funcionalidad de ingresar
- y mantener issues así como otras funcionalidades útiles, por ejemplo una
- Wiki.
+ y mantener incidentes así como otras funcionalidades útiles, e.g.
+ una Wiki.
  
 \end_layout
 
@@ -258,8 +256,8 @@ Este documento incluye dos secciones con las cuales podemos ejecutar el
 
 \begin_layout Standard
 La primera es la sección de casos de test que incluye los mismos.
- La segunda sección es la guía de test la cual da un orden a los casos de
- test para probar la integración de los requerimientos funcionales.
+ La segunda sección es la guía de test, esta sección da un orden a los casos
+ de test para probar la integración de los requerimientos funcionales.
 \end_layout
 
 \begin_layout Standard
@@ -272,23 +270,23 @@ Cada caso de test consta de cinco tablas:
 \end_layout
 
 \begin_layout Itemize
-Identificación del caso de test
+Identificación del caso de test.
 \end_layout
 
 \begin_layout Itemize
-Datos de entrada
+Datos de entrada.
 \end_layout
 
 \begin_layout Itemize
-Condiciones iniciales
+Condiciones iniciales.
 \end_layout
 
 \begin_layout Itemize
-Pasos para el test
+Pasos para el test.
 \end_layout
 
 \begin_layout Itemize
-Notas o comentarios
+Notas o comentarios.
 \end_layout
 
 \begin_layout Standard
@@ -300,7 +298,7 @@ Identificación del caso de test
 \end_layout
 
 \begin_layout Standard
-Contiene id, título y descripción del caso de test.
+Contiene el identificador, el título y la descripción del caso de test.
 \end_layout
 
 \begin_layout Standard
@@ -325,7 +323,7 @@ Condiciones iniciales
 \begin_layout Standard
 Se ingresan las condiciones necesarias para que el caso se ejecute satisfactoria
 mente.
- Se asigna un id y la descripción de la condición.
+ Se asigna un identificador y una descripción a cada condición.
 \end_layout
 
 \begin_layout Standard
@@ -350,14 +348,13 @@ Notas o comentarios
 
 \begin_layout Standard
 Puede utilizarse de diferentes maneras.
- Puede ser para hacer consideraciones sobre la ejecución o fallo de un paso
- o para la descripción de comportamiento alternativos.
+ Puede ser utilizado para hacer consideraciones sobre la ejecución o fallo
+ de un paso o para la descripción de comportamiento alternativos.
 \end_layout
 
 \begin_layout Standard
 Este documento es extensible de forma de agregar nuevos escenarios a la
- guía o nuevos casos de test si por ejemplo se agregan nuevos requerimientos
- funcionales.
+ guía o nuevos casos de test si se agregan nuevos requerimientos funcionales.
 \end_layout
 
 \begin_layout Section
@@ -365,14 +362,14 @@ Guía de test.
 \end_layout
 
 \begin_layout Standard
-A continuación propondremos diferentes escenarios en los que podremos probar
+A continuación se propondran diferentes escenarios en los que se probará
  la integración de las funcionalidades requeridas.
- Cada escenario contiene un conjunto de casos de test en el que le damos
+ Cada escenario contiene un conjunto de casos de test en el que se le da
  un orden de ejecución.
 \end_layout
 
 \begin_layout Standard
-Escenario 1: Creación de usuario y ejecución de trabajo.
+Escenario 1: Creación de usuarios y ejecución de trabajos.
 \end_layout
 
 \begin_layout Standard
@@ -384,6 +381,7 @@ En este escenario se crea un usuario y se ejecuta un trabajo con el usuario
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/EscenarioTest1.png
+	width 8cm
 	rotateOrigin center
 
 \end_inset
@@ -403,6 +401,7 @@ En este escenario observamos la actividad del cluster y los trabajos ejecutados
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/EscenarioTest2.png
+	width 5cm
 
 \end_inset
 
@@ -421,6 +420,7 @@ En este escenario observamos la actividad del cluster y los trabajos ejecutados
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/EscenarioTest3.png
+	width 5cm
 
 \end_inset
 
@@ -439,6 +439,7 @@ Verificamos el control de los trabajos ejecutados en el cluster mediante
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/EscenarioTest4.png
+	width 5cm
 
 \end_inset
 
@@ -457,6 +458,7 @@ Verificamos el control de los trabajos ejecutados en el cluster mediante
 \begin_layout Standard
 \begin_inset Graphics
 	filename Images/EscenarioTest5.png
+	width 5cm
 
 \end_inset
 
@@ -468,7 +470,7 @@ Casos de Test
 \end_layout
 
 \begin_layout Subsection
-Nuevo Cliente.
+Nuevo Cliente
 \end_layout
 
 \begin_layout Standard
@@ -1036,7 +1038,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Nuevo trabajo para un cliente.
+Nuevo trabajo para un cliente
 \end_layout
 
 \begin_layout Standard
@@ -2217,7 +2219,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Nuevo Usuario.
+Nuevo Usuario
 \end_layout
 
 \begin_layout Standard
@@ -2841,7 +2843,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Asociar Grupo - Trabajo.
+Asociar Grupo - Trabajo
 \end_layout
 
 \begin_layout Standard
@@ -3388,7 +3390,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Ejecución de Trabajo.
+Ejecución de Trabajo
 \end_layout
 
 \begin_layout Standard
@@ -4266,7 +4268,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Actividad en Maui.
+Actividad en Maui
 \end_layout
 
 \begin_layout Standard
@@ -4836,7 +4838,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Actividad en TORQUE.
+Actividad en TORQUE
 \end_layout
 
 \begin_layout Standard
@@ -5410,7 +5412,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Detención o Cancelación de trabajo en Maui.
+Detención o cancelación de trabajo en Maui
 \end_layout
 
 \begin_layout Standard
@@ -5981,7 +5983,7 @@ Comentario
 \end_layout
 
 \begin_layout Subsection
-Detención o Cancelación de trabajo en TORQUE.
+Detención o cancelación de trabajo en TORQUE
 \end_layout
 
 \begin_layout Standard
