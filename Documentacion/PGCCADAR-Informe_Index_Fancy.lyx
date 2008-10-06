@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -6,7 +6,7 @@
 \begin_preamble
 \usepackage[spanish]{babel}
 \usepackage{hyphenat}
-\hyphenation{pro-yec-to in-tro-duc-cion pro-ce-sa-dor}
+\hyphenation{pro-yec-to in-tro-duc-cion pro-ce-sa-dor ad-mi-nis-tra-do-res pa-ra-le-los de-sa-rro-llo pa-ra-le-lo si-mu-la-cio-nes co-rrec-to bi-blio-te-cas cons-truc-ción to-po-ló-gi-ca}
 \end_preamble
 \language spanish
 \inputencoding auto
@@ -167,17 +167,17 @@ El informe presenta el trabajo realizado en el marco de la asignatura Proyecto
  de Grado de la carrera Ingeniería en Computación.
  Este proyecto fue propuesto por el grupo académico CeCal (Centro de Cálculo)
  del Instituto de Computación de la Facultad de Ingeniería, Universidad
- de la República, mas especificamente en el área de computación de alto
+ de la República, más específicamente en el área de computación de alto
  desempeño.
  El proyecto consistió en la implementación de un cluster de computadoras
  de alto desempeño con la capacidad de brindar acceso remoto para que sus
- usuarios interactuen con el y para que sus administradores lo regulen y
+ usuarios interactúen con el y para que sus administradores lo regulen y
  monitoreen.
  
 \end_layout
 
 \begin_layout Abstract
-Este documento esta organizado en siete secciones.
+Este documento está organizado en siete secciones.
  La primer sección es una introducción a este proyecto en la cual incluimos
  una breve introducción a la computación de alto rendimiento, objetivos
  y motivaciones del proyecto, alcance y actividades desarrolladas en el
@@ -191,13 +191,13 @@ En la segunda sección se profundiza en el estado del arte de la computación
  de computación paralela y herramientas disponibles.
  En la tercer sección se presentan las tecnologías relevadas para la implantació
 n de un cluster de alto desempeño.
- La cuarta sección se especifica la solución propuesta con las tecnologias
+ En la cuarta sección se especifica la solución propuesta con las tecnologías
  elegidas y la interfaz de acceso remoto desarrollada para el cluster de
  alto desempeño con acceso remoto.
  También se detalla el proceso de verificación realizado durante el desarrollo.
  En la quinta sección se describen los ambientes donde el sitema es puesto
  en producción.
- Y finalmente en la sexta y septima sección se presentan las conclusiones
+ Finalmente en la sexta y séptima sección se presentan las conclusiones
  y los trabajos a futuro.
 \end_layout
 
