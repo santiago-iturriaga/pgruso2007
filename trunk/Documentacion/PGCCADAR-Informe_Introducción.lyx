@@ -1,10 +1,8 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
 \textclass article
-\begin_preamble
-\end_preamble
 \language spanish
 \inputencoding auto
 \font_roman default
@@ -29,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -140,9 +138,9 @@ d.
 \begin_layout Standard
 El alto poder de procesamiento de varias computadoras trabajando en paralelo
  (o cluster de computadoras) se perfila como una solución viable a varias
- problematicas, que requieren gran poder de computo a un bajo costo de implement
+ problemáticas, que requieren gran poder de computo a un bajo costo de implement
 ación.
- Algunas de las problematicas actuales más importantes estan relacionadas
+ Algunas de las problemáticas actuales más importantes están relacionadas
  con la ciencia e ingeniería, dinámica de fluidos computacional, simulaciones
  electromagnéticas, modelado ambiental, dinámica estructural, modelado biológico
 , dinámica molecular, simulación de redes, modelado financiero y económico,
@@ -249,7 +247,7 @@ Otro actividad importante es la evaluación y diseño de herramientas automátic
  de base (sistemas operativos, bibliotecas, monitores de desempeño, etc.)
  que permitan el desarrollo y la ejecución de programas paralelos y distribuidos.
  Durante el relevamiento de las herramientas se deben evaluar tanto característi
-cas funcionales así como características de usabilidad.
+cas funcionales como características de usabilidad.
 \end_layout
 
 \begin_layout Standard
@@ -330,13 +328,13 @@ Proyecto realizado por el Mg.
 \end_layout
 
 \begin_layout Standard
-Este trabajo se desarrollo una versión paralela del Algoritmo Evolutivo
+En este trabajo se desarrolló una versión paralela del Algoritmo Evolutivo
  para Optimización Multiobjetivo NSGA-II.
  Se introducen los detalles de diseño e implementación de una versión paralela
  y se analiza la calidad de resultados y la eficiencia computacional, comparando
  con los resultados y tiempos de ejecución de la versión secuencial del
  algoritmo NSGA-II sobre un conjunto de problemas de prueba estándar.
- Adicionalmente, se estudio la aplicación de la versión paralela propuesta
+ Adicionalmente, se estudió la aplicación de la versión paralela propuesta
  a la resolución de un problema de diseño de redes de comunicaciones confiables.
  
 \end_layout
@@ -358,7 +356,7 @@ Proyecto de grado realizado por Sebastián Baña, Gonzalo Ferres y Nicolás
 \begin_layout Standard
 El proyecto propuso la adaptación de la biblioteca MPI para su utilización
  desde lenguajes a través de la plataforma .NET.
- Este proyecto formo parte del proceso de desarrollo del área de procesamiento
+ Este proyecto formó parte del proceso de desarrollo del área de procesamiento
  de alta performance en aplicaciones comerciales e industriales utilizando
  computadoras de bajo costo en curso en el UAS.
 \end_layout
@@ -368,7 +366,7 @@ Utilizando mecanismos de exportación de clases a través de el ambiente .NET,
  este proyecto propuso la utilización de MPI desde lenguajes soportados
  por .NET de modo que las técnicas de procesamiento paralelo puedan utilizarse
  desde programas desarrollados en esos lenguajes.
- Para realizar esto ultimo debieron encapsular en clases las primitivas
+ Para realizar esto último debieron encapsular en clases las primitivas
  básicas de comunicación de la biblioteca MPI ( envío de mensajes, recepción
  de mensajes bloqueante y no bloqueante, primitivas de comunicación colectivas
  ) y las primitivas de sincronización de procesos y reducción de resultados
@@ -397,7 +395,7 @@ Los Algoritmos Genéticos constituyen uno de los paradigmas de Computación
  los individuos mas aptos (mejores soluciones) sobreviven.
  La evolución de dicha población es a través de interacciones (cruzamiento)
  y transformaciones únicas (mutaciones), luego de determinadas generaciones
- la población converge hacia una solución optima o cercana a la misma.
+ la población converge hacia una solución óptima o cercana a la misma.
  
 \end_layout
 
@@ -410,10 +408,10 @@ El auge de la computación paralela y distribuida ha renovado el interés
 \end_layout
 
 \begin_layout Standard
-El proyecto consistio en el estudio, diseño e implementación del modelo
+El proyecto consistió en el estudio, diseño e implementación del modelo
  de algoritmos genéticos incrementales, un modelo distribuido original de
  Alba y Troya, dicho modelo deberá ser adaptado para ser ejecutado en un
- cluster de PC's no dedicadas y por lo tanto para su ejecución se debio
+ cluster de PC's no dedicadas y por lo tanto para su ejecución se debió
  tener en cuenta las cargas de dichas PC.
  Los modelos diseñados fueron aplicados a problemas de optimización combinatoria
 , en particular en el área de diseño de redes de comunicaciones confiables.
@@ -443,7 +441,7 @@ Al tratar con problemas de optimización combinatoria NP difíciles, para
 \end_layout
 
 \begin_layout Standard
-En este trabajo se realizo un estudio de las técnicas de computación evolutiva
+En este trabajo se realizó un estudio de las técnicas de computación evolutiva
  y la aplicación de técnicas de procesamiento de alta performance para implement
 ar modelos de algoritmos genéticos capaces de ejecutar en un ambiente paralelo-d
 istribuido y se presentaron algoritmos evolutivos abocados al caso concreto
@@ -454,7 +452,7 @@ istribuido y se presentaron algoritmos evolutivos abocados al caso concreto
 \end_layout
 
 \begin_layout Standard
-El estudio comparativo realizado en este proyecto reporto resultados satisfactor
+El estudio comparativo realizado en este proyecto reportó resultados satisfactor
 ios tanto desde el punto de vista de la calidad de resultados obtenidos
  como desde el punto de vista de la mejora de eficiencia computacional alcanzada
  por las versiones paralelas de los algoritmos con respecto a sus contrapartes
@@ -511,23 +509,23 @@ Las cualidades de este nuevo modelo permiten la obtención de resultados
 En esta tesis se estudiaron técnicas de computación de alto desempeño aplicadas
  al cálculo científico, con el fin de mejorar el desempeño computacional
  de modelos numéricos que utilizan el paradigma de elementos finitos (MEF).
- Se abordo la aplicación de las técnicas estudiadas al modelo hidrodinámico
+ Se abordó la aplicación de las técnicas estudiadas al modelo hidrodinámico
  RMA-10 aplicado al Río de la Plata.
 \end_layout
 
 \begin_layout Standard
-Se presento una estrategia secuencial para el cálculo de la matriz de rigidez
+Se presentó una estrategia secuencial para el cálculo de la matriz de rigidez
  del modelo RMA-10 utilizando tablas de dispersión y su posterior resolución
  empleando métodos multifrontales para sistemas lineales dispersos.
- También se evalúo la aplicación de distintas estrategias de programación
- paralela a la modificación propuesta y se realizo un estudio comparativo
+ También se evaluó la aplicación de distintas estrategias de programación
+ paralela a la modificación propuesta y se realizó un estudio comparativo
  de las diferentes estrategias.
 \end_layout
 
 \begin_layout Standard
-Como en el proyecto anterior de algoritmos geneticos, el proyecto Fenton
- probee un ambiente que facilitaria las pruebas de las estrategias de programaci
-ón paralela estudiadas así como mejoraria la eficiencia computacional de
+Como en el proyecto anterior de algoritmos genéticos, el proyecto Fenton
+ provee un ambiente que facilitaría las pruebas de las estrategias de programaci
+ón paralela estudiadas así como mejoraría la eficiencia computacional de
  estas.
 \end_layout
 
@@ -557,7 +555,7 @@ Con la masificación de las redes inalámbricas, los entes reguladores del
 \end_layout
 
 \begin_layout Standard
-En este trabajo se llevo a cabo una investigación sobre algoritmos genéticos,
+En este trabajo se llevó a cabo una investigación sobre algoritmos genéticos,
  considerando sus variantes secuenciales y paralelas, y su aplicación a
  la resolución del problema de la asignación de frecuencias en las redes
  de telefonía celular.
