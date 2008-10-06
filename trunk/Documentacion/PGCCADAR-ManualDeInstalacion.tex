@@ -68,7 +68,7 @@ Que contiene el documento, en que consiste el proyecto...
 
 \section{Sistema operativo}
 
-Es recomendado utilizar Linux 2.6 (o superior), con una arquitectura de 32-bits (x86) o 64-bits (x64). Si bien el sistema fue probado en SUSE, Ubuntu y Fedora, esto no quita que pueda realizarse una instalaci\'{o}n en otras distribuciones (Debian, Slackware, etc.) o hasta otro sistema operativo de la familia POSIX (FreeBSD, Solaris, etc.).
+Es recomendado instalar el sistema Fenton sobre alguna distribuci\'{o}n Linux 2.6 (o superior), con una arquitectura de 32-bits (x86) o 64-bits (x64). Si bien el sistema Fenton fue probado en SUSE, Ubuntu y Fedora, esto no quita que pueda realizarse una instalaci\'{o}n en otras distribuciones (Debian, Slackware, etc.) o hasta otro sistema operativo de la familia POSIX (FreeBSD, Solaris, etc.).
 
 Durante le resto del documento se asumir\'{a} que el sistema Fenton se instalara en una distribuci\'{o}n Linux.
 
@@ -76,9 +76,9 @@ Durante le resto del documento se asumir\'{a} que el sistema Fenton se instalara
 
 \paragraph{Usuario y grupo del sistema.}
 
-Se necesita crear un usuario y un grupo del sistema para ejecutar el sistema Fenton. Este usuario del sistema debe ser configurado como administrador en TORQUE, Maui. Por defecto este usuario y este grupo se llamar\'{a}n fenton.
+Se necesita crear un usuario y un grupo del sistema para ejecutar el sistema Fenton. Este usuario del sistema debe ser configurado como administrador en TORQUE y Maui. Por defecto este usuario y este grupo se llamar\'{a}n fenton.
 
-Para crear el usuario y grupo del sistema se debera ejecutar los siguientes comandos:
+Para crear el usuario y grupo del sistema se deben ejecutar los siguientes comandos:
 
 \begin{verbatim}
 root:# addgroup fenton
@@ -94,9 +94,9 @@ Se vera un breve instructivo de como realizar la instalaci\'{o}n compilando e in
 
 \subsection{PostgreSQL 8.2.5 o superior \small{[requerido]}}
 
-PostgreSQL\cite{postgres} es un servidor de base de datos relacional liberado bajo la licencia BSD. El sistema Fenton utiliza PostgreSQL para persistir la informaci\'{o}n sobre usuarios, trabajos, etc.
+PostgreSQL\cite{postgres} es un servidor de base de datos relacional liberado bajo la licencia BSD. El sistema Fenton utiliza PostgreSQL para persistir la informaci\'{o}n por ejemplo sobre usuarios, trabajos del cluster.
 
-Compilaci\'{o}n e instalaci\'{o}n de PostgreSQL en \mbox{\texttt{/usr/local/postgresql-8.2.5}} se deben seguir los siguientes pasos:
+Para la compilaci\'{o}n e instalaci\'{o}n de PostgreSQL en \mbox{\texttt{/usr/local/postgresql-8.2.5}} se deben seguir los siguientes pasos:
 
 \begin{verbatim}
 $ ./configure --prefix=/usr/local/postgresql-8.2.5
@@ -104,7 +104,7 @@ $ make
 root:# make install
 \end{verbatim}
 
-Luego se debe crear el usuario de PostgreSQL y se debe asignar espacio f\'{i}sico para los datos y logs.
+Luego se debe crear el usuario de PostgreSQL y asignar espacio f\'{i}sico para los datos y logs.
 
 \begin{verbatim}
 root:# adduser postgres 
@@ -114,7 +114,7 @@ postgres:$ cd /usr/local/postgresql-8.2.5/bin
 postgres:$ ./initdb -D /usr/local/postgresql-8.2.5/data 
 \end{verbatim}
 
-Finalmente iniciamos el servicio:
+Finalmente se inicia el servicio:
 
 \begin{verbatim}
 postgres:$ cd /usr/local/postgresql-8.2.5/bin
@@ -129,9 +129,9 @@ El sistema Fenton requiere que la base de datos sea accesible desde todos los no
 
 \subsection{Apache 2.0 o superior \small{[requerido]}}
 
-El servidor HTTP Apache\cite{apache} es un servidor HTTP de c\'{o}digo abierto. La interfaz web de acceso remoto al sistema Fenton, para la ejecuci\'{o}n de trabajos y la administraci\'{o}n del cluster, es publicada en el servidor HTTP.
+El servidor Apache\cite{apache} es un servidor HTTP de c\'{o}digo abierto. Este servidor HTTP es utilizado para la publicación de la interfaz web de acceso remoto al sistema Fenton.
 
-En la actualidad todas las distribuciones de Linux disponen de un paquete de Apache 2.0 o superior. Se recomienda utilizar Apache 2.0 o superior para la instalaci\'{o}n de la interfaz web.
+En la actualidad todas las distribuciones de Linux disponen de un paquete de Apache 2.0 o superior y se recomienda utilizar estas versiones de Apache en la publicaci\'{o}n de la interfaz web. 
 
 \subsection{PHP 5.2.5 o superior \small{[requerido]}}
 
