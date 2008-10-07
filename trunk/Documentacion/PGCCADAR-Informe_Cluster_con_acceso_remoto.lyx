@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -46,10 +46,9 @@ Cluster con acceso remoto
 \begin_layout Standard
 El principal objetivo del proyecto es la contrucción de un cluster con acceso
  remoto.
- En esta sección se describirá el sistema Fenton, la solución propuesta
- por el equipo para cumplir con tal objetivo.
- Se profundizará en las tecnologías elegidas de la etapa de relevamiento
- e investigación (ver sección 
+ En esta sección se describirá el sistema Fenton, se profundizará en las
+ tecnologías elegidas en la etapa de relevamiento e investigación (ver sección
+ 
 \begin_inset LatexCommand vref
 reference "sec:Relevamiento-de-tecnologías"
 
@@ -60,9 +59,8 @@ reference "sec:Relevamiento-de-tecnologías"
  Se detallará la construcción de la interfaz para acceso remoto al cluster
  y además se mencionarán las herramientas utilizadas para el desarrollo
  y la documentación a lo largo del proyecto.
- Algo relevante de mencionar es que durante todo el proceso de desarrollo
- del sistema se  utilizaron exclusivamente herramientas de código libre
- (OSS).
+ Cabe destacar que durante todo el proceso de desarrollo del sistema se
+  utilizaron exclusivamente herramientas de código libre (OSS).
  
 \end_layout
 
@@ -123,10 +121,9 @@ dor de trabajos radica uno de los mayores riesgos para el proyecto.
 \end_layout
 
 \begin_layout Standard
-Luego de evaluar diversas tecnologías actuales para la implementación de
- clusters se optó por utilizar TORQUE como DRM y Maui como despachador,
- dejando abierta la posibilidad de anexar Gold para la contabilización de
- recursos.
+Luego de evaluar diversas tecnologías para la implementación de clusters
+ se optó por utilizar TORQUE como DRM y Maui como despachador, dejando abierta
+ la posibilidad de anexar Gold para la contabilización de recursos.
  Existen varios casos de estudio (ver sección 
 \begin_inset LatexCommand vref
 reference "sub:Torque-Casos-de-estudio"
@@ -169,7 +166,7 @@ Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
  Dichas carencias no son un problema importante ya que el cluster cuenta
  con nodos homogéneos y dedicados, esto significa que los nodos del cluster
  tendrán capacidades de procesamiento muy similares y no serán compartidos
- con otras aplicaciones externas al cluster (e.g.: aplicaciones de escritorio).
+ con otras aplicaciones externas al cluster (e.g., aplicaciones de escritorio).
 \end_layout
 
 \begin_layout Standard
@@ -181,13 +178,6 @@ Como se mencionó en la sección de relevamiento de tecnologías, si bien TORQUE
  y configuraciones que permiten mejorar la performance del cluster y además
  brinda la posibilidad de implementar un algoritmo de planificación desarrollado
  a medida.
-\end_layout
-
-\begin_layout Standard
-Inicialmente se evaluó la herramienta Gold para llevar registro y contabilizar
- la utilización de recursos en clusters.
- Finalmente Gold fue dejado fuera del alcance del proyecto, pero mantenemos
- y recomendamos la utilización de Gold para trabajos futuros sobre el cluster.
 \end_layout
 
 \begin_layout Standard
@@ -204,20 +194,20 @@ Desarrollo de la interfaz de acceso remoto
 
 \begin_layout Standard
 Hasta aquí las herramientas para construir la infraestructura del cluster,
- a continuación detallaremos el componente de acceso remoto del sistema
+ a continuación se detallarán el componente de acceso remoto del sistema
  Fenton.
- Un requerimiento importante es brindar una interfaz de usuario simple y
- de fácil acceso para usuarios no especializados, por esta razón y para
- evitar problemas con la posible heterogeneidad de los sistemas clientes
- se decidió brindar una interfaz de usuario web para el acceso remoto al
- cluster.
+ Un requerimiento importante del sistema es brindar una interfaz de usuario
+ simple y de fácil acceso para usuarios no especializados, por esta razón
+ y para evitar problemas con la posible heterogeneidad de los sistemas clientes
+ se decidió brindar una interfaz de usuario de tipo web para el acceso remoto
+ al cluster.
 \end_layout
 
 \begin_layout Standard
 El desarrollo del componente de acceso web requirió la definición de varias
- herramientas: un servidor web para alojar nuestra aplicación, un lenguaje
- server-side para implementar la lógica y un manejador de bases de datos
- relacionales para almacenar usuarios, trabajos y resultados de ejecuciones.
+ herramientas: un servidor web para alojar la aplicación, un lenguaje server-sid
+e para implementar la lógica y un manejador de bases de datos relacionales
+ para almacenar usuarios, trabajos y resultados de ejecuciones.
  La utilización de TORQUE y Maui para el manejo de recursos y la planificación
  de trabajos del cluster nos condiciona a trabajar sobre un sistema operativo
  GNU/Linux o Unix-BSD.
@@ -226,11 +216,11 @@ El desarrollo del componente de acceso web requirió la definición de varias
 \end_layout
 
 \begin_layout Standard
-Teniendo en cuenta los conocimientos previos de los integrantes del grupo,
- así como la curva de aprendizaje de los diferentes lenguajes para desarrollar
+Teniendo en cuenta los conocimientos previos de los integrantes del grupo
+ y la curva de aprendizaje de los diferentes lenguajes para desarrollar
  aplicaciones web, se decidió utilizar PHP como lenguaje de implementación.
  El servidor web Apache brinda un excelente soporte para la ejecución de
- código PHP por lo que resulta una pareja ideal.
+ código PHP por lo que resultan una pareja ideal.
  Como entorno de desarrollo para la implementación de la logica en código
  PHP necesaria se utilizó Eclipse con el plugin PHPEclipse.
  
@@ -245,8 +235,8 @@ Para el almacenamiento de datos se consideraron dos motores de base de datos
  maduro, con buena integración con PHP y un muy buen soporte por parte de
  la comunidad.
  Si bien PostgreSQL no es tan amigable ni tan popular como MySQL, cuenta
- con una licencia de tipo BSD (Berkeley Software Distribution) mucho más
- flexible y permisiva que la licencia utilizada por MySQL.
+ con una licencia de tipo BSD mucho más flexible y permisiva que la licencia
+ utilizada por MySQL.
  
 \end_layout
 
@@ -274,7 +264,7 @@ s en formato HTML
 status open
 
 \begin_layout Standard
-En realidad estas plantillas no son HTML puro ya que cuentan con etiquetas
+Realmente estas plantillas no son HTML puro ya que cuentan con etiquetas
  especiales que determinan la posición del contenido dinámico en la página.
 \end_layout
 
@@ -312,11 +302,11 @@ status open
 \end_layout
 
 \begin_layout Standard
-A su vez se separó en módulos distintos las interfaces con: TORQUE, Maui
- y el sistema operativo.
+Se separaron en módulos distintos las interfaces con TORQUE, Maui y el sistema
+ operativo.
  Las interfaces con TORQUE y Maui brindan al usurio administrador información
  sobre el estado del sistema y permiten que este realice acciones sobre
- los trabajos como por ejemplo: iniciar, detener, etc.
+ los trabajos (e.g., iniciar, detener, etc.).
  La interfaz con el sistema operativo es utilizada para almacenar los trabajos
  con el código fuente, archivos binarios, ejecutables y los archivos conteniendo
  los resultados de los trabajos ejecutados por los usuarios.
@@ -364,15 +354,15 @@ ar los recursos del cluster, conocer el estado de los nodos del cluster
 
 \begin_layout Standard
 Dado que nos encontramos en un ambiente multiusuario, la aplicación permite
- administrar las reservas del clúster, para organizar la utilización de
- recursos por varios usuarios de forma simultánea.
+ administrar las reservas del clúster para organizar la utilización de recursos
+ por parte de varios usuarios de forma simultánea.
  Cada trabajo creado tendrá asociado un conjunto de recursos disponibles
  que determinarán el posterior funcionamiento de las ejecuciones de los
  trabajos por parte de los usuarios.
  Para esta implementación se restringió el uso de espacio de almacenamiento
  en el disco duro, tiempo máximo de ejecución y cantidad de nodos disponibles
- simultaneamente, pero es posible agregar otros recursos a restringir (por
- ejemplo: memoria, ciclos de procesador, etc.).
+ simultaneamente, pero es posible agregar otros recursos a restringir (e.g,
+ memoria, ciclos de procesador, etc.).
 \end_layout
 
 \begin_layout Standard
@@ -395,22 +385,22 @@ Los usuarios administradores cuentan con un conjunto de reportes estadísticos
  Estos reportes brindan una gran ayuda en las tareas de administración de
  cluster.
  La generación de los reportes estadísticos se realiza con información brindada
- por TORQUE, Maui y Ganglia; y es posible detallar la información por nodo
+ por TORQUE, Maui y Ganglia; es posible detallar la información por nodo
  del cluster, usuario o proceso.
 \end_layout
 
 \begin_layout Standard
 Por último se definió un mecanismo de alertas a los usuarios.
- Este permite enviar alertas a los diferentes usuarios del sistema, como
- ser inicio y finalización de trabajos, excesos de recursos del cluster,
+ Este mecanismo permite enviar alertas a los diferentes usuarios del sistema,
+ como ser inicio y finalización de trabajos, excesos de recursos del cluster,
  etc.
  Este mecanismo es totalmente extensible en cuanto a las definiciones de
  alertas y es soportado por funcionalidades de TORQUE y la base de datos.
- Los usuarios pueden observar las alertas en la interfaz web que le fueron
- enviadas por Fenton y se encuentra disponible la posibilidad de enviarlas
- por correo electrónico mediante un servidor SMTP.
+ Un usuario puede observar las alertas que le fueron enviadas por Fenton
+ en la interfaz web y se encuentra disponible la posibilidad de enviar las
+ alertas por correo electrónico mediante un servidor SMTP.
  Este sistema de alertas debe ser disparado periódicamente por el sistema
- operativo (por ejemplo en GNU/Linux mediante el utilitario cron o anacron).
+ operativo (e.g., en GNU/Linux mediante el utilitario cron o anacron).
 \end_layout
 
 \begin_layout Subsection
@@ -420,23 +410,29 @@ Otras herramientas
 \begin_layout Standard
 En el transcurso del proyecto fueron necesarias otras herramientas para
  algunos tipos de tareas.
- Fue necesario contar con una herramienta colaborativa permitiera compartir
+ Fue necesario contar con una herramienta colaborativa que permitiera compartir
  y versionar tanto el código como los documentos.
  Para esto se utilizó Google Code, un servicio de Google que brinda alojamiento
  a proyectos de software.
  Algunas de las funcionalidades que ofrece Google Code son: control de versiones
- utilizando  Subversion
-\begin_inset Foot
-status open
-
-\begin_layout Standard
-Subversion es un software de control de versiones diseñado específicamente
- para reemplazar al popular CVS.
+ utilizando Subversion, un manejador de incidencias, una Wiki, etcétera.
 \end_layout
 
-\end_inset
-
-, un manejador de incidencias, una Wiki, etcétera.
+\begin_layout Standard
+Subversion (también conocido como SVN) es un software de control de versiones
+ diseñado específicamente para reemplazar al popular Concurrent Versioning
+ System (CVS).
+ Los sistemas de control de versiones mantienen un seguimiento de los cambios
+ realizados al código fuente de una proyecto y permiten la colaboración
+ de varios desarrolladores.
+ Dick Grune desarrolló CVS en 1984 y fue liberado bajo una licencia pública
+ general GNU ganando mucha popularidad entre los proyectos open source.
+ Lamentablemente CVS posee muchas deficiencias, por esta razón CollabNet
+ Inc.
+ comenzó en el año 2000 con el desarrollo de Subversion.
+ Subversion fue liberado bajo una licencia Apache por lo que es considerado
+ software libre y desde entonces se ha vuelto muy popular en la comunidad
+ open source y en ambientes corporativos.
 \end_layout
 
 \begin_layout Standard
