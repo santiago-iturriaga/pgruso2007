@@ -6,7 +6,7 @@
 \begin_preamble
 \usepackage[spanish]{babel}
 \usepackage{hyphenat}
-\hyphenation{pro-yec-to in-tro-duc-cion pro-ce-sa-dor ad-mi-nis-tra-do-res pa-ra-le-los de-sa-rro-llo pa-ra-le-lo si-mu-la-cio-nes co-rrec-to bi-blio-te-cas cons-truc-ción to-po-ló-gi-ca con-ti-nua-ción}
+\hyphenation{pro-yec-to in-tro-duc-cion pro-ce-sa-dor ad-mi-nis-tra-do-res pa-ra-le-los de-sa-rro-llo pa-ra-le-lo si-mu-la-cio-nes co-rrec-to bi-blio-te-cas cons-truc-ción to-po-ló-gi-ca con-ti-nua-ción pla-ta-for-mas ad-mi-nis-tra-ción be-ne-fi-cio pa-ra-le-la mo-le-cu-lar es-ti-mu-la-das des-com-po-si-ción par-ti-cu-lar va-rios o-pe-ra-cio-nes ba-lan-ce-o ad-ya-cen-tes ins-tan-tá-ne-a u-sua-rios ac-tua-li-za-ción}
 \end_preamble
 \language spanish
 \inputencoding auto
