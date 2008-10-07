@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -27,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -83,8 +83,8 @@ istribuida.
  enfatizan la verdadera simultaneidad de la ejecución de las tareas.
  El avance en diferentes tecnologías como microprocesadores con mayor poder
  de procesamiento, comunicación de datos de alta velocidad y el desarrollo
- de bibliotecas para la comunicación entre precesos han facilitado la utilizació
-n de la programación paralela en aplicaciónes.
+ de bibliotecas para la comunicación entre procesos han facilitado la utilizació
+n de la programación paralela en aplicaciones.
  Mediante la programación paralela los multicomputadores y los sistemas
  con múltiples procesadores consiguen un aumento en el rendimiento, en cambio
  en los sistemas monoprocesador el beneficio en el rendimiento no es tan
@@ -204,6 +204,7 @@ En las redes de tipo bus o ethernet los procesadores comparten un único
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -258,20 +259,20 @@ Al igual que la interconexión mediante bus (o ethernet), las mallas son
  En las mallas de dimensión 1, si los dos nodos extremos también son conectados,
  entonces se tiene un anillo.
  Las mallas de 2 dimensiones y de 3 dimensiones son comunes en computación
- paralela y tiene la ventaja de que pueden ser construidas sin conexiones
+ paralela y tienen la ventaja de que pueden ser construidas sin conexiones
  largas.
  El diámetro de las mallas puede ser reducido a la mitad si se extiende
  la malla con conexiones toroidales de forma que los procesadores en los
  bordes también estén conectados con vecinos.
- Esto sin embargo presenta dos desventajas: a) conexiones más largas son
- requeridas y b) un subconjunto de un torus no es un torus y los beneficios
- de esta interconexión se pierden si la máquina es particionada entre varios
- usuarios.
+ Esto sin embargo presenta dos desventajas: conexiones más largas son requeridas
+ y un subconjunto de un torus no es un torus y los beneficios de esta interconex
+ión se pierden si la máquina es particionada entre varios usuarios.
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -324,6 +325,7 @@ Las redes de tipo mariposa son similares a las mallas pero presentan menor
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -389,6 +391,7 @@ Las redes de tipo pirámide intentan combinar las ventajas de las mallas
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -456,6 +459,7 @@ o los procesadores respectivos de dos hipercubos de dimensión d.
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -528,6 +532,7 @@ reference "fig:Omega"
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -584,6 +589,7 @@ Las fibras de interconexión son un conjunto de switches, llamados routers,
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -877,6 +883,7 @@ reference "SISD"
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -958,6 +965,7 @@ reference "SIMD"
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1016,6 +1024,7 @@ reference "MISD"
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1071,6 +1080,7 @@ reference "MIMD"
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1148,15 +1158,15 @@ En estas máquinas los vectores fluyen a través de las unidades aritméticas
  pipelined.
  Las unidades consisten de una cascada de etapas de procesamiento compuestas
  de circuitos que efectúan operaciones aritméticas o lógicas sobre el flujo
- de datos que pasan a través de ellas.
+ de datos que pasa a través de ellas.
 \end_layout
 
 \begin_layout Standard
 Las etapas están separadas por registros de alta velocidad usados para guardar
  resultados intermedios.
- La información que fluye entre las etapas adyacentes esta bajo el control
- de un reloj R que se aplica a todos los registros simultáneamente.
- En esta categoría tenemos máquinas como la Cray-1 y la Cyber-205.
+ La información que fluye entre las etapas adyacentes está bajo el control
+ de un reloj que se aplica a todos los registros simultáneamente.
+ Ejemplos de esta categoría son máquinas como la Cray-1 y la Cyber-205.
 \end_layout
 
 \begin_layout Paragraph
@@ -1169,7 +1179,7 @@ Son máquinas que constan de un computador secuencial conectado a un arreglo
  las mismas operaciones sobre datos diferentes.
  El computador secuencial generalmente es un CPU de propósito general que
  almacena el programa y los datos que serán operados en paralelo, además
- de ejecutar la porción del programa que es secuencial.
+ de ejecutar la porción secuencial del programa.
  Los elementos de procesamiento se asemejan a CPUs pero no tienen unidades
  de control propias; el computador secuencial genera todas las señales de
  control para las unidades de procesamiento en el computador.
@@ -1337,8 +1347,8 @@ icas: alto rendimiento, alta disponibilidad, equilibrio de carga y escalabilidad
 \end_layout
 
 \begin_layout Standard
-La construcción de los cluster es económica debido a su flexibilidad, permitiend
-o tener varios computadores con la misma configuración de hardware y sistema
+La construcción de un cluster es económica debido a su flexibilidad, permitiendo
+ tener varios computadores con la misma configuración de hardware y sistema
  operativo (cluster homogéneo), diferente rendimiento pero con arquitecturas
  y sistemas operativos similares (cluster semi-homogéneo), o tener diferente
  hardware y sistema operativo (cluster heterogéneo).
@@ -1425,7 +1435,6 @@ Herramientas para la programación paralela
 En programación paralela existen diferentes lenguajes y herramientas de
  programación con características específicas para diferentes clases de
  problema.
- A continuación veremos algunas de estas herramientas.
 \end_layout
 
 \begin_layout Standard
@@ -1478,7 +1487,7 @@ El número de tareas es fijado en tiempo de pre-ejecución (aunque esto ha
 
 \begin_layout Standard
 La característica que hace que las implementaciones de este estandar sea
- de especial interes para sistemas distribuidos es que no utiliza memoria
+ de especial interés para sistemas distribuidos es que no utiliza memoria
  compartida.
 \end_layout
 
@@ -1529,7 +1538,7 @@ PVM permite utilizar una colección de computadores heterogéneos como una
  Los programas están compuestos por una serie de tareas que cooperan entre
  sí.
  Estas tareas acceden a recursos de PVM a través de una biblioteca estándar,
- que contiene funciones para iniciación y finalización de tareas asá como
+ que contiene funciones para iniciación y finalización de tareas así como
  para comunicación y sincronización entre tareas.
  
 \end_layout
@@ -1567,8 +1576,9 @@ Algunas de sus cualidades de PVM son potencia, simplicidad, portabilidad,
  la máquina virtual.
  Contiene mecanismos de creación e identificación de procesos, un modelo
  de comunicación entre procesos basado en pasaje de mensajes y brinda mecanismos
- de sincronización de procesos.PVM brinda soporte para manejar heterogeneidad
- y aprovecha las arquitecturas multiprocesador.
+ de sincronización de procesos.
+ PVM brinda soporte para manejar heterogeneidad y aprovecha las arquitecturas
+ multiprocesador.
 \end_layout
 
 \begin_layout Subsubsection
