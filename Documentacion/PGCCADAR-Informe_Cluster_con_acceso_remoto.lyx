@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -155,7 +155,7 @@ Si bien TORQUE brinda todas las funcionalidades necesarias para satisfacer
 Como se mencionó en la sección de relevamiento de tecnologías, si bien TORQUE
  contiene la lógica necesaria para llevar a cabo la planificación de trabajos
  se trata de una lógica muy básica.
- Por esta razón se optó por incorporar a Maui para este proposito.
+ Por esta razón se optó por incorporar a Maui para este propósito.
  Maui presenta un algoritmo de planificación con diversas características
  y configuraciones que permiten mejorar la performance del cluster y además
  brinda la posibilidad de implementar un algoritmo de planificación desarrollado
@@ -224,7 +224,7 @@ Para el almacenamiento de datos se consideraron dos motores de base de datos
 A la hora de la implementación se realizó una clara separación entre la
  capa de presentación y la capa con la lógica de negocios, desacoplando
  asi la presentación de la información con el comportamiento de la aplicación.
- El acceso a datos se encapsuló en un módulo especifico, esto redundó en
+ El acceso a datos se encapsuló en un módulo específico, esto redundó en
  una ventaja para el producto: para utilizar otro manejador de base de datos
  relacional de condiciones similares solamente es necesario reimplementar
  el módulo y repetir la etapa de verificación.

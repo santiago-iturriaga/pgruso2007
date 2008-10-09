@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -49,7 +49,7 @@ Finalizada la descripción del trabajo realizado, en esta sección se presentar�
  Fenton.
  Se describirán las características de hardware y software de los clusters
  de computadores de alto desempeño en los que fue instalado Fenton.
- Por ultimo se especificará el proceso que se siguió durante la instalación
+ Por último se especificará el proceso que se siguió durante la instalación
  del sistema.
 \end_layout
 
@@ -470,7 +470,7 @@ Medusa fue implementado en el marco del proyecto "Laboratorio de simulación
 \end_layout
 
 \begin_layout Standard
-Se realizo la instalación del sistema Fenton en el cluster Medusa.
+Se realizó la instalación del sistema Fenton en el cluster Medusa.
  Para esto se incorporó un nuevo nodo (medusa10) al cluster que desempeñará
  el papel de nodo maestro.
  En este nodo se instaló el sistema Fenton en su totalidad, pero aún se
