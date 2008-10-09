@@ -179,9 +179,9 @@ Cluster de computadores del CeCal.
 \begin_layout Standard
 En el marco del proyecto se realizó una primera instalación de Fenton en
  este cluster.
- Inicialmente se utilizó para realizar un testeo de las  tecnologías elegidas
- en un ambiente controlado pero a medida que el proyecto fue madurando y
- se fueron cumpliendo etapas de su desarrollo se realizaron actualizaciones
+ Inicialmente se utilizó para realizar un validación de las  tecnologías
+ elegidas en un ambiente controlado pero a medida que el proyecto fue madurando
+ y se fueron cumpliendo etapas de su desarrollo se realizaron actualizaciones
  del software instalado en el cluster.
  
 \end_layout
