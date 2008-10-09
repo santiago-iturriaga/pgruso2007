@@ -227,7 +227,7 @@ A la hora de la implementación se realizó una clara separación entre la
  El acceso a datos se encapsuló en un módulo especifico, esto redundó en
  una ventaja para el producto: para utilizar otro manejador de base de datos
  relacional de condiciones similares solamente es necesario reimplementar
- el módulo y repetir la etapa de testeo.
+ el módulo y repetir la etapa de verificación.
  La apariencia del sitio también podía variar durante la implementación
 \begin_inset Note Note
 status open
