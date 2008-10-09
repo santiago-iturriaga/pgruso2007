@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -27,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -73,15 +73,15 @@ Las caracteristicas en las cuales se centró el relevamiento de aplicaciones
 \begin_layout Standard
 Previamente al relevamiento se estableció GNU/Linux como sistema operativo
  del cluster, pudiendo tratarse de una distribución como Fedora u openSUSE,
- y la biblioteca MPI como principal herramienta para el desarrollo de
- programas paralelos y distribuidos.
+ y la biblioteca MPI como principal herramienta para el desarrollo de programas
+ paralelos y distribuidos.
 \end_layout
 
 \begin_layout Standard
-En esta sección se presentarán las aplicacions que fueran relevadas para
+En esta sección se presentarán las aplicaciones que fueron relevadas para
  el despacho de trabajos y administración del cluster, las aplicaciones
  de monitoreo del cluster, los lenguajes de desarrollo, los manejadores
- de base de datos relacionales y otras aplicaciones que fueran necesarias
+ de base de datos relacionales y otras aplicaciones que fueron necesarias
  para la implementación del proyecto.
 \end_layout
 
@@ -92,7 +92,7 @@ status open
 
 \begin_layout Standard
 Moshe Bar, fundador y director de proyecto de openMosix (uno de los proyectos
- SSI mas influyentes al momento del relevamiento de tecnologías), anuncio
+ SSI más influyentes al momento del relevamiento de tecnologías), anunció
  el 15 de julio del 2007 el cierre del proyecto y que se congelaría tanto
  su desarrollo como el soporte brindado a partir del 1 de marzo del 2008.
 \end_layout
@@ -108,7 +108,7 @@ A diferencia de un cluster tradicional en un cluster SSI todas las computadoras
  Un middleware SSI oculta la naturaleza heterogénea y distribuida de los
  recursos, y los presenta a los usuarios y a las aplicaciones como un recurso
  computacional unificado y sencillo.
- Una de las metas que mas diferencia un SSI de un cluster o un grid tradicional
+ Una de las metas que más diferencia un SSI de un cluster o un grid tradicional
  es su completa transparencia en la gestión de recursos.
  Es debido a esta completa transparencia que es posible migrar procesos
  de un nodo a otro.
@@ -304,11 +304,7 @@ Observando la historia reciente del producto, en una versión anterior se
  lo estaban utilizando en ese momento descartaron la idea de buscar el problema
  y solucionarlo, limitándose solamente a esperar que los creadores de la
  herramienta lo corrigieran.
- 
-\end_layout
-
-\begin_layout Standard
-La desición de obiar el problema se debe a que la herramienta cuenta con
+ La decisión de obiar el problema se debe a que la herramienta cuenta con
  un código muy complejo y difícil de modificar, lo que lo coloca como una
  opción poco viable para ser utilizada dentro de este proeycto.
 \end_layout
@@ -329,9 +325,9 @@ El sistema PBS (Portable Batch System) fue desarrollado a principios de
  PBS es un software que provee controles sobre la iniciación y despacho
  de trabajos batch; permite la administración y asignación de recursos a
  los diferentes trabajos permitiendo asgurar a los usuarios que los trabajos
- obtendran los recursos necesarios para terminar su ejecución.
- Del sistema PBS surgen dos aplicaciones: OpenPBS y TORQUE. Ambas fueron
- relevadas en el proyecto Fenton.
+ obtendrán los recursos necesarios para terminar su ejecución.
+ Del sistema PBS surgen dos aplicaciones: OpenPBS y TORQUE.
+ Ambas fueron relevadas en el proyecto Fenton.
 \end_layout
 
 \begin_layout Standard
@@ -376,7 +372,7 @@ TORQUE ofrece apoyo para programar y ejecutar trabajos que requieren el
 
 \begin_layout Standard
 TORQUE ejecuta dos scripts administrativos con la ejecución de cada trabajo
- llamados prologo y epilogo.
+ llamados prólogo y epílogo.
  El prólogo se ejecuta inmediatamente antes de que se ejecute el trabajo
  y el epílogo se ejecuta de inmediatamente después.
  Ambos scripts se ejecutan con privilegios de root y pueden utilizarse para
@@ -552,7 +548,7 @@ Fairness.
 \end_layout
 
 \begin_layout Standard
-Fairness implica dar igual acceso a los recursos a todos los usarios del
+Fairness implica dar igual acceso a los recursos a todos los usuarios del
  cluster.
 \end_layout
 
@@ -701,7 +697,7 @@ Estadísticas de tiempo real.
 \end_layout
 
 \begin_layout Standard
-Las estadisticas de tiempo real son mantenidas en memoria y pueden ser consultad
+Las estadísticas de tiempo real son mantenidas en memoria y pueden ser consultad
 as mediante comandos.
  El comando 'showstats' provee información detallada por usuario, por grupo,
  por cuenta o por nodo.
@@ -717,7 +713,7 @@ Histórico.
 \end_layout
 
 \begin_layout Standard
-Las estadisticas de historico pueden ser obtenidas para un lapso de tiempo,
+Las estadisticas de histórico pueden ser obtenidas para un lapso de tiempo,
  un tipo de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
  Este comando utiliza la traza de información detallada de un trabajo, que
  es guardada al dar por finalizado un trabajo.
@@ -769,7 +765,7 @@ Previo al inicio de un trabajo se realiza una estimación del total de recursos
  que consumirá.
  En base a la estimación se reservan créditos en la cuenta correspondiente.
  Los créditos 'reservados' se debitan una vez que el trabajo es terminado,
- evitando que un proyecto consuma mas recursos de los que tiene asignados.
+ evitando que un proyecto consuma más recursos de los que tiene asignados.
 \end_layout
 
 \begin_layout Subparagraph
