@@ -27,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -46,39 +46,75 @@ Conclusiones
 \begin_layout Standard
 La computación de alto rendimiento ha cobrado mucha importancia en la resolución
  de problemas con un alto grado de complejidad computacional.
- Este proyecto nos permitió explorar más a fondo la problemática de la computaci
-ón de alto rendimiento que hasta el momento no conocíamos en profundidad
- mediante etapas de estudio del área e investigación de tecnologías.
+ Este proyecto permitió explorar más a fondo la problemática de la computación
+ de alto rendimiento, que hasta el momento era desconocida por los integrantes
+ de este proyecto de grado, mediante etapas de estudio del área e investigación
+ de tecnologías.
  
 \end_layout
 
 \begin_layout Standard
-Como parte del estudio del área se cursó la materia 'Computación de Alta
- Performance' dictada por el grupo CeCal del Instituto de Computación de
- la Facultad de Ingeniería.
- Esta materia nos sirvió para introducirnos al área y todos los conceptos
- relacionados a la computación de alto rendimiento.
+Como parte del estudio del área se cursó por parte del los estudiantes la
+ materia 'Computación de Alta Performance' dictada por el grupo CeCal del
+ Instituto de Computación de la Facultad de Ingeniería.
+ Esta materia sirvió para introducir a los estudiantes en el área y a todos
+ los conceptos relacionados a la computación de alto rendimiento.
  
 \end_layout
 
 \begin_layout Standard
 La etapa de investigación de tecnologías fue muy importante y positiva para
  el desarrollo del proyecto.
- Nos sirvió para conocer algunas de las más importantes herramientas OSS
- del mercado para la implementación de clusters y profundizar en las característ
-icas, funcionalidades y limitaciones que estas aplicaciones presentan.
- En esta etapa pudimos identificar herramientas como TORQUE, Maui y Gold
- que nos permitieron construir una sólida plataforma de ejecución de trabajos
+ Sirvió para conocer algunas de las más importantes herramientas de código
+ abierto del mercado para la implementación de clusters, y profundizar en
+ las características, funcionalidades y limitaciones que estas aplicaciones
+ presentan.
+ En esta etapa se pudo identificar herramientas como TORQUE, Maui y Gold
+ que permitieron construir una sólida plataforma de ejecución de trabajos
  en el cluster.
 \end_layout
 
 \begin_layout Standard
-Creemos que la investigación realizada en este proyecto fue muy positiva
- ya que pudimos desarrollar una solución que nos permite alcanzar los objetivos
- del proyecto y abrir caminos para nuevas investigaciones y trabajos.
- Nos permitió comprobar que la implementación de un cluster de alto desempeño
- con un alto nivel de prestaciones, escalable y performante es posible utilizand
-o computadores de escritorios; sin necesidad de hardware especializado.
+Fue posible comprobar en la práctica que TORQUE resulta adecuado para la
+ gestión de clusters de pequeño y mediano porte.
+ Tanto TORQUE como Maui requieren pocos recursos de hardware para su ejecución,
+ ventaja que resulta muy importante en un cluster de reducidas dimensiones
+ como el que se desea utilizar.
+\end_layout
+
+\begin_layout Standard
+Se construyó una interfaz web de fácil acceso al cluster para usuarios no
+ especializados y usuarios administradores.
+ La interfaz web de acceso al sistema permite una utilización amigable del
+ cluster por parte de usuarios no experimentados, en la que los usuarios
+ pueden subir un proyecto al cluster, compilarlo, ejecutarlo y consultar
+ la salida a pantalla en tiempo real.
+ Permite además a usuarios más experimentados la administración del cluster,
+ administración de los usuarios del cluster y ofrece un conjunto de reportes
+ estadísticos sobre los recursos disponibles en el cluster.
+\end_layout
+
+\begin_layout Standard
+Las herramientas utilizadas tanto para la administración de recursos y despacho
+ de trabajos así como monitoreo del sistema permitieron una fácil integración
+ con la interfaz web obteniendo así una aplicación completa que permite
+ un alto grado de abstracción del cluster.
+ 
+\end_layout
+
+\begin_layout Standard
+La investigación realizada en este proyecto fue muy positiva ya que se pudo
+ desarrollar una solución que permitió alcanzar los objetivos del proyecto
+ y abrir caminos para nuevas investigaciones y trabajos.
+ También permitió comprobar que la implementación de un cluster de alto
+ desempeño con un alto nivel de prestaciones, escalable y performante es
+ posible utilizando computadores de escritorios; sin necesidad de hardware
+ especializado.
+\end_layout
+
+\begin_layout Standard
+Los objetivos del proyecto se alcanzaron en buena forma lo que permite que
+ hoy en dáa que el sistema Fenton se encuentre en producción.
 \end_layout
 
 \end_body
