@@ -63,23 +63,73 @@ Como parte del estudio del área se cursó por parte del los estudiantes la
 \end_layout
 
 \begin_layout Standard
-La etapa de investigación de tecnologías fue muy importante y positiva para
- el desarrollo del proyecto.
+Se realizo una etapa de investigación de tecnologías la cual fue muy importante
+ y positiva para el desarrollo del proyecto.
  Sirvió para conocer algunas de las más importantes herramientas de código
  abierto del mercado para la implementación de clusters, y profundizar en
  las características, funcionalidades y limitaciones que estas aplicaciones
  presentan.
- En esta etapa se pudo identificar herramientas como TORQUE, Maui y Gold
- que permitieron construir una sólida plataforma de ejecución de trabajos
- en el cluster.
+ 
 \end_layout
 
 \begin_layout Standard
-Fue posible comprobar en la práctica que TORQUE resulta adecuado para la
- gestión de clusters de pequeño y mediano porte.
- Tanto TORQUE como Maui requieren pocos recursos de hardware para su ejecución,
- ventaja que resulta muy importante en un cluster de reducidas dimensiones
- como el que se desea utilizar.
+En esta etapa se pudo identificar herramientas como Sun Grid Engine, Condor,
+ TORQUE, Maui y Gold.
+\end_layout
+
+\begin_layout Standard
+Condor fue diseñado para High-Throughput Computing (HTC) pero puede adaptarse
+ a los requerimientos planteados y brinda funcionalidades interesantes como
+ migración de procesos, cpu harvesting entre otros.
+ Existen en Condor áreas criticas en las que se encuentra claramente en
+ desventaja con respecto a otros productos como por ejemplo el limitado
+ soporte que brinda Condor a las bibliotecas PVM y MPI.
+ 
+\end_layout
+
+\begin_layout Standard
+Sun Grid Engine es un software para administración de recursos distribuidos
+ que dinámicamente asocia requerimientos de hardware y software de los usuarios
+ con los recursos disponibles en la red (generalmente heterogéneos) de acuerdo
+ a políticas predefinidas, además provee la mayoría de las funcionalidades
+ requeridas para el proyecto.
+ Por otro lado, tiene como desventaja ser un único gran paquete indivisible,
+ lo cual hace muy difícil cualquier adaptación o modificación de su funcionamien
+to.
+ 
+\end_layout
+
+\begin_layout Standard
+TORQUE es un software que provee controles sobre la iniciación y despacho
+ de trabajos batch; permite la administración y asignación de recursos a
+ los diferentes trabajos permitiendo asgurar a los usuarios que los trabajos
+ obtendran los recursos necesarios para terminar su ejecución.
+ TORQUE ofrece apoyo para programar y ejecutar trabajos que requieren el
+ acceso interactivo de los usuarios a la entrada y salida del trabajo durante
+ el tiempo de ejecución; tambien probe soporte para las bilbliotecas de
+ programación paralela y distribuida MPI y PVM la cual es una caracteristica
+ importante para los objetivos del proyecto.
+ TORQUE contiene la lógica necesaria para llevar a cabo la planificación
+ de trabajos, pero se trata de una lógica muy simple que no resulta adecuada
+ para un ambiente de producción por esta razon se integro Maui.
+ Maui se enfoca en la planificación de trabajos y deja la problemática de
+ iniciar los trabajos y la interacción con los usuarios a los manejadores
+ de recursos.
+\end_layout
+
+\begin_layout Standard
+Gold es un sistema de contaduría open-source que lleva registro y maneja
+ el uso de recursos en clusters de alto desempeño.
+\end_layout
+
+\begin_layout Standard
+TORQUE, junto con Maui y Gold, satisfacen los requerimientos planteados
+ para el proyecto.
+ El consumo de recursos del cluster de estas tres herramientas es relativamente
+ bajo, se adapta muy bien al manejo de clusters pequeños y posee un manejo
+ eficiente de trabajos paralelos (sobre todo si estos son homogéneos).
+ Además permitieron construir una sólida plataforma de ejecución de trabajos
+ en el cluster.
 \end_layout
 
 \begin_layout Standard
@@ -89,9 +139,17 @@ Se construyó una interfaz web de fácil acceso al cluster para usuarios no
  cluster por parte de usuarios no experimentados, en la que los usuarios
  pueden subir un proyecto al cluster, compilarlo, ejecutarlo y consultar
  la salida a pantalla en tiempo real.
- Permite además a usuarios más experimentados la administración del cluster,
- administración de los usuarios del cluster y ofrece un conjunto de reportes
- estadísticos sobre los recursos disponibles en el cluster.
+ Permite además a usuarios más experimentados la administración de los recursos
+ del cluster, administración de los usuarios del cluster y ofrece un conjunto
+ de reportes estadísticos sobre los recursos disponibles en el cluster.
+ Para la generación de los reportes estadistcos se integro la interfaz web
+ con Ganglia.
+ 
+\end_layout
+
+\begin_layout Standard
+La herramienta Ganglia es un sistema de monitoreo, escalable y distribuido,
+ para sistemas de alto desempeño como clusters de computadores o grids.
 \end_layout
 
 \begin_layout Standard
