@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -138,14 +138,51 @@ texttt{joplin.fing.edu.uy}}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ClusterCeCal.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Cluster de computadores del CeCal.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 En el marco del proyecto se realizó una primera instalación de Fenton en
  este cluster.
  Inicialmente se utilizó para realizar un testeo de las  tecnologías elegidas
  en un ambiente controlado pero a medida que el proyecto fue madurando y
  se fueron cumpliendo etapas de su desarrollo se realizaron actualizaciones
  del software instalado en el cluster.
- Actualmente el cluster cuenta con la versión final de Fenton y se encuentra
- disponible para su utilización en producción.
  
 \end_layout
 
@@ -307,7 +344,9 @@ texttt{lennon.fing.edu.uy}}
 \end_layout
 
 \begin_layout Standard
-La interfaz web del sistema Fenton se encuentra disponible desde dentro
+Actualmente el cluster cuenta con la versión final de Fenton y se encuentra
+ disponible para su utilización en producción.
+ La interfaz web del sistema Fenton se encuentra disponible desde dentro
  del InCo en 
 \begin_inset LatexCommand url
 target "http://lennon.fing.edu.uy/pgccadar"
@@ -315,6 +354,80 @@ target "http://lennon.fing.edu.uy/pgccadar"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Screenshot.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Acceso al sistema Fenton.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Screenshot-1.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Estado del sistema Fenton.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
