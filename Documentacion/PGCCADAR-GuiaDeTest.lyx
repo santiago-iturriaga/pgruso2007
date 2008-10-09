@@ -169,29 +169,29 @@ Objetivos
 \end_layout
 
 \begin_layout Standard
-El objetivo de este documento es presentar el proceso de test al cual se
- sometió la solución construida.
- El mismo pretende ser una guía de test para verificar y validar el funcionamien
-to de la solución en procesos de test futuros.
+El objetivo de este documento es presentar el proceso de verificación al
+ cual se sometió la solución construida.
+ El mismo pretende ser una guía para verificar y validar el funcionamiento
+ de la solución en futuros procesos de verificación.
 \end_layout
 
 \begin_layout Standard
-El proceso de test tiene por objetivo la detección de defectos y probar
- la correctitud de las funcionalidades de la solución.
+El proceso de verificación tiene por objetivo la detección de defectos y
+ probar la correctitud de las funcionalidades de la solución.
  
 \end_layout
 
 \begin_layout Section
-Proceso de test y metodología de trabajo
+Proceso de verificación y metodología de trabajo
 \end_layout
 
 \begin_layout Standard
-Durante el proceso de testing se aplicaron dos tipos de test.
+Durante el proceso de verificación se aplicaron dos tipos de test.
  Se realizó un test funcional apoyado o complementado con un test exploratorio.
 \end_layout
 
 \begin_layout Standard
-El testing funcional verifica el cumplimiento de los requerimientos funcionales
+El test funcional verifica el cumplimiento de los requerimientos funcionales
  contra los casos de test, en un entorno que emula un ambiente de producción
  del sistema.
  El objetivo de este test es verificar si el comportamiento observado del
@@ -215,19 +215,19 @@ Para la ejecución del test funcional se creó un conjunto de casos de test,
 \end_layout
 
 \begin_layout Standard
-El testing funcional también apunta a evaluar la integración de las distintas
- funcionalidades de Fenton y el scheduler (TORQUE-Maui).
+El test funcional también apunta a evaluar la integración de las distintas
+ funcionalidades de Fenton y el scheduler (e.g., TORQUE y Maui).
 \end_layout
 
 \begin_layout Standard
 Cada caso de test es independiente del otro, pero en conjunto y siguiendo
- la guía de test presentada en este documento verifican la integración de
- cada funcionalidad.
+ la guía de verificación presentada en este documento verifican la integración
+ de cada funcionalidad.
 \end_layout
 
 \begin_layout Standard
-Los dos tipos de testing pueden ejecutarse en paralelo y esa fue la forma
- en que se realizó el testing en esta oportunidad.
+Los dos tipos de test pueden ejecutarse en paralelo y esa fue la forma en
+ que se realizó la verificación en esta oportunidad.
 \end_layout
 
 \begin_layout Section
@@ -235,8 +235,9 @@ Herramientas utilizadas
 \end_layout
 
 \begin_layout Standard
-En el proceso de test se utilizaron como herramientas la guía de test presentada
-da en este documento así como el conjunto de casos de test.
+En el proceso de verificación se utilizaron como herramientas la guía de
+ verificación presentadada en este documento así como el conjunto de casos
+ de test.
  Para el registro de incidentes se utilizó el hosting de Google para proyectos
  (Google Code).
  El hosting de Google para proyectos tiene la funcionalidad de ingresar
@@ -251,18 +252,19 @@ Como usar este documento
 
 \begin_layout Standard
 Este documento incluye dos secciones con las cuales podemos ejecutar el
- proceso de testing.
+ proceso de verificación.
 \end_layout
 
 \begin_layout Standard
-La primera es la sección de casos de test que incluye los mismos.
- La segunda sección es la guía de test, esta sección da un orden a los casos
- de test para probar la integración de los requerimientos funcionales.
+La primera es la sección de casos de test y la segunda sección es la guía
+ de verificación.
+ La segunda sección da un orden a los casos de test para probar la integración
+ de los requerimientos funcionales.
 \end_layout
 
 \begin_layout Standard
 Los casos de test pueden aplicarse independientemente o siguiendo la guía
- de test.
+ de verificación.
 \end_layout
 
 \begin_layout Standard
