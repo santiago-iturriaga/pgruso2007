@@ -57,18 +57,19 @@ La computación de alto rendimiento ha cobrado mucha importancia en la resoluci�
 Como parte del estudio del área se cursó por parte del los estudiantes la
  materia 'Computación de Alta Performance' dictada por el grupo CeCal del
  Instituto de Computación de la Facultad de Ingeniería.
- Esta materia sirvió para introducir a los estudiantes en el área y a todos
- los conceptos relacionados a la computación de alto rendimiento.
+ Esta materia ayudó a acercar a los estudiantes al área y a los conceptos
+ principales de la computación de alto rendimiento y programación paralela
+ y distribuida.
  
 \end_layout
 
 \begin_layout Standard
-Se realizo una etapa de investigación de tecnologías la cual fue muy importante
- y positiva para el desarrollo del proyecto.
- Sirvió para conocer algunas de las más importantes herramientas de código
- abierto del mercado para la implementación de clusters, y profundizar en
- las características, funcionalidades y limitaciones que estas aplicaciones
- presentan.
+Se realizo en el proyecto CCADAR una etapa de investigación de tecnologías
+ la cual fue muy importante y positiva para el desarrollo del proyecto.
+ En esta etapa de investigación se tomo contacto con algunas de las más
+ importantes herramientas de código abierto del mercado para la implementación
+ de clusters, se profundizo en las características de estas herramientas
+ y en funcionalidades y limitaciones que estas aplicaciones presentan.
  
 \end_layout
 
@@ -78,71 +79,88 @@ En esta etapa se pudo identificar herramientas como Sun Grid Engine, Condor,
 \end_layout
 
 \begin_layout Standard
-Condor fue diseñado para High-Throughput Computing (HTC) pero puede adaptarse
- a los requerimientos planteados y brinda funcionalidades interesantes como
- migración de procesos, cpu harvesting entre otros.
- Existen en Condor áreas criticas en las que se encuentra claramente en
+Como primera aplicación importante se tiene a Condor.
+ Condor fue diseñado para High-Throughput Computing (HTC) pero puede adaptarse
+ a los requerimientos planteados en el proyecto CCADAR, además brinda funcionali
+dades interesantes como migración de procesos, y cpu harvesting entre otros.
+ Existen en Condor áreas críticas en las que se encuentra claramente en
  desventaja con respecto a otros productos como por ejemplo el limitado
- soporte que brinda Condor a las bibliotecas PVM y MPI.
+ soporte que brinda a las bibliotecas PVM y MPI.
  
 \end_layout
 
 \begin_layout Standard
-Sun Grid Engine es un software para administración de recursos distribuidos
- que dinámicamente asocia requerimientos de hardware y software de los usuarios
- con los recursos disponibles en la red (generalmente heterogéneos) de acuerdo
- a políticas predefinidas, además provee la mayoría de las funcionalidades
- requeridas para el proyecto.
- Por otro lado, tiene como desventaja ser un único gran paquete indivisible,
+Otra aplicación muy potente que se pudo identificar es Sun Grid Engine o
+ SGE.
+ SGE es un software para administración de recursos distribuidos que dinámicamen
+te asocia requerimientos de hardware y software de los usuarios con los
+ recursos disponibles en la red (generalmente heterogéneos) de acuerdo a
+ políticas predefinidas.
+ También SGE provee la mayoría de las funcionalidades requeridas para el
+ proyecto CCADAR.
+ Por otro lado, SGE tiene como desventaja ser un único gran paquete indivisible,
  lo cual hace muy difícil cualquier adaptación o modificación de su funcionamien
 to.
  
 \end_layout
 
 \begin_layout Standard
-TORQUE es un software que provee controles sobre la iniciación y despacho
- de trabajos batch; permite la administración y asignación de recursos a
- los diferentes trabajos permitiendo asgurar a los usuarios que los trabajos
- obtendran los recursos necesarios para terminar su ejecución.
+Por último esta TORQUE que es un software que provee controles sobre la
+ iniciación y despacho de trabajos batch; también permite la administración
+ y asignación de recursos a los diferentes trabajos asegurando a los usuarios
+ que los trabajos obtendrán los recursos necesarios para terminar su ejecución.
  TORQUE ofrece apoyo para programar y ejecutar trabajos que requieren el
  acceso interactivo de los usuarios a la entrada y salida del trabajo durante
- el tiempo de ejecución; tambien probe soporte para las bilbliotecas de
+ el tiempo de ejecución; además provee soporte para las bilbliotecas de
  programación paralela y distribuida MPI y PVM la cual es una caracteristica
  importante para los objetivos del proyecto.
- TORQUE contiene la lógica necesaria para llevar a cabo la planificación
- de trabajos, pero se trata de una lógica muy simple que no resulta adecuada
- para un ambiente de producción por esta razon se integro Maui.
+ La herramienta TORQUE contiene la lógica necesaria para llevar a cabo la
+ planificación de trabajos, pero se trata de una lógica muy simple que no
+ resulta adecuada para un ambiente de producción y por esta razón se integro
+ con Maui.
  Maui se enfoca en la planificación de trabajos y deja la problemática de
  iniciar los trabajos y la interacción con los usuarios a los manejadores
- de recursos.
+ de recursos como TORQUE.
 \end_layout
 
 \begin_layout Standard
-Gold es un sistema de contaduría open-source que lleva registro y maneja
+Se investigó otra herramienta, llamada Gold, que potencia las funcionalidades
+ de TORQUE para la administración de recurso del cluster.
+ Gold es un sistema de contaduría open-source que lleva registro y maneja
  el uso de recursos en clusters de alto desempeño.
 \end_layout
 
 \begin_layout Standard
-TORQUE, junto con Maui y Gold, satisfacen los requerimientos planteados
- para el proyecto.
- El consumo de recursos del cluster de estas tres herramientas es relativamente
- bajo, se adapta muy bien al manejo de clusters pequeños y posee un manejo
- eficiente de trabajos paralelos (sobre todo si estos son homogéneos).
- Además permitieron construir una sólida plataforma de ejecución de trabajos
- en el cluster.
+TORQUE junto con Maui y Gold satisfacen los requerimientos planteados para
+ el proyecto CCADAR.
+ Una caracteristica muy importante por el tipo de cluster con los que se
+ trabajara es que el consumo de recursos del cluster por parte de estas
+ tres herramientas es relativamente bajo, se adaptan muy bien a clusters
+ pequeños y permiten un manejo eficiente de trabajos paralelos; sobre todo
+ en clusters homogéneos.
+ 
 \end_layout
 
 \begin_layout Standard
-Se construyó una interfaz web de fácil acceso al cluster para usuarios no
- especializados y usuarios administradores.
+Dadas las características mencionadas en capítulos anteriores de este informe
+ sobre TORQUE, Maui y Gold , estas herramientas fueron seleccionadas para
+ la administración de recurso y despacho de trabajos del cluster permitiendo
+ construir una sólida plataforma de ejecución de trabajos en el cluster.
+\end_layout
+
+\begin_layout Standard
+Para alcanzar otro objetivo importante del proyecto CCADAR como es la utilizació
+n amigable del cluster se construyó una interfaz web de fácil acceso al
+ cluster para usuarios no especializados y usuarios administradores.
  La interfaz web de acceso al sistema permite una utilización amigable del
  cluster por parte de usuarios no experimentados, en la que los usuarios
  pueden subir un proyecto al cluster, compilarlo, ejecutarlo y consultar
  la salida a pantalla en tiempo real.
- Permite además a usuarios más experimentados la administración de los recursos
- del cluster, administración de los usuarios del cluster y ofrece un conjunto
- de reportes estadísticos sobre los recursos disponibles en el cluster.
- Para la generación de los reportes estadistcos se integro la interfaz web
+ Esta interfaz web permite a usuarios más experimentados la administración
+ de los recursos del cluster, administración de los usuarios del cluster
+ y ofrece un conjunto de reportes estadísticos sobre los recursos disponibles
+ en el cluster.
+ Para la generación de los reportes estadístcos se integro la interfaz web
  con Ganglia.
  
 \end_layout
@@ -171,8 +189,9 @@ La investigación realizada en este proyecto fue muy positiva ya que se pudo
 \end_layout
 
 \begin_layout Standard
-Los objetivos del proyecto se alcanzaron en buena forma lo que permite que
- hoy en dáa que el sistema Fenton se encuentre en producción.
+Por último como reflexión final, los objetivos del proyecto CCADAR se alcanzaron
+ en buena forma lo que permite que hoy en día que el sistema Fenton se encuentre
+ en producción.
 \end_layout
 
 \end_body
