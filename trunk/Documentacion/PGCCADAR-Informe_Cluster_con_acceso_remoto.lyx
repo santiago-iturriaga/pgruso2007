@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -276,8 +276,9 @@ height_special "totalheight"
 status open
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename diagrama.png
+	filename interaccion_1.png
 	width 10cm
 
 \end_inset
@@ -303,8 +304,9 @@ Se separaron en módulos distintos las interfaces con TORQUE, Maui y el sistema
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename esquema.png
+	filename interaccion_2.png
 	width 10cm
 
 \end_inset
