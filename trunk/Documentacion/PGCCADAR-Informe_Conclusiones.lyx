@@ -64,11 +64,11 @@ Como parte del estudio del área se cursó por parte del los estudiantes la
 \end_layout
 
 \begin_layout Standard
-Se realizo en el proyecto CCADAR una etapa de investigación de tecnologías
+Se realizó en el proyecto CCADAR una etapa de investigación de tecnologías
  la cual fue muy importante y positiva para el desarrollo del proyecto.
- En esta etapa de investigación se tomo contacto con algunas de las más
+ En esta etapa de investigación se tomó contacto con algunas de las más
  importantes herramientas de código abierto del mercado para la implementación
- de clusters, se profundizo en las características de estas herramientas
+ de clusters, se profundizó en las características de estas herramientas
  y en funcionalidades y limitaciones que estas aplicaciones presentan.
  
 \end_layout
@@ -105,18 +105,18 @@ to.
 \end_layout
 
 \begin_layout Standard
-Por último esta TORQUE que es un software que provee controles sobre la
- iniciación y despacho de trabajos batch; también permite la administración
+Por último se analizó TORQUE que es un software que provee controles sobre
+ la iniciación y despacho de trabajos batch; también permite la administración
  y asignación de recursos a los diferentes trabajos asegurando a los usuarios
  que los trabajos obtendrán los recursos necesarios para terminar su ejecución.
  TORQUE ofrece apoyo para programar y ejecutar trabajos que requieren el
  acceso interactivo de los usuarios a la entrada y salida del trabajo durante
  el tiempo de ejecución; además provee soporte para las bilbliotecas de
- programación paralela y distribuida MPI y PVM la cual es una caracteristica
+ programación paralela y distribuida MPI y PVM la cual es una característica
  importante para los objetivos del proyecto.
  La herramienta TORQUE contiene la lógica necesaria para llevar a cabo la
  planificación de trabajos, pero se trata de una lógica muy simple que no
- resulta adecuada para un ambiente de producción y por esta razón se integro
+ resulta adecuada para un ambiente de producción y por esta razón se integró
  con Maui.
  Maui se enfoca en la planificación de trabajos y deja la problemática de
  iniciar los trabajos y la interacción con los usuarios a los manejadores
@@ -125,7 +125,7 @@ Por último esta TORQUE que es un software que provee controles sobre la
 
 \begin_layout Standard
 Se investigó otra herramienta, llamada Gold, que potencia las funcionalidades
- de TORQUE para la administración de recurso del cluster.
+ de TORQUE para la administración de recursos del cluster.
  Gold es un sistema de contaduría open-source que lleva registro y maneja
  el uso de recursos en clusters de alto desempeño.
 \end_layout
@@ -133,8 +133,8 @@ Se investigó otra herramienta, llamada Gold, que potencia las funcionalidades
 \begin_layout Standard
 TORQUE junto con Maui y Gold satisfacen los requerimientos planteados para
  el proyecto CCADAR.
- Una caracteristica muy importante por el tipo de cluster con los que se
- trabajara es que el consumo de recursos del cluster por parte de estas
+ Una característica muy importante por el tipo de cluster con los que se
+ trabajará es que el consumo de recursos del cluster por parte de estas
  tres herramientas es relativamente bajo, se adaptan muy bien a clusters
  pequeños y permiten un manejo eficiente de trabajos paralelos; sobre todo
  en clusters homogéneos.
@@ -143,7 +143,7 @@ TORQUE junto con Maui y Gold satisfacen los requerimientos planteados para
 
 \begin_layout Standard
 Dadas las características mencionadas en capítulos anteriores de este informe
- sobre TORQUE, Maui y Gold , estas herramientas fueron seleccionadas para
+ sobre TORQUE, Maui y Gold, estas herramientas fueron seleccionadas para
  la administración de recurso y despacho de trabajos del cluster permitiendo
  construir una sólida plataforma de ejecución de trabajos en el cluster.
 \end_layout
@@ -160,8 +160,8 @@ n amigable del cluster se construyó una interfaz web de fácil acceso al
  de los recursos del cluster, administración de los usuarios del cluster
  y ofrece un conjunto de reportes estadísticos sobre los recursos disponibles
  en el cluster.
- Para la generación de los reportes estadístcos se integro la interfaz web
- con Ganglia.
+ Para la generación de los reportes estadísticos se integro la interfaz
+ web con Ganglia.
  
 \end_layout
 
@@ -184,13 +184,13 @@ La investigación realizada en este proyecto fue muy positiva ya que se pudo
  y abrir caminos para nuevas investigaciones y trabajos.
  También permitió comprobar que la implementación de un cluster de alto
  desempeño con un alto nivel de prestaciones, escalable y performante es
- posible utilizando computadores de escritorios; sin necesidad de hardware
+ posible utilizando computadores de escritorio; sin necesidad de hardware
  especializado.
 \end_layout
 
 \begin_layout Standard
 Por último como reflexión final, los objetivos del proyecto CCADAR se alcanzaron
- en buena forma lo que permite que hoy en día que el sistema Fenton se encuentre
+ en buena forma lo que permite que hoy en día el sistema Fenton se encuentre
  en producción.
 \end_layout
 
