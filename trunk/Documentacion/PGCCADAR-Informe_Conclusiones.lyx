@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -44,108 +44,97 @@ Conclusiones
 \end_layout
 
 \begin_layout Standard
-La computación de alto rendimiento ha cobrado mucha importancia en la resolución
- de problemas con un alto grado de complejidad computacional.
- Este proyecto permitió explorar más a fondo la problemática de la computación
- de alto rendimiento, que hasta el momento era desconocida por los integrantes
- de este proyecto de grado, mediante etapas de estudio del área e investigación
- de tecnologías.
+La computación de alto rendimiento es fundamental para la resolución de
+ problemas con un alto grado de complejidad computacional, estos problemas
+ provienen de disciplinas como matemática, física o química y no se encuentran
+ necesariamente relacionados con la informática.
+ Muchos de los usuarios de estos sistemas no poseen una formación en informática
+ y el uso de un cluster de computadores les presenta una importante dificultad
+ técnica.
+ En el primer capítulo de éste documento se describen como objetivos principales
+ del proyecto de grado la construcción de un cluster de computadores de
+ alto rendimiento y la necesidad de facilitar el acceso al mismo a usuarios
+ no especializados en informática.
+\end_layout
+
+\begin_layout Standard
+El resultado de éste proyecto de grado fue muy positivo y los objetivos
+ mencionados en el primer capítulo del documento se alcanzaron en buena
+ forma, esto permite que hoy en día el sistema Fenton se encuentre en producción
+ y listo para su utilización.
+\end_layout
+
+\begin_layout Standard
+Durante su desarrollo, éste proyecto de grado permitió explorar a fondo
+ la problemática de la computación de alto rendimiento mediante etapas de
+ aprendizaje e investigación de tecnologías.
+ Como parte del aprendizaje los estudiantes cursaron la materia 'Computación
+ de Alta Performance' dictada por el grupo CeCal del Instituto de Computación
+ de la Facultad de Ingeniería.
+ Esta materia introdujo a los estudiantes a los conceptos principales de
+ la computación de alto rendimiento y a de la programación paralela y distribuid
+a.
+ Por otro lado se realizó en el proyecto de grado una etapa de investigación
+ de tecnologías que resultó muy importante y positiva para el desarrollo
+ del proyecto.
+ En esta etapa se investigaron las herramientas de código abierto para la
+ implementación de clusters de computadores; sus características, sus funcionali
+dades y sus limitaciones.
  
 \end_layout
 
 \begin_layout Standard
-Como parte del estudio del área se cursó por parte del los estudiantes la
- materia 'Computación de Alta Performance' dictada por el grupo CeCal del
- Instituto de Computación de la Facultad de Ingeniería.
- Esta materia ayudó a acercar a los estudiantes al área y a los conceptos
- principales de la computación de alto rendimiento y programación paralela
- y distribuida.
+Una de las primeras aplicaciones investigadas fue Condor, un sistema diseñado
+ fundamentalmente para High-Throughput Computing (HTC) pero que puede adaptarse
+ a los requerimientos planteados en el proyecto de grado.
+ Condor brinda funcionalidades interesantes como migración de procesos entre
+ nodos y la capacidad de aprovechar ciclos ociosos de procesador (CPU Harvesting
+).
+ Sin embargo Condor ofrece un soporte muy básico a las bibliotecas PVM y
+ MPI para programación distribuida.
+ Otra aplicación investigada fue Sun Grid Engine, un software para administració
+n de recursos distribuidos actualmente desarrollado por Sun Microsystems.
+ Sun Grid Engine provee las funcionalidades requeridas para el proyecto
+ de grado, pero presenta como desventaja ser un único gran paquete indivisible
+ y muy complejo, lo cual hace muy difícil cualquier tipo de adaptación o
+ modificación a su funcionamiento.
+ Por último se investigó TORQUE, un software para administración de recursos
+ distribuidos con funcionalidades muy similares a las presentadas por Sun
+ Grid Engine desarrollado por Cluster Resources Inc.
+ A diferencia de Sun Grid Engine, TORQUE es un software de reducidas dimensiones
+ enfocado especificamente en la administración de recursos que no contiene
+ la lógica necesaria para la planificación de la ejecución de trabajos en
+ un cluster de computadores.
+ Cluster Resources Inc.
+ desarrolla también Maui, un software especializado en la planificación
+ y despacho de trabajos en clusters de computadores que resulta la pareja
+ ideal para TORQUE.
+ TORQUE y Maui brindan además un excelente soporte de forma integrada a
+ la biblioteca MPI para programación paralela y distribuida.
+ TORQUE junto con Maui proveen las funcionalidades requeridas para el proyecto
+ de grado y además presentan un bajo consumo de memoria, característica
+ que resulta muy importante en clusters pequeños.
  
 \end_layout
 
 \begin_layout Standard
-Se realizó en el proyecto CCADAR una etapa de investigación de tecnologías
- la cual fue muy importante y positiva para el desarrollo del proyecto.
- En esta etapa de investigación se tomó contacto con algunas de las más
- importantes herramientas de código abierto del mercado para la implementación
- de clusters, se profundizó en las características de estas herramientas
- y en funcionalidades y limitaciones que estas aplicaciones presentan.
- 
+Como se mencionó en el cuarto capítulo de este documento, TORQUE y Maui
+ fueron las herramientas seleccionadas para la administración de recursos
+ y despacho de trabajos y permitieron construir una sólida plataforma de
+ ejecución de trabajos en el cluster.
 \end_layout
 
 \begin_layout Standard
-En esta etapa se pudo identificar herramientas como Sun Grid Engine, Condor,
- TORQUE, Maui y Gold.
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
-Como primera aplicación importante se tiene a Condor.
- Condor fue diseñado para High-Throughput Computing (HTC) pero puede adaptarse
- a los requerimientos planteados en el proyecto CCADAR, además brinda funcionali
-dades interesantes como migración de procesos, y cpu harvesting entre otros.
- Existen en Condor áreas críticas en las que se encuentra claramente en
- desventaja con respecto a otros productos como por ejemplo el limitado
- soporte que brinda a las bibliotecas PVM y MPI.
- 
+hasta aca llegué
 \end_layout
 
-\begin_layout Standard
-Otra aplicación muy potente que se pudo identificar es Sun Grid Engine o
- SGE.
- SGE es un software para administración de recursos distribuidos que dinámicamen
-te asocia requerimientos de hardware y software de los usuarios con los
- recursos disponibles en la red (generalmente heterogéneos) de acuerdo a
- políticas predefinidas.
- También SGE provee la mayoría de las funcionalidades requeridas para el
- proyecto CCADAR.
- Por otro lado, SGE tiene como desventaja ser un único gran paquete indivisible,
- lo cual hace muy difícil cualquier adaptación o modificación de su funcionamien
-to.
- 
-\end_layout
+\end_inset
 
-\begin_layout Standard
-Por último se analizó TORQUE que es un software que provee controles sobre
- la iniciación y despacho de trabajos batch; también permite la administración
- y asignación de recursos a los diferentes trabajos asegurando a los usuarios
- que los trabajos obtendrán los recursos necesarios para terminar su ejecución.
- TORQUE ofrece apoyo para programar y ejecutar trabajos que requieren el
- acceso interactivo de los usuarios a la entrada y salida del trabajo durante
- el tiempo de ejecución; además provee soporte para las bilbliotecas de
- programación paralela y distribuida MPI y PVM la cual es una característica
- importante para los objetivos del proyecto.
- La herramienta TORQUE contiene la lógica necesaria para llevar a cabo la
- planificación de trabajos, pero se trata de una lógica muy simple que no
- resulta adecuada para un ambiente de producción y por esta razón se integró
- con Maui.
- Maui se enfoca en la planificación de trabajos y deja la problemática de
- iniciar los trabajos y la interacción con los usuarios a los manejadores
- de recursos como TORQUE.
-\end_layout
 
-\begin_layout Standard
-Se investigó otra herramienta, llamada Gold, que potencia las funcionalidades
- de TORQUE para la administración de recursos del cluster.
- Gold es un sistema de contaduría open-source que lleva registro y maneja
- el uso de recursos en clusters de alto desempeño.
-\end_layout
-
-\begin_layout Standard
-TORQUE junto con Maui y Gold satisfacen los requerimientos planteados para
- el proyecto CCADAR.
- Una característica muy importante por el tipo de cluster con los que se
- trabajará es que el consumo de recursos del cluster por parte de estas
- tres herramientas es relativamente bajo, se adaptan muy bien a clusters
- pequeños y permiten un manejo eficiente de trabajos paralelos; sobre todo
- en clusters homogéneos.
- 
-\end_layout
-
-\begin_layout Standard
-Dadas las características mencionadas en capítulos anteriores de este informe
- sobre TORQUE, Maui y Gold, estas herramientas fueron seleccionadas para
- la administración de recurso y despacho de trabajos del cluster permitiendo
- construir una sólida plataforma de ejecución de trabajos en el cluster.
 \end_layout
 
 \begin_layout Standard
@@ -160,14 +149,9 @@ n amigable del cluster se construyó una interfaz web de fácil acceso al
  de los recursos del cluster, administración de los usuarios del cluster
  y ofrece un conjunto de reportes estadísticos sobre los recursos disponibles
  en el cluster.
- Para la generación de los reportes estadísticos se integro la interfaz
- web con Ganglia.
- 
-\end_layout
-
-\begin_layout Standard
-La herramienta Ganglia es un sistema de monitoreo, escalable y distribuido,
- para sistemas de alto desempeño como clusters de computadores o grids.
+ Para la generación de los reportes estadísticos se integró la interfaz
+ web del sistema con Ganglia, un sistema de monitoreo escalable y distribuido
+ para sistemas de alto rendimiento.
 \end_layout
 
 \begin_layout Standard
@@ -176,22 +160,6 @@ Las herramientas utilizadas tanto para la administración de recursos y despacho
  con la interfaz web obteniendo así una aplicación completa que permite
  un alto grado de abstracción del cluster.
  
-\end_layout
-
-\begin_layout Standard
-La investigación realizada en este proyecto fue muy positiva ya que se pudo
- desarrollar una solución que permitió alcanzar los objetivos del proyecto
- y abrir caminos para nuevas investigaciones y trabajos.
- También permitió comprobar que la implementación de un cluster de alto
- desempeño con un alto nivel de prestaciones, escalable y performante es
- posible utilizando computadores de escritorio; sin necesidad de hardware
- especializado.
-\end_layout
-
-\begin_layout Standard
-Por último como reflexión final, los objetivos del proyecto CCADAR se alcanzaron
- en buena forma lo que permite que hoy en día el sistema Fenton se encuentre
- en producción.
 \end_layout
 
 \end_body
