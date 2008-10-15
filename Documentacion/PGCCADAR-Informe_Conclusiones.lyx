@@ -58,13 +58,6 @@ La computación de alto rendimiento es fundamental para la resolución de
 \end_layout
 
 \begin_layout Standard
-El resultado de éste proyecto de grado fue muy positivo y los objetivos
- mencionados en el primer capítulo del documento se alcanzaron en buena
- forma, esto permite que hoy en día el sistema Fenton se encuentre en producción
- y listo para su utilización.
-\end_layout
-
-\begin_layout Standard
 Durante su desarrollo, éste proyecto de grado permitió explorar a fondo
  la problemática de la computación de alto rendimiento mediante etapas de
  aprendizaje e investigación de tecnologías.
@@ -119,46 +112,24 @@ n de recursos distribuidos actualmente desarrollado por Sun Microsystems.
 \begin_layout Standard
 Como se mencionó en el cuarto capítulo de este documento, TORQUE y Maui
  fueron las herramientas seleccionadas para la administración de recursos
- y despacho de trabajos y permitieron construir una sólida plataforma de
- ejecución de trabajos en el cluster.
+ y despacho de trabajos.
+ TORQUE y Maui permitieron construir una sólida plataforma de ejecución
+ de trabajos en el cluster de computadores, y fue a partir de esta plataforma
+ que se desarrolló una interfaz web para el acceso remoto al sistema.
+ Ésta interfaz web de acceso al sistema permite una utilización amigable
+ del cluster por parte de usuarios no especializados, además permite a usuarios
+ técnicos la administración de los recursos del cluster y sus usuarios y
+ ofrece un conjunto de reportes sobre el uso de los recursos en el cluster.
+ Para la generación de estos reportes se integró la interfaz web del sistema
+ con Ganglia, un sistema de monitoreo escalable y distribuido para sistemas
+ de alto rendimiento.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-hasta aca llegué
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Para alcanzar otro objetivo importante del proyecto CCADAR como es la utilizació
-n amigable del cluster se construyó una interfaz web de fácil acceso al
- cluster para usuarios no especializados y usuarios administradores.
- La interfaz web de acceso al sistema permite una utilización amigable del
- cluster por parte de usuarios no experimentados, en la que los usuarios
- pueden subir un proyecto al cluster, compilarlo, ejecutarlo y consultar
- la salida a pantalla en tiempo real.
- Esta interfaz web permite a usuarios más experimentados la administración
- de los recursos del cluster, administración de los usuarios del cluster
- y ofrece un conjunto de reportes estadísticos sobre los recursos disponibles
- en el cluster.
- Para la generación de los reportes estadísticos se integró la interfaz
- web del sistema con Ganglia, un sistema de monitoreo escalable y distribuido
- para sistemas de alto rendimiento.
-\end_layout
-
-\begin_layout Standard
-Las herramientas utilizadas tanto para la administración de recursos y despacho
- de trabajos así como monitoreo del sistema permitieron una fácil integración
- con la interfaz web obteniendo así una aplicación completa que permite
- un alto grado de abstracción del cluster.
- 
+El resultado de éste proyecto de grado fue muy positivo y los objetivos
+ mencionados en el primer capítulo del documento se alcanzaron en buena
+ forma, esto permite que hoy en día el sistema Fenton se encuentre en producción
+ y listo para su utilización.
 \end_layout
 
 \end_body
