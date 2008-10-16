@@ -1,4 +1,4 @@
-#LyX 1.5.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -48,9 +48,9 @@ La computación de alto rendimiento es fundamental para la resolución de
  problemas con un alto grado de complejidad computacional, estos problemas
  provienen de disciplinas como matemática, física o química y no se encuentran
  necesariamente relacionados con la informática.
- Muchos de los usuarios de estos sistemas no poseen una formación en informática
- y el uso de un cluster de computadores les presenta una importante dificultad
- técnica.
+ Muchos de los usuarios de clusters de computadores de alto rendimiento
+ no poseen una formación en informática y su uso les presenta una importante
+ dificultad técnica.
  En el primer capítulo de éste documento se describen como objetivos principales
  del proyecto de grado la construcción de un cluster de computadores de
  alto rendimiento y la necesidad de facilitar el acceso al mismo a usuarios
@@ -110,25 +110,27 @@ n de recursos distribuidos actualmente desarrollado por Sun Microsystems.
 \end_layout
 
 \begin_layout Standard
-Como se mencionó en el cuarto capítulo de este documento, TORQUE y Maui
- fueron las herramientas seleccionadas para la administración de recursos
- y despacho de trabajos.
+Como se detalló en el cuarto capítulo de este documento, TORQUE y Maui fueron
+ las herramientas seleccionadas para la administración de recursos y despacho
+ de trabajos en el cluster.
  TORQUE y Maui permitieron construir una sólida plataforma de ejecución
- de trabajos en el cluster de computadores, y fue a partir de esta plataforma
- que se desarrolló una interfaz web para el acceso remoto al sistema.
+ de trabajos, y fue a partir de esta plataforma que se desarrolló una interfaz
+ web para el acceso remoto al sistema.
  Ésta interfaz web de acceso al sistema permite una utilización amigable
  del cluster por parte de usuarios no especializados, además permite a usuarios
- técnicos la administración de los recursos del cluster y sus usuarios y
- ofrece un conjunto de reportes sobre el uso de los recursos en el cluster.
+ técnicos la administración de los recursos del cluster, la administración
+ de la seguridad del cluster y ofrece un conjunto de reportes historicos
+ y en tiempo real sobre el uso de los recursos en el cluster.
  Para la generación de estos reportes se integró la interfaz web del sistema
  con Ganglia, un sistema de monitoreo escalable y distribuido para sistemas
  de alto rendimiento.
 \end_layout
 
 \begin_layout Standard
-El resultado de éste proyecto de grado fue muy positivo y los objetivos
- mencionados en el primer capítulo del documento se alcanzaron en buena
- forma, esto permite que hoy en día el sistema Fenton se encuentre en producción
+Podemos decir que el resultado de éste proyecto de grado fue muy positivo
+ y los objetivos mencionados en el primer capítulo del documento se alcanzaron
+ en buena forma.
+ Esto permite que hoy en día el sistema Fenton se encuentre en producción
  y listo para su utilización.
 \end_layout
 
