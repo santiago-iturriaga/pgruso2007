@@ -1705,19 +1705,18 @@ En el proyecto de grado CCADAR se busca la implementación de una herramienta
 \end_layout
 
 \begin_layout Standard
-Para manejar la asignación de recursos y controlar la ejecución de trabajos
- paralelos y distribuidos del cluster fue necesario contar con un Middleware
+Para el manejo de la asignación de recursos y control de la ejecución de trabajos
+ paralelos y distribuidos en el cluster fue necesario contar con un Middleware
  especializado en estas funciones.
  Un Middleware de este tipo se encuentra encargado de recibir las peticiones
- de ejecución de trabajos en el cluster y los redistribuye de manera que
- el proceso se ejecute más rápido y el sistema no sufra sobrecargas en un
- servidor.
+ de ejecución de trabajos en el cluster, realiza la asignación de recursos
+ a los trabajos para su ejecución y prioriza la ejecución de trabajos 
+ según reglas predefinidas.
 \end_layout
 
 \begin_layout Standard
-En el siguiente cápitulo se especificará el relevamientos de tecnologiás,
- como middelwares, utilizadas para la implementación de sistemas de computo
- de alto renedimiento como el sistema Fenton.
+En el siguiente cápitulo se investigarán en profundidas las tecnologías necesarias 
+para el proyecto CCADAR como Middlewares, herramientas de monitoreo del sistema, etc.
 \end_layout
 
 \end_body
