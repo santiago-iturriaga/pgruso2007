@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -665,7 +665,7 @@ En la última etapa cada tarea es asignada a un procesador tratando de maximizar
 \end_layout
 
 \begin_layout Subsubsection
-Partición.
+Partición
 \end_layout
 
 \begin_layout Standard
@@ -854,7 +854,7 @@ Como posible punto intermedio entre ambos tipos de algoritmo está el balanceo
 \end_layout
 
 \begin_layout Subsection
-Taxonomía de Flynn.
+Taxonomía de Flynn
 \end_layout
 
 \begin_layout Standard
@@ -1656,63 +1656,62 @@ Las aplicaciones middleware han aparecido de manera relativamente reciente
 \end_layout
 
 \begin_layout Subsection
-Concluciones sobre la computación de alto renedimiento.
+Conclusiones sobre la computación de alto rendimiento
 \end_layout
 
 \begin_layout Standard
 El modelo de computación de alto rendimiento es una realidad cada vez más
- utilizada en la solución de problemas complejos.
- Este modelo se apoya en tecnologías como los clusters que ultimamente han
- ganado popularidad y el uso de paradigmas de programación paralela y/o
- distribuida.
-\end_layout
-
-\begin_layout Standard
-La popularidad de los clusters se ve estimulada por varios factores como
- los bajos costos de las PC y del incremento de velocidad y capacidad de
- tecnologías de comunicación, también más accesibles.
+ utilizada para la resolución de problemas complejos.
+ Los clusters de computadores y el uso de paradigmas de programación paralela
+ y distribuida han ganado popularidad en los últimos tiempos.
+ La popularidad de los clusters se ve estimulada por varios factores; como
+ los bajos costos de las PC y el incremento en la velocidad y capacidad
+ de tecnologías de comunicación.
  La escalabilidad es otro factor importante que estimula la utilización
  de los clusters, ya que si se desea incrementar el poder de computo se
- puede agregar mas nodos y no perder la inversión hecha.
+ pueden agregar más nodos sin perder la inversión hecha previamente.
 \end_layout
 
 \begin_layout Standard
 Dentro del ambito de la Facultad de Ingeniería se han realizado inversiones
  en la investigación e implementación de clusters y herramientas de computo
  de alto rendimiento.
- Ejemplos de estos dos casos son: el cluster Medusa que fue llevado a cabo
- en conjunto entre el INFIA y el CeCal con el apoyo financiero del programa
- de desarrollo tecnologico en el año 2006, y el proyecto de grado CCADAR.
+ Un ejemplo de estos trabajos es el cluster Medusa que fue llevado a cabo
+ en conjunto entre el Instituto de Mecánica de los Fluidos e Ingeniería
+ Ambiental (IMFIA) y del Centro de Cálculo (CeCal) con el apoyo financiero
+ del Programa de Desarrollo Tecnologico (PDT) en el año 2006.
 \end_layout
 
 \begin_layout Standard
 La programación paralela y distribuida es fundamental para la completa utilizaci
-ón de los recursos que el cluster de computadores brinda ya que proporciona
- ventajas como mayor capacidad de proceso, menor tiempo de procesamiento
- y aprovechamiento de la escalabilidad potencial de los recursos.
- En el proyecto CCADAR se busca la inplementación de una herramienta de
- facil acceso para los usuarios que permita la ejeución de trabajos paralales
- en un cluster y así aprobechar las ventajas de la programación paralela
- y distribuida.
-\end_layout
-
-\begin_layout Standard
-En la programación paralela existen diferentes lenguajes y herramientas
- de programación donde algunas de las mas utilizdas son las bibliotecas
+ón de los recursos que brinda un cluster de computadores.
+ Existen muchas herramientas que facilitan el desarrollo de programas paralelos
+ y distribuidos y dos de las herramientas más utilizadas son las bibliotecas
  MPI y PVM.
- MPI y PVM son bibliotecas de subrutinas para enviar y recibir mensajes
- las cuales facilitan el desarrollo de aplicaciones paralelas y distribuidas.
- El proyecto CCADAR tiene como objetivo la implementación de una herramienta
- que de soporte para estas dos bibliotecas de desarrollo.
+ Las bibliotecas MPI y PVM contienen subrutinas para enviar y recibir mensajes
+ y manejar la sincronización entre procesos que facilitan el desarrollo
+ de aplicaciones paralelas y distribuidas.
+ 
 \end_layout
 
 \begin_layout Standard
-Para manejar la asignación de recurso del cluster y controlar la ejecución
- de trabajos paralelos y distribuidos en el mismo fue necesario contar con
- un middelware especializado en estas funciones.
- Un middelware recibe los trabajos entrantes al cluster y los redistribuye
- de manera que el proceso se ejecute más rápido y el sistema no sufra sobrecarga
-s en un servidor.
+En el proyecto de grado CCADAR se busca la implementación de una herramienta
+ de facil acceso para los usuarios, que permita la ejecución de trabajos
+ paralelos y distribuidos en un cluster de computadores de forma de aprovechar
+ las ventajas de la programación paralela y distribuida.
+ Para facilitar la ejecución de trabajos paralelos en el cluster el proyecto
+ de grado tiene como objetivo brindar soporte para las bibliotecas MPI y
+ PVM.
+\end_layout
+
+\begin_layout Standard
+Para manejar la asignación de recursos y controlar la ejecución de trabajos
+ paralelos y distribuidos del cluster fue necesario contar con un Middleware
+ especializado en estas funciones.
+ Un Middleware de este tipo se encuentra encargado de recibir las peticiones
+ de ejecución de trabajos en el cluster y los redistribuye de manera que
+ el proceso se ejecute más rápido y el sistema no sufra sobrecargas en un
+ servidor.
 \end_layout
 
 \begin_layout Standard
