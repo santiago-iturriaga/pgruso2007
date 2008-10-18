@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -132,8 +132,8 @@ texttt{joplin.fing.edu.uy}}
 
 .
  Cada nodo cuenta con un procesador AMD Athlon 64 3000+, 1 GB de memoria
- RAM, sistema operativo openSUSE 10.1 y se se encuentran conectados entre
- si mediante una red Ethernet de 100 Mbps.
+ RAM, sistema operativo openSUSE 10.1 y se encuentran conectados entre si
+ mediante una red Ethernet de 100 Mbps.
  
 \end_layout
 
@@ -179,7 +179,7 @@ Cluster de computadores del CeCal.
 \begin_layout Standard
 En el marco del proyecto se realizó una primera instalación de Fenton en
  este cluster.
- Inicialmente se utilizó para realizar un validación de las  tecnologías
+ Inicialmente se utilizó para realizar una validación de las  tecnologías
  elegidas en un ambiente controlado pero a medida que el proyecto fue madurando
  y se fueron cumpliendo etapas de su desarrollo se realizaron actualizaciones
  del software instalado en el cluster.

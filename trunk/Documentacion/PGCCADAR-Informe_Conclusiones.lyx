@@ -94,7 +94,7 @@ n de recursos distribuidos actualmente desarrollado por Sun Microsystems.
  distribuidos con funcionalidades muy similares a las presentadas por Sun
  Grid Engine desarrollado por Cluster Resources Inc.
  A diferencia de Sun Grid Engine, TORQUE es un software de reducidas dimensiones
- enfocado especificamente en la administración de recursos que no contiene
+ enfocado específicamente en la administración de recursos que no contiene
  la lógica necesaria para la planificación de la ejecución de trabajos en
  un cluster de computadores.
  Cluster Resources Inc.
@@ -119,7 +119,7 @@ Como se detalló en el cuarto capítulo de este documento, TORQUE y Maui fueron
  Ésta interfaz web de acceso al sistema permite una utilización amigable
  del cluster por parte de usuarios no especializados, además permite a usuarios
  técnicos la administración de los recursos del cluster, la administración
- de la seguridad del cluster y ofrece un conjunto de reportes historicos
+ de la seguridad del cluster y ofrece un conjunto de reportes históricos
  y en tiempo real sobre el uso de los recursos en el cluster.
  Para la generación de estos reportes se integró la interfaz web del sistema
  con Ganglia, un sistema de monitoreo escalable y distribuido para sistemas

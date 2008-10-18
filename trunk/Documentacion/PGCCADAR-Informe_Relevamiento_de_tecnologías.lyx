@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -62,7 +62,7 @@ e dentro del proyecto, encontrar un conjunto de aplicaciones que permitan
 \end_layout
 
 \begin_layout Standard
-Las caracteristicas en las cuales se centró el relevamiento de aplicaciones
+Las características en las cuales se centró el relevamiento de aplicaciones
  del cluster fueron su desempeño, la interfaz disponible para el usuario,
  la interfaz de administración del cluster, la información disponible del
  cluster y sus nodos individuales, los mecanismos de despacho e inicialización
@@ -121,7 +121,7 @@ mo, de esta manera no es necesario re-escribir programas utilizando bibliotecas
 A pesar de las ventajas presentadas por los SSI a nivel de manejo de recursos
  no se cree que se ajusten a los requerimientos planteados en este proyecto
  principalmente debido a que el cluster ya se encuentra en funcionamiento
- siguiendo un paradigma estilo Beowulf mas clásico.
+ siguiendo un paradigma estilo Beowulf más clásico.
  Quizás sea interesante construir un pequeño cluster SSI e investigar más
  a fondo este tipo de tecnologías de manera de poder comparar ambas soluciones.
 \end_layout
@@ -192,7 +192,7 @@ Resumen
 Condor no parece ser el software ideal para el proyecto.
  Si bien puede adaptarse a los requerimientos planteados y brinda funcionalidade
 s interesantes (e.g.
- migración de procesos, cpu harvesting, etc.), existen áreas criticas en
+ migración de procesos, cpu harvesting, etc.), existen áreas críticas en
  las que se encuentra claramente en desventaja con respecto a otros productos.
  El limitado soporte que brinda Condor a las bibliotecas PVM y MPI resulta
  ser un problema crítico y determinante para que fuera descartado en el
@@ -304,9 +304,9 @@ Observando la historia reciente del producto, en una versión anterior se
  lo estaban utilizando en ese momento descartaron la idea de buscar el problema
  y solucionarlo, limitándose solamente a esperar que los creadores de la
  herramienta lo corrigieran.
- La decisión de obiar el problema se debe a que la herramienta cuenta con
+ La decisión de obviar el problema se debe a que la herramienta cuenta con
  un código muy complejo y difícil de modificar, lo que lo coloca como una
- opción poco viable para ser utilizada dentro de este proeycto.
+ opción poco viable para ser utilizada dentro de este proyecto.
 \end_layout
 
 \begin_layout Subsection
@@ -324,7 +324,7 @@ El sistema PBS (Portable Batch System) fue desarrollado a principios de
  los '90 por MRJ para la National Aeronautics and Space Administration (NASA).
  PBS es un software que provee controles sobre la iniciación y despacho
  de trabajos batch; permite la administración y asignación de recursos a
- los diferentes trabajos permitiendo asgurar a los usuarios que los trabajos
+ los diferentes trabajos permitiendo asegurar a los usuarios que los trabajos
  obtendrán los recursos necesarios para terminar su ejecución.
  Del sistema PBS surgen dos aplicaciones: OpenPBS y TORQUE.
  Ambas fueron relevadas en el proyecto Fenton.
@@ -341,7 +341,7 @@ da para la NASA.
 \end_layout
 
 \begin_layout Standard
-TORQUE (Terascale Open-source Resource and QUEue manager) es una bifuracación
+TORQUE (Terascale Open-source Resource and QUEue manager) es una bifurcación
  open-source de la versión 2.3.12 de OpenPBS mantenido y desarrollado por
  Cluster Resources.
  Incorpora numerosas mejoras con respecto al proyecto PBS original provistas
@@ -351,7 +351,7 @@ ter Center), Sandia, PNNL (Pacific Northwest National Laboratory), y otros
 \end_layout
 
 \begin_layout Standard
-A continuación se verán las caracteristicas generales de TORQUE.
+A continuación se verán las características generales de TORQUE.
  OpenPBS no fue investigado a fondo pues como se mencionó anteriormente
  no está en desarrollo actualmente y no existe soporte del mismo.
  
@@ -384,15 +384,14 @@ TORQUE ejecuta dos scripts administrativos con la ejecución de cada trabajo
 \begin_layout Standard
 En TORQUE los trabajos son manejados de la misma manera que lo hace PBS.
  Se cuenta con un conjunto de colas de trabajos que definen propiedades
- generales para los trabajos que contienen (ej.
- recursos disponibles, etc.).
+ generales para los trabajos que contienen (e.g., recursos disponibles, etc.).
  Al ingresar un trabajo al sistema, éste debe especificar características
- especificas de sí mismo que ayuden al sistema a planificar su ejecución
- (ej.
- nodos a utilizar, memoria máxima a utilizar, etc.).
+ específicas de sí mismo que ayuden al sistema a planificar su ejecución
+ (e.g., nodos a utilizar, memoria máxima a utilizar, etc.).
  Con la información de la cola a la que pertenece el trabajo y los datos
- específicos del trabajo en cuestión el scheduler decide el momento en que
- un trabajo comienza a ejecutarse y con que recursos cuenta en cada instante.
+ específicos del trabajo en cuestión el despachador de trabajos decide el
+ momento en que un trabajo comienza a ejecutarse y con que recursos cuenta
+ en cada instante.
 \end_layout
 
 \begin_layout Standard
@@ -400,8 +399,7 @@ TORQUE cuenta con una interfaz de usuario de línea de comando (CLI) como
  principal manera de interactuar con el sistema.
  También cuenta con una interfaz gráfica para X-Windows y una biblioteca
  para desarrollo en C aunque es posible utilizar bibliotecas desarrolladas
- por terceros para otros lenguajes (ej.
- Perl o Python).
+ por terceros para otros lenguajes (e.g., Perl o Python).
 \end_layout
 
 \begin_layout Standard
@@ -539,7 +537,7 @@ Características generales.
 \end_layout
 
 \begin_layout Standard
-El algoritmo de planificación de Maui presenta caracteristicas muy interesantes
+El algoritmo de planificación de Maui presenta características muy interesantes
  algunas de las cuales se presentarán a continuación.
 \end_layout
 
@@ -571,8 +569,7 @@ Maui tiene una interfaz para la interacción con un allocation management
  externo.
  Un allocation manager (también conocido como allocation bank o cpu bank)
  funciona como un banco en el cual la moneda son los recursos del sistema
- (ej.
- procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
+ (e.g., procesadores, memoria, etc.) autorizando a los trabajos cierta cantidad
  de recursos.
 \end_layout
 
@@ -581,7 +578,7 @@ Backfill.
 \end_layout
 
 \begin_layout Standard
-Backfill es una optimización en el algoritmo de planificacion que permite
+Backfill es una optimización en el algoritmo de planificación que permite
  asignar de mejor forma los recursos permitiendo ejecutar algunos trabajos
  fuera de orden siempre y cuando éstos no retrasen los trabajos de prioridad
  superior de la cola.
@@ -589,7 +586,7 @@ Backfill es una optimización en el algoritmo de planificacion que permite
  una estimación de cuánto tiempo necesitará para su ejecución.
  Esta estimación, conocida como límite wallclock, es una valoración del
  tiempo desde el comienzo del trabajo hasta su final.
- Es util sobrestimar levemente el límite de wallclock porque el planificador
+ Es útil sobrestimar levemente el límite de wallclock porque el planificador
  se puede configurar para eliminar a los trabajos que exceden sus límites
  del wallclock.
  Sin embargo, la sobrestimación demasiado grande del tiempo del wallclock
@@ -667,7 +664,7 @@ Interfaz de extensión
 Esta interfaz permite que bibliotecas externas sean conectadas con el servidor
  de Maui brindando acceso a todos los datos y objetos utilizados por el
  planificador.
- Además, permite que estas bibliotecas sobreescriban las principales funciones
+ Además, permite que estas bibliotecas sobrescriban las principales funciones
  de Maui.
 \end_layout
 
@@ -701,8 +698,8 @@ Las estadísticas de tiempo real son mantenidas en memoria y pueden ser consulta
 as mediante comandos.
  El comando 'showstats' provee información detallada por usuario, por grupo,
  por cuenta o por nodo.
- Además en cualquier momento estas estadísticas pueden reinicializarce utilizand
-o el comando 'resetstats'.
+ Además en cualquier momento estas estadísticas pueden limpiarse utilizando
+ el comando 'resetstats'.
  
 \end_layout
 
@@ -713,7 +710,7 @@ Histórico.
 \end_layout
 
 \begin_layout Standard
-Las estadisticas de histórico pueden ser obtenidas para un lapso de tiempo,
+Las estadísticas de histórico pueden ser obtenidas para un lapso de tiempo,
  un tipo de trabajo y/o una porción de recursos utilizando el comando 'profiler'.
  Este comando utiliza la traza de información detallada de un trabajo, que
  es guardada al dar por finalizado un trabajo.
@@ -728,7 +725,7 @@ Fairshare.
 \begin_layout Standard
 Este tipo de estadísticas son mantenidas sin importar si fairshare se encuentra
  habilitado o no.
- Al igual que las trazas de los trabajos, las estadisticas son almacenadas
+ Al igual que las trazas de los trabajos, las estadísticas son almacenadas
  en archivos utilizando texto plano por cada ventana de fairshare.
 \end_layout
 
@@ -774,7 +771,7 @@ Vencimiento de créditos.
 
 \begin_layout Standard
 Puede especificarse un lapso de validez a los créditos en el sistema, permitiend
-o que se implemente una política de usalo-o-pierdelo previniendo el uso
+o que se implemente una política de úsalo-o-piérdelo previniendo el uso
  exhaustivo de créditos acumulados.
  De esta manera se establecen ciclos de utilización de recursos evitando
  el uso de recursos excedentes de un ciclo a otro.
@@ -842,7 +839,7 @@ La universidad de Glasgow dispone de un cluster que hoy en día cuenta con
  60 nodos de procesamiento disponibles, cada uno con procesadores duales
  Opteron 248 y 2 GB RAM.
  El cluster utiliza TORQUE y Maui sobre Redhat Enterprise GNU/Linux 3.
- Además de los componentes estándares incluídos en la distribución (e.g.
+ Además de los componentes estándares incluidos en la distribución (e.g.
  compilador gcc, g++, g77, etc.) se han instalado las bibliotecas MPICH 1.2.6
  (MPI) para procesamiento paralelo.
 \end_layout
@@ -972,7 +969,7 @@ GMetaD
 \end_layout
 
 \begin_layout Standard
-El metaservicio de ganglia (Ganglia Meta Daemon) es un servicio que se encarga
+El metaservicio de Ganglia (Ganglia Meta Daemon) es un servicio que se encarga
  de recolectar y almacenar información de otros servicios (ya sean servicios
  GMonD u otros servicios GMetaD).
  GMetaD provee un mecanismo de consultas muy simple para obtener información
@@ -1102,7 +1099,7 @@ rsion Concurrency Control).
  Mediante MVCC PostgreSQL permite el acceso de lectura a una tabla mientras
  que otro proceso realiza una operación de escritura sobre esa misma tabla.
  Este comportamiento se debe a que cada usuario obtiene una visión consistente
- de la ultima versión actualizada.
+ de la última versión actualizada.
  Esta estrategia es superior al uso de bloqueos por tabla o por filas común
  en otras bases y elimina la necesidad del uso de bloqueos explícitos.
  
@@ -1131,7 +1128,7 @@ Desde enero de 2008 una subsidiaria de Sun Microsystems.
 \end_inset
 
  desarrolla MySQL como software libre en un esquema de licenciamiento dual.
- Por un lado se ofrece bajo la licencia publica GNU para software de código
+ Por un lado se ofrece bajo la licencia pública GNU para software de código
  abierto, pero las empresas que quieran incorporarlo a productos que no
  poseen código abierto deben comprar a la empresa una licencia específica
  para uso comercial.
