@@ -138,7 +138,7 @@ d.
 \begin_layout Standard
 El alto poder de procesamiento de varias computadoras trabajando en paralelo
  (o cluster de computadoras) se perfila como una solución viable a varias
- problemáticas, que requieren gran poder de computo a un bajo costo de implement
+ problemáticas, que requieren gran poder de cómputo a un bajo costo de implement
 ación.
  Algunas de las problemáticas actuales más importantes están relacionadas
  con la ciencia e ingeniería, dinámica de fluidos computacional, simulaciones
@@ -367,9 +367,9 @@ Utilizando mecanismos de exportación de clases a través de el ambiente .NET,
  por .NET de modo que las técnicas de procesamiento paralelo puedan utilizarse
  desde programas desarrollados en esos lenguajes.
  Para realizar esto último debieron encapsular en clases las primitivas
- básicas de comunicación de la biblioteca MPI ( envío de mensajes, recepción
- de mensajes bloqueante y no bloqueante, primitivas de comunicación colectivas
- ) y las primitivas de sincronización de procesos y reducción de resultados
+ básicas de comunicación de la biblioteca MPI (envío de mensajes, recepción
+ de mensajes bloqueante y no bloqueante, primitivas de comunicación colectivas)
+ y las primitivas de sincronización de procesos y reducción de resultados
  de modo que posibilitara su uso desde programas remotos.
 \end_layout
 
@@ -392,7 +392,7 @@ Los Algoritmos Genéticos constituyen uno de los paradigmas de Computación
  Evolutiva más difundidos, basando su funcionamiento en la simulación del
  principio de evolución natural en donde a partir de un población (de soluciones
  potenciales) se establece una especie de ley de la selva virtual en donde
- los individuos mas aptos (mejores soluciones) sobreviven.
+ los individuos más aptos (mejores soluciones) sobreviven.
  La evolución de dicha población es a través de interacciones (cruzamiento)
  y transformaciones únicas (mutaciones), luego de determinadas generaciones
  la población converge hacia una solución óptima o cercana a la misma.
@@ -446,7 +446,7 @@ En este trabajo se realizó un estudio de las técnicas de computación evolutiv
 ar modelos de algoritmos genéticos capaces de ejecutar en un ambiente paralelo-d
 istribuido y se presentaron algoritmos evolutivos abocados al caso concreto
  de diseñar redes de comunicaciones de alta conectividad topológica.
- También se evalúaron diferentes algoritmos evolutivos puros e híbridos
+ También se evaluaron diferentes algoritmos evolutivos puros e híbridos
  en sus versiones secuenciales y paralelas.
  
 \end_layout
@@ -463,7 +463,7 @@ ios tanto desde el punto de vista de la calidad de resultados obtenidos
 \begin_layout Standard
 El proyecto Fenton es una muy buena posibilidad para mejorar la eficiencia
  computacional obtenida con las versiones paralelas desarrolladas en el
- proyecto de algoritmos paralelos geneticos.
+ proyecto de algoritmos paralelos genéticos.
 \end_layout
 
 \begin_layout Paragraph

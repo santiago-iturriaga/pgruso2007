@@ -46,7 +46,7 @@ Cluster con acceso remoto
 \begin_layout Standard
 En esta sección se describirá el sistema Fenton, se profundizará en las
  tecnologías elegidas en la etapa de relevamiento e investigación para la
- implementación del gestionamiento de recursos (DRM) y el despacho de trabajos.
+ implementación del gerenciamiento de recursos (DRM) y el despacho de trabajos.
  Se detallará la construcción de la interfaz para acceso remoto al cluster
  y además se mencionarán las herramientas utilizadas para el desarrollo
  y la documentación a lo largo del proyecto.
@@ -99,11 +99,11 @@ Gerenciador de recursos y despachador de trabajos
 \end_layout
 
 \begin_layout Standard
-A continuación se presentán y justificarán las tecnologías seleccionadas
+A continuación se presentarán y justificarán las tecnologías seleccionadas
  para la implementación del gerenciador de recursos (DRM) y despachador
  de trabajos del sistema Fenton.
  La etapa de relevamiento de tecnologías fue una de las más importantes
- del proyecto, y en la implementación del gestionador de recursos y el planifica
+ del proyecto, y en la implementación del gerenciador de recursos y el planifica
 dor de trabajos radica uno de los mayores riesgos para el proyecto.
  
 \end_layout
@@ -201,7 +201,7 @@ Teniendo en cuenta los conocimientos previos de los integrantes del grupo
  aplicaciones web, se decidió utilizar PHP como lenguaje de implementación.
  El servidor web Apache brinda un excelente soporte para la ejecución de
  código PHP por lo que resultan una pareja ideal.
- Como entorno de desarrollo para la implementación de la logica en código
+ Como entorno de desarrollo para la implementación de la lógica en código
  PHP necesaria se utilizó Eclipse con el plugin PHPEclipse.
  
 \end_layout
@@ -222,8 +222,8 @@ Para el almacenamiento de datos se consideraron dos motores de base de datos
 
 \begin_layout Standard
 A la hora de la implementación se realizó una clara separación entre la
- capa de presentación y la capa con la lógica de negocios, desacoplando
- asi la presentación de la información con el comportamiento de la aplicación.
+ capa de presentación y la capa con la lógica de negocios desacoplando la
+ presentación de la información con el comportamiento de la aplicación.
  El acceso a datos se encapsuló en un módulo específico, esto redundó en
  una ventaja para el producto: para utilizar otro manejador de base de datos
  relacional de condiciones similares solamente es necesario reimplementar
@@ -263,16 +263,10 @@ Realmente estas plantillas no son HTML puro ya que cuentan con etiquetas
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
+\begin_inset Float figure
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Standard
@@ -286,6 +280,22 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Diagrama de interacción.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_inset
 
 
@@ -294,7 +304,7 @@ status open
 \begin_layout Standard
 Se separaron en módulos distintos las interfaces con TORQUE, Maui y el sistema
  operativo.
- Las interfaces con TORQUE y Maui brindan al usurio administrador información
+ Las interfaces con TORQUE y Maui brindan al usuario administrador información
  sobre el estado del sistema y permiten que este realice acciones sobre
  los trabajos (e.g., iniciar, detener, etc.).
  La interfaz con el sistema operativo es utilizada para almacenar los trabajos
@@ -304,10 +314,37 @@ Se separaron en módulos distintos las interfaces con TORQUE, Maui y el sistema
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename interaccion_2.png
 	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Diagrama de dependencias.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
 
 \end_inset
 
@@ -350,7 +387,7 @@ Dado que se trata de un ambiente multiusuario, la aplicación permite administra
  trabajos por parte de los usuarios.
  Para esta implementación se restringió el uso de espacio de almacenamiento
  en el disco duro, tiempo máximo de ejecución y cantidad de nodos disponibles
- simultaneamente, pero es posible agregar otros recursos a restringir (e.g,
+ simultáneamente, pero es posible agregar otros recursos a restringir (e.g,
  memoria, ciclos de procesador, etc.).
 \end_layout
 
@@ -409,8 +446,8 @@ Subversion (también conocido como SVN) es un software de control de versiones
  diseñado específicamente para reemplazar al popular Concurrent Versioning
  System (CVS).
  Los sistemas de control de versiones mantienen un seguimiento de los cambios
- realizados al código fuente de una proyecto y permiten la colaboración
- de varios desarrolladores.
+ realizados al código fuente de un proyecto y permiten la colaboración de
+ varios desarrolladores.
  Dick Grune desarrolló CVS en 1984 y fue liberado bajo una licencia pública
  general GNU ganando mucha popularidad entre los proyectos open source.
  Lamentablemente CVS posee muchas deficiencias, por esta razón CollabNet

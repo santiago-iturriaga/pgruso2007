@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -27,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -83,7 +83,7 @@ Mejorar los reportes de los usuarios administradores para el análisis del
 \end_layout
 
 \begin_layout Itemize
-Continuar con al instalación del sistema Fenton en el cluster Medusa (ver
+Continuar con la instalación del sistema Fenton en el cluster Medusa (ver
  página 
 \begin_inset LatexCommand pageref
 reference "sub:Cluster-de-computadores-Medusa"

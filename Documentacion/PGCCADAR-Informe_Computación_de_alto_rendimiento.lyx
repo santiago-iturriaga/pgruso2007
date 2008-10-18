@@ -193,7 +193,7 @@ reference "fig:Bus-y-Ethernet"
 \end_layout
 
 \begin_layout Standard
-En las redes de tipo bus o ethernet los procesadores comparten un único
+En las redes de tipo bus o Ethernet los procesadores comparten un único
  bus como recurso de comunicación.
  La arquitectura es fácil y económica de implementar, pero no es escalable
  ya que solo un procesador puede usar el bus en un momento dado, a medida
@@ -253,7 +253,7 @@ reference "fig:Mallas"
 \end_layout
 
 \begin_layout Standard
-Al igual que la interconexión mediante bus (o ethernet), las mallas son
+Al igual que la interconexión mediante bus (o Ethernet), las mallas son
  fáciles y económicas de implementar, sin embargo el diámetro se incrementa
  al añadir nodos.
  En las mallas de dimensión 1, si los dos nodos extremos también son conectados,
@@ -638,7 +638,7 @@ El diseño de algoritmos paralelos involucra cuatro etapas, las cuales se
 \end_layout
 
 \begin_layout Standard
-La primer etapa es la de partición, en esta etapa el cómputo y los datos
+La primera etapa es la de partición, en esta etapa el cómputo y los datos
  sobre los cuales se opera se descomponen en tareas.
  En este punto del diseño se ignoran aspectos como el número de procesadores
  de la máquina a usar y se concentra la atención en explotar oportunidades
@@ -646,7 +646,7 @@ La primer etapa es la de partición, en esta etapa el cómputo y los datos
 \end_layout
 
 \begin_layout Standard
-Finalizada la primer etapa, se inicia la etapa de comunicación donde se
+Finalizada la primera etapa, se inicia la etapa de comunicación donde se
  determina la comunicación para coordinar las tareas, se definen estructuras
  y algoritmos de comunicación.
 \end_layout
@@ -858,9 +858,9 @@ Taxonomía de Flynn
 \end_layout
 
 \begin_layout Standard
-Una forma de clasificar las diferentes arquitecturas de computación secuenciales
- y paralelas, es mediante la taxonomía de Flynn, que está basada en la multiplic
-idad del flujo de instrucciones y del flujo de datos en un computador.
+Una forma de clasificar las diferentes arquitecturas de computación secuencial
+ y paralela es mediante la taxonomía de Flynn, que está basada en la multiplicid
+ad del flujo de instrucciones y del flujo de datos en un computador.
  Un flujo de instrucciones es una secuencia de instrucciones ejecutadas
  por el computador y un flujo de datos es la secuencia de datos sobre los
  cuales operan las instrucciones.
@@ -1135,7 +1135,7 @@ Arquitecturas de computación paralela
 \end_layout
 
 \begin_layout Standard
-En esta sección se enumeran las diferentes arquitecturas que se peuden encontrar
+En esta sección se enumeran las diferentes arquitecturas que se pueden encontrar
  relacionadas a la computación paralela.
 \end_layout
 
@@ -1175,7 +1175,7 @@ Arreglos de Procesadores.
 
 \begin_layout Standard
 Son máquinas que constan de un computador secuencial conectado a un arreglo
- de elementos de procesamiento sincronizados e idénticos capaces de ejecutar
+ de elementos idénticos de procesamiento sincronizado capaces de ejecutar
  las mismas operaciones sobre datos diferentes.
  El computador secuencial generalmente es un CPU de propósito general que
  almacena el programa y los datos que serán operados en paralelo, además
@@ -1473,7 +1473,7 @@ MPI es un estándar que define la sintaxis y la semántica de las funciones
  Fue creado por científicos desarrolladores de software y aplicaciones bajo
  el objetivo de desarrollar un estándar portable y eficiente para programación
  paralela.
- Implementaciones del estandar en forma de biblioteca permiten trabajar
+ Implementaciones del estándar en forma de biblioteca permiten trabajar
  con memoria distribuida, tener paralelismo explícito y contener un único
  mecanismo de comunicación que puede ser punto a punto.
  
@@ -1486,7 +1486,7 @@ El número de tareas es fijado en tiempo de pre-ejecución (aunque esto ha
 \end_layout
 
 \begin_layout Standard
-La característica que hace que las implementaciones de este estandar sea
+La característica que hace que las implementaciones de este estándar sean
  de especial interés para sistemas distribuidos es que no utiliza memoria
  compartida.
 \end_layout
@@ -1565,8 +1565,8 @@ La segunda parte de PVM es una biblioteca de funciones que ofrece un completo
  la carga de trabajo computacional de la aplicación.
  Las tareas se identifican mediante un entero llamado el identificador de
  tarea y abreviado TID.
- Los mensajes se envían y reciben utilizando estos tids, los cuales son
- asignados por PVM.
+ Los mensajes se envían y reciben utilizando estos TID, los cuales son asignados
+ por PVM.
 \end_layout
 
 \begin_layout Standard
@@ -1586,13 +1586,13 @@ Middleware
 \end_layout
 
 \begin_layout Standard
-El Middleware es un software de conectividad que ofrece un conjunto de servicios
+El middleware es un software de conectividad que ofrece un conjunto de servicios
  que hacen posible el funcionamiento de aplicaciones distribuidas sobre
  plataformas heterogéneas.
  Funciona como una capa de abstracción de software distribuida, que se sitúa
  entre las capas de aplicaciones y las capas inferiores (sistema operativo
  y red).
- El Middleware nos abstrae de la complejidad y heterogeneidad de las redes
+ El middleware nos abstrae de la complejidad y heterogeneidad de las redes
  de comunicaciones subyacentes, así como de los sistemas operativos y lenguajes
  de programación, proporcionando una API para la fácil programación y manejo
  de aplicaciones distribuidas, dando a su vez la sensación al usuario de
@@ -1646,7 +1646,7 @@ s que posean más o mejores recursos para acelerar su procesamiento.
 
 \begin_layout Standard
 Las aplicaciones middleware han aparecido de manera relativamente reciente
- en el mundo de la informática ganando popularidad en la decada de los 80
+ en el mundo de la informática ganando popularidad en la década de los 80
  ya que eran la solución innovadora para integrar las nuevas aplicaciones
  con los sistemas antiguos (legacy systems), en todo caso, el término ha
  sido usado desde 1968.
@@ -1668,18 +1668,18 @@ El modelo de computación de alto rendimiento es una realidad cada vez más
  los bajos costos de las PC y el incremento en la velocidad y capacidad
  de tecnologías de comunicación.
  La escalabilidad es otro factor importante que estimula la utilización
- de los clusters, ya que si se desea incrementar el poder de computo se
+ de los clusters, ya que si se desea incrementar el poder de cómputo se
  pueden agregar más nodos sin perder la inversión hecha previamente.
 \end_layout
 
 \begin_layout Standard
-Dentro del ambito de la Facultad de Ingeniería se han realizado inversiones
- en la investigación e implementación de clusters y herramientas de computo
+Dentro del ámbito de la Facultad de Ingeniería se han realizado inversiones
+ en la investigación e implementación de clusters y herramientas de cómputo
  de alto rendimiento.
  Un ejemplo de estos trabajos es el cluster Medusa que fue llevado a cabo
  en conjunto entre el Instituto de Mecánica de los Fluidos e Ingeniería
  Ambiental (IMFIA) y del Centro de Cálculo (CeCal) con el apoyo financiero
- del Programa de Desarrollo Tecnologico (PDT) en el año 2006.
+ del Programa de Desarrollo Tecnológico (PDT) en el año 2006.
 \end_layout
 
 \begin_layout Standard
@@ -1696,7 +1696,7 @@ La programación paralela y distribuida es fundamental para la completa utilizac
 
 \begin_layout Standard
 En el proyecto de grado CCADAR se busca la implementación de una herramienta
- de facil acceso para los usuarios, que permita la ejecución de trabajos
+ de fácil acceso para los usuarios, que permita la ejecución de trabajos
  paralelos y distribuidos en un cluster de computadores de forma de aprovechar
  las ventajas de la programación paralela y distribuida.
  Para facilitar la ejecución de trabajos paralelos en el cluster el proyecto
@@ -1705,18 +1705,19 @@ En el proyecto de grado CCADAR se busca la implementación de una herramienta
 \end_layout
 
 \begin_layout Standard
-Para el manejo de la asignación de recursos y control de la ejecución de trabajos
- paralelos y distribuidos en el cluster fue necesario contar con un Middleware
- especializado en estas funciones.
+Para el manejo de la asignación de recursos y control de la ejecución de
+ trabajos paralelos y distribuidos en el cluster fue necesario contar con
+ un Middleware especializado en estas funciones.
  Un Middleware de este tipo se encuentra encargado de recibir las peticiones
  de ejecución de trabajos en el cluster, realiza la asignación de recursos
- a los trabajos para su ejecución y prioriza la ejecución de trabajos 
- según reglas predefinidas.
+ a los trabajos para su ejecución y prioriza la ejecución de trabajos  según
+ reglas predefinidas.
 \end_layout
 
 \begin_layout Standard
-En el siguiente cápitulo se investigarán en profundidas las tecnologías necesarias 
-para el proyecto CCADAR como Middlewares, herramientas de monitoreo del sistema, etc.
+En el siguiente capítulo se investigarán en profundidad las tecnologías
+ necesarias para el proyecto CCADAR como middlewares, herramientas de monitoreo
+ del sistema, etc.
 \end_layout
 
 \end_body
