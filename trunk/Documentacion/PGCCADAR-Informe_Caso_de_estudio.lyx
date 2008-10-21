@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -321,23 +321,9 @@ texttt{lennon.fing.edu.uy}}
 \end_layout
 
 \begin_layout Standard
-Con esta distribución de los servicios en el cluster el nodo maestro (
-\begin_inset ERT
-status open
-
-\begin_layout Standard
-
-
-\backslash
-mbox{
-\backslash
-texttt{lennon.fing.edu.uy}}
-\end_layout
-
-\end_inset
-
-) actúa como front-end permitiendo que el resto de los nodos puedan ser
- privados e invisibles al usuario del cluster.
+Con esta distribución de los servicios en el cluster el nodo maestro actúa
+ como front-end permitiendo que el resto de los nodos puedan ser privados
+ e invisibles al usuario del cluster.
  Además debido a los reducidos requerimientos de software de los nodos de
  cómputo resulta relativamente simple agregar o quitar nodos del cluster.
  
