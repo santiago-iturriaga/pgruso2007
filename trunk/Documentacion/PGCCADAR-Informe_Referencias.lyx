@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -27,7 +27,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
-\quotes_language spanish
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -46,12 +46,10 @@ key "RAIM04"
 \end_inset
 
 B.
- Radic, E.
+ Radic y E.
  Imamagic.
  Benchmarking the Performance of JMS on Computer Clusters.
- CARNet Users' Conference, 28.
- 9.
- 2004.
+ CARNet Users' Conference, 2004.
 \end_layout
 
 \begin_layout Bibliography
@@ -62,12 +60,10 @@ key "IMRADO04"
 
 E.
  Imamagic, B.
- Radic, D.
+ Radic y D.
  Dobrenic.
  Job Management Systems Analysis.
- CARNet Users' Conference, 28.
- 9.
- 2004.
+ CARNet Users' Conference, 2004.
 \end_layout
 
 \begin_layout Bibliography
@@ -76,15 +72,16 @@ key "MAUI"
 
 \end_inset
 
-Maui Cluster Scheduler, Cluster Resources.
- 
+Cluster Resources.
+ Maui Cluster Scheduler manual.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.clusterresources.com/products/maui/"
 
 \end_inset
 
 .
- Consultado Julio 2007.
+ Consultado Julio de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -93,15 +90,16 @@ key "TORQUE"
 
 \end_inset
 
-TORQUE Resource Manager, Cluster Resources.
- 
+Cluster Resources.
+ TORQUE Resource Manager manual.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.clusterresources.com/products/torque/"
 
 \end_inset
 
 .
- Consultado Julio 2007.
+ Consultado Julio de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -110,9 +108,9 @@ key "GRLUST03"
 
 \end_inset
 
-William Gropp, Ewing Lusk and Thomas Sterling.
+William Gropp, Ewing Lusk y Thomas Sterling.
  Beowulf Cluster Computing with Linux, Second Edition.
- MIT press 2003 ISBN:0262692929.
+ Publicado por MIT, 2003.
 \end_layout
 
 \begin_layout Bibliography
@@ -124,7 +122,7 @@ key "SLOAN04"
 Joseph D.
  Sloan.
  High Performance Linux Clusters with OSCAR, Rocks, OpenMosix, and MPI.
- O'Reilly 2004 ISBN:0596005709.
+ Publicado por O'Reilly, 2004.
 \end_layout
 
 \begin_layout Bibliography
@@ -134,10 +132,18 @@ key "MIBO05"
 \end_inset
 
 M.
- Michels, W.
+ Michels y W.
  Borremans.
  Clustering with openMosix.
- University of Amsterdam, Febrero 2005.
+ University of Amsterdam, 2005.
+ Disponible en 
+\begin_inset LatexCommand url
+target "http://staff.science.uva.nl/~delaat/snb-2004-2005/p20/report.pdf"
+
+\end_inset
+
+.
+ Consultado en Junio de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -146,14 +152,16 @@ key "DCSC"
 
 \end_inset
 
-Dansk Center for Scientific Computing, 
+Dansk Center for Scientific Computing.
+ CSC's Super Computer documentation.
+ Disponible en 
 \begin_inset LatexCommand url
-target "http://www.dcsc.sdu.dk/"
+target "http://www.dcsc.sdu.dk/doc.php"
 
 \end_inset
 
 .
- Consultado Febrero 2008.
+ Consultado en Febrero de 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -162,14 +170,16 @@ key "SUBYSB"
 
 \end_inset
 
-Stony Brook University, 
+Stony Brook University.
+ Seawulf Cluster tutorials.
+ Disponible en 
 \begin_inset LatexCommand url
-target "http://www.sunysb.edu/seawulfcluster/"
+target "http://www.sunysb.edu/seawulfcluster/tutorials.shtml"
 
 \end_inset
 
 .
- Consultado Febrero 2008.
+ Consultado en Febrero de 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -178,14 +188,16 @@ key "HELICS"
 
 \end_inset
 
-University of Heidelberg, 
+University of Heidelberg.
+ Helics Cluster documentation.
+ Disponible en 
 \begin_inset LatexCommand url
-target "http://helics.uni-hd.de/"
+target "http://helics.uni-hd.de/doc/"
 
 \end_inset
 
 .
- Consultado Febrero 2008.
+ Consultado en Febrero de 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -194,30 +206,16 @@ key "GLA"
 
 \end_inset
 
-University of Glasgow, 
+University of Glasgow.
+ Glasgow computer cluster guide.
+ Disponible en 
 \begin_inset LatexCommand url
-target "http://www.gla.ac.uk/services/it/whatwedo/computecluster/"
+target "http://www.gla.ac.uk/services/it/whatwedo/computecluster/userguide/"
 
 \end_inset
 
 .
- Consultado Febrero 2008.
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset LatexCommand bibitem
-key "OREGON"
-
-\end_inset
-
-Oregon State University, Laboratorio de fisica, 
-\begin_inset LatexCommand url
-target "http://physics.oregonstate.edu/~elserj/support/cluster_use.php"
-
-\end_inset
-
-.
- Consultado Febrero 2008.
+ Consultado en Febrero de 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -226,14 +224,16 @@ key "DRMAA"
 
 \end_inset
 
-Distributed Resource Management Application API, 
+Open Grid Forum.
+ Distributed Resource Management Application API Specification Documents.
+ Disponibles en 
 \begin_inset LatexCommand url
-target "http://www.drmaa.net"
+target "http://www.drmaa.org/documents.php"
 
 \end_inset
 
 .
- Consultado Junio 2007.
+ Consultado en Junio de 2007.
 \end_layout
 
 \begin_layout Bibliography
