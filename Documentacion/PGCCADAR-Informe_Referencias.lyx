@@ -1,4 +1,4 @@
-#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -49,7 +49,14 @@ B.
  Radic y E.
  Imamagic.
  Benchmarking the Performance of JMS on Computer Clusters.
- CARNet Users' Conference, 2004.
+ Presentado en CARNet Users' Conference, 2004.
+ Disponible en línea en 
+\begin_inset LatexCommand url
+target "http://www.srce.hr/dokumenti/crogrid/radovi/Benchmarking_the_Performance_of_JMS_on_Computer_Cluster.pdf"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -63,7 +70,14 @@ E.
  Radic y D.
  Dobrenic.
  Job Management Systems Analysis.
- CARNet Users' Conference, 2004.
+ Presentado en CARNet Users' Conference, 2004.
+ Disponible en línea en 
+\begin_inset LatexCommand url
+target "http://www.srce.hr/dokumenti/crogrid/radovi/Job_Management_Systems_Analysis.pdf"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
@@ -72,7 +86,7 @@ key "MAUI"
 
 \end_inset
 
-Cluster Resources.
+Maui, Cluster Resources.
  Maui Cluster Scheduler manual.
  Disponible en línea en 
 \begin_inset LatexCommand url
@@ -90,7 +104,7 @@ key "TORQUE"
 
 \end_inset
 
-Cluster Resources.
+TORQUE, Cluster Resources.
  TORQUE Resource Manager manual.
  Disponible en línea en 
 \begin_inset LatexCommand url
@@ -136,7 +150,7 @@ M.
  Borremans.
  Clustering with openMosix.
  University of Amsterdam, 2005.
- Disponible en 
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://staff.science.uva.nl/~delaat/snb-2004-2005/p20/report.pdf"
 
@@ -154,7 +168,7 @@ key "DCSC"
 
 Dansk Center for Scientific Computing.
  CSC's Super Computer documentation.
- Disponible en 
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.dcsc.sdu.dk/doc.php"
 
@@ -172,7 +186,7 @@ key "SUBYSB"
 
 Stony Brook University.
  Seawulf Cluster tutorials.
- Disponible en 
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.sunysb.edu/seawulfcluster/tutorials.shtml"
 
@@ -190,7 +204,7 @@ key "HELICS"
 
 University of Heidelberg.
  Helics Cluster documentation.
- Disponible en 
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://helics.uni-hd.de/doc/"
 
@@ -208,7 +222,7 @@ key "GLA"
 
 University of Glasgow.
  Glasgow computer cluster guide.
- Disponible en 
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.gla.ac.uk/services/it/whatwedo/computecluster/userguide/"
 
@@ -224,9 +238,9 @@ key "DRMAA"
 
 \end_inset
 
-Open Grid Forum.
+DRMAA, Open Grid Forum.
  Distributed Resource Management Application API Specification Documents.
- Disponibles en 
+ Disponibles en línea en 
 \begin_inset LatexCommand url
 target "http://www.drmaa.org/documents.php"
 
@@ -242,12 +256,11 @@ key "NES04"
 
 \end_inset
 
-Mg.
- Ing.
- Sergio Nesmachnow.
+Sergio Nesmachnow.
  Algoritmos genéticos paralelos y su aplicación al diseño de redes de comunicaci
-ones confiables, 2004.
- 
+ones confiables.
+ Facultad de Ingeniería, Universidad de la República, Uruguay, 2004.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.fing.edu.uy/~sergion/Tesis.pdf"
 
@@ -262,10 +275,10 @@ key "EZZ06"
 
 \end_inset
 
-Ing.
- Pablo Ezzatti.
- Mejora del desempeño de modelos numéricos del Río de la Plata, 2006.
- 
+Pablo Ezzatti.
+ Mejora del desempeño de modelos numéricos del Río de la Plata.
+ Facultad de Ingeniería, Universidad de la República, Uruguay, 2006.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.fing.edu.uy/inco/grupos/cecal/hpc/mej_des/tesis.pdf"
 
@@ -280,10 +293,11 @@ key "PEMORO06"
 
 \end_inset
 
-Cristian Perfumo, Gerardo Mora, Lucas Rojas.
+Cristian Perfumo, Gerardo Mora y Lucas Rojas.
  Algoritmos genéticos paralelos aplicados a la resolución de problemas de
- asinación de frecuencias en redes celulares, 2006.
- 
+ asignación de frecuencias en redes celulares.
+ Universidad Nacional de la Patagonia, Argentina, 2006.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.fing.edu.uy/inco/grupos/cecal/hpc/AG_MIFAP/AG_MIFAP.pdf"
 
@@ -298,13 +312,11 @@ key "NES03"
 
 \end_inset
 
-Mg.
- Ing.
- Sergio Nesmachnow.
+Sergio Nesmachnow.
  Una versión paralela del algoritmo evolutivo para optimización multiobjetivo
- NSGA-II y su aplicación al diseño de redes de comunicaciones confiables,
- 2003.
- 
+ NSGA-II y su aplicación al diseño de redes de comunicaciones confiables.
+ Facultad de Ingeniería, Universidad de la República, Uruguay, 2003.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.fing.edu.uy/~sergion/MOEA/PNSGAII.pdf"
 
@@ -320,8 +332,9 @@ key "BAFEPE03"
 \end_inset
 
 Sebastián Baña, Gonzalo Ferres y Nicolás Pepe.
- Proyecto MPI.net, 2003.
- 
+ Proyecto MPI.net.
+ Facultad de Ingeniería, Universidad de la República, Uruguay, 2003.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.fing.edu.uy/~sergion/mpinet/"
 
@@ -337,8 +350,9 @@ key "DOMU03"
 \end_inset
 
 Federico Dominioni y Pablo Musso.
- Proyecto algoritmos genéticos incrementales, 2003.
- 
+ Proyecto algoritmos genéticos incrementales.
+ Facultad de Ingeniería, Universidad de la República, Uruguay, 2003.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.fing.edu.uy/~sergion/agi/"
 
@@ -353,10 +367,11 @@ key "BAHI92"
 
 \end_inset
 
-Baron, R.
- y Higbie, L.
+R.
+ Baron y L.
+ Higbie.
  Computer Architecture.
- Addison Wesley, 1992.
+ Publicado por Addison Wesley, 1992.
 \end_layout
 
 \begin_layout Bibliography
@@ -365,9 +380,11 @@ key "BALSI90"
 
 \end_inset
 
-De Balsi, M.
+M.
+ De Balsi.
  Computer Architecture.
- Addison Wesley, 1990.
+ Publicado por Addison Wesley, 1990.
+ 
 \end_layout
 
 \begin_layout Bibliography
@@ -376,10 +393,18 @@ key "FOSTER95"
 
 \end_inset
 
-Foster I.
+I.
+ Foster.
  Designing and Building Parallel Programs.
- Concepts and Tools for Parallel Software Engineering.
- Addison Wesley, 1995.
+ Publicado por Addison Wesley, 1995.
+ Disponible en línea 
+\begin_inset LatexCommand url
+target "http://www-unix.mcs.anl.gov/dbpp/"
+
+\end_inset
+
+.
+ Consultado en Agosto de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -388,14 +413,16 @@ key "APACHE"
 
 \end_inset
 
-Servidor HTTP Apache, 
+Apache, The Apache Software Foundation.
+ Documentación del Servidor HTTP Apache 2.0.
+ Disponible en línea 
 \begin_inset LatexCommand url
-target "http://httpd.apache.org/"
+target "http://httpd.apache.org/docs/2.0/"
 
 \end_inset
 
 .
- Consultado Junio 2007.
+ Consultado en Junio de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -404,14 +431,16 @@ key "GANGLIA"
 
 \end_inset
 
-Sistema de monitoreo Ganglia, 
+Ganglia.
+ Ganglia 3.0 Installation and Configuration.
+ Disponible en línea en 
 \begin_inset LatexCommand url
-target "http://ganglia.info/"
+target "http://sourceforge.net/docman/display_doc.php?docid=128915&group_id=43021"
 
 \end_inset
 
 .
- Consultado Junio 2007.
+ Consultado en Junio de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -420,14 +449,16 @@ key "POSTGRES"
 
 \end_inset
 
-PostgreSQL, 
+PostgreSQL, The PostgreSQL Global Development Group.
+ PostgreSQL 8.2 Documentation.
+ Disponible en línea en 
 \begin_inset LatexCommand url
-target "http://www.postgresql.org/"
+target "http://www.postgresql.org/docs/8.2/interactive/index.html"
 
 \end_inset
 
 .
- Consultado Julio 2007.
+ Consultado en Julio de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -436,16 +467,16 @@ key "MYSQL"
 
 \end_inset
 
-MySQL, Sitio oficial.
+MySQL, Sun Microsystems.
  Documentación técnica.
- Disponible en linea en 
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.mysql.com/"
 
 \end_inset
 
 .
- Consultado Julio 2007.
+ Consultado en Julio de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -454,15 +485,15 @@ key "PHP"
 
 \end_inset
 
-Lenguaje PHP, Sitio oficial.
- Disponible en linea en 
+PHP, The PHP Group.
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "http://www.php.net/"
 
 \end_inset
 
 .
- Consultado Julio 2007.
+ Consultado en Julio de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -471,16 +502,16 @@ key "JOBMONARCH"
 
 \end_inset
 
-Job Monarch, Welcome to Job Monarch.
+Job Monarch.
  Documentación técnica.
- Disponible en linea en 
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "https://subtrac.sara.nl/oss/jobmonarch/"
 
 \end_inset
 
 .
- Consultado Setiembre 2007.
+ Consultado en Setiembre de 2007.
 \end_layout
 
 \begin_layout Bibliography
@@ -489,16 +520,16 @@ key "PBS_PYTHON"
 
 \end_inset
 
-PBS Python, Welcome to pbs_python pages.
+PBS Python.
  Documentación técnica.
- Disponible en linea en
+ Disponible en línea en 
 \begin_inset LatexCommand url
 target "https://subtrac.sara.nl/oss/pbs_python/"
 
 \end_inset
 
 .
- Consultado Setiembre 2007.
+ Consultado en Setiembre de 2007.
 \end_layout
 
 \end_body
