@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -436,7 +436,9 @@ key "MYSQL"
 
 \end_inset
 
-MySQL, 
+MySQL, Sitio oficial.
+ Documentación técnica.
+ Disponible en linea en 
 \begin_inset LatexCommand url
 target "http://www.mysql.com/"
 
@@ -452,7 +454,8 @@ key "PHP"
 
 \end_inset
 
-Lenguaje PHP, 
+Lenguaje PHP, Sitio oficial.
+ Disponible en linea en 
 \begin_inset LatexCommand url
 target "http://www.php.net/"
 
@@ -468,7 +471,9 @@ key "JOBMONARCH"
 
 \end_inset
 
-Job Monarch, 
+Job Monarch, Welcome to Job Monarch.
+ Documentación técnica.
+ Disponible en linea en 
 \begin_inset LatexCommand url
 target "https://subtrac.sara.nl/oss/jobmonarch/"
 
@@ -484,7 +489,9 @@ key "PBS_PYTHON"
 
 \end_inset
 
-Biblioteca pbs_python, 
+PBS Python, Welcome to pbs_python pages.
+ Documentación técnica.
+ Disponible en linea en
 \begin_inset LatexCommand url
 target "https://subtrac.sara.nl/oss/pbs_python/"
 
