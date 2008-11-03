@@ -50,12 +50,9 @@ name "sec:Relevamiento-de-tecnologías"
 \end_layout
 
 \begin_layout Standard
-El relevamiento de paquetes de software que permitan el desarrollo y la
- ejecución de programas paralelos y distribuidos fue una actividad muy important
-e dentro del proyecto, encontrar un conjunto de aplicaciones que permitan
- cumplir con los objetivos del proyecto fue vital para el alcance del mismo.
- Cabe mencionar que en caso de no haber encontrado una aplicación adecuada
- se debería desarrollar la misma.
+El relevamiento de paquetes de software fue una actividad muy important
+e dentro del proyecto. Encontrar un conjunto de aplicaciones que permitan
+ la ejecución de programas paralelos y distribuidos fue vital para el alcance del proyecto.
  El relevamiento se enfocó en sistemas de administración de cluster, sistemas
  de despacho de trabajos y sistemas de monitoreo de clusters.
  
