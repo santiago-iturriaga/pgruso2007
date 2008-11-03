@@ -52,7 +52,8 @@ name "sec:Relevamiento-de-tecnologías"
 \begin_layout Standard
 El relevamiento de paquetes de software fue una actividad muy important
 e dentro del proyecto. Encontrar un conjunto de aplicaciones que permitan
- la ejecución de programas paralelos y distribuidos fue vital para el alcance del proyecto.
+ la ejecución de programas paralelos y distribuidos fue vital para cubrir el 
+ alcance del proyecto.
  El relevamiento se enfocó en sistemas de administración de cluster, sistemas
  de despacho de trabajos y sistemas de monitoreo de clusters.
  
@@ -60,7 +61,7 @@ e dentro del proyecto. Encontrar un conjunto de aplicaciones que permitan
 
 \begin_layout Standard
 Las características en las cuales se centró el relevamiento de aplicaciones
- del cluster fueron su desempeño, la interfaz disponible para el usuario,
+ del cluster fueron: su desempeño, la interfaz disponible para el usuario,
  la interfaz de administración del cluster, la información disponible del
  cluster y sus nodos individuales, los mecanismos de despacho e inicialización
  de trabajos y finalmente que se trate de una herramienta de código abierto.
