@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -559,6 +559,44 @@ En este trabajo se llevó a cabo una investigación sobre algoritmos genéticos,
  considerando sus variantes secuenciales y paralelas, y su aplicación a
  la resolución del problema de la asignación de frecuencias en las redes
  de telefonía celular.
+\end_layout
+
+\begin_layout Paragraph
+Diseño, configuración, administración y evaluación de performance de un
+ HPC cluster(2006).
+\end_layout
+
+\begin_layout Standard
+El proyecto propone la construcción de un cluster de alta performance para
+ la solución de problemas con altos requerimientos de computo.
+ Este proyecto se cristalizo en la construcción del cluster Medusa.
+\end_layout
+
+\begin_layout Standard
+El cluster de alto desempeño Medusa es un esfuerzo conjunto del Instituto
+ de Mecánica de los Fluidos e Ingeniería Ambiental (IMFIA) y del Centro
+ de Cálculo (CeCal) (Facultad de Ingeniera, Universidad de la República,
+ Uruguay), con el apoyo financiero del Programa de Desarrollo Tecnológico
+ (PDT), proyecto 48/01 (2006-2008).
+ 
+\end_layout
+
+\begin_layout Standard
+En su configuración original (año 2006), Medusa cuenta con seis nodos con
+ procesador Opteron Dual Core y tecnología de interconexión Ethernet.
+\end_layout
+
+\begin_layout Standard
+La aplicación primaria del cluster ha involucrado la ejecución de simulaciones
+ para el desarollo de puentes, barcazas, prevención de efectos ambientales
+ no deseables por buques de gran calado, etc.
+\end_layout
+
+\begin_layout Standard
+El proyecto CCADAR esta íntimamente relacionado con el cluster Medusa pues
+ el sistema de utilización, administración y acceso remoto de buscado en
+ el proyecto CCADAR es para la utilización del cluster Medusa.
+ 
 \end_layout
 
 \begin_layout Subsection
