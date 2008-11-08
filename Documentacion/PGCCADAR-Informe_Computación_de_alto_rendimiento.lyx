@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -1386,8 +1386,7 @@ Cluster de alta disponibilidad.
 Un cluster de alta disponibilidad se caracteriza por compartir los discos
  de almacenamiento de datos, los distintos computadores se monitorean constantem
 ente entre sí para responder en forma instantánea frente a la caída de uno
- de ellos..
- 
+ de ellos.
 \end_layout
 
 \begin_layout Standard
